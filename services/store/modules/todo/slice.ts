@@ -12,7 +12,6 @@ const slice = createSlice({
     // add reducers here
     addNewTodo: (state, action) => {
       const timestamp = new Date().getTime();
-      console.log("timestamp", timestamp);
       state.todos = [
         {
           id: timestamp,
