@@ -1,5 +1,3 @@
-import Navbar from "@/components/navigation/Navbar";
-import StoreProvider from "@/components/providers/StoreProvider";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
@@ -55,10 +53,7 @@ export default function RootLayout({
       <body
         className={`${poppins.variable} font-poppins bg-slate-50 min-h-screen text-neutral-700`}
       >
-        <StoreProvider>
-          <Navbar />
-          {children}
-        </StoreProvider>
+        {children}
       </body>
     </html>
   );
