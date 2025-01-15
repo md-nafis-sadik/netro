@@ -1,5 +1,11 @@
+import Services from "@/components/home/services/Services";
+
 function Home() {
-  return <div></div>;
+  return (
+    <main>
+      <Services />
+    </main>
+  );
 }
 
 export default Home;
