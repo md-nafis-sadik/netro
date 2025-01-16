@@ -18,6 +18,14 @@ body {
   .input {
     @apply w-full border border-neutral-300 p-3 bg-transparent rounded-lg outline-none focus:shadow-none focus:outline-none focus:ring-transparent;
   }
+
+  .flex_center {
+    @apply flex items-center justify-center;
+  }
+
+  .absolute_center {
+    @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
+  }
 }
 
 @layer base {

@@ -1,0 +1,27 @@
+.dark-text-gradient {
+  background: linear-gradient(
+    90deg,
+    #676767 0.06%,
+    #000 20.04%,
+    #000 39.42%,
+    #676767 59.7%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.lite-text-gradient {
+  background: linear-gradient(
+    90deg,
+    #676767 24.89%,
+    #909090 43.02%,
+    #fff 52.64%,
+    #676767 79.02%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
-import "@/styles/globals.css";
 import { poppins } from "@/lib/fonts";
+import "@/styles/globals.css";
+import "@/styles/app.css";
 
 export const metadata: Metadata = {
   title: "Create Next App",

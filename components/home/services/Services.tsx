@@ -1,13 +1,17 @@
-import { scoutCond } from "@/lib/fonts";
-import { cn } from "@/lib/utils";
+import SectionHeader from "@/components/shared/SectionHeader";
+import SectionSubHeader from "@/components/shared/SectionSubHeader";
+import ServiceCard from "./ServiceCard";
 
 const Services = () => {
   return (
-    <div>
-      <p className={cn(scoutCond.className, "text-5xl text-center")}>
-        Welcome to Netro Systems
-      </p>
-    </div>
+    <section className="flex_center flex-col mt-20 mb-[120px]">
+      <SectionSubHeader text="Services" />
+      <SectionHeader dark text="Solutions for You" />
+
+      <div className="w-full">
+        <ServiceCard />
+      </div>
+    </section>
   );
 };
 
