@@ -8,7 +8,8 @@ export const servicesHomeData = [
     imageComponent: {
       src: images.doubleLCrystal,
       alt: "Double L Crystal",
-      className: "absolute -right-4 bottom-3 w-[194px] h-auto",
+      className: "w-[194px] h-auto",
+      width: 194,
     },
   },
   {
@@ -18,7 +19,8 @@ export const servicesHomeData = [
     imageComponent: {
       src: images.gemCrystal,
       alt: "Gem crystal image",
-      className: "absolute -right-4 bottom-3 w-[135px]",
+      className: "w-[135px] h-auto",
+      width: 135,
     },
   },
   {
@@ -28,7 +30,8 @@ export const servicesHomeData = [
     imageComponent: {
       src: images.StarMixerCrystal,
       alt: "",
-      className: "absolute -right-4 bottom-3 w-[156px] h-auto",
+      className: "w-[156px] h-auto",
+      width: 156,
     },
   },
   {
@@ -38,7 +41,8 @@ export const servicesHomeData = [
     imageComponent: {
       src: images.StarCrystal,
       alt: "",
-      className: "absolute -right-4 bottom-3 w-[184px] h-auto",
+      className: "w-[184px] h-auto",
+      width: 184,
     },
   },
   {
@@ -48,7 +52,8 @@ export const servicesHomeData = [
     imageComponent: {
       src: images.honeycombCrystal,
       alt: "",
-      className: "absolute -right-4 bottom-3 w-[180px] h-auto",
+      className: "w-[180px] h-auto",
+      width: 180,
     },
   },
 ];
