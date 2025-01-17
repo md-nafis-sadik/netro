@@ -3,41 +3,78 @@ import { heroHomeSocialsData } from "@/lib/data";
 import { bonbon, inter, scoutCond } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
 import { images } from "@/services";
+import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import Image from "next/image";
-import Link from "next/link";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 
 const Hero = () => {
   const textRef = useRef<HTMLSpanElement | null>(null);
 
-  useEffect(() => {
+  useGSAP(() => {
     if (!textRef.current) return;
 
     const target = textRef.current;
 
-    // Create a GSAP timeline for the animation
-    const tl = gsap.timeline();
+    // Set initial position
+    gsap.set(target, {
+      y: -100,
+      opacity: 0,
+      scale: 1,
+    });
 
-    tl.fromTo(
-      target,
-      { scale: 0, opacity: 0 }, // Start with no scale and opacity
-      {
-        scale: 1.5, // Scale up larger than the original
-        opacity: 1, // Fade in
-        duration: 0.4,
-        ease: "power2.out",
-      }
-    )
+    const tl = gsap.timeline({
+      delay: 0.3, // 300ms delay
+    });
+
+    tl
+      // Initial drop with impact
       .to(target, {
-        scale: 0.8, // Bounce down smaller than the original
+        opacity: 1,
+        y: 0,
         duration: 0.4,
-        ease: "power2.out(1, 0.5)",
+        ease: "power2.in",
       })
+      // Squash on impact
+      .to(
+        target,
+        {
+          scaleX: 1.4,
+          scaleY: 0.6,
+          duration: 0.08,
+          ease: "power1.out",
+        },
+        "-=0.08"
+      )
+      // First bounce up
       .to(target, {
-        scale: 1, // Settle into original size
-        duration: 0.6,
-        ease: "power2.out(1, 0.5)",
+        y: -40,
+        scaleX: 1,
+        scaleY: 1,
+        duration: 0.25,
+        ease: "power2.out",
+      })
+      // Small final bounce and settle
+      .to(target, {
+        y: 0,
+        duration: 0.2,
+        ease: "power2.in",
+      })
+      .to(
+        target,
+        {
+          scaleX: 1.2,
+          scaleY: 0.8,
+          duration: 0.1,
+          ease: "power1.out",
+        },
+        "-=0.1"
+      )
+      // Return to original shape
+      .to(target, {
+        scale: 1,
+        duration: 0.2,
+        ease: "power1.inOut",
       });
   }, []);
 
