@@ -13,8 +13,13 @@ export default {
         poppins: ["var(--font-poppins)"],
       },
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        main: {
+          50: "#ECEFFF",
+          400: "#7775FF",
+        },
+        natural: {
+          900: "#212121",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",

@@ -1,4 +1,9 @@
 import { images } from "@/services";
+import {
+  LinkedinOutlinedIcon,
+  TelegramOutlinedIcon,
+  WhatsappOutlinedIcon,
+} from "@/services/assets/svgs";
 
 export const servicesHomeData = [
   {
@@ -55,5 +60,20 @@ export const servicesHomeData = [
       className: "w-[180px] h-auto",
       width: 180,
     },
+  },
+];
+
+export const heroHomeSocialsData = [
+  {
+    icon: <WhatsappOutlinedIcon className="!w-6 !h-6 !shrink-0" />,
+    link: "",
+  },
+  {
+    icon: <TelegramOutlinedIcon className="!w-6 !h-6 !shrink-0" />,
+    link: "",
+  },
+  {
+    icon: <LinkedinOutlinedIcon className="!w-6 !h-6 !shrink-0" />,
+    link: "",
   },
 ];

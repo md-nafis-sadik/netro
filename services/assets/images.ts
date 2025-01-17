@@ -4,3 +4,6 @@ export { default as gemCrystal } from "@/public/images/gem-crystal.png";
 export { default as honeycombCrystal } from "@/public/images/honeycomb-crystal.png";
 export { default as StarCrystal } from "@/public/images/star-crystal.png";
 export { default as StarMixerCrystal } from "@/public/images/star-mixer-crystal.png";
+export { default as StarGlass } from "@/public/images/star-glass.png";
+export { default as RatingClutch } from "@/public/images/rating-clutch.png";
+export { default as RatingTrustpilot } from "@/public/images/rating-trustpilot.png";

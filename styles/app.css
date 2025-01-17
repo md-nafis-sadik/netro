@@ -25,3 +25,17 @@
   background-clip: text;
   text-fill-color: transparent;
 }
+
+.hero-text-gradient {
+  background: linear-gradient(113deg, #ffb3b3, #e6a3e6, #b3b3ff, #a3a3e6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero-text-o-gradient {
+  background: linear-gradient(113deg, #ffb3b3, #e6a3e6, #b3b3ff, #a3a3e6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
