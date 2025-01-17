@@ -1,8 +1,10 @@
 "use client";
+import { Button } from "@/components/ui/button";
 import { heroHomeSocialsData } from "@/lib/data";
 import { bonbon, inter, scoutCond } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
 import { images } from "@/services";
+import { CallMissedIcon } from "@/services/assets/svgs";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import Image from "next/image";
@@ -126,10 +128,15 @@ const Hero = () => {
 
         {/* CONNECT & SOCIALS */}
         <div className="flex flex-row gap-6 mt-8 md:mt-[60px]">
+          <Button variant={"gradient"}>
+            <span className="text-white">Schedule a call</span>
+            <CallMissedIcon className="!h-6 !w-6 !shrink-0" />
+          </Button>
+
           <div className="flex flex-row items-center gap-3">
             {heroHomeSocialsData.map(({ link, icon }, index) => (
               <a
-                className="h-12 w-12 rounded-full bg-natural-900 flex_center"
+                className="h-12 w-12 rounded-full transition_common bg-natural-900 hover:bg-main-400 flex_center"
                 href={link}
                 key={index}
                 target="_blank"

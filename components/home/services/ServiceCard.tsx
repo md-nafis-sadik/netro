@@ -48,7 +48,7 @@ const ServiceCard = ({ title, text, imageComponent, link }: IFServiceCard) => {
       </p>
 
       <Link href={link} className="group">
-        <RightArrowIcon className="animation_common group-hover:translate-x-3 h-10 w-10" />
+        <RightArrowIcon className="transition_common group-hover:translate-x-3 h-10 w-10" />
       </Link>
     </div>
   );

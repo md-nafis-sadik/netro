@@ -2,8 +2,7 @@
 import { scoutCond } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
 import gsap from "gsap";
-import { SplitText } from "gsap/SplitText";
-import { useEffect, useLayoutEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 
 interface IFHeader {
   dark?: boolean;

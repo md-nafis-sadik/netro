@@ -3,6 +3,29 @@ interface IFSvgProps {
   color?: string;
 }
 
+// C
+
+export const CallMissedIcon = ({
+  className,
+  color = "#ffffff",
+  ...props
+}: IFSvgProps) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    className={className}
+    {...props}
+  >
+    <path
+      d="M3 8.20501L12 17.205L19 10.205V14.795H21V6.79501H13V8.79501H17.59L12 14.385L4.41 6.79501L3 8.20501Z"
+      fill={color}
+    />
+  </svg>
+);
+
 // L
 
 export const LinkedinOutlinedIcon = ({

@@ -1,0 +1,40 @@
+.gradient-button-border {
+  --borderWidth: 2px;
+  position: relative;
+  background-color: #000000;
+  transition: 0.3s ease-in-out all;
+}
+
+.gradient-button-border:hover {
+  background-color: #483bdc;
+}
+
+.gradient-button-border:hover::after {
+  opacity: 0;
+}
+
+.gradient-button-border:after {
+  content: "";
+  position: absolute;
+  top: calc(-1 * var(--borderWidth));
+  left: calc(-1 * var(--borderWidth));
+  height: calc(100% + var(--borderWidth) * 2);
+  width: calc(100% + var(--borderWidth) * 2);
+  background: linear-gradient(60deg, #483bdc, #ffa8a9, #82d3a4);
+  border-radius: 100px;
+  z-index: -1;
+  animation: animatedgradient 3s ease alternate infinite;
+  background-size: 300% 300%;
+}
+
+@keyframes animatedgradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}

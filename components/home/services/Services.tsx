@@ -4,27 +4,10 @@ import SectionSubHeader from "@/components/shared/SectionSubHeader";
 import ServiceCard from "./ServiceCard";
 import { servicesHomeData } from "@/lib/data";
 import useEmblaCarousel from "embla-carousel-react";
-import { useEffect, useState } from "react";
-import { useWindowDimensions } from "@/hooks/WindowDimensions";
 
 const Services = () => {
-  const [spaceStart, setSpaceStart] = useState<Number>(0);
-
-  const options = { align: "start" as "start", loop: false };
-  const [emblaRef, emblaApi] = useEmblaCarousel(options);
-  const { width } = useWindowDimensions();
-
-  useEffect(() => {
-    if (width >= 1536) {
-      setSpaceStart(224);
-    } else if (width >= 1280) {
-      setSpaceStart(128);
-    } else if (width >= 640) {
-      setSpaceStart(64);
-    } else {
-      setSpaceStart(32);
-    }
-  }, [width]);
+  const options = { align: "start", loop: false } as const;
+  const [emblaRef] = useEmblaCarousel(options);
 
   return (
     <section className="flex_center flex-col mt-20 mb-[120px]">
