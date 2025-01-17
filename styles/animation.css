@@ -38,3 +38,11 @@
     background-position: 0% 50%;
   }
 }
+
+.rotate-text {
+  position: absolute;
+  transform-origin: 0 104px; /* 50% of the container height and width */
+  font-size: 1rem;
+  line-height: 1rem;
+  top: 0;
+}

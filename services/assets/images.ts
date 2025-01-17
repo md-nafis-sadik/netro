@@ -1,4 +1,5 @@
 export { default as avatar } from "@/public/images/avatar.png";
+export { default as avater2 } from "@/public/images/avater-2.png";
 export { default as doubleLCrystal } from "@/public/images/double-l-crystal.png";
 export { default as gemCrystal } from "@/public/images/gem-crystal.png";
 export { default as honeycombCrystal } from "@/public/images/honeycomb-crystal.png";

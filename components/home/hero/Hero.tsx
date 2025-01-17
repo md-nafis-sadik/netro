@@ -9,6 +9,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import Image from "next/image";
 import { useRef } from "react";
+import ContactPin from "./ContactPin";
 
 const Hero = () => {
   const textRef = useRef<HTMLSpanElement | null>(null);
@@ -147,7 +148,7 @@ const Hero = () => {
           </div>
         </div>
 
-        <div className="flex flex-row items-center mt-10 md:mt-20 gap-6">
+        <div className="flex flex-row items-center mt-10 md:mt-20 gap-6 relative">
           <Image
             src={images.RatingClutch}
             alt="clutch rating"
@@ -163,6 +164,7 @@ const Hero = () => {
             height={100}
             width={400}
           />
+          <ContactPin className="absolute -bottom-10 right-0 z-50" />
         </div>
       </div>
     </section>
