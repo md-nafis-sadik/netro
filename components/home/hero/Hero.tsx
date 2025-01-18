@@ -10,6 +10,7 @@ import gsap from "gsap";
 import Image from "next/image";
 import { useRef } from "react";
 import ContactPin from "./ContactPin";
+import ParallaxContainer from "@/components/shared/animations/HoverParallax";
 
 const Hero = () => {
   const textRef = useRef<HTMLSpanElement | null>(null);
@@ -82,7 +83,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="flex flex-row bg-black min-h-[1120px] relative">
+    <section className="flex flex-row bg-black min-h-[1120px] relative overflow-hidden">
       <Image
         alt="hero star glass image"
         src={images.StarGlass}
@@ -164,7 +165,13 @@ const Hero = () => {
             height={100}
             width={400}
           />
-          <ContactPin className="absolute -bottom-10 right-0 z-50" />
+
+          <ParallaxContainer
+            containerClassName="absolute -bottom-10 right-0 z-50"
+            scaleAmount={1.5}
+          >
+            <ContactPin />
+          </ParallaxContainer>
         </div>
       </div>
     </section>

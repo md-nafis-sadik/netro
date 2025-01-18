@@ -26,7 +26,7 @@ const ContactPin = ({ className }: { className?: string }) => {
   return (
     <div
       className={cn(
-        "flex items-center justify-center rounded-full bg-transparent overflow-hidden hover:scale-150 transition_common cursor-pointer",
+        "flex items-center justify-center rounded-full bg-transparent overflow-hidden transition_common cursor-pointer",
         className
       )}
     >
