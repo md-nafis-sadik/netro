@@ -54,6 +54,30 @@ export const LinkedinOutlinedIcon = ({
   </svg>
 );
 
+// P
+
+export const PlusRoundedIcon = ({
+  className,
+  color = "#ffffff",
+  ...props
+}: IFSvgProps) => (
+  <svg
+    width="40"
+    height="41"
+    viewBox="0 0 40 41"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    className={className}
+    {...props}
+  >
+    <rect y="0.5" width="40" height="40" rx="20" fill="#111111" />
+    <path
+      d="M20 10.5C14.48 10.5 10 14.98 10 20.5C10 26.02 14.48 30.5 20 30.5C25.52 30.5 30 26.02 30 20.5C30 14.98 25.52 10.5 20 10.5ZM25 21.5H21V25.5H19V21.5H15V19.5H19V15.5H21V19.5H25V21.5Z"
+      fill={color}
+    />
+  </svg>
+);
+
 // R
 
 export const RightArrowIcon = ({

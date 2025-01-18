@@ -1,8 +1,12 @@
 "use client";
 import { scoutCond } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
+import { useGSAP } from "@gsap/react";
+import ScrollTrigger from "gsap/ScrollTrigger";
 import gsap from "gsap";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
+
+gsap.registerPlugin(ScrollTrigger);
 
 interface IFHeader {
   dark?: boolean;
@@ -13,47 +17,62 @@ interface IFHeader {
 const SectionHeader = ({ dark, lite, text }: IFHeader) => {
   const containerRef = useRef<HTMLDivElement | null>(null);
 
-  useEffect(() => {
-    const container = containerRef.current;
+  useGSAP(
+    () => {
+      const container = containerRef.current;
+      if (!container) return;
 
-    if (!container) return;
+      // Clear any existing content
+      container.innerHTML = "";
 
-    // Split text into individual letters while preserving spaces
-    const letters = text.split("").map((char) => {
-      const span = document.createElement("span");
-      span.textContent = char === " " ? "\u00A0" : char; // Preserve spaces as non-breaking spaces
-      span.style.display = "inline-block"; // Required for individual animation
-      if (char === " ") {
-        span.style.marginRight = "0.1em"; // Adjust spacing for one letter width
-      }
-      container.appendChild(span);
-      return span;
-    });
+      // Split text into individual letters while preserving spaces
+      const letters = text.split("").map((char) => {
+        const span = document.createElement("span");
+        span.textContent = char === " " ? "\u00A0" : char;
+        span.style.display = "inline-block";
+        if (char === " ") {
+          span.style.marginRight = "0.1em";
+        }
+        container.appendChild(span);
+        return span;
+      });
 
-    // GSAP Animation
-    const tl = gsap.timeline({
-      defaults: { ease: "power1.out", duration: 0.3 },
-    });
+      // Create animation
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: container,
+          start: "top bottom-=100",
+          toggleActions: "play none none reverse",
+          markers: false,
+          once: true,
+          scrub: false,
+        },
+      });
 
-    tl.fromTo(
-      letters,
-      {
-        opacity: 0,
-        x: 50,
-        rotate: () => gsap.utils.random(-45, 45), // Random starting angles
-      },
-      {
-        opacity: 1,
-        x: 0,
-        rotate: 0, // Reset to straight
-        stagger: 0.1, // Stagger for smooth letter appearance
-      }
-    );
+      tl.fromTo(
+        letters,
+        {
+          opacity: 0,
+          x: 50,
+          rotate: () => gsap.utils.random(-45, 45),
+        },
+        {
+          opacity: 1,
+          x: 0,
+          rotate: 0,
+          stagger: 0.1,
+          duration: 0.8,
+          ease: "power2.out",
+        }
+      );
 
-    return () => {
-      gsap.killTweensOf(letters);
-    };
-  }, [text]);
+      // Cleanup
+      return () => {
+        tl.kill();
+      };
+    },
+    { scope: containerRef }
+  );
 
   return (
     <div
@@ -62,7 +81,7 @@ const SectionHeader = ({ dark, lite, text }: IFHeader) => {
         scoutCond.className,
         "text-[128px] font-bold !leading-[0.9] uppercase text-center mt-10",
         dark && "text-black",
-        lite && "lite-text-gradient"
+        lite && "text-white"
       )}
     />
   );

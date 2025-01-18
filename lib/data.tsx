@@ -77,3 +77,68 @@ export const heroHomeSocialsData = [
     link: "",
   },
 ];
+
+export const faqData = [
+  {
+    question: "What services does Netro Creative offer?",
+    answer:
+      "Netro Creative offers a wide range of services including custom software development, mobile app development, web application development, enterprise software solutions, software consulting, and ongoing maintenance and support.",
+  },
+  {
+    question: "What industries does Netro Creative specialize in?",
+    answer:
+      "Netro Creative specializes in a wide range of industries, including finance, healthcare, e-commerce, education, and more. We tailor our services to meet the unique needs of each industry.",
+  },
+  {
+    question:
+      "How does Netro Creative ensure the quality of its software products?",
+    answer:
+      "You can reach out to Netro Creative by email at 0o9oX@example.com or by filling out the contact form on our website. We look forward to hearing from you and discussing your project needs.",
+  },
+  {
+    question: "What is Netro Creative's development process?",
+    answer:
+      "You can reach out to Netro Creative by email at 0o9oX@example.com or by filling out the contact form on our website. We look forward to hearing from you and discussing your project needs.",
+  },
+  {
+    question: "How does Netro Creative handle data security and privacy?",
+    answer:
+      "You can reach out to Netro Creative by email at 0o9oX@example.com or by filling out the contact form on our website. We look forward to hearing from you and discussing your project needs.",
+  },
+  {
+    question: "Does Netro Creative provide ongoing support and maintenance?",
+    answer:
+      "You can reach out to Netro Creative by email at 0o9oX@example.com or by filling out the contact form on our website. We look forward to hearing from you and discussing your project needs.",
+  },
+  {
+    question: "What are Netro Creative's pricing models?",
+    answer:
+      "You can reach out to Netro Creative by email at 0o9oX@example.com or by filling out the contact form on our website. We look forward to hearing from you and discussing your project needs.",
+  },
+  {
+    question: "How can I get started with Netro Creative?",
+    answer:
+      "You can reach out to Netro Creative by email at 0o9oX@example.com or by filling out the contact form on our website. We look forward to hearing from you and discussing your project needs.",
+  },
+];
+
+export const journalData = [
+  {
+    title: "Vision for creative excellence vision",
+    image: images.Blog1,
+    date: "30 November, 2024",
+    link: "",
+  },
+  {
+    title: "Vision for creative excellence vision",
+    image: images.Blog2,
+    date: "30 November, 2024",
+    link: "",
+  },
+  {
+    title: "Vision for creative excellence vision",
+    image: images.Blog3,
+    date: "30 November, 2024",
+    link: "",
+  },
+];

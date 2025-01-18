@@ -16,12 +16,7 @@ const Services = () => {
 
       <div className="containerX w-full overflow-x-hidden overflow-y-visible mt-5 md:mt-10">
         <div className="w-full" ref={emblaRef}>
-          <div
-            className="w-full min-h-fit flex flex-row gap-6 md:gap-10 py-5 md:py-10 pe-4 md:pe-20"
-            // style={{
-            //   marginInlineStart: `${spaceStart}px`,
-            // }}
-          >
+          <div className="w-full min-h-fit flex flex-row gap-6 md:gap-10 py-5 md:py-10 pe-4 md:pe-20">
             {servicesHomeData.map(
               ({ title, text, link, imageComponent }, index) => (
                 <ServiceCard
