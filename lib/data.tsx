@@ -142,3 +142,49 @@ export const journalData = [
     link: "",
   },
 ];
+
+export const pricingData = [
+  {
+    title: "UI/UX Design",
+    subtitle: "For personal or Industrial",
+    price: 29,
+    period: "per hour",
+    popular: false,
+    features: [
+      "Ensured proper UX",
+      "Followed guide or create",
+      "Modern softwares",
+      "Scalable and ready to develop",
+      "Collaborative",
+    ],
+  },
+  {
+    title: "Development",
+    subtitle: "For personal or Industrial",
+    price: 49,
+    period: "per hour",
+    popular: true,
+    features: [
+      "Frontend Development",
+      "Backend Development",
+      "Database, Server Setup",
+      "DevOps and Deploy",
+      "Bug Fixing",
+      "After sales service",
+    ],
+  },
+  {
+    title: "Branding",
+    subtitle: "For personal or Industrial",
+    price: 19,
+    period: "per hour",
+    popular: false,
+    features: [
+      "Logo from scratch",
+      "Brand Guideline",
+      "Animation and Graphical assets",
+      "3D Animation",
+      "Brand Assets preparation",
+    ],
+  },
+];

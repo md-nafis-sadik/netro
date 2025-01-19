@@ -12,9 +12,10 @@ interface IFHeader {
   dark?: boolean;
   lite?: boolean;
   text: string;
+  className?: string;
 }
 
-const SectionHeader = ({ dark, lite, text }: IFHeader) => {
+const SectionHeader = ({ dark, lite, text, className }: IFHeader) => {
   const containerRef = useRef<HTMLDivElement | null>(null);
 
   useGSAP(
@@ -79,9 +80,10 @@ const SectionHeader = ({ dark, lite, text }: IFHeader) => {
       ref={containerRef}
       className={cn(
         scoutCond.className,
-        "text-[128px] font-bold !leading-[0.9] uppercase text-center mt-10",
+        "text-[128px] font-bold !leading-[0.9] uppercase text-center",
         dark && "text-black",
-        lite && "text-white"
+        lite && "text-white",
+        className
       )}
     />
   );
