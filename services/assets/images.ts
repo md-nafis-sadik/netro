@@ -2,6 +2,7 @@
 
 export { default as avatar } from "@/public/images/avatar.png";
 export { default as avater2 } from "@/public/images/avater-2.png";
+export { default as avater3 } from "@/public/images/avater-3.png";
 export { default as Blog1 } from "@/public/images/journal/blog-1.png";
 export { default as Blog2 } from "@/public/images/journal/blog-2.png";
 export { default as Blog3 } from "@/public/images/journal/blog-3.png";
