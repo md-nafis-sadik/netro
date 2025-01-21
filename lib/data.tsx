@@ -215,3 +215,67 @@ export const testimonialsData = [
     title: "CTO - FutureTech Solutions",
   },
 ];
+
+export const footerData = {
+  inquiries: {
+    title: "INQUIRIES",
+    address:
+      "290/737 York House Green Lane West, Garstang, Preston, Lancashire, England, PR3 1NJ",
+    phone: "+1 789 567 890",
+    email: "hello@netrosystems.com",
+  },
+  companyInfo: {
+    title: "COMPANY INFO",
+    links: [
+      { text: "About Us", href: "/about-us" },
+      { text: "Join Our Team", href: "/careers" },
+      { text: "Our Process", href: "/process" },
+      { text: "Client Reviews", href: "/reviews" },
+      { text: "Portfolio", href: "/portfolio" },
+      { text: "Case Studies", href: "/case-studies" },
+    ],
+  },
+  services: {
+    title: "SERVICES",
+    links: [
+      { text: "UI/UX Design", href: "/services/ui-ux-design" },
+      { text: "Branding & Identity", href: "/services/branding" },
+      { text: "Web Development", href: "/services/web-development" },
+      { text: "Mobile App Development", href: "/services/mobile-development" },
+      { text: "SaaS Development", href: "/services/saas-development" },
+      { text: "MVP Development", href: "/services/mvp-development" },
+      { text: "3D Animation", href: "/services/3d-animation" },
+    ],
+  },
+  support: {
+    title: "SUPPORT",
+    links: [
+      { text: "Privacy Policy", href: "/privacy-policy" },
+      { text: "Terms of Service", href: "/terms-of-service" },
+      { text: "Help Center", href: "/help" },
+    ],
+  },
+  resources: {
+    title: "RESOURCES",
+    links: [
+      { text: "Our Journal", href: "/journal" },
+      { text: "Whitepapers & E-books", href: "/resources/whitepapers" },
+      { text: "Tools & Templates", href: "/resources/tools" },
+      { text: "Webinars / Workshops", href: "/resources/webinars" },
+      { text: "FAQs", href: "/faqs" },
+    ],
+  },
+  copyright: "© 2022 - 2025 • Netro Systems, All Rights Reserved.",
+  socialLinks: [
+    { platform: "twitter", href: "#" },
+    { platform: "linkedin", href: "#" },
+    { platform: "instagram", href: "#" },
+    { platform: "youtube", href: "#" },
+    { platform: "facebook", href: "#" },
+    { platform: "telegram", href: "#" },
+    { platform: "dribbble", href: "#" },
+    { platform: "behance", href: "#" },
+    { platform: "github", href: "#" },
+  ],
+  actions: [{ text: "Go To Top", href: "#top" }],
+};

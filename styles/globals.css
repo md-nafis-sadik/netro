@@ -30,6 +30,14 @@ body {
   .transition_common {
     @apply transition-all duration-300 ease-in-out;
   }
+
+  .footer_el_title {
+    @apply text-[28px] md:text-[32px] font-bold !leading-[1.1] uppercase;
+  }
+
+  .footer_el_text {
+    @apply text-sm md:text-base font-normal !leading-normal;
+  }
 }
 
 @layer base {

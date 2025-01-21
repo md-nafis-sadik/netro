@@ -47,6 +47,42 @@ export const CheckedCircleIcon = ({
   </svg>
 );
 
+// D
+
+export const DividerFadingDashes = ({ className, ...props }: IFSvgProps) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="1282"
+    height="3"
+    viewBox="0 0 1282 3"
+    fill="none"
+    className={className}
+    {...props}
+  >
+    <path
+      d="M1 1.5H1281"
+      stroke="url(#paint0_linear_1282_1069)"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeDasharray="10 10"
+    />
+    <defs>
+      <linearGradient
+        id="paint0_linear_1282_1069"
+        x1="1"
+        y1="2"
+        x2="1281"
+        y2="2"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop stopColor="white" />
+        <stop offset="0.5" stopColor="#E8E8E8" />
+        <stop offset="1" stopColor="white" />
+      </linearGradient>
+    </defs>
+  </svg>
+);
+
 // L
 
 export const LinkedinOutlinedIcon = ({
