@@ -16,7 +16,7 @@ const TestimonialCard = ({
   title,
 }: IFTestimonialCard) => {
   return (
-    <div className="flex_center flex-col mt-10 md:mt-20 min-w-[1000px]">
+    <div className="flex_center flex-col mt-10 md:mt-20 min-w-full select-none">
       <p
         className={cn(
           "text-sm md:text-lg uppercase !leading-[1.6] font-normal text-center max-w-[1000px]"

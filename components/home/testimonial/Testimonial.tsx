@@ -6,10 +6,14 @@ import { cn } from "@/lib/utils";
 import useEmblaButtons from "@/hooks/EmblaCarousel";
 import { LeftSignIcon, RightSignIcon } from "@/services/assets/svgs";
 import { testimonialsData } from "@/lib/data";
+import Autoplay from "embla-carousel-autoplay";
 
 const Testimonial = () => {
-  const options = { align: "start", loop: false } as const;
-  const [emblaRef, emblaApi] = useEmblaCarousel(options);
+  const autoplayOptions = { delay: 3000 };
+  const options = { align: "start", loop: true } as const;
+  const [emblaRef, emblaApi] = useEmblaCarousel(options, [
+    Autoplay(autoplayOptions),
+  ]);
   const { onPrevButtonClick, onNextButtonClick } = useEmblaButtons(emblaApi);
 
   return (
@@ -38,7 +42,7 @@ const Testimonial = () => {
         <button
           aria-label="move left button"
           className={cn(
-            "btn bg-white hover:bg-white/80 transition-all duration-300 h-10 md:h-[60px] w-10 md:w-[60px] border border-natural-300 rounded-full flex_center"
+            "btn bg-white hover:opacity-50 transition-all duration-300 h-10 md:h-[60px] w-10 md:w-[60px] border border-natural-300 rounded-full flex_center"
           )}
           onClick={onPrevButtonClick}
         >
@@ -47,7 +51,7 @@ const Testimonial = () => {
         <button
           aria-label="move right button"
           className={cn(
-            "btn bg-white hover:bg-white/80 transition-all duration-300 h-10 md:h-[60px] w-10 md:w-[60px] border border-natural-300 rounded-full flex_center"
+            "btn bg-white hover:opacity-50 transition-all duration-300 h-10 md:h-[60px] w-10 md:w-[60px] border border-natural-300 rounded-full flex_center"
           )}
           onClick={onNextButtonClick}
         >
