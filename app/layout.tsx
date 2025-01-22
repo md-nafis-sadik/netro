@@ -3,6 +3,7 @@ import { poppins } from "@/lib/fonts";
 import "@/styles/globals.css";
 import "@/styles/app.css";
 import Footer from "@/components/shared/footer/Footer";
+import LetsTalk from "@/components/home/cta/LetsTalk";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -20,6 +21,7 @@ export default function RootLayout({
         className={`${poppins.variable} font-poppins bg-white min-h-screen text-neutral-700`}
       >
         {children}
+        <LetsTalk />
         <Footer />
       </body>
     </html>

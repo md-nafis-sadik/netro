@@ -26,6 +26,27 @@ export const AtTheRateIcon = ({
   </svg>
 );
 
+export const ArrowTopRIghtIcon = ({
+  className,
+  color = "#ffffff",
+  ...props
+}: IFSvgProps) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="14"
+    height="15"
+    viewBox="0 0 14 15"
+    fill="none"
+    className={className}
+    {...props}
+  >
+    <path
+      d="M5.54167 3.125V4.29167H9.38583L2.625 11.0525L3.4475 11.875L10.2083 5.11417V8.95833H11.375V3.125H5.54167Z"
+      fill={color}
+    />
+  </svg>
+);
+
 // B
 
 export const BehanceIcon = ({
