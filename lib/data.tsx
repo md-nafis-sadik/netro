@@ -1,9 +1,17 @@
 import { images } from "@/services";
 import {
+  BehanceIcon,
+  DribbleIcon,
+  FacebookIcon,
+  GithubIcon,
+  InstagramIcon,
   LinkedinOutlinedIcon,
   TelegramOutlinedIcon,
+  TwitterIcon,
   WhatsappOutlinedIcon,
+  YoutubeIcon,
 } from "@/services/assets/svgs";
+import colors from "./colors";
 
 export const servicesHomeData = [
   {
@@ -267,15 +275,75 @@ export const footerData = {
   },
   copyright: "© 2022 - 2025 • Netro Systems, All Rights Reserved.",
   socialLinks: [
-    { platform: "twitter", href: "#" },
-    { platform: "linkedin", href: "#" },
-    { platform: "instagram", href: "#" },
-    { platform: "youtube", href: "#" },
-    { platform: "facebook", href: "#" },
-    { platform: "telegram", href: "#" },
-    { platform: "dribbble", href: "#" },
-    { platform: "behance", href: "#" },
-    { platform: "github", href: "#" },
+    {
+      platform: "twitter",
+      href: "#",
+      icon: (
+        <TwitterIcon color={colors.black} className="h-5 w-5 md:h-6 md:w-6" />
+      ),
+    },
+    {
+      platform: "linkedin",
+      href: "#",
+      icon: (
+        <LinkedinOutlinedIcon
+          color={colors.black}
+          className="h-5 w-5 md:h-6 md:w-6"
+        />
+      ),
+    },
+    {
+      platform: "instagram",
+      href: "#",
+      icon: (
+        <InstagramIcon color={colors.black} className="h-5 w-5 md:h-6 md:w-6" />
+      ),
+    },
+    {
+      platform: "youtube",
+      href: "#",
+      icon: (
+        <YoutubeIcon color={colors.black} className="h-5 w-5 md:h-6 md:w-6" />
+      ),
+    },
+    {
+      platform: "facebook",
+      href: "#",
+      icon: (
+        <FacebookIcon color={colors.black} className="h-5 w-5 md:h-6 md:w-6" />
+      ),
+    },
+    {
+      platform: "telegram",
+      href: "#",
+      icon: (
+        <TelegramOutlinedIcon
+          color={colors.black}
+          className="h-5 w-5 md:h-6 md:w-6"
+        />
+      ),
+    },
+    {
+      platform: "dribbble",
+      href: "#",
+      icon: (
+        <DribbleIcon color={colors.black} className="h-5 w-5 md:h-6 md:w-6" />
+      ),
+    },
+    {
+      platform: "behance",
+      href: "#",
+      icon: (
+        <BehanceIcon color={colors.black} className="h-5 w-5 md:h-6 md:w-6" />
+      ),
+    },
+    {
+      platform: "github",
+      href: "#",
+      icon: (
+        <GithubIcon color={colors.black} className="h-5 w-5 md:h-6 md:w-6" />
+      ),
+    },
   ],
   actions: [{ text: "Go To Top", href: "#top" }],
 };

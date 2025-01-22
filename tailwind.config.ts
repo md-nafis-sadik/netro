@@ -13,6 +13,8 @@ export default {
         poppins: ["var(--font-poppins)"],
       },
       colors: {
+        white: "#ffffff",
+        black: "#000000",
         main: {
           50: "#ECEFFF",
           100: "#DDE1FF",
@@ -56,7 +58,7 @@ export default {
         },
         natural: {
           50: "#FFFFFF",
-          100: "#FFFFFF",
+          100: "#F6F6F6",
           200: "#EEEEEE",
           300: "#E0E0E0",
           400: "#BDBDBD",
