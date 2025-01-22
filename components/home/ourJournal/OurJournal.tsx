@@ -12,7 +12,7 @@ const OurJournal = () => {
   return (
     <section className="bg-white flex_center flex-col my-20 w-full">
       <SectionSubHeader text="Our Journal" />
-      <SectionHeader dark text="Latest Insights" />
+      <SectionHeader dark text="Latest Insights" className="mt-6" />
 
       <div className="containerX w-full overflow-x-hidden overflow-y-visible mt-5 md:mt-10">
         <div className="w-full" ref={emblaRef}>

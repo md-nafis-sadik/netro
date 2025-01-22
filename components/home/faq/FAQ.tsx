@@ -12,9 +12,9 @@ import { cn } from "@/lib/utils";
 
 const FAQ = () => {
   return (
-    <section className="bg-black flex_center flex-col my-20 w-full py-20">
+    <section className="bg-black flex_center flex-col w-full py-20">
       <SectionSubHeader dark text="Frequently asked questions" />
-      <SectionHeader lite text="Common Queries" />
+      <SectionHeader lite text="Common Queries" className="mt-6" />
 
       <div className="containerX mt-10 md:mt-20">
         <Accordion
@@ -26,7 +26,10 @@ const FAQ = () => {
           {faqData.map(({ question, answer }, index) => (
             <AccordionItem key={index} value={`item-${index}`}>
               <AccordionTrigger
-                className={cn(inter.className, "text-xl font-bold text-white")}
+                className={cn(
+                  inter.className,
+                  "text-sm md:text-xl font-medium md:font-bold text-white !leading-[1.4] md:!leading-[1.1] text-start"
+                )}
               >
                 {question}
               </AccordionTrigger>

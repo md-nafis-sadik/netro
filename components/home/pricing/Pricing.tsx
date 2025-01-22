@@ -6,7 +6,7 @@ import { pricingData } from "@/lib/data";
 
 const Pricing = () => {
   return (
-    <section className="bg-black flex_center flex-col my-20 w-full py-20 overflow-hidden">
+    <section className="bg-black flex_center flex-col w-full py-20 overflow-hidden">
       <SectionSubHeader dark text="Our Pricing" />
       <SectionHeader
         lite
