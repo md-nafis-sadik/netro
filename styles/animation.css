@@ -1,33 +1,18 @@
-.gradient-button-border {
-  position: relative;
-  transition: 0.3s ease-in-out all;
-  z-index: -1;
+/* styles/gradient-button.css */
+.bg-gradient {
   background: linear-gradient(60deg, #483bdc, #ffa8a9, #82d3a4);
-  animation: animatedgradient 3s ease alternate infinite;
   background-size: 300% 300%;
 }
 
-.gradient-button-border:hover {
-  background-color: #483bdc;
+.bg-gradient:hover {
+  background: #6455ff;
 }
 
-.gradient-button-border:hover::after {
-  opacity: 0;
+.animate-gradient {
+  animation: gradientAnimation 3s ease alternate infinite;
 }
 
-.gradient-button-border:after {
-  position: absolute;
-  background-color: #000000;
-  z-index: -1;
-  content: "";
-  top: 2px;
-  left: 2px;
-  height: calc(100% - 4px);
-  width: calc(100% - 4px);
-  border-radius: 100px;
-}
-
-@keyframes animatedgradient {
+@keyframes gradientAnimation {
   0% {
     background-position: 0% 50%;
   }

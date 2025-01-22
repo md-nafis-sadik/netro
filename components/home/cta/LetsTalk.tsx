@@ -1,5 +1,5 @@
 import SectionHeader from "@/components/shared/SectionHeader";
-import { Button } from "@/components/ui/button";
+import { GradientButton } from "@/components/ui/gradient-button";
 import { footerData } from "@/lib/data";
 import { inter } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
@@ -29,7 +29,7 @@ const LetsTalk = () => {
           </p>
         </div>
 
-        <form className="rounded-[100px] border border-[#494949] px-6 py-3 h-[54px] md:h-[70px] flex items-center gap-4">
+        <form className="rounded-[100px] border border-[#494949] ps-6 py-3 pe-3 h-[54px] md:h-[70px] flex items-center gap-4">
           <input
             type="email"
             placeholder="Ex: user@website.com"
@@ -38,14 +38,9 @@ const LetsTalk = () => {
               "text-base font-normal !leading-[1.3] bg-transparent border-none outline-none text-white placeholder:bg-clip-text placeholder:text-transparent placeholder:bg-gradient-to-r placeholder:from-[#959595] placeholder:via-white placeholder:to-[#676767]"
             )}
           />
-          <Button
-            variant={"gradient"}
-            type="submit"
-            size={"lg"}
-            className="text-white gradient-button-border"
-          >
+          <GradientButton type="submit">
             <span>Submit</span>
-          </Button>
+          </GradientButton>
         </form>
       </div>
     </section>

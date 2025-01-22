@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button";
+import { GradientButton } from "@/components/ui/gradient-button";
 import { inter } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
 import { CheckedCircleIcon } from "@/services/assets/svgs";
@@ -55,9 +55,9 @@ const PricingCard = ({
       </p>
 
       <div className="mt-6 md:mt-10">
-        <Button variant={"gradient"}>
+        <GradientButton>
           <span className="text-white">Start Project</span>
-        </Button>
+        </GradientButton>
       </div>
 
       <div className="border border-text-750 h-0 w-full my-6 md:my-10" />

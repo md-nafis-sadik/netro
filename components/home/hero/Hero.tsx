@@ -1,5 +1,4 @@
 "use client";
-import { Button } from "@/components/ui/button";
 import { heroHomeSocialsData } from "@/lib/data";
 import { bonbon, inter, scoutCond } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
@@ -11,6 +10,7 @@ import Image from "next/image";
 import { useRef } from "react";
 import ContactPin from "./ContactPin";
 import ParallaxContainer from "@/components/shared/animations/HoverParallax";
+import { GradientButton } from "@/components/ui/gradient-button";
 
 const Hero = () => {
   const textRef = useRef<HTMLSpanElement | null>(null);
@@ -130,10 +130,10 @@ const Hero = () => {
 
         {/* CONNECT & SOCIALS */}
         <div className="flex flex-row gap-6 mt-8 md:mt-[60px]">
-          <Button variant={"gradient"}>
+          <GradientButton>
             <span className="text-white">Schedule a call</span>
             <CallMissedIcon className="!h-6 !w-6 !shrink-0" />
-          </Button>
+          </GradientButton>
 
           <div className="flex flex-row items-center gap-3">
             {heroHomeSocialsData.map(({ link, icon }, index) => (
