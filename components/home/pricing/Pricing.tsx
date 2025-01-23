@@ -3,6 +3,8 @@ import SectionSubHeader from "@/components/shared/SectionSubHeader";
 import React from "react";
 import PricingCard from "./PricingCard";
 import { pricingData } from "@/lib/data";
+import { cn } from "@/lib/utils";
+import { inter } from "@/lib/fonts";
 
 const Pricing = () => {
   return (
@@ -29,6 +31,16 @@ const Pricing = () => {
           )
         )}
       </div>
+
+      <p
+        className={cn(
+          inter.className,
+          "text-xs md:text-base font-normal !leading-[1.8] md:!leading-[1.4] text-text-200"
+        )}
+      >
+        Complete the form by clicking “Start Project” to send us a message. Our
+        support team will promptly respond to your request.
+      </p>
     </section>
   );
 };

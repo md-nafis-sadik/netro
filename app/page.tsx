@@ -7,7 +7,7 @@ import Testimonial from "@/components/home/testimonial/Testimonial";
 
 function Home() {
   return (
-    <main>
+    <main className="relative">
       <Hero />
       <Services />
       <Pricing />

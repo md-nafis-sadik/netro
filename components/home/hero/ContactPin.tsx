@@ -1,3 +1,4 @@
+"use client";
 import { cn } from "@/lib/utils";
 import { images } from "@/services";
 import { useGSAP } from "@gsap/react";

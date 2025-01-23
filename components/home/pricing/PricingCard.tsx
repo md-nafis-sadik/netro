@@ -34,7 +34,7 @@ const PricingCard = ({
       <p
         className={cn(
           inter.className,
-          "text-sm md:text-base font-normal !leading-[1.1] text-white mt-2 md:mt-3"
+          "text-sm md:text-base font-normal !leading-[1.1] mt-2 md:mt-3 text-text-600"
         )}
       >
         {subtitle}
@@ -55,7 +55,7 @@ const PricingCard = ({
       </p>
 
       <div className="mt-6 md:mt-10">
-        <GradientButton>
+        <GradientButton className="!px-8">
           <span className="text-white">Start Project</span>
         </GradientButton>
       </div>

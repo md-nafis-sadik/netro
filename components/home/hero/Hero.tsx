@@ -8,8 +8,6 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import Image from "next/image";
 import { useRef } from "react";
-import ContactPin from "./ContactPin";
-import ParallaxContainer from "@/components/shared/animations/HoverParallax";
 import { GradientButton } from "@/components/ui/gradient-button";
 
 const Hero = () => {
@@ -165,13 +163,6 @@ const Hero = () => {
             height={100}
             width={400}
           />
-
-          <ParallaxContainer
-            containerClassName="absolute -bottom-10 right-0 z-50"
-            scaleAmount={1.5}
-          >
-            <ContactPin />
-          </ParallaxContainer>
         </div>
       </div>
     </section>

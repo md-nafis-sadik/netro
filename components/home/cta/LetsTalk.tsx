@@ -29,13 +29,13 @@ const LetsTalk = () => {
           </p>
         </div>
 
-        <form className="rounded-[100px] border border-[#494949] ps-6 py-3 pe-3 h-[54px] md:h-[70px] flex items-center gap-4">
+        <form className="rounded-[100px] border border-[#494949] ps-6 py-3 pe-3 h-[54px] md:h-[70px] flex items-center gap-4 content-bg-gradient-primary">
           <input
             type="email"
             placeholder="Ex: user@website.com"
             className={cn(
               inter.className,
-              "text-base font-normal !leading-[1.3] bg-transparent border-none outline-none text-white placeholder:bg-clip-text placeholder:text-transparent placeholder:bg-gradient-to-r placeholder:from-[#959595] placeholder:via-white placeholder:to-[#676767]"
+              "text-base font-normal !leading-[1.3] bg-transparent border-none outline-none text-white placeholder:bg-clip-text placeholder:text-transparent placeholder:bg-gradient-to-r placeholder:from-[#959595] placeholder:via-white placeholder:to-[#676767] h-full"
             )}
           />
           <GradientButton type="submit">

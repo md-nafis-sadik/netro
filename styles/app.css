@@ -11,3 +11,14 @@
   background-clip: text;
   color: transparent;
 }
+
+.content-bg-gradient-primary {
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0) 2%,
+    rgba(26, 23, 55, 0.54) 21.5%,
+    #2f1b1c 47.5%,
+    rgba(27, 43, 33, 0.85) 73%,
+    rgba(0, 0, 0, 0) 98%
+  );
+}

@@ -4,6 +4,8 @@ import "@/styles/globals.css";
 import "@/styles/app.css";
 import Footer from "@/components/shared/footer/Footer";
 import LetsTalk from "@/components/home/cta/LetsTalk";
+import ParallaxContainer from "@/components/shared/animations/HoverParallax";
+import ContactPin from "@/components/home/hero/ContactPin";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -18,11 +20,17 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${poppins.variable} font-poppins bg-white min-h-screen text-neutral-700`}
+        className={`${poppins.variable} font-poppins bg-white min-h-screen text-neutral-700 relative`}
       >
         {children}
         <LetsTalk />
         <Footer />
+        <ParallaxContainer
+          containerClassName="fixed bottom-10 right-10 z-50"
+          scaleAmount={1.5}
+        >
+          <ContactPin />
+        </ParallaxContainer>
       </body>
     </html>
   );
