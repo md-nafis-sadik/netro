@@ -10,7 +10,7 @@ const Team = () => {
   const [emblaRef] = useEmblaCarousel(options);
 
   return (
-    <section className="flex_center flex-col mt-20 mb-[120px]">
+    <section className="flex_center flex-col mt-20 mb-[120px] select-none">
       <SectionSubHeader text="Our Team" />
       <SectionHeader dark text="Meet the experts" className="mt-6" />
 

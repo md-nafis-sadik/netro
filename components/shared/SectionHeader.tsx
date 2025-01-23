@@ -80,7 +80,7 @@ const SectionHeader = ({ dark, lite, text, className }: IFHeader) => {
       ref={containerRef}
       className={cn(
         scoutCond.className,
-        "text-5xl md:text-[128px] font-bold !leading-[0.9] uppercase text-center",
+        "text-5xl md:text-[128px] font-bold !leading-[0.9] uppercase text-center select-none relative z-10",
         dark && "text-black",
         lite && "text-white",
         className

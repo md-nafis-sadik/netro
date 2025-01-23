@@ -15,7 +15,7 @@ interface IFTeamCardProps {
 
 const TeamCard = ({ image, name, position, socials }: IFTeamCardProps) => {
   return (
-    <div className="min-h-[298px] min-w-[224px] md:min-h-[400px] md:min-w-[300px] bg-black relative select-none">
+    <div className="min-h-[298px] min-w-[224px] md:min-h-[400px] md:min-w-[300px] bg-black relative select-none cursor-grab active:cursor-grabbing">
       <Image
         src={image}
         alt={name}
