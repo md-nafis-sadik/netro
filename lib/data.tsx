@@ -86,6 +86,77 @@ export const heroHomeSocialsData = [
   },
 ];
 
+export const teamData = [
+  {
+    name: "Asiq Mohammed",
+    position: "CEO",
+    image: images.team1,
+    socials: [
+      {
+        type: "linkedin",
+        link: "",
+        icon: (
+          <LinkedinOutlinedIcon
+            color={colors.black}
+            className="!h-[14px] !w-[14px] !shrink-0"
+          />
+        ),
+      },
+    ],
+  },
+  {
+    name: "John Doe",
+    position: "CMO",
+    image: images.team2,
+    socials: [
+      {
+        type: "linkedin",
+        link: "",
+        icon: (
+          <LinkedinOutlinedIcon
+            color={colors.black}
+            className="!h-[14px] !w-[14px] !shrink-0"
+          />
+        ),
+      },
+    ],
+  },
+  {
+    name: "John Doe",
+    position: "COO",
+    image: images.team3,
+    socials: [
+      {
+        type: "linkedin",
+        link: "",
+        icon: (
+          <LinkedinOutlinedIcon
+            color={colors.black}
+            className="!h-[14px] !w-[14px] !shrink-0"
+          />
+        ),
+      },
+    ],
+  },
+  {
+    name: "John Doe",
+    position: "CTO",
+    image: images.team4,
+    socials: [
+      {
+        type: "linkedin",
+        link: "",
+        icon: (
+          <LinkedinOutlinedIcon
+            color={colors.black}
+            className="!h-[14px] !w-[14px] !shrink-0"
+          />
+        ),
+      },
+    ],
+  },
+];
+
 export const faqData = [
   {
     question: "What services does Netro Creative offer?",

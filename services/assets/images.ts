@@ -14,7 +14,7 @@ export { default as RatingTrustpilot } from "@/public/images/rating-trustpilot.p
 export { default as StarCrystal } from "@/public/images/star-crystal.png";
 export { default as StarMixerCrystal } from "@/public/images/star-mixer-crystal.png";
 export { default as StarGlass } from "@/public/images/star-glass.png";
-export { default as Team1 } from "@/public/images/team/1.png";
-export { default as Team2 } from "@/public/images/team/2.png";
-export { default as Team3 } from "@/public/images/team/3.png";
-export { default as Team4 } from "@/public/images/team/4.png";
+export { default as team1 } from "@/public/images/team/1.png";
+export { default as team2 } from "@/public/images/team/2.png";
+export { default as team3 } from "@/public/images/team/3.png";
+export { default as team4 } from "@/public/images/team/4.png";
