@@ -5,6 +5,7 @@ import FAQ from "@/components/home/faq/FAQ";
 import Pricing from "@/components/home/pricing/Pricing";
 import Testimonial from "@/components/home/testimonial/Testimonial";
 import Team from "@/components/home/team/Team";
+import SuccessShowcase from "@/components/home/successShowcase/SuccessShowcase";
 
 function Home() {
   return (
@@ -13,6 +14,7 @@ function Home() {
       <Services />
       <Pricing />
       <Testimonial />
+      <SuccessShowcase />
       <Team />
       <FAQ />
       <OurJournal />

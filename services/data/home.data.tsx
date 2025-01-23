@@ -86,6 +86,33 @@ export const heroHomeSocialsData = [
   },
 ];
 
+export const successStoryData = [
+  {
+    type: "Experience",
+    value: "5",
+    ext: "YRS",
+    color: "#91FF76",
+  },
+  {
+    type: "Raised",
+    value: "70",
+    ext: "M",
+    color: "#FFF146",
+  },
+  {
+    type: "Happy Clients",
+    value: "84",
+    ext: "+",
+    color: "#91FF76",
+  },
+  {
+    type: "Projects",
+    value: "153",
+    ext: "+",
+    color: "#FFF146",
+  },
+];
+
 export const teamData = [
   {
     name: "asiq mohammed",
