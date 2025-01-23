@@ -47,6 +47,27 @@ export const ArrowTopRIghtIcon = ({
   </svg>
 );
 
+export const ArrowLongTailIcon = ({
+  className,
+  color = "#ECEFFF",
+  ...props
+}: IFSvgProps) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="25"
+    viewBox="0 0 24 25"
+    fill="none"
+    className={className}
+    {...props}
+  >
+    <path
+      d="M17.4177 5.91797L16.3487 6.98705L21.1059 11.7443H0V13.2562H21.1059L16.3487 18.0134L17.4177 19.0825L24 12.5002L17.4177 5.91797Z"
+      fill={color}
+    />
+  </svg>
+);
+
 // B
 
 export const BehanceIcon = ({
@@ -329,6 +350,22 @@ export const LeftSignIcon = ({
       d="M20.94 22.12L14.8333 16L20.94 9.88L19.06 8L11.06 16L19.06 24L20.94 22.12Z"
       fill={color}
     />
+  </svg>
+);
+
+export const LineIcon = ({
+  className,
+  color = "#7775FF",
+  ...props
+}: IFSvgProps) => (
+  <svg
+    width="24"
+    height="2"
+    viewBox="0 0 24 2"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <line y1="0.75" x2="24" y2="0.75" stroke={color} stroke-width="1.5" />
   </svg>
 );
 

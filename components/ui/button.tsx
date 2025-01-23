@@ -10,7 +10,7 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "",
+        default: "bg-main-400 hover:bg-main-500 text-white",
         gradient: "gradient-button-border",
       },
       size: {

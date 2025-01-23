@@ -18,3 +18,4 @@ export { default as team1 } from "@/public/images/team/1.png";
 export { default as team2 } from "@/public/images/team/2.png";
 export { default as team3 } from "@/public/images/team/3.png";
 export { default as team4 } from "@/public/images/team/4.png";
+export { default as officeImage1 } from "@/public/images/office-image/1.png";

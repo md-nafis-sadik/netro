@@ -8,8 +8,19 @@ interface IFProductCardProps {
 
 const ProductCard = ({ name, description }: IFProductCardProps) => {
   return (
-    <div className="relative w-full">
-      <div className="w-full h-auto aspect-[0.74/1] bg-white"></div>
+    <div className="relative w-full cursor-pointer select-none group">
+      <div className="w-full h-auto aspect-[0.74/1] bg-white relative">
+        <div className="absolute_center bg-main-400/50 h-[100px] w-[100px] md:h-[140px] md:w-[140px] rounded-full transition_common duration-500 group-hover:scale-105 opacity-0 group-hover:opacity-100 flex_center">
+          <p
+            className={cn(
+              scoutCond.className,
+              "text-lg md:text-2xl font-bold !leading-none uppercase text-white text-center"
+            )}
+          >
+            View <br /> Details
+          </p>
+        </div>
+      </div>
 
       <p
         className={cn(

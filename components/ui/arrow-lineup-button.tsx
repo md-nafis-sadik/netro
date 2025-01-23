@@ -3,6 +3,7 @@ import "@/styles/animation.css";
 import { inter } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
 import colors from "@/lib/colors";
+import { ArrowLongTailIcon, LineIcon } from "@/services/assets/svgs";
 
 interface ArrowLineupButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -38,18 +39,8 @@ const ArrowLineupButton = React.forwardRef<
           {...props}
         >
           {/* Left SVG */}
-          <span className="flex-shrink-0 w-6 h-6 group-hover:opacity-0">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={2}
-              stroke="currentColor"
-              className="w-6 h-6"
-              style={{ color: lineColor }}
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14" />
-            </svg>
+          <span className="flex-shrink-0 !w-6 !h-6 group-hover:opacity-0 flex_center">
+            <LineIcon color={lineColor} className="!w-6 !h-6 !shrink-0" />
           </span>
           {/* Text */}
           <span
@@ -63,27 +54,13 @@ const ArrowLineupButton = React.forwardRef<
           {/* Right Arrow */}
           <span
             className={cn(
-              "absolute right-3 opacity-0 group-hover:opacity-100 group-hover:right-5 transition-all duration-300 flex items-center"
+              "absolute right-3 opacity-0 group-hover:opacity-100 group-hover:right-5 transition-all duration-300 flex_center"
             )}
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={2}
-              stroke="currentColor"
-              className="w-6 h-6"
-              style={{ color: lineColor }}
-            >
-              {/* More Balanced Arrow Head */}
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M14.5 5.5L21 12l-6.5 6.5"
-              />
-              {/* Tail */}
-              <path strokeLinecap="round" strokeLinejoin="round" d="M21 12H3" />
-            </svg>
+            <ArrowLongTailIcon
+              color={lineColor}
+              className="!w-6 !h-6 !shrink-0"
+            />
           </span>
         </button>
       </div>
