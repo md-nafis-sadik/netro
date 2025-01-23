@@ -4,6 +4,8 @@ import SectionSubHeader from "@/components/shared/SectionSubHeader";
 import useEmblaCarousel from "embla-carousel-react";
 import TeamCard from "./TeamCard";
 import { teamData } from "@/services/data";
+import ArrowLineupButton from "@/components/ui/arrow-lineup-button";
+import colors from "@/lib/colors";
 
 const Team = () => {
   const options = { align: "start", loop: false } as const;
@@ -29,6 +31,10 @@ const Team = () => {
           </div>
         </div>
       </div>
+
+      <ArrowLineupButton lineColor={colors.secondary[300]}>
+        Meet our team
+      </ArrowLineupButton>
     </section>
   );
 };

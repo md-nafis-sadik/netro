@@ -15,7 +15,10 @@ const SuccessShowcase = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-10 mt-10 md:my-20 lg:my-[120px]">
         {successStoryData.map(({ type, value, ext, color }, index) => (
-          <div className="flex flex-col items-center gap-1 md:gap-3">
+          <div
+            className="flex flex-col items-center gap-1 md:gap-3"
+            key={index}
+          >
             <p
               className={cn(
                 scoutCond.className,

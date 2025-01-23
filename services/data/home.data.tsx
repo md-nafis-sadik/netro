@@ -86,6 +86,29 @@ export const heroHomeSocialsData = [
   },
 ];
 
+export const productsData = [
+  {
+    name: "Yoowifi",
+    description:
+      "A cutting-edge telecom project delivering seamless connectivity solutions.",
+  },
+  {
+    name: "Indemif.ai",
+    description:
+      "A cutting-edge telecom project delivering seamless connectivity solutions.",
+  },
+  {
+    name: "Artistry",
+    description:
+      "A cutting-edge telecom project delivering seamless connectivity solutions.",
+  },
+  {
+    name: "kanga",
+    description:
+      "A cutting-edge telecom project delivering seamless connectivity solutions.",
+  },
+];
+
 export const successStoryData = [
   {
     type: "Experience",
