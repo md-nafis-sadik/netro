@@ -2,8 +2,8 @@
 import SectionHeader from "@/components/shared/SectionHeader";
 import SectionSubHeader from "@/components/shared/SectionSubHeader";
 import ServiceCard from "./ServiceCard";
-import { servicesHomeData } from "@/lib/data";
 import useEmblaCarousel from "embla-carousel-react";
+import { servicesHomeData } from "@/services/data";
 
 const Services = () => {
   const options = { align: "start", loop: false } as const;

@@ -11,7 +11,7 @@ import {
   WhatsappOutlinedIcon,
   YoutubeIcon,
 } from "@/services/assets/svgs";
-import colors from "./colors";
+import colors from "@/lib/colors";
 
 export const servicesHomeData = [
   {
@@ -88,8 +88,8 @@ export const heroHomeSocialsData = [
 
 export const teamData = [
   {
-    name: "Asiq Mohammed",
-    position: "CEO",
+    name: "asiq mohammed",
+    position: "Managing Director & CEO",
     image: images.team1,
     socials: [
       {
@@ -105,8 +105,8 @@ export const teamData = [
     ],
   },
   {
-    name: "John Doe",
-    position: "CMO",
+    name: "altamira tripty",
+    position: "Chief Marketing Officer (CMO)",
     image: images.team2,
     socials: [
       {
@@ -122,8 +122,8 @@ export const teamData = [
     ],
   },
   {
-    name: "John Doe",
-    position: "COO",
+    name: "sultan mahmud",
+    position: "Chief Operations Officer (COO)",
     image: images.team3,
     socials: [
       {
@@ -139,8 +139,76 @@ export const teamData = [
     ],
   },
   {
-    name: "John Doe",
-    position: "CTO",
+    name: "ahmed lincon",
+    position: "Chief Technology Officer (CTO)",
+    image: images.team4,
+    socials: [
+      {
+        type: "linkedin",
+        link: "",
+        icon: (
+          <LinkedinOutlinedIcon
+            color={colors.black}
+            className="!h-[14px] !w-[14px] !shrink-0"
+          />
+        ),
+      },
+    ],
+  },
+  {
+    name: "asiq mohammed",
+    position: "Managing Director & CEO",
+    image: images.team1,
+    socials: [
+      {
+        type: "linkedin",
+        link: "",
+        icon: (
+          <LinkedinOutlinedIcon
+            color={colors.black}
+            className="!h-[14px] !w-[14px] !shrink-0"
+          />
+        ),
+      },
+    ],
+  },
+  {
+    name: "altamira tripty",
+    position: "Chief Marketing Officer (CMO)",
+    image: images.team2,
+    socials: [
+      {
+        type: "linkedin",
+        link: "",
+        icon: (
+          <LinkedinOutlinedIcon
+            color={colors.black}
+            className="!h-[14px] !w-[14px] !shrink-0"
+          />
+        ),
+      },
+    ],
+  },
+  {
+    name: "sultan mahmud",
+    position: "Chief Operations Officer (COO)",
+    image: images.team3,
+    socials: [
+      {
+        type: "linkedin",
+        link: "",
+        icon: (
+          <LinkedinOutlinedIcon
+            color={colors.black}
+            className="!h-[14px] !w-[14px] !shrink-0"
+          />
+        ),
+      },
+    ],
+  },
+  {
+    name: "ahmed lincon",
+    position: "Chief Technology Officer (CTO)",
     image: images.team4,
     socials: [
       {

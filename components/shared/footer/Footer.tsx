@@ -1,4 +1,3 @@
-import { footerData } from "@/lib/data";
 import { inter, scoutCond } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
 import {
@@ -6,6 +5,7 @@ import {
   CallIcon,
   DividerFadingDashes,
 } from "@/services/assets/svgs";
+import { footerData } from "@/services/data";
 import Link from "next/link";
 
 const Footer = () => {

@@ -1,5 +1,4 @@
 "use client";
-import { heroHomeSocialsData } from "@/lib/data";
 import { bonbon, inter, scoutCond } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
 import { images } from "@/services";
@@ -9,6 +8,7 @@ import gsap from "gsap";
 import Image from "next/image";
 import { useRef } from "react";
 import { GradientButton } from "@/components/ui/gradient-button";
+import { heroHomeSocialsData } from "@/services/data";
 
 const Hero = () => {
   const textRef = useRef<HTMLSpanElement | null>(null);

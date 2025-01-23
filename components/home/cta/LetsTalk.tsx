@@ -1,9 +1,9 @@
 import SectionHeader from "@/components/shared/SectionHeader";
 import { GradientButton } from "@/components/ui/gradient-button";
-import { footerData } from "@/lib/data";
 import { inter } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
 import { ArrowTopRIghtIcon } from "@/services/assets/svgs";
+import { footerData } from "@/services/data";
 
 const LetsTalk = () => {
   return (

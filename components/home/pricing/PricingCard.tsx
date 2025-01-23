@@ -21,7 +21,7 @@ const PricingCard = ({
   features,
 }: IFCardProps) => {
   return (
-    <div className="border border-[#494949] px-4 py-6 md:px-10 md:py-10 w-full h-full">
+    <div className="border border-[#494949] px-4 py-6 md:px-10 md:py-10 w-full h-full max-w-[410px]">
       <p
         className={cn(
           inter.className,

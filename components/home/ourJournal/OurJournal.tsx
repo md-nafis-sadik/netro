@@ -1,9 +1,9 @@
 "use client";
 import SectionHeader from "@/components/shared/SectionHeader";
 import SectionSubHeader from "@/components/shared/SectionSubHeader";
-import { journalData } from "@/lib/data";
 import useEmblaCarousel from "embla-carousel-react";
 import JournalCard from "./JournalCard";
+import { journalData } from "@/services/data";
 
 const OurJournal = () => {
   const options = { align: "start", loop: false } as const;

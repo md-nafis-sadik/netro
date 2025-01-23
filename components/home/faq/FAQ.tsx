@@ -6,9 +6,9 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { faqData } from "@/lib/data";
 import { inter } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
+import { faqData } from "@/services/data";
 
 const FAQ = () => {
   return (

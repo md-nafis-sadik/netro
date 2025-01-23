@@ -5,8 +5,8 @@ import useEmblaCarousel from "embla-carousel-react";
 import { cn } from "@/lib/utils";
 import useEmblaButtons from "@/hooks/EmblaCarousel";
 import { LeftSignIcon, RightSignIcon } from "@/services/assets/svgs";
-import { testimonialsData } from "@/lib/data";
 import Autoplay from "embla-carousel-autoplay";
+import { testimonialsData } from "@/services/data";
 
 const Testimonial = () => {
   const autoplayOptions = { delay: 3000 };

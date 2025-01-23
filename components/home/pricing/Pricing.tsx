@@ -2,9 +2,9 @@ import SectionHeader from "@/components/shared/SectionHeader";
 import SectionSubHeader from "@/components/shared/SectionSubHeader";
 import React from "react";
 import PricingCard from "./PricingCard";
-import { pricingData } from "@/lib/data";
 import { cn } from "@/lib/utils";
 import { inter } from "@/lib/fonts";
+import { pricingData } from "@/services/data";
 
 const Pricing = () => {
   return (
@@ -17,7 +17,7 @@ const Pricing = () => {
       />
       <SectionHeader lite text="your ambitions." />
 
-      <div className="containerX grid grid-cols-3 gap-6 my-10 md:my-20">
+      <div className="containerX grid grid-cols-3 gap-6 my-10 md:my-20 max-w-fit">
         {pricingData.map(
           ({ title, subtitle, price, popular, features }, index) => (
             <PricingCard
