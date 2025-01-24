@@ -70,7 +70,7 @@ const ProjectCard: FC<IFProjectCard> = ({
           </p>
 
           <Button className="w-fit group mt-4 md:mt-12">
-            <span className="!leading-none">Join our team</span>
+            <span className="!leading-none">View Case</span>
             <ArrowLongTailIcon className="h-auto w-5 md:w-6 group-hover:translate-x-2 transition_common" />
           </Button>
         </div>

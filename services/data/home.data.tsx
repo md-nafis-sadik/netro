@@ -7,7 +7,6 @@ import {
   InstagramIcon,
   LinkedinOutlinedIcon,
   TelegramOutlinedIcon,
-  TelzenIcon,
   TwitterIcon,
   WhatsappOutlinedIcon,
   YoutubeIcon,

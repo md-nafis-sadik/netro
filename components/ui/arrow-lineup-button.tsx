@@ -13,6 +13,7 @@ interface ArrowLineupButtonProps
   textClassName?: string;
 }
 
+// eslint-disable-next-line react/display-name
 const ArrowLineupButton = React.forwardRef<
   HTMLButtonElement,
   ArrowLineupButtonProps

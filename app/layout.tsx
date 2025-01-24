@@ -6,6 +6,7 @@ import Footer from "@/components/shared/footer/Footer";
 import LetsTalk from "@/components/home/cta/LetsTalk";
 import ParallaxContainer from "@/components/shared/animations/HoverParallax";
 import ContactPin from "@/components/home/hero/ContactPin";
+import Navbar from "@/components/shared/navigation/Navbar";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -22,6 +23,7 @@ export default function RootLayout({
       <body
         className={`${poppins.variable} font-poppins bg-white min-h-screen text-neutral-700 relative`}
       >
+        <Navbar />
         {children}
         <LetsTalk />
         <Footer />
