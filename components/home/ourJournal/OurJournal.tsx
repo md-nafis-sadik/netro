@@ -4,6 +4,8 @@ import SectionSubHeader from "@/components/shared/SectionSubHeader";
 import useEmblaCarousel from "embla-carousel-react";
 import JournalCard from "./JournalCard";
 import { journalData } from "@/services/data";
+import ArrowLineupButton from "@/components/ui/arrow-lineup-button";
+import colors from "@/lib/colors";
 
 const OurJournal = () => {
   const options = { align: "start", loop: false } as const;
@@ -27,6 +29,16 @@ const OurJournal = () => {
               />
             ))}
           </div>
+        </div>
+
+        <div className="flex_center">
+          <ArrowLineupButton
+            lineColor={colors.secondary[300]}
+            textClassName="text-text-900"
+            className="mt-10 md:mt-20"
+          >
+            See all products
+          </ArrowLineupButton>
         </div>
       </div>
     </section>

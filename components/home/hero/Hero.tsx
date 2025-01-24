@@ -84,7 +84,7 @@ const Hero = () => {
     <section className="flex flex-row bg-black min-h-[1120px] relative overflow-hidden">
       <Image
         alt="hero star glass image"
-        src={images.StarGlass}
+        src={images.starGlass}
         className="absolute z-[1] left-0 top-0 h-[1080px] w-[1080px] aspect-square shrink-0 rotate-[-113deg]"
         height={1120}
         width={1120}
@@ -149,7 +149,7 @@ const Hero = () => {
 
         <div className="flex flex-row items-center mt-10 md:mt-20 gap-6 relative">
           <Image
-            src={images.RatingClutch}
+            src={images.ratingClutch}
             alt="clutch rating"
             className="h-9 w-auto"
             height={100}
@@ -157,7 +157,7 @@ const Hero = () => {
           />
           <div className="h-[46px] border-[1px] border-[#353535] border-dashed" />
           <Image
-            src={images.RatingTrustpilot}
+            src={images.ratingTrustpilot}
             alt="trustpilot rating"
             className="h-9 w-auto"
             height={100}

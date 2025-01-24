@@ -22,3 +22,12 @@
     rgba(0, 0, 0, 0) 98%
   );
 }
+
+.project-home-blur {
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.5) 0%,
+    rgba(1, 42, 33, 0.25) 100%
+  );
+  backdrop-filter: blur(12px);
+}

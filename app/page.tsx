@@ -8,11 +8,13 @@ import Team from "@/components/home/team/Team";
 import SuccessShowcase from "@/components/home/successShowcase/SuccessShowcase";
 import WorkCulture from "@/components/home/workCulture/WorkCulture";
 import Products from "@/components/home/products/Products";
+import Projects from "@/components/home/projects/Projects";
 
 function Home() {
   return (
     <main className="relative">
       <Hero />
+      <Projects />
       <Services />
       <Products />
       <WorkCulture />

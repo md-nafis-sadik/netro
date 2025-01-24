@@ -7,11 +7,31 @@ import {
   InstagramIcon,
   LinkedinOutlinedIcon,
   TelegramOutlinedIcon,
+  TelzenIcon,
   TwitterIcon,
   WhatsappOutlinedIcon,
   YoutubeIcon,
 } from "@/services/assets/svgs";
 import colors from "@/lib/colors";
+
+export const projectsData = [
+  {
+    name: "Telzen",
+    description:
+      "Empowering brands with user-focused designs and seamless development.",
+    tagList: "Case Study, Mobile App, Telco, Design, Development",
+    image: images.projectBannerTelzen,
+    icon: images.telzenIcon,
+  },
+  {
+    name: "Yoowifi",
+    description:
+      "Empowering brands with user-focused designs and seamless development.",
+    tagList: "Case Study, Mobile App, Telco, Design, Development",
+    image: images.projectBannerYooWifi,
+    icon: images.yoowifiIcon,
+  },
+];
 
 export const servicesHomeData = [
   {
@@ -41,7 +61,7 @@ export const servicesHomeData = [
     text: "Building intelligent applications that revolutionize user experiences.",
     link: "",
     imageComponent: {
-      src: images.StarMixerCrystal,
+      src: images.starMixerCrystal,
       alt: "",
       className: "w-[156px] h-auto",
       width: 156,
@@ -52,7 +72,7 @@ export const servicesHomeData = [
     text: "Building identities that leave a lasting impression.",
     link: "",
     imageComponent: {
-      src: images.StarCrystal,
+      src: images.starCrystal,
       alt: "",
       className: "w-[184px] h-auto",
       width: 184,
@@ -322,19 +342,19 @@ export const faqData = [
 export const journalData = [
   {
     title: "Vision for creative excellence vision",
-    image: images.Blog1,
+    image: images.blog1,
     date: "30 November, 2024",
     link: "",
   },
   {
     title: "Vision for creative excellence vision",
-    image: images.Blog2,
+    image: images.blog2,
     date: "30 November, 2024",
     link: "",
   },
   {
     title: "Vision for creative excellence vision",
-    image: images.Blog3,
+    image: images.blog3,
     date: "30 November, 2024",
     link: "",
   },
