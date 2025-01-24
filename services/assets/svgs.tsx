@@ -497,6 +497,27 @@ export const PlusRoundedIcon = ({
   </svg>
 );
 
+export const PlusRoundedSecondaryIcon = ({
+  className,
+  color = "#000000",
+  ...props
+}: IFSvgProps) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="21"
+    height="20"
+    viewBox="0 0 21 20"
+    fill="none"
+    className={className}
+    {...props}
+  >
+    <path
+      d="M10.1922 1.66667C5.59222 1.66667 1.85889 5.40001 1.85889 10C1.85889 14.6 5.59222 18.3333 10.1922 18.3333C14.7922 18.3333 18.5256 14.6 18.5256 10C18.5256 5.40001 14.7922 1.66667 10.1922 1.66667ZM14.3589 10.8333H11.0256V14.1667H9.35889V10.8333H6.02555V9.16667H9.35889V5.83334H11.0256V9.16667H14.3589V10.8333Z"
+      fill={color}
+    />
+  </svg>
+);
+
 // Q
 
 export const QuoteStraightIcon = ({

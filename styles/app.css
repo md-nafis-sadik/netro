@@ -31,3 +31,13 @@
   );
   backdrop-filter: blur(12px);
 }
+
+.navbar-btn-gradient {
+  background: linear-gradient(
+    to right,
+    #00000001,
+    #483bdc80,
+    #81842f,
+    #00000001
+  );
+}
