@@ -10,7 +10,7 @@ import {
   RightSignIcon,
 } from "@/services/assets/svgs";
 import Autoplay from "embla-carousel-autoplay";
-import { testimonialsData } from "@/services/data";
+import { testimonialsData } from "@/services/data/shared.data";
 
 const Testimonial = () => {
   const autoplayOptions = { delay: 3000 };

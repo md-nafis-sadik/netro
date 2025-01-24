@@ -3,7 +3,7 @@ import Services from "@/components/home/services/Services";
 import OurJournal from "@/components/home/ourJournal/OurJournal";
 import FAQ from "@/components/home/faq/FAQ";
 import Pricing from "@/components/home/pricing/Pricing";
-import Testimonial from "@/components/home/testimonial/Testimonial";
+import Testimonial from "@/components/shared/testimonial/Testimonial";
 import Team from "@/components/home/team/Team";
 import SuccessShowcase from "@/components/home/successShowcase/SuccessShowcase";
 import WorkCulture from "@/components/home/workCulture/WorkCulture";
