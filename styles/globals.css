@@ -18,6 +18,26 @@ body {
   .input {
     @apply w-full border border-neutral-300 p-3 bg-transparent rounded-lg outline-none focus:shadow-none focus:outline-none focus:ring-transparent;
   }
+
+  .flex_center {
+    @apply flex items-center justify-center;
+  }
+
+  .absolute_center {
+    @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
+  }
+
+  .transition_common {
+    @apply transition-all duration-300 ease-in-out;
+  }
+
+  .footer_el_title {
+    @apply text-[28px] md:text-[32px] font-bold !leading-[1.1] uppercase;
+  }
+
+  .footer_el_text {
+    @apply text-sm md:text-base font-normal !leading-normal;
+  }
 }
 
 @layer base {
