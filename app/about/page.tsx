@@ -1,15 +1,15 @@
-import AboutHero from "@/components/about/hero/AboutHero";
-import AboutStats from "@/components/about/stats/AboutStats";
-import AboutView from "@/components/about/view/AboutView";
-import WhatMakesDifferent from "@/components/about/whatMakesDifferent/WhatMakesDifferent";
-import Testimonial from "@/components/shared/testimonial/Testimonial";
+import HeroAbout from "@/components/hero/HeroAbout";
+import Testimonial from "@/components/testimonial/Testimonial";
+import StatisticsAbout from "@/components/statistics/StatisticsAbout";
+import WhatMakesDifferent from "@/components/whatMakesDifferent/WhatMakesDifferent";
+import ViewAbout from "@/components/view/ViewAbout";
 
 const AboutPage = () => {
   return (
     <main>
-      <AboutHero />
-      <AboutStats />
-      <AboutView />
+      <HeroAbout />
+      <StatisticsAbout />
+      <ViewAbout />
       <WhatMakesDifferent />
       <Testimonial />
     </main>

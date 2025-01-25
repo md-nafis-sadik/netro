@@ -15,3 +15,5 @@ pnpm dev
 # or
 bun dev
 ```
+
+`Feature` based Component folder structure followed

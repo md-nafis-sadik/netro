@@ -1,31 +1,31 @@
-import Hero from "@/components/home/hero/Hero";
-import Services from "@/components/home/services/Services";
-import OurJournal from "@/components/home/ourJournal/OurJournal";
-import FAQ from "@/components/home/faq/FAQ";
-import Pricing from "@/components/home/pricing/Pricing";
-import Testimonial from "@/components/shared/testimonial/Testimonial";
-import Team from "@/components/home/team/Team";
-import SuccessShowcase from "@/components/home/successShowcase/SuccessShowcase";
-import WorkCulture from "@/components/home/workCulture/WorkCulture";
-import Products from "@/components/home/products/Products";
-import Projects from "@/components/home/projects/Projects";
+import FAQ from "@/components/faq/FAQ";
+import Testimonial from "@/components/testimonial/Testimonial";
+import Team from "@/components/team/Team";
+import OurJournal from "@/components/journal/JournalHome";
+import Products from "@/components/products/Products";
+import HeroHome from "@/components/hero/HeroHome";
+import ProjectsHome from "@/components/projects/ProjectsHome";
+import ServicesHome from "@/components/services/ServicesHome";
+import WorkCultureHome from "@/components/workCulture/WorkCultureHome";
+import PricingHome from "@/components/pricing/PricingHome";
+import StatisticsHome from "@/components/statistics/StatisticsHome";
 
-function HomePage() {
+const HomePage = () => {
   return (
     <main className="relative">
-      <Hero />
-      <Projects />
-      <Services />
+      <HeroHome />
+      <ProjectsHome />
+      <ServicesHome />
       <Products />
-      <WorkCulture />
-      <Pricing />
+      <WorkCultureHome />
+      <PricingHome />
       <Testimonial />
-      <SuccessShowcase />
+      <StatisticsHome />
       <Team />
       <FAQ />
       <OurJournal />
     </main>
   );
-}
+};
 
 export default HomePage;
