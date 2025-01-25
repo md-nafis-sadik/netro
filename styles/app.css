@@ -35,9 +35,9 @@
 .navbar-btn-gradient {
   background: linear-gradient(
     to right,
-    #00000001,
-    #483bdc80,
-    #81842f,
-    #00000001
+    #ffffff01,
+    #9c94fb,
+    #f7fc5280,
+    #ffffff01
   );
 }

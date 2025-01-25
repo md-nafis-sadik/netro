@@ -1,7 +1,7 @@
 import SectionHeader from "@/components/shared/SectionHeader";
 import { inter, scoutCond } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
-import { successStoryData } from "@/services/data";
+import { successStoryData } from "@/services/data/shared.data";
 
 const SuccessShowcase = () => {
   return (

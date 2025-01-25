@@ -26,7 +26,7 @@ const Testimonial = () => {
         <SectionHeader dark text="See How We've Made" />
         <SectionHeader dark text="a Difference" />
 
-        <QuoteStraightIcon className="absolute -top-[20%] -right-[14%] w-[20%] h-auto !shrink-0" />
+        <QuoteStraightIcon className="absolute -top-[20%] -right-[14%] w-[20%] z-[-1] h-auto !shrink-0" />
       </div>
 
       {/* CAROUSEL */}

@@ -10,7 +10,7 @@ import WorkCulture from "@/components/home/workCulture/WorkCulture";
 import Products from "@/components/home/products/Products";
 import Projects from "@/components/home/projects/Projects";
 
-function Home() {
+function HomePage() {
   return (
     <main className="relative">
       <Hero />
@@ -28,4 +28,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default HomePage;

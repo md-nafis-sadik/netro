@@ -17,11 +17,19 @@ const Navbar = () => {
   const pathname = usePathname();
 
   return (
-    <nav className={cn(pathname === "/" ? "bg-black" : "bg-transparent")}>
+    <nav
+      className={cn(
+        pathname === routes.homepage.link ? "bg-black" : "bg-transparent"
+      )}
+    >
       <div className="containerX flex flex-row items-center justify-between gap-4 py-3">
         <Link href={routes.homepage.link} className="h-fit">
           <AppLogoIcon
-            color={pathname === "/" ? colors.white : colors.natural[900]}
+            color={
+              pathname === routes.homepage.link
+                ? colors.white
+                : colors.natural[900]
+            }
             className="h-5 w-auto"
           />
         </Link>
@@ -55,7 +63,9 @@ const Navbar = () => {
                   <PlusRoundedSecondaryIcon
                     className="!h-5 !w-5 !shrink-0 transition_common group-hover:rotate-180 px-3 relative z-[2]"
                     color={
-                      pathname === "/" ? colors.white : colors.natural[900]
+                      pathname === routes.homepage.link
+                        ? colors.white
+                        : colors.natural[900]
                     }
                   />
                 )}
@@ -64,7 +74,9 @@ const Navbar = () => {
                 <Dividericon
                   className="w-[7px] h-7"
                   color={
-                    pathname === "/" ? colors.natural[900] : colors.natural[200]
+                    pathname === routes.homepage.link
+                      ? colors.natural[900]
+                      : colors.natural[200]
                   }
                 />
               )}
