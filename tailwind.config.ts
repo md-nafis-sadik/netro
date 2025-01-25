@@ -11,9 +11,26 @@ export default {
     extend: {
       fontFamily: {
         poppins: ["var(--font-poppins)"],
+        scoutcond: ["var(--font-scout-one)"],
+      },
+      padding: {
+        30: "7.5rem", // 120px
+        15: "3.75rem", // 60px
+      },
+      screens: {
+        xs: "380px",
+      },
+      height: {
+        30: "7.5rem", // 120px
+      },
+      width: {
+        30: "7.5rem", // 120px
       },
       colors: {
-        white: "#ffffff",
+        white: {
+          DEFAULT: "#FFFFFF",
+          100: "#fafafa",
+        },
         black: "#000000",
         main: {
           50: "#ECEFFF",
@@ -96,6 +113,10 @@ export default {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+      },
+      backgroundImage: {
+        gradientGreen:
+          "linear-gradient(90deg, #483BDC 30%, #FFA8A9 70.5%, #82D3A4 100%)",
       },
     },
   },
