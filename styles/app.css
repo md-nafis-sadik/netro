@@ -1,0 +1,43 @@
+.hero-text-gradient {
+  background: linear-gradient(113deg, #ffb3b3, #e6a3e6, #b3b3ff, #a3a3e6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero-text-o-gradient {
+  background: linear-gradient(113deg, #ffb3b3, #e6a3e6, #b3b3ff, #a3a3e6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.content-bg-gradient-primary {
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0) 2%,
+    rgba(26, 23, 55, 0.54) 21.5%,
+    #2f1b1c 47.5%,
+    rgba(27, 43, 33, 0.85) 73%,
+    rgba(0, 0, 0, 0) 98%
+  );
+}
+
+.project-home-blur {
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.5) 0%,
+    rgba(1, 42, 33, 0.25) 100%
+  );
+  backdrop-filter: blur(12px);
+}
+
+.navbar-btn-gradient {
+  background: linear-gradient(
+    to right,
+    #00000001,
+    #483bdc80,
+    #81842f,
+    #00000001
+  );
+}

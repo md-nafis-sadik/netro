@@ -1,42 +1,12 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
-import "./globals.css";
-
-const poppins = localFont({
-  src: [
-    {
-      path: "../public/fonts/Poppins-ExtraBold.ttf",
-      weight: "900",
-      style: "normal",
-    },
-    {
-      path: "../public/fonts/Poppins-Bold.ttf",
-      weight: "800",
-      style: "normal",
-    },
-    {
-      path: "../public/fonts/Poppins-SemiBold.ttf",
-      weight: "600",
-      style: "normal",
-    },
-    {
-      path: "../public/fonts/Poppins-Medium.ttf",
-      weight: "500",
-      style: "normal",
-    },
-    {
-      path: "../public/fonts/Poppins-Regular.ttf",
-      weight: "400",
-      style: "normal",
-    },
-    {
-      path: "../public/fonts/Poppins-Light.ttf",
-      weight: "300",
-      style: "normal",
-    },
-  ],
-  variable: "--font-poppins",
-});
+import { poppins } from "@/lib/fonts";
+import "@/styles/globals.css";
+import "@/styles/app.css";
+import Footer from "@/components/shared/footer/Footer";
+import LetsTalk from "@/components/home/cta/LetsTalk";
+import ParallaxContainer from "@/components/shared/animations/HoverParallax";
+import ContactPin from "@/components/home/hero/ContactPin";
+import Navbar from "@/components/shared/navigation/Navbar";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -51,9 +21,18 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${poppins.variable} font-poppins bg-slate-50 min-h-screen text-neutral-700`}
+        className={`${poppins.variable} font-poppins bg-white min-h-screen text-neutral-700 relative`}
       >
+        <Navbar />
         {children}
+        <LetsTalk />
+        <Footer />
+        <ParallaxContainer
+          containerClassName="fixed bottom-10 right-10 z-50"
+          scaleAmount={1.5}
+        >
+          <ContactPin />
+        </ParallaxContainer>
       </body>
     </html>
   );
