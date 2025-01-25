@@ -13,6 +13,33 @@ import {
 } from "@/services/assets/svgs";
 import colors from "@/lib/colors";
 
+export const marqueeData = [
+  {
+    image: images.companyWhite1,
+    darkImage: images.companyBlack1,
+  },
+  {
+    image: images.companyWhite2,
+    darkImage: images.companyBlack2,
+  },
+  {
+    image: images.companyWhite3,
+    darkImage: images.companyBlack3,
+  },
+  {
+    image: images.companyWhite4,
+    darkImage: images.companyBlack4,
+  },
+  {
+    image: images.companyWhite5,
+    darkImage: images.companyBlack5,
+  },
+  {
+    image: images.companyWhite6,
+    darkImage: images.companyBlack6,
+  },
+];
+
 export const projectsData = [
   {
     name: "Telzen",

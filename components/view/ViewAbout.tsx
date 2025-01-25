@@ -15,6 +15,7 @@ const ViewAbout = () => {
                   : "h-[186px] md:h-[434px]",
                 "min-w-[33%] relative overflow-hidden transition_common"
               )}
+              key={index}
             >
               <Image
                 src={image}

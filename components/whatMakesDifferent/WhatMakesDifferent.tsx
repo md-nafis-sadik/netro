@@ -18,7 +18,7 @@ const WhatMakesDifferent = () => {
         <div className="mt-10 md:mt-20 flex flex-col">
           {whatMakesDifferentData.map(
             ({ title, description, image, imageClassName, serial }, index) => (
-              <Fragment>
+              <Fragment key={index}>
                 <div
                   key={index}
                   className="flex items-center gap-2 justify-between"
