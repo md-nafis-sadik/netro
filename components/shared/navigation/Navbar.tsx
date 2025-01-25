@@ -19,7 +19,10 @@ const Navbar = () => {
   return (
     <nav
       className={cn(
-        pathname === routes.homepage.link ? "bg-black" : "bg-transparent"
+        pathname === routes.homepage.link
+          ? "bg-black border-[#393939]"
+          : "bg-transparent border-natural-300",
+        "border-b border-dashed"
       )}
     >
       <div className="containerX flex flex-row items-center justify-between gap-4 py-3">
@@ -44,7 +47,10 @@ const Navbar = () => {
                 <span
                   className={cn(
                     pathname === link &&
-                      "block navbar-btn-gradient absolute w-full h-1/2 bottom-0 left-0 z-[1]"
+                      (pathname === routes.homepage.link
+                        ? "navbar-btn-gradient-dark"
+                        : "navbar-btn-gradient-lite"),
+                    "block navbar-btn-gradient absolute w-full h-1/2 bottom-0 left-0 z-[1]"
                   )}
                 />
 
@@ -61,7 +67,7 @@ const Navbar = () => {
                 </span>
                 {megaMenu && (
                   <PlusRoundedSecondaryIcon
-                    className="!h-5 !w-5 !shrink-0 transition_common group-hover:rotate-180 px-3 relative z-[2]"
+                    className="!h-5 !w-5 !shrink-0 transition_common group-hover:rotate-180 px-3 relative z-[3]"
                     color={
                       pathname === routes.homepage.link
                         ? colors.white
@@ -85,14 +91,38 @@ const Navbar = () => {
         </div>
 
         <div className="flex flex-row items-center gap-3">
-          <GradientButton className="flex_center gap-2">
+          <GradientButton
+            className={cn(
+              pathname === routes.homepage.link ? "bg-black" : "!bg-white",
+              "flex_center gap-2"
+            )}
+          >
             <GraphicIcon className="!h-5 !w-5 !shrink-0" />
-            <span className="text-white text-sm font-normal !leading-[1.4]">
+            <span
+              className={cn(
+                pathname === routes.homepage.link
+                  ? "text-white"
+                  : "text-text-900",
+                " text-sm font-normal !leading-[1.4]"
+              )}
+            >
               OFF
             </span>
           </GradientButton>
-          <GradientButton className="flex_center gap-2 text-white text-sm font-normal !leading-[1.4]">
-            <span className="text-white text-sm font-normal !leading-[1.4]">
+          <GradientButton
+            className={cn(
+              pathname === routes.homepage.link ? "bg-black" : "!bg-white",
+              "flex_center gap-2 text-white text-sm font-normal !leading-[1.4]"
+            )}
+          >
+            <span
+              className={cn(
+                pathname === routes.homepage.link
+                  ? "text-white"
+                  : "!text-text-900",
+                "text-white text-sm font-normal !leading-[1.4]"
+              )}
+            >
               Get in touch
             </span>
           </GradientButton>

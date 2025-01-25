@@ -21,7 +21,7 @@ export const GradientButton = React.forwardRef<
         className={cn(
           inter.className,
           className,
-          "flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-black text-white font-bold transition-all duration-300 group-hover:bg-main-500"
+          "flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-black text-white font-bold transition-all duration-300 group-hover:!bg-main-500"
         )}
         {...props}
       >

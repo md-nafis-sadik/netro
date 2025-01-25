@@ -32,12 +32,16 @@
   backdrop-filter: blur(12px);
 }
 
-.navbar-btn-gradient {
+.navbar-btn-gradient-dark {
   background: linear-gradient(
     to right,
-    #ffffff01,
-    #9c94fb,
-    #f7fc5280,
-    #ffffff01
+    #00000000,
+    #483bdc80,
+    #81842f,
+    #00000000
   );
+}
+
+.navbar-btn-gradient-lite {
+  background: linear-gradient(to right, #ffffff00, #9a92ff, #f9ff4d, #ffffff00);
 }
