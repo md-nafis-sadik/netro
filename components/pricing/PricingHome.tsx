@@ -17,11 +17,12 @@ const PricingHome = () => {
       />
       <SectionHeader lite text="your ambitions." />
 
-      <div className="containerX grid grid-cols-3 gap-6 my-10 md:my-20 max-w-fit">
+      <div className="containerX grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 justify-items-center gap-6 my-10 md:my-20 sm:max-w-fit">
         {pricingData.map(
           ({ title, subtitle, price, popular, features }, index) => (
             <PricingCard
               key={index}
+              index={index}
               title={title}
               subtitle={subtitle}
               price={price}
@@ -34,7 +35,7 @@ const PricingHome = () => {
 
       <p
         className={cn(
-          "text-xs md:text-base font-normal !leading-[1.8] md:!leading-[1.4] text-text-200 font-inter"
+          "containerX text-center text-xs md:text-base font-normal !leading-[1.8] md:!leading-[1.4] text-text-200 font-inter"
         )}
       >
         Complete the form by clicking “Start Project” to send us a message. Our

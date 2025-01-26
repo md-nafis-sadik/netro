@@ -119,7 +119,7 @@ export const productsData = [
       "A cutting-edge telecom project delivering seamless connectivity solutions.",
   },
   {
-    name: "Indemif.ai",
+    name: "Indemnif.ai",
     description:
       "A cutting-edge telecom project delivering seamless connectivity solutions.",
   },
