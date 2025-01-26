@@ -26,6 +26,7 @@ const HeroHome = () => {
             "hero-text-gradient text-[66px] lg:text-[96px] uppercase font-bold !leading-[0.8] font-scout-cond text-center lg:text-start"
           )}
         >
+          {/* <ZRotationText text="DESIGN" delay={0.5} /> */}
           <div>DESIGN</div>
           <p className="">
             <span>DEVEL</span>
