@@ -137,7 +137,7 @@ const Navbar: FC = () => {
           <GradientButton
             className={cn(
               pathname === routes.homepage.link ? "bg-black" : "!bg-white",
-              "flex_center gap-2 group"
+              "flex_center gap-2 group px-3"
             )}
             containerClassName="block min-[1160px]:hidden"
             onClick={() => setIsSheetOpen(true)}
@@ -160,6 +160,7 @@ const Navbar: FC = () => {
       <NavigationSheet
         isSheetOpen={isSheetOpen}
         closeSheet={() => setIsSheetOpen(false)}
+        pathname={pathname}
       />
     </nav>
   );

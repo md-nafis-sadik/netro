@@ -104,15 +104,21 @@ export const successStoryData = [
 
 export const socialsData = [
   {
-    icon: <WhatsappOutlinedIcon className="!w-6 !h-6 !shrink-0" />,
+    icon: (
+      <WhatsappOutlinedIcon className="!w-5 md:!w-6 !h-5 md:!h-6 !shrink-0" />
+    ),
     link: "",
   },
   {
-    icon: <TelegramOutlinedIcon className="!w-6 !h-6 !shrink-0" />,
+    icon: (
+      <TelegramOutlinedIcon className="!w-5 md:!w-6 !h-5 md:!h-6 !shrink-0" />
+    ),
     link: "",
   },
   {
-    icon: <LinkedinOutlinedIcon className="!w-6 !h-6 !shrink-0" />,
+    icon: (
+      <LinkedinOutlinedIcon className="!w-5 md:!w-6 !h-5 md:!h-6 !shrink-0" />
+    ),
     link: "",
   },
 ];
