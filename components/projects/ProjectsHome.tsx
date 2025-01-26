@@ -5,7 +5,7 @@ import ProjectCard from "./ProjectHomeCard";
 
 const ProjectsHome = () => {
   return (
-    <section className="bg-black w-full py-20 overflow-hidden">
+    <section className="bg-black w-full py-20 relative">
       <div className="containerX flex_center flex-col">
         <SectionSubHeader dark text="Explore Projects" />
         <SectionHeader
