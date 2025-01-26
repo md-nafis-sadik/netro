@@ -13,8 +13,7 @@ const LetsTalkHome = () => {
           <SectionHeader lite text="Let's Talk" className="text-start" />
           <p
             className={cn(
-              inter.className,
-              "text-xl md:text-[32px] font-normal !leading-[1.2] flex items-center justify-start gap-2 md:gap-4"
+              "text-xl md:text-[32px] font-normal !leading-[1.2] flex items-center justify-start gap-2 md:gap-4 font-inter"
             )}
           >
             <span className="bg-clip-text bg-gradient-to-r from-[#D3D3D3] via-white to-[#959595] text-transparent ">
@@ -34,8 +33,7 @@ const LetsTalkHome = () => {
             type="email"
             placeholder="Ex: user@website.com"
             className={cn(
-              inter.className,
-              "text-base font-normal !leading-[1.3] bg-transparent border-none outline-none text-white placeholder:bg-clip-text placeholder:text-transparent placeholder:bg-gradient-to-r placeholder:from-[#959595] placeholder:via-white placeholder:to-[#676767] h-full"
+              "text-base font-normal !leading-[1.3] bg-transparent border-none outline-none text-white placeholder:bg-clip-text placeholder:text-transparent placeholder:bg-gradient-to-r placeholder:from-[#959595] placeholder:via-white placeholder:to-[#676767] h-full font-inter"
             )}
           />
           <GradientButton type="submit">

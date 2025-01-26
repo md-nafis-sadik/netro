@@ -473,6 +473,29 @@ export const LineIcon = ({
   </svg>
 );
 
+// M
+
+export const MenuIcon = ({
+  className,
+  color = "#ffffff",
+  ...props
+}: IFSvgProps) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="17"
+    height="16"
+    viewBox="0 0 17 16"
+    fill="none"
+    className={className}
+    {...props}
+  >
+    <path
+      d="M1.71429 9.33333V10.6667H15.0476V9.33333H1.71429ZM1.71429 4.88889V6.22222H15.0476V4.88889H1.71429Z"
+      fill={color}
+    />
+  </svg>
+);
+
 // P
 
 export const PlusRoundedIcon = ({

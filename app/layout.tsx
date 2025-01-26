@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { poppins } from "@/lib/fonts";
+import { bonbon, inter, scoutCond, yesevaOne } from "@/lib/fonts";
 import "@/styles/globals.css";
 import "@/styles/app.css";
 import Footer from "@/components/footer/Footer";
@@ -7,6 +7,7 @@ import LetsTalk from "@/components/letsTalk/LetsTalkHome";
 import ParallaxContainer from "@/components/animations/HoverParallax";
 import ContactPin from "@/components/common/ContactPin";
 import Navbar from "@/components/navigation/Navbar";
+import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -21,7 +22,13 @@ const RootLayout = ({
   return (
     <html lang="en">
       <body
-        className={`${poppins.variable} font-poppins bg-white min-h-screen text-neutral-700 relative`}
+        className={cn(
+          inter.variable,
+          bonbon.variable,
+          yesevaOne.variable,
+          scoutCond.variable,
+          "font-poppins bg-white min-h-screen text-neutral-700 relative"
+        )}
       >
         <Navbar />
         {children}

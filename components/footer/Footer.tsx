@@ -25,8 +25,7 @@ const Footer = () => {
             </p>
             <p
               className={cn(
-                inter.className,
-                "footer_el_text mt-4 md:mt-8 text-center sm:text-start"
+                "footer_el_text mt-4 md:mt-8 text-center sm:text-start font-inter"
               )}
             >
               {footerData.inquiries.address}
@@ -61,8 +60,7 @@ const Footer = () => {
                   <Link
                     href={link.href}
                     className={cn(
-                      inter.className,
-                      "footer_el_text block mb-2 text-center sm:text-start"
+                      "footer_el_text block mb-2 text-center sm:text-start font-inter"
                     )}
                   >
                     {link.text}
@@ -88,8 +86,7 @@ const Footer = () => {
                   <Link
                     href={link.href}
                     className={cn(
-                      inter.className,
-                      "footer_el_text block mb-2 text-center sm:text-start"
+                      "footer_el_text block mb-2 text-center sm:text-start font-inter"
                     )}
                   >
                     {link.text}
@@ -115,8 +112,7 @@ const Footer = () => {
                   <Link
                     href={link.href}
                     className={cn(
-                      inter.className,
-                      "footer_el_text block mb-2 text-center sm:text-start"
+                      "footer_el_text block mb-2 text-center sm:text-start font-inter"
                     )}
                   >
                     {link.text}
@@ -142,8 +138,7 @@ const Footer = () => {
                   <Link
                     href={link.href}
                     className={cn(
-                      inter.className,
-                      "footer_el_text block mb-2 text-center sm:text-start"
+                      "footer_el_text block mb-2 text-center sm:text-start font-inter"
                     )}
                   >
                     {link.text}
@@ -158,7 +153,7 @@ const Footer = () => {
         <DividerFadingDashes className="w-full my-10 md:my-[60px]" />
 
         {/* Copyright */}
-        <p className={cn(inter.className, "footer_el_text text-center")}>
+        <p className={cn("footer_el_text text-center font-inter")}>
           {footerData.copyright}
         </p>
 

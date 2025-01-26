@@ -29,16 +29,14 @@ const TeamCard = ({ image, name, position, socials }: IFTeamCardProps) => {
           <div className="transition_common -translate-y-5 group-hover:translate-y-0">
             <p
               className={cn(
-                inter.className,
-                "text-sm md:text-lg font-bold !leading-normal text-white capitalize"
+                "text-sm md:text-lg font-bold !leading-normal text-white capitalize font-inter"
               )}
             >
               {name}
             </p>
             <p
               className={cn(
-                inter.className,
-                "text-[8px] md:text-[10px] font-normal !leading-normal text-white"
+                "text-[8px] md:text-[10px] font-normal !leading-normal text-white font-inter"
               )}
             >
               {position}

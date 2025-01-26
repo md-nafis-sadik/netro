@@ -106,8 +106,7 @@ const HeroHome = () => {
             <span
               ref={textRef}
               className={cn(
-                "text-[96px] inline-block font-normal hero-text-o-gradient",
-                bonbon.className
+                "text-[96px] inline-block font-normal hero-text-o-gradient font-bonbon"
               )}
             >
               O
@@ -119,8 +118,7 @@ const HeroHome = () => {
 
         <p
           className={cn(
-            inter.className,
-            "text-xl font-normal !leading-[1.8] text-white mt-6"
+            "text-xl font-normal !leading-[1.8] text-white mt-6 font-inter"
           )}
         >
           Empowering brands with user-focused designs and <br /> seamless

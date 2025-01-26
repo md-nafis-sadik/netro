@@ -34,8 +34,7 @@ const PricingHome = () => {
 
       <p
         className={cn(
-          inter.className,
-          "text-xs md:text-base font-normal !leading-[1.8] md:!leading-[1.4] text-text-200"
+          "text-xs md:text-base font-normal !leading-[1.8] md:!leading-[1.4] text-text-200 font-inter"
         )}
       >
         Complete the form by clicking “Start Project” to send us a message. Our

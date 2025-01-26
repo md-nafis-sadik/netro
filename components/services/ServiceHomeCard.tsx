@@ -45,8 +45,7 @@ const ServiceHomeCard = ({
       </p>
       <p
         className={cn(
-          inter.className,
-          "text-white text-base md:text-lg font-medium mt-3 mb-10 md:mb-20"
+          "text-white text-base md:text-lg font-medium mt-3 mb-10 md:mb-20 font-inter"
         )}
       >
         {text}

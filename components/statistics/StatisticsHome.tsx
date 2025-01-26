@@ -32,8 +32,7 @@ const StatisticsHome = () => {
               </p>
               <p
                 className={cn(
-                  inter.className,
-                  "text-sm md:text-2xl font-medium !leading-[0.9] text-text-200 uppercase"
+                  "text-sm md:text-2xl font-medium !leading-[0.9] text-text-200 uppercase font-inter"
                 )}
               >
                 {type}

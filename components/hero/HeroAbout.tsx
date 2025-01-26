@@ -15,8 +15,7 @@ const HeroAbout = () => {
         />
         <p
           className={cn(
-            inter.className,
-            "text-sm md:text-2xl mt-6 uppercase text-text-600"
+            "text-sm md:text-2xl mt-6 uppercase text-text-600 font-inter"
           )}
         >
           our success

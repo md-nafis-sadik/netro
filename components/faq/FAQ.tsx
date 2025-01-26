@@ -6,7 +6,6 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { inter } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
 import { faqData } from "@/services/data";
 
@@ -27,16 +26,14 @@ const FAQ = () => {
             <AccordionItem key={index} value={`item-${index}`}>
               <AccordionTrigger
                 className={cn(
-                  inter.className,
-                  "text-sm md:text-xl font-medium md:font-bold text-white !leading-[1.4] md:!leading-[1.1] text-start"
+                  "text-sm md:text-xl font-medium md:font-bold text-white !leading-[1.4] md:!leading-[1.1] text-start font-inter"
                 )}
               >
                 {question}
               </AccordionTrigger>
               <AccordionContent
                 className={cn(
-                  inter.className,
-                  "text-xs md:text-base text-white font-normal"
+                  "text-xs md:text-base text-white font-normal font-inter"
                 )}
               >
                 {answer}

@@ -33,9 +33,8 @@ const ArrowLineupButton = React.forwardRef<
         <button
           ref={ref}
           className={cn(
-            inter.className,
             className,
-            "relative flex items-center gap-2 px-6 py-3 text-base font-bold text-text-900 !leading-[1.1] overflow-hidden transition-all duration-300"
+            "relative flex items-center gap-2 px-6 py-3 text-base font-bold text-text-900 !leading-[1.1] overflow-hidden transition-all duration-300 font-inter"
           )}
           {...props}
         >

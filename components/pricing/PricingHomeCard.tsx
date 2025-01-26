@@ -23,29 +23,20 @@ const PricingHomeCard = ({
   return (
     <div className="border border-[#494949] px-4 py-6 md:px-10 md:py-10 w-full h-full max-w-[410px]">
       <p
-        className={cn(
-          inter.className,
-          "text-xl font-bold !leading-[1.1] text-white"
-        )}
+        className={cn("text-xl font-bold !leading-[1.1] text-white font-inter")}
       >
         {title}
       </p>
 
       <p
         className={cn(
-          inter.className,
-          "text-sm md:text-base font-normal !leading-[1.1] mt-2 md:mt-3 text-text-600"
+          "text-sm md:text-base font-normal !leading-[1.1] mt-2 md:mt-3 text-text-600 font-inter"
         )}
       >
         {subtitle}
       </p>
 
-      <p
-        className={cn(
-          inter.className,
-          "text-sm font-normal !leading-[1.1] mt-8"
-        )}
-      >
+      <p className={cn("text-sm font-normal !leading-[1.1] mt-8 font-inter")}>
         <span className="text-text-50 text-4xl md:text-5xl font-bold !leading-[1.1]">
           ${price}
         </span>{" "}

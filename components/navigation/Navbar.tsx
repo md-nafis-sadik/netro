@@ -56,11 +56,10 @@ const Navbar = () => {
 
                 <span
                   className={cn(
-                    inter.className,
                     pathname === routes.homepage.link
                       ? "text-white"
                       : "text-text-900",
-                    "text-sm font-normal !leading-[1.4] relative z-[2]"
+                    "text-sm font-normal !leading-[1.4] relative z-[2] font-inter"
                   )}
                 >
                   {name}

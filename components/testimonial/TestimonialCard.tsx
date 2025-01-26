@@ -46,8 +46,7 @@ const TestimonialCard = ({
 
           <p
             className={cn(
-              inter.className,
-              "text-sm md:text-base font-normal !leading-normal text-text-600"
+              "text-sm md:text-base font-normal !leading-normal text-text-600 font-inter"
             )}
           >
             {title}
