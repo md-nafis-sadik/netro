@@ -12,6 +12,7 @@ const buttonVariants = cva(
       variant: {
         default: "bg-main-400 hover:bg-main-500 text-white",
         gradient: "gradient-button-border",
+        outlined: "bg-transparent border border-[#242424]",
       },
       size: {
         default: "px-6 py-3",

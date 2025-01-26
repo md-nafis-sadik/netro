@@ -1,5 +1,4 @@
 "use client";
-import { bonbon, inter, scoutCond } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
 import { images } from "@/services";
 import { CallMissedIcon } from "@/services/assets/svgs";
@@ -8,8 +7,7 @@ import gsap from "gsap";
 import Image from "next/image";
 import { useRef } from "react";
 import { GradientButton } from "@/components/ui/gradient-button";
-import { heroHomeSocialsData } from "@/services/data";
-import MarqueeHome from "../marquee/MarqueeHome";
+import { socialsData } from "@/services/data/shared.data";
 
 const HeroHome = () => {
   const textRef = useRef<HTMLSpanElement | null>(null);
@@ -96,8 +94,7 @@ const HeroHome = () => {
         {/* TITLES */}
         <div
           className={cn(
-            scoutCond.className,
-            "hero-text-gradient text-[96px] uppercase font-bold !leading-[0.8]"
+            "hero-text-gradient text-[96px] uppercase font-bold !leading-[0.8] font-scout-cond"
           )}
         >
           <div>DESIGN</div>
@@ -133,7 +130,7 @@ const HeroHome = () => {
           </GradientButton>
 
           <div className="flex flex-row items-center gap-3">
-            {heroHomeSocialsData.map(({ link, icon }, index) => (
+            {socialsData.map(({ link, icon }, index) => (
               <a
                 className="h-12 w-12 rounded-full transition_common bg-natural-900 hover:bg-main-400 flex_center"
                 href={link}

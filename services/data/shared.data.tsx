@@ -1,4 +1,9 @@
 import { images } from "../assets";
+import {
+  LinkedinOutlinedIcon,
+  TelegramOutlinedIcon,
+  WhatsappOutlinedIcon,
+} from "../assets/svgs";
 
 export const routes = {
   homepage: {
@@ -94,6 +99,21 @@ export const successStoryData = [
     value: "153",
     ext: "+",
     color: "#FFF146",
+  },
+];
+
+export const socialsData = [
+  {
+    icon: <WhatsappOutlinedIcon className="!w-6 !h-6 !shrink-0" />,
+    link: "",
+  },
+  {
+    icon: <TelegramOutlinedIcon className="!w-6 !h-6 !shrink-0" />,
+    link: "",
+  },
+  {
+    icon: <LinkedinOutlinedIcon className="!w-6 !h-6 !shrink-0" />,
+    link: "",
   },
 ];
 

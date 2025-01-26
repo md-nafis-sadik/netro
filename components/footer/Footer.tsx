@@ -17,8 +17,7 @@ const Footer = () => {
           <div className="col-span-2 md:col-span-3 flex items-center sm:items-start flex-col">
             <p
               className={cn(
-                scoutCond.className,
-                "footer_el_title text-center sm:text-start"
+                "footer_el_title text-center sm:text-start font-scout-cond"
               )}
             >
               {footerData.inquiries.title}
@@ -48,8 +47,7 @@ const Footer = () => {
           <div className="col-span-2 flex items-center sm:items-start flex-col">
             <p
               className={cn(
-                scoutCond.className,
-                "footer_el_title text-center sm:text-start"
+                "footer_el_title text-center sm:text-start font-scout-cond"
               )}
             >
               {footerData.companyInfo.title}
@@ -74,8 +72,7 @@ const Footer = () => {
           <div className="col-span-2 flex items-center sm:items-start flex-col">
             <p
               className={cn(
-                scoutCond.className,
-                "footer_el_title text-center sm:text-start"
+                "footer_el_title text-center sm:text-start font-scout-cond"
               )}
             >
               {footerData.services.title}
@@ -100,8 +97,7 @@ const Footer = () => {
           <div className="col-span-2 flex items-center sm:items-start flex-col">
             <p
               className={cn(
-                scoutCond.className,
-                "footer_el_title text-center sm:text-start"
+                "footer_el_title text-center sm:text-start font-scout-cond"
               )}
             >
               {footerData.support.title}
@@ -126,8 +122,7 @@ const Footer = () => {
           <div className="col-span-2 flex items-center sm:items-start flex-col">
             <p
               className={cn(
-                scoutCond.className,
-                "footer_el_title text-center sm:text-start"
+                "footer_el_title text-center sm:text-start font-scout-cond"
               )}
             >
               {footerData.resources.title}

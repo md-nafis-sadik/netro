@@ -117,21 +117,6 @@ export const servicesHomeData = [
   },
 ];
 
-export const heroHomeSocialsData = [
-  {
-    icon: <WhatsappOutlinedIcon className="!w-6 !h-6 !shrink-0" />,
-    link: "",
-  },
-  {
-    icon: <TelegramOutlinedIcon className="!w-6 !h-6 !shrink-0" />,
-    link: "",
-  },
-  {
-    icon: <LinkedinOutlinedIcon className="!w-6 !h-6 !shrink-0" />,
-    link: "",
-  },
-];
-
 export const productsData = [
   {
     name: "Yoowifi",

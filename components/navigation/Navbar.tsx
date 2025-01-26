@@ -1,19 +1,23 @@
 "use client";
 import { GradientButton } from "@/components/ui/gradient-button";
 import colors from "@/lib/colors";
-import { inter } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
 import {
   AppLogoIcon,
   Dividericon,
   GraphicIcon,
+  MenuIcon,
   PlusRoundedSecondaryIcon,
 } from "@/services/assets/svgs";
 import { navbarData, routes } from "@/services/data/shared.data";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { FC, useState } from "react";
+import NavigationSheet from "./NavigationSheet";
 
-const Navbar = () => {
+const Navbar: FC = () => {
+  const [isSheetOpen, setIsSheetOpen] = useState(false);
+
   const pathname = usePathname();
 
   return (
@@ -37,7 +41,7 @@ const Navbar = () => {
           />
         </Link>
 
-        <div className="flex flex-row items-center">
+        <div className="hidden min-[1160px]:flex flex-row items-center">
           {navbarData.map(({ link, name, megaMenu }, index) => (
             <div className="flex flex-row items-center" key={index}>
               <Link
@@ -66,7 +70,7 @@ const Navbar = () => {
                 </span>
                 {megaMenu && (
                   <PlusRoundedSecondaryIcon
-                    className="!h-5 !w-5 !shrink-0 transition_common group-hover:rotate-180 px-3 relative z-[3]"
+                    className="!h-5 !w-5 !shrink-0 transition_common group-hover:rotate-180 relative z-[3]"
                     color={
                       pathname === routes.homepage.link
                         ? colors.white
@@ -90,6 +94,7 @@ const Navbar = () => {
         </div>
 
         <div className="flex flex-row items-center gap-3">
+          {/* ON/OFF MUSIC */}
           <GradientButton
             className={cn(
               pathname === routes.homepage.link ? "bg-black" : "!bg-white",
@@ -108,11 +113,13 @@ const Navbar = () => {
               OFF
             </span>
           </GradientButton>
+          {/* GET IN TOUCH */}
           <GradientButton
             className={cn(
               pathname === routes.homepage.link ? "bg-black" : "!bg-white",
-              "flex_center gap-2 text-white text-sm font-normal !leading-[1.4] group"
+              "hidden min-[1160px]:flex_center gap-2 text-white text-sm font-normal !leading-[1.4] group"
             )}
+            containerClassName="hidden min-[1160px]:block"
           >
             <span
               className={cn(
@@ -125,8 +132,35 @@ const Navbar = () => {
               Get in touch
             </span>
           </GradientButton>
+
+          {/* MOBILE MENU */}
+          <GradientButton
+            className={cn(
+              pathname === routes.homepage.link ? "bg-black" : "!bg-white",
+              "flex_center gap-2 group"
+            )}
+            containerClassName="block min-[1160px]:hidden"
+            onClick={() => setIsSheetOpen(true)}
+          >
+            <MenuIcon className="!h-5 !w-5 !shrink-0" />
+            <span
+              className={cn(
+                pathname === routes.homepage.link
+                  ? "text-white"
+                  : "text-text-900",
+                "font-scout-cond text-lg font-bold text-white uppercase !leading-[0.9] group-hover:text-white transition_common"
+              )}
+            >
+              Menu
+            </span>
+          </GradientButton>
         </div>
       </div>
+
+      <NavigationSheet
+        isSheetOpen={isSheetOpen}
+        closeSheet={() => setIsSheetOpen(false)}
+      />
     </nav>
   );
 };

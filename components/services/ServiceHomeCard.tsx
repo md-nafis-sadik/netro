@@ -37,8 +37,7 @@ const ServiceHomeCard = ({
 
       <p
         className={cn(
-          scoutCond.className,
-          "text-[32px] md:text-[62px] font-bold !leading-[1.04] uppercase text-white whitespace-pre-wrap"
+          "text-[32px] md:text-[62px] font-bold !leading-[1.04] uppercase text-white whitespace-pre-wrap font-scout-cond"
         )}
       >
         {title}

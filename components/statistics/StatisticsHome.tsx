@@ -22,8 +22,7 @@ const StatisticsHome = () => {
             >
               <p
                 className={cn(
-                  scoutCond.className,
-                  "text-[54px] md:text-6xl lg:text-7xl xl:text-[128px] font-bold !leading-[0.9] uppercase"
+                  "text-[54px] md:text-6xl lg:text-7xl xl:text-[128px] font-bold !leading-[0.9] uppercase font-scout-cond"
                 )}
                 style={{ color: color }}
               >
