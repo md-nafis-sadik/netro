@@ -513,6 +513,27 @@ export const MenuIcon = ({
   </svg>
 );
 
+export const MailIcon = ({
+  className,
+  color = "#000000",
+  ...props
+}: IFSvgProps) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="32"
+    height="32"
+    viewBox="0 0 32 32"
+    fill="none"
+    className={className}
+    {...props}
+  >
+    <path
+      d="M26.668 5.33331H5.33464C3.86797 5.33331 2.6813 6.53331 2.6813 7.99998L2.66797 24C2.66797 25.4666 3.86797 26.6666 5.33464 26.6666H26.668C28.1346 26.6666 29.3346 25.4666 29.3346 24V7.99998C29.3346 6.53331 28.1346 5.33331 26.668 5.33331ZM26.668 10.6666L16.0013 17.3333L5.33464 10.6666V7.99998L16.0013 14.6666L26.668 7.99998V10.6666Z"
+      fill={color}
+    />
+  </svg>
+);
+
 // P
 
 export const PlusRoundedIcon = ({
