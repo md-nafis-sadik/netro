@@ -26,8 +26,7 @@ const JournalCard = ({ image, title, link, date }: IFCardProps) => {
       <Link href={link} className="block pt-4 md:pt-6 w-full">
         <p
           className={cn(
-            inter.className,
-            "text-lg md:text-2xl !leading-normal md:!leading-[1.16] font-bold text-natural-700"
+            "text-lg md:text-2xl !leading-normal md:!leading-[1.16] font-bold text-natural-700 font-inter"
           )}
         >
           {title}
@@ -35,8 +34,7 @@ const JournalCard = ({ image, title, link, date }: IFCardProps) => {
 
         <p
           className={cn(
-            inter.className,
-            "text-sm font-normal !leading-[1.1] text-natural-700 mt-2 md:mt-3"
+            "text-sm font-normal !leading-[1.1] text-natural-700 mt-2 md:mt-3 font-inter"
           )}
         >
           {date}

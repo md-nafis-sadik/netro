@@ -10,7 +10,10 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        poppins: ["var(--font-poppins)"],
+        inter: ["var(--font-inter)"],
+        bonbon: ["var(--font-bonbon)"],
+        "yeseva-one": ["var(--font-yeseva-one)"],
+        "scout-cond": ["var(--font-scout-one)"],
         scoutcond: ["var(--font-scout-one)"],
       },
       padding: {
@@ -84,6 +87,7 @@ export default {
           700: "#616161",
           800: "#424242",
           900: "#212121",
+          900: "#0F0F0F",
           black: "#000000",
         },
       },

@@ -17,16 +17,14 @@ const Footer = () => {
           <div className="col-span-2 md:col-span-3 flex items-center sm:items-start flex-col">
             <p
               className={cn(
-                scoutCond.className,
-                "footer_el_title text-center sm:text-start"
+                "footer_el_title text-center sm:text-start font-scout-cond"
               )}
             >
               {footerData.inquiries.title}
             </p>
             <p
               className={cn(
-                inter.className,
-                "footer_el_text mt-4 md:mt-8 text-center sm:text-start"
+                "footer_el_text mt-4 md:mt-8 text-center sm:text-start font-inter"
               )}
             >
               {footerData.inquiries.address}
@@ -49,8 +47,7 @@ const Footer = () => {
           <div className="col-span-2 flex items-center sm:items-start flex-col">
             <p
               className={cn(
-                scoutCond.className,
-                "footer_el_title text-center sm:text-start"
+                "footer_el_title text-center sm:text-start font-scout-cond"
               )}
             >
               {footerData.companyInfo.title}
@@ -61,8 +58,7 @@ const Footer = () => {
                   <Link
                     href={link.href}
                     className={cn(
-                      inter.className,
-                      "footer_el_text block mb-2 text-center sm:text-start"
+                      "footer_el_text block mb-2 text-center sm:text-start font-inter"
                     )}
                   >
                     {link.text}
@@ -76,8 +72,7 @@ const Footer = () => {
           <div className="col-span-2 flex items-center sm:items-start flex-col">
             <p
               className={cn(
-                scoutCond.className,
-                "footer_el_title text-center sm:text-start"
+                "footer_el_title text-center sm:text-start font-scout-cond"
               )}
             >
               {footerData.services.title}
@@ -88,8 +83,7 @@ const Footer = () => {
                   <Link
                     href={link.href}
                     className={cn(
-                      inter.className,
-                      "footer_el_text block mb-2 text-center sm:text-start"
+                      "footer_el_text block mb-2 text-center sm:text-start font-inter"
                     )}
                   >
                     {link.text}
@@ -103,8 +97,7 @@ const Footer = () => {
           <div className="col-span-2 flex items-center sm:items-start flex-col">
             <p
               className={cn(
-                scoutCond.className,
-                "footer_el_title text-center sm:text-start"
+                "footer_el_title text-center sm:text-start font-scout-cond"
               )}
             >
               {footerData.support.title}
@@ -115,8 +108,7 @@ const Footer = () => {
                   <Link
                     href={link.href}
                     className={cn(
-                      inter.className,
-                      "footer_el_text block mb-2 text-center sm:text-start"
+                      "footer_el_text block mb-2 text-center sm:text-start font-inter"
                     )}
                   >
                     {link.text}
@@ -130,8 +122,7 @@ const Footer = () => {
           <div className="col-span-2 flex items-center sm:items-start flex-col">
             <p
               className={cn(
-                scoutCond.className,
-                "footer_el_title text-center sm:text-start"
+                "footer_el_title text-center sm:text-start font-scout-cond"
               )}
             >
               {footerData.resources.title}
@@ -142,8 +133,7 @@ const Footer = () => {
                   <Link
                     href={link.href}
                     className={cn(
-                      inter.className,
-                      "footer_el_text block mb-2 text-center sm:text-start"
+                      "footer_el_text block mb-2 text-center sm:text-start font-inter"
                     )}
                   >
                     {link.text}
@@ -158,7 +148,7 @@ const Footer = () => {
         <DividerFadingDashes className="w-full my-10 md:my-[60px]" />
 
         {/* Copyright */}
-        <p className={cn(inter.className, "footer_el_text text-center")}>
+        <p className={cn("footer_el_text text-center font-inter")}>
           {footerData.copyright}
         </p>
 

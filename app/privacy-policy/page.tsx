@@ -1,17 +1,11 @@
+import PageThumbnail from "@/components/shared/PageThumbnail";
 import { images } from "@/services";
 import Image from "next/image";
 
 function PrivacyPolicy() {
   return (
     <section className="">
-      <div className="containerX">
-        <div className="pt-10 sm:pt-16 md:pt-20 lg:pt-24 pb-10 sm:pb-16 md:pb-20">
-          <h1 className="title blackGradient">Privacy & Policy</h1>
-          <p className="text-sm sm:text-base md:text-xl lg:text-2xl text-text-600 uppercase leading-[140%] mt-6 md:mt-5">
-            Guide
-          </p>
-        </div>
-      </div>
+      <PageThumbnail title="Privacy & Policy" description="Guide" />
       <div className="pt-10 sm:pt-16 md:pt-20 pb-8 sm:pb-16 md:pb-20 lg:pb-30 border-t border-dashed border-natural-300 ">
         <div className="containerX grid sm:grid-cols-2 gap-10 sm:gap-16 md:gap-20">
           <Image

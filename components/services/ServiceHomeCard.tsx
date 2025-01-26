@@ -26,33 +26,36 @@ const ServiceHomeCard = ({
   link,
 }: IFServiceCard) => {
   return (
-    <div className="min-h-[394px] min-w-[394px] relative bg-black py-6 md:py-10 px-4 md:px-10 select-none cursor-grab active:cursor-grabbing">
+    <div className="h-[260px] md:h-[394px] min-h-[260px] md:min-h-[394px] min-w-[260px] md:min-w-[394px] relative bg-black py-6 md:py-10 px-4 md:px-10 select-none cursor-grab active:cursor-grabbing flex flex-col justify-between w-full">
       <Image
         src={imageComponent.src}
         alt={imageComponent.alt}
-        className={cn(imageComponent.className, "absolute -right-4 -bottom-6")}
-        height={imageComponent.height}
-        width={imageComponent.width}
+        className={cn("absolute -right-4 -bottom-6", imageComponent.className)}
+        height={imageComponent.src.height}
+        width={imageComponent.src.width}
       />
 
-      <p
-        className={cn(
-          scoutCond.className,
-          "text-[32px] md:text-[62px] font-bold !leading-[1.04] uppercase text-white whitespace-pre-wrap"
-        )}
-      >
-        {title}
-      </p>
-      <p
-        className={cn(
-          inter.className,
-          "text-white text-base md:text-lg font-medium mt-3 mb-10 md:mb-20"
-        )}
-      >
-        {text}
-      </p>
+      <div className="">
+        <p
+          className={cn(
+            "text-[32px] md:text-[62px] md:font-bold !leading-[1.04] uppercase text-white whitespace-pre-wrap font-scout-cond"
+          )}
+        >
+          {title}
+        </p>
+        <p
+          className={cn(
+            "text-white text-base md:text-lg font-medium mt-3 mb-10 md:mb-20 font-inter"
+          )}
+        >
+          {text}
+        </p>
+      </div>
 
-      <Link href={link} className="group">
+      <Link
+        href={link}
+        className="group w-fit absolute bottom-6 md:bottom-10 left-4 md:left-10"
+      >
         <RightArrowIcon className="transition_common group-hover:translate-x-3 h-10 w-10" />
       </Link>
     </div>

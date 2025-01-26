@@ -1,9 +1,10 @@
 import ParallaxContainer from "@/components/animations/HoverParallax";
+import ContactPin from "@/components/common/ContactPin";
 import Footer from "@/components/footer/Footer";
-import ContactPin from "@/components/hero/ContactPin";
 import LetsTalk from "@/components/letsTalk/LetsTalkHome";
 import Navbar from "@/components/navigation/Navbar";
-import { bonbon, poppins, scout, scoutCond, yesevaOne } from "@/lib/fonts";
+import { bonbon, inter, scoutCond, yesevaOne } from "@/lib/fonts";
+import { cn } from "@/lib/utils";
 import "@/styles/app.css";
 import "@/styles/globals.css";
 import type { Metadata } from "next";
@@ -21,10 +22,13 @@ const RootLayout = ({
   return (
     <html lang="en">
       <body
-        className={`${poppins.variable} ${bonbon.variable}
-${yesevaOne.variable}
-${scout.variable}
-${scoutCond.variable} font-poppins bg-white min-h-screen text-neutral-700 relative`}
+        className={cn(
+          inter.variable,
+          bonbon.variable,
+          yesevaOne.variable,
+          scoutCond.variable,
+          "font-poppins bg-white min-h-screen text-neutral-700 relative"
+        )}
       >
         <Navbar />
         {children}

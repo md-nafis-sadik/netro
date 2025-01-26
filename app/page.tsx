@@ -14,10 +14,18 @@ import MarqueeHome from "@/components/marquee/MarqueeHome";
 
 const HomePage = () => {
   return (
-    <main className="relative">
+    <main className="relative overflow-hidden">
       <HeroHome />
-      <MarqueeHome dark={true} />
-      <MarqueeHome dark={false} />
+      <div className="w-full relative -mt-40">
+        <MarqueeHome
+          dark={true}
+          className="absolute -bottom-20 md:bottom-0 left-1/2 -translate-x-1/2"
+        />
+        <MarqueeHome
+          dark={false}
+          className="absolute -bottom-20 md:bottom-0 left-1/2 -translate-x-1/2"
+        />
+      </div>
       <IntroHome />
       <ProjectsHome />
       <ServicesHome />

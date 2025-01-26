@@ -51,8 +51,7 @@ const ProjectHomeCard: FC<IFProjectHomeCard> = ({
 
           <p
             className={cn(
-              inter.className,
-              "text-base font-normal !leading-[1.4] text-text-200 mt-7"
+              "text-base font-normal !leading-[1.4] text-text-200 mt-7 font-inter"
             )}
           >
             {description}
@@ -62,8 +61,7 @@ const ProjectHomeCard: FC<IFProjectHomeCard> = ({
         <div className="flex flex-col">
           <p
             className={cn(
-              inter.className,
-              "text-[10px] md:text-xs font-normal !leading-[1.6] text-text-200"
+              "text-[10px] md:text-xs font-normal !leading-[1.6] text-text-200 font-inter"
             )}
           >
             {tagList}

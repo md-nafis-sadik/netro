@@ -15,8 +15,7 @@ const HeroAbout = () => {
         />
         <p
           className={cn(
-            inter.className,
-            "text-sm md:text-2xl mt-6 uppercase text-text-600"
+            "text-sm md:text-2xl mt-6 uppercase text-text-600 font-inter"
           )}
         >
           our success
@@ -43,8 +42,7 @@ const HeroAbout = () => {
 
           <p
             className={cn(
-              scoutCond.className,
-              "text-[8px] md:text-[32px] font-bold !leading-[1.2] tracking-[0.26px] md:tracking-[0.5px] text-white absolute_center"
+              "text-[8px] md:text-[32px] font-bold !leading-[1.2] tracking-[0.26px] md:tracking-[0.5px] text-white absolute_center font-scout-cond"
             )}
           >
             Play <br /> Reel

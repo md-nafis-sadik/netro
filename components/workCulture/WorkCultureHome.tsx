@@ -25,10 +25,7 @@ const WorkCultureHome = () => {
               <span className="!leading-none">Join our team</span>
               <ArrowLongTailIcon className="h-auto w-5 md:w-6 group-hover:translate-x-2 transition_common" />
             </Button>
-            <ArrowLineupButton
-              lineColor={colors.main[400]}
-              className="mt-10 md:mt-0"
-            >
+            <ArrowLineupButton lineColor={colors.main[400]} className="">
               Know more about us
             </ArrowLineupButton>
           </div>

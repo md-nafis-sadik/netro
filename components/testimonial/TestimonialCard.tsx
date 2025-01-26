@@ -37,8 +37,7 @@ const TestimonialCard = ({
         <div className="flex flex-col">
           <p
             className={cn(
-              scoutCond.className,
-              "text-[28px] md:text-[32px] font-bold !leading-normal text-text-900 tracking-[0.84px] md:tracking-[0.96px] uppercase"
+              "text-[28px] md:text-[32px] font-bold !leading-normal text-text-900 tracking-[0.84px] md:tracking-[0.96px] uppercase font-scout-cond"
             )}
           >
             {name}
@@ -46,8 +45,7 @@ const TestimonialCard = ({
 
           <p
             className={cn(
-              inter.className,
-              "text-sm md:text-base font-normal !leading-normal text-text-600"
+              "text-sm md:text-base font-normal !leading-normal text-text-600 font-inter"
             )}
           >
             {title}

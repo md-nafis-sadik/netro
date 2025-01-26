@@ -1,116 +1,41 @@
-"use client";
-import { bonbon, inter, scoutCond } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
 import { images } from "@/services";
 import { CallMissedIcon } from "@/services/assets/svgs";
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
 import Image from "next/image";
-import { useRef } from "react";
 import { GradientButton } from "@/components/ui/gradient-button";
-import { heroHomeSocialsData } from "@/services/data";
+import { socialsData } from "@/services/data/shared.data";
+import BallBounceText from "../animations/BallBounceText";
 
 const HeroHome = () => {
-  const textRef = useRef<HTMLSpanElement | null>(null);
-
-  useGSAP(() => {
-    if (!textRef.current) return;
-
-    const target = textRef.current;
-
-    // Set initial position
-    gsap.set(target, {
-      y: -100,
-      opacity: 0,
-      scale: 1,
-    });
-
-    const tl = gsap.timeline({
-      delay: 0.3, // 300ms delay
-    });
-
-    tl
-      // Initial drop with impact
-      .to(target, {
-        opacity: 1,
-        y: 0,
-        duration: 0.4,
-        ease: "power2.in",
-      })
-      // Squash on impact
-      .to(
-        target,
-        {
-          scaleX: 1.4,
-          scaleY: 0.6,
-          duration: 0.08,
-          ease: "power1.out",
-        },
-        "-=0.08"
-      )
-      // First bounce up
-      .to(target, {
-        y: -40,
-        scaleX: 1,
-        scaleY: 1,
-        duration: 0.25,
-        ease: "power2.out",
-      })
-      // Small final bounce and settle
-      .to(target, {
-        y: 0,
-        duration: 0.2,
-        ease: "power2.in",
-      })
-      .to(
-        target,
-        {
-          scaleX: 1.2,
-          scaleY: 0.8,
-          duration: 0.1,
-          ease: "power1.out",
-        },
-        "-=0.1"
-      )
-      // Return to original shape
-      .to(target, {
-        scale: 1,
-        duration: 0.2,
-        ease: "power1.inOut",
-      });
-  }, []);
-
   return (
-    <section className="flex flex-row bg-black min-h-[1120px] relative overflow-hidden">
+    <section className="flex flex-col-reverse lg:flex-row bg-black lg:min-h-[1120px] relative overflow-hidden">
       <Image
         alt="hero star glass image"
         src={images.starGlass}
-        className="absolute z-[1] left-0 top-0 h-[1080px] w-[1080px] aspect-square shrink-0 rotate-[-113deg]"
+        className="absolute z-[1] left-1/2 -translate-x-1/2 lg:-translate-x-0 lg:left-14 bottom-8 lg:top-0 h-[410px] lg:h-[1080px] w-[410px] lg:w-[1080px] aspect-square !shrink-0 rotate-[14.8deg] lg:rotate-[-113deg]"
         height={1120}
         width={1120}
       />
-      <div className="w-[36%]" />
+      {/* GAP BALANCER */}
+      <div className="h-[300px] lg:h-auto lg:w-[36%]" />
 
-      <div className="w-[64%] bg-black px-20 py-[118px] relative z-[2]">
+      <div className="w-full lg:w-[64%] bg-black px-4 md:px-20 pb-10 pt-[60px] lg:py-[118px] relative z-[2]">
         {/* TITLES */}
         <div
           className={cn(
-            scoutCond.className,
-            "hero-text-gradient text-[96px] uppercase font-bold !leading-[0.8]"
+            "hero-text-gradient text-[66px] lg:text-[96px] uppercase font-bold !leading-[0.8] font-scout-cond text-center lg:text-start"
           )}
         >
           <div>DESIGN</div>
           <p className="">
             <span>DEVEL</span>
-            <span
-              ref={textRef}
+            <BallBounceText
               className={cn(
-                "text-[96px] inline-block font-normal hero-text-o-gradient",
-                bonbon.className
+                "text-[66px] lg:text-[96px] inline-block font-normal hero-text-o-gradient font-bonbon"
               )}
             >
               O
-            </span>
+            </BallBounceText>
             <span>PMENT</span>
           </p>
           <div>DEPLOY</div>
@@ -118,8 +43,7 @@ const HeroHome = () => {
 
         <p
           className={cn(
-            inter.className,
-            "text-xl font-normal !leading-[1.8] text-white mt-6"
+            "text-sm md:text-xl font-normal !leading-[1.8] text-white mt-6 font-inter text-center lg:text-start"
           )}
         >
           Empowering brands with user-focused designs and <br /> seamless
@@ -127,14 +51,14 @@ const HeroHome = () => {
         </p>
 
         {/* CONNECT & SOCIALS */}
-        <div className="flex flex-row gap-6 mt-8 md:mt-[60px]">
-          <GradientButton>
+        <div className="flex flex-col md:flex-row justify-center lg:justify-start items-center gap-6 mt-8 md:mt-[60px]">
+          <GradientButton containerClassName="!shrink-0">
             <span className="text-white">Schedule a call</span>
             <CallMissedIcon className="!h-6 !w-6 !shrink-0" />
           </GradientButton>
 
           <div className="flex flex-row items-center gap-3">
-            {heroHomeSocialsData.map(({ link, icon }, index) => (
+            {socialsData.map(({ link, icon }, index) => (
               <a
                 className="h-12 w-12 rounded-full transition_common bg-natural-900 hover:bg-main-400 flex_center"
                 href={link}
@@ -147,11 +71,11 @@ const HeroHome = () => {
           </div>
         </div>
 
-        <div className="flex flex-row items-center mt-10 md:mt-20 gap-6 relative">
+        <div className="flex flex-row items-center justify-center lg:justify-start mt-10 md:mt-20 gap-6 relative">
           <Image
             src={images.ratingClutch}
             alt="clutch rating"
-            className="h-9 w-auto"
+            className="h-6 md:h-9 w-auto"
             height={100}
             width={400}
           />
@@ -159,7 +83,7 @@ const HeroHome = () => {
           <Image
             src={images.ratingTrustpilot}
             alt="trustpilot rating"
-            className="h-9 w-auto"
+            className="h-6 md:h-9 w-auto"
             height={100}
             width={400}
           />
