@@ -13,7 +13,7 @@ import {
 } from "@/services/assets/svgs";
 import colors from "@/lib/colors";
 
-export const marqueeData = [
+export const marqueeHomeData = [
   {
     image: images.companyWhite1,
     darkImage: images.companyBlack1,
@@ -67,8 +67,7 @@ export const servicesHomeData = [
     imageComponent: {
       src: images.doubleLCrystal,
       alt: "Double L Crystal",
-      className: "w-[194px] h-auto",
-      width: 194,
+      className: "!max-w-[142px] md:!max-w-[194px] h-auto",
     },
   },
   {
@@ -78,8 +77,7 @@ export const servicesHomeData = [
     imageComponent: {
       src: images.gemCrystal,
       alt: "Gem crystal image",
-      className: "w-[135px] h-auto",
-      width: 135,
+      className: "!max-w-[96px] md:!max-w-[135px] h-auto",
     },
   },
   {
@@ -89,8 +87,7 @@ export const servicesHomeData = [
     imageComponent: {
       src: images.starMixerCrystal,
       alt: "",
-      className: "w-[156px] h-auto",
-      width: 156,
+      className: "!max-w-[133px] md:!max-w-[156px] h-auto",
     },
   },
   {
@@ -100,8 +97,7 @@ export const servicesHomeData = [
     imageComponent: {
       src: images.starCrystal,
       alt: "",
-      className: "w-[184px] h-auto",
-      width: 184,
+      className: "!max-w-[136px] md:!max-w-[184px] h-auto",
     },
   },
   {
@@ -111,8 +107,7 @@ export const servicesHomeData = [
     imageComponent: {
       src: images.honeycombCrystal,
       alt: "",
-      className: "w-[180px] h-auto",
-      width: 180,
+      className: "!max-w-[116px] md:!max-w-[180px] h-auto",
     },
   },
 ];
