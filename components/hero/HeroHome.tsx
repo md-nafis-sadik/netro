@@ -9,6 +9,7 @@ import Image from "next/image";
 import { useRef } from "react";
 import { GradientButton } from "@/components/ui/gradient-button";
 import { heroHomeSocialsData } from "@/services/data";
+import MarqueeHome from "../marquee/MarqueeHome";
 
 const HeroHome = () => {
   const textRef = useRef<HTMLSpanElement | null>(null);

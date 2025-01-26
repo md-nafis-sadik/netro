@@ -5,7 +5,7 @@ import "@/styles/app.css";
 import Footer from "@/components/footer/Footer";
 import LetsTalk from "@/components/letsTalk/LetsTalkHome";
 import ParallaxContainer from "@/components/animations/HoverParallax";
-import ContactPin from "@/components/hero/ContactPin";
+import ContactPin from "@/components/common/ContactPin";
 import Navbar from "@/components/navigation/Navbar";
 
 export const metadata: Metadata = {
