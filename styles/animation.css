@@ -9,7 +9,7 @@
 }
 
 .btn-animate-gradient {
-  animation: gradientAnimation 3s ease alternate infinite;
+  animation: gradientAnimation 3s ease linear infinite;
 }
 
 @keyframes gradientAnimation {

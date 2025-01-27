@@ -5,6 +5,7 @@ import Image from "next/image";
 import { GradientButton } from "@/components/ui/gradient-button";
 import { socialsData } from "@/services/data/shared.data";
 import BallBounceText from "../animations/BallBounceText";
+import ZRotationText from "../animations/ZRotationText";
 
 const HeroHome = () => {
   return (
@@ -26,20 +27,20 @@ const HeroHome = () => {
             "hero-text-gradient text-[66px] lg:text-[96px] uppercase font-bold !leading-[0.8] font-scoutcond text-center lg:text-start"
           )}
         >
-          {/* <ZRotationText text="DESIGN" delay={0.5} /> */}
-          <div>DESIGN</div>
-          <p className="">
-            <span>DEVEL</span>
+          <ZRotationText text="DESIGN" delay={0.5} />
+          <p className="flex">
+            <ZRotationText text="DEVEL" delay={0.75} />
             <BallBounceText
               className={cn(
                 "text-[66px] lg:text-[96px] inline-block font-normal hero-text-o-gradient font-bonbon"
               )}
+              delay={1.0}
             >
               O
             </BallBounceText>
-            <span>PMENT</span>
+            <ZRotationText text="PMENT" delay={1.25} />
           </p>
-          <div>DEPLOY</div>
+          <ZRotationText text="DEPLOY" delay={1.5} />
         </div>
 
         <p

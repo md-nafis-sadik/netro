@@ -1,7 +1,10 @@
 "use client";
-import React, { useMemo, useRef } from "react";
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
+import React, { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { cn } from "@/lib/utils";
+
+gsap.registerPlugin(ScrollTrigger);
 
 interface ZRotationTextProps {
   text: string;
@@ -9,81 +12,127 @@ interface ZRotationTextProps {
   className?: string;
 }
 
-const ZRotationText: React.FC<ZRotationTextProps> = ({
-  text,
-  delay = 0,
-  className = "",
-}) => {
+const ZRotationText = ({ text, delay = 0, className }: ZRotationTextProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
+  const originalRef = useRef<HTMLDivElement>(null);
+  const cloneRef = useRef<HTMLDivElement>(null);
 
-  useGSAP(
-    () => {
-      const container = containerRef.current;
-      if (!container) return;
+  useEffect(() => {
+    if (!containerRef.current || !originalRef.current || !cloneRef.current)
+      return;
 
-      const originalText = container.querySelector(".original-text");
-      const cloneText = container.querySelector(".clone-text");
+    const splitText = (text: string) => {
+      return text.split("").map((char, i) => (
+        <span
+          key={i}
+          className="inline-block"
+          style={{ transformOrigin: "50% 50% -50px" }}
+        >
+          {char}
+        </span>
+      ));
+    };
 
-      if (!originalText || !cloneText) return;
+    const originalChars = originalRef.current.children;
+    const cloneChars = cloneRef.current.children;
 
-      const tl = gsap.timeline({ paused: true });
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: "top center+=100",
+        toggleActions: "play none none reverse",
+      },
+      delay,
+    });
 
-      tl.to(originalText, {
-        rotationX: 90,
-        opacity: 0,
-        duration: 0.4,
-        stagger: 0.02,
-      }).fromTo(
-        cloneText,
+    // Set initial positions
+    gsap.set(cloneChars, {
+      rotationX: -90,
+      opacity: 0,
+      transformOrigin: "50% 50% -50",
+    });
+
+    // Animation sequence
+    tl.to(originalChars, {
+      duration: 0.4,
+      rotationX: 90,
+      transformOrigin: "50% 50% -50",
+      stagger: {
+        each: 0.02,
+        ease: "power2",
+        from: "start",
+      },
+    })
+      .to(
+        originalChars,
         {
-          rotationX: -90,
-          opacity: 0,
-        },
-        {
-          rotationX: 0,
-          opacity: 1,
           duration: 0.4,
-          stagger: 0.02,
+          opacity: 0,
+          stagger: {
+            each: 0.02,
+            ease: "power4.in",
+          },
+        },
+        0
+      )
+      .to(
+        cloneChars,
+        {
+          duration: 0.05,
+          opacity: 1,
+          stagger: {
+            each: 0.02,
+          },
+        },
+        0.001
+      )
+      .to(
+        cloneChars,
+        {
+          duration: 0.4,
+          rotationX: 0,
+          stagger: {
+            each: 0.02,
+          },
         },
         0
       );
 
-      // Intersection Observer
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              gsap.delayedCall(delay, () => tl.play());
-              observer.disconnect();
-            }
-          });
-        },
-        { threshold: 0.1 }
-      );
-
-      observer.observe(container);
-
-      return () => observer.disconnect();
-    },
-    { scope: containerRef }
-  );
+    return () => {
+      tl.kill();
+    };
+  }, [text, delay]);
 
   return (
-    <div
-      ref={containerRef}
-      className={`relative h-20 flex items-center justify-center ${className}`}
-    >
-      <h1 className="text-4xl font-bold relative overflow-hidden">
-        <span className="original-text absolute top-0 left-0 w-full text-center">
-          {text}
-        </span>
-        <span
-          className="clone-text absolute top-0 left-0 w-full text-center"
-          style={{ transform: "translateY(-100%)" }}
-        >
-          {text}
-        </span>
-      </h1>
+    <div ref={containerRef} className="relative w-fit whitespace-nowrap">
+      <div
+        ref={originalRef}
+        className={cn(
+          "relative [&>span]:inline-block font-scoutcond font-bold uppercase leading-[0.8]",
+          className
+        )}
+        style={{ perspective: "600px" }}
+      >
+        {text.split("").map((char, i) => (
+          <span key={i} className="text-gray-700">
+            {char}
+          </span>
+        ))}
+      </div>
+      <div
+        ref={cloneRef}
+        className={cn(
+          "absolute top-0 left-0 [&>span]:inline-block font-scoutcond font-bold uppercase leading-[0.8]",
+          className
+        )}
+        style={{ perspective: "600px" }}
+      >
+        {text.split("").map((char, i) => (
+          <span key={i} className="hero-text-gradient">
+            {char}
+          </span>
+        ))}
+      </div>
     </div>
   );
 };
