@@ -1,4 +1,4 @@
-// GradientButton.tsx
+"use client";
 import React from "react";
 import "@/styles/animation.css";
 import { inter } from "@/lib/fonts";
@@ -31,7 +31,7 @@ export const GradientButton = React.forwardRef<
         className={cn(
           "inline-block p-[2px] rounded-full bg-gradient hover:-translate-y-[2px] transition_common group !shrink-0",
           containerClassName,
-          nonGradient ? "bg-[#161616]" : "animate-gradient"
+          nonGradient ? "bg-[#161616]" : "btn-animate-gradient"
         )}
       >
         <button

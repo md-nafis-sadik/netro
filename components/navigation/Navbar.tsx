@@ -93,12 +93,12 @@ const Navbar: FC = () => {
           ))}
         </div>
 
-        <div className="flex flex-row items-center gap-3">
+        <div className="flex flex-row items-center gap-2 md:gap-3">
           {/* ON/OFF MUSIC */}
           <GradientButton
             className={cn(
               pathname === routes.homepage.link ? "bg-black" : "!bg-white",
-              "flex_center gap-2 group"
+              "flex_center gap-2 group ps-3 md:px-5"
             )}
           >
             <GraphicIcon className="!h-5 !w-5 !shrink-0" />
@@ -135,10 +135,7 @@ const Navbar: FC = () => {
 
           {/* MOBILE MENU */}
           <GradientButton
-            className={cn(
-              pathname === routes.homepage.link ? "bg-black" : "!bg-white",
-              "flex_center gap-2 group px-3"
-            )}
+            className={cn("bg-black flex_center gap-2 group ps-[10px] md:px-3")}
             containerClassName="block min-[1160px]:hidden"
             onClick={() => setIsSheetOpen(true)}
           >
@@ -148,7 +145,7 @@ const Navbar: FC = () => {
                 pathname === routes.homepage.link
                   ? "text-white"
                   : "text-text-900",
-                "font-scout-cond text-lg font-bold text-white uppercase !leading-[0.9] group-hover:text-white transition_common"
+                "font-scoutcond text-lg font-bold text-white uppercase !leading-[0.9] group-hover:text-white transition_common"
               )}
             >
               Menu

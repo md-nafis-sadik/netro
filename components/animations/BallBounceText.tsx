@@ -6,9 +6,14 @@ import { FC, useRef } from "react";
 interface BallBounceTextProps {
   children: React.ReactNode;
   className?: string;
+  delay?: number;
 }
 
-const BallBounceText: FC<BallBounceTextProps> = ({ children, className }) => {
+const BallBounceText: FC<BallBounceTextProps> = ({
+  children,
+  className,
+  delay = 0.3,
+}) => {
   const textRef = useRef<HTMLSpanElement | null>(null);
 
   useGSAP(() => {
@@ -24,7 +29,7 @@ const BallBounceText: FC<BallBounceTextProps> = ({ children, className }) => {
     });
 
     const tl = gsap.timeline({
-      delay: 0.3, // 300ms delay
+      delay: delay, // 300ms delay
     });
 
     tl

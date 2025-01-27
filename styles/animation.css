@@ -8,8 +8,8 @@
   background: #6455ff;
 }
 
-.animate-gradient {
-  animation: gradientAnimation 3s ease alternate infinite;
+.btn-animate-gradient {
+  animation: gradientAnimation 3s ease linear infinite;
 }
 
 @keyframes gradientAnimation {

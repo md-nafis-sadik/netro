@@ -13,7 +13,7 @@ const ProductCard = ({ name, description }: IFProductCardProps) => {
         <div className="absolute_center bg-main-400/50 h-[100px] w-[100px] md:h-[140px] md:w-[140px] rounded-full transition_common duration-500 group-hover:scale-105 opacity-0 group-hover:opacity-100 flex_center">
           <p
             className={cn(
-              "text-lg md:text-2xl font-bold !leading-none uppercase text-white text-center font-scout-cond"
+              "text-lg md:text-2xl font-bold !leading-none uppercase text-white text-center font-scoutcond"
             )}
           >
             View <br /> Details
@@ -23,7 +23,7 @@ const ProductCard = ({ name, description }: IFProductCardProps) => {
 
       <p
         className={cn(
-          "text-2xl md:text-[32px] !leading-none font-bold text-white uppercase mt-3 md:mt-4 font-scout-cond"
+          "text-2xl md:text-[32px] !leading-none font-bold text-white uppercase mt-3 md:mt-4 font-scoutcond"
         )}
       >
         {name}

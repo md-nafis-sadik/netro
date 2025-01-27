@@ -9,7 +9,7 @@ const StatisticsAbout = () => {
         <div className="flex flex-col items-center gap-1 md:gap-3" key={index}>
           <p
             className={cn(
-              "text-[54px] md:text-6xl lg:text-7xl xl:text-[128px] font-bold !leading-[0.9] uppercase text-center w-full font-scout-cond"
+              "text-[54px] md:text-6xl lg:text-7xl xl:text-[128px] font-bold !leading-[0.9] uppercase text-center w-full font-scoutcond"
             )}
           >
             <span className="text-text-900">{value}</span>

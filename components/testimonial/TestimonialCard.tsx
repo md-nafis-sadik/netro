@@ -37,7 +37,7 @@ const TestimonialCard = ({
         <div className="flex flex-col">
           <p
             className={cn(
-              "text-[28px] md:text-[32px] font-bold !leading-normal text-text-900 tracking-[0.84px] md:tracking-[0.96px] uppercase font-scout-cond"
+              "text-[28px] md:text-[32px] font-bold !leading-normal text-text-900 tracking-[0.84px] md:tracking-[0.96px] uppercase font-scoutcond"
             )}
           >
             {name}

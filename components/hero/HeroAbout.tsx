@@ -42,7 +42,7 @@ const HeroAbout = () => {
 
           <p
             className={cn(
-              "text-[8px] md:text-[32px] font-bold !leading-[1.2] tracking-[0.26px] md:tracking-[0.5px] text-white absolute_center font-scout-cond"
+              "text-[8px] md:text-[32px] font-bold !leading-[1.2] tracking-[0.26px] md:tracking-[0.5px] text-white absolute_center font-scoutcond"
             )}
           >
             Play <br /> Reel

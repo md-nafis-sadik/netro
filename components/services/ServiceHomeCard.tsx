@@ -38,7 +38,7 @@ const ServiceHomeCard = ({
       <div className="">
         <p
           className={cn(
-            "text-[32px] md:text-[62px] md:font-bold !leading-[1.04] uppercase text-white whitespace-pre-wrap font-scout-cond"
+            "text-[32px] md:text-[62px] md:font-bold !leading-[1.04] uppercase text-white whitespace-pre-wrap font-scoutcond"
           )}
         >
           {title}

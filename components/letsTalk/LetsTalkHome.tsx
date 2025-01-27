@@ -8,15 +8,19 @@ import { footerData } from "@/services/data";
 const LetsTalkHome = () => {
   return (
     <section className="bg-black">
-      <div className="containerX py-[60px] md:py-20 flex flex-col md:flex-row items-center gap-[42px] justify-between">
+      <div className="containerX py-[60px] md:py-20 flex flex-col lg:flex-row items-center gap-[42px] justify-between">
         <div>
-          <SectionHeader lite text="Let's Talk" className="text-start" />
+          <SectionHeader
+            lite
+            text="Let's Talk"
+            className="text-center lg:text-start text-[80px] lg:text-[134px]"
+          />
           <p
             className={cn(
-              "text-xl md:text-[32px] font-normal !leading-[1.2] flex items-center justify-start gap-2 md:gap-4 font-inter"
+              "font-normal !leading-[1.2] flex items-center justify-start gap-2 md:gap-4 font-inter"
             )}
           >
-            <span className="bg-clip-text bg-gradient-to-r from-[#D3D3D3] via-white to-[#959595] text-transparent ">
+            <span className="text-xl md:text-[32px] bg-clip-text bg-gradient-to-r from-[#D3D3D3] via-white to-[#959595] text-transparent ">
               {footerData.inquiries.email}
             </span>
             <a
@@ -28,7 +32,7 @@ const LetsTalkHome = () => {
           </p>
         </div>
 
-        <form className="rounded-[100px] border border-[#494949] ps-6 py-3 pe-2 md:pe-3 h-[54px] md:h-[70px] flex items-center gap-4 content-bg-gradient-primary">
+        <form className="rounded-[100px] border border-[#494949] ps-6 py-3 pe-1 md:pe-3 h-[54px] md:h-[70px] flex items-center gap-4 content-bg-gradient-primary">
           <input
             type="email"
             placeholder="Ex: user@website.com"

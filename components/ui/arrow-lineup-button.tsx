@@ -1,9 +1,11 @@
+"use client";
 import React from "react";
 import "@/styles/animation.css";
-import { inter } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
 import colors from "@/lib/colors";
 import { ArrowLongTailIcon, LineIcon } from "@/services/assets/svgs";
+import { useRouter } from "next/router";
+import Link from "next/link";
 
 interface ArrowLineupButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -11,6 +13,7 @@ interface ArrowLineupButtonProps
   className?: string;
   lineColor?: string;
   textClassName?: string;
+  href?: string;
 }
 
 // eslint-disable-next-line react/display-name
@@ -24,12 +27,16 @@ const ArrowLineupButton = React.forwardRef<
       className = "",
       lineColor = colors.main[500],
       textClassName,
+      href = "",
       ...props
     },
     ref
   ) => {
     return (
-      <div className="inline-block p-[2px] transition-common group">
+      <Link
+        href={href}
+        className="inline-block p-[2px] transition-common group"
+      >
         <button
           ref={ref}
           className={cn(
@@ -45,7 +52,7 @@ const ArrowLineupButton = React.forwardRef<
           {/* Text */}
           <span
             className={cn(
-              "relative group-hover:-translate-x-6 transition-transform duration-300",
+              "relative group-hover:-translate-x-6 transition-transform duration-300 font-inter text-base font-bold text-text-900 !leading-[1.1]",
               textClassName
             )}
           >
@@ -63,7 +70,7 @@ const ArrowLineupButton = React.forwardRef<
             />
           </span>
         </button>
-      </div>
+      </Link>
     );
   }
 );

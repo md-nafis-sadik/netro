@@ -2,6 +2,7 @@
 import React, { useRef, useEffect, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { cn } from "@/lib/utils";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -94,7 +95,10 @@ const TextFadeIn: React.FC<TextFadeInProps> = ({ text, className = "" }) => {
   }, [text]);
 
   return (
-    <div ref={containerRef} className={`flex flex-col ${className}`}>
+    <div
+      ref={containerRef}
+      className={cn(`flex flex-col font-inter`, className)}
+    >
       {words.map((line: string, lineIndex: React.Key | null | undefined) => (
         <div key={lineIndex} className="flex flex-wrap">
           {line

@@ -26,7 +26,7 @@ const WhatMakesDifferent = () => {
                   {/* SERIAL */}
                   <p
                     className={cn(
-                      "text-2xl md:text-[128px] font-bold !leading-[0.9] uppercase h-full font-scout-cond",
+                      "text-2xl md:text-[128px] font-bold !leading-[0.9] uppercase h-full font-scoutcond",
                       index % 2 === 0 ? "text-secondary-400" : "text-[#4DD165]"
                     )}
                   >
@@ -37,7 +37,7 @@ const WhatMakesDifferent = () => {
                   <div className="ms-2 md:ms-20 max-w-[204px] md:max-w-[674px]">
                     <p
                       className={cn(
-                        "text-2xl md:text-[64px] font-bold !leading-none uppercase text-white font-scout-cond"
+                        "text-2xl md:text-[64px] font-bold !leading-none uppercase text-white font-scoutcond"
                       )}
                     >
                       {title}

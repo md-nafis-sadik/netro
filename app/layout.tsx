@@ -1,13 +1,15 @@
-import ParallaxContainer from "@/components/animations/HoverParallax";
-import ContactPin from "@/components/common/ContactPin";
+import type { Metadata } from "next";
+import { bonbon, inter, scout, scoutCond, yesevaOne } from "@/lib/fonts";
+import "@/styles/globals.css";
+import "@/styles/app.css";
 import Footer from "@/components/footer/Footer";
 import LetsTalk from "@/components/letsTalk/LetsTalkHome";
+import ParallaxContainer from "@/components/animations/HoverParallax";
+import ContactPin from "@/components/contact-us/ContactPin";
 import Navbar from "@/components/navigation/Navbar";
-import { bonbon, inter, scoutCond, yesevaOne } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
 import "@/styles/app.css";
 import "@/styles/globals.css";
-import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -27,7 +29,8 @@ const RootLayout = ({
           bonbon.variable,
           yesevaOne.variable,
           scoutCond.variable,
-          "font-poppins bg-white min-h-screen text-neutral-700 relative"
+          scout.variable,
+          "bg-white min-h-screen text-neutral-700 relative"
         )}
       >
         <Navbar />
