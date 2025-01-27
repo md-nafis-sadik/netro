@@ -20,3 +20,26 @@ export const softwareServicesData = [
     title: "SaaS Development",
   },
 ];
+
+export const uxUiServicesData = [
+  {
+    serial: "01",
+    title: "User Experience (UX) Design",
+  },
+  {
+    serial: "02",
+    title: "User Interface (UI) Design",
+  },
+  {
+    serial: "03",
+    title: "Wireframing and Prototyping",
+  },
+  {
+    serial: "04",
+    title: "Mobile App Design",
+  },
+  {
+    serial: "05",
+    title: "Brand Experience Design",
+  },
+];

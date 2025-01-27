@@ -1,5 +1,6 @@
 import SectionHeader from "@/components/common/SectionHeader";
 import SoftwareService from "@/components/services/SoftwareService";
+import UXUIService from "@/components/services/UXUIService";
 
 const ServicePage = () => {
   return (
@@ -9,6 +10,7 @@ const ServicePage = () => {
         Know our strengths
       </p>
       <SoftwareService />
+      <UXUIService />
     </main>
   );
 };
