@@ -44,12 +44,12 @@ const ServiceListRenderer: FC<IFServiceListRendererProps> = ({
 
 const ServiceDetailsContent = () => {
   return (
-    <section className="containerX flex py-10 md:py-20 lg:py-[120px]">
+    <section className="containerX flex flex-col md:flex-row gap-10 py-10 md:py-20 lg:py-[120px]">
       <div className="w-full md:w-1/2 flex_center items-start">
         <Image
           src={images.cylindricalHalfStar}
           alt="cylindrical half star"
-          className="max-w-[331px] md:max-w-[200px] h-auto !shrink-0 md:sticky md:top-[60px]"
+          className="max-w-[200px] md:max-w-[331px] h-auto !shrink-0 md:sticky md:top-[60px]"
           height={600}
           width={600}
         />

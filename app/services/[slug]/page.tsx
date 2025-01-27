@@ -1,4 +1,5 @@
 import SectionHeader from "@/components/common/SectionHeader";
+import CaseStudyShowcase from "@/components/projects/CaseStudyShowcase";
 import ClientServiceList from "@/components/services/ClientServiceList";
 import ServiceDetailsContent from "@/components/services/ServiceDetailsContent";
 import { images } from "@/services";
@@ -34,6 +35,7 @@ const ServiceDetailsPage = async ({
       </div>
 
       <ServiceDetailsContent />
+      <CaseStudyShowcase />
       <ClientServiceList />
     </main>
   );

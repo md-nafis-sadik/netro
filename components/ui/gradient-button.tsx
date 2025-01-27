@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import "@/styles/animation.css";
-import { inter } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
 
 interface GradientButtonProps
