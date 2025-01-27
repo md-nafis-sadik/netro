@@ -48,7 +48,7 @@ body {
   }
 
   .para {
-    @apply text-sm sm:text-base text-text-600 leading-[160%] font-inter;
+    @apply text-sm sm:text-base  text-text-600 leading-[160%] font-inter;
   }
 
   .input {

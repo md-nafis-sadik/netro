@@ -67,7 +67,7 @@ function JobDescription() {
     <section className="pb-10 sm:pb-16 md:pb-20 lg:pb-30 font-inter">
       <div className="containerX">
         <div className="flex flex-col md:flex-row gap-6 sm:gap-16 md:gap-20">
-          <div className="w-full max-w-[462px] ">
+          <div className="w-full max-w-[462px]">
             <div className="w-full px-4 sm:px-7 py-6 sm:py-8 md:p-10 border border-dashed border-natural-300 font-inter flex flex-col gap-6 sticky top-10">
               <div>
                 <h2 className="titleMd text-text-900">Jr. Software EngineeR</h2>
