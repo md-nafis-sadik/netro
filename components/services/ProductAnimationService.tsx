@@ -6,7 +6,7 @@ import { productAnimationServiceData } from "@/services/data";
 
 const ProductAnimationService = () => {
   return (
-    <section className="flex flex-col md:flex-row gap-6 md:gap-20 border-t border-dashed border-natural-300 py-10 md:py-20 font-inter">
+    <section className="containerX flex flex-col md:flex-row gap-6 md:gap-20 border-t border-dashed border-natural-300 py-10 md:py-20 font-inter">
       <div className="w-full md:w-2/5 !aspect-[0.87/1] md:h-fit !shrink-0 relative md:sticky md:top-10 overflow-hidden">
         <Image
           src={images.blog1}
