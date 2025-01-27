@@ -161,3 +161,38 @@ export const clientServicesListData = [
     title: "Company 4",
   },
 ];
+
+export const customSoftwareDevelopmentServiceData = [
+  {
+    serial: "01",
+    title: "End-to-End Development",
+  },
+  {
+    serial: "02",
+    title: "User-Centric Approach",
+  },
+  {
+    serial: "03",
+    title: "Industry-Specific Expertise",
+  },
+  {
+    serial: "04",
+    title: "Scalable and Flexible Architecture",
+  },
+  {
+    serial: "05",
+    title: "Agile Development Process",
+  },
+  {
+    serial: "06",
+    title: "Cutting-Edge Technologies",
+  },
+  {
+    serial: "07",
+    title: "Ongoing Maintenance and Support",
+  },
+  {
+    serial: "08",
+    title: "High Security Standards",
+  },
+];

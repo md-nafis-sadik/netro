@@ -19,6 +19,7 @@ export { default as companyWhite3 } from "@/public/images/company/white-3.png";
 export { default as companyWhite4 } from "@/public/images/company/white-4.png";
 export { default as companyWhite5 } from "@/public/images/company/white-5.png";
 export { default as companyWhite6 } from "@/public/images/company/white-6.png";
+export { default as cylindricalHalfStar } from "@/public/images/cylindrical-half-star-crystal.png";
 export { default as contact } from "@/public/images/contact.png";
 export { default as diamondCrystal } from "@/public/images/diamond-crystal.png";
 export { default as doubleLCrystal } from "@/public/images/double-l-crystal.png";

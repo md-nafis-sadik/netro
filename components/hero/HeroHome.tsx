@@ -28,7 +28,7 @@ const HeroHome = () => {
           )}
         >
           <ZRotationText text="DESIGN" delay={0.5} />
-          <p className="flex">
+          <p className="flex flex-row items-end">
             <ZRotationText text="DEVEL" delay={0.75} />
             <BallBounceText
               className={cn(

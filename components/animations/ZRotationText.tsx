@@ -33,8 +33,21 @@ const ZRotationText = ({ text, delay = 0, className }: ZRotationTextProps) => {
       ));
     };
 
+    const originalText = originalRef.current;
     const originalChars = originalRef.current.children;
     const cloneChars = cloneRef.current.children;
+
+    // Set initial states
+    gsap.set(originalText, {
+      opacity: 1, // Start visible
+    });
+
+    // Set initial positions
+    gsap.set(cloneChars, {
+      rotationX: -90,
+      opacity: 0,
+      transformOrigin: "50% 50% -50",
+    });
 
     const tl = gsap.timeline({
       scrollTrigger: {
@@ -43,13 +56,6 @@ const ZRotationText = ({ text, delay = 0, className }: ZRotationTextProps) => {
         toggleActions: "play none none reverse",
       },
       delay,
-    });
-
-    // Set initial positions
-    gsap.set(cloneChars, {
-      rotationX: -90,
-      opacity: 0,
-      transformOrigin: "50% 50% -50",
     });
 
     // Animation sequence
@@ -104,31 +110,36 @@ const ZRotationText = ({ text, delay = 0, className }: ZRotationTextProps) => {
   }, [text, delay]);
 
   return (
-    <div ref={containerRef} className="relative w-fit whitespace-nowrap">
+    <div
+      ref={containerRef}
+      className={cn("relative w-fit whitespace-nowrap", className)}
+    >
       <div
         ref={originalRef}
-        className={cn(
-          "relative [&>span]:inline-block font-scoutcond font-bold uppercase leading-[0.8]",
-          className
-        )}
+        className="relative whitespace-nowrap"
         style={{ perspective: "600px" }}
       >
         {text.split("").map((char, i) => (
-          <span key={i} className="text-gray-700">
+          <span
+            key={i}
+            className="inline-block text-gray-500"
+            style={{ display: "inline-block", whiteSpace: "pre" }}
+          >
             {char}
           </span>
         ))}
       </div>
       <div
         ref={cloneRef}
-        className={cn(
-          "absolute top-0 left-0 [&>span]:inline-block font-scoutcond font-bold uppercase leading-[0.8]",
-          className
-        )}
+        className="absolute top-0 left-0 whitespace-nowrap"
         style={{ perspective: "600px" }}
       >
         {text.split("").map((char, i) => (
-          <span key={i} className="hero-text-gradient">
+          <span
+            key={i}
+            className="hero-text-gradient inline-block opacity-0"
+            style={{ display: "inline-block", whiteSpace: "pre" }}
+          >
             {char}
           </span>
         ))}
