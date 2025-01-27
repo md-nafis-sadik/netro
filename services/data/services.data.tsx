@@ -43,3 +43,41 @@ export const uxUiServicesData = [
     title: "Brand Experience Design",
   },
 ];
+
+export const productAnimationServiceData = [
+  {
+    serial: "01",
+    title: "3D Product Visualization",
+  },
+  {
+    serial: "02",
+    title: "360° Product Animations",
+  },
+  {
+    serial: "03",
+    title: "Interactive 3D Animations",
+  },
+  {
+    serial: "04",
+    title: "3D Rendering for Marketing",
+  },
+];
+
+export const saasDevelopmentServiceData = [
+  {
+    serial: "01",
+    title: "Web Application Development",
+  },
+  {
+    serial: "02",
+    title: "Mobile Application Development",
+  },
+  {
+    serial: "03",
+    title: "Enterprise Software Solutions",
+  },
+  {
+    serial: "04",
+    title: "SaaS Development",
+  },
+];

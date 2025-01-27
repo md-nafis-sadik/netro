@@ -1,11 +1,10 @@
-import React from "react";
+import { images } from "@/services";
+import Image from "next/image";
 import ArrowLineupButton from "../ui/arrow-lineup-button";
 import colors from "@/lib/colors";
-import { uxUiServicesData } from "@/services/data";
-import Image from "next/image";
-import { images } from "@/services";
+import { saasDevelopmentServiceData, uxUiServicesData } from "@/services/data";
 
-const UXUIService = () => {
+const SaasDevelopmentService = () => {
   return (
     <section className="flex flex-col md:flex-row-reverse gap-6 md:gap-20 border-t border-dashed border-natural-300 py-10 md:py-20 font-inter">
       <div className="w-full md:w-2/5 !aspect-[0.87/1] md:h-fit !shrink-0 relative md:sticky md:top-10 overflow-hidden">
@@ -18,17 +17,18 @@ const UXUIService = () => {
 
       <div className="w-full md:w-3/5 flex-col gap-4 md:gap-6">
         <p className="font-scout-cond text-[48px] lg:text-[96px] font-bold !leading-none text-text-900 uppercase">
-          UXUI Design
+          SaaS <br /> Development & SQA
         </p>
 
         <p className="text-sm lg:text-2xl font-normal !leading-[1.4] text-text-700 mt-4 md:mt-6">
-          We design intuitive, engaging, and stunning interfaces that blend
-          functionality and aesthetics to elevate your brand and enhance user
-          experience.
+          We specialize in SaaS development, delivering scalable, secure, and
+          efficient software solutions tailored to your business needs. Coupled
+          with robust Software Quality Assurance (SQA), we ensure seamless
+          performance, reliability, and user satisfaction at every stage.
         </p>
 
         <div className="flex flex-col mt-4 md:mt-6">
-          {uxUiServicesData.map(({ serial, title }, index) => (
+          {saasDevelopmentServiceData.map(({ serial, title }, index) => (
             <div
               className="flex flex-row items-center gap-6 lg:gap-12 py-4 lg:py-8"
               key={index}
@@ -52,4 +52,4 @@ const UXUIService = () => {
   );
 };
 
-export default UXUIService;
+export default SaasDevelopmentService;

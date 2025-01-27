@@ -45,7 +45,7 @@ const ArrowLineupButton = React.forwardRef<
           {/* Text */}
           <span
             className={cn(
-              "relative group-hover:-translate-x-6 transition-transform duration-300",
+              "relative group-hover:-translate-x-6 transition-transform duration-300 font-inter text-base font-bold text-text-900 !leading-[1.1]",
               textClassName
             )}
           >
