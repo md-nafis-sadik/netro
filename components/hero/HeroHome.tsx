@@ -23,7 +23,7 @@ const HeroHome = () => {
         {/* TITLES */}
         <div
           className={cn(
-            "hero-text-gradient text-[66px] lg:text-[96px] uppercase font-bold !leading-[0.8] font-scout-cond text-center lg:text-start"
+            "hero-text-gradient text-[66px] lg:text-[96px] uppercase font-bold !leading-[0.8] font-scoutcond text-center lg:text-start"
           )}
         >
           {/* <ZRotationText text="DESIGN" delay={0.5} /> */}

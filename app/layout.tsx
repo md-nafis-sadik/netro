@@ -30,7 +30,7 @@ const RootLayout = ({
           yesevaOne.variable,
           scoutCond.variable,
           scout.variable,
-          "font-poppins bg-white min-h-screen text-neutral-700 relative"
+          "bg-white min-h-screen text-neutral-700 relative"
         )}
       >
         <Navbar />

@@ -13,7 +13,6 @@ export default {
         inter: ["var(--font-inter)"],
         bonbon: ["var(--font-bonbon)"],
         "yeseva-one": ["var(--font-yeseva-one)"],
-        "scout-cond": ["var(--font-scout-one)"],
         poppins: ["var(--font-poppins)"],
         scoutcond: ["var(--font-scout-one)"],
       },

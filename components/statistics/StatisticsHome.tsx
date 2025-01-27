@@ -22,7 +22,7 @@ const StatisticsHome = () => {
             >
               <p
                 className={cn(
-                  "text-[54px] md:text-6xl lg:text-7xl xl:text-[128px] font-bold !leading-[0.9] uppercase font-scout-cond"
+                  "text-[54px] md:text-6xl lg:text-7xl xl:text-[128px] font-bold !leading-[0.9] uppercase font-scoutcond"
                 )}
                 style={{ color: color }}
               >

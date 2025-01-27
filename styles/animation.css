@@ -8,7 +8,7 @@
   background: #6455ff;
 }
 
-.animate-gradient {
+.btn-animate-gradient {
   animation: gradientAnimation 3s ease alternate infinite;
 }
 

@@ -16,7 +16,7 @@ const ProductAnimationService = () => {
       </div>
 
       <div className="w-full md:w-3/5 flex-col gap-4 md:gap-6">
-        <p className="font-scout-cond text-[48px] lg:text-[96px] font-bold !leading-none text-text-900 uppercase">
+        <p className="font-scoutcond text-[48px] lg:text-[96px] font-bold !leading-none text-text-900 uppercase">
           3D Product Animation
         </p>
 

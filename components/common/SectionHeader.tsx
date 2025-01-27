@@ -79,7 +79,7 @@ const SectionHeader = ({ dark, lite, text, className }: IFHeader) => {
     <div
       ref={containerRef}
       className={cn(
-        "text-5xl md:text-[128px] font-bold !leading-[0.9] uppercase text-center font-scout-cond",
+        "text-5xl md:text-[128px] font-bold !leading-[0.9] uppercase text-center font-scoutcond",
         dark && "text-black",
         lite && "text-white",
         className

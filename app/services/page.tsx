@@ -1,4 +1,5 @@
 import SectionHeader from "@/components/common/SectionHeader";
+import ClientServiceList from "@/components/services/ClientServiceList";
 import ProductAnimationService from "@/components/services/ProductAnimationService";
 import SaasDevelopmentService from "@/components/services/SaasDevelopmentService";
 import ServiceStrengthAreas from "@/components/services/ServiceStrengthAreas";
@@ -7,8 +8,8 @@ import UXUIService from "@/components/services/UXUIService";
 
 const ServicePage = () => {
   return (
-    <main className="py-10 md:py-[100px]">
-      <div className="containerX">
+    <main className="relative">
+      <div className="containerX py-10 md:py-[100px]">
         <SectionHeader
           dark
           text="What We Do"
@@ -23,6 +24,7 @@ const ServicePage = () => {
       <ProductAnimationService />
       <SaasDevelopmentService />
       <ServiceStrengthAreas />
+      <ClientServiceList />
     </main>
   );
 };

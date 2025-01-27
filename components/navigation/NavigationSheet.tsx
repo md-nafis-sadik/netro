@@ -40,7 +40,7 @@ const NavigationSheet: FC<IFNavigationSheetProps> = ({
             <CrossIcon color={colors.white} className="!h-5 !w-5 !shrink-0" />
             <span
               className={cn(
-                "text-white font-scout-cond text-lg font-bold uppercase !leading-[0.9] group-hover:text-white transition_common"
+                "text-white font-scoutcond text-lg font-bold uppercase !leading-[0.9] group-hover:text-white transition_common"
               )}
             >
               Close
@@ -71,7 +71,7 @@ const NavigationSheet: FC<IFNavigationSheetProps> = ({
                     pathname === routes.homepage.link
                       ? "font-bold"
                       : "font-normal",
-                    "text-white text-[28px] !leading-[1.2] relative z-[2] font-scout-cond uppercase"
+                    "text-white text-[28px] !leading-[1.2] relative z-[2] font-scoutcond uppercase"
                   )}
                 >
                   {name}

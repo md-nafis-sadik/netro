@@ -17,7 +17,7 @@ const Footer = () => {
           <div className="col-span-2 md:col-span-3 flex items-center sm:items-start flex-col">
             <p
               className={cn(
-                "footer_el_title text-center sm:text-start font-scout-cond"
+                "footer_el_title text-center sm:text-start font-scoutcond"
               )}
             >
               {footerData.inquiries.title}
@@ -47,7 +47,7 @@ const Footer = () => {
           <div className="col-span-2 flex items-center sm:items-start flex-col">
             <p
               className={cn(
-                "footer_el_title text-center sm:text-start font-scout-cond"
+                "footer_el_title text-center sm:text-start font-scoutcond"
               )}
             >
               {footerData.companyInfo.title}
@@ -72,7 +72,7 @@ const Footer = () => {
           <div className="col-span-2 flex items-center sm:items-start flex-col">
             <p
               className={cn(
-                "footer_el_title text-center sm:text-start font-scout-cond"
+                "footer_el_title text-center sm:text-start font-scoutcond"
               )}
             >
               {footerData.services.title}
@@ -97,7 +97,7 @@ const Footer = () => {
           <div className="col-span-2 flex items-center sm:items-start flex-col">
             <p
               className={cn(
-                "footer_el_title text-center sm:text-start font-scout-cond"
+                "footer_el_title text-center sm:text-start font-scoutcond"
               )}
             >
               {footerData.support.title}
@@ -122,7 +122,7 @@ const Footer = () => {
           <div className="col-span-2 flex items-center sm:items-start flex-col">
             <p
               className={cn(
-                "footer_el_title text-center sm:text-start font-scout-cond"
+                "footer_el_title text-center sm:text-start font-scoutcond"
               )}
             >
               {footerData.resources.title}

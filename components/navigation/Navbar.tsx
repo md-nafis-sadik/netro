@@ -145,7 +145,7 @@ const Navbar: FC = () => {
                 pathname === routes.homepage.link
                   ? "text-white"
                   : "text-text-900",
-                "font-scout-cond text-lg font-bold text-white uppercase !leading-[0.9] group-hover:text-white transition_common"
+                "font-scoutcond text-lg font-bold text-white uppercase !leading-[0.9] group-hover:text-white transition_common"
               )}
             >
               Menu
