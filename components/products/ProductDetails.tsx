@@ -1,5 +1,12 @@
 import { images } from "@/services";
-import { ArrowLongTailIcon, ReactIcon } from "@/services/assets/svgs";
+import {
+  ArrowLongTailIcon,
+  ExclemetionIcon,
+  FileListIcon,
+  ReactIcon,
+  UserIcon,
+} from "@/services/assets/svgs";
+import Image from "next/image";
 import { Button } from "../ui/button";
 import ProductsGallery from "./ProductsGallery";
 
@@ -14,6 +21,56 @@ function ProductDetails({ imageIndex = 0 }: { imageIndex: number }) {
     ],
     description:
       "JazakAllah is the ultimate app for muslims, with Iftar Timings, Dua, Hadis, Azkar, Al-Quran, Tasbih Counting, Qibla Compass, Mosque Locator, Daily Prayer Notification, Islamic Calender, Makka Live, Islamic Wallpapers, Zakat Calculator, Islamic AI Chat Bot, Islamic Baby Name Generator and progress tracking. Stay connected to your faith, deepen your spiritual practice.",
+    features: [
+      "Tasbih Counter",
+      "Iftar Timings",
+      "Dua",
+      "Hadis",
+      "Azkar",
+      "Al – Quran",
+      "Qibla Compass",
+      "Islamic Calender",
+      "Mosque Locator",
+      "Makka Live",
+      "Daily Prayer Notification",
+      "Islamic Wallpapers",
+      "Zakat Calculator",
+      "Islamic Baby Name Generator",
+      "Prayer Timings",
+      "Islamic AI Chat Bot",
+      "MultiLingual (Arabic, Bangla, English, French, Hindi, Tuskish, Urdu)",
+    ],
+    notes: [
+      "Java 8 and 17 (JDK)",
+      "Flutter 3.19",
+      "Dart version 3.3.0",
+      "Google Maps API",
+      "Google Places API",
+      "One Signal",
+      "Firebase",
+      "RevenueCat",
+      "Chat GPT API",
+      "Google Play Store For In App Purchase",
+      "Node.js 19.9.0",
+      "Npm 10.2.4",
+      "Php 8.2",
+      "Domain & Hosting",
+      "Terminal Enabled on CPanel",
+    ],
+    apiKeys: {
+      title: "Islamic AI needs OpenAI API Key",
+      infos: [
+        "The App comes with a customized backend and Admin Panel. Credentials has been shared.",
+        "Flutter Code. iOS App needs to run",
+        "on Mac device with XCode (Expertise required)",
+        "Ad Network, Payment Methods are subject to setup yourself.",
+        "Installation is not included in 6 months support.",
+      ],
+    },
+    auth: {
+      email: "test@netrocreative.com",
+      password: "test1234",
+    },
   };
 
   return (
@@ -29,6 +86,132 @@ function ProductDetails({ imageIndex = 0 }: { imageIndex: number }) {
             <p className="text-sm sm:text-base md:text-lg text-text-700 mt-4 sm:mt-6">
               {data?.description}
             </p>
+            <div className="flex flex-col gap-6 sm:gap-10 md:gap-12 mt-6 sm:mt-10 md:mt-12">
+              <div>
+                <h4 className="titleLg">CORE FEATURES</h4>
+                <ul className="mt-4 sm:mt-6">
+                  {data?.features?.map((feature, index) => (
+                    <li
+                      className="flex items-center gap-6 sm:gap-10 md:gap-12"
+                      key={index}
+                    >
+                      <span className="text-base sm:text-lg text-text-200 font-semibold">
+                        01
+                      </span>
+                      <span className="flex-1  py-3 border-b border-dashed border-natural-300 text-sm sm:text-base md:text-lg text-text-900">
+                        {feature}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="flex gap-4 px-4 py-6 sm:p-6 bg-secondary-50 border border-dashed border-secondary-950">
+                <ExclemetionIcon className="w-20 h-20 hidden md:block" />
+                <div>
+                  <div className="flex items-center gap-4">
+                    <ExclemetionIcon className="w-10 h-10 sm:w-16 sm:h-16 md:hidden" />
+                    <h4 className="titleMd md:text-4xl">
+                      {data?.apiKeys?.title}
+                    </h4>
+                  </div>
+
+                  <ul className="list-disc mt-4 pl-4">
+                    {data?.apiKeys?.infos?.map((info, index) => (
+                      <li
+                        className="text-sm sm:text-base text-text-500"
+                        key={index}
+                      >
+                        {info}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+              <div className="flex gap-4 px-4 py-6 sm:p-6 border border-dashed border-natural-300">
+                <UserIcon className="w-20 h-20 hidden md:block" />
+                <div>
+                  <div className="flex items-center gap-4">
+                    <UserIcon className="w-10 h-10 sm:w-16 sm:h-16 md:hidden" />
+                    <h4 className="titleMd md:text-4xl">Admin Login</h4>
+                  </div>
+
+                  <ul className="list-disc mt-4 pl-4">
+                    <li className="text-sm sm:text-base text-text-500">
+                      E-mail: {data?.auth?.email}
+                    </li>
+                    <li className="text-sm sm:text-base text-text-500">
+                      Password: {data?.auth?.password}
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div className="flex gap-4 px-4 py-6 sm:p-6 border border-dashed border-natural-300">
+                <FileListIcon className="w-20 h-20 hidden md:block" />
+                <div>
+                  <div className="flex items-center gap-4">
+                    <FileListIcon className="w-10 h-10 sm:w-16 sm:h-16 md:hidden" />
+                    <h4 className="titleMd md:text-4xl">Documentation</h4>
+                  </div>
+
+                  <ul className="list-disc mt-4 pl-4">
+                    <li className="text-sm sm:text-base text-text-500 ">
+                      <span>Check The Product Documentation:</span>{" "}
+                      <span className="font-bold text-text-900">
+                        Google Drive Link
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <p className="text-sm sm:text-base md:text-lg text-text-700">
+                To check out all the features and the smothness of the app and
+                UI, download the app now!
+              </p>
+              <div className="w-full flex flex-col sm:flex-row gap-3 flex-wrap">
+                <button
+                  type="button"
+                  className="relative pl-4 pr-6 py-3 bg-main-500 flex items-center gap-4 w-full sm:max-w-max"
+                >
+                  <Image
+                    src={images.download}
+                    alt="Download"
+                    width={200}
+                    height={200}
+                    className="w-8"
+                  />
+                  <p className="text-2xl font-inter font-normal text-white leading-[110%]">
+                    DOWNLOAD <span className="font-bold">APP</span>
+                  </p>
+                </button>
+                <button
+                  type="button"
+                  className="relative pl-4 pr-6 py-3 bg-main-100 border border-main-500 gap-4 w-full max-w-[285px]text-2xl font-inter font-normal text-text-900 leading-[110%] text-center sm:max-w-[285px] h-14"
+                >
+                  DOWNLOAD
+                </button>
+              </div>
+              <div>
+                <h4 className="titleLg">Note</h4>
+                <p className="text-sm sm:text-base md:text-lg text-text-700 mt-2 sm:mt-3 md:mt-4 mb-4">
+                  There are a few things you need for this project to work.
+                </p>
+                <ul className="mt-4 sm:mt-6">
+                  {data?.notes?.map((feature, index) => (
+                    <li
+                      className="flex items-center gap-6 sm:gap-10 md:gap-12"
+                      key={index}
+                    >
+                      <span className="text-base sm:text-lg text-text-200 font-semibold">
+                        01
+                      </span>
+                      <span className="flex-1  py-3 border-b border-dashed border-natural-300 text-sm sm:text-base md:text-lg text-text-900">
+                        {feature}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
           </div>
           <div className="w-full md:max-w-[462px]">
             <ProductsGallery

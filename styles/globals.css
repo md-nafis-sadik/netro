@@ -43,6 +43,10 @@ body {
     @apply text-5xl sm:text-7xl md:text-9xl leading-[90%] font-scoutcond font-bold uppercase;
   }
 
+  .titleLg {
+    @apply text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold font-scoutcond leading-[100%] uppercase;
+  }
+
   .titleMd {
     @apply text-2xl sm:text-3xl md:text-5xl font-bold font-scoutcond leading-[100%] uppercase;
   }
