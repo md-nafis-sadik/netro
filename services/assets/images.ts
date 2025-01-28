@@ -44,3 +44,10 @@ export { default as team2 } from "@/public/images/team/2.png";
 export { default as team3 } from "@/public/images/team/3.png";
 export { default as team4 } from "@/public/images/team/4.png";
 export { default as termc } from "@/public/images/termc.png";
+export { default as career1 } from "@/public/images/career/career-1.png";
+export { default as career2 } from "@/public/images/career/career-2.png";
+export { default as career3 } from "@/public/images/career/career-3.png";
+export { default as career4 } from "@/public/images/career/career-4.png";
+export { default as career5 } from "@/public/images/career/career-5.png";
+export { default as career6 } from "@/public/images/career/career-6.png";
+

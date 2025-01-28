@@ -1,9 +1,8 @@
-import * as React from "react";
+import { cn } from "@/lib/utils";
+import "@/styles/animation.css";
 import { Slot } from "@radix-ui/react-slot";
 import { cva, type VariantProps } from "class-variance-authority";
-import "@/styles/animation.css";
-import { cn } from "@/lib/utils";
-import { inter } from "@/lib/fonts";
+import * as React from "react";
 
 const buttonVariants = cva(
   "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-base font-bold !leading-[1.1] rounded-full transition_common hover:-translate-y-[2px]",
