@@ -21,18 +21,6 @@ const ZRotationText = ({ text, delay = 0, className }: ZRotationTextProps) => {
     if (!containerRef.current || !originalRef.current || !cloneRef.current)
       return;
 
-    const splitText = (text: string) => {
-      return text.split("").map((char, i) => (
-        <span
-          key={i}
-          className="inline-block"
-          style={{ transformOrigin: "50% 50% -50px" }}
-        >
-          {char}
-        </span>
-      ));
-    };
-
     const originalText = originalRef.current;
     const originalChars = originalRef.current.children;
     const cloneChars = cloneRef.current.children;
