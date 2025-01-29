@@ -4,9 +4,9 @@ import PageThumbnail from "@/components/shared/PageThumbnail";
 async function PortfolioPage({
   searchParams,
 }: {
-  searchParams: Promise<{ filteredBy?: string }>;
+  searchParams: Promise<{ filtered_by?: string }>;
 }) {
-  const query = (await searchParams)?.filteredBy || "All";
+  const query = (await searchParams)?.filtered_by || "All";
 
   return (
     <main className="relative">

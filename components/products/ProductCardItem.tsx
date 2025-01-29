@@ -7,6 +7,8 @@ function ProductCardItem({
   item,
   titleClass,
   descriptionClass,
+  className = "",
+  wrapper = "",
 }: {
   item: {
     _id?: string;
@@ -17,10 +19,20 @@ function ProductCardItem({
   };
   titleClass?: string;
   descriptionClass?: string;
+  className?: string;
+  wrapper?: string;
 }) {
   return (
-    <Link href={`/products/${item?._id}`} className="w-full group">
-      <div className="h-[438px] sm:h-[500px] md:h-[552px]  relative cursor-pointer select-none">
+    <Link
+      href={`/products/${item?._id}`}
+      className={cn("w-full group", className)}
+    >
+      <div
+        className={cn(
+          "h-[438px] sm:h-[500px] md:h-[552px] relative cursor-pointer select-none",
+          wrapper
+        )}
+      >
         <Image
           src={item?.imageUrl || images.blog1}
           alt="product"

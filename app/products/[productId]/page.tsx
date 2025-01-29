@@ -1,3 +1,4 @@
+import OtherProducts from "@/components/products/OtherProducts";
 import ProductDetails from "@/components/products/ProductDetails";
 import Breadcrumbs from "@/components/shared/Breadcrumbs";
 
@@ -23,6 +24,7 @@ async function SingleProductDetails({
         </div>
       </div>
       <ProductDetails imageIndex={Number(image_index || 0)} />
+      <OtherProducts />
     </>
   );
 }

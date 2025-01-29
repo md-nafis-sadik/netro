@@ -19,7 +19,7 @@ function ProductFilterItems({ query = "All" }: { query: string }) {
 
   const handleTabClick = (tabName: string) => {
     const query = new URLSearchParams();
-    query.set("filteredBy", tabName);
+    query.set("filtered_by", tabName);
     const newPath = `?${query.toString()}`;
     router.push(newPath);
   };
