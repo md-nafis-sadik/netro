@@ -125,6 +125,8 @@ export default {
       backgroundImage: {
         gradientGreen:
           "linear-gradient(90deg, #483BDC 30%, #FFA8A9 70.5%, #82D3A4 100%)",
+        blandGradient:
+          "linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, #002F25 100%)",
       },
     },
   },

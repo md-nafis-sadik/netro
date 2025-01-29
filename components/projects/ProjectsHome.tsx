@@ -16,20 +16,9 @@ const ProjectsHome = () => {
         <SectionHeader lite text="for Themselves" />
 
         <div className="flex flex-col gap-6 md:gap-10 mt-10 md:mt-20 w-full">
-          {projectsData.map(
-            ({ name, description, tagList, image, icon }, index) => (
-              <ProjectCard
-                name={name}
-                bgImage={image}
-                description={description}
-                tagList={tagList}
-                top={(index + 1) * 50}
-                key={index}
-                index={index}
-                icon={icon}
-              />
-            )
-          )}
+          {projectsData.map((item, index) => (
+            <ProjectCard item={item} top={(index + 1) * 50} key={index} />
+          ))}
         </div>
       </div>
     </section>

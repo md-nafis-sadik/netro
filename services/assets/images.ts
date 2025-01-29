@@ -36,6 +36,10 @@ export { default as loopAbstractCrystal } from "@/public/images/loop-abstract-cr
 export { default as officeImage1 } from "@/public/images/office-image/1.png";
 export { default as officeImage2 } from "@/public/images/office-image/2.png";
 export { default as officeImage3 } from "@/public/images/office-image/3.png";
+export { default as project3 } from "@/public/images/project/project-3.png";
+export { default as project4 } from "@/public/images/project/project-4.png";
+export { default as project5 } from "@/public/images/project/project-5.png";
+export { default as project6 } from "@/public/images/project/project-6.png";
 export { default as telzenIcon } from "@/public/images/project/telzen-icon.png";
 export { default as projectBannerTelzen } from "@/public/images/project/telzen.webp";
 export { default as yoowifiIcon } from "@/public/images/project/yoowifi-icon.png";
@@ -51,3 +55,4 @@ export { default as team2 } from "@/public/images/team/2.png";
 export { default as team3 } from "@/public/images/team/3.png";
 export { default as team4 } from "@/public/images/team/4.png";
 export { default as termc } from "@/public/images/termc.png";
+export { default as video } from "@/public/images/video.png";

@@ -1,3 +1,4 @@
+import colors from "@/lib/colors";
 import { images } from "@/services";
 import {
   BehanceIcon,
@@ -8,10 +9,8 @@ import {
   LinkedinOutlinedIcon,
   TelegramOutlinedIcon,
   TwitterIcon,
-  WhatsappOutlinedIcon,
   YoutubeIcon,
 } from "@/services/assets/svgs";
-import colors from "@/lib/colors";
 
 export const marqueeHomeData = [
   {
@@ -55,6 +54,30 @@ export const projectsData = [
       "Empowering brands with user-focused designs and seamless development.",
     tagList: "Case Study, Mobile App, Telco, Design, Development",
     image: images.projectBannerYooWifi,
+    icon: images.yoowifiIcon,
+  },
+  {
+    name: "Yoowifi",
+    description:
+      "Empowering brands with user-focused designs and seamless development.",
+    tagList: "Case Study, Mobile App, Telco, Design, Development",
+    image: images.blog1,
+    icon: images.yoowifiIcon,
+  },
+  {
+    name: "Yoowifi",
+    description:
+      "Empowering brands with user-focused designs and seamless development.",
+    tagList: "Case Study, Mobile App, Telco, Design, Development",
+    image: images.blog2,
+    icon: images.yoowifiIcon,
+  },
+  {
+    name: "Yoowifi",
+    description:
+      "Empowering brands with user-focused designs and seamless development.",
+    tagList: "Case Study, Mobile App, Telco, Design, Development",
+    image: images.blog3,
     icon: images.yoowifiIcon,
   },
 ];
