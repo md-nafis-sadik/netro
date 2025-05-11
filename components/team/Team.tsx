@@ -1,11 +1,11 @@
 "use client";
-import SectionHeader from "@/components/common/SectionHeader";
 import SectionSubHeader from "@/components/common/SectionSubHeader";
 import useEmblaCarousel from "embla-carousel-react";
 import TeamCard from "./TeamCard";
 import { teamData } from "@/services/data";
 import ArrowLineupButton from "@/components/ui/arrow-lineup-button";
 import colors from "@/lib/colors";
+import SectionHeader from "../common/SectionHeader";
 
 const Team = () => {
   const options = { align: "start", loop: false } as const;
@@ -14,7 +14,10 @@ const Team = () => {
   return (
     <section className="flex_center flex-col mt-20 mb-[120px] select-none">
       <SectionSubHeader text="Our Team" />
-      <SectionHeader dark text="Meet the experts" className="mt-6" />
+
+      <SectionHeader className="home_team_header mt-6">
+        Meet the experts
+      </SectionHeader>
 
       <div className="containerX w-full overflow-x-hidden overflow-y-visible mt-5 md:mt-10">
         <div className="w-full" ref={emblaRef}>

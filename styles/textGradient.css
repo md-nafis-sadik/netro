@@ -1,0 +1,113 @@
+/* HOME */
+.home_projects_header {
+  background: linear-gradient(
+    91deg,
+    #676767 14.11%,
+    #909090 37.39%,
+    #fff 52.7%,
+    #676767 83.6%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.home_services_header {
+  background: linear-gradient(
+    90deg,
+    #676767 0.06%,
+    #000 20.04%,
+    #000 39.42%,
+    #676767 59.7%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.home_products_header {
+  background: linear-gradient(
+    90deg,
+    #676767 24.89%,
+    #909090 43.02%,
+    #fff 52.64%,
+    #676767 79.02%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.home_pricing_header {
+  background: linear-gradient(
+    90deg,
+    #676767 0.06%,
+    #fff 20.04%,
+    #fff 39.42%,
+    #676767 59.7%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.home_testimonial_header {
+  background: linear-gradient(90deg, #000 0.06%, #929292 20.04%, #292929 59.7%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.home_statistics_header {
+  background: linear-gradient(
+    90deg,
+    #676767 0.06%,
+    #fff 20.04%,
+    #fff 39.42%,
+    #676767 59.7%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.home_team_header {
+  background: linear-gradient(
+    90deg,
+    #676767 12.05%,
+    #676767 35.72%,
+    #000 53.18%,
+    #676767 68.21%,
+    #676767 89.06%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.home_faq_header {
+  background: linear-gradient(
+    90deg,
+    #676767 0.06%,
+    #fff 20.04%,
+    #fff 39.42%,
+    #676767 59.7%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.home_journal_header {
+  background: linear-gradient(
+    90deg,
+    #676767 12.05%,
+    #676767 35.72%,
+    #000 53.18%,
+    #676767 68.21%,
+    #676767 89.06%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

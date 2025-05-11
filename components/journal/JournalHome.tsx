@@ -1,11 +1,11 @@
 "use client";
-import SectionHeader from "@/components/common/SectionHeader";
 import SectionSubHeader from "@/components/common/SectionSubHeader";
 import useEmblaCarousel from "embla-carousel-react";
 import JournalCard from "./JournalCard";
 import { journalData } from "@/services/data";
 import ArrowLineupButton from "@/components/ui/arrow-lineup-button";
 import colors from "@/lib/colors";
+import SectionHeader from "../common/SectionHeader";
 
 const OurJournal = () => {
   const options = { align: "start", loop: false } as const;
@@ -14,7 +14,9 @@ const OurJournal = () => {
   return (
     <section className="bg-white flex_center flex-col my-20 w-full">
       <SectionSubHeader text="Our Journal" />
-      <SectionHeader dark text="Latest Insights" className="mt-6" />
+      <SectionHeader className="home_journal_header mt-6">
+        Latest Insights
+      </SectionHeader>
 
       <div className="containerX w-full overflow-x-hidden overflow-y-visible mt-5 md:mt-10">
         <div className="w-full" ref={emblaRef}>

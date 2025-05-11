@@ -1,5 +1,5 @@
 import { coreStrengthsServicesData } from "@/services/data";
-import SectionHeader from "../common/SectionHeader";
+import SectionHeaderAnimated from "../common/SectionHeaderAnimated";
 import { cn } from "@/lib/utils";
 import { Fragment } from "react";
 
@@ -7,7 +7,7 @@ const ServiceStrengthAreas = () => {
   return (
     <section className="bg-black py-10 md:py-[120px]">
       <div className="containerX">
-        <SectionHeader text="Our Core Strengths" lite />
+        <SectionHeaderAnimated text="Our Core Strengths" lite />
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-20 mt-10 md:mt-20">
           {coreStrengthsServicesData.map(({ serial, title, text }, index) => (

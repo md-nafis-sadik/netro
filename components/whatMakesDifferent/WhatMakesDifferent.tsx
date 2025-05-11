@@ -1,4 +1,4 @@
-import SectionHeader from "@/components/common/SectionHeader";
+import SectionHeader from "@/components/common/SectionHeaderAnimated";
 import { inter, scoutCond } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
 import { whatMakesDifferentData } from "@/services/data";

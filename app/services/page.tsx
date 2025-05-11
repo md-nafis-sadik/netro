@@ -1,4 +1,4 @@
-import SectionHeader from "@/components/common/SectionHeader";
+import SectionHeaderAnimated from "@/components/common/SectionHeaderAnimated";
 import ClientServiceList from "@/components/services/ClientServiceList";
 import ProductAnimationService from "@/components/services/ProductAnimationService";
 import SaasDevelopmentService from "@/components/services/SaasDevelopmentService";
@@ -10,7 +10,7 @@ const ServicePage = () => {
   return (
     <main className="relative">
       <div className="containerX py-10 md:py-[100px]">
-        <SectionHeader
+        <SectionHeaderAnimated
           dark
           text="What We Do"
           className="text-center md:text-start"

@@ -1,5 +1,4 @@
-import SectionHeader from "@/components/common/SectionHeader";
-import { inter, scoutCond } from "@/lib/fonts";
+import SectionHeaderAnimated from "@/components/common/SectionHeaderAnimated";
 import { cn } from "@/lib/utils";
 import { images } from "@/services";
 import Image from "next/image";
@@ -8,7 +7,7 @@ const HeroAbout = () => {
   return (
     <section className="">
       <div className="containerX my-20">
-        <SectionHeader
+        <SectionHeaderAnimated
           dark
           text="The Story"
           className="text-center md:text-start"

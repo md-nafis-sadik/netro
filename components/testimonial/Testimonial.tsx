@@ -1,5 +1,5 @@
 "use client";
-import SectionHeader from "@/components/common/SectionHeader";
+import SectionHeaderAnimated from "@/components/common/SectionHeaderAnimated";
 import TestimonialCard from "./TestimonialCard";
 import useEmblaCarousel from "embla-carousel-react";
 import { cn } from "@/lib/utils";
@@ -11,6 +11,7 @@ import {
 } from "@/services/assets/svgs";
 import Autoplay from "embla-carousel-autoplay";
 import { testimonialsData } from "@/services/data/shared.data";
+import SectionHeader from "../common/SectionHeader";
 
 const Testimonial = () => {
   const autoplayOptions = { delay: 3000 };
@@ -23,8 +24,9 @@ const Testimonial = () => {
   return (
     <div className="containerX w-full py-20 md:py-[120px] relative">
       <div className="w-fit relative mx-auto h-fit">
-        <SectionHeader dark text="See How We've Made" />
-        <SectionHeader dark text="a Difference" />
+        <SectionHeader className="home_testimonial_header">
+          See How We've Made <br /> a Difference
+        </SectionHeader>
 
         <QuoteStraightIcon className="absolute -top-[20%] -right-[14%] w-[20%] z-[-1] h-auto !shrink-0" />
       </div>

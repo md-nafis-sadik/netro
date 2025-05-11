@@ -1,4 +1,4 @@
-import SectionHeader from "@/components/common/SectionHeader";
+import SectionHeaderAnimated from "@/components/common/SectionHeaderAnimated";
 import SectionSubHeader from "@/components/common/SectionSubHeader";
 import {
   Accordion,
@@ -8,12 +8,16 @@ import {
 } from "@/components/ui/accordion";
 import { cn } from "@/lib/utils";
 import { faqData } from "@/services/data";
+import SectionHeader from "../common/SectionHeader";
 
 const FAQ = () => {
   return (
     <section className="bg-black flex_center flex-col w-full py-20">
       <SectionSubHeader dark text="Frequently asked questions" />
-      <SectionHeader lite text="Common Queries" className="mt-6" />
+
+      <SectionHeader className="home_faq_header mt-6">
+        Common Queries
+      </SectionHeader>
 
       <div className="containerX mt-10 md:mt-20">
         <Accordion

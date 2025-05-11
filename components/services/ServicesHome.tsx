@@ -1,10 +1,10 @@
 "use client";
-import SectionHeader from "@/components/common/SectionHeader";
+import SectionHeaderAnimated from "@/components/common/SectionHeaderAnimated";
 import SectionSubHeader from "@/components/common/SectionSubHeader";
 import ServiceCard from "./ServiceHomeCard";
 import useEmblaCarousel from "embla-carousel-react";
-import { servicesHomeData } from "@/services/data";
 import { images } from "@/services";
+import SectionHeader from "../common/SectionHeader";
 
 const ServicesHome = () => {
   const options = { align: "start", loop: false } as const;
@@ -13,7 +13,9 @@ const ServicesHome = () => {
   return (
     <section className="flex_center flex-col mt-20 mb-[120px]">
       <SectionSubHeader text="Services" />
-      <SectionHeader dark text="Solutions for You" className="mt-6 md:mt-10" />
+      <SectionHeader className="home_services_header">
+        Solutions for You
+      </SectionHeader>
 
       <div className="containerX w-full mt-5 md:mt-10">
         <div className="w-full" ref={emblaRef}>

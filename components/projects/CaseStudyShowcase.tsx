@@ -1,6 +1,6 @@
 "use client";
 import useEmblaCarousel from "embla-carousel-react";
-import SectionHeader from "../common/SectionHeader";
+import SectionHeaderAnimated from "../common/SectionHeaderAnimated";
 import CaseStudyCard from "./CaseStudyCard";
 import ArrowLineupButton from "../ui/arrow-lineup-button";
 import colors from "@/lib/colors";
@@ -11,7 +11,7 @@ const CaseStudyShowcase = () => {
 
   return (
     <section className="bg-black py-10 md:pt-20 md:pb-[120px]">
-      <SectionHeader lite text="Our Proud Creations" />
+      <SectionHeaderAnimated lite text="Our Proud Creations" />
 
       <div className="containerX w-full overflow-x-hidden overflow-y-visible mt-5 md:mt-10">
         <div className="w-full" ref={emblaRef}>

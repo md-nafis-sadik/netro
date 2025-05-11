@@ -1,20 +1,15 @@
-import SectionHeader from "@/components/common/SectionHeader";
 import { GradientButton } from "@/components/ui/gradient-button";
-import { inter } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
 import { ArrowTopRIghtIcon } from "@/services/assets/svgs";
 import { footerData } from "@/services/data";
+import SectionHeader from "../common/SectionHeader";
 
 const LetsTalkHome = () => {
   return (
     <section className="bg-black">
       <div className="containerX py-[60px] md:py-20 flex flex-col lg:flex-row items-center gap-[42px] justify-between">
         <div>
-          <SectionHeader
-            lite
-            text="Let's Talk"
-            className="text-center lg:text-start text-[80px] lg:text-[134px]"
-          />
+          <SectionHeader className="home_faq_header">Let's Talk</SectionHeader>
           <p
             className={cn(
               "font-normal !leading-[1.2] flex items-center justify-start gap-2 md:gap-4 font-inter"

@@ -1,4 +1,4 @@
-import SectionHeader from "@/components/common/SectionHeader";
+import SectionHeaderAnimated from "@/components/common/SectionHeaderAnimated";
 import CaseStudyShowcase from "@/components/projects/CaseStudyShowcase";
 import ClientServiceList from "@/components/services/ClientServiceList";
 import ServiceDetailsContent from "@/components/services/ServiceDetailsContent";
@@ -15,7 +15,7 @@ const ServiceDetailsPage = async ({
   return (
     <main className="relative">
       <div className="containerX py-10 md:py-[100px]">
-        <SectionHeader
+        <SectionHeaderAnimated
           dark
           text="Software Development"
           className="text-center md:text-start"

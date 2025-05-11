@@ -5,7 +5,6 @@ import colors from "@/lib/colors";
 import { images } from "@/services";
 import { ArrowLongTailIcon } from "@/services/assets/svgs";
 import Image from "next/image";
-import TextFadeIn from "../animations/TextFadeIn";
 
 const WorkCultureHome = () => {
   return (
@@ -15,12 +14,11 @@ const WorkCultureHome = () => {
         <div className="flex flex-col w-full md:w-[45%]">
           <SectionSubHeader text="Work Culture" className="w-fit" />
 
-          <TextFadeIn
-            text="Netro Systems fosters innovation collaboration, diversity, and
+          <p className="text-2xl md:text-[40px] font-bold !leading-[1.2] mt-6 md:mt-10">
+            Netro Systems fosters innovation collaboration, diversity, and
             growth, creating impactful software solutions in a vibrant,
-            inclusive culture."
-            className="text-2xl md:text-[40px] font-bold !leading-[1.2] mt-6 md:mt-10"
-          />
+            inclusive culture.
+          </p>
 
           <div className="mt-10 flex items-center gap-2 md:gap-4">
             <Button className="w-fit group">
