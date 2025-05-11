@@ -9,7 +9,9 @@ const LetsTalkHome = () => {
     <section className="bg-black">
       <div className="containerX py-[60px] md:py-20 flex flex-col lg:flex-row items-center gap-[42px] justify-between">
         <div>
-          <SectionHeader className="home_faq_header">Let's Talk</SectionHeader>
+          <SectionHeader className="home_faq_header">
+            Let&apos;s Talk
+          </SectionHeader>
           <p
             className={cn(
               "font-normal !leading-[1.2] flex items-center justify-start gap-2 md:gap-4 font-inter"

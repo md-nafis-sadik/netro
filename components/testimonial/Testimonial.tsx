@@ -25,7 +25,7 @@ const Testimonial = () => {
     <div className="containerX w-full py-20 md:py-[120px] relative">
       <div className="w-fit relative mx-auto h-fit">
         <SectionHeader className="home_testimonial_header">
-          See How We've Made <br /> a Difference
+          See How We&apos;ve Made <br /> a Difference
         </SectionHeader>
 
         <QuoteStraightIcon className="absolute -top-[20%] -right-[14%] w-[20%] z-[-1] h-auto !shrink-0" />
