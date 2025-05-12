@@ -29,7 +29,7 @@ const LetsTalkHome = () => {
           </p>
         </div>
 
-        <form className="rounded-[100px] border border-[#494949] ps-6 py-3 pe-1 md:pe-3 h-[54px] md:h-[70px] flex items-center gap-4 content-bg-gradient-primary">
+        <form className="border border-[#494949] ps-6 py-3 pe-1 md:pe-3 h-[54px] md:h-[70px] flex items-center gap-4 content-bg-gradient-primary !rounded-[100px]">
           <input
             type="email"
             placeholder="Ex: user@website.com"

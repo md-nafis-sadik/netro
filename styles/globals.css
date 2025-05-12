@@ -106,4 +106,18 @@ body {
     border-image-slice: 1;
     transition: all 0.3s ease-in-out;
   }
+
+  .borderGradientCommonWrapper {
+    position: relative;
+    border-radius: 12px; /* your desired radius */
+    padding: 2px; /* border thickness */
+    background: linear-gradient(90deg, #483bdc 0%, #ffa8a9 47%, #82d3a4 100%);
+
+    .borderGradientCommon {
+      position: relative;
+      border-radius: 10px; /* slightly less to fit inside */
+      background: white; /* or whatever bg you want */
+      z-index: 1;
+    }
+  }
 }

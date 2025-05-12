@@ -1,10 +1,10 @@
 "use client";
-import SectionHeaderAnimated from "@/components/common/SectionHeaderAnimated";
 import SectionSubHeader from "@/components/common/SectionSubHeader";
-import ServiceCard from "./ServiceHomeCard";
+import ServiceHomeCard from "./ServiceHomeCard";
 import useEmblaCarousel from "embla-carousel-react";
 import { images } from "@/services";
 import SectionHeader from "../common/SectionHeader";
+import { HoverCardRoot } from "../animations/3DCard";
 
 const ServicesHome = () => {
   const options = { align: "start", loop: false } as const;
@@ -21,7 +21,7 @@ const ServicesHome = () => {
         <div className="w-full" ref={emblaRef}>
           <div className="w-full min-h-fit flex flex-row gap-6 md:gap-10 py-5 md:py-10 pe-4 md:pe-20">
             {/* Why noot looping this? -> Each image has different width */}
-            <ServiceCard
+            <ServiceHomeCard
               title={"Software \nDevelopment"}
               text="Building robust solutions to power your business growth."
               link=""
@@ -31,7 +31,8 @@ const ServicesHome = () => {
                 className: "max-w-[142px] md:max-w-[194px] h-auto",
               }}
             />
-            <ServiceCard
+
+            <ServiceHomeCard
               title={"UXUI \nDesign"}
               text="Designing seamless and intuitive digital experiences."
               link=""
@@ -41,7 +42,7 @@ const ServicesHome = () => {
                 className: "max-w-[96px] md:max-w-[135px] h-auto",
               }}
             />
-            <ServiceCard
+            <ServiceHomeCard
               title={"AI Apps \nCustom LLMs"}
               text="Building intelligent applications that revolutionize user experiences."
               link=""
@@ -51,7 +52,7 @@ const ServicesHome = () => {
                 className: "max-w-[133px] md:max-w-[156px] h-auto",
               }}
             />
-            <ServiceCard
+            <ServiceHomeCard
               title={"Branding \nSolution"}
               text="Building identities that leave a lasting impression."
               link=""
@@ -61,7 +62,7 @@ const ServicesHome = () => {
                 className: "max-w-[136px] md:max-w-[184px] h-auto",
               }}
             />
-            <ServiceCard
+            <ServiceHomeCard
               title={"Server \nMaintenance"}
               text="24/7 server care to prevent downtime and ensure efficiency."
               link=""
