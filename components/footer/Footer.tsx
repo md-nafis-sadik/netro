@@ -1,12 +1,12 @@
-import { inter, scoutCond } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
 import {
   AtTheRateIcon,
   CallIcon,
   DividerFadingDashes,
 } from "@/services/assets/svgs";
-import { footerData } from "@/services/data";
+import { footerData } from "@/services/data/shared.data";
 import Link from "next/link";
+import GoTopButton from "../navigation/GoTopButton";
 
 const Footer = () => {
   return (
@@ -58,7 +58,7 @@ const Footer = () => {
                   <Link
                     href={link.href}
                     className={cn(
-                      "footer_el_text block mb-2 text-center sm:text-start font-inter"
+                      "footer_el_text block mb-2 text-center sm:text-start font-inter hover:text-main-500 transition_common"
                     )}
                   >
                     {link.text}
@@ -83,7 +83,7 @@ const Footer = () => {
                   <Link
                     href={link.href}
                     className={cn(
-                      "footer_el_text block mb-2 text-center sm:text-start font-inter"
+                      "footer_el_text block mb-2 text-center sm:text-start font-inter hover:text-main-500 transition_common"
                     )}
                   >
                     {link.text}
@@ -108,7 +108,7 @@ const Footer = () => {
                   <Link
                     href={link.href}
                     className={cn(
-                      "footer_el_text block mb-2 text-center sm:text-start font-inter"
+                      "footer_el_text block mb-2 text-center sm:text-start font-inter hover:text-main-500 transition_common"
                     )}
                   >
                     {link.text}
@@ -133,7 +133,7 @@ const Footer = () => {
                   <Link
                     href={link.href}
                     className={cn(
-                      "footer_el_text block mb-2 text-center sm:text-start font-inter"
+                      "footer_el_text block mb-2 text-center sm:text-start font-inter hover:text-main-500 transition_common"
                     )}
                   >
                     {link.text}
@@ -141,6 +141,8 @@ const Footer = () => {
                 </li>
               ))}
             </ul>
+
+            <GoTopButton className="mt-4 md:mt-10" />
           </div>
         </div>
 
@@ -155,7 +157,7 @@ const Footer = () => {
         <div className="flex flex-row items-center justify-center flex-wrap gap-[10px] md:gap-3 mt-12">
           {footerData.socialLinks.map(({ href, icon }, index) => (
             <Link
-              className="bg-natural-100 flex_center h-10 w-10 md:h-12 md:w-12 rounded-full hover:bg-natural-300 transition_common"
+              className="bg-natural-100 flex_center h-10 w-10 md:h-12 md:w-12 rounded-full hover:bg-black transition_common group"
               href={href}
               key={index}
             >

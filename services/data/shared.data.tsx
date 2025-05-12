@@ -1,9 +1,18 @@
+import colors from "@/lib/colors";
 import { images } from "../assets";
 import {
+  BehanceIcon,
+  DribbleIcon,
+  FacebookIcon,
+  GithubIcon,
+  InstagramIcon,
   LinkedinOutlinedIcon,
   TelegramOutlinedIcon,
+  TwitterIcon,
+  YoutubeIcon,
   WhatsappOutlinedIcon,
 } from "../assets/svgs";
+import {} from "@/services/assets/svgs";
 
 export const routes = {
   homepage: {
@@ -74,6 +83,148 @@ export const navbarData = [
     link: routes.journal.link,
   },
 ];
+
+export const footerData = {
+  inquiries: {
+    title: "INQUIRIES",
+    address:
+      "290/737 York House Green Lane West, Garstang, Preston, Lancashire, England, PR3 1NJ",
+    phone: "+1 789 567 890",
+    email: "hello@netrosystems.com",
+  },
+  companyInfo: {
+    title: "COMPANY INFO",
+    links: [
+      { text: "About Us", href: "/about-us" },
+      { text: "Join Our Team", href: "/careers" },
+      { text: "Our Process", href: "/process" },
+      { text: "Client Reviews", href: "/reviews" },
+      { text: "Portfolio", href: "/portfolio" },
+      { text: "Case Studies", href: "/case-studies" },
+    ],
+  },
+  services: {
+    title: "SERVICES",
+    links: [
+      { text: "UI/UX Design", href: "/services/ui-ux-design" },
+      { text: "Branding & Identity", href: "/services/branding" },
+      { text: "Web Development", href: "/services/web-development" },
+      { text: "Mobile App Development", href: "/services/mobile-development" },
+      { text: "SaaS Development", href: "/services/saas-development" },
+      { text: "MVP Development", href: "/services/mvp-development" },
+      { text: "3D Animation", href: "/services/3d-animation" },
+    ],
+  },
+  support: {
+    title: "SUPPORT",
+    links: [
+      { text: "Privacy Policy", href: "/privacy-policy" },
+      { text: "Terms of Service", href: "/terms-of-service" },
+      { text: "Help Center", href: "/help" },
+    ],
+  },
+  resources: {
+    title: "RESOURCES",
+    links: [
+      { text: "Our Journal", href: "/journal" },
+      { text: "Whitepapers & E-books", href: "/resources/whitepapers" },
+      { text: "Tools & Templates", href: "/resources/tools" },
+      { text: "Webinars / Workshops", href: "/resources/webinars" },
+      { text: "FAQs", href: "/faqs" },
+    ],
+  },
+  copyright: "© 2022 - 2025 • Netro Systems, All Rights Reserved.",
+  socialLinks: [
+    {
+      platform: "twitter",
+      href: "#",
+      icon: (
+        <TwitterIcon className="h-5 w-5 md:h-6 md:w-6 text-black group-hover:text-white" />
+      ),
+    },
+    {
+      platform: "linkedin",
+      href: "#",
+      icon: (
+        <LinkedinOutlinedIcon
+          color={colors.black}
+          className="h-5 w-5 md:h-6 md:w-6 text-black group-hover:text-white"
+        />
+      ),
+    },
+    {
+      platform: "instagram",
+      href: "#",
+      icon: (
+        <InstagramIcon
+          color={colors.black}
+          className="h-5 w-5 md:h-6 md:w-6 text-black group-hover:text-white"
+        />
+      ),
+    },
+    {
+      platform: "youtube",
+      href: "#",
+      icon: (
+        <YoutubeIcon
+          color={colors.black}
+          className="h-5 w-5 md:h-6 md:w-6 text-black group-hover:text-white"
+        />
+      ),
+    },
+    {
+      platform: "facebook",
+      href: "#",
+      icon: (
+        <FacebookIcon
+          color={colors.black}
+          className="h-5 w-5 md:h-6 md:w-6 text-black group-hover:text-white"
+        />
+      ),
+    },
+    {
+      platform: "telegram",
+      href: "#",
+      icon: (
+        <TelegramOutlinedIcon
+          color={colors.black}
+          className="h-5 w-5 md:h-6 md:w-6 text-black group-hover:text-white"
+        />
+      ),
+    },
+    {
+      platform: "dribbble",
+      href: "#",
+      icon: (
+        <DribbleIcon
+          color={colors.black}
+          className="h-5 w-5 md:h-6 md:w-6 text-black group-hover:text-white"
+        />
+      ),
+    },
+    {
+      platform: "behance",
+      href: "#",
+      icon: (
+        <BehanceIcon
+          color={colors.black}
+          className="h-5 w-5 md:h-6 md:w-6 text-black group-hover:text-white"
+        />
+      ),
+    },
+    {
+      platform: "github",
+      href: "#",
+      icon: (
+        <GithubIcon
+          color={colors.black}
+          className="h-5 w-5 md:h-6 md:w-6 text-black group-hover:text-white"
+        />
+      ),
+    },
+  ],
+  actions: [{ text: "Go To Top", href: "#top" }],
+};
 
 export const successStoryData = [
   {

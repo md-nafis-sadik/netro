@@ -28,7 +28,7 @@ const HeroHome = () => {
           )}
         >
           <ZRotationText text="DESIGN" delay={0.5} />
-          <p className="flex flex-row items-end">
+          <div className="flex flex-row items-end">
             <ZRotationText text="DEVEL" delay={0.75} />
             <BallBounceText
               className={cn(
@@ -39,7 +39,7 @@ const HeroHome = () => {
               O
             </BallBounceText>
             <ZRotationText text="PMENT" delay={1.25} />
-          </p>
+          </div>
           <ZRotationText text="DEPLOY" delay={1.5} />
         </div>
 

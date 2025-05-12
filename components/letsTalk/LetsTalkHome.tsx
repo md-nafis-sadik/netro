@@ -1,8 +1,8 @@
 import { GradientButton } from "@/components/ui/gradient-button";
 import { cn } from "@/lib/utils";
 import { ArrowTopRIghtIcon } from "@/services/assets/svgs";
-import { footerData } from "@/services/data";
 import SectionHeader from "../common/SectionHeader";
+import { footerData } from "@/services/data/shared.data";
 
 const LetsTalkHome = () => {
   return (
