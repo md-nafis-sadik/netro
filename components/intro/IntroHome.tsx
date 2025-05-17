@@ -1,5 +1,3 @@
-import TextFadeIn from "../animations/TextFadeIn";
-
 const IntroHome = () => {
   return (
     <div className="containerX pt-[110px] pb-[60px] md:py-[160px] flex flow-row">

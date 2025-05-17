@@ -256,19 +256,28 @@ export const successStoryData = [
 export const socialsData = [
   {
     icon: (
-      <WhatsappOutlinedIcon className="!w-5 md:!w-6 !h-5 md:!h-6 !shrink-0" />
+      <WhatsappOutlinedIcon
+        className="!w-5 md:!w-6 !h-5 md:!h-6 !shrink-0"
+        color={colors.white}
+      />
     ),
     link: "",
   },
   {
     icon: (
-      <TelegramOutlinedIcon className="!w-5 md:!w-6 !h-5 md:!h-6 !shrink-0" />
+      <TelegramOutlinedIcon
+        className="!w-5 md:!w-6 !h-5 md:!h-6 !shrink-0 text-white"
+        color={colors.white}
+      />
     ),
     link: "",
   },
   {
     icon: (
-      <LinkedinOutlinedIcon className="!w-5 md:!w-6 !h-5 md:!h-6 !shrink-0" />
+      <LinkedinOutlinedIcon
+        className="!w-5 md:!w-6 !h-5 md:!h-6 !shrink-0 text-white"
+        color={colors.white}
+      />
     ),
     link: "",
   },

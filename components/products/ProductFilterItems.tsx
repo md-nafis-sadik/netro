@@ -25,7 +25,7 @@ function ProductFilterItems({ query = "All" }: { query: string }) {
   };
   return (
     <div className="sm:border-t border-dashed border-natural-300 sm:pt-6 md:pt-10">
-      <div className="w-full max-w-[1920px] mx-auto sm:px-8 xl:px-16 2xl:px-28">
+      <div className="w-full">
         <div className="p-3 border-x-0 sm:border-x border-y border-dashed border-natural-300 ">
           <SliderContainer className="relative overflow-hidden">
             <ul className="flex items-center gap-2">

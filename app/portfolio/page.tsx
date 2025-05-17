@@ -13,10 +13,14 @@ async function PortfolioPage({
 
   return (
     <main className="relative">
-      <PageThumbnail title="Our Projects" description="showcase" />
-      <ProductFilterItems query={query} />
-      <section className="pt-10 pb-10 sm:pb-16 md:pb-20 lg:pb-30">
-        <div className="containerX">
+      <PageThumbnail
+        title="Our Projects"
+        description="showcase"
+        titleClassName="our_projects_header"
+      />
+      <div className="containerX">
+        <ProductFilterItems query={query} />
+        <section className="pt-10 pb-10 sm:pb-16 md:pb-20 lg:pb-30">
           <div className="grid md:grid-cols-2 gap-6 sm:gap-10 md:gap-16 lg:gap-20">
             {projectsData.map((item, index) => (
               <ProjectHomeCard
@@ -29,8 +33,8 @@ async function PortfolioPage({
               />
             ))}
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
     </main>
   );
 }
