@@ -3,6 +3,7 @@ import { bonbon, inter, scout, scoutCond, yesevaOne } from "@/lib/fonts";
 import "@/styles/globals.css";
 import "@/styles/app.css";
 import "@/styles/textGradient.css";
+import "@/styles/bgGradient.css";
 import Footer from "@/components/footer/Footer";
 import LetsTalk from "@/components/letsTalk/LetsTalkHome";
 import ParallaxContainer from "@/components/animations/HoverParallax";
@@ -29,7 +30,7 @@ const RootLayout = ({
           yesevaOne.variable,
           scoutCond.variable,
           scout.variable,
-          "bg-white min-h-screen text-neutral-700 relative"
+          "bg-white min-h-screen text-neutral-700 relative select-none"
         )}
       >
         <Navbar />

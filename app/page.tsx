@@ -14,7 +14,7 @@ import MarqueeHome from "@/components/marquee/MarqueeHome";
 
 const HomePage = () => {
   return (
-    <main className="relative overflow-hidden">
+    <main className="relative">
       <HeroHome />
       <div className="w-full relative -mt-40">
         <MarqueeHome

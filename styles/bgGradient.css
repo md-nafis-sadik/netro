@@ -1,0 +1,15 @@
+.email_input_gradient {
+  background: #494949;
+}
+
+.email_input_gradient:hover,
+.email_input_gradient:focus-within {
+  background: linear-gradient(
+    to right,
+    #5f5f5f 2%,
+    #6f68c5 22%,
+    #934445 47%,
+    #68a481 73%,
+    #222222 98%
+  );
+}

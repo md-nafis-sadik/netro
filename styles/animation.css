@@ -1,10 +1,13 @@
 /* styles/gradient-button.css */
-.bg-gradient {
+.bg-gradient-btn {
   background: linear-gradient(60deg, #483bdc, #ffa8a9, #82d3a4);
   background-size: 300% 300%;
 }
 
-.bg-gradient:hover {
+.bg-gradient-btn:hover,
+.bg-gradient-btn:focus-within,
+.group:hover .bg-gradient-btn,
+.group:focus-within .bg-gradient-btn {
   background: #6455ff;
 }
 

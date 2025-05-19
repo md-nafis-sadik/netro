@@ -39,7 +39,12 @@ const Footer = () => {
               <div className="h-8 w-8 rounded-full bg-natural-100 flex_center">
                 <AtTheRateIcon className="h-[14px] w-[14px] !shrink-0" />
               </div>
-              <p className="footer_el_text">{footerData.inquiries.email}</p>
+              <a
+                href={`mailto:${footerData.inquiries.email}`}
+                className="footer_el_text hover:underline"
+              >
+                {footerData.inquiries.email}
+              </a>
             </div>
           </div>
 
