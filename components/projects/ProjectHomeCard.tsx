@@ -18,21 +18,23 @@ const ProjectHomeCard = ({
   index = 0,
   className = "",
   showBottom = false,
+  style = {},
 }: {
   item: IFProjectHomeCard;
   top?: number;
   index?: number;
   className?: string;
   showBottom?: boolean;
+  style?: React.CSSProperties;
 }) => {
   return (
     <Link
       href={`/portfolio/${item?.name}`}
       className={cn(
-        "w-full sticky left-0 h-[450px] max-h-[450px] md:h-[640px] md:max-h-[640px] overflow-hidden bg-text-700 group transition_common cursor-pointer",
+        "w-full sticky left-0 top-20 mb-80 h-[450px] max-h-[450px] md:h-[640px] md:max-h-[640px] overflow-hidden bg-text-700 group transition_common cursor-pointer",
         className
       )}
-      style={{ top: `${top}px` }}
+      style={style}
     >
       <Image
         src={item?.image}

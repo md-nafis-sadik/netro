@@ -1,9 +1,9 @@
 "use client";
-import SectionHeaderAnimated from "@/components/common/SectionHeaderAnimated";
 import SectionSubHeader from "@/components/common/SectionSubHeader";
 import { projectsData } from "@/services/data";
 import ProjectCard from "./ProjectHomeCard";
 import SectionHeader from "../common/SectionHeader";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
@@ -14,33 +14,65 @@ const ProjectsHome = () => {
   useGSAP(
     () => {
       const cards = gsap.utils.toArray<HTMLDivElement>(".stacked-card");
+      const total = cards.length;
+      const scaleDecay = 0.05;
 
-      // Set initial Y offsets
-      gsap.set(cards, {
-        y: (_, i) => i * 20,
-        zIndex: (_, i) => cards.length - i,
+      cards.forEach((card, i) => {
+        const reversedIndex = total - 1 - i;
+
+        // Stack setup - initial positions
+        gsap.set(card, {
+          y: i * 100 - 50,
+          scale: 1,
+          zIndex: i,
+        });
+
+        // Create ScrollTrigger for each card
+        const trigger = ScrollTrigger.create({
+          trigger: card,
+          start: "top center+=100",
+          end: "bottom top+=100",
+          scrub: 0.1,
+          onUpdate: (self) => {
+            const progress = self.progress;
+            const scale = 1 - progress * scaleDecay * (reversedIndex + 1);
+
+            gsap.to(card, {
+              scale,
+              transition: "none",
+            });
+          },
+          // Important: This ensures the ScrollTrigger initializes properly on page load
+          invalidateOnRefresh: true,
+        });
+
+        // Force immediate refresh/update to handle page loads at non-zero scroll positions
+        trigger.refresh();
       });
 
-      // Scroll listener
-      const handleScroll = () => {
-        const scrollY = window.scrollY;
-        const cardOffset = 100; // Customize how fast cards shift on scroll
+      // Force immediate update of all ScrollTriggers to account for initial scroll position
+      ScrollTrigger.refresh();
 
+      // Add a small delay to make sure ScrollTrigger has properly initialized
+      setTimeout(() => {
+        // Update each card based on current scroll position
         cards.forEach((card, i) => {
-          const scale = 1 - i * 0.05;
-          const yOffset = scrollY * 0.2 - i * cardOffset;
+          const cardTrigger =
+            ScrollTrigger.getById(card.id) ||
+            ScrollTrigger.getAll().find((st) => st.trigger === card);
 
-          gsap.to(card, {
-            y: yOffset,
-            scale,
-            duration: 0.5,
-            ease: "power3.out",
-          });
+          if (cardTrigger) {
+            const reversedIndex = total - 1 - i;
+            const progress = cardTrigger.progress;
+            const scale = 1 - progress * scaleDecay * (reversedIndex + 1);
+
+            // Set the initial scale based on current scroll position
+            gsap.set(card, {
+              scale,
+            });
+          }
         });
-      };
-
-      window.addEventListener("scroll", handleScroll);
-      return () => window.removeEventListener("scroll", handleScroll);
+      }, 100);
     },
     { scope: cardsRef }
   );
@@ -50,14 +82,17 @@ const ProjectsHome = () => {
       <div className="containerX flex_center flex-col">
         <SectionSubHeader dark text="Explore Projects" />
 
-        <SectionHeader className="home_projects_header">
+        <SectionHeader className="home_projects_header pb-10 md:pb-28">
           Projects That Speak <br /> for Themselves
         </SectionHeader>
 
-        <div className="flex flex-col gap-6 md:gap-10 mt-10 md:mt-20 w-full relative">
+        <div
+          ref={cardsRef}
+          className="flex flex-col gap-6 md:gap-10 mb-40 w-full relative"
+        >
           {projectsData.map((item, index) => (
             <ProjectCard
-              className="stacked-card w-full"
+              className="w-full stacked-card"
               item={item}
               top={(index + 1) * 50}
               key={index}

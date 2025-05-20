@@ -51,7 +51,7 @@ export const projectsData = [
     description:
       "Empowering brands with user-focused designs and seamless development.",
     tagList: "Case Study, Mobile App, Telco, Design, Development",
-    image: images.blog1,
+    image: images.projectBannerTelzen,
     icon: images.yoowifiIcon,
   },
   {
@@ -59,7 +59,7 @@ export const projectsData = [
     description:
       "Empowering brands with user-focused designs and seamless development.",
     tagList: "Case Study, Mobile App, Telco, Design, Development",
-    image: images.blog2,
+    image: images.projectBannerYooWifi,
     icon: images.yoowifiIcon,
   },
   {
@@ -67,7 +67,7 @@ export const projectsData = [
     description:
       "Empowering brands with user-focused designs and seamless development.",
     tagList: "Case Study, Mobile App, Telco, Design, Development",
-    image: images.blog3,
+    image: images.projectBannerTelzen,
     icon: images.yoowifiIcon,
   },
 ];

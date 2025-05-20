@@ -46,64 +46,67 @@ const Navbar: FC = () => {
         </Link>
 
         <div className="hidden min-[1160px]:flex flex-row items-center">
-          {navbarData.map(({ link, name, megaMenu }, index) => (
-            <div
-              {...(megaMenu
-                ? { onMouseEnter: () => setMegamenuOpening(true) }
-                : {})}
-              {...(megaMenu
-                ? { onMouseLeave: () => setMegamenuOpening(false) }
-                : {})}
-              className="flex flex-row items-center relative"
-              key={index}
-            >
-              <Link
-                href={link}
-                className="h-[34px] w-fit py-2 px-4 border-none outline-none group flex items-center gap-1 relative"
+          {navbarData.map(({ link, name, megaMenu }, index) => {
+            console.log(index);
+            return (
+              <div
+                {...(megaMenu
+                  ? { onMouseEnter: () => setMegamenuOpening(true) }
+                  : {})}
+                {...(megaMenu
+                  ? { onMouseLeave: () => setMegamenuOpening(false) }
+                  : {})}
+                className="flex flex-row items-center relative"
+                key={index}
               >
-                <span
-                  className={cn(
-                    pathname === link &&
-                      (pathname === routes.homepage.link
-                        ? "navbar-btn-gradient-dark"
-                        : "navbar-btn-gradient-lite"),
-                    "block navbar-btn-gradient absolute w-full h-1/2 bottom-0 left-0 z-[1]"
-                  )}
-                />
-
-                <span
-                  className={cn(
-                    pathname === routes.homepage.link
-                      ? "text-white"
-                      : "text-text-900",
-                    "text-sm font-normal !leading-[1.4] relative z-[2] font-inter"
-                  )}
+                <Link
+                  href={link}
+                  className="h-[34px] w-fit py-2 px-4 border-none outline-none group flex items-center gap-1 relative"
                 >
-                  {name}
-                </span>
-                {megaMenu && (
-                  <PlusRoundedSecondaryIcon
-                    className="!h-5 !w-5 !shrink-0 transition_common group-hover:rotate-180 relative z-[3]"
+                  <span
+                    className={cn(
+                      pathname === link &&
+                        (pathname === routes.homepage.link
+                          ? "navbar-btn-gradient-dark"
+                          : "navbar-btn-gradient-lite"),
+                      "block navbar-btn-gradient absolute w-full h-1/2 bottom-0 left-0 z-[1]"
+                    )}
+                  />
+
+                  <span
+                    className={cn(
+                      pathname === routes.homepage.link
+                        ? "text-white"
+                        : "text-text-900",
+                      "text-sm font-normal !leading-[1.4] relative z-[2] font-inter"
+                    )}
+                  >
+                    {name}
+                  </span>
+                  {megaMenu && (
+                    <PlusRoundedSecondaryIcon
+                      className="!h-5 !w-5 !shrink-0 transition_common group-hover:rotate-180 relative z-[3]"
+                      color={
+                        pathname === routes.homepage.link
+                          ? colors.white
+                          : colors.natural[900]
+                      }
+                    />
+                  )}
+                </Link>
+                {index < navbarData.length - 1 && (
+                  <Dividericon
+                    className="w-[7px] h-7"
                     color={
                       pathname === routes.homepage.link
-                        ? colors.white
-                        : colors.natural[900]
+                        ? colors.natural[900]
+                        : colors.natural[200]
                     }
                   />
                 )}
-              </Link>
-              {index < navbarData.length - 1 && (
-                <Dividericon
-                  className="w-[7px] h-7"
-                  color={
-                    pathname === routes.homepage.link
-                      ? colors.natural[900]
-                      : colors.natural[200]
-                  }
-                />
-              )}
-            </div>
-          ))}
+              </div>
+            );
+          })}
         </div>
 
         <DropupNavigationMenu show={megamenuOpening} />

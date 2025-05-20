@@ -10,6 +10,7 @@ import ParallaxContainer from "@/components/animations/HoverParallax";
 import ContactPin from "@/components/contact-us/ContactPin";
 import Navbar from "@/components/navigation/Navbar";
 import { cn } from "@/lib/utils";
+import LenisWrapper from "@/components/wrappers/LenisWrapper";
 
 export const metadata: Metadata = {
   title: "Netro Systems",
@@ -23,27 +24,29 @@ const RootLayout = ({
 }>) => {
   return (
     <html lang="en">
-      <body
-        className={cn(
-          inter.variable,
-          bonbon.variable,
-          yesevaOne.variable,
-          scoutCond.variable,
-          scout.variable,
-          "bg-white min-h-screen text-neutral-700 relative select-none"
-        )}
-      >
-        <Navbar />
-        {children}
-        <LetsTalk />
-        <Footer />
-        <ParallaxContainer
-          containerClassName="fixed bottom-10 right-10 z-50"
-          scaleAmount={1.5}
+      <LenisWrapper>
+        <body
+          className={cn(
+            inter.variable,
+            bonbon.variable,
+            yesevaOne.variable,
+            scoutCond.variable,
+            scout.variable,
+            "bg-white min-h-screen text-neutral-700 relative select-none"
+          )}
         >
-          <ContactPin />
-        </ParallaxContainer>
-      </body>
+          <Navbar />
+          {children}
+          <LetsTalk />
+          <Footer />
+          <ParallaxContainer
+            containerClassName="fixed bottom-10 right-10 z-50"
+            scaleAmount={1.5}
+          >
+            <ContactPin />
+          </ParallaxContainer>
+        </body>
+      </LenisWrapper>
     </html>
   );
 };

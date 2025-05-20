@@ -16,7 +16,7 @@ const HomePage = () => {
   return (
     <main className="relative">
       <HeroHome />
-      <div className="w-full relative -mt-40">
+      <div className="w-full relative -mt-40 ">
         <MarqueeHome
           dark={true}
           className="absolute -bottom-20 md:bottom-0 left-1/2 -translate-x-1/2"
