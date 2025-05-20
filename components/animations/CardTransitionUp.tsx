@@ -35,7 +35,8 @@ const CardTransitionUp: React.FC<CardTransitionUpProps> = ({
           opacity: 1,
           scale: 1,
           duration: 0.5 * (index + 1),
-          ease: "power1.in",
+          // ease: "power1.in",
+          transition: "none",
           scrollTrigger: {
             trigger: cardRef.current,
             start: "top 80%",

@@ -29,7 +29,7 @@ const PricingHomeCard = ({
     <CardTransitionUp
       index={index}
       className={cn(
-        "pricing-card w-full 2xl:w-[410px] h-full max-w-full md:max-w-[410px] p-[1px] hover:p-[2px] transition_common"
+        "pricing-card w-full 2xl:w-[410px] h-full max-w-full md:max-w-[410px] p-[2px] transition_common"
       )}
     >
       <div className="px-4 py-6 md:px-10 md:py-10 h-full">

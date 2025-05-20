@@ -2,6 +2,7 @@ import SectionHeaderAnimated from "@/components/common/SectionHeaderAnimated";
 import { cn } from "@/lib/utils";
 import { successStoryData } from "@/services/data/shared.data";
 import SectionHeader from "../common/SectionHeader";
+import NumberCounter from "../animations/NumberCounter";
 
 const StatisticsHome = () => {
   return (
@@ -23,7 +24,11 @@ const StatisticsHome = () => {
                 )}
                 style={{ color: color }}
               >
-                <span>{value}</span>
+                <NumberCounter
+                  value={Number(value)}
+                  duration={2}
+                  className="text-[54px] md:text-6xl lg:text-7xl xl:text-[128px] font-bold !leading-[0.9] uppercase font-scoutcond"
+                />
                 <span>{ext}</span>
               </p>
               <p

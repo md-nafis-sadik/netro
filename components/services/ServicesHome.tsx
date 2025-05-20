@@ -11,7 +11,7 @@ const ServicesHome = () => {
   const [emblaRef] = useEmblaCarousel(options);
 
   return (
-    <section className="flex_center flex-col mt-20 mb-[120px]">
+    <section className="flex_center flex-col mt-20 mb-[120px] overflow-hidden">
       <SectionSubHeader text="Services" />
       <SectionHeader className="home_services_header">
         Solutions for You
