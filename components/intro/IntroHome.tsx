@@ -1,6 +1,6 @@
 "use client";
 import { useGSAP } from "@gsap/react";
-import { useEffect, useRef } from "react";
+import { useEffect, useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -8,92 +8,67 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const IntroHome = () => {
-  const containerRef = useRef(null);
+  const containerRef = useRef<HTMLDivElement>(null);
   const paragraphRef = useRef<HTMLParagraphElement>(null);
-  const pinRef = useRef(null);
-  const splitWordsRef = useRef<HTMLSpanElement[]>([]);
 
-  // Manual implementation of text splitting instead of using SplitText plugin
-  useEffect(() => {
-    if (paragraphRef.current) {
-      // Get the original text
-      const originalText = paragraphRef.current.innerText;
+  useLayoutEffect(() => {
+    const paragraphEl = paragraphRef.current;
+    if (!paragraphEl) return;
 
-      // Split the text into words
-      const words = originalText.split(" ");
+    const text = paragraphEl.textContent || "";
+    const words = text.split(" ");
+    paragraphEl.innerHTML = "";
 
-      // Clear the original content
-      paragraphRef.current.innerText = "";
+    words.forEach((word, wordIndex) => {
+      const wordSpan = document.createElement("span");
+      wordSpan.className = "inline-block mr-[0.25em]";
 
-      // Create spans for each word
-      words.forEach((word) => {
-        const wordSpan = document.createElement("span");
-        wordSpan.className = "word";
-        wordSpan.style.display = "inline-block";
-        wordSpan.style.marginRight = "0.25em"; // add space between words
-        wordSpan.innerText = word;
-
-        // Add the span to the paragraph
-        if (paragraphRef.current) {
-          paragraphRef.current.appendChild(wordSpan);
-        }
-
-        // Store references to the spans
-        splitWordsRef.current.push(wordSpan);
+      [...word].forEach((letter) => {
+        const letterSpan = document.createElement("span");
+        letterSpan.textContent = letter;
+        letterSpan.className = "inline-block opacity-0";
+        wordSpan.appendChild(letterSpan);
       });
-    }
+
+      paragraphEl.appendChild(wordSpan);
+    });
+
+    const allLetters = paragraphEl.querySelectorAll("span span");
+
+    gsap.fromTo(
+      allLetters,
+      {
+        opacity: 0,
+        // y: 0,
+        scale: 0.92,
+      },
+      {
+        opacity: 1,
+        // y: 0,
+        scale: 1,
+        stagger: {
+          amount: 1,
+          each: 0.03,
+        },
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top center",
+          end: "bottom center",
+          scrub: true,
+          pin: true,
+          markers: false,
+        },
+      }
+    );
   }, []);
-
-  useGSAP(
-    () => {
-      if (splitWordsRef.current.length > 0) {
-        gsap.from(splitWordsRef.current, {
-          opacity: 0.15,
-          stagger: 2,
-          duration: 2,
-          ease: "none",
-          scrollTrigger: {
-            markers: true,
-            trigger: containerRef.current,
-            start: "top top",
-            end: "bottom bottom",
-            scrub: true,
-            pin: pinRef.current,
-          },
-        });
-      }
-    },
-    { scope: containerRef, dependencies: [splitWordsRef.current.length] }
-  );
-
-  useGSAP(
-    () => {
-      if (splitWordsRef.current.length > 0) {
-        gsap.from(splitWordsRef.current, {
-          opacity: 0.15,
-          stagger: 2,
-          duration: 2,
-          ease: "none",
-          scrollTrigger: {
-            markers: true,
-            trigger: containerRef.current,
-            start: "top top",
-            end: "bottom bottom",
-            scrub: true,
-            pin: pinRef.current,
-          },
-        });
-      }
-    },
-    { scope: containerRef, dependencies: [splitWordsRef.current.length] }
-  );
 
   return (
     <div
       ref={containerRef}
-      className="containerX pt-[110px] pb-[60px] md:py-[160px] flex flow-row"
+      className="containerX pt-[110px] pb-[60px] md:py-[160px] flex flow-row overflow-hidden"
     >
-      <div ref={pinRef} className="hidden md:block w-2/5" />
+      <div className="hidden md:block w-2/5" />
 
       <p
         ref={paragraphRef}
