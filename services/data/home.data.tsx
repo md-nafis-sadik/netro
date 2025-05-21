@@ -578,19 +578,19 @@ export const journalData = [
     title: "Vision for creative excellence vision",
     image: images.blog1,
     date: "30 November, 2024",
-    link: "",
+    link: "journal/1",
   },
   {
     title: "Vision for creative excellence vision",
     image: images.blog2,
     date: "30 November, 2024",
-    link: "",
+    link: "journal/2",
   },
   {
     title: "Vision for creative excellence vision",
     image: images.blog3,
     date: "30 November, 2024",
-    link: "",
+    link: "journal/3",
   },
 ];
 

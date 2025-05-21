@@ -1,15 +1,11 @@
-"use client";
 import JournalCard from "@/components/journal/JournalCard";
+import JournalSuggestions from "@/components/shared/JournalSuggestions";
 import PageThumbnail from "@/components/shared/PageThumbnail";
 import { journalData } from "@/services/data";
 import { journalCategories } from "@/services/data/journal.data";
-import useEmblaCarousel from "embla-carousel-react";
 import { ChevronRight } from "lucide-react";
 
 const JournalPage = () => {
-  const options = { align: "start", loop: false } as const;
-  const [emblaRef] = useEmblaCarousel(options);
-
   return (
     <main className="relative">
       <PageThumbnail
@@ -88,19 +84,7 @@ const JournalPage = () => {
         </div>
 
         {/* MORE SUGGESTED ARTICLES */}
-        <div className="w-full mt-10 md:mt-20 overflow-hidden" ref={emblaRef}>
-          <div className="w-full min-h-fit flex flex-row gap-6 md:gap-10 py-5 md:py-10">
-            {journalData.map(({ title, date, image, link }, index) => (
-              <JournalCard
-                key={index}
-                title={title}
-                date={date}
-                image={image}
-                link={link}
-              />
-            ))}
-          </div>
-        </div>
+        <JournalSuggestions />
       </section>
     </main>
   );
