@@ -8,8 +8,10 @@ interface IFCardProps {
   title: string;
   link: string;
   date: string;
-  classNameImageContainer?: string;
+  imageContainerClassName?: string;
   className?: string;
+  titleClassName?: string;
+  contentContainerClassName?: string;
 }
 
 const JournalCard = ({
@@ -17,15 +19,17 @@ const JournalCard = ({
   title,
   link,
   date,
-  classNameImageContainer,
+  imageContainerClassName,
   className,
+  titleClassName,
+  contentContainerClassName,
 }: IFCardProps) => {
   return (
     <div className={cn("w-full group", className)}>
       <div
         className={cn(
           "h-[196px] md:h-[308px] w-full relative overflow-hidden min-w-[260px] md:min-w-[400px]",
-          classNameImageContainer
+          imageContainerClassName
         )}
       >
         <Image
@@ -37,10 +41,14 @@ const JournalCard = ({
         />
       </div>
 
-      <Link href={link} className="block pt-4 md:pt-6 w-full">
+      <Link
+        href={link}
+        className={cn("block pt-4 md:pt-6 w-full", contentContainerClassName)}
+      >
         <p
           className={cn(
-            "text-lg md:text-2xl !leading-normal md:!leading-[1.16] font-bold text-natural-700 font-inter"
+            "text-lg md:text-2xl !leading-normal md:!leading-[1.16] font-bold text-natural-700 font-inter",
+            titleClassName
           )}
         >
           {title}
