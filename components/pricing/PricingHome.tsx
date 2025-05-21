@@ -10,7 +10,7 @@ const PricingHome = () => {
     <section className="bg-black flex_center flex-col w-full py-20 overflow-hidden">
       <SectionSubHeader dark text="Our Pricing" />
 
-      <SectionHeader className="home_pricing_header">
+      <SectionHeader className="home_pricing_header w-full">
         Built to scale with
         <br /> your ambitions.
       </SectionHeader>

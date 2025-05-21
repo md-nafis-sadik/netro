@@ -15,7 +15,7 @@ const FAQ = () => {
     <section className="bg-black flex_center flex-col w-full py-20">
       <SectionSubHeader dark text="Frequently asked questions" />
 
-      <SectionHeader className="home_faq_header mt-6">
+      <SectionHeader className="home_faq_header w-full mt-6">
         Common Queries
       </SectionHeader>
 
