@@ -1,7 +1,6 @@
 "use client";
 import { cn } from "@/lib/utils";
 import JournalCard from "../journal/JournalCard";
-import { journalData } from "@/services/data";
 import useEmblaCarousel from "embla-carousel-react";
 import { timestampDisplay } from "@/services";
 

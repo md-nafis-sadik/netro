@@ -2,8 +2,6 @@ import JournalCard from "@/components/journal/JournalCard";
 import JournalSuggestions from "@/components/shared/JournalSuggestions";
 import { fetchWithDelay } from "@/lib/apiHandler";
 import { timestampDisplay } from "@/services";
-import { journalData } from "@/services/data";
-import { journalCategories } from "@/services/data/journal.data";
 import { ChevronRight } from "lucide-react";
 
 type BlogsResponse = {
@@ -13,7 +11,7 @@ type BlogsResponse = {
 
 async function JournalGalleryWrapper() {
   // ALL BLOGS
-  let blogsResponse: any = await fetchWithDelay(`/blogs/all`);
+  const blogsResponse: any = await fetchWithDelay(`/blogs/all`);
   let blogs: BlogsResponse;
   if (Array.isArray(blogsResponse)) {
     blogs = { data: blogsResponse.slice(0, 5) };
@@ -24,8 +22,8 @@ async function JournalGalleryWrapper() {
   }
 
   // BLOG CATEGORIES
-  let categoriesResponse = await fetchWithDelay(`/blogs/landing`);
-  let categories: { data: any[] } =
+  const categoriesResponse = await fetchWithDelay(`/blogs/landing`);
+  const categories: { data: any[] } =
     categoriesResponse &&
     typeof categoriesResponse === "object" &&
     "data" in categoriesResponse &&
@@ -34,7 +32,7 @@ async function JournalGalleryWrapper() {
       : { data: [] };
 
   // FEATURED BLOGS
-  let featuredBlogsResponse: any = await fetchWithDelay(`/blogs/featured`);
+  const featuredBlogsResponse: any = await fetchWithDelay(`/blogs/featured`);
   let featuredBlogs: BlogsResponse;
   if (Array.isArray(featuredBlogsResponse)) {
     featuredBlogs = { data: featuredBlogsResponse };
@@ -51,7 +49,7 @@ async function JournalGalleryWrapper() {
   }
 
   // RECENT BLOGS
-  let recentBlogsResponse = await fetchWithDelay(`/blogs/recent`);
+  const recentBlogsResponse = await fetchWithDelay(`/blogs/recent`);
   let recentBlogs: BlogsResponse;
   if (Array.isArray(recentBlogsResponse)) {
     recentBlogs = { data: recentBlogsResponse };

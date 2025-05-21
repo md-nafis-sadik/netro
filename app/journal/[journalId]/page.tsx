@@ -1,13 +1,38 @@
 import SectionHeader from "@/components/common/SectionHeader";
 import JournalSuggestions from "@/components/shared/JournalSuggestions";
 import PageThumbnail from "@/components/shared/PageThumbnail";
-import { images } from "@/services";
+import { getGeneratedMetadata } from "@/lib/metadata";
+import { images, purifyUrl } from "@/services";
 import Image from "next/image";
 
-const page = async ({ params }: { params: Promise<{ journalId: string }> }) => {
-  const { journalId } = await params;
+export async function generateMetadata({
+  params,
+}: {
+  params: { JournalId: string[] };
+}) {
+  let { JournalId } = params;
+  const JournalIdStr = JournalId.join("/");
+  const id = purifyUrl({ urlString: JournalIdStr });
+  const url = `/blogs/find-by-title/${id}`;
+  return await getGeneratedMetadata({
+    apiUrl: url,
+    metaTitle: id,
+    path: `/blogs/${JournalIdStr}`,
+  });
+}
 
-  //   console.log(journalId);
+const JournalDetailsPage = async ({
+  params,
+}: {
+  params: Promise<{ journalId: string }>;
+}) => {
+  const { journalId: rawJournalId } = await params;
+  let journalId = Array.isArray(rawJournalId)
+    ? rawJournalId.join("/")
+    : rawJournalId;
+  journalId = purifyUrl({ urlString: journalId });
+
+  console.log(journalId);
 
   return (
     <main className="relative">
@@ -39,4 +64,4 @@ const page = async ({ params }: { params: Promise<{ journalId: string }> }) => {
   );
 };
 
-export default page;
+export default JournalDetailsPage;

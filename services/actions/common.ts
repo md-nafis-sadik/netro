@@ -12,3 +12,7 @@ export async function fetchData({
   }).then((res) => res.json());
   return response;
 }
+
+export function purifyUrl({ urlString }: { urlString: string }) {
+  return urlString?.replace(/%20/g, " ");
+}
