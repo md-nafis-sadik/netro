@@ -147,7 +147,7 @@ const Footer = () => {
               ))}
             </ul>
 
-            <GoTopButton className="mt-4 md:mt-10" />
+            <GoTopButton className="mt-4 md:mt-10 pe-6" />
           </div>
         </div>
 

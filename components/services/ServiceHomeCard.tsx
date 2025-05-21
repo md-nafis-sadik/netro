@@ -22,6 +22,8 @@ interface IFServiceCard {
   text: string;
   imageComponent: IFImageComponent;
   link: string;
+  className?: string;
+  [key: string]: any;
 }
 
 const ServiceHomeCard = ({
@@ -29,10 +31,17 @@ const ServiceHomeCard = ({
   text,
   imageComponent,
   link,
+  className = "",
+  ...props
 }: IFServiceCard) => {
   return (
-    <HoverCardRoot>
-      <HoverCardContainer className="h-[260px] md:h-[394px] min-h-[260px] md:min-h-[394px] min-w-[260px] md:min-w-[394px] relative bg-black py-6 md:py-10 px-4 md:px-10 select-none cursor-grab active:cursor-grabbing flex flex-col w-full">
+    <HoverCardRoot {...props}>
+      <HoverCardContainer
+        className={cn(
+          "h-[260px] md:h-[394px] min-h-[260px] md:min-h-[394px] min-w-[260px] md:min-w-[394px] relative bg-black py-6 md:py-10 px-4 md:px-10 select-none cursor-grab active:cursor-grabbing flex flex-col w-full",
+          className
+        )}
+      >
         <HoverCardItem translateZ={40} className="absolute -right-4 -bottom-6">
           <Image
             src={imageComponent.src}

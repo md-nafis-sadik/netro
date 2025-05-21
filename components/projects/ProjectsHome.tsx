@@ -22,7 +22,7 @@ const ProjectsHome = () => {
 
         // Stack setup - initial positions
         gsap.set(card, {
-          y: i * 100 - 50,
+          y: i * 100 - 20,
           scale: 1,
           zIndex: i,
         });
@@ -94,7 +94,6 @@ const ProjectsHome = () => {
             <ProjectCard
               className="w-full stacked-card"
               item={item}
-              top={(index + 1) * 50}
               key={index}
             />
           ))}

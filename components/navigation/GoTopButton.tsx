@@ -23,7 +23,7 @@ const GoTopButton = ({ className }: IFGoTopButtonProps) => {
   return (
     <button
       className={cn(
-        "border border-[#E8E8E8] p-3 flex flex-row items-center justify-center gap-1 md:gap-2 rounded-full group hover:shadow-sm transition_common",
+        "border border-[#E8E8E8] p-3 flex flex-row items-center justify-center gap-1 md:gap-2 rounded-full group hover:shadow-sm hover:bg-slate-100 transition_common",
         className
       )}
       onClick={scrollToTop}

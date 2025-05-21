@@ -9,7 +9,7 @@ const LetsTalkHome = () => {
     <section className="bg-black">
       <div className="containerX py-[60px] md:py-20 flex flex-col lg:flex-row items-center gap-[42px] justify-between">
         <div>
-          <SectionHeader className="home_faq_header text-start">
+          <SectionHeader className="home_faq_header text-start mt-0">
             Let&apos;s Talk
           </SectionHeader>
           <p

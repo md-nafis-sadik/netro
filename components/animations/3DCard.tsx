@@ -16,11 +16,17 @@ const HoverContext = createContext<{
   setIsHovered: React.Dispatch<React.SetStateAction<boolean>>;
 } | null>(null);
 
-export function HoverCardRoot({ children }: { children: ReactNode }) {
+export function HoverCardRoot({
+  children,
+  ...props
+}: {
+  children: ReactNode;
+  [key: string]: any;
+}) {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <HoverContext.Provider value={{ isHovered, setIsHovered }}>
+    <HoverContext.Provider value={{ isHovered, setIsHovered }} {...props}>
       {children}
     </HoverContext.Provider>
   );
