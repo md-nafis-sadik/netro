@@ -3,12 +3,14 @@ import { cn } from "@/lib/utils";
 import JournalCard from "../journal/JournalCard";
 import { journalData } from "@/services/data";
 import useEmblaCarousel from "embla-carousel-react";
+import { timestampDisplay } from "@/services";
 
 interface IFProps {
+  data?: any[];
   className?: string;
 }
 
-const JournalSuggestions = ({ className }: IFProps) => {
+const JournalSuggestions = ({ data, className }: IFProps) => {
   const options = { align: "start", loop: false } as const;
   const [emblaRef] = useEmblaCarousel(options);
 
@@ -18,13 +20,13 @@ const JournalSuggestions = ({ className }: IFProps) => {
       ref={emblaRef}
     >
       <div className="w-full min-h-fit flex flex-row gap-6 md:gap-10 py-5 md:py-10">
-        {journalData.map(({ title, date, image, link }, index) => (
+        {data?.map((item, index) => (
           <JournalCard
             key={index}
-            title={title}
-            date={date}
-            image={image}
-            link={link}
+            title={item?.title}
+            date={timestampDisplay(item?.publishedAt)}
+            image={item?.featuredImage}
+            link={`/blogs/${item?.title}`}
           />
         ))}
       </div>

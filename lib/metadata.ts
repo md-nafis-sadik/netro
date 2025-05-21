@@ -5,7 +5,7 @@ export async function getGeneratedMetadata({
   metaTitle = "",
   path = "",
 }) {
-  let response = (await fetchWithDelay(`${apiUrl}`)) as { data?: any };
+  const response = (await fetchWithDelay(`${apiUrl}`)) as { data?: any };
   const data = response?.data || {};
   const socialLinks = {
     twitter: "https://twitter.com/netrosystems",

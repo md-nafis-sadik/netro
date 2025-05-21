@@ -1,20 +1,32 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  reactStrictMode: true,
   images: {
+    domains: [
+      "via.placeholder.com",
+      "server.netrosystems.com",
+      "203.161.48.124",
+      "localhost",
+    ],
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "lh3.googleusercontent.com",
+        hostname: "netrosystems.com",
+        port: "",
+        pathname: "/**",
       },
       {
         protocol: "https",
-        hostname: "avatars.githubusercontent.com",
+        hostname: "server.netrosystems.com",
+        port: "",
+        pathname: "/**",
       },
       {
-        protocol: "https",
-        hostname: "dummyjson.com",
+        protocol: "http",
+        hostname: "localhost",
+        port: "",
+        pathname: "/**",
       },
     ],
   },
