@@ -6,10 +6,10 @@
 }
 
 .hero-text-o-gradient {
-  background: linear-gradient(113deg, #ffb3b3, #e6a3e6, #b3b3ff, #a3a3e6);
-  -webkit-background-clip: text;
+  background: linear-gradient(270deg, #d4a3cf 0%, #f8a7b0 100%);
   background-clip: text;
-  color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .content-bg-gradient-primary {

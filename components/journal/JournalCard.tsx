@@ -8,12 +8,26 @@ interface IFCardProps {
   title: string;
   link: string;
   date: string;
+  classNameImageContainer?: string;
+  className?: string;
 }
 
-const JournalCard = ({ image, title, link, date }: IFCardProps) => {
+const JournalCard = ({
+  image,
+  title,
+  link,
+  date,
+  classNameImageContainer,
+  className,
+}: IFCardProps) => {
   return (
-    <div className="w-full group">
-      <div className="h-[196px] md:h-[308px] w-full relative overflow-hidden min-w-[260px] md:min-w-[400px]">
+    <div className={cn("w-full group", className)}>
+      <div
+        className={cn(
+          "h-[196px] md:h-[308px] w-full relative overflow-hidden min-w-[260px] md:min-w-[400px]",
+          classNameImageContainer
+        )}
+      >
         <Image
           src={image}
           alt="Blog 1"

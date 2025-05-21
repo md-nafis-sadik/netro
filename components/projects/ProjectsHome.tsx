@@ -92,7 +92,7 @@ const ProjectsHome = () => {
         >
           {projectsData.map((item, index) => (
             <ProjectCard
-              className="w-full stacked-card"
+              className="w-full stacked-card sticky left-0 top-10 mb-80"
               item={item}
               key={index}
             />

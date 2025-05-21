@@ -24,7 +24,7 @@ const HeroHome = () => {
         {/* TITLES */}
         <div
           className={cn(
-            "hero-text-gradient text-[66px] lg:text-[96px] uppercase font-bold !leading-[0.8] font-scoutcond text-center lg:text-start"
+            "hero-text-gradient text-[66px] md:text-[96px] lg:text-[128px] uppercase font-bold !leading-[0.8] font-scoutcond text-center lg:text-start"
           )}
         >
           <ZRotationText text="DESIGN" delay={0.5} />
@@ -32,7 +32,7 @@ const HeroHome = () => {
             <ZRotationText text="DEVEL" delay={0.75} />
             <BallBounceText
               className={cn(
-                "text-[66px] lg:text-[96px] inline-block font-normal hero-text-o-gradient font-bonbon"
+                "text-[66px] lg:text-[102px] inline-block font-normal hero-text-o-gradient font-bonbon !leading-[0.8] "
               )}
               delay={1.0}
             >

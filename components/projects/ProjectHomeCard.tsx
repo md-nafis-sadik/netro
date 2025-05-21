@@ -27,7 +27,7 @@ const ProjectHomeCard = ({
     <Link
       href={`/portfolio/${item?.name}`}
       className={cn(
-        "w-full sticky left-0 top-10 mb-80 h-[450px] max-h-[450px] md:h-[640px] md:max-h-[640px] overflow-hidden bg-text-700 group transition_common cursor-pointer",
+        "w-full h-[450px] max-h-[450px] md:h-[640px] md:max-h-[640px] overflow-hidden bg-text-700 group transition_common cursor-pointer",
         className
       )}
       style={style}
@@ -35,7 +35,7 @@ const ProjectHomeCard = ({
       <Image
         src={item?.image}
         alt={item?.name}
-        className="min-h-full min-w-full absolute_center"
+        className="min-h-full h-full min-w-full w-auto object-cover absolute_center"
         width={1920}
         height={1280}
       />
