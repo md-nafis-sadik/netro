@@ -31,7 +31,7 @@ const RootLayout = ({
           yesevaOne.variable,
           scoutCond.variable,
           scout.variable,
-          "bg-white min-h-screen text-neutral-700 relative select-none"
+          "bg-white min-h-screen text-neutral-700 relative"
         )}
       >
         <LenisWrapper>
