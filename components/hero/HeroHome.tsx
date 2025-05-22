@@ -24,32 +24,37 @@ const HeroHome = () => {
         {/* TITLES */}
         <div
           className={cn(
-            "hero-text-gradient text-[66px] md:text-[96px] lg:text-[128px] uppercase font-bold !leading-[0.8] font-scoutcond text-center lg:text-start"
+            "hero-text-gradient text-[66px] md:text-[96px] lg:text-[128px] uppercase font-bold !leading-[0.8] font-scoutcond !text-center lg:text-start"
           )}
         >
-          <ZRotationText text="DESIGN" delay={0.5} />
-          <div className="flex flex-row items-end">
-            <ZRotationText text="DEVEL" delay={0.75} />
-            <BallBounceText
-              className={cn(
-                "text-[66px] lg:text-[102px] inline-block font-normal hero-text-o-gradient font-bonbon !leading-[0.8] "
-              )}
-              delay={1.0}
-            >
-              O
-            </BallBounceText>
-            <ZRotationText text="PMENT" delay={1.25} />
+          <div className="flex items-center justify-center lg:justify-start w-full">
+            <ZRotationText text="DESIGN" delay={0.5} />
           </div>
-          <ZRotationText text="DEPLOY" delay={1.5} />
+          <div className="flex flex-row items-end w-full">
+            <div className="flex items-center justify-center lg:justify-start w-full">
+              <ZRotationText text="DEVEL" delay={0.75} />
+              <BallBounceText
+                className={cn(
+                  "text-[66px] lg:text-[102px] inline-block font-normal hero-text-o-gradient font-bonbon !leading-[0.8] "
+                )}
+                delay={1.0}
+              >
+                O
+              </BallBounceText>
+              <ZRotationText text="PMENT" delay={1.25} />
+            </div>
+          </div>
+          <div className="flex items-center justify-center lg:justify-start w-full">
+            <ZRotationText text="DEPLOY" delay={1.5} />
+          </div>
         </div>
 
         <p
           className={cn(
-            "text-sm md:text-xl font-normal !leading-[1.8] text-white mt-6 font-inter text-center lg:text-start"
+            "text-sm md:text-xl font-normal !leading-[1.8] text-text-200 mt-6 font-inter text-center lg:text-start max-w-[562px] mx-auto lg:mx-0"
           )}
         >
-          Empowering brands with user-focused designs and <br /> seamless
-          development.
+          Empowering brands with user-focused designs and seamless development.
         </p>
 
         {/* CONNECT & SOCIALS */}

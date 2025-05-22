@@ -2,24 +2,16 @@ import SectionHeaderAnimated from "@/components/common/SectionHeaderAnimated";
 import { cn } from "@/lib/utils";
 import { images } from "@/services";
 import Image from "next/image";
+import PageThumbnail from "../shared/PageThumbnail";
 
 const HeroAbout = () => {
   return (
     <section className="">
-      <div className="containerX my-20">
-        <SectionHeaderAnimated
-          dark
-          text="The Story"
-          className="text-center md:text-start"
-        />
-        <p
-          className={cn(
-            "text-sm md:text-2xl mt-6 uppercase text-text-600 font-inter"
-          )}
-        >
-          our success
-        </p>
-      </div>
+      <PageThumbnail
+        title="The Story"
+        description="our success"
+        titleClassName="about_us_othe_story w-fit"
+      />
 
       <div className="w-full h-[200px] md:h-[400px] lg:h-[600px] relative overflow-hidden flex_center">
         <Image
@@ -30,7 +22,7 @@ const HeroAbout = () => {
           width={1920}
         />
 
-        <div className="relative h-[120px] w-[120px] flex_center">
+        {/* <div className="relative h-[120px] w-[120px] flex_center">
           <Image
             src={images.bubble}
             alt="Bubble image"
@@ -46,7 +38,7 @@ const HeroAbout = () => {
           >
             Play <br /> Reel
           </p>
-        </div>
+        </div> */}
       </div>
     </section>
   );

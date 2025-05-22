@@ -1,6 +1,7 @@
 import { inter, scoutCond } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
 import { successStoryData } from "@/services/data/shared.data";
+import NumberCounter from "../animations/NumberCounter";
 
 const StatisticsAbout = () => {
   return (
@@ -9,10 +10,14 @@ const StatisticsAbout = () => {
         <div className="flex flex-col items-center gap-1 md:gap-3" key={index}>
           <p
             className={cn(
-              "text-[54px] md:text-6xl lg:text-7xl xl:text-[128px] font-bold !leading-[0.9] uppercase text-center w-full font-scoutcond"
+              "text-[54px] md:text-6xl lg:text-7xl xl:text-[128px] font-bold !leading-[0.9] uppercase text-center w-full font-scoutcond text-black"
             )}
           >
-            <span className="text-text-900">{value}</span>
+            <NumberCounter
+              value={Number(value)}
+              duration={5}
+              className="text-[54px] md:text-6xl lg:text-7xl xl:text-[128px] font-bold !leading-[0.9] uppercase font-scoutcond"
+            />
             <span
               className={cn(ext === "+" ? "text-main-400" : "text-text-900")}
             >

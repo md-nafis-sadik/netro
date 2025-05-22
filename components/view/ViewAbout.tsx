@@ -23,7 +23,7 @@ const ViewAbout = () => {
                 aria-label={description}
                 width={1280}
                 height={1280}
-                className="min-w-full min-h-full absolute_center !w-[700px]"
+                className="min-h-full h-full min-w-full w-auto object-cover absolute_center"
               />
             </div>
           ))}

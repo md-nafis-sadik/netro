@@ -17,8 +17,8 @@ function NotFound() {
           Oops! Something is wrong.
         </h2>
         <p className="text-sm sm:text-base md:text-xl text-black-700">
-          The page you're looking for might have taken a detour. Don't worry,
-          we've got a map! Drop Us a Line
+          The page you&apos;re looking for might have taken a detour. Don&apos;t
+          worry, we&apos;ve got a map! Drop Us a Line
         </p>
       </div>
     </div>

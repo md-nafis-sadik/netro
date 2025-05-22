@@ -128,6 +128,20 @@
   max-width: fit-content;
 }
 
+/* ABOUT US */
+.about_us_othe_story {
+  background: linear-gradient(
+    91deg,
+    #1d1d1d 14.11%,
+    #909090 37.39%,
+    #9b9b9b 52.7%,
+    #3c3c3c 83.6%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 /* JOURNAL */
 .journal_suggestions_header {
   background: var(

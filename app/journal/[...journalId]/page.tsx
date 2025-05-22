@@ -11,10 +11,12 @@ import { Suspense } from "react";
 export async function generateMetadata({
   params,
 }: {
-  params: { journalId: string[] };
+  params: Promise<{ journalId: string | string[] }>;
 }) {
-  const { journalId } = params;
-  const journalIdStr = journalId.join("/");
+  const { journalId } = await params;
+  const journalIdStr = Array.isArray(journalId)
+    ? journalId.join("/")
+    : journalId;
   const id = purifyUrl({ urlString: journalIdStr });
   const url = `/blogs/find-by-title/${id}`;
   return await getGeneratedMetadata({
@@ -27,16 +29,18 @@ export async function generateMetadata({
 const JournalDetailsPage = async ({
   params,
 }: {
-  params: Promise<{ journalId: string }>;
+  params: Promise<{ journalId: string | string[] }>;
 }) => {
-  let { journalId } = await params;
-  journalId = Array.isArray(journalId) ? journalId.join("/") : journalId;
-  journalId = purifyUrl({ urlString: journalId });
+  const { journalId } = await params;
+  const journalIdString = Array.isArray(journalId)
+    ? journalId.join("/")
+    : journalId;
+  const purifiedId = purifyUrl({ urlString: journalIdString });
 
   return (
     <main className="relative">
       <Suspense fallback={<JournalDetailsSkeleton />}>
-        <JournalDetailsWrapper id={journalId} />
+        <JournalDetailsWrapper id={purifiedId as string} />
       </Suspense>
 
       <section className="containerX pt-10 md:pt-20 pb-5 md:pb-10">
