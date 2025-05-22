@@ -74,3 +74,4 @@ export { default as naimurRahman } from "@/public/images/team/naimur-rahman.webp
 export { default as raihanulIslam } from "@/public/images/team/raihanul-islam.webp";
 export { default as termc } from "@/public/images/termc.png";
 export { default as video } from "@/public/images/video.png";
+export { default as notFound } from "@/public/images/not-found.webp";

@@ -8,16 +8,16 @@ import Image from "next/image";
 export async function generateMetadata({
   params,
 }: {
-  params: { JournalId: string[] };
+  params: { journalId: string[] };
 }) {
-  let { JournalId } = params;
-  const JournalIdStr = JournalId.join("/");
-  const id = purifyUrl({ urlString: JournalIdStr });
+  const { journalId } = params;
+  const journalIdStr = journalId.join("/");
+  const id = purifyUrl({ urlString: journalIdStr });
   const url = `/blogs/find-by-title/${id}`;
   return await getGeneratedMetadata({
     apiUrl: url,
     metaTitle: id,
-    path: `/blogs/${JournalIdStr}`,
+    path: `/blogs/${journalIdStr}`,
   });
 }
 
@@ -32,7 +32,7 @@ const JournalDetailsPage = async ({
     : rawJournalId;
   journalId = purifyUrl({ urlString: journalId });
 
-  console.log(journalId);
+  console.log(rawJournalId);
 
   return (
     <main className="relative">

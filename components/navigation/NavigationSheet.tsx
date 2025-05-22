@@ -23,8 +23,6 @@ const NavigationSheet: FC<IFNavigationSheetProps> = ({
   closeSheet,
   pathname,
 }) => {
-  console.log("isSheetOpen", isSheetOpen, "closeSheet", closeSheet);
-
   return (
     <Sheet open={isSheetOpen} onOpenChange={closeSheet}>
       <SheetContent showCrossIcon={false} className="bg-black select-none">

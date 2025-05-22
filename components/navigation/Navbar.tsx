@@ -47,7 +47,7 @@ const Navbar: FC = () => {
 
         <div className="hidden min-[1160px]:flex flex-row items-center">
           {navbarData.map(({ link, name, megaMenu }, index) => {
-            console.log(index);
+            // console.log(index);
             return (
               <div
                 {...(megaMenu

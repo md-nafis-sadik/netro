@@ -73,7 +73,7 @@ async function JournalGalleryWrapper() {
               title={item?.title}
               date={timestampDisplay(item?.publishedAt)}
               image={item?.featuredImage}
-              link={`/blogs/${item?.title}`}
+              link={`/journal/${item?.title}`}
               imageContainerClassName="h-[360px] md:h-[416px] w-full"
             />
           ))}
@@ -96,7 +96,7 @@ async function JournalGalleryWrapper() {
                   title={item?.title}
                   date={timestampDisplay(item?.publishedAt)}
                   image={item?.featuredImage}
-                  link={`/blogs/${item?.title}`}
+                  link={`/journal/${item?.title}`}
                   imageContainerClassName="!h-[77px] !min-w-[112px] !w-[112px]"
                   className="flex flex-row items-center gap-6"
                   titleClassName="text-sm sm:text-base md:!text-sm lg:text-lg font-bold !leading-[1.4]"

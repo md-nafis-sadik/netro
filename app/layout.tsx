@@ -24,17 +24,17 @@ const RootLayout = ({
 }>) => {
   return (
     <html lang="en">
-      <LenisWrapper>
-        <body
-          className={cn(
-            inter.variable,
-            bonbon.variable,
-            yesevaOne.variable,
-            scoutCond.variable,
-            scout.variable,
-            "bg-white min-h-screen text-neutral-700 relative select-none"
-          )}
-        >
+      <body
+        className={cn(
+          inter.variable,
+          bonbon.variable,
+          yesevaOne.variable,
+          scoutCond.variable,
+          scout.variable,
+          "bg-white min-h-screen text-neutral-700 relative select-none"
+        )}
+      >
+        <LenisWrapper>
           <Navbar />
           {children}
           <LetsTalk />
@@ -45,8 +45,8 @@ const RootLayout = ({
           >
             <ContactPin />
           </ParallaxContainer>
-        </body>
-      </LenisWrapper>
+        </LenisWrapper>
+      </body>
     </html>
   );
 };

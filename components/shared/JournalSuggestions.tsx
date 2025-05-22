@@ -25,7 +25,7 @@ const JournalSuggestions = ({ data, className }: IFProps) => {
             title={item?.title}
             date={timestampDisplay(item?.publishedAt)}
             image={item?.featuredImage}
-            link={`/blogs/${item?.title}`}
+            link={`/journal/${item?.title}`}
           />
         ))}
       </div>
