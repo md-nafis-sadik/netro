@@ -50,12 +50,8 @@ const Navbar: FC = () => {
             // console.log(index);
             return (
               <div
-                {...(megaMenu
-                  ? { onMouseEnter: () => setMegamenuOpening(true) }
-                  : {})}
-                {...(megaMenu
-                  ? { onMouseLeave: () => setMegamenuOpening(false) }
-                  : {})}
+                onMouseEnter={() => (megaMenu ? setMegamenuOpening(true) : {})}
+                onMouseLeave={() => (megaMenu ? setMegamenuOpening(false) : {})}
                 className="flex flex-row items-center relative"
                 key={index}
               >

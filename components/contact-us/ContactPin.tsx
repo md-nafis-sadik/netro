@@ -121,8 +121,7 @@ const ContactPin = ({ className }: { className?: string }) => {
         break;
       }
 
-      // @ts-ignore
-      currentElement = currentElement.parentElement;
+      currentElement = currentElement.parentElement as Element;
     }
 
     // Fallback to body background
