@@ -28,7 +28,7 @@ export const GradientButton = React.forwardRef<
     return (
       <div
         className={cn(
-          "inline-block p-[2px] rounded-full bg-gradient-btn hover:-translate-y-[2px] group-hover:!bg-main-500 transition_common group !shrink-0",
+          "block p-[2px] rounded-full bg-gradient-btn hover:-translate-y-[2px] group-hover:!bg-main-500 transition_common group !shrink-0",
           containerClassName,
           nonGradient ? "bg-[#161616]" : "btn-animate-gradient"
         )}

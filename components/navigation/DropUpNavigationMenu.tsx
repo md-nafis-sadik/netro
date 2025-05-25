@@ -5,6 +5,7 @@ import clsx from "clsx";
 import { servicesMenu, socialsData } from "@/services/data/shared.data";
 import { GradientButton } from "../ui/gradient-button";
 import { CallMissedIcon } from "@/services/assets/svgs";
+import Link from "next/link";
 
 gsap.registerPlugin(useGSAP);
 
@@ -52,19 +53,20 @@ export default function DropupNavigationMenu({
       <ul className="flex flex-col">
         {servicesMenu.map((service, serviceIndex) => (
           <Fragment>
-            <li
+            <Link
+              href={""}
               key={service.name}
-              className="pt-6 pb-3 flex flex-row justify-between items-center"
+              className="pt-6 pb-3 flex flex-row justify-between items-center hover:scale-105 transition_common hover:bg-black px-2"
             >
-              <p className="text-2xl font-medium tracking-[0.48px] text-white">
+              <span className="text-2xl font-medium tracking-[0.48px] text-white">
                 {service.name}
-              </p>
-              <p className="font-scoutcond text-[32px] font-bold text-text-750">
+              </span>
+              <span className="font-scoutcond text-[32px] font-bold text-text-750 hover:text-main-500">
                 {service.serialNo}
-              </p>
-            </li>
+              </span>
+            </Link>
 
-            <div className="w-full h-[1px] bg-gradient-to-tr from-[#000000] to-[#454545]" />
+            <div className="h-[1px] w-[calc(100%-40px)] mx-auto bg-gradient-to-tr from-[#000000] to-[#454545]" />
           </Fragment>
         ))}
       </ul>
