@@ -2,6 +2,7 @@ import { useRef, useEffect, JSX } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import clsx from "clsx";
+import { servicesMenu } from "@/services/data/shared.data";
 
 gsap.registerPlugin(useGSAP);
 
@@ -42,20 +43,21 @@ export default function DropupNavigationMenu({
     <div
       ref={menuRef}
       className={clsx(
-        "absolute bottom-full mb-2 left-0 w-48 bg-white border border-gray-200 rounded-lg shadow-md p-2 z-50"
+        "absolute -bottom-[380px] mb-2 left-0 min-w-[474px] min-h-[60px] bg-[#1C1C1C] shadow-md p-10 z-50 services-dropdown"
       )}
       style={{ display: "none" }}
     >
-      <ul className="space-y-2">
-        <li className="hover:bg-gray-100 rounded-md px-3 py-1 cursor-pointer">
-          Option 1
-        </li>
-        <li className="hover:bg-gray-100 rounded-md px-3 py-1 cursor-pointer">
-          Option 2
-        </li>
-        <li className="hover:bg-gray-100 rounded-md px-3 py-1 cursor-pointer">
-          Option 3
-        </li>
+      <ul className="flex flex-col">
+        {servicesMenu.map((service) => (
+          <li
+            key={service.name}
+            className="pt-6 pb-3 flex flex-row justify-between items-center"
+          >
+            <p className="text-2xl font-medium tracking-[0.48px] text-white">
+              {service.name}
+            </p>
+          </li>
+        ))}
       </ul>
     </div>
   );

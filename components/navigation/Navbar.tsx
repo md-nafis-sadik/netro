@@ -12,7 +12,7 @@ import {
 import { navbarData, routes } from "@/services/data/shared.data";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import NavigationSheet from "./NavigationSheet";
 import DropupNavigationMenu from "./DropUpNavigationMenu";
 
@@ -21,8 +21,6 @@ const Navbar: FC = () => {
   const [megamenuOpening, setMegamenuOpening] = useState(false);
 
   const pathname = usePathname();
-
-  console.log("megamenuOpening", megamenuOpening);
 
   return (
     <nav
@@ -50,8 +48,8 @@ const Navbar: FC = () => {
             // console.log(index);
             return (
               <div
-                onMouseEnter={() => (megaMenu ? setMegamenuOpening(true) : {})}
-                onMouseLeave={() => (megaMenu ? setMegamenuOpening(false) : {})}
+                onMouseEnter={() => megaMenu && setMegamenuOpening(true)}
+                onMouseLeave={() => megaMenu && setMegamenuOpening(false)}
                 className="flex flex-row items-center relative"
                 key={index}
               >
@@ -100,12 +98,12 @@ const Navbar: FC = () => {
                     }
                   />
                 )}
+
+                {megaMenu && <DropupNavigationMenu show={megamenuOpening} />}
               </div>
             );
           })}
         </div>
-
-        <DropupNavigationMenu show={megamenuOpening} />
 
         <div className="flex flex-row items-center gap-2 md:gap-3">
           {/* ON/OFF MUSIC */}

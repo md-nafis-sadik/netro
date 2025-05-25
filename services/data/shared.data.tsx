@@ -84,6 +84,25 @@ export const navbarData = [
   },
 ];
 
+export const servicesMenu = [
+  {
+    name: "UI/UX Design",
+    link: "/services/ui-ux-design",
+  },
+  {
+    name: "Software Development",
+    link: "/services/software-development",
+  },
+  {
+    name: "Branding",
+    link: "/services/branding",
+  },
+  {
+    name: "3D Design",
+    link: "/services/3d-design",
+  },
+];
+
 export const footerData = {
   inquiries: {
     title: "INQUIRIES",
