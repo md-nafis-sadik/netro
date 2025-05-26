@@ -52,10 +52,9 @@ export default function DropupNavigationMenu({
     >
       <ul className="flex flex-col overflow-hidden">
         {servicesMenu.map((service, serviceIndex) => (
-          <Fragment>
+          <Fragment key={`${service.name}_${serviceIndex}`}>
             <Link
               href={""}
-              key={`${service.name}_${serviceIndex}`}
               className="pt-6 pb-3 flex flex-row justify-between items-center hover:scale-105 transition_common hover:bg-black px-10 group"
             >
               <span className="text-2xl font-medium tracking-[0.48px] text-white">

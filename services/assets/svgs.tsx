@@ -465,6 +465,102 @@ export const GraphicIcon = ({
   </svg>
 );
 
+export const GraphicAnimatedIcon = ({
+  className,
+  color = "",
+  ...props
+}: IFSvgProps) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="210"
+    height="200"
+    viewBox="0 0 21 20"
+    fill="none"
+    className={className}
+    {...props}
+  >
+    <path
+      d="M6.21431 15H7.88098V5H6.21431V15Z"
+      fill="url(#paint0_linear_1463_552)"
+    >
+      <animateTransform
+        attributeName="transform"
+        type="scale"
+        values="1,0.4; 1,1.2; 1,0.7; 1,1.1; 1,0.6; 1,1.3; 1,0.4"
+        dur="1.2s"
+        repeatCount="indefinite"
+      />
+    </path>
+
+    <path
+      d="M9.54765 18.3333H11.2143V1.66666H9.54765V18.3333Z"
+      fill="url(#paint0_linear_1463_552)"
+    >
+      <animateTransform
+        attributeName="transform"
+        type="scale"
+        values="1,0.2; 1,1.8; 1,0.5; 1,1.6; 1,0.3; 1,1.9; 1,0.2"
+        dur="0.8s"
+        repeatCount="indefinite"
+      />
+    </path>
+
+    <path
+      d="M2.88098 11.6667H4.54765V8.33333H2.88098V11.6667Z"
+      fill="url(#paint0_linear_1463_552)"
+    >
+      <animateTransform
+        attributeName="transform"
+        type="scale"
+        values="1,0.8; 1,0.3; 1,1.2; 1,0.5; 1,0.9; 1,0.4; 1,0.8"
+        dur="1.5s"
+        repeatCount="indefinite"
+      />
+    </path>
+
+    <path
+      d="M12.881 15H14.5476V5H12.881V15Z"
+      fill="url(#paint0_linear_1463_552)"
+    >
+      <animateTransform
+        attributeName="transform"
+        type="scale"
+        values="1,0.5; 1,1.4; 1,0.8; 1,1.2; 1,0.6; 1,1.5; 1,0.5"
+        dur="1.1s"
+        repeatCount="indefinite"
+      />
+    </path>
+
+    <path
+      d="M16.2143 8.33333V11.6667H17.881V8.33333H16.2143Z"
+      fill="url(#paint0_linear_1463_552)"
+    >
+      <animateTransform
+        attributeName="transform"
+        type="scale"
+        values="1,0.9; 1,0.4; 1,1.1; 1,0.6; 1,0.8; 1,0.3; 1,0.9"
+        dur="0.9s"
+        repeatCount="indefinite"
+      />
+    </path>
+
+    <defs>
+      <linearGradient
+        id="paint0_linear_1463_552"
+        x1="3.88098"
+        y1="7.50004"
+        x2="14.881"
+        y2="18"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop offset="0.3" stopColor="#6256EC" />
+        <stop offset="0.705" stopColor="#FFA8A9" />
+        <stop offset="1" stopColor="#82D3A4" />
+      </linearGradient>
+    </defs>
+  </svg>
+);
+
 // I
 
 export const InstagramIcon = ({

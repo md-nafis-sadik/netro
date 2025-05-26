@@ -12,9 +12,10 @@ import {
 import { navbarData, routes } from "@/services/data/shared.data";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { FC, useEffect, useState } from "react";
+import { FC, useState } from "react";
 import NavigationSheet from "./NavigationSheet";
 import DropupNavigationMenu from "./DropUpNavigationMenu";
+import IntroAudioPlayer from "./IntroAudioPlayer";
 
 const Navbar: FC = () => {
   const [isSheetOpen, setIsSheetOpen] = useState(false);
@@ -107,24 +108,8 @@ const Navbar: FC = () => {
 
         <div className="flex flex-row items-center gap-2 md:gap-3">
           {/* ON/OFF MUSIC */}
-          <GradientButton
-            className={cn(
-              pathname === routes.homepage.link ? "bg-black" : "!bg-white",
-              "flex_center gap-2 group ps-3 md:px-5"
-            )}
-          >
-            <GraphicIcon className="!h-5 !w-5 !shrink-0" />
-            <span
-              className={cn(
-                pathname === routes.homepage.link
-                  ? "text-white"
-                  : "text-text-900",
-                " text-sm font-normal !leading-[1.4] group-hover:text-white transition_common"
-              )}
-            >
-              OFF
-            </span>
-          </GradientButton>
+          <IntroAudioPlayer pathname={pathname} />
+
           {/* GET IN TOUCH */}
           <GradientButton
             className={cn(
