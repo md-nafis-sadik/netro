@@ -1,19 +1,17 @@
-import SectionHeader from "@/components/common/SectionHeaderAnimated";
 import { inter, scoutCond } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
 import { whatMakesDifferentData } from "@/services/data";
 import Image from "next/image";
 import { Fragment } from "react";
+import SectionHeader from "../common/SectionHeader";
 
 const WhatMakesDifferent = () => {
   return (
     <section className="bg-black py-10 md:py-[120px]">
       <div className="containerX">
-        <SectionHeader
-          text="What Makes Us Different"
-          className="text-start"
-          lite
-        />
+        <SectionHeader className="text-black text-start about_what_maked_different">
+          What Makes Us Different
+        </SectionHeader>
 
         <div className="mt-10 md:mt-20 flex flex-col">
           {whatMakesDifferentData.map(

@@ -1,8 +1,8 @@
-import ProductFilterItems from "@/components/products/ProductFilterItems";
-import ProjectHomeCard from "@/components/projects/ProjectHomeCard";
+import ProjectsGallery from "@/components/projects/ProjectsGallery";
+import ProjectsGallerySkeleton from "@/components/projects/ProjectsGallerySkeleton";
+import ProjectsGalleryWrapper from "@/components/projects/ProjectsGalleryWrapper";
 import PageThumbnail from "@/components/shared/PageThumbnail";
-import { cn } from "@/lib/utils";
-import { projectsData } from "@/services/data";
+import { Suspense } from "react";
 
 async function PortfolioPage({
   searchParams,
@@ -19,21 +19,9 @@ async function PortfolioPage({
         titleClassName="our_projects_header"
       />
       <div className="containerX">
-        <ProductFilterItems query={query} />
-        <section className="pt-10 pb-10 sm:pb-16 md:pb-20 lg:pb-30">
-          <div className="grid md:grid-cols-2 gap-6 sm:gap-10 md:gap-16 lg:gap-20">
-            {projectsData.map((item, index) => (
-              <ProjectHomeCard
-                key={index}
-                item={item}
-                className={cn(
-                  "relative bg-transparent",
-                  (index + 1) % 3 === 0 ? "md:col-span-2" : ""
-                )}
-              />
-            ))}
-          </div>
-        </section>
+        <Suspense fallback={<ProjectsGallerySkeleton />}>
+          <ProjectsGalleryWrapper query={query} />
+        </Suspense>
       </div>
     </main>
   );

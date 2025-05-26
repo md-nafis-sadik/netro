@@ -17,6 +17,9 @@ const eslintConfig = [
       "@typescript-eslint/no-require-imports": "off",
       "@typescript-eslint/no-explicit-any": "off",
       "@typescript-eslint/no-unused-vars": "off",
+      // "no-var": "off", // Disable the no-var rule
+      // "no-unused-vars": "warn", // Example: other rules can be enabled or modified
+      "prefer-const": "off",
     },
   },
 ];

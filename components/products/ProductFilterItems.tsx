@@ -23,6 +23,7 @@ function ProductFilterItems({ query = "All" }: { query: string }) {
     const newPath = `?${query.toString()}`;
     router.push(newPath);
   };
+
   return (
     <div className="sm:border-t border-dashed border-natural-300 sm:pt-6 md:pt-10">
       <div className="w-full">

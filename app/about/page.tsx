@@ -3,6 +3,7 @@ import Testimonial from "@/components/testimonial/Testimonial";
 import StatisticsAbout from "@/components/statistics/StatisticsAbout";
 import WhatMakesDifferent from "@/components/whatMakesDifferent/WhatMakesDifferent";
 import ViewAbout from "@/components/view/ViewAbout";
+import WhatWeAreGreatAt from "@/components/specialities/WhatWeAreGreatAt";
 
 const AboutPage = () => {
   return (
@@ -10,6 +11,7 @@ const AboutPage = () => {
       <HeroAbout />
       <StatisticsAbout />
       <ViewAbout />
+      <WhatWeAreGreatAt />
       <WhatMakesDifferent />
       <Testimonial />
     </main>

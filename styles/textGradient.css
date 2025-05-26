@@ -142,6 +142,19 @@
   -webkit-text-fill-color: transparent;
 }
 
+.about_what_maked_different {
+  background: linear-gradient(
+    90deg,
+    #676767 0.06%,
+    #fff 20.04%,
+    #fff 39.42%,
+    #676767 59.7%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 /* JOURNAL */
 .journal_suggestions_header {
   background: var(

@@ -21,7 +21,7 @@ const IntroAudioPlayer = ({ pathname }: IFProps) => {
     const audio = audioRef.current;
     if (!audio) return;
 
-    let loadingTimer: NodeJS.Timeout;
+    let loadingTimer: NodeJS.Timeout; // For clearing the loading timer
 
     const checkAutoplaySupport = async () => {
       try {
