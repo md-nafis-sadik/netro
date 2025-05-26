@@ -64,7 +64,7 @@ const IntroHome = () => {
   }, []);
 
   return (
-    <div className="containerX pt-[110px] pb-[60px] md:py-[160px] flex flow-row overflow-hidden">
+    <div className="containerX pt-12 lg:pt-[110px] pb-[60px] md:pb-[160px] flex flow-row overflow-hidden">
       <div className="hidden md:block w-2/5" />
 
       <p className="w-full md:w-3/5 text-2xl md:text-5xl font-bold !leading-[1.4] text-text-900">

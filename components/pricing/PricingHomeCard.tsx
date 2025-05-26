@@ -58,7 +58,7 @@ const PricingHomeCard = ({
           </sup>
         </p>
 
-        <div className="mt-6 md:mt-10">
+        <div className="mt-6 md:mt-10 flex justify-start">
           <GradientButton className="!px-8">
             <span className="text-white">Start Project</span>
           </GradientButton>

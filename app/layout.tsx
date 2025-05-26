@@ -4,6 +4,7 @@ import "@/styles/globals.css";
 import "@/styles/app.css";
 import "@/styles/textGradient.css";
 import "@/styles/bgGradient.css";
+import "@/styles/animation.css";
 import Footer from "@/components/footer/Footer";
 import LetsTalk from "@/components/letsTalk/LetsTalkHome";
 import ParallaxContainer from "@/components/animations/HoverParallax";

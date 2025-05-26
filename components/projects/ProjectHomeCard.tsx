@@ -24,10 +24,10 @@ const ProjectHomeCard = ({
   style?: React.CSSProperties;
 }) => {
   return (
-    <Link
-      href={`/portfolio/${item?.name}`}
+    <div
+      // href={`/portfolio/${item?.name}`}
       className={cn(
-        "w-full h-[450px] max-h-[450px] md:h-[640px] md:max-h-[640px] overflow-hidden bg-text-700 group transition_common cursor-pointer",
+        "w-full h-[728px] max-h-[728px] md:h-[640px] md:max-h-[640px] overflow-hidden bg-text-700 group transition_common cursor-pointer relative",
         className
       )}
       style={style}
@@ -42,9 +42,9 @@ const ProjectHomeCard = ({
 
       <div
         className={cn(
-          " w-full absolute left-0 transition_common  mt-auto",
+          "min-w-full md:min-w-0 absolute left-0 transition_common mt-auto",
           showBottom
-            ? "bottom-0 h-max bg-blandGradient backdrop-blur-md"
+            ? "min-w-full bottom-0 h-max bg-blandGradient backdrop-blur-md"
             : "project-home-blur md:-translate-x-full group-hover:translate-x-0 bottom-0 md:bottom-auto md:top-0 h-max md:h-full max-w-[320px]"
         )}
       >
@@ -82,7 +82,7 @@ const ProjectHomeCard = ({
           </div>
         </div>
       </div>
-    </Link>
+    </div>
   );
 };
 

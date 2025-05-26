@@ -13,24 +13,20 @@
 
 .btn-animate-gradient {
   background: linear-gradient(90deg, #483bdc, #ffa8a9, #82d3a4);
-  background-size: 100% 100%;
-  animation: gradientAnimation 0.5s ease linear infinite;
-  transition: transform 0.2s;
+  background-size: 300% 300%;
+  animation: gradientAnimation 4s ease infinite; /* changed to 2s so it's noticeable */
+  transition: background-position 4s;
 }
-
-/* .btn-animate-gradient:hover {
-  background: linear-gradient(270deg, #483bdc, #ffa8a9, #82d3a4);
-} */
 
 @keyframes gradientAnimation {
   0% {
-    background-position: 0% 50%;
+    background-position: 0% 0%;
   }
   50% {
-    background-position: 100% 50%;
+    background-position: 100% 100%;
   }
   100% {
-    background-position: 0% 50%;
+    background-position: 0% 0%;
   }
 }
 

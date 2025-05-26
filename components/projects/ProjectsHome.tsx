@@ -4,25 +4,29 @@ import { projectsData } from "@/services/data";
 import ProjectCard from "./ProjectHomeCard";
 import SectionHeader from "../common/SectionHeader";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { cn } from "@/lib/utils";
 
 const ProjectsHome = () => {
   const cardsRef = useRef<HTMLDivElement | null>(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  console.log(activeIndex);
 
   useGSAP(
     () => {
       const cards = gsap.utils.toArray<HTMLDivElement>(".stacked-card");
       const total = cards.length;
-      const scaleDecay = 0.05;
+      const scaleDecay = 0.075;
 
       cards.forEach((card, i) => {
         const reversedIndex = total - 1 - i;
 
         // Stack setup - initial positions
         gsap.set(card, {
-          y: i * 100 - 20,
+          y: i * 60,
           scale: 1,
           zIndex: i,
         });
@@ -31,11 +35,13 @@ const ProjectsHome = () => {
         const trigger = ScrollTrigger.create({
           trigger: card,
           start: "top center+=100",
-          end: "bottom top+=100",
+          end: "bottom top+=40",
           scrub: 0.1,
           onUpdate: (self) => {
             const progress = self.progress;
             const scale = 1 - progress * scaleDecay * (reversedIndex + 1);
+
+            setActiveIndex(i);
 
             gsap.to(card, {
               scale,
@@ -86,13 +92,13 @@ const ProjectsHome = () => {
           Projects That Speak <br /> for Themselves
         </SectionHeader>
 
-        <div
-          ref={cardsRef}
-          className="flex flex-col gap-6 md:gap-10 mb-40 w-full relative"
-        >
+        <div ref={cardsRef} className="flex flex-col mb-40 w-full relative">
           {projectsData.map((item, index) => (
             <ProjectCard
-              className="w-full stacked-card sticky left-0 top-10 mb-80"
+              className={cn("w-full stacked-card sticky left-0 top-0 mb-80")}
+              style={{
+                pointerEvents: activeIndex === index ? "auto" : "none",
+              }}
               item={item}
               key={index}
             />
