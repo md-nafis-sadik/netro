@@ -165,3 +165,14 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+/* PORTFOLIO DETAILS */
+.portfolio_details_explore_more_products_header {
+  background: var(
+    --Text-Text-Black,
+    linear-gradient(90deg, #000 1.22%, #7b7b7b 50.61%, #000 100%)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

@@ -1,3 +1,4 @@
+import ProjectDetailsExploreMoreProducts from "@/components/projects/ProjectDetailsExploreMoreProducts";
 import ProjectDetailsImageStagger from "@/components/projects/ProjectDetailsImageStagger";
 import Breadcrumbs from "@/components/shared/Breadcrumbs";
 import { Button } from "@/components/ui/button";
@@ -235,6 +236,8 @@ async function PortfolioDetails({
           </div>
         </div>
       </div>
+
+      <ProjectDetailsExploreMoreProducts />
     </main>
   );
 }
