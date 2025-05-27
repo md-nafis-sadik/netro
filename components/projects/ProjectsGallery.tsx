@@ -10,7 +10,7 @@ interface IFProps {
   data?: any;
 }
 
-const ProjectsGallery = ({ query = "", data = [] }: IFProps) => {
+const ProjectsGallery = ({ query, data = [] }: IFProps) => {
   const searchParams = useSearchParams();
   const category = searchParams.get("category");
 

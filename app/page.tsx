@@ -10,7 +10,6 @@ import WorkCultureHome from "@/components/workCulture/WorkCultureHome";
 import PricingHome from "@/components/pricing/PricingHome";
 import StatisticsHome from "@/components/statistics/StatisticsHome";
 import IntroHome from "@/components/intro/IntroHome";
-import MarqueeHome from "@/components/marquee/MarqueeHome";
 import HeroMarquee from "@/components/hero/HeroMarquee";
 
 const HomePage = () => {

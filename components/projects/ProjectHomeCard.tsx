@@ -24,8 +24,8 @@ const ProjectHomeCard = ({
       style={style}
     >
       <Image
-        src={item?.image}
-        alt={item?.name}
+        src={item?.featuredImage}
+        alt={item?.title}
         className="min-h-full h-full min-w-full w-auto object-cover absolute_center"
         width={1920}
         height={1280}
@@ -42,19 +42,19 @@ const ProjectHomeCard = ({
         <div className="p-6 md:p-8 h-full flex flex-col justify-between gap-6">
           <div className="flex flex-col">
             <Image
-              src={item?.icon}
+              src={item?.author?.profileImage}
               alt={item?.name}
-              className="h-auto w-[112px]"
+              className="h-auto w-20"
               height={200}
               width={300}
             />
 
             <p
               className={cn(
-                "text-sm sm:text-base font-normal !leading-[1.4] text-text-200 mt-4 sm:mt-5 md:mt-7 font-inter line-clamp-2"
+                "text-sm sm:text-base font-normal !leading-[1.4] text-text-200 mt-4 sm:mt-5 md:mt-7 font-inter line-clamp-5"
               )}
             >
-              {item?.description}
+              {item?.metaDescription}
             </p>
           </div>
           <div className="flex flex-col">
