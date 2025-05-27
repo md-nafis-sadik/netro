@@ -1,9 +1,9 @@
 "use client";
 import { Fragment } from "react";
 import ProductFilterItems from "@/components/products/ProductFilterItems";
-import ProjectHomeCard from "@/components/projects/ProjectHomeCard";
 import { cn } from "@/lib/utils";
 import { useSearchParams } from "next/navigation";
+import ProjectCard from "./ProjectCard";
 
 interface IFProps {
   query?: string;
@@ -28,7 +28,7 @@ const ProjectsGallery = ({ query, data = [] }: IFProps) => {
       <section className="pt-10 pb-10 sm:pb-16 md:pb-20 lg:pb-30">
         <div className="grid md:grid-cols-2 gap-6 sm:gap-10 md:gap-16 lg:gap-20">
           {newData?.map((item: any, index: number) => (
-            <ProjectHomeCard
+            <ProjectCard
               key={index}
               item={item}
               className={cn(

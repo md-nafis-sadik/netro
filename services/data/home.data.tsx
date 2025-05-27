@@ -31,44 +31,44 @@ export const marqueeHomeData = [
 
 export const projectsData = [
   {
-    name: "Telzen",
-    description:
+    title: "Telzen",
+    metaDescription:
       "Empowering brands with user-focused designs and seamless development.",
     tagList: "Case Study, Mobile App, Telco, Design, Development",
-    image: images.projectBannerTelzen,
-    icon: images.telzenIcon,
+    featuredImage: images.projectBannerTelzen,
+    author: { profileImage: images.telzenIcon },
   },
   {
-    name: "Yoowifi",
-    description:
+    title: "Yoowifi",
+    metaDescription:
       "Empowering brands with user-focused designs and seamless development.",
     tagList: "Case Study, Mobile App, Telco, Design, Development",
-    image: images.projectBannerYooWifi,
-    icon: images.yoowifiIcon,
+    featuredImage: images.projectBannerYooWifi,
+    author: { profileImage: images.yoowifiIcon },
   },
   {
-    name: "Yoowifi",
-    description:
+    title: "Yoowifi",
+    metaDescription:
       "Empowering brands with user-focused designs and seamless development.",
     tagList: "Case Study, Mobile App, Telco, Design, Development",
-    image: images.projectBannerTelzen,
-    icon: images.yoowifiIcon,
+    featuredImage: images.projectBannerTelzen,
+    author: { profileImage: images.yoowifiIcon },
   },
   {
-    name: "Yoowifi",
-    description:
+    title: "Yoowifi",
+    metaDescription:
       "Empowering brands with user-focused designs and seamless development.",
     tagList: "Case Study, Mobile App, Telco, Design, Development",
-    image: images.projectBannerYooWifi,
-    icon: images.yoowifiIcon,
+    featuredImage: images.projectBannerYooWifi,
+    author: { profileImage: images.yoowifiIcon },
   },
   {
-    name: "Yoowifi",
-    description:
+    title: "Yoowifi",
+    metaDescription:
       "Empowering brands with user-focused designs and seamless development.",
     tagList: "Case Study, Mobile App, Telco, Design, Development",
-    image: images.projectBannerTelzen,
-    icon: images.yoowifiIcon,
+    featuredImage: images.projectBannerTelzen,
+    author: { profileImage: images.yoowifiIcon },
   },
 ];
 

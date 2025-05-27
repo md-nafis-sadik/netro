@@ -5,7 +5,7 @@ import { ArrowLongTailIcon } from "@/services/assets/svgs";
 import Image from "next/image";
 import Link from "next/link";
 
-const ProjectHomeCard = ({
+const ProjectCard = ({
   item,
   className = "",
   showBottom = false,
@@ -19,7 +19,7 @@ const ProjectHomeCard = ({
   return (
     <div
       className={cn(
-        "w-full h-[728px] max-h-[728px] md:h-[640px] md:max-h-[640px] overflow-hidden bg-text-700 group transition_common cursor-pointer relative",
+        "w-full h-[728px] max-h-[728px] md:h-[640px] md:max-h-[640px] overflow-hidden bg-text-700 group transition_common relative",
         className
       )}
       style={style}
@@ -44,7 +44,7 @@ const ProjectHomeCard = ({
           <div className="flex flex-col">
             <Image
               src={item?.author?.profileImage}
-              alt={item?.name}
+              alt={item?.title}
               className="h-auto w-20"
               height={200}
               width={300}
@@ -80,4 +80,4 @@ const ProjectHomeCard = ({
   );
 };
 
-export default ProjectHomeCard;
+export default ProjectCard;

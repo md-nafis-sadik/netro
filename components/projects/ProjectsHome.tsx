@@ -1,7 +1,7 @@
 "use client";
 import SectionSubHeader from "@/components/common/SectionSubHeader";
 import { projectsData } from "@/services/data";
-import ProjectCard from "./ProjectHomeCard";
+import ProjectCard from "./ProjectCard";
 import SectionHeader from "../common/SectionHeader";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRef, useState } from "react";
@@ -12,8 +12,6 @@ import { cn } from "@/lib/utils";
 const ProjectsHome = () => {
   const cardsRef = useRef<HTMLDivElement | null>(null);
   const [activeIndex, setActiveIndex] = useState(0);
-
-  console.log(activeIndex);
 
   useGSAP(
     () => {

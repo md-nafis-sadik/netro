@@ -1,6 +1,6 @@
 import { projectsData } from "@/services/data";
 import SliderContainer from "../shared/SlideContainer";
-import ProjectHomeCard from "./ProjectHomeCard";
+import ProjectCard from "./ProjectCard";
 
 function OtherProjects() {
   return (
@@ -12,7 +12,7 @@ function OtherProjects() {
         <SliderContainer className="relative">
           <div className="w-full min-h-fit flex flex-row gap-6 sm:gap-10 md:gap-15">
             {projectsData?.map((item, index) => (
-              <ProjectHomeCard
+              <ProjectCard
                 key={index}
                 item={item}
                 className="relative bg-transparent min-w-[280px] sm:min-w-[400px] md:min-w-[522px]"

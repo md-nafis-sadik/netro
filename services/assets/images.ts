@@ -26,6 +26,7 @@ export { default as contact } from "@/public/images/contact.png";
 export { default as cylindricalHalfStar } from "@/public/images/cylindrical-half-star-crystal.png";
 export { default as diamondCrystal } from "@/public/images/diamond-crystal.png";
 export { default as doubleLCrystal } from "@/public/images/double-l-crystal.png";
+export { default as download3d } from "@/public/images/download-3d.png";
 export { default as download } from "@/public/images/download.png";
 export { default as gemCrystal } from "@/public/images/gem-crystal.png";
 export { default as honeycombCrystal } from "@/public/images/honeycomb-crystal.png";
