@@ -1,7 +1,9 @@
+"use client";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { ArrowLongTailIcon } from "@/services/assets/svgs";
 import Image from "next/image";
+import Link from "next/link";
 
 const ProjectHomeCard = ({
   item,
@@ -16,7 +18,6 @@ const ProjectHomeCard = ({
 }) => {
   return (
     <div
-      // href={`/portfolio/${item?.name}`}
       className={cn(
         "w-full h-[728px] max-h-[728px] md:h-[640px] md:max-h-[640px] overflow-hidden bg-text-700 group transition_common cursor-pointer relative",
         className
@@ -66,10 +67,12 @@ const ProjectHomeCard = ({
               {item?.tagList}
             </p>
 
-            <Button className="w-fit group mt-4 sm:mt-6 md:mt-12">
-              <span className="!leading-none">View Case</span>
-              <ArrowLongTailIcon className="h-auto w-5 md:w-6 group-hover:translate-x-2 transition_common" />
-            </Button>
+            <Link href={`/portfolio/${item?.title}`}>
+              <Button className="w-fit group mt-4 sm:mt-6 md:mt-12">
+                <span className="!leading-none">View Case</span>
+                <ArrowLongTailIcon className="h-auto w-5 md:w-6 group-hover:translate-x-2 transition_common" />
+              </Button>
+            </Link>
           </div>
         </div>
       </div>

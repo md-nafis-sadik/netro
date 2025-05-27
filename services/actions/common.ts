@@ -29,3 +29,8 @@ export const handleCopy = (
     (err) => {}
   );
 };
+
+// converts `1` to `01` and keeps `10` to `10`. means keeps the leading zeros
+export const toTwoDigits = (n: number) => {
+  return String(n).padStart(2, "0");
+};

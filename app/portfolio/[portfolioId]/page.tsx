@@ -1,38 +1,152 @@
-import OtherProjects from "@/components/projects/OtherProjects";
-import ProjectInformation from "@/components/projects/ProjectInformation";
-import ProjectVideo from "@/components/projects/ProjectVideo";
-import PageThumbnail from "@/components/shared/PageThumbnail";
-import { cn } from "@/lib/utils";
-import { images } from "@/services";
-import { aboutViewData } from "@/services/data";
-import Image from "next/image";
+import ProjectDetailsImageStagger from "@/components/projects/ProjectDetailsImageStagger";
+import Breadcrumbs from "@/components/shared/Breadcrumbs";
+import { fetchWithDelay } from "@/lib/apiHandler";
+import { getGeneratedMetadata } from "@/lib/metadata";
+import { purifyUrl, toTwoDigits } from "@/services";
+import { WarningSignIcon } from "@/services/assets/svgs";
+
+interface PortfolioDetailsResponse {
+  data: any;
+  [key: string]: any;
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ portfolioId: string }>;
+}) {
+  const { portfolioId } = await params;
+  const purifiedPortfolioId = purifyUrl({ urlString: portfolioId });
+  const url = `/portfolios/find-by-title/${purifiedPortfolioId}`;
+  return await getGeneratedMetadata({
+    apiUrl: url,
+    metaTitle: purifiedPortfolioId,
+  });
+}
 
 async function PortfolioDetails({
   params,
 }: {
   params: Promise<{ portfolioId: string }>;
 }) {
-  const { portfolioId } = await params;
-  const data = {
-    projectInfo: {
-      clientOrigin: "Germany",
-      timeline: "90 Days",
-      tags: [
-        "UX/UI Design",
-        "Interaction Design",
-        "Illustration",
-        "Animations",
-        "Video Production",
-      ],
-      description:
-        "Telzen is a vibrant telco platform for youth, offering flexible plans, rewards, and seamless account management in an intuitive app.",
-      title: "Your Connected,\n Rewarded Lifestyle",
-      subDescription:
-        "Telzen offers a range of features designed for the modern, connected youth. With flexible mobile plans tailored to your needs, you can easily manage your account, track usage, and pay bills. Earn rewards through gamified experiences and access exclusive deals for everyday savings. Enjoy 24/7 customer support and stay in control of your connectivity with Telzen.",
-    },
-  };
+  let { portfolioId } = await params;
+  portfolioId = purifyUrl({ urlString: portfolioId });
+
+  let portfolioDetails = (await fetchWithDelay(
+    `/portfolios/find-by-title/${portfolioId}`
+  )) as PortfolioDetailsResponse;
+
+  // TEMP DATA
+  const coreFeatures = [
+    "Tasbih Counting",
+    "Iftar Timings",
+    "Dua",
+    "Quran",
+    "Hadis",
+    "Islamic Calendar",
+  ];
+
+  const noteList = [
+    "The App comes with a customized backend and Admin Panel. Credentials has been shared.",
+    "Flutter Code. iOS App needs to run.",
+    "On Mac device with XCode (Expertise required)",
+    "Ad Network, Payment Methods are subject to setup yourself.",
+    "Installation is not included in 6 months support.",
+  ];
+  // TEMP DATA
+
   return (
-    <>
+    <main className="min-h-screen font-inter">
+      <div className="containerX">
+        <Breadcrumbs
+          breadcrumbs={[
+            {
+              name: "Product",
+              link: "/portfolio",
+            },
+            {
+              name: "Product description",
+              // link: `/portfolio/${portfolioId}`,
+            },
+          ]}
+          wrapperClassName="pt-2 sm:pt-6 pb-8 sm:pb-8 md:py-10"
+        />
+      </div>
+
+      <div className="flex flex-row gap-20 containerX">
+        <div className="flex flex-col w-full lg:w-3/5 ">
+          <ProjectDetailsImageStagger data={portfolioDetails?.data} />
+          <p className="text-sm md:text-lg font-normal !leading-[1.6] mt-4 md:mt-6 text-text-700">
+            {portfolioDetails?.data?.metaDescription}
+          </p>
+
+          {/* CORE FEATURES */}
+          <div className="mt-6 md:mt-10 lg:mt-12">
+            <p className="font-scoutcond text-2xl sm:text-4xl md:text-5xl lg:text-[64px] font-bold !leading-[0.9] uppercase text-text-900">
+              Core Features
+            </p>
+
+            <div className="mt-4 md:mt-6">
+              {coreFeatures.map((feature, index) => (
+                <p
+                  className="flex items-center gap-6 md:gap-10 lg:gap-12 my-3 whitespace-pre-wrap"
+                  key={index}
+                >
+                  <span className="text-base md:text-lg !leading-[1.2] md:!leading-[1.4] font-semibold text-text-200">
+                    {toTwoDigits(index + 1)}
+                  </span>
+                  <span className="text-sm md:text-lg font-normal !leading-[1.6] text-text-900">
+                    {feature}
+                  </span>
+                </p>
+              ))}
+            </div>
+          </div>
+
+          {/* NOTE WITH WARNING */}
+          <div className="border border-dashed border-secondary-950 bg-secondary-50 py-6 px-4 md:px-6 flex flex-row mt-6 md:mt-12">
+            <WarningSignIcon className="w-10 h-10 md:w-20 md:h-20" />
+
+            <div className="">
+              <p className="font-scoutcond text-2xl sm:text-3xl lg:text-4xl font-bold !leading-[0.9] text-text-900 uppercase">
+                Jazakallah needs OpenAI API Key
+              </p>
+
+              <ul className="list-disc list-inside">
+                {noteList.map((note, index) => (
+                  <li
+                    className="flex items-center gap-6 md:gap-10 lg:gap-12 my-3 whitespace-pre-wrap"
+                    key={index}
+                  >
+                    <span className="text-sm md:text-lg font-normal !leading-[1.6] text-text-900">
+                      {note}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div className="h-full relative w-full lg:w-2/5">
+          <div className="border border-dashed border-natural-300 p-6 md:p-8 lg:p-10 sticky top-10">
+            <p className="font-scoutcond text-2xl md:text-4xl lg:text-5xl font-bold !leading-[0.9] uppercase">
+              {portfolioDetails?.data?.title}
+            </p>
+            <p className="text-sm md:text-lg !leading-[1.4] md:!leading-[1.6] mt-2 md:mt-4">
+              {portfolioDetails?.data?.metaDescription}
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
+  );
+}
+
+export default PortfolioDetails;
+
+{
+  /* <>
       <PageThumbnail title="telzen - A Telecom Brand" description="GUIDE" />
       <ProjectVideo />
       <ProjectInformation information={data?.projectInfo} />
@@ -183,8 +297,5 @@ async function PortfolioDetails({
         </div>
       </section>
       <OtherProjects />
-    </>
-  );
+    </> */
 }
-
-export default PortfolioDetails;

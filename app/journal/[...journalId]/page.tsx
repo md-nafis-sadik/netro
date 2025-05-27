@@ -2,8 +2,6 @@ import SectionHeader from "@/components/common/SectionHeader";
 import JournalDetailsSkeleton from "@/components/journal/JournalDetailsSkeleton";
 import JournalDetailsWrapper from "@/components/journal/JournalDetailsWrapper";
 import JournalSuggestionWrapper from "@/components/journal/JournalSuggestionWrapper";
-import JournalSuggestions from "@/components/shared/JournalSuggestions";
-import { fetchWithDelay } from "@/lib/apiHandler";
 import { getGeneratedMetadata } from "@/lib/metadata";
 import { purifyUrl } from "@/services";
 import { Suspense } from "react";

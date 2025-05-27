@@ -1,18 +1,26 @@
 import colors from "@/lib/colors";
+import { cn } from "@/lib/utils";
 import { Dividericon } from "@/services/assets/svgs";
 import Link from "next/link";
 
 function Breadcrumbs({
   breadcrumbs,
+  wrapperClassName,
 }: {
-  breadcrumbs: { name: string; link: string }[];
+  breadcrumbs: { name?: string; link?: string }[];
+  wrapperClassName?: string;
 }) {
   return (
-    <ul className="flex items-center gap-2 text-sm font-inter uppercase">
+    <ul
+      className={cn(
+        "flex items-center gap-2 text-sm font-inter uppercase",
+        wrapperClassName
+      )}
+    >
       {breadcrumbs?.map((item, index) => (
         <li key={index} className="flex items-center gap-2">
           {index !== breadcrumbs?.length - 1 ? (
-            <Link className="text-text-600" href={item?.link}>
+            <Link className="text-text-600" href={item?.link as string}>
               {item?.name}
             </Link>
           ) : (
