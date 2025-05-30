@@ -6,14 +6,20 @@ import { useRouter } from "next/navigation";
 import { Fragment } from "react";
 import SliderContainer from "../shared/SlideContainer";
 
-function ProductFilterItems({ query = "All" }: { query: string }) {
+interface IProductFilterItems {
+  query?: string;
+  categoryData?: any;
+}
+
+function ProductFilterItems({
+  query = "All",
+  categoryData,
+}: IProductFilterItems) {
   const productLists = [
-    "All",
-    "UX/UI Design",
-    "Software Development",
-    "Web Development",
-    "App Development",
-    "SaaS Development",
+    {
+      category: "All",
+    },
+    ...categoryData,
   ];
   const router = useRouter();
 
@@ -21,7 +27,7 @@ function ProductFilterItems({ query = "All" }: { query: string }) {
     const query = new URLSearchParams();
     query.set("filtered_by", tabName);
     const newPath = `?${query.toString()}`;
-    router.push(newPath);
+    router.push(tabName === "All" ? "/portfolio" : newPath); // Navigate to the new path based on the tabName. If "All" is clicked, it navigates to "/portfolio", otherwise it appends the query string.
   };
 
   return (
@@ -35,11 +41,11 @@ function ProductFilterItems({ query = "All" }: { query: string }) {
                   <li
                     className={cn(
                       "px-6 sm:px-7 md:px-8 py-2 sm:py-3 text-sm text-text-900 font-semibold cursor-pointer font-inter whitespace-nowrap",
-                      query === item ? "bg-main-400 text-white" : ""
+                      query === item?.category ? "bg-main-400 text-white" : ""
                     )}
-                    onClick={() => handleTabClick(item)}
+                    onClick={() => handleTabClick(item?.category)}
                   >
-                    {item}
+                    {item?.category}
                   </li>
                   <li>
                     {index !== productLists?.length - 1 && (

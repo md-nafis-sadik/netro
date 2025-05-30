@@ -10,22 +10,22 @@ interface IFProps {
   data?: any;
 }
 
-const ProjectsGallery = ({ query, data = [] }: IFProps) => {
+const ProjectsGallery = ({ data = [] }: IFProps) => {
   const searchParams = useSearchParams();
-  const category = searchParams.get("category");
+  const filtered_by = searchParams.get("filtered_by");
 
   const newData = data?.filter((item: any) => {
-    if (category?.toLowerCase() === undefined) {
+    if (filtered_by?.toLowerCase() === undefined) {
       return item;
     } else {
-      return item?.category?.toLowerCase() === category?.toLowerCase();
+      console.log("item?.category?.toLowerCase()", item?.category);
+      return item?.category?.toLowerCase() === filtered_by?.toLowerCase();
     }
   });
 
   return (
-    <Fragment>
-      <ProductFilterItems query={query as string} />
-      <section className="pt-10 pb-10 sm:pb-16 md:pb-20 lg:pb-30">
+    <section className="pt-10 pb-10 sm:pb-16 md:pb-20 lg:pb-30">
+      {newData?.length > 0 ? (
         <div className="grid md:grid-cols-2 gap-6 sm:gap-10 md:gap-16 lg:gap-20">
           {newData?.map((item: any, index: number) => (
             <ProjectCard
@@ -38,8 +38,14 @@ const ProjectsGallery = ({ query, data = [] }: IFProps) => {
             />
           ))}
         </div>
-      </section>
-    </Fragment>
+      ) : (
+        <div className="py-40">
+          <p className="font-inter text-center text-2xl font-semibold">
+            No work available for this segment.
+          </p>
+        </div>
+      )}
+    </section>
   );
 };
 
