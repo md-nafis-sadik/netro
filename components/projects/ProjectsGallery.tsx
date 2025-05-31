@@ -1,9 +1,9 @@
 "use client";
-import { Fragment } from "react";
-import ProductFilterItems from "@/components/products/ProductFilterItems";
 import { cn } from "@/lib/utils";
 import { useSearchParams } from "next/navigation";
 import ProjectCard from "./ProjectCard";
+import Skeleton from "../shared/Skeleton";
+import ProjectsGallerySkeleton from "./ProjectsGallerySkeleton";
 
 interface IFProps {
   query?: string;

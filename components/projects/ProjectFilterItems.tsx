@@ -6,15 +6,15 @@ import { useRouter } from "next/navigation";
 import { Fragment } from "react";
 import SliderContainer from "../shared/SlideContainer";
 
-interface IProductFilterItems {
+interface IProjectFilterItems {
   query?: string;
   categoryData?: any;
 }
 
-function ProductFilterItems({
+function ProjectFilterItems({
   query = "All",
   categoryData,
-}: IProductFilterItems) {
+}: IProjectFilterItems) {
   const productLists = [
     {
       category: "All",
@@ -65,4 +65,4 @@ function ProductFilterItems({
   );
 }
 
-export default ProductFilterItems;
+export default ProjectFilterItems;

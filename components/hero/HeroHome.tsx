@@ -35,7 +35,7 @@ const HeroHome = () => {
               <ZRotationText text="DEVEL" delay={0.75} />
               <BallBounceText
                 className={cn(
-                  "text-[66px] lg:text-[102px] inline-block font-normal hero-text-o-gradient font-bonbon !leading-[0.8] "
+                  "text-[66px] md:text-[86px] lg:text-[116px] inline-block font-normal hero-text-o-gradient font-bonbon !leading-[0.8] mt-4"
                 )}
                 delay={1.0}
               >
