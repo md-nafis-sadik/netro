@@ -31,35 +31,33 @@ function ProjectFilterItems({
   };
 
   return (
-    <div className="sm:border-t border-dashed border-natural-300 sm:pt-6 md:pt-10">
-      <div className="w-full">
-        <div className="p-3 border-x-0 sm:border-x border-y border-dashed border-natural-300 ">
-          <SliderContainer className="relative overflow-hidden">
-            <ul className="flex items-center gap-2">
-              {productLists.map((item, index) => (
-                <Fragment key={index}>
-                  <li
-                    className={cn(
-                      "px-6 sm:px-7 md:px-8 py-2 sm:py-3 text-sm text-text-900 font-semibold cursor-pointer font-inter whitespace-nowrap",
-                      query === item?.category ? "bg-main-400 text-white" : ""
-                    )}
-                    onClick={() => handleTabClick(item?.category)}
-                  >
-                    {item?.category}
-                  </li>
-                  <li>
-                    {index !== productLists?.length - 1 && (
-                      <Dividericon
-                        className="w-[7px] h-7"
-                        color={colors.natural[200]}
-                      />
-                    )}
-                  </li>
-                </Fragment>
-              ))}
-            </ul>
-          </SliderContainer>
-        </div>
+    <div className="w-full">
+      <div className="p-3 border-x-0 sm:border-x border-y border-dashed border-natural-300 ">
+        <SliderContainer className="relative overflow-hidden">
+          <ul className="flex items-center gap-2">
+            {productLists.map((item, index) => (
+              <Fragment key={index}>
+                <li
+                  className={cn(
+                    "px-6 sm:px-7 md:px-8 py-2 sm:py-3 text-sm text-text-900 font-semibold cursor-pointer font-inter whitespace-nowrap",
+                    query === item?.category ? "bg-main-400 text-white" : ""
+                  )}
+                  onClick={() => handleTabClick(item?.category)}
+                >
+                  {item?.category}
+                </li>
+                <li>
+                  {index !== productLists?.length - 1 && (
+                    <Dividericon
+                      className="w-[7px] h-7"
+                      color={colors.natural[200]}
+                    />
+                  )}
+                </li>
+              </Fragment>
+            ))}
+          </ul>
+        </SliderContainer>
       </div>
     </div>
   );
