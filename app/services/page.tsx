@@ -5,20 +5,17 @@ import SaasDevelopmentService from "@/components/services/SaasDevelopmentService
 import ServiceStrengthAreas from "@/components/services/ServiceStrengthAreas";
 import SoftwareService from "@/components/services/SoftwareService";
 import UXUIService from "@/components/services/UXUIService";
+import PageThumbnail from "@/components/shared/PageThumbnail";
 
 const ServicePage = () => {
   return (
     <main className="relative">
-      <div className="containerX py-10 md:py-[100px]">
-        <SectionHeaderAnimated
-          dark
-          text="What We Do"
-          className="text-center md:text-start"
-        />
-        <p className="font-inter text-sm md:text-2xl font-normal md:font-light !leading-[1.4] uppercase text-center md:text-start text-text-600 mt-6">
-          Know our strengths
-        </p>
-      </div>
+      <PageThumbnail
+        title="What We Do"
+        description="Know our strengths"
+        titleClassName="services_header w-fit"
+      />
+
       <SoftwareService />
       <UXUIService />
       <ProductAnimationService />
