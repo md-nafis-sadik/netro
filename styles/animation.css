@@ -13,8 +13,9 @@
 
 .btn-animate-gradient {
   background: linear-gradient(90deg, #483bdc, #ffa8a9, #82d3a4);
-  background-size: 300% 300%;
-  animation: gradientAnimation 4s ease infinite; /* changed to 2s so it's noticeable */
+  background-size: 100% 100%;
+  /* background-size: 300% 300%; */
+  /* animation: gradientAnimation 4s ease infinite; changed to 2s so it's noticeable */
   transition: background-position 4s;
 }
 

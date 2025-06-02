@@ -108,7 +108,7 @@ const Navbar: FC = () => {
 
         <div className="flex flex-row items-center gap-2 md:gap-3">
           {/* ON/OFF MUSIC */}
-          <IntroAudioPlayer pathname={pathname} />
+          {/* <IntroAudioPlayer pathname={pathname} /> */}
 
           {/* GET IN TOUCH */}
           <GradientButton
