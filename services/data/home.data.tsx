@@ -127,24 +127,52 @@ export const servicesHomeData = [
 
 export const productsData = [
   {
-    name: "Yoowifi",
+    id: "01",
+    image: images.product1,
+    title: "Trivialy",
     description:
-      "A cutting-edge telecom project delivering seamless connectivity solutions.",
+      "Trivialy introduces a whole new way to boost your sales and engagements.",
+    url: "https://trivialy.co",
   },
   {
-    name: "Indemnif.ai",
+    id: "02",
+    image: images.product2,
+    title: "Dokani",
     description:
-      "A cutting-edge telecom project delivering seamless connectivity solutions.",
+      "A ERP that created for SMB and SMEs. Flexibility and easy operation is key.",
+    url: "https://dokani.products8.com",
   },
   {
-    name: "Artistry",
+    id: "03",
+    image: images.product3,
+    title: "Jazakallah",
     description:
-      "A cutting-edge telecom project delivering seamless connectivity solutions.",
+      "A complete Islamic app that comes with all your needed religious need.",
+    url: "https://codecanyon.net/item/jazakallah-tasbih-counter-app/44905917",
   },
   {
-    name: "kanga",
+    id: "04",
+    image: images.product4,
+    title: "Rimozen AI",
     description:
-      "A cutting-edge telecom project delivering seamless connectivity solutions.",
+      "Generative app that can generate stunning images, motions and music.",
+    url: "https://play.google.com/store/apps/details?id=com.netrocreative.geniepers&pcampaignid=web_share",
+  },
+  {
+    id: "05",
+    image: images.product5,
+    title: "Qurio",
+    description:
+      "For the kids from Pre-Play to Class 3 can learn things using Qurio.",
+    url: "https://play.google.com/store/apps/details?id=com.netrocreative.qurioapp&pcampaignid=web_share",
+  },
+  {
+    id: "06",
+    image: images.product6,
+    title: "ProChat AI",
+    description:
+      "ChatGPT 4.o enabled personal assistant that eases your tasks like never before.",
+    url: "https://codecanyon.net/item/prochat-the-ultimate-ai-assistant/44970962",
   },
 ];
 
