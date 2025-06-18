@@ -1,4 +1,113 @@
 /* HOME */
+/* HERO */
+.home_hero_design_d {
+  background: radial-gradient(
+    76.36% 84.75% at 74.04% 8.33%,
+    #f3bbad 0%,
+    #f5b0ae 72.12%,
+    #d3a2ce 99.52%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.home_hero_design_e {
+  background: linear-gradient(
+    187deg,
+    #eecca9 9.93%,
+    #f5b1ae 52.62%,
+    #d4a3cf 88.99%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.home_hero_design_s {
+  background: linear-gradient(
+    180deg,
+    #eadea7 5.73%,
+    #f8a7b0 66.2%,
+    #d4a3cf 89.18%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.home_hero_design_i {
+  background: linear-gradient(
+    180deg,
+    #e8e6a6 6.25%,
+    #f8a7b0 60.56%,
+    #d4a3cf 87.76%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.home_hero_design_g {
+  background: radial-gradient(
+    150.76% 83.1% at 31.37% 8.33%,
+    #ebdda8 6.9%,
+    #f8a7b0 67.67%,
+    #d4a3cf 99.52%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.home_hero_design_n {
+  background: radial-gradient(
+    83.1% 91.25% at 25% 7.29%,
+    #efc8aa 0%,
+    #f8a7b0 72.69%,
+    #d4a3cf 99.52%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.home_hero_development_d {
+  background: radial-gradient(
+    366.11% 88.64% at 21.81% 10.42%,
+    #b89fe8 0%,
+    #af9dee 70.4%,
+    #b49feb 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.home_hero_development_e {
+  background: radial-gradient(
+    366.11% 88.64% at 21.81% 10.42%,
+    #aa9df4 0%,
+    #bc9fe3 70.4%,
+    #c5a0db 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.home_hero_design_v {
+  background: radial-gradient(
+    389.37% 86.74% at 21.81% 10.42%,
+    #bca0e3 0%,
+    #cfa2d3 70.4%,
+    #d8a3ca 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .home_projects_header {
   background: linear-gradient(
     91deg,
@@ -113,11 +222,17 @@
 }
 
 /* SERVICES */
-.services_header{
-  background: linear-gradient(91deg, #1D1D1D 14.11%, #909090 37.39%, #9B9B9B 52.7%, #3C3C3C 83.6%);
-background-clip: text;
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
+.services_header {
+  background: linear-gradient(
+    91deg,
+    #1d1d1d 14.11%,
+    #909090 37.39%,
+    #9b9b9b 52.7%,
+    #3c3c3c 83.6%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 /* OUR PROJECTS */

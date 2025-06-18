@@ -28,7 +28,36 @@ const HeroHome = () => {
           )}
         >
           <div className="flex items-center justify-center lg:justify-start w-full">
-            <ZRotationText text="DESIGN" delay={0.5} />
+            <ZRotationText
+              text="D"
+              delay={0.5}
+              gradientTextClass="home_hero_design_d"
+            />
+            <ZRotationText
+              text="E"
+              delay={0.52}
+              gradientTextClass="home_hero_design_e"
+            />
+            <ZRotationText
+              text="S"
+              delay={0.54}
+              gradientTextClass="home_hero_design_s"
+            />
+            <ZRotationText
+              text="I"
+              delay={0.56}
+              gradientTextClass="home_hero_design_i"
+            />
+            <ZRotationText
+              text="G"
+              delay={0.58}
+              gradientTextClass="home_hero_design_g"
+            />
+            <ZRotationText
+              text="N"
+              delay={0.6}
+              gradientTextClass="home_hero_design_n"
+            />
           </div>
           <div className="flex flex-row items-end w-full">
             <div className="flex items-center justify-center lg:justify-start w-full">

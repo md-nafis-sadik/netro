@@ -10,9 +10,15 @@ interface ZRotationTextProps {
   text: string;
   delay?: number;
   className?: string;
+  gradientTextClass?: string;
 }
 
-const ZRotationText = ({ text, delay = 0, className }: ZRotationTextProps) => {
+const ZRotationText = ({
+  text,
+  delay = 0,
+  className,
+  gradientTextClass,
+}: ZRotationTextProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const originalRef = useRef<HTMLDivElement>(null);
   const cloneRef = useRef<HTMLDivElement>(null);
@@ -125,7 +131,7 @@ const ZRotationText = ({ text, delay = 0, className }: ZRotationTextProps) => {
         {text.split("").map((char, i) => (
           <span
             key={i}
-            className="hero-text-gradient inline-block opacity-0"
+            className={cn("inline-block opacity-0", gradientTextClass)}
             style={{ display: "inline-block", whiteSpace: "pre" }}
           >
             {char}
