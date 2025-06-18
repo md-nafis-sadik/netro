@@ -84,7 +84,7 @@
   -webkit-text-fill-color: transparent;
 }
 
-.home_hero_development_e {
+.home_hero_development_e1 {
   background: radial-gradient(
     366.11% 88.64% at 21.81% 10.42%,
     #aa9df4 0%,
@@ -96,13 +96,215 @@
   -webkit-text-fill-color: transparent;
 }
 
-.home_hero_design_v {
+.home_hero_development_v {
   background: radial-gradient(
     389.37% 86.74% at 21.81% 10.42%,
     #bca0e3 0%,
     #cfa2d3 70.4%,
     #d8a3ca 100%
   );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.home_hero_development_e2 {
+  background: radial-gradient(
+    389.37% 86.74% at 21.81% 10.42%,
+    #d4a3d0 0%,
+    #eda6b9 70.4%,
+    #f8a7b0 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.home_hero_development_l {
+  background: radial-gradient(
+    389.37% 86.74% at 21.81% 10.42%,
+    #f5a6b3 0%,
+    #f8a7b0 70.4%,
+    #f8a7b0 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.home_hero_development_o {
+  background: linear-gradient(270deg, #d4a3cf 0%, #f8a7b0 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.home_hero_development_p {
+  background: radial-gradient(
+    625.79% 84.12% at 35.71% 89.58%,
+    #cca1d5 1%,
+    #d4a3cf 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.home_hero_development_m {
+  background: radial-gradient(
+    521.01% 103.8% at 88.33% 80.73%,
+    #b09eee 0%,
+    #cda2d6 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.home_hero_development_e3 {
+  background: radial-gradient(
+    551.7% 106.55% at 87.5% 85.42%,
+    #a69cf6 0.35%,
+    #b39fec 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.home_hero_development_n {
+  background: radial-gradient(
+    558.75% 107.68% at 87.5% 86.98%,
+    #a79df7 0%,
+    #a69cf6 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.home_hero_development_t {
+  background: radial-gradient(
+    584.17% 89.96% at 56.67% 87.5%,
+    #a79df7 0%,
+    #a89ef8 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.home_hero_deploy_d {
+  background: linear-gradient(
+        to bottom right,
+        #ecabb7 0%,
+        #e5a8be 24%,
+        #f6aeae 48%
+      )
+      bottom right / 50% 50% no-repeat,
+    linear-gradient(to bottom left, #ecabb7 0%, #e5a8be 24%, #f6aeae 48%) bottom
+      left / 50% 50% no-repeat,
+    linear-gradient(to top left, #ecabb7 0%, #e5a8be 24%, #f6aeae 48%) top left /
+      50% 50% no-repeat,
+    linear-gradient(to top right, #ecabb7 0%, #e5a8be 24%, #f6aeae 48%) top
+      right / 50% 50% no-repeat;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.home_hero_deploy_e {
+  background: linear-gradient(
+        to bottom right,
+        #d6a5ce 0%,
+        #d8a4cb 24%,
+        #e3a8bf 48%
+      )
+      bottom right / 50% 50% no-repeat,
+    linear-gradient(to bottom left, #d6a5ce 0%, #d8a4cb 24%, #e3a8bf 48%) bottom
+      left / 50% 50% no-repeat,
+    linear-gradient(to top left, #d6a5ce 0%, #d8a4cb 24%, #e3a8bf 48%) top left /
+      50% 50% no-repeat,
+    linear-gradient(to top right, #d6a5ce 0%, #d8a4cb 24%, #e3a8bf 48%) top
+      right / 50% 50% no-repeat;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.home_hero_deploy_p {
+  background: radial-gradient(
+    151.61% 93.91% at 26.53% 86.46%,
+    #d8a6c6 0%,
+    #dfacb5 65.96%,
+    #d6a5c7 95.19%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.home_hero_deploy_l {
+  background: linear-gradient(
+        to bottom right,
+        #e1aead 0%,
+        #e1aeb0 24%,
+        #dcaaba 48%
+      )
+      bottom right / 50% 50% no-repeat,
+    linear-gradient(to bottom left, #e1aead 0%, #e1aeb0 24%, #dcaaba 48%) bottom
+      left / 50% 50% no-repeat,
+    linear-gradient(to top left, #e1aead 0%, #e1aeb0 24%, #dcaaba 48%) top left /
+      50% 50% no-repeat,
+    linear-gradient(to top right, #e1aead 0%, #e1aeb0 24%, #dcaaba 48%) top
+      right / 50% 50% no-repeat;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.home_hero_deploy_o {
+  background: linear-gradient(to bottom right, #cba8ca 0%, #dcaaba 48%) bottom
+      right / 50% 50% no-repeat,
+    linear-gradient(to bottom left, #cba8ca 0%, #dcaaba 48%) bottom left / 50%
+      50% no-repeat,
+    linear-gradient(to top left, #cba8ca 0%, #dcaaba 48%) top left / 50% 50%
+      no-repeat,
+    linear-gradient(to top right, #cba8ca 0%, #dcaaba 48%) top right / 50% 50%
+      no-repeat;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.home_hero_deploy_y {
+  background: linear-gradient(
+        to bottom right,
+        #b5a1e4 0%,
+        #c3a5d5 24%,
+        #cfa9c3 48%
+      )
+      bottom right / 50% 50% no-repeat,
+    linear-gradient(to bottom left, #b5a1e4 0%, #c3a5d5 24%, #cfa9c3 48%) bottom
+      left / 50% 50% no-repeat,
+    linear-gradient(to top left, #b5a1e4 0%, #c3a5d5 24%, #cfa9c3 48%) top left /
+      50% 50% no-repeat,
+    linear-gradient(to top right, #b5a1e4 0%, #c3a5d5 24%, #cfa9c3 48%) top
+      right / 50% 50% no-repeat;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.home_hero_deploy_dot {
+  background: linear-gradient(to bottom right, #a99df3 0%, #b09feb 48%) bottom
+      right / 50% 50% no-repeat,
+    linear-gradient(to bottom left, #a99df3 0%, #b09feb 48%) bottom left / 50%
+      50% no-repeat,
+    linear-gradient(to top left, #a99df3 0%, #b09feb 48%) top left / 50% 50%
+      no-repeat,
+    linear-gradient(to top right, #a99df3 0%, #b09feb 48%) top right / 50% 50%
+      no-repeat;
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

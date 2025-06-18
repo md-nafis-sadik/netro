@@ -61,20 +61,102 @@ const HeroHome = () => {
           </div>
           <div className="flex flex-row items-end w-full">
             <div className="flex items-center justify-center lg:justify-start w-full">
-              <ZRotationText text="DEVEL" delay={0.75} />
+              <ZRotationText
+                text="D"
+                delay={0.75}
+                gradientTextClass="home_hero_development_d"
+              />
+              <ZRotationText
+                text="E"
+                delay={0.77}
+                gradientTextClass="home_hero_development_e1"
+              />
+              <ZRotationText
+                text="V"
+                delay={0.79}
+                gradientTextClass="home_hero_development_v"
+              />
+              <ZRotationText
+                text="E"
+                delay={0.81}
+                gradientTextClass="home_hero_development_e2"
+              />
+              <ZRotationText
+                text="L"
+                delay={0.83}
+                gradientTextClass="home_hero_development_l"
+              />
               <BallBounceText
                 className={cn(
-                  "text-[66px] md:text-[86px] lg:text-[116px] inline-block font-normal hero-text-o-gradient font-bonbon !leading-[0.8] mt-4"
+                  "text-[66px] md:text-[86px] lg:text-[116px] inline-block font-normal font-bonbon !leading-[0.8] mt-4 home_hero_development_o"
                 )}
                 delay={1.0}
               >
                 O
               </BallBounceText>
-              <ZRotationText text="PMENT" delay={1.25} />
+              <ZRotationText
+                text="P"
+                delay={1.25}
+                gradientTextClass="home_hero_development_p"
+              />
+              <ZRotationText
+                text="M"
+                delay={1.27}
+                gradientTextClass="home_hero_development_m"
+              />
+              <ZRotationText
+                text="E"
+                delay={1.29}
+                gradientTextClass="home_hero_development_e3"
+              />
+              <ZRotationText
+                text="N"
+                delay={1.31}
+                gradientTextClass="home_hero_development_n"
+              />
+              <ZRotationText
+                text="T"
+                delay={1.33}
+                gradientTextClass="home_hero_development_t"
+              />
             </div>
           </div>
           <div className="flex items-center justify-center lg:justify-start w-full">
-            <ZRotationText text="DEPLOY" delay={1.5} />
+            <ZRotationText
+              text="D"
+              delay={1.5}
+              gradientTextClass="home_hero_deploy_d"
+            />
+            <ZRotationText
+              text="E"
+              delay={1.52}
+              gradientTextClass="home_hero_deploy_e"
+            />
+            <ZRotationText
+              text="P"
+              delay={1.54}
+              gradientTextClass="home_hero_deploy_p"
+            />
+            <ZRotationText
+              text="L"
+              delay={1.56}
+              gradientTextClass="home_hero_deploy_l"
+            />
+            <ZRotationText
+              text="O"
+              delay={1.58}
+              gradientTextClass="home_hero_deploy_o"
+            />
+            <ZRotationText
+              text="Y"
+              delay={1.6}
+              gradientTextClass="home_hero_deploy_y"
+            />
+            <ZRotationText
+              text="."
+              delay={1.62}
+              gradientTextClass="home_hero_deploy_dot"
+            />
           </div>
         </div>
 
