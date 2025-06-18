@@ -11,6 +11,7 @@ import PricingHome from "@/components/pricing/PricingHome";
 import StatisticsHome from "@/components/statistics/StatisticsHome";
 import IntroHome from "@/components/intro/IntroHome";
 import HeroMarquee from "@/components/hero/HeroMarquee";
+import ProjectsHomeWrapper from "@/components/projects/ProjectsHomeWrapper";
 
 const HomePage = () => {
   return (
@@ -20,7 +21,7 @@ const HomePage = () => {
         <HeroMarquee />
       </div>
       <IntroHome />
-      <ProjectsHome />
+      <ProjectsHomeWrapper />
       <ServicesHome />
       <Products />
       <WorkCultureHome />

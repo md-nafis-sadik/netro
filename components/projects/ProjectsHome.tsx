@@ -9,7 +9,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { cn } from "@/lib/utils";
 
-const ProjectsHome = () => {
+const ProjectsHome = ({ data }: { data: any }) => {
   const cardsRef = useRef<HTMLDivElement | null>(null);
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -91,7 +91,7 @@ const ProjectsHome = () => {
         </SectionHeader>
 
         <div ref={cardsRef} className="flex flex-col mb-40 w-full relative">
-          {projectsData.map((item, index) => (
+          {data?.data?.slice(0, 5).map((item: any, index: number) => (
             <ProjectCard
               className={cn("w-full stacked-card sticky left-0 top-0 mb-80")}
               style={{
