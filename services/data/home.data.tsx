@@ -177,7 +177,7 @@ export const productsData = [
 ];
 
 export const teamData = [
-  // 1
+  //  Asiq Mohammed
   {
     name: "Asiq Mohammed",
     position: "Managing Director & CEO",
@@ -195,7 +195,7 @@ export const teamData = [
       },
     ],
   },
-  // 2
+  //  Altamira Tripty
   {
     name: "Altamira Tripty",
     position: "Chief Marketing Officer (CMO)",
@@ -213,7 +213,7 @@ export const teamData = [
       },
     ],
   },
-  // 3
+  //  Sultan Mahmud
   {
     name: "Sultan Mahmud",
     position: "Chief Operations Officer (COO)",
@@ -231,7 +231,7 @@ export const teamData = [
       },
     ],
   },
-  // 4
+  //  Ahmed Lincon
   {
     name: "Ahmed Lincon",
     position: "Chief Technology Officer (CTO)",
@@ -249,115 +249,7 @@ export const teamData = [
       },
     ],
   },
-  // 5
-  {
-    name: "Ismail Jabiulla",
-    position: "Software Engineer",
-    image: images.ismailJabiulla,
-    socials: [
-      {
-        type: "linkedin",
-        link: "",
-        icon: (
-          <LinkedinOutlinedIcon
-            color={colors.black}
-            className="!h-[14px] !w-[14px] !shrink-0"
-          />
-        ),
-      },
-    ],
-  },
-  // 6
-  {
-    name: "Hasibul Hasan Rasel",
-    position: "Software Engineer",
-    image: images.hasibulHasanRasel,
-    socials: [
-      {
-        type: "linkedin",
-        link: "",
-        icon: (
-          <LinkedinOutlinedIcon
-            color={colors.black}
-            className="!h-[14px] !w-[14px] !shrink-0"
-          />
-        ),
-      },
-    ],
-  },
-  // 7
-  {
-    name: "Ektiar Alam",
-    position: "Chief Operations Officer (COO)",
-    image: images.ektiarAlam,
-    socials: [
-      {
-        type: "linkedin",
-        link: "",
-        icon: (
-          <LinkedinOutlinedIcon
-            color={colors.black}
-            className="!h-[14px] !w-[14px] !shrink-0"
-          />
-        ),
-      },
-    ],
-  },
-  // 8
-  {
-    name: "Khondaker Akib Anwar",
-    position: "Chief Technology Officer (CTO)",
-    image: images.khondakerAkibAnwar,
-    socials: [
-      {
-        type: "linkedin",
-        link: "",
-        icon: (
-          <LinkedinOutlinedIcon
-            color={colors.black}
-            className="!h-[14px] !w-[14px] !shrink-0"
-          />
-        ),
-      },
-    ],
-  },
-  // 9
-  {
-    name: "Mir Saroar Hossain",
-    position: "Chief Technology Officer (CTO)",
-    image: images.mirSaroarHossain,
-    socials: [
-      {
-        type: "linkedin",
-        link: "",
-        icon: (
-          <LinkedinOutlinedIcon
-            color={colors.black}
-            className="!h-[14px] !w-[14px] !shrink-0"
-          />
-        ),
-      },
-    ],
-  },
-  // 10
-  {
-    name: "Fozlay Rabbi",
-    position: "Chief Technology Officer (CTO)",
-    image: images.fozlayRabbi,
-    socials: [
-      {
-        type: "linkedin",
-        link: "",
-        icon: (
-          <LinkedinOutlinedIcon
-            color={colors.black}
-            className="!h-[14px] !w-[14px] !shrink-0"
-          />
-        ),
-      },
-    ],
-  },
-  // 11
+  //  Abdullah Al MahMud
   {
     name: "Abdullah Al MahMud",
     position: "Chief Technology Officer (CTO)",
@@ -375,7 +267,7 @@ export const teamData = [
       },
     ],
   },
-  // 12
+  //  Muhtasim Jeet
   {
     name: "Muhtasim Jeet",
     position: "Chief Technology Officer (CTO)",
@@ -393,7 +285,7 @@ export const teamData = [
       },
     ],
   },
-  // 13
+  //  Ridoy Haque
   {
     name: "Ridoy Haque",
     position: "Chief Technology Officer (CTO)",
@@ -411,7 +303,7 @@ export const teamData = [
       },
     ],
   },
-  // 14
+  //  Naimur Rahman
   {
     name: "Naimur Rahman",
     position: "Chief Technology Officer (CTO)",
@@ -429,7 +321,43 @@ export const teamData = [
       },
     ],
   },
-  // 15
+  //  Hasibul Hasan Rasel
+  {
+    name: "Hasibul Hasan Rasel",
+    position: "Software Engineer",
+    image: images.hasibulHasanRasel,
+    socials: [
+      {
+        type: "linkedin",
+        link: "",
+        icon: (
+          <LinkedinOutlinedIcon
+            color={colors.black}
+            className="!h-[14px] !w-[14px] !shrink-0"
+          />
+        ),
+      },
+    ],
+  },
+  //  Ismail Jabiulla
+  {
+    name: "Ismail Jabiulla",
+    position: "Software Engineer",
+    image: images.ismailJabiulla,
+    socials: [
+      {
+        type: "linkedin",
+        link: "",
+        icon: (
+          <LinkedinOutlinedIcon
+            color={colors.black}
+            className="!h-[14px] !w-[14px] !shrink-0"
+          />
+        ),
+      },
+    ],
+  },
+  //  Soumik Ahammed
   {
     name: "Soumik Ahammed",
     position: "Chief Technology Officer (CTO)",
@@ -447,61 +375,7 @@ export const teamData = [
       },
     ],
   },
-  // 16
-  {
-    name: "Saheduzzaman Shamim",
-    position: "Chief Technology Officer (CTO)",
-    image: images.shaheduzzamanShamim,
-    socials: [
-      {
-        type: "linkedin",
-        link: "",
-        icon: (
-          <LinkedinOutlinedIcon
-            color={colors.black}
-            className="!h-[14px] !w-[14px] !shrink-0"
-          />
-        ),
-      },
-    ],
-  },
-  // 17
-  {
-    name: "Jannatun Hur Maria",
-    position: "Chief Technology Officer (CTO)",
-    image: images.jannatunHurMaria,
-    socials: [
-      {
-        type: "linkedin",
-        link: "",
-        icon: (
-          <LinkedinOutlinedIcon
-            color={colors.black}
-            className="!h-[14px] !w-[14px] !shrink-0"
-          />
-        ),
-      },
-    ],
-  },
-  // 18
-  {
-    name: "Raihanul Islam",
-    position: "Chief Technology Officer (CTO)",
-    image: images.raihanulIslam,
-    socials: [
-      {
-        type: "linkedin",
-        link: "",
-        icon: (
-          <LinkedinOutlinedIcon
-            color={colors.black}
-            className="!h-[14px] !w-[14px] !shrink-0"
-          />
-        ),
-      },
-    ],
-  },
-  // 19
+  //  Sheikh Md Maruf
   {
     name: "Sheikh Md Maruf",
     position: "Chief Technology Officer (CTO)",
@@ -519,11 +393,11 @@ export const teamData = [
       },
     ],
   },
-  // 20
+  //  Saheduzzaman Shamim
   {
-    name: "Anika Ebnath",
+    name: "Saheduzzaman Shamim",
     position: "Chief Technology Officer (CTO)",
-    image: images.anikaEbnath,
+    image: images.shaheduzzamanShamim,
     socials: [
       {
         type: "linkedin",
@@ -537,11 +411,137 @@ export const teamData = [
       },
     ],
   },
-  // 21
+  //  M. Zahid Ahamed Tusar
   {
     name: "M. Zahid Ahamed Tusar",
     position: "Chief Technology Officer (CTO)",
     image: images.mZahidAhamedTusar,
+    socials: [
+      {
+        type: "linkedin",
+        link: "",
+        icon: (
+          <LinkedinOutlinedIcon
+            color={colors.black}
+            className="!h-[14px] !w-[14px] !shrink-0"
+          />
+        ),
+      },
+    ],
+  },
+  //  Ektiar Alam
+  {
+    name: "Ektiar Alam",
+    position: "Chief Operations Officer (COO)",
+    image: images.ektiarAlam,
+    socials: [
+      {
+        type: "linkedin",
+        link: "",
+        icon: (
+          <LinkedinOutlinedIcon
+            color={colors.black}
+            className="!h-[14px] !w-[14px] !shrink-0"
+          />
+        ),
+      },
+    ],
+  },
+  //  Khondaker Akib Anwar
+  {
+    name: "Khondaker Akib Anwar",
+    position: "Chief Technology Officer (CTO)",
+    image: images.khondakerAkibAnwar,
+    socials: [
+      {
+        type: "linkedin",
+        link: "",
+        icon: (
+          <LinkedinOutlinedIcon
+            color={colors.black}
+            className="!h-[14px] !w-[14px] !shrink-0"
+          />
+        ),
+      },
+    ],
+  },
+  //  Mir Saroar Hossain
+  {
+    name: "Mir Saroar Hossain",
+    position: "Chief Technology Officer (CTO)",
+    image: images.mirSaroarHossain,
+    socials: [
+      {
+        type: "linkedin",
+        link: "",
+        icon: (
+          <LinkedinOutlinedIcon
+            color={colors.black}
+            className="!h-[14px] !w-[14px] !shrink-0"
+          />
+        ),
+      },
+    ],
+  },
+  //  Fozlay Rabbi
+  {
+    name: "Fozlay Rabbi",
+    position: "Chief Technology Officer (CTO)",
+    image: images.fozlayRabbi,
+    socials: [
+      {
+        type: "linkedin",
+        link: "",
+        icon: (
+          <LinkedinOutlinedIcon
+            color={colors.black}
+            className="!h-[14px] !w-[14px] !shrink-0"
+          />
+        ),
+      },
+    ],
+  },
+  //  Raihanul Islam
+  {
+    name: "Raihanul Islam",
+    position: "Chief Technology Officer (CTO)",
+    image: images.raihanulIslam,
+    socials: [
+      {
+        type: "linkedin",
+        link: "",
+        icon: (
+          <LinkedinOutlinedIcon
+            color={colors.black}
+            className="!h-[14px] !w-[14px] !shrink-0"
+          />
+        ),
+      },
+    ],
+  },
+  //  Jannatun Hur Maria
+  {
+    name: "Jannatun Hur Maria",
+    position: "Chief Technology Officer (CTO)",
+    image: images.jannatunHurMaria,
+    socials: [
+      {
+        type: "linkedin",
+        link: "",
+        icon: (
+          <LinkedinOutlinedIcon
+            color={colors.black}
+            className="!h-[14px] !w-[14px] !shrink-0"
+          />
+        ),
+      },
+    ],
+  },
+  //  Anika Ebnath
+  {
+    name: "Anika Ebnath",
+    position: "Chief Technology Officer (CTO)",
+    image: images.anikaEbnath,
     socials: [
       {
         type: "linkedin",

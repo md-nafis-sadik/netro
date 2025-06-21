@@ -1,5 +1,4 @@
 "use client";
-import SectionHeaderAnimated from "@/components/common/SectionHeaderAnimated";
 import TestimonialCard from "./TestimonialCard";
 import useEmblaCarousel from "embla-carousel-react";
 import { cn } from "@/lib/utils";
