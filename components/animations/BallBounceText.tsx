@@ -26,10 +26,11 @@ const BallBounceText: FC<BallBounceTextProps> = ({
       y: -100,
       opacity: 0,
       scale: 1,
+      visibility: "visible",
     });
 
     const tl = gsap.timeline({
-      delay: delay, // 300ms delay
+      delay, // 300ms delay
     });
 
     tl
@@ -84,7 +85,7 @@ const BallBounceText: FC<BallBounceTextProps> = ({
   }, []);
 
   return (
-    <span ref={textRef} className={className}>
+    <span ref={textRef} className={`opacity-0 invisible ${className}`}>
       {children}
     </span>
   );
