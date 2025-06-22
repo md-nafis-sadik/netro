@@ -3,7 +3,6 @@ import { softwareServicesData } from "@/services/data";
 import Image from "next/image";
 import ArrowLineupButton from "../ui/arrow-lineup-button";
 import colors from "@/lib/colors";
-import { redirect } from "next/navigation";
 import { routes } from "@/services/data/shared.data";
 
 const SoftwareService = () => {

@@ -6,10 +6,13 @@ import { teamData } from "@/services/data";
 import ArrowLineupButton from "@/components/ui/arrow-lineup-button";
 import colors from "@/lib/colors";
 import SectionHeader from "../common/SectionHeader";
+import Autoplay from "embla-carousel-autoplay";
 
 const Team = () => {
   const options = { align: "start", loop: false } as const;
-  const [emblaRef] = useEmblaCarousel(options);
+  const [emblaRef] = useEmblaCarousel(options, [
+    Autoplay({ delay: 3000, stopOnInteraction: false }),
+  ]);
 
   return (
     <section className="flex_center flex-col mt-20 mb-[120px] select-none">

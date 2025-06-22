@@ -1,4 +1,3 @@
-import SectionHeaderAnimated from "@/components/common/SectionHeaderAnimated";
 import ClientServiceList from "@/components/services/ClientServiceList";
 import ProductAnimationService from "@/components/services/ProductAnimationService";
 import SaasDevelopmentService from "@/components/services/SaasDevelopmentService";

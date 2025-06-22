@@ -1,4 +1,3 @@
-import React from "react";
 import ArrowLineupButton from "../ui/arrow-lineup-button";
 import colors from "@/lib/colors";
 import { uxUiServicesData } from "@/services/data";
