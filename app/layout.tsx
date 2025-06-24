@@ -11,6 +11,7 @@ import Navbar from "@/components/navigation/Navbar";
 import { cn } from "@/lib/utils";
 import LenisWrapper from "@/components/wrappers/LenisWrapper";
 import Script from "next/script";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Netro Systems",
@@ -48,6 +49,7 @@ const RootLayout = ({
         </LenisWrapper>
 
         <Script
+          id="facebook-pixel"
           dangerouslySetInnerHTML={{
             __html: `!function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -62,7 +64,8 @@ fbq('track', 'PageView');`,
           }}
         ></Script>
         <noscript>
-          <img
+          <Image
+            alt="Facebook Pixel"
             height="1"
             width="1"
             style={{ display: "none", visibility: "hidden" }}
@@ -78,6 +81,7 @@ fbq('track', 'PageView');`,
           ></iframe>
         </noscript>
         <Script
+          id="google-tag-manager"
           dangerouslySetInnerHTML={{
             __html: `
               (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -89,11 +93,13 @@ fbq('track', 'PageView');`,
           }}
         />
         <Script
+          id="visitor-tracking"
           async
           defer
           src="https://app.visitortracking.com/assets/js/tracer.js"
         ></Script>
         <Script
+          id="visitor-tracking-init"
           dangerouslySetInnerHTML={{
             __html: `
               function init_tracer() {
