@@ -1,10 +1,8 @@
 import ClientServiceList from "@/components/services/ClientServiceList";
-import ProductAnimationService from "@/components/services/ProductAnimationService";
-import SaasDevelopmentService from "@/components/services/SaasDevelopmentService";
 import ServiceStrengthAreas from "@/components/services/ServiceStrengthAreas";
-import SoftwareService from "@/components/services/SoftwareService";
-import UXUIService from "@/components/services/UXUIService";
+import ServicesWrapper from "@/components/services/ServicesWrapper";
 import PageThumbnail from "@/components/shared/PageThumbnail";
+import { Suspense } from "react";
 
 const ServicePage = () => {
   return (
@@ -15,10 +13,9 @@ const ServicePage = () => {
         titleClassName="services_header w-fit"
       />
 
-      <SoftwareService />
-      <UXUIService />
-      <ProductAnimationService />
-      <SaasDevelopmentService />
+      <Suspense fallback={<div className="containerX">Loading...</div>}>
+        <ServicesWrapper />
+      </Suspense>
       <ServiceStrengthAreas />
       <ClientServiceList />
     </main>

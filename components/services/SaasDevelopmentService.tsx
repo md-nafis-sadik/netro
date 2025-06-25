@@ -1,17 +1,19 @@
-import { images } from "@/services";
 import Image from "next/image";
 import ArrowLineupButton from "../ui/arrow-lineup-button";
 import colors from "@/lib/colors";
-import { saasDevelopmentServiceData, uxUiServicesData } from "@/services/data";
+import { saasDevelopmentServiceData } from "@/services/data";
+import { routes } from "@/services/data/shared.data";
 
-const SaasDevelopmentService = () => {
+const SaasDevelopmentService = ({ data }: any) => {
   return (
     <section className="containerX flex flex-col md:flex-row-reverse gap-6 md:gap-20 border-t border-dashed border-natural-300 py-10 md:py-20 font-inter">
-      <div className="w-full md:w-2/5 !aspect-[0.87/1] md:h-fit !shrink-0 relative md:sticky md:top-10 overflow-hidden">
+      <div className="w-full md:w-2/5 aspect-[20/9] md:h-fit !shrink-0 relative md:sticky md:top-10 overflow-hidden">
         <Image
-          src={images.blog1}
+          src={data?.featuredImage}
+          height={1024}
+          width={1024}
           alt="Software development related image"
-          className="min-h-full min-w-full max-h-[636px] absolute_center !shrink-0"
+          className="min-w-full min-h-full object-cover absolute_center transition_common group-hover:scale-105"
         />
       </div>
 
@@ -20,12 +22,10 @@ const SaasDevelopmentService = () => {
           SaaS <br /> Development & SQA
         </p>
 
-        <p className="text-sm lg:text-2xl font-normal !leading-[1.4] text-text-700 mt-4 md:mt-6">
-          We specialize in SaaS development, delivering scalable, secure, and
-          efficient software solutions tailored to your business needs. Coupled
-          with robust Software Quality Assurance (SQA), we ensure seamless
-          performance, reliability, and user satisfaction at every stage.
-        </p>
+        <div
+          className="text-sm lg:text-2xl font-normal !leading-[1.4] text-text-700 mt-4 md:mt-6 line-clamp-6"
+          dangerouslySetInnerHTML={{ __html: data.content }}
+        />
 
         <div className="flex flex-col mt-4 md:mt-6">
           {saasDevelopmentServiceData.map(({ serial, title }, index) => (
@@ -44,7 +44,11 @@ const SaasDevelopmentService = () => {
           ))}
         </div>
 
-        <ArrowLineupButton color={colors.main[400]} className="mt-6 md:mt-10">
+        <ArrowLineupButton
+          color={colors.main[400]}
+          className="mt-6 md:mt-10"
+          href={`${routes.services.link}/${data?.title}`}
+        >
           See full details
         </ArrowLineupButton>
       </div>

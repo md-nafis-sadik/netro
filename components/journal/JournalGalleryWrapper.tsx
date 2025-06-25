@@ -9,7 +9,7 @@ type BlogsResponse = {
   [key: string]: any;
 };
 
-async function JournalGalleryWrapper() {
+const JournalGalleryWrapper = async () => {
   // ALL BLOGS
   const blogsResponse: any = await fetchWithDelay(`/blogs/all`);
   let blogs: BlogsResponse;
@@ -136,6 +136,6 @@ async function JournalGalleryWrapper() {
       <JournalSuggestions data={recentBlogs?.data} />
     </section>
   );
-}
+};
 
 export default JournalGalleryWrapper;

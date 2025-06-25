@@ -1,18 +1,19 @@
-import { images } from "@/services";
 import { softwareServicesData } from "@/services/data";
 import Image from "next/image";
 import ArrowLineupButton from "../ui/arrow-lineup-button";
 import colors from "@/lib/colors";
 import { routes } from "@/services/data/shared.data";
 
-const SoftwareService = () => {
+const SoftwareService = ({ data }: any) => {
   return (
     <section className="containerX flex flex-col md:flex-row gap-6 md:gap-20 border-t border-dashed border-natural-300 py-10 md:py-20 font-inter relative">
-      <div className="w-full md:w-2/5 aspect-[0.87/1] md:h-fit !shrink-0 relative md:sticky md:top-10 overflow-hidden">
+      <div className="w-full md:w-2/5 aspect-[20/9] md:h-fit !shrink-0 relative md:sticky md:top-10 overflow-hidden">
         <Image
-          src={images.blog1}
+          src={data?.featuredImage}
+          height={1024}
+          width={1024}
           alt="Software development related image"
-          className="min-h-full min-w-full max-h-[636px] absolute_center !shrink-0"
+          className="min-w-full min-h-full object-cover absolute_center transition_common group-hover:scale-105"
         />
       </div>
 
@@ -21,12 +22,10 @@ const SoftwareService = () => {
           Software <br /> Development
         </p>
 
-        <p className="text-sm lg:text-2xl font-normal !leading-[1.4] text-text-700 mt-4 md:mt-6">
-          We specialize in creating scalable, reliable, and cutting-edge
-          software solutions designed to address modern challenges. Our
-          expertise ensures innovative, efficient, and tailored systems that
-          drive growth and empower businesses to succeed.
-        </p>
+        <div
+          className="text-sm lg:text-2xl font-normal !leading-[1.4] text-text-700 mt-4 md:mt-6 line-clamp-6"
+          dangerouslySetInnerHTML={{ __html: data.content }}
+        />
 
         <div className="flex flex-col mt-4 md:mt-6">
           {softwareServicesData.map(({ serial, title }, index) => (
@@ -48,7 +47,7 @@ const SoftwareService = () => {
         <ArrowLineupButton
           color={colors.main[400]}
           className="mt-6 md:mt-10"
-          href={`${routes.services.link}/software-development`}
+          href={`${routes.services.link}/${data?.title}`}
         >
           See full details
         </ArrowLineupButton>

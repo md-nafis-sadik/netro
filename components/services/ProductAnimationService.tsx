@@ -1,17 +1,19 @@
 import colors from "@/lib/colors";
 import ArrowLineupButton from "../ui/arrow-lineup-button";
 import Image from "next/image";
-import { images } from "@/services";
 import { productAnimationServiceData } from "@/services/data";
+import { routes } from "@/services/data/shared.data";
 
-const ProductAnimationService = () => {
+const ProductAnimationService = ({ data }: any) => {
   return (
     <section className="containerX flex flex-col md:flex-row gap-6 md:gap-20 border-t border-dashed border-natural-300 py-10 md:py-20 font-inter">
-      <div className="w-full md:w-2/5 !aspect-[0.87/1] md:h-fit !shrink-0 relative md:sticky md:top-10 overflow-hidden">
+      <div className="w-full md:w-2/5 aspect-[20/9] md:h-fit !shrink-0 relative md:sticky md:top-10 overflow-hidden">
         <Image
-          src={images.blog1}
+          src={data?.featuredImage}
+          height={1024}
+          width={1024}
           alt="Software development related image"
-          className="min-h-full min-w-full max-h-[636px] absolute_center !shrink-0"
+          className="min-w-full min-h-full object-cover absolute_center transition_common group-hover:scale-105"
         />
       </div>
 
@@ -20,12 +22,10 @@ const ProductAnimationService = () => {
           3D Product Animation
         </p>
 
-        <p className="text-sm lg:text-2xl font-normal !leading-[1.4] text-text-700 mt-4 md:mt-6">
-          Our 3D product animation services bring your ideas to life with
-          stunning visuals and dynamic motion. We create immersive, detailed
-          animations that showcase your products, enhance storytelling, and
-          leave a lasting impression on your audience.
-        </p>
+        <div
+          className="text-sm lg:text-2xl font-normal !leading-[1.4] text-text-700 mt-4 md:mt-6 line-clamp-6"
+          dangerouslySetInnerHTML={{ __html: data.content }}
+        />
 
         <div className="flex flex-col mt-4 md:mt-6">
           {productAnimationServiceData.map(({ serial, title }, index) => (
@@ -44,7 +44,11 @@ const ProductAnimationService = () => {
           ))}
         </div>
 
-        <ArrowLineupButton color={colors.main[400]} className="mt-6 md:mt-10">
+        <ArrowLineupButton
+          color={colors.main[400]}
+          className="mt-6 md:mt-10"
+          href={`${routes.services.link}/${data?.title}`}
+        >
           See full details
         </ArrowLineupButton>
       </div>
