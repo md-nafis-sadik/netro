@@ -3,13 +3,13 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   images: {
-    domains: [
-      "via.placeholder.com",
-      "server.netrosystems.com",
-      "203.161.48.124",
-      "localhost",
-    ],
     remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "via.placeholder.com",
+        port: "",
+        pathname: "/**",
+      },
       {
         protocol: "https",
         hostname: "netrosystems.com",
@@ -25,6 +25,18 @@ const nextConfig: NextConfig = {
       {
         protocol: "http",
         hostname: "localhost",
+        port: "",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "203.161.48.124",
+        port: "",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "www.facebook.com",
         port: "",
         pathname: "/**",
       },
