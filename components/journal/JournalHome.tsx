@@ -6,8 +6,10 @@ import ArrowLineupButton from "@/components/ui/arrow-lineup-button";
 import colors from "@/lib/colors";
 import SectionHeader from "../common/SectionHeader";
 import { timestampDisplay } from "@/services";
+import { useRouter } from "next/navigation";
 
 const OurJournal = ({ data }: any) => {
+  const router = useRouter();
   const options = { align: "start", loop: false } as const;
   const [emblaRef] = useEmblaCarousel(options);
 
@@ -18,11 +20,12 @@ const OurJournal = ({ data }: any) => {
         Latest Insights
       </SectionHeader>
 
-      <div className="containerX w-full overflow-x-hidden overflow-y-visible mt-5 md:mt-10">
+      <div className="containerX w-full overflow-hidden mt-5 md:mt-10">
         <div className="w-full" ref={emblaRef}>
           <div className="w-full min-h-fit flex flex-row gap-6 md:gap-10 py-5 md:py-10">
             {data?.map((item: any, index: number) => (
               <JournalCard
+                index={index}
                 key={index}
                 title={item?.title}
                 date={timestampDisplay(item?.publishedAt)}
@@ -38,6 +41,7 @@ const OurJournal = ({ data }: any) => {
             lineColor={colors.secondary[300]}
             textClassName="text-text-900"
             className="mt-10 md:mt-20"
+            onClick={() => router.push("/journal")}
           >
             See all products
           </ArrowLineupButton>

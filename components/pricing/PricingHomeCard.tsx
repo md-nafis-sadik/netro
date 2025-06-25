@@ -2,7 +2,7 @@ import { GradientButton } from "@/components/ui/gradient-button";
 import { inter } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
 import { CheckedCircleIcon } from "@/services/assets/svgs";
-import CardTransitionUp from "../animations/CardTransitionUp";
+import CardTransitionUpWithDelay from "../animations/CardTransitionUpWithDelay";
 
 interface IFCardProps {
   title?: string;
@@ -26,7 +26,7 @@ const PricingHomeCard = ({
   features,
 }: IFCardProps) => {
   return (
-    <CardTransitionUp
+    <CardTransitionUpWithDelay
       index={index}
       className={cn(
         "pricing-card w-full 2xl:w-[410px] h-full max-w-full md:max-w-[410px] p-[2px] transition_common"
@@ -77,7 +77,7 @@ const PricingHomeCard = ({
           ))}
         </ul>
       </div>
-    </CardTransitionUp>
+    </CardTransitionUpWithDelay>
   );
 };
 

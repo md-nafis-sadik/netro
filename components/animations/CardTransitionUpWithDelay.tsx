@@ -6,13 +6,13 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { cn } from "@/lib/utils";
 import { useGSAP } from "@gsap/react";
 
-interface CardTransitionUpProps {
+interface CardTransitionUpWithDelayProps {
   children: React.ReactNode;
   index: number;
   className?: string;
 }
 
-const CardTransitionUp: React.FC<CardTransitionUpProps> = ({
+const CardTransitionUpWithDelay: React.FC<CardTransitionUpWithDelayProps> = ({
   children,
   index,
   className,
@@ -55,4 +55,4 @@ const CardTransitionUp: React.FC<CardTransitionUpProps> = ({
   );
 };
 
-export default CardTransitionUp;
+export default CardTransitionUpWithDelay;

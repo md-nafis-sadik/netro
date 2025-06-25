@@ -2,9 +2,11 @@ import { inter } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
+import CardTransitionUp from "../animations/CardTransitionUpWithDelay";
 
 interface IFCardProps {
   image: StaticImageData;
+  index: number;
   title: string;
   link: string;
   date: string;
@@ -16,6 +18,7 @@ interface IFCardProps {
 
 const JournalCard = ({
   image,
+  index,
   title,
   link,
   date,
@@ -25,7 +28,7 @@ const JournalCard = ({
   contentContainerClassName,
 }: IFCardProps) => {
   return (
-    <div className={cn("w-full group", className)}>
+    <CardTransitionUp index={index} className={cn("w-full group", className)}>
       <div
         className={cn(
           "h-[196px] md:h-[308px] w-full relative overflow-hidden min-w-[260px] md:min-w-[400px]",
@@ -62,7 +65,7 @@ const JournalCard = ({
           {date}
         </p>
       </Link>
-    </div>
+    </CardTransitionUp>
   );
 };
 

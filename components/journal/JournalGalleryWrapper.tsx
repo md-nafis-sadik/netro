@@ -70,6 +70,7 @@ async function JournalGalleryWrapper() {
           {blogs?.data?.map((item, index) => (
             <JournalCard
               key={index}
+              index={index}
               title={item?.title}
               date={timestampDisplay(item?.publishedAt)}
               image={item?.featuredImage}
@@ -92,6 +93,7 @@ async function JournalGalleryWrapper() {
             <div className="flex flex-col gap-7 md:gap-10">
               {featuredBlogs?.data?.map((item, index) => (
                 <JournalCard
+                  index={index}
                   key={index}
                   title={item?.title}
                   date={timestampDisplay(item?.publishedAt)}

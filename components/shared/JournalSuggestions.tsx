@@ -21,6 +21,7 @@ const JournalSuggestions = ({ data, className }: IFProps) => {
       <div className="w-full min-h-fit flex flex-row gap-6 md:gap-10 py-5 md:py-10">
         {data?.map((item, index) => (
           <JournalCard
+            index={index}
             key={index}
             title={item?.title}
             date={timestampDisplay(item?.publishedAt)}
