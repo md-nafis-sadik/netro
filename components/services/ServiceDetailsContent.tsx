@@ -1,96 +1,39 @@
-import { images } from "@/services";
-import { customSoftwareDevelopmentServiceData } from "@/services/data";
+import { fetchWithDelay } from "@/lib/apiHandler";
+import { ArrowLongTailIcon } from "@/services/assets/svgs";
 import Image from "next/image";
-import { FC, Fragment } from "react";
 
-interface IFServiceListRendererProps {
-  data?: { serial: string; title: string }[];
-  title?: string;
-  text?: string;
-}
+const ServiceDetailsContent = async ({ slug }: { slug: string }) => {
+  let service = (await fetchWithDelay(
+    `/services/find-by-title/${slug}`
+  )) as any;
 
-const ServiceListRenderer: FC<IFServiceListRendererProps> = ({
-  data,
-  title,
-  text,
-}) => {
   return (
-    <div>
-      <p className="text-2xl md:text-5xl !leading-none font-bold font-scoutcond uppercase text-text-900">
-        {title}
-      </p>
-      <p className="text-sm md:text-lg font-normal !leading-[1.6] mt-4 md:mt-6 text-text-600">
-        {text}
-      </p>
-      <div className="flex flex-col mt-4 md:mt-6">
-        {data?.map(({ serial, title }, index) => (
-          <div
-            className="flex flex-row items-center gap-6 lg:gap-12 py-4 lg:py-8"
-            key={index}
-          >
-            <p className="text-text-200 text-lg font-semibold lg:font-bold !leading-[1.4]">
-              {serial}
-            </p>
-
-            <p className="text-sm lg:text-lg !leading-[1.6] lg:!leading-[1.4] font-normal text-text-900">
-              {title}
-            </p>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-};
-
-const ServiceDetailsContent = () => {
-  return (
-    <section className="containerX flex flex-col md:flex-row gap-10 py-10 md:py-20 lg:py-[120px]">
-      <div className="w-full md:w-1/2 flex_center items-start">
+    <section className="">
+      <div className="w-full aspect-[20/9] relative overflow-hidden">
         <Image
-          src={images.cylindricalHalfStar}
-          alt="cylindrical half star"
-          className="max-w-[200px] md:max-w-[331px] h-auto !shrink-0 md:sticky md:top-[60px]"
-          height={600}
-          width={600}
+          src={service?.data?.featuredImage}
+          alt={`service image ${service?.data?.title}`}
+          className="absolute_center min-h-full min-w-full"
+          height={1280}
+          width={1920}
         />
       </div>
 
-      <div className="w-full md:w-1/2 flex flex-col gap-10 md:gap-20">
-        <ServiceListRenderer
-          data={customSoftwareDevelopmentServiceData}
-          title="Custom Software Development"
-          text={
-            "Custom software development creates tailored solutions to meet specific business needs, improving efficiency, scalability, and competitiveness."
-          }
+      <div className="containerX flex flex-col gap-10 py-10 md:py-20">
+        <div
+          className="content font-inter !pt-0"
+          dangerouslySetInnerHTML={{ __html: service?.data?.content || "" }}
         />
-        <ServiceListRenderer
-          data={customSoftwareDevelopmentServiceData}
-          title="Web Application Development"
-          text={
-            "Web application development focuses on building tailored, interactive web-based solutions to streamline processes, enhance user experience, and drive business growth."
-          }
-        />
-        <ServiceListRenderer
-          data={customSoftwareDevelopmentServiceData}
-          title="Mobile Application Development"
-          text={
-            "Mobile application development creates customized, user-friendly apps for smartphones and tablets, enhancing functionality and reaching a wider audience."
-          }
-        />
-        <ServiceListRenderer
-          data={customSoftwareDevelopmentServiceData}
-          title="Enterprise Software Solutions"
-          text={
-            "Enterprise software solutions provide scalable and specialized applications designed to meet the complex needs of large organizations, improving efficiency and collaboration across the business."
-          }
-        />
-        <ServiceListRenderer
-          data={customSoftwareDevelopmentServiceData}
-          title="SaaS Development"
-          text={
-            "SaaS development delivers cloud-based software solutions that offer scalability, accessibility, and cost efficiency, enabling businesses to streamline operations and enhance productivity."
-          }
-        />
+
+        <a
+          href="https://tidycal.com/netrosystems/discussion"
+          target="_blank"
+          rel="noreferrer"
+          className="btn_primary transition-colors duration-500 min-w-[180px] max-w-max sm:min-w-0 text-xs sm:text-base group flex flex-row items-center gap-2 mt-20"
+        >
+          <span>Reach us</span>
+          <ArrowLongTailIcon className="group-hover:fill-black-900 fill-white duration-300 " />
+        </a>
       </div>
     </section>
   );

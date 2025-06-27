@@ -1,16 +1,30 @@
 import SectionHeaderAnimated from "@/components/common/SectionHeaderAnimated";
-import CaseStudyShowcase from "@/components/projects/CaseStudyShowcase";
-import ClientServiceList from "@/components/services/ClientServiceList";
+import FAQ from "@/components/faq/FAQ";
 import ServiceDetailsContent from "@/components/services/ServiceDetailsContent";
-import { images } from "@/services";
-import Image from "next/image";
+import ServiceDetailsSkeleton from "@/components/services/ServiceDetailsSkeleton";
+import Testimonial from "@/components/testimonial/Testimonial";
+import { getGeneratedMetadata } from "@/lib/metadata";
+import { purifyUrl } from "@/services";
+import { Suspense } from "react";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  let slug = (await params).slug;
+  const id = purifyUrl({ urlString: slug });
+  const url = `/blogs/find-by-title/${id}`;
+  return await getGeneratedMetadata({ apiUrl: url, metaTitle: id });
+}
 
 const ServiceDetailsPage = async ({
   params,
 }: {
   params: Promise<{ slug: string }>;
 }) => {
-  const slug = (await params).slug;
+  let slug = (await params).slug;
+  slug = purifyUrl({ urlString: slug });
 
   return (
     <main className="relative">
@@ -24,19 +38,13 @@ const ServiceDetailsPage = async ({
           Know our strengths
         </p>
       </div>
-      <div className="h-[200px] md:h-[600px] w-full relative overflow-hidden">
-        <Image
-          src={images.blog1}
-          alt="topic image 1"
-          className="absolute_center min-h-full min-w-full"
-          height={1280}
-          width={1920}
-        />
-      </div>
 
-      <ServiceDetailsContent />
-      <CaseStudyShowcase />
-      <ClientServiceList />
+      <Suspense fallback={<ServiceDetailsSkeleton />}>
+        <ServiceDetailsContent slug={slug} />
+      </Suspense>
+
+      <FAQ />
+      <Testimonial />
     </main>
   );
 };

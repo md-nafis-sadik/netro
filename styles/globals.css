@@ -73,6 +73,10 @@ body {
   .btn {
     @apply inline-flex items-center justify-center gap-2 whitespace-nowrap text-base font-bold !leading-[1.1] rounded-full transition_common hover:-translate-y-[2px];
   }
+
+  .btn_primary {
+    @apply flex items-center justify-center py-3 sm:py-5 px-4 sm:px-6 md:px-8 gap-1 bg-main-500  text-white  hover:bg-yellow-500 hover:text-black font-bold text-sm sm:text-base md:text-xl rounded-full text-center text-nowrap duration-300;
+  }
 }
 
 @layer base {
