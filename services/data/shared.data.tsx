@@ -87,23 +87,23 @@ export const navbarData = [
 export const servicesMenu = [
   {
     serialNo: "01",
-    name: "UI/UX Design",
-    link: "/services/ui-ux-design",
+    name: "Software Development",
+    link: "/services/Software Development",
   },
   {
     serialNo: "02",
-    name: "Software Development",
-    link: "/services/software-development",
+    name: "Product Design (UI/UX Design)",
+    link: "/services/Product Design (UI/UX Design)",
   },
   {
     serialNo: "03",
-    name: "Branding",
-    link: "/services/branding",
+    name: "3D Product Animation",
+    link: "/services/3D Product Animation",
   },
   {
     serialNo: "04",
-    name: "3D Design",
-    link: "/services/3d-design",
+    name: "SaaS Development & SQA",
+    link: "/services/SaaS Development & SQA",
   },
 ];
 

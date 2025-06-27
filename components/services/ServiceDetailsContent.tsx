@@ -1,6 +1,7 @@
 import { fetchWithDelay } from "@/lib/apiHandler";
 import { ArrowLongTailIcon } from "@/services/assets/svgs";
 import Image from "next/image";
+import SectionHeader from "../common/SectionHeader";
 
 const ServiceDetailsContent = async ({ slug }: { slug: string }) => {
   let service = (await fetchWithDelay(
@@ -9,6 +10,21 @@ const ServiceDetailsContent = async ({ slug }: { slug: string }) => {
 
   return (
     <section className="">
+      <div className="containerX py-10 md:py-[100px]">
+        <SectionHeader className="service_details_header w-fit text-start">
+          {service?.data?.title || "Service Title Not Found"}
+        </SectionHeader>
+
+        <p className="font-inter text-sm md:text-2xl font-normal md:font-light !leading-[1.4] uppercase text-center md:text-start text-text-600 mt-6">
+          {service?.data?.tags?.map((tag: string, index: number) => (
+            <span key={index} className="mr-2 last:mr-0">
+              {tag}
+              {index < service.data.tags.length - 1 ? ", " : ""}
+            </span>
+          ))}
+        </p>
+      </div>
+
       <div className="w-full aspect-[20/9] relative overflow-hidden">
         <Image
           src={service?.data?.featuredImage}

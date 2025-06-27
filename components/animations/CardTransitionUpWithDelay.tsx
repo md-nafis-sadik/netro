@@ -9,12 +9,14 @@ import { useGSAP } from "@gsap/react";
 interface CardTransitionUpWithDelayProps {
   children: React.ReactNode;
   index: number;
+  duration?: number;
   className?: string;
 }
 
 const CardTransitionUpWithDelay: React.FC<CardTransitionUpWithDelayProps> = ({
   children,
   index,
+  duration,
   className,
 }) => {
   const cardRef = useRef<HTMLDivElement>(null);
@@ -34,12 +36,12 @@ const CardTransitionUpWithDelay: React.FC<CardTransitionUpWithDelayProps> = ({
           y: "0px",
           opacity: 1,
           scale: 1,
-          duration: 0.5 * (index + 1),
+          duration: duration || 0.5 * (index + 1),
           // ease: "power1.in",
           transition: "none",
           scrollTrigger: {
             trigger: cardRef.current,
-            start: "top 80%",
+            start: "top 95%",
             toggleActions: "play none none none",
             once: true,
           },

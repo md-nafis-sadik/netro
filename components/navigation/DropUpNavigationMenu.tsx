@@ -54,7 +54,7 @@ export default function DropupNavigationMenu({
         {servicesMenu.map((service, serviceIndex) => (
           <Fragment key={`${service.name}_${serviceIndex}`}>
             <Link
-              href={""}
+              href={service.link}
               className="pt-6 pb-3 flex flex-row justify-between items-center hover:scale-105 transition_common hover:bg-black px-10 group"
             >
               <span className="text-2xl font-medium tracking-[0.48px] text-white">

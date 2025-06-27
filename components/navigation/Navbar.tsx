@@ -5,7 +5,6 @@ import { cn } from "@/lib/utils";
 import {
   AppLogoIcon,
   Dividericon,
-  GraphicIcon,
   MenuIcon,
   PlusRoundedSecondaryIcon,
 } from "@/services/assets/svgs";
@@ -15,7 +14,6 @@ import { usePathname } from "next/navigation";
 import { FC, useState } from "react";
 import NavigationSheet from "./NavigationSheet";
 import DropupNavigationMenu from "./DropUpNavigationMenu";
-import IntroAudioPlayer from "./IntroAudioPlayer";
 
 const Navbar: FC = () => {
   const [isSheetOpen, setIsSheetOpen] = useState(false);
@@ -46,7 +44,6 @@ const Navbar: FC = () => {
 
         <div className="hidden min-[1160px]:flex flex-row items-center">
           {navbarData.map(({ link, name, megaMenu }, index) => {
-            // console.log(index);
             return (
               <div
                 onMouseEnter={() => megaMenu && setMegamenuOpening(true)}

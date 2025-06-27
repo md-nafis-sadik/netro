@@ -28,7 +28,11 @@ const JournalCard = ({
   contentContainerClassName,
 }: IFCardProps) => {
   return (
-    <CardTransitionUp index={index} className={cn("w-full group", className)}>
+    <CardTransitionUp
+      index={index}
+      duration={0.75}
+      className={cn("w-full group", className)}
+    >
       <div
         className={cn(
           "h-[196px] md:h-[308px] w-full relative overflow-hidden min-w-[260px] md:min-w-[400px]",

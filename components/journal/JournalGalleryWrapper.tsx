@@ -83,7 +83,7 @@ const JournalGalleryWrapper = async () => {
         {/* RIGHT PORTION */}
         <div className="w-full lg:w-2/5 flex flex-col gap-8 md:gap-[52px] relative">
           {/* FEATURED */}
-          <div className="w-full border border-dashed border-neutral-300 p-6 lg:p-10">
+          <div className="w-full border border-dashed border-neutral-300 p-6 lg:p-10 overflow-hidden">
             <p className="title text-5xl font-bold !leading-[0.9] text-black">
               Featured
             </p>
