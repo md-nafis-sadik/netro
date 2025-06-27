@@ -437,6 +437,32 @@
   -webkit-text-fill-color: transparent;
 }
 
+.services_our_core_strengths_header {
+  background: linear-gradient(
+    90deg,
+    #676767 0.06%,
+    #fff 20.04%,
+    #fff 39.42%,
+    #676767 59.7%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.services_client_weve_served_header {
+  background: linear-gradient(
+    91deg,
+    #1d1d1d 33.69%,
+    #909090 43.81%,
+    #9b9b9b 50.47%,
+    #3c3c3c 63.91%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 /* OUR PROJECTS */
 .our_projects_header {
   background: linear-gradient(

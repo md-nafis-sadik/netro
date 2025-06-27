@@ -4,7 +4,7 @@ import Image from "next/image";
 const ClientServiceList = () => {
   return (
     <section className="containerX py-10 md:py-20 ">
-      <p className="font-scoutcond text-2xl lg:text-[48px] font-bold !leading-[0.9] text-text-900 uppercase tracking-[2px] text-center">
+      <p className="font-scoutcond text-2xl lg:text-[48px] font-bold !leading-[0.9] services_client_weve_served_header uppercase tracking-[2px] text-center">
         {"Client we've served"}
       </p>
 

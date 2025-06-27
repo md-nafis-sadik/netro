@@ -48,7 +48,7 @@ const RootLayout = ({
           </ParallaxContainer> */}
         </LenisWrapper>
 
-        <Script
+        {/* <Script
           id="facebook-pixel"
           dangerouslySetInnerHTML={{
             __html: `!function(f,b,e,v,n,t,s)
@@ -112,7 +112,7 @@ fbq('track', 'PageView');`,
               window.onload = init_tracer;
             `,
           }}
-        />
+        /> */}
       </body>
     </html>
   );
