@@ -1,6 +1,5 @@
 import { Suspense } from "react";
 import FAQ from "@/components/faq/FAQ";
-import Testimonial from "@/components/testimonial/Testimonial";
 import Team from "@/components/team/Team";
 import Products from "@/components/products/Products";
 import HeroHome from "@/components/hero/HeroHome";
@@ -13,6 +12,8 @@ import HeroMarquee from "@/components/hero/HeroMarquee";
 import ProjectsHomeWrapper from "@/components/projects/ProjectsHomeWrapper";
 import JournalHomeSkeleton from "@/components/journal/JournalHomeSkeleton";
 import JournalHomeWrapper from "@/components/journal/JournalHomeWrapper";
+import TestimonialWrapper from "@/components/testimonial/TestimonialWrapper";
+import TestimonialSkeleton from "@/components/testimonial/TestimonialSkeleton";
 
 const HomePage = () => {
   return (
@@ -35,7 +36,9 @@ const HomePage = () => {
       <Products />
       <WorkCultureHome />
       <PricingHome />
-      <Testimonial />
+      <Suspense fallback={<TestimonialSkeleton />}>
+        <TestimonialWrapper />
+      </Suspense>
       <StatisticsHome />
       <Team />
       <FAQ />

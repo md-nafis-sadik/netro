@@ -10,16 +10,17 @@ import {
 } from "@/services/assets/svgs";
 import { navbarData, routes } from "@/services/data/shared.data";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { FC, useState } from "react";
 import NavigationSheet from "./NavigationSheet";
 import DropupNavigationMenu from "./DropUpNavigationMenu";
 
 const Navbar: FC = () => {
+  const pathname = usePathname();
+  const router = useRouter();
+
   const [isSheetOpen, setIsSheetOpen] = useState(false);
   const [megamenuOpening, setMegamenuOpening] = useState(false);
-
-  const pathname = usePathname();
 
   return (
     <nav
@@ -114,6 +115,12 @@ const Navbar: FC = () => {
               "hidden min-[1160px]:flex_center gap-2 text-white text-sm font-normal !leading-[1.4] group"
             )}
             containerClassName="hidden min-[1160px]:block"
+            onClick={() =>
+              window.open(
+                "https://tidycal.com/netrosystems/discussion",
+                "_blank"
+              )
+            }
           >
             <span
               className={cn(

@@ -3,6 +3,8 @@ import FAQ from "@/components/faq/FAQ";
 import ServiceDetailsContent from "@/components/services/ServiceDetailsContent";
 import ServiceDetailsSkeleton from "@/components/services/ServiceDetailsSkeleton";
 import Testimonial from "@/components/testimonial/Testimonial";
+import TestimonialSkeleton from "@/components/testimonial/TestimonialSkeleton";
+import TestimonialWrapper from "@/components/testimonial/TestimonialWrapper";
 import { getGeneratedMetadata } from "@/lib/metadata";
 import { purifyUrl } from "@/services";
 import { Suspense } from "react";
@@ -36,7 +38,9 @@ const ServiceDetailsPage = async ({
       </Suspense>
 
       <FAQ />
-      <Testimonial />
+      <Suspense fallback={<TestimonialSkeleton />}>
+        <TestimonialWrapper />
+      </Suspense>
     </main>
   );
 };

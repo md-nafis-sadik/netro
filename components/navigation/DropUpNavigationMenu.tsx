@@ -85,7 +85,12 @@ export default function DropupNavigationMenu({
           ))}
         </div>
 
-        <GradientButton containerClassName="!shrink-0">
+        <GradientButton
+          containerClassName="!shrink-0"
+          onClick={() =>
+            window.open("https://tidycal.com/netrosystems/discussion", "_blank")
+          }
+        >
           <span className="text-white">Schedule a call</span>
           <CallMissedIcon className="!h-6 !w-6 !shrink-0" />
         </GradientButton>

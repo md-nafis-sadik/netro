@@ -29,7 +29,7 @@ const TestimonialCard = ({
         <Image
           src={avatar}
           alt="avatar"
-          className="w-[52px] md:w-[60px] h-[52px] md:h-[60px]"
+          className="w-[52px] md:w-[60px] h-[52px] md:h-[60px] rounded-md"
           width={500}
           height={500}
         />

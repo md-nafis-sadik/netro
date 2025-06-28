@@ -9,10 +9,9 @@ import {
   RightSignIcon,
 } from "@/services/assets/svgs";
 import Autoplay from "embla-carousel-autoplay";
-import { testimonialsData } from "@/services/data/shared.data";
 import SectionHeader from "../common/SectionHeader";
 
-const Testimonial = () => {
+const Testimonial = ({ data }: any) => {
   const autoplayOptions = { delay: 3000 };
   const options = { align: "start", loop: true } as const;
   const [emblaRef, emblaApi] = useEmblaCarousel(options, [
@@ -34,13 +33,13 @@ const Testimonial = () => {
       <div className="w-full overflow-x-hidden">
         <div className="w-full" ref={emblaRef}>
           <div className="flex gap-3 md:gap-6 lg:gap-8 w-full">
-            {testimonialsData.map(({ name, title, avatar, id, message }) => (
+            {data?.map((item: any, index: number) => (
               <TestimonialCard
-                key={id}
-                name={name}
-                title={title}
-                avatar={avatar}
-                message={message}
+                key={index}
+                name={item?.name}
+                title={item?.occupation}
+                avatar={item?.imageUrl}
+                message={item?.review}
               />
             ))}
           </div>
