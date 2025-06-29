@@ -6,8 +6,12 @@ import colors from "@/lib/colors";
 import { images } from "@/services";
 import { ArrowLongTailIcon } from "@/services/assets/svgs";
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
 import { useLayoutEffect, useRef } from "react";
+
+// Register ScrollTrigger plugin
+gsap.registerPlugin(ScrollTrigger);
 
 const WorkCultureHome = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -70,7 +74,7 @@ const WorkCultureHome = () => {
   }, []);
 
   return (
-    <section
+    <div
       ref={containerRef}
       className="containerX w-full pt-10 md:pt-20 lg:pt-[160px] pb-20 lg:pb-[160px] relative"
     >
@@ -110,7 +114,7 @@ const WorkCultureHome = () => {
           />
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

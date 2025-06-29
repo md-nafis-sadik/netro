@@ -14,15 +14,17 @@ import JournalHomeSkeleton from "@/components/journal/JournalHomeSkeleton";
 import JournalHomeWrapper from "@/components/journal/JournalHomeWrapper";
 import TestimonialWrapper from "@/components/testimonial/TestimonialWrapper";
 import TestimonialSkeleton from "@/components/testimonial/TestimonialSkeleton";
+import IntroWithMarqueeHome from "@/components/intro/IntroWithMarqueeHome";
 
 const HomePage = () => {
   return (
     <main className="relative">
-      <div className=" overflow-hidden">
+      <div className=" relative">
         <HeroHome />
-        <HeroMarquee />
+        {/* <HeroMarquee /> */}
+        {/* <IntroHome /> */}
+        <IntroWithMarqueeHome />
       </div>
-      <IntroHome />
       <Suspense
         fallback={
           <div className="h-screen flex items-center justify-center">
