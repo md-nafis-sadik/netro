@@ -1,20 +1,88 @@
+"use client";
 import SectionSubHeader from "@/components/common/SectionSubHeader";
 import ArrowLineupButton from "@/components/ui/arrow-lineup-button";
 import { Button } from "@/components/ui/button";
 import colors from "@/lib/colors";
 import { images } from "@/services";
 import { ArrowLongTailIcon } from "@/services/assets/svgs";
+import gsap from "gsap";
 import Image from "next/image";
+import { useLayoutEffect, useRef } from "react";
 
 const WorkCultureHome = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const paragraphRef = useRef<HTMLParagraphElement>(null);
+
+  useLayoutEffect(() => {
+    const paragraphEl = paragraphRef.current;
+    if (!paragraphEl) return;
+
+    const text = paragraphEl.textContent || "";
+    const words = text.split(" ");
+    paragraphEl.innerHTML = "";
+
+    words.forEach((word) => {
+      const wordSpan = document.createElement("span");
+      wordSpan.className = "inline-block mr-[0.25em]";
+
+      [...word].forEach((letter) => {
+        const letterSpan = document.createElement("span");
+        letterSpan.textContent = letter;
+        letterSpan.className = "inline-block opacity-0";
+        wordSpan.appendChild(letterSpan);
+      });
+
+      paragraphEl.appendChild(wordSpan);
+    });
+
+    const allLetters = paragraphEl.querySelectorAll("span span");
+
+    gsap.fromTo(
+      allLetters,
+      {
+        opacity: 0,
+        y: 20,
+        scale: 0.9,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        stagger: {
+          amount: 2,
+          each: 0.02,
+        },
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top top",
+          end: "+=100%", // scroll for 1x viewport height
+          scrub: 1.2,
+          pin: true,
+          markers: false,
+        },
+      }
+    );
+
+    return () => {
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+    };
+  }, []);
+
   return (
-    <section className="containerX w-full pt-10 md:pt-20 lg:pt-[160px] pb-20 lg:pb-[160px] relative">
+    <section
+      ref={containerRef}
+      className="containerX w-full pt-10 md:pt-20 lg:pt-[160px] pb-20 lg:pb-[160px] relative"
+    >
       <div className="flex flex-col md:flex-row gap-10">
         {/* Left portion */}
         <div className="flex flex-col w-full md:w-[45%]">
           <SectionSubHeader text="Work Culture" className="w-fit" />
 
-          <p className="text-2xl md:text-[40px] font-bold !leading-[1.2] mt-6 md:mt-10">
+          <p
+            ref={paragraphRef}
+            className="text-2xl md:text-[40px] font-bold !leading-[1.2] mt-6 md:mt-10"
+          >
             Netro Systems fosters innovation collaboration, diversity, and
             growth, creating impactful software solutions in a vibrant,
             inclusive culture.

@@ -19,7 +19,7 @@ const IntroHome = () => {
     const words = text.split(" ");
     paragraphEl.innerHTML = "";
 
-    words.forEach((word, wordIndex) => {
+    words.forEach((word) => {
       const wordSpan = document.createElement("span");
       wordSpan.className = "inline-block mr-[0.25em]";
 
@@ -39,35 +39,45 @@ const IntroHome = () => {
       allLetters,
       {
         opacity: 0,
-        // y: 0,
-        scale: 0.92,
+        y: 20,
+        scale: 0.9,
       },
       {
         opacity: 1,
-        // y: 0,
+        y: 0,
         scale: 1,
         stagger: {
-          amount: 1,
-          each: 0.03,
+          amount: 2,
+          each: 0.02,
         },
         ease: "power2.out",
         scrollTrigger: {
           trigger: containerRef.current,
-          start: "top center",
-          end: "bottom center",
-          scrub: true,
+          start: "top top",
+          end: "+=100%", // scroll for 1x viewport height
+          scrub: 1.2,
           pin: true,
           markers: false,
         },
       }
     );
+
+    return () => {
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+    };
   }, []);
 
   return (
-    <div className="containerX pt-12 lg:pt-[110px] pb-[60px] md:pb-[160px] flex flow-row overflow-hidden">
+    <div
+      ref={containerRef}
+      className="containerX flex flow-row items-center overflow-hidden h-full md:h-screen px-4 md:px-0 py-20 md:py-0"
+    >
       <div className="hidden md:block w-2/5" />
 
-      <p className="w-full md:w-3/5 text-2xl md:text-5xl font-bold !leading-[1.4] text-text-900">
+      <p
+        ref={paragraphRef}
+        className="w-full md:w-3/5 text-2xl md:text-5xl font-bold !leading-[1.4] text-text-900"
+      >
         Netro Systems fosters innovation, collaboration, diversity, and growth,
         creating impactful software solutions in a vibrant, inclusive culture.
       </p>
