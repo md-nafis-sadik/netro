@@ -45,10 +45,10 @@ const ServiceDetailsContent = async ({ slug }: { slug: string }) => {
           href="https://tidycal.com/netrosystems/discussion"
           target="_blank"
           rel="noreferrer"
-          className="btn_primary transition-colors duration-500 min-w-[180px] max-w-max sm:min-w-0 text-xs sm:text-base group flex flex-row items-center gap-2 mt-20"
+          className="btn_primary transition-colors duration-500 min-w-[180px] max-w-max sm:min-w-0 text-xs sm:text-base group flex flex-row items-center gap-2 mt-10"
         >
           <span>Reach us</span>
-          <ArrowLongTailIcon className="group-hover:fill-black-900 fill-white duration-300 " />
+          <ArrowLongTailIcon className="group-hover:fill-black-900 fill-white duration-300" />
         </a>
       </div>
     </section>

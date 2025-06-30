@@ -7,14 +7,19 @@ export const aboutViewData = [
     description: "Office Image 1 Description",
   },
   {
-    image: images.officeImage1,
+    image: images.officeImage2,
     title: "Office Image 2",
     description: "Office Image 2 Description",
   },
   {
-    image: images.officeImage1,
+    image: images.officeImage3,
     title: "Office Image 3",
     description: "Office Image 3 Description",
+  },
+  {
+    image: images.officeImage4,
+    title: "Office Image 4",
+    description: "Office Image 4 Description",
   },
 ];
 

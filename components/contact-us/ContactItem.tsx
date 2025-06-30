@@ -28,6 +28,7 @@ function ContactItem({
           className={cn(
             "text-sm sm:text-lg md:text-2xl text-text-900 leading-[22px] font-semibold break-all"
           )}
+          target="_blank"
         >
           {linkText}
         </a>

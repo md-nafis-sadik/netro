@@ -1,3 +1,4 @@
+"use client";
 import {
   ArrowLongTailIcon,
   MailIcon,
@@ -7,8 +8,54 @@ import {
 import { Button } from "../ui/button";
 import BudgetTags from "./BudgetTags";
 import ContactItem from "./ContactItem";
+import { useState } from "react";
+import { baseUrl } from "@/services/data/shared.data";
 
 function ContactUsForm({ query = "" }: { query: string | undefined }) {
+  const [isLoading, setIsLoading] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [isError, setIsError] = useState(false);
+
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const form = event.target as HTMLFormElement;
+    const email = (form.elements.namedItem("email") as HTMLInputElement)?.value;
+    const message = (form.elements.namedItem("message") as HTMLInputElement)
+      ?.value;
+    const formData = new FormData();
+    const data = {
+      email,
+      message,
+    };
+    formData.append("data", JSON.stringify(data));
+    setIsLoading(true);
+    setIsError(false);
+    setIsSuccess(false);
+
+    fetch(`${baseUrl}/leads/create`, {
+      method: "POST",
+      body: formData,
+    })
+      .then((res) => {
+        if (res?.ok) {
+          setIsError(false);
+          setIsSuccess(true);
+          setTimeout(() => {
+            setIsSuccess(false);
+          }, 1000);
+        } else {
+          setIsError(true);
+          setTimeout(() => {
+            setIsError(false);
+          }, 1000);
+        }
+      })
+      .finally(() => {
+        (event.target as HTMLFormElement).reset();
+        setIsLoading(false);
+      });
+  };
+
   return (
     <div className="pt-10 sm:pt-16 md:pt-20 pb-8 sm:pb-16 md:pb-20 lg:pb-30">
       <div className="containerX">
@@ -28,6 +75,7 @@ function ContactUsForm({ query = "" }: { query: string | undefined }) {
                 }
                 title="Whatsapp Link"
                 linkText="https://wa.me/message/2QBWTQI4J4MIF1"
+                link="https://wa.me/message/2QBWTQI4J4MIF1"
               />
               <ContactItem
                 icon={
@@ -38,11 +86,13 @@ function ContactUsForm({ query = "" }: { query: string | undefined }) {
                 }
                 title="Telegram Link"
                 linkText="https://t.me/netrosystems"
+                link="https://t.me/netrosystems"
               />
               <ContactItem
                 icon={<MailIcon className="w-6 h-6 sm:w-8 sm:h-8" />}
                 title="Email Us"
                 linkText="hello@netrosystems.com"
+                link="mailto:hello@netrosystems.com"
                 isBordered={false}
               />
             </div>
@@ -51,6 +101,7 @@ function ContactUsForm({ query = "" }: { query: string | undefined }) {
             <form
               action="#"
               className="w-full px-4 sm:px-7 md:px-10 py-6 sm:py-8 md:py-10 border border-dashed border-natural-300 flex flex-col gap-6 sm:gap-8 md:gap-10"
+              onSubmit={handleSubmit}
             >
               <input
                 type="text"
@@ -75,7 +126,7 @@ function ContactUsForm({ query = "" }: { query: string | undefined }) {
                 </p>
                 <BudgetTags query={query} />
               </div>
-              <Button className="w-fit group">
+              <Button className="w-fit group" type="submit">
                 <span className="!leading-none">Send Message</span>
                 <ArrowLongTailIcon className="h-auto w-5 md:w-6 group-hover:translate-x-2 transition_common" />
               </Button>

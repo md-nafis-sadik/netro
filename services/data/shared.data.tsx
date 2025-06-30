@@ -14,6 +14,8 @@ import {
 } from "../assets/svgs";
 import {} from "@/services/assets/svgs";
 
+export const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
+
 export const routes = {
   homepage: {
     name: "Home",
