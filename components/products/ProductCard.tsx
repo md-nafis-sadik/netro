@@ -16,7 +16,7 @@ const ProductCard = ({ name, description, image, url }: IFProductCardProps) => {
           <Image
             src={image}
             alt={name}
-            className="absolute_center object-cover min-h-full min-w-full"
+            className="absolute_center object-cover h-auto min-w-full"
             height={1280}
             width={1920}
           />

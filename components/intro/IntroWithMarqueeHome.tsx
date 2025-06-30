@@ -79,7 +79,7 @@ const IntroWithMarqueeHome = () => {
           dark={false}
           className="absolute -bottom-16 md:-bottom-5 left-1/2 -translate-x-1/2"
         />
-        <div className="bg-black h-1/2 absolute top-0 w-full" />
+        <div className="bg-black h-[200px] absolute top-0 w-full" />
       </div>
 
       {/* Text Reveal Section */}
@@ -87,7 +87,7 @@ const IntroWithMarqueeHome = () => {
         <div className="hidden md:block w-2/5" />
         <p
           ref={paragraphRef}
-          className="w-full md:w-3/5 text-2xl md:text-5xl font-bold !leading-[1.4] text-text-900"
+          className="w-full md:w-3/5 text-2xl md:text-5xl font-bold !leading-[1.4] text-text-900 font-inter"
         >
           Netro Systems fosters innovation, collaboration, diversity, and
           growth, creating impactful software solutions in a vibrant, inclusive

@@ -21,8 +21,6 @@ const HomePage = () => {
     <main className="relative">
       <div className=" relative">
         <HeroHome />
-        {/* <HeroMarquee /> */}
-        {/* <IntroHome /> */}
         <IntroWithMarqueeHome />
       </div>
       <Suspense

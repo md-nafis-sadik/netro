@@ -1,6 +1,5 @@
 import SectionSubHeader from "@/components/common/SectionSubHeader";
 import { productsData } from "@/services/data";
-import React from "react";
 import ProductCard from "./ProductCard";
 import ArrowLineupButton from "@/components/ui/arrow-lineup-button";
 import colors from "@/lib/colors";
