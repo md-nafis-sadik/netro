@@ -11,7 +11,7 @@ interface IFProductCardProps {
 const ProductCard = ({ name, description, image, url }: IFProductCardProps) => {
   return (
     <div className="relative w-full cursor-pointer select-none group">
-      <div className="w-full h-auto aspect-[0.74/1] bg-white relative">
+      <div className="w-full h-auto aspect-[0.74/1] bg-gradient-to-r from-transparent via-[#6d60ff]/40 to-transparent backdrop-blur-3xl relative">
         {image && (
           <Image
             src={image}

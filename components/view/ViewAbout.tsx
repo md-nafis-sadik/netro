@@ -10,7 +10,7 @@ import { useEffect, useLayoutEffect, useRef, useState } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const ViewAbout = () => {
+const ViewAbout = ({ reverse }: { reverse?: boolean }) => {
   const options = {
     align: "center",
     loop: true,
@@ -96,23 +96,32 @@ const ViewAbout = () => {
   }, []);
 
   return (
-    <section ref={containerRef} className="containerX overflow-hidden">
-      <div className="mx-auto mt-6 md:mt-10 min-h-[234px] md:min-h-[544px] lg:min-h-[660px] overflow-hidden">
+    <section
+      ref={containerRef}
+      className={cn(
+        "containerX overflow-hidden w-full flex",
+        reverse ? "flex-col-reverse" : "flex-col"
+      )}
+    >
+      <div className="mx-auto w-full mt-6 md:mt-10 min-h-[234px] md:min-h-[544px] lg:min-h-[660px] overflow-x-hidden">
         <div className="w-full" ref={emblaRef}>
-          <div className="flex gap-4 sm:gap-6 pt-10">
+          <div className="flex flex-row items-center gap-4 sm:gap-6 pt-10">
             {aboutViewData.map(({ image, title, description }, index) => (
-              <div className="flex-[0_0_33.333%] px-2" key={index}>
+              <div
+                className="flex-[0_0_100%] sm:flex-[0_0_50%] md:flex-[0_0_33.333%] px-2"
+                key={index}
+              >
                 <div
-                  className="relative overflow-hidden rounded-lg transition-transform duration-300 ease-out"
+                  className={cn(
+                    "relative overflow-hidden transition-all duration-300 ease-out",
+                    selectedIndex === index
+                      ? "h-[234px] md:h-[544px]"
+                      : "h-[186px] md:h-[434px]",
+                    index === aboutViewData.length - 1 && "me-4 md:me-6"
+                  )}
                   style={{
-                    height: selectedIndex === index ? "234px" : "186px",
                     transform:
-                      selectedIndex === index
-                        ? "scale(1.1) translateY(-30px)"
-                        : "scale(1) translateY(0)",
-                    ...(window.innerWidth >= 768 && {
-                      height: selectedIndex === index ? "544px" : "434px",
-                    }),
+                      selectedIndex === index ? "scale(1.1)" : "scale(1)",
                   }}
                 >
                   <Image
@@ -132,7 +141,7 @@ const ViewAbout = () => {
 
       <p
         className={cn(
-          "text-2xl md:text-5xl font-bold !leading-[1.4] text-text-900 my-10 md:mt-0 md:mb-[120px]"
+          "text-2xl md:text-5xl font-bold !leading-[1.4] text-text-900 my-10 md:mt-10 md:mb-[120px]"
         )}
         ref={paragraphRef}
       >
