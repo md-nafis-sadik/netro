@@ -10,15 +10,19 @@ const IntroWithMarqueeHome = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const paragraphRef = useRef<HTMLParagraphElement>(null);
 
+  const paragraphText =
+    "Netro Systems fosters innovation, collaboration, diversity, and growth, creating impactful software solutions in a vibrant, inclusive culture.";
+
   useLayoutEffect(() => {
     const container = containerRef.current;
     const paragraphEl = paragraphRef.current;
     if (!container || !paragraphEl) return;
 
-    // Split paragraph into animated spans
-    const text = paragraphEl.textContent || "";
-    const words = text.split(" ");
+    // Clear first in case of rerenders (like navigation)
     paragraphEl.innerHTML = "";
+
+    // Use the raw string instead of textContent
+    const words = paragraphText.split(" ");
 
     words.forEach((word) => {
       const wordSpan = document.createElement("span");
@@ -88,11 +92,7 @@ const IntroWithMarqueeHome = () => {
         <p
           ref={paragraphRef}
           className="w-full md:w-3/5 text-2xl md:text-5xl font-bold !leading-[1.4] text-text-900 font-inter"
-        >
-          Netro Systems fosters innovation, collaboration, diversity, and
-          growth, creating impactful software solutions in a vibrant, inclusive
-          culture.
-        </p>
+        />
       </div>
     </div>
   );

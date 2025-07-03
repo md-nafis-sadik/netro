@@ -32,6 +32,9 @@ const WorkCultureHome = () => {
     },
   ];
 
+  const paragraphText =
+    "Netro Systems fosters innovation, collaboration, diversity, and growth, creating impactful software solutions in a vibrant, inclusive culture.";
+
   useLayoutEffect(() => {
     // Initialize cards first
     initializeCards();
@@ -84,9 +87,11 @@ const WorkCultureHome = () => {
     const paragraphEl = paragraphRef.current;
     if (!paragraphEl) return;
 
-    const text = paragraphEl.textContent || "";
-    const words = text.split(" ");
+    // Clear first in case of rerenders (like navigation)
     paragraphEl.innerHTML = "";
+
+    // Use the raw string instead of textContent
+    const words = paragraphText.split(" ");
 
     words.forEach((word) => {
       const wordSpan = document.createElement("span");
@@ -224,11 +229,7 @@ const WorkCultureHome = () => {
           <p
             ref={paragraphRef}
             className="text-2xl md:text-[40px] font-bold !leading-[1.2] mt-6 md:mt-10"
-          >
-            Netro Systems fosters innovation collaboration, diversity, and
-            growth, creating impactful software solutions in a vibrant,
-            inclusive culture.
-          </p>
+          />
 
           <div className="mt-10 flex items-center gap-2 md:gap-4">
             <Button className="w-fit group">
