@@ -25,6 +25,9 @@ const ViewAbout = ({ reverse }: { reverse?: boolean }) => {
 
   const [selectedIndex, setSelectedIndex] = useState<number>(1);
 
+  const paragraphText =
+    "Netro Systems fosters innovation, collaboration, diversity, and growth, creating impactful software solutions in a vibrant, inclusive culture.";
+
   // EMBLA API CENTERED SLIDE INDEX
   useEffect(() => {
     if (!emblaApi) return;
@@ -46,10 +49,11 @@ const ViewAbout = ({ reverse }: { reverse?: boolean }) => {
     const paragraphEl = paragraphRef.current;
     if (!container || !paragraphEl) return;
 
-    // Split paragraph into animated spans
-    const text = paragraphEl.textContent || "";
-    const words = text.split(" ");
+    // Clear first in case of rerenders (like navigation)
     paragraphEl.innerHTML = "";
+
+    // Use the raw string instead of textContent
+    const words = paragraphText.split(" ");
 
     words.forEach((word) => {
       const wordSpan = document.createElement("span");
@@ -144,10 +148,7 @@ const ViewAbout = ({ reverse }: { reverse?: boolean }) => {
           "text-2xl md:text-5xl font-bold !leading-[1.4] text-text-900 my-10 md:mt-10 md:mb-[120px]"
         )}
         ref={paragraphRef}
-      >
-        Netro Systems fosters innovation, collaboration, diversity, and growth,
-        creating impactful software solutions in a vibrant, inclusive culture.
-      </p>
+      />
     </section>
   );
 };

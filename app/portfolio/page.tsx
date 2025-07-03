@@ -1,10 +1,8 @@
-import ProjectFilterItems from "@/components/projects/ProjectFilterItems";
 import ProjectFilterItemSkeleton from "@/components/projects/ProjectFilterItemSkeleton";
 import ProjectFilterItemWrapper from "@/components/projects/ProjectFilterItemWrapper";
 import ProjectsGallerySkeleton from "@/components/projects/ProjectsGallerySkeleton";
 import ProjectsGalleryWrapper from "@/components/projects/ProjectsGalleryWrapper";
 import PageThumbnail from "@/components/shared/PageThumbnail";
-import { fetchWithDelay } from "@/lib/apiHandler";
 import { Suspense } from "react";
 
 async function PortfolioPage({

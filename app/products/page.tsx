@@ -1,5 +1,4 @@
 import AllProducts from "@/components/products/AllProducts";
-import ProjectFilterItems from "@/components/projects/ProjectFilterItems";
 import PageThumbnail from "@/components/shared/PageThumbnail";
 
 async function Products({
@@ -12,7 +11,7 @@ async function Products({
   return (
     <>
       <PageThumbnail title="Our Products" description="showcase" />
-      <ProjectFilterItems query={query} />
+      {/* <ProjectFilterItems query={query} /> */}
       <AllProducts query={query} />
     </>
   );
