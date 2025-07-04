@@ -57,3 +57,39 @@ export const whatMakesDifferentData = [
     imageClassName: "w-full h-auto",
   },
 ];
+
+export const whatWeAreGreatAtData = {
+  categories: [
+    "Product Design",
+    "Software Development",
+    "3D Product Animation",
+    "SaaS Development & SQA",
+  ],
+  item: [
+    [
+      "User Experience (UX) Design",
+      "User Interface (UI) Design",
+      "Wireframing and Prototyping",
+      "Mobile App Design",
+      "Web Design and Redesign",
+      "Interaction Design",
+      "Microinteraction Design",
+      "Landing Page Design",
+      "Brand Experience Design",
+    ],
+    [
+      "Custom Software Development",
+      "Web Application Development",
+      "Mobile Application Development",
+      "Enterprise Software Solutions",
+    ],
+    ["3D Product Animation", "2D Product Animation", "Character Animation"],
+    [
+      "SaaS Development",
+      "API Development and Integration",
+      "Cloud Solutions",
+      "DevOps and Continuous Delivery",
+      "Quality Assurance and Testing",
+    ],
+  ],
+};
