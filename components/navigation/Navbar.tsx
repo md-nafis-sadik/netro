@@ -28,7 +28,7 @@ const Navbar: FC = () => {
         pathname === routes.homepage.link
           ? "bg-black border-[#393939]"
           : "bg-transparent border-natural-300",
-        "border-b border-dashed"
+        "border-b border-dashed sticky top-0 z-50"
       )}
     >
       <div className="containerX flex flex-row items-center justify-between gap-4 py-3">

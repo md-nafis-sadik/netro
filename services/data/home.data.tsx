@@ -3,30 +3,19 @@ import { images } from "@/services";
 import { LinkedinOutlinedIcon } from "@/services/assets/svgs";
 
 export const marqueeHomeData = [
-  {
-    image: images.companyWhite1,
-    darkImage: images.companyBlack1,
-  },
-  {
-    image: images.companyWhite2,
-    darkImage: images.companyBlack2,
-  },
-  {
-    image: images.companyWhite3,
-    darkImage: images.companyBlack3,
-  },
-  {
-    image: images.companyWhite4,
-    darkImage: images.companyBlack4,
-  },
-  {
-    image: images.companyWhite5,
-    darkImage: images.companyBlack5,
-  },
-  {
-    image: images.companyWhite6,
-    darkImage: images.companyBlack6,
-  },
+  images.companyBlack1,
+  images.companyBlack2,
+  images.companyBlack3,
+  images.companyBlack4,
+  images.companyBlack5,
+  images.companyBlack6,
+  images.companyBlack7,
+  images.companyBlack8,
+  images.companyBlack9,
+  images.companyBlack10,
+  images.companyBlack11,
+  images.companyBlack12,
+  images.companyBlack13,
 ];
 
 export const projectsData = [

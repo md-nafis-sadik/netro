@@ -327,7 +327,7 @@ export const Download3DIcon = ({
         width="31.1111"
         height="40"
         fill="url(#pattern0_2071_8085)"
-        shape-rendering="crispEdges"
+        shapeRendering="crispEdges"
       />
     </g>
     <defs>
@@ -338,9 +338,9 @@ export const Download3DIcon = ({
         width="55.1113"
         height="64"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
