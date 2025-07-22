@@ -55,10 +55,10 @@ export const routes = {
 };
 
 export const navbarData = [
-  {
-    name: routes.homepage.name,
-    link: routes.homepage.link,
-  },
+  // {
+  //   name: routes.homepage.name,
+  //   link: routes.homepage.link,
+  // },
   {
     name: routes.services.name,
     link: routes.services.link,
@@ -68,10 +68,10 @@ export const navbarData = [
     name: routes.portfolio.name,
     link: routes.portfolio.link,
   },
-  {
-    name: routes.career.name,
-    link: routes.career.link,
-  },
+  // {
+  //   name: routes.career.name,
+  //   link: routes.career.link,
+  // },
   {
     name: routes.about.name,
     link: routes.about.link,
@@ -80,10 +80,10 @@ export const navbarData = [
     name: routes.contact.name,
     link: routes.contact.link,
   },
-  {
-    name: routes.journal.name,
-    link: routes.journal.link,
-  },
+  // {
+  //   name: routes.journal.name,
+  //   link: routes.journal.link,
+  // },
 ];
 
 export const servicesMenu = [
