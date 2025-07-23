@@ -4,7 +4,7 @@ import Image from "next/image";
 
 function PrivacyPolicy() {
   return (
-    <section className="">
+    <section className="pt-20">
       <PageThumbnail title="Privacy & Policy" description="Guide" />
       <div className="pt-10 sm:pt-16 md:pt-20 pb-8 sm:pb-16 md:pb-20 lg:pb-30 border-t border-dashed border-natural-300 ">
         <div className="containerX grid sm:grid-cols-2 gap-10 sm:gap-16 md:gap-20">

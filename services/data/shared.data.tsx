@@ -11,6 +11,8 @@ import {
   TwitterIcon,
   YoutubeIcon,
   WhatsappOutlinedIcon,
+  PinterestIcon,
+  CodeCanyonIcon,
 } from "../assets/svgs";
 import {} from "@/services/assets/svgs";
 
@@ -114,62 +116,67 @@ export const footerData = {
     title: "INQUIRIES",
     address:
       "290/737 York House Green Lane West, Garstang, Preston, Lancashire, England, PR3 1NJ",
-    phone: "+1 789 567 890",
+    phone: "+44 7360251473",
     email: "hello@netrosystems.com",
   },
   companyInfo: {
     title: "COMPANY INFO",
     links: [
-      { text: "About Us", href: "/about-us" },
-      { text: "Join Our Team", href: "/careers" },
-      { text: "Our Process", href: "/process" },
-      { text: "Client Reviews", href: "/reviews" },
-      { text: "Portfolio", href: "/portfolio" },
-      { text: "Case Studies", href: "/case-studies" },
+      { text: "About Us", href: routes.about.link },
+      { text: "Join Our Team", href: routes.career.link },
+      // { text: "Our Process", href: "/process" },
+      // { text: "Client Reviews", href: "/reviews" },
+      { text: "Portfolio", href: routes.portfolio.link },
+      // { text: "Case Studies", href: "/case-studies" },
     ],
   },
   services: {
     title: "SERVICES",
     links: [
-      { text: "UI/UX Design", href: "/services/ui-ux-design" },
-      { text: "Branding & Identity", href: "/services/branding" },
-      { text: "Web Development", href: "/services/web-development" },
-      { text: "Mobile App Development", href: "/services/mobile-development" },
-      { text: "SaaS Development", href: "/services/saas-development" },
-      { text: "MVP Development", href: "/services/mvp-development" },
-      { text: "3D Animation", href: "/services/3d-animation" },
+      { text: "Software Development", href: "/services/Software Development" },
+      {
+        text: "Product Design (UI/UX Design)",
+        href: "/services/Product Design (UI/UX Design)",
+      },
+      { text: "3D Product Animation", href: "/services/3D Product Animation" },
+      {
+        text: "SaaS Development & SQA",
+        href: "/services/SaaS Development & SQA",
+      },
     ],
   },
   support: {
     title: "SUPPORT",
     links: [
-      { text: "Privacy Policy", href: "/privacy-policy" },
-      { text: "Terms of Service", href: "/terms-of-service" },
-      { text: "Help Center", href: "/help" },
+      { text: "Privacy Policy", href: "privacy-policy" },
+      // { text: "Terms of Service", href: "/terms-of-service" },
+      { text: "Help Center", href: routes.contact.link },
     ],
   },
   resources: {
     title: "RESOURCES",
     links: [
-      { text: "Our Journal", href: "/journal" },
-      { text: "Whitepapers & E-books", href: "/resources/whitepapers" },
-      { text: "Tools & Templates", href: "/resources/tools" },
-      { text: "Webinars / Workshops", href: "/resources/webinars" },
-      { text: "FAQs", href: "/faqs" },
+      // { text: "Our Journal", href: "/journal" },
+      // { text: "Whitepapers & E-books", href: "/resources/whitepapers" },
+      // { text: "Tools & Templates", href: "/resources/tools" },
+      // { text: "Webinars / Workshops", href: "/resources/webinars" },
+      // { text: "FAQs", href: "/faqs" },
+      { text: "Company Portfolio", href: "/" },
+      { text: "Brand Guideline", href: "/brand-guideline" },
     ],
   },
-  copyright: "© 2022 - 2025 • Netro Systems, All Rights Reserved.",
+  copyright: "© 2019 - 2025 • Netro Systems, All Rights Reserved.",
   socialLinks: [
     {
       platform: "twitter",
-      href: "#",
+      href: "https://x.com/netrosystems",
       icon: (
         <TwitterIcon className="h-5 w-5 md:h-6 md:w-6 text-black group-hover:text-white" />
       ),
     },
     {
       platform: "linkedin",
-      href: "#",
+      href: "http://linkedin.com/company/netrosystems",
       icon: (
         <LinkedinOutlinedIcon
           color={colors.black}
@@ -179,7 +186,7 @@ export const footerData = {
     },
     {
       platform: "instagram",
-      href: "#",
+      href: "https://www.instagram.com/netrosystems",
       icon: (
         <InstagramIcon
           color={colors.black}
@@ -189,7 +196,7 @@ export const footerData = {
     },
     {
       platform: "youtube",
-      href: "#",
+      href: "https://www.youtube.com/@netrosystems",
       icon: (
         <YoutubeIcon
           color={colors.black}
@@ -199,7 +206,7 @@ export const footerData = {
     },
     {
       platform: "facebook",
-      href: "#",
+      href: "https://www.facebook.com/netrosystems",
       icon: (
         <FacebookIcon
           color={colors.black}
@@ -207,11 +214,31 @@ export const footerData = {
         />
       ),
     },
+    // {
+    //   platform: "telegram",
+    //   href: "#",
+    //   icon: (
+    //     <TelegramOutlinedIcon
+    //       color={colors.black}
+    //       className="h-5 w-5 md:h-6 md:w-6 text-black group-hover:text-white"
+    //     />
+    //   ),
+    // },
     {
-      platform: "telegram",
-      href: "#",
+      platform: "pinterest",
+      href: "https://pinterest.com/netrosystems",
       icon: (
-        <TelegramOutlinedIcon
+        <PinterestIcon
+          color={colors.black}
+          className="h-5 w-5 md:h-6 md:w-6 text-black group-hover:text-white"
+        />
+      ),
+    },
+    {
+      platform: "codecanyon",
+      href: "https://codecanyon.net/user/netrosystems/portfolio",
+      icon: (
+        <CodeCanyonIcon
           color={colors.black}
           className="h-5 w-5 md:h-6 md:w-6 text-black group-hover:text-white"
         />
@@ -219,7 +246,7 @@ export const footerData = {
     },
     {
       platform: "dribbble",
-      href: "#",
+      href: "https://dribbble.com/netrosystems",
       icon: (
         <DribbleIcon
           color={colors.black}
@@ -229,7 +256,7 @@ export const footerData = {
     },
     {
       platform: "behance",
-      href: "#",
+      href: "https://www.behance.net/netrosystems",
       icon: (
         <BehanceIcon
           color={colors.black}
@@ -239,7 +266,7 @@ export const footerData = {
     },
     {
       platform: "github",
-      href: "#",
+      href: "https://github.com/netrosystems",
       icon: (
         <GithubIcon
           color={colors.black}

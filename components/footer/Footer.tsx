@@ -33,7 +33,12 @@ const Footer = () => {
               <div className="h-8 w-8 rounded-full bg-natural-100 flex_center">
                 <CallIcon className="h-[14px] w-[14px] !shrink-0" />
               </div>
-              <p className="footer_el_text">{footerData.inquiries.phone}</p>
+              <a
+                href={`tel:${footerData.inquiries.phone}`}
+                className="footer_el_text hover:underline"
+              >
+                {footerData.inquiries.phone}
+              </a>
             </div>
             <div className="flex items-center gap-6 mt-4 md:mt-2">
               <div className="h-8 w-8 rounded-full bg-natural-100 flex_center">
@@ -161,13 +166,14 @@ const Footer = () => {
 
         <div className="flex flex-row items-center justify-center flex-wrap gap-[10px] md:gap-3 mt-12">
           {footerData.socialLinks.map(({ href, icon }, index) => (
-            <Link
+            <a
               className="bg-natural-100 flex_center h-10 w-10 md:h-12 md:w-12 rounded-full hover:bg-black transition_common group"
               href={href}
               key={index}
+              target="_blank"
             >
               {icon}
-            </Link>
+            </a>
           ))}
         </div>
 
