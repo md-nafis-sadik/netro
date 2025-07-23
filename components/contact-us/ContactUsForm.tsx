@@ -1,15 +1,18 @@
 "use client";
 import {
   ArrowLongTailIcon,
+  ErrorSvg,
   MailIcon,
-  TelegramOutlinedIcon,
+  SpinningIcon,
+  SuccessSvg,
   WhatsappOutlinedIcon,
 } from "@/services/assets/svgs";
 import { Button } from "../ui/button";
 import BudgetTags from "./BudgetTags";
 import ContactItem from "./ContactItem";
-import { useState } from "react";
-import { baseUrl } from "@/services/data/shared.data";
+import { Fragment, useState } from "react";
+import { baseUrl, netroWhatsappLink } from "@/services/data/shared.data";
+import { toast, Toaster } from "sonner";
 
 function ContactUsForm({ query = "" }: { query: string | undefined }) {
   const [isLoading, setIsLoading] = useState(false);
@@ -28,6 +31,9 @@ function ContactUsForm({ query = "" }: { query: string | undefined }) {
       message,
     };
     formData.append("data", JSON.stringify(data));
+    if (query) {
+      formData.append("budget", query);
+    }
     setIsLoading(true);
     setIsError(false);
     setIsSuccess(false);
@@ -43,11 +49,26 @@ function ContactUsForm({ query = "" }: { query: string | undefined }) {
           setTimeout(() => {
             setIsSuccess(false);
           }, 1000);
+
+          toast("Thank You!", {
+            description: "We'll contact you shortly.",
+            action: {
+              label: "Got it",
+              onClick: () => {},
+              actionButtonStyle: {
+                fontSize: "1rem",
+                fontWeight: 600,
+                backgroundColor: "#6455FF", // Replace with your main-500 color
+                color: "#fff",
+              },
+            },
+            position: "top-right",
+          });
         } else {
           setIsError(true);
           setTimeout(() => {
             setIsError(false);
-          }, 1000);
+          }, 3000);
         }
       })
       .finally(() => {
@@ -74,10 +95,10 @@ function ContactUsForm({ query = "" }: { query: string | undefined }) {
                   />
                 }
                 title="Whatsapp Link"
-                linkText="https://wa.me/message/2QBWTQI4J4MIF1"
-                link="https://wa.me/message/2QBWTQI4J4MIF1"
+                linkText={netroWhatsappLink}
+                link={netroWhatsappLink}
               />
-              <ContactItem
+              {/* <ContactItem
                 icon={
                   <TelegramOutlinedIcon
                     className="w-6 h-6 sm:w-8 sm:h-8"
@@ -87,7 +108,7 @@ function ContactUsForm({ query = "" }: { query: string | undefined }) {
                 title="Telegram Link"
                 linkText="https://t.me/netrosystems"
                 link="https://t.me/netrosystems"
-              />
+              /> */}
               <ContactItem
                 icon={<MailIcon className="w-6 h-6 sm:w-8 sm:h-8" />}
                 title="Email Us"
@@ -110,15 +131,15 @@ function ContactUsForm({ query = "" }: { query: string | undefined }) {
                 placeholder="Your Name"
               />
               <input
-                type="text"
-                name="username"
+                type="email"
+                name="email"
                 className="input"
-                placeholder="Your Name"
+                placeholder="Your Email"
               />
               <textarea
-                name="username"
+                name="queries"
                 className="input h-30"
-                placeholder="Your Name"
+                placeholder="Tell Us About Your Quires"
               />
               <div className="">
                 <p className="text-base text-text-700 leading-[120%] font-medium">
@@ -126,14 +147,42 @@ function ContactUsForm({ query = "" }: { query: string | undefined }) {
                 </p>
                 <BudgetTags query={query} />
               </div>
-              <Button className="w-fit group" type="submit">
-                <span className="!leading-none">Send Message</span>
-                <ArrowLongTailIcon className="h-auto w-5 md:w-6 group-hover:translate-x-2 transition_common" />
+              <Button
+                className="w-fit group min-w-[195px]"
+                type="submit"
+                disabled={isLoading}
+              >
+                {isLoading ? (
+                  <Fragment>
+                    <span className="!leading-none">Sending...</span>
+                    <SpinningIcon className="w-5 h-5 md:w-6 md:h-6 text-white" />
+                  </Fragment>
+                ) : (
+                  <Fragment>
+                    <span className="!leading-none">Send Message</span>
+                    <ArrowLongTailIcon className="h-auto w-5 md:w-6 group-hover:translate-x-2 transition_common" />
+                  </Fragment>
+                )}
               </Button>
             </form>
+            {isError ? (
+              <p className={`text-status-error flex items-center p-2 gap-2`}>
+                <ErrorSvg />
+                <span>An error occurred. Please try again.</span>
+              </p>
+            ) : (
+              <p
+                className={`text-black flex items-center p-2 gap-2 opacity-0 select-none pointer-events-none`}
+              >
+                <SuccessSvg />
+                <span>All Ok</span>
+              </p>
+            )}
           </div>
         </div>
       </div>
+
+      <Toaster />
     </div>
   );
 }
