@@ -7,6 +7,7 @@ import colors from "@/lib/colors";
 import SectionHeader from "../common/SectionHeader";
 import { timestampDisplay } from "@/services";
 import { useRouter } from "next/navigation";
+import { routes } from "@/services/data/shared.data";
 
 const OurJournal = ({ data }: any) => {
   const router = useRouter();
@@ -41,7 +42,7 @@ const OurJournal = ({ data }: any) => {
             lineColor={colors.secondary[300]}
             textClassName="text-text-900"
             className="mt-10 md:mt-20"
-            onClick={() => router.push("/journal")}
+            href={routes.journal.link}
           >
             See all products
           </ArrowLineupButton>

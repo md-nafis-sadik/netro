@@ -3,6 +3,7 @@ import { inter } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
 import { CheckedCircleIcon } from "@/services/assets/svgs";
 import CardTransitionUpWithDelay from "../animations/CardTransitionUpWithDelay";
+import { routes } from "@/services/data/shared.data";
 
 interface IFCardProps {
   title?: string;
@@ -59,7 +60,7 @@ const PricingHomeCard = ({
         </p>
 
         <div className="mt-6 md:mt-10 flex justify-start">
-          <GradientButton className="!px-8">
+          <GradientButton href={routes.contact.link} className="!px-8">
             <span className="text-white">Start Project</span>
           </GradientButton>
         </div>

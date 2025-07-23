@@ -5,9 +5,11 @@ import { Button } from "@/components/ui/button";
 import colors from "@/lib/colors";
 import { images } from "@/services";
 import { ArrowLongTailIcon } from "@/services/assets/svgs";
+import { routes } from "@/services/data/shared.data";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
+import Link from "next/link";
 import { useLayoutEffect, useRef, useState } from "react";
 
 // Register ScrollTrigger plugin
@@ -232,11 +234,17 @@ const WorkCultureHome = () => {
           />
 
           <div className="mt-10 flex items-center gap-2 md:gap-4">
-            <Button className="w-fit group">
-              <span className="!leading-none">Join our team</span>
-              <ArrowLongTailIcon className="h-auto w-5 md:w-6 group-hover:translate-x-2 transition_common" />
-            </Button>
-            <ArrowLineupButton lineColor={colors.main[400]} className="">
+            <Link href={routes.career.link}>
+              <Button className="w-fit group">
+                <span className="!leading-none">Join our team</span>
+                <ArrowLongTailIcon className="h-auto w-5 md:w-6 group-hover:translate-x-2 transition_common" />
+              </Button>
+            </Link>
+            <ArrowLineupButton
+              href={routes.about.link}
+              lineColor={colors.main[400]}
+              className=""
+            >
               Know more about us
             </ArrowLineupButton>
           </div>
@@ -253,7 +261,7 @@ const WorkCultureHome = () => {
               ref={(el) => {
                 cardsRef.current[index] = el;
               }}
-              className="absolute top-0 left-0 w-full h-full rounded-lg overflow-hidden shadow-lg flex_center"
+              className="absolute top-0 left-0 w-full h-full overflow-hidden shadow-lg flex_center"
               style={{
                 transformStyle: "preserve-3d",
                 backfaceVisibility: "hidden",

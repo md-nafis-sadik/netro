@@ -1,4 +1,3 @@
-import SectionHeaderAnimated from "@/components/common/SectionHeaderAnimated";
 import SectionSubHeader from "@/components/common/SectionSubHeader";
 import {
   Accordion,
@@ -37,7 +36,7 @@ const FAQ = () => {
               </AccordionTrigger>
               <AccordionContent
                 className={cn(
-                  "text-xs md:text-base text-white font-normal font-inter"
+                  "text-xs md:text-base text-text-200 font-normal font-inter"
                 )}
               >
                 {answer}

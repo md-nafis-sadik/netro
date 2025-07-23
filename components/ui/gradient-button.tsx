@@ -2,6 +2,7 @@
 import React from "react";
 import "@/styles/animation.css";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 interface GradientButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -9,6 +10,7 @@ interface GradientButtonProps
   className?: string;
   containerClassName?: string;
   nonGradient?: boolean;
+  href?: string;
 }
 
 export const GradientButton = React.forwardRef<
@@ -21,17 +23,19 @@ export const GradientButton = React.forwardRef<
       className = "",
       containerClassName = "",
       nonGradient = false,
+      href = "",
       ...props
     },
     ref
   ) => {
     return (
-      <div
+      <Link
         className={cn(
           "block p-[2px] rounded-full bg-gradient-btn hover:-translate-y-[2px] group-hover:!bg-main-500 transition_common group !shrink-0",
           containerClassName,
           nonGradient ? "bg-[#161616]" : "btn-animate-gradient"
         )}
+        href={href}
       >
         <button
           ref={ref}
@@ -43,7 +47,7 @@ export const GradientButton = React.forwardRef<
         >
           {children}
         </button>
-      </div>
+      </Link>
     );
   }
 );

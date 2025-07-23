@@ -40,7 +40,10 @@ const ProductCard = ({ name, description, image, url }: IFProductCardProps) => {
         {description}
       </p>
 
-      <a className="mt-6" href={url}>
+      <a
+        className="mt-6 bg-main-400 hover:bg-main-500 flex items-center gap-2 p-[12px_20px_12px_24px] py-2 rounded-full w-fit text-white font-inter text-sm md:text-base font-bold !leading-[1.1]"
+        href={url}
+      >
         <span>Download App</span>
         <ArrowLongTailIcon className="text-white-100" />
       </a>

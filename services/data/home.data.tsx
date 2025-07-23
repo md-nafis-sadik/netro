@@ -582,43 +582,27 @@ export const faqData = [
   {
     question: "What services does Netro Creative offer?",
     answer:
-      "Netro Creative offers a wide range of services including custom software development, mobile app development, web application development, enterprise software solutions, software consulting, and ongoing maintenance and support.",
+      "Netro Systems partners with startups and SaaS innovators to build high-performance, scalable digital products from the ground up. We offer full-stack development for custom applications, responsive web platforms, and cross-platform mobile apps, all optimized for rapid deployment and iterative growth. Our expertise spans cloud-native architectures, API integrations, and automated DevOps pipelines, enabling fast MVP delivery and cost-efficient scaling. With a strong focus on UX, performance, and maintainability, we help founders transform ideas into robust, market-ready solutions.",
   },
   {
-    question: "What industries does Netro Creative specialize in?",
+    question: "What industries does Netro Creative specialise in?",
     answer:
-      "Netro Creative specializes in a wide range of industries, including finance, healthcare, e-commerce, education, and more. We tailor our services to meet the unique needs of each industry.",
-  },
-  {
-    question:
-      "How does Netro Creative ensure the quality of its software products?",
-    answer:
-      "You can reach out to Netro Creative by email at 0o9oX@example.com or by filling out the contact form on our website. We look forward to hearing from you and discussing your project needs.",
+      "Netro Systems delivers cutting-edge solutions across Telecommunications, eCommerce, AI, and FinTech. We build scalable telecom platforms, AI-powered eCommerce solutions, intelligent automation systems, and secure, compliant financial applications. Leveraging cloud-native architectures, API-driven integrations, and advanced analytics, we help businesses innovate, optimize operations, and stay ahead in the digital era.",
   },
   {
     question: "What is Netro Creative's development process?",
     answer:
-      "You can reach out to Netro Creative by email at 0o9oX@example.com or by filling out the contact form on our website. We look forward to hearing from you and discussing your project needs.",
+      "At Netro Systems, we follow an Agile-driven development process combined with DevOps practices to ensure speed, flexibility, and quality. Our approach begins with in-depth discovery and requirement analysis, followed by strategic planning and architecture design. We prioritize iterative development through short sprints, supported by continuous integration and automated testing for seamless delivery. With robust QA, cloud-native deployment, and proactive monitoring, we guarantee reliability and scalability. Post-launch, our ongoing maintenance and optimization ensure that solutions evolve with your business needs.",
   },
   {
     question: "How does Netro Creative handle data security and privacy?",
     answer:
-      "You can reach out to Netro Creative by email at 0o9oX@example.com or by filling out the contact form on our website. We look forward to hearing from you and discussing your project needs.",
+      "Netro Creative adheres to industry-leading security standards and privacy regulations to ensure complete protection of client and user data. We implement a multi-layered security approach, including end-to-end encryption, role-based access control, and secure API integrations. All applications are developed following OWASP best practices to mitigate vulnerabilities such as SQL injection, XSS, and CSRF. For sensitive data, we enforce encryption both at rest and in transit using AES-256 and TLS 1.3 protocols. Our infrastructure is deployed on secure cloud environments with compliance to ISO 27001, GDPR, and, where applicable, PCI DSS standards. Continuous security audits, penetration testing, and real-time monitoring further safeguard against threats, ensuring data integrity, confidentiality, and availability at every stage of the development lifecycle.",
   },
   {
     question: "Does Netro Creative provide ongoing support and maintenance?",
     answer:
-      "You can reach out to Netro Creative by email at 0o9oX@example.com or by filling out the contact form on our website. We look forward to hearing from you and discussing your project needs.",
-  },
-  {
-    question: "What are Netro Creative's pricing models?",
-    answer:
-      "You can reach out to Netro Creative by email at 0o9oX@example.com or by filling out the contact form on our website. We look forward to hearing from you and discussing your project needs.",
-  },
-  {
-    question: "How can I get started with Netro Creative?",
-    answer:
-      "You can reach out to Netro Creative by email at 0o9oX@example.com or by filling out the contact form on our website. We look forward to hearing from you and discussing your project needs.",
+      "Yes. Netro Creative provides comprehensive ongoing support and maintenance to ensure your software remains secure, up-to-date, and fully optimized. Our services include performance monitoring, bug fixes, security updates, feature enhancements, and 24/7 technical assistance to keep your solution running seamlessly.",
   },
 ];
 

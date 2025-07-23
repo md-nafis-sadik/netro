@@ -22,13 +22,13 @@ const HeroHome = () => {
           <Image
             src={images.netroHeroCrystal}
             alt="netro hero crystal image"
-            className="absolute_center lg:!right-auto object-cover lg:max-w-[700px]"
+            className="absolute_center lg:!right-auto object-cover max-w-full max-h-full"
             height={1400}
             width={1920}
           />
         </div>
 
-        <div className="w-full lg:w-1/2 pb-10 pt-[60px] lg:py-[180px] ps-10 relative z-[2]">
+        <div className="w-full lg:w-1/2 pb-10 pt-20 lg:py-[180px] lg:ps-10 relative z-[2]">
           {/* TITLES */}
           <div
             className={cn(
@@ -203,11 +203,11 @@ const HeroHome = () => {
             </div>
           </div>
 
-          <div className="flex flex-row items-center justify-center lg:justify-start flex-wrap mt-10 lg:mt-20 gap-6 relative">
+          <div className="flex flex-row items-center justify-center lg:justify-start mt-10 lg:mt-20 gap-6 relative">
             <Image
               src={images.ratingClutch}
               alt="clutch rating"
-              className="h-6 md:h-9 w-auto"
+              className="max-w-[160px] h-auto"
               height={100}
               width={400}
             />
@@ -215,7 +215,7 @@ const HeroHome = () => {
             <Image
               src={images.ratingTrustpilot}
               alt="trustpilot rating"
-              className="h-6 md:h-9 w-auto"
+              className="max-w-[160px] h-auto"
               height={100}
               width={400}
             />
@@ -223,7 +223,7 @@ const HeroHome = () => {
             <Image
               src={images.ratingGoodFirms}
               alt="goodfirms rating"
-              className="h-6 md:h-9 w-auto"
+              className="max-w-[160px] h-auto"
               height={100}
               width={400}
             />
