@@ -1,6 +1,5 @@
 "use client";
 import SectionSubHeader from "@/components/common/SectionSubHeader";
-import { projectsData } from "@/services/data";
 import ProjectCard from "./ProjectCard";
 import SectionHeader from "../common/SectionHeader";
 import { ScrollTrigger } from "gsap/ScrollTrigger";

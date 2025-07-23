@@ -22,7 +22,7 @@ const HeroHome = () => {
           <Image
             src={images.netroHeroCrystal}
             alt="netro hero crystal image"
-            className="absolute_center lg:!right-auto object-cover max-w-full max-h-full"
+            className="absolute_center lg:!right-auto object-cover max-w-[340px] lg:max-w-full h-auto lg:max-h-full"
             height={1400}
             width={1920}
           />
@@ -184,10 +184,16 @@ const HeroHome = () => {
 
           {/* CONNECT & SOCIALS */}
           <div className="flex flex-col md:flex-row justify-center lg:justify-start items-center gap-6 mt-8 md:mt-10">
-            <Button className="!shrink-0 bg-main-600 hover:bg-main-500">
-              <span className="text-white">Schedule a call</span>
-              <CalendarIcon className="!h-6 !w-6 !shrink-0" />
-            </Button>
+            <a
+              href="https://tidycal.com/netrosystems/discussion"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button className="!shrink-0 bg-main-600 hover:bg-main-500">
+                <span className="text-white">Schedule a call</span>
+                <CalendarIcon className="!h-6 !w-6 !shrink-0" />
+              </Button>
+            </a>
 
             <div className="flex flex-row items-center gap-3">
               {socialsData.map(({ link, icon }, index) => (
@@ -203,30 +209,49 @@ const HeroHome = () => {
             </div>
           </div>
 
-          <div className="flex flex-row items-center justify-center lg:justify-start mt-10 lg:mt-20 gap-6 relative">
-            <Image
-              src={images.ratingClutch}
-              alt="clutch rating"
-              className="max-w-[160px] h-auto"
-              height={100}
-              width={400}
-            />
-            <div className="h-[46px] border-[1px] border-[#353535] border-dashed" />
-            <Image
-              src={images.ratingTrustpilot}
-              alt="trustpilot rating"
-              className="max-w-[160px] h-auto"
-              height={100}
-              width={400}
-            />
-            <div className="h-[46px] border-[1px] border-[#353535] border-dashed" />
-            <Image
-              src={images.ratingGoodFirms}
-              alt="goodfirms rating"
-              className="max-w-[160px] h-auto"
-              height={100}
-              width={400}
-            />
+          <div className="flex flex-row items-center justify-center lg:justify-start mt-10 lg:mt-20 gap-2 sm:gap-4 lg:gap-6 relative w-full max-w-full overflow-hidden px-4 sm:px-0">
+            <a
+              href="https://clutch.co/profile/netro-systems"
+              className="flex-shrink min-w-0"
+            >
+              <Image
+                src={images.ratingClutch}
+                alt="clutch rating"
+                className="w-full h-auto max-w-[80px] xs:max-w-[100px] sm:max-w-[120px] md:max-w-[140px] lg:max-w-[160px] object-contain"
+                height={100}
+                width={400}
+              />
+            </a>
+
+            <div className="h-[30px] sm:h-[38px] lg:h-[46px] border-[1px] border-[#353535] border-dashed flex-shrink-0" />
+
+            <a
+              href="https://www.trustpilot.com/review/netrosystems.com"
+              className="flex-shrink min-w-0"
+            >
+              <Image
+                src={images.ratingTrustpilot}
+                alt="trustpilot rating"
+                className="w-full h-auto max-w-[80px] xs:max-w-[100px] sm:max-w-[120px] md:max-w-[140px] lg:max-w-[160px] object-contain"
+                height={100}
+                width={400}
+              />
+            </a>
+
+            <div className="h-[30px] sm:h-[38px] lg:h-[46px] border-[1px] border-[#353535] border-dashed flex-shrink-0" />
+
+            <a
+              href="https://www.goodfirms.co/company/netro-systems-limited"
+              className="flex-shrink min-w-0"
+            >
+              <Image
+                src={images.ratingGoodFirms}
+                alt="goodfirms rating"
+                className="w-full h-auto max-w-[80px] xs:max-w-[100px] sm:max-w-[120px] md:max-w-[140px] lg:max-w-[160px] object-contain"
+                height={100}
+                width={400}
+              />
+            </a>
           </div>
         </div>
       </div>

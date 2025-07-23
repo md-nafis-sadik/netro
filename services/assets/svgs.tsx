@@ -924,7 +924,7 @@ export const PinterestIcon = ({ className, color = "#000000" }: IFSvgProps) => (
     xmlSpace="preserve"
     className={className}
   >
-    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+    <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
     <g
       id="SVGRepo_tracerCarrier"
       strokeLinecap="round"

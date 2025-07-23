@@ -17,7 +17,7 @@ import IntroWithMarqueeHome from "@/components/intro/IntroWithMarqueeHome";
 const HomePage = () => {
   return (
     <main className="relative">
-      <div className=" relative">
+      <div className="relative">
         <HeroHome />
         <IntroWithMarqueeHome />
       </div>

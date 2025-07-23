@@ -313,7 +313,7 @@ export const socialsData = [
         color={colors.white}
       />
     ),
-    link: "",
+    link: "https://wa.me/message/O7VDJ52RI3Q5G1",
   },
   {
     icon: (
@@ -322,7 +322,7 @@ export const socialsData = [
         color={colors.white}
       />
     ),
-    link: "",
+    link: "https://t.me/netrosystems",
   },
   {
     icon: (
@@ -331,7 +331,7 @@ export const socialsData = [
         color={colors.white}
       />
     ),
-    link: "",
+    link: "http://linkedin.com/company/netrosystems",
   },
 ];
 
