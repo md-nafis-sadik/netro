@@ -22,13 +22,13 @@ const HeroHome = () => {
           <Image
             src={images.netroHeroCrystal}
             alt="netro hero crystal image"
-            className="absolute_center lg:!right-auto object-cover lg:max-h-[700px] lg:max-w-[734px]"
+            className="absolute_center lg:!right-auto object-cover lg:max-w-[700px]"
             height={1400}
             width={1920}
           />
         </div>
 
-        <div className="w-full lg:w-1/2 pb-10 pt-[60px] lg:py-[180px] relative z-[2]">
+        <div className="w-full lg:w-1/2 pb-10 pt-[60px] lg:py-[180px] ps-10 relative z-[2]">
           {/* TITLES */}
           <div
             className={cn(

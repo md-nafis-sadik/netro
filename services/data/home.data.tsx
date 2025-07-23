@@ -120,27 +120,35 @@ export const productsData = [
     image: images.product1,
     title: "Trivialy",
     description:
-      "Trivialy introduces a whole new way to boost your sales and engagements.",
+      "Boosts up to 40% eCommerce sales via customer engagement activities. Try this FREEMIUM tool! Currently available for Wordpress only.",
     url: "https://trivialy.co",
   },
   {
     id: "02",
     image: images.product2,
-    title: "Dokani",
+    title: "Telzen- telecom brand",
     description:
-      "A ERP that created for SMB and SMEs. Flexibility and easy operation is key.",
+      "When you travel you must need a roaming enabled eSIM into your phone. Don't you? Then try our cutting edge product.",
     url: "https://dokani.products8.com",
   },
   {
     id: "03",
     image: images.product3,
-    title: "Jazakallah",
+    title: "JazakAllah MMP",
     description:
-      "A complete Islamic app that comes with all your needed religious need.",
+      "From the religion responsibility we have created a solution that automates and makes easier to manage your Mosque. It also comes with a complete user app for practitioners.",
     url: "https://codecanyon.net/item/jazakallah-tasbih-counter-app/44905917",
   },
   {
     id: "04",
+    image: images.product5,
+    title: "Smart pathshala",
+    description:
+      "Smart Pathshala is one of the apps that made by the brilliant people with ability to automate the educational Institute. Ask your Institute admin for onboarding!",
+    url: "https://play.google.com/store/apps/details?id=com.netrocreative.qurioapp&pcampaignid=web_share",
+  },
+  {
+    id: "05",
     image: images.product4,
     title: "Rimozen AI",
     description:
@@ -148,19 +156,43 @@ export const productsData = [
     url: "https://play.google.com/store/apps/details?id=com.netrocreative.geniepers&pcampaignid=web_share",
   },
   {
-    id: "05",
-    image: images.product5,
-    title: "Qurio",
-    description:
-      "For the kids from Pre-Play to Class 3 can learn things using Qurio.",
-    url: "https://play.google.com/store/apps/details?id=com.netrocreative.qurioapp&pcampaignid=web_share",
-  },
-  {
     id: "06",
     image: images.product6,
-    title: "ProChat AI",
+    title: "Dokani ERP",
     description:
-      "ChatGPT 4.o enabled personal assistant that eases your tasks like never before.",
+      "Might saw lot of ERP or inventory management solution but what if we bring a product that created for dealers only with good traction in sales and multi-location stores.",
+    url: "https://codecanyon.net/item/prochat-the-ultimate-ai-assistant/44970962",
+  },
+  {
+    id: "07",
+    image: images.product7,
+    title: "KIds AI",
+    description:
+      "Dedicated counsellors for Parenting, powered by Artificial Intelligence. The app can be a guide for your parenting and make you feel better even when kids are tantruming.",
+    url: "https://codecanyon.net/item/prochat-the-ultimate-ai-assistant/44970962",
+  },
+  {
+    id: "08",
+    image: images.product8,
+    title: "Kiddz Learn",
+    description:
+      "Immersive application that helps learning lill' stars with drawing, learning words or even doing simple maths. but remember its for Kids under 10!",
+    url: "https://codecanyon.net/item/prochat-the-ultimate-ai-assistant/44970962",
+  },
+  {
+    id: "09",
+    image: images.product9,
+    title: "Eventus",
+    description:
+      "Must be thinking it's nothing but a even booking platform? Wrong, it's something that no one solved the problem. Why don't you explore their website?",
+    url: "https://codecanyon.net/item/prochat-the-ultimate-ai-assistant/44970962",
+  },
+  {
+    id: "10",
+    image: images.product10,
+    title: "Pro AI",
+    description:
+      "Day-To-Day Ai app that eases your tasks like writing an email reply, writing an leave application or even writing an appraisal request letter too? Why don’t yo try today?",
     url: "https://codecanyon.net/item/prochat-the-ultimate-ai-assistant/44970962",
   },
 ];

@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils";
 import Image, { StaticImageData } from "next/image";
+import { ArrowLongTailIcon } from "@/services/assets/svgs";
 
 interface IFProductCardProps {
   name: string;
@@ -11,25 +12,16 @@ interface IFProductCardProps {
 const ProductCard = ({ name, description, image, url }: IFProductCardProps) => {
   return (
     <div className="relative w-full cursor-pointer select-none group">
-      <div className="w-full h-auto aspect-[0.74/1] bg-gradient-to-r from-transparent via-[#6d60ff]/40 to-transparent backdrop-blur-3xl relative">
+      <div className="w-full h-auto min-h-[228px] relative">
         {image && (
           <Image
             src={image}
             alt={name}
-            className="absolute_center object-cover h-auto min-w-full"
+            className="absolute_center object-cover h-auto min-w-full max-h-[228px]"
             height={1280}
             width={1920}
           />
         )}
-        <div className="absolute_center bg-main-400/50 h-[100px] w-[100px] md:h-[140px] md:w-[140px] rounded-full transition_common duration-500 group-hover:scale-105 opacity-0 group-hover:opacity-100 flex_center">
-          <p
-            className={cn(
-              "text-lg md:text-2xl font-bold !leading-none uppercase text-white text-center font-scoutcond"
-            )}
-          >
-            View <br /> Details
-          </p>
-        </div>
       </div>
 
       <p
@@ -47,6 +39,11 @@ const ProductCard = ({ name, description, image, url }: IFProductCardProps) => {
       >
         {description}
       </p>
+
+      <a className="mt-6" href={url}>
+        <span>Download App</span>
+        <ArrowLongTailIcon className="text-white-100" />
+      </a>
     </div>
   );
 };

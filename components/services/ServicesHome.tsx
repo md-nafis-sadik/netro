@@ -7,7 +7,7 @@ import SectionHeader from "../common/SectionHeader";
 import Autoplay from "embla-carousel-autoplay";
 
 const ServicesHome = () => {
-  const options = { align: "start", loop: true } as const;
+  const options = { align: "start", loop: false } as const;
   const [emblaRef] = useEmblaCarousel(options, [
     Autoplay({ delay: 3000, stopOnInteraction: false }),
   ]);
