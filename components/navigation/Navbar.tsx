@@ -26,20 +26,20 @@ const Navbar: FC = () => {
     <nav
       className={cn(
         pathname === routes.homepage.link
-          ? "bg-black border-[#393939]"
+          ? "border-[#393939]"
           : "bg-transparent border-natural-300",
-        "border-b border-dashed"
+        "fixed top-0 w-full z-50 bg-black/20"
       )}
     >
       <div className="containerX flex flex-row items-center justify-between gap-4 py-3">
         <Link href={routes.homepage.link} className="h-fit">
           <AppLogoIcon
-            color={
+            className={cn(
+              "h-5 lg:h-7 w-auto",
               pathname === routes.homepage.link
-                ? colors.white
-                : colors.natural[900]
-            }
-            className="h-5 w-auto"
+                ? "text-white"
+                : "text-natural-black"
+            )}
           />
         </Link>
 
@@ -104,12 +104,12 @@ const Navbar: FC = () => {
           })}
         </div>
 
-        <div className="flex flex-row items-center gap-2 md:gap-3">
-          {/* ON/OFF MUSIC */}
-          {/* <IntroAudioPlayer pathname={pathname} /> */}
+        {/* <div className="flex flex-row items-center gap-2 md:gap-3"> */}
+        {/* ON/OFF MUSIC */}
+        {/* <IntroAudioPlayer pathname={pathname} /> */}
 
-          {/* GET IN TOUCH */}
-          <GradientButton
+        {/* GET IN TOUCH */}
+        {/* <GradientButton
             className={cn(
               pathname === routes.homepage.link ? "bg-black" : "!bg-white",
               "hidden min-[1160px]:flex_center gap-2 text-white text-sm font-normal !leading-[1.4] group"
@@ -132,27 +132,27 @@ const Navbar: FC = () => {
             >
               Get in touch
             </span>
-          </GradientButton>
+          </GradientButton> */}
 
-          {/* MOBILE MENU */}
-          <GradientButton
-            className={cn("bg-black flex_center gap-2 group ps-[10px] md:px-3")}
-            containerClassName="block min-[1160px]:hidden"
-            onClick={() => setIsSheetOpen(true)}
+        {/* MOBILE MENU */}
+        <GradientButton
+          className={cn("bg-black flex_center gap-2 group ps-[10px] md:px-3")}
+          containerClassName="block min-[1160px]:hidden"
+          onClick={() => setIsSheetOpen(true)}
+        >
+          <MenuIcon className="!h-5 !w-5 !shrink-0" />
+          <span
+            className={cn(
+              pathname === routes.homepage.link
+                ? "text-white"
+                : "text-text-900",
+              "font-scoutcond text-lg font-bold text-white uppercase !leading-[0.9] group-hover:text-white transition_common"
+            )}
           >
-            <MenuIcon className="!h-5 !w-5 !shrink-0" />
-            <span
-              className={cn(
-                pathname === routes.homepage.link
-                  ? "text-white"
-                  : "text-text-900",
-                "font-scoutcond text-lg font-bold text-white uppercase !leading-[0.9] group-hover:text-white transition_common"
-              )}
-            >
-              Menu
-            </span>
-          </GradientButton>
-        </div>
+            Menu
+          </span>
+        </GradientButton>
+        {/* </div> */}
       </div>
 
       <NavigationSheet

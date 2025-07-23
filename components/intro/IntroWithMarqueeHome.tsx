@@ -71,27 +71,16 @@ const IntroWithMarqueeHome = () => {
   return (
     <div
       ref={containerRef}
-      className="w-full -mt-52 min-h-[240px] md:min-h-[280px] lg:min-h-[420px] relative z-10"
+      className="w-full min-h-[240px] md:min-h-[280px] lg:min-h-[380px] relative z-10 overflow-hidden"
     >
       {/* Hero Marquee Section */}
-      <div className="relative w-full overflow-hidden min-h-[240px] md:min-h-[280px] lg:min-h-[320px]">
-        <MarqueeHome
-          dark={true}
-          className="absolute -bottom-20 md:-bottom-[120px] left-1/2 -translate-x-1/2"
-        />
-        <MarqueeHome
-          dark={false}
-          className="absolute -bottom-16 md:-bottom-5 left-1/2 -translate-x-1/2"
-        />
-        <div className="bg-black h-[200px] absolute top-0 w-full" />
-      </div>
+      <MarqueeHome dark={false} className="" />
 
       {/* Text Reveal Section */}
-      <div className="containerX -mt-52 flex flow-row items-center overflow-hidden h-full md:h-screen px-4 md:px-0 py-20 md:py-0">
-        <div className="hidden md:block w-2/5" />
+      <div className="containerX flex flow-row items-center overflow-hidden h-full md:h-screen px-4 md:px-0 py-20 md:py-0">
         <p
           ref={paragraphRef}
-          className="w-full md:w-3/5 text-2xl md:text-5xl font-bold !leading-[1.4] text-text-900 font-inter"
+          className="w-full md:w-3/5 text-2xl md:text-5xl text-center font-bold !leading-[1.4] text-text-900 font-inter mx-auto"
         />
       </div>
     </div>

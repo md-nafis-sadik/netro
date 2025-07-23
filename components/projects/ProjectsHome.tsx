@@ -83,14 +83,17 @@ const ProjectsHome = ({ data }: { data: any }) => {
 
   return (
     <section className="bg-black w-full py-20 relative">
-      <div className="containerX flex_center flex-col">
+      <div className="flex_center flex-col">
         <SectionSubHeader dark text="Explore Projects" />
 
         <SectionHeader className="home_projects_header pb-10 md:pb-28">
-          Projects That Speak <br /> for Themselves
+          Our Projects
         </SectionHeader>
 
-        <div ref={cardsRef} className="flex flex-col mb-40 w-full relative">
+        <div
+          ref={cardsRef}
+          className="flex flex-col items-center mb-40 w-full relative"
+        >
           {data?.data?.slice(0, 5).map((item: any, index: number) => (
             <ProjectCard
               className={cn("w-full stacked-card sticky left-0 top-0 mb-80")}

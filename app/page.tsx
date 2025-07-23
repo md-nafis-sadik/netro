@@ -7,8 +7,6 @@ import ServicesHome from "@/components/services/ServicesHome";
 import WorkCultureHome from "@/components/workCulture/WorkCultureHome";
 import PricingHome from "@/components/pricing/PricingHome";
 import StatisticsHome from "@/components/statistics/StatisticsHome";
-import IntroHome from "@/components/intro/IntroHome";
-import HeroMarquee from "@/components/hero/HeroMarquee";
 import ProjectsHomeWrapper from "@/components/projects/ProjectsHomeWrapper";
 import JournalHomeSkeleton from "@/components/journal/JournalHomeSkeleton";
 import JournalHomeWrapper from "@/components/journal/JournalHomeWrapper";

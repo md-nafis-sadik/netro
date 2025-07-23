@@ -19,7 +19,7 @@ const ProjectCard = ({
   return (
     <div
       className={cn(
-        "w-full h-[728px] max-h-[728px] md:h-[640px] md:max-h-[640px] overflow-hidden bg-text-700 group transition_common relative",
+        "w-full 2xl:!w-[1440px] min-[1620px]:!w-[1580px] h-[728px] max-h-[728px] md:h-[640px] md:max-h-[640px] lg:h-[740px] lg:max-h-[740px] overflow-hidden bg-text-700 group transition_common relative",
         className
       )}
       style={style}
