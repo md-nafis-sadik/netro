@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 import SectionHeader from "../common/SectionHeader";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -186,13 +186,13 @@ const WhatWeAreGreatAt = () => {
         {/* Left Section - Sticky */}
         <div
           ref={leftSectionRef}
-          className="w-1/2 sticky top-0 h-screen flex flex-col pr-8 bg-white space-y-10 py-20"
+          className="hidden md:flex w-1/2 sticky top-0 h-screen  flex-col pr-8 bg-white space-y-10 py-20"
         >
           {whatWeAreGreatAtData.categories.map((category, index) => (
             <p
               key={category}
               data-category={index}
-              className="text-4xl text-text-600 font-normal transition-all duration-300 cursor-pointer hover:text-black leading-[1.1]"
+              className="font-inter text-4xl text-text-600 font-normal transition-all duration-300 cursor-pointer hover:text-black leading-[1.1]"
               style={{
                 fontWeight: index === 0 ? "bold" : "normal",
                 color: index === 0 ? "#000000" : "#9CA3AF",
@@ -204,7 +204,7 @@ const WhatWeAreGreatAt = () => {
         </div>
 
         {/* Right Section - Scrollable */}
-        <div ref={rightSectionRef} className="w-1/2 bg-white">
+        <div ref={rightSectionRef} className="hidden md:block w-1/2 bg-white">
           <div className="py-20 px-16">
             {whatWeAreGreatAtData.categories.map((category, categoryIndex) => (
               <div key={categoryIndex}>
@@ -213,7 +213,7 @@ const WhatWeAreGreatAt = () => {
                     <div
                       key={`${categoryIndex}-${itemIndex}`}
                       data-item={`${categoryIndex}-${itemIndex}`}
-                      className="mb-24 opacity-70 transform translate-y-2 transition-all duration-500"
+                      className="opacity-70 transform translate-y-2 transition-all duration-500"
                     >
                       <div className="flex items-start mb-6">
                         <span className="text-2xl font-bold text-text-200 !leading-[1.4] mr-12">

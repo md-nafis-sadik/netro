@@ -4,11 +4,10 @@ import ServiceHomeCard from "./ServiceHomeCard";
 import useEmblaCarousel from "embla-carousel-react";
 import { images } from "@/services";
 import SectionHeader from "../common/SectionHeader";
-import { HoverCardRoot } from "../animations/3DCard";
 import Autoplay from "embla-carousel-autoplay";
 
 const ServicesHome = () => {
-  const options = { align: "start", loop: false } as const;
+  const options = { align: "start", loop: true } as const;
   const [emblaRef] = useEmblaCarousel(options, [
     Autoplay({ delay: 3000, stopOnInteraction: false }),
   ]);
@@ -74,6 +73,7 @@ const ServicesHome = () => {
                 alt: "",
                 className: "max-w-[116px] md:max-w-[180px] h-auto",
               }}
+              className="mr-4 md:mr-6"
             />
           </div>
         </div>
