@@ -24,6 +24,7 @@ async function CareerDetails({
           <Breadcrumbs breadcrumbs={breadcrumbs} />
         </div>
       </div>
+
       <Suspense fallback={<JobDescriptionSkeleton />}>
         <JobDescriptionWrapper id={id} />
       </Suspense>
