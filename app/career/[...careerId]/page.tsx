@@ -1,6 +1,8 @@
 import JobApplyForm from "@/components/career/JobApplyForm";
-import JobDescription from "@/components/career/JobDescription";
+import JobDescriptionSkeleton from "@/components/career/JobDescriptionSkeleton";
+import JobDescriptionWrapper from "@/components/career/JobDescriptionWrapper";
 import Breadcrumbs from "@/components/shared/Breadcrumbs";
+import { Suspense } from "react";
 
 async function CareerDetails({
   params,
@@ -16,15 +18,17 @@ async function CareerDetails({
   ];
 
   return (
-    <>
+    <main className="relative mt-20 md:mt-24">
       <div className="py-4 sm:py-6 md:py-10">
         <div className="containerX">
           <Breadcrumbs breadcrumbs={breadcrumbs} />
         </div>
       </div>
-      <JobDescription />
+      <Suspense fallback={<JobDescriptionSkeleton />}>
+        <JobDescriptionWrapper id={id} />
+      </Suspense>
       <JobApplyForm />
-    </>
+    </main>
   );
 }
 
