@@ -12,7 +12,8 @@ import BudgetTags from "./BudgetTags";
 import ContactItem from "./ContactItem";
 import { Fragment, useState } from "react";
 import { baseUrl, netroWhatsappLink } from "@/services/data/shared.data";
-import { toast, Toaster } from "sonner";
+import { Toaster } from "../ui/sonner";
+import { toast } from "sonner";
 
 function ContactUsForm({ query = "" }: { query: string | undefined }) {
   const [isLoading, setIsLoading] = useState(false);

@@ -14,8 +14,8 @@ function JobDescription({ job }: any) {
               <div>
                 <h2 className="titleMd text-text-900"> {job?.data?.title}</h2>
                 <p className="para mt-3">
-                  We're looking for passionate {job?.data?.title} ready to make
-                  an impact.
+                  We&apos;re looking for passionate {job?.data?.title} ready to
+                  make an impact.
                 </p>
               </div>
               <div className="flex flex-col gap-4 border-t border-dashed border-natural-300 pt-6">
