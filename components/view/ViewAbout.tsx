@@ -107,7 +107,7 @@ const ViewAbout = ({ reverse }: { reverse?: boolean }) => {
         reverse ? "flex-col-reverse" : "flex-col"
       )}
     >
-      <div className="mx-auto w-full mt-6 md:mt-10 min-h-[234px] md:min-h-[544px] lg:min-h-[660px] overflow-x-hidden">
+      <div className="mx-auto w-full mt-6 md:mt-10 mb-10 md:mb-0 h-[234px] min-h-[234px] md:h-[544px] md:min-h-[544px] lg:h-[660px] lg:min-h-[660px] overflow-hidden">
         <div className="w-full" ref={emblaRef}>
           <div className="flex flex-row items-center gap-4 sm:gap-6 pt-10">
             {aboutViewData.map(({ image, title, description }, index) => (
@@ -145,7 +145,8 @@ const ViewAbout = ({ reverse }: { reverse?: boolean }) => {
 
       <p
         className={cn(
-          "text-2xl md:text-5xl font-bold !leading-[1.4] text-text-900 my-10 md:mt-10 md:mb-[120px]"
+          "text-2xl md:text-5xl font-bold !leading-[1.4] text-text-900 mt-20 md:mt-16",
+          reverse ? "md:mb-14" : "md:mb-[100px]"
         )}
         ref={paragraphRef}
       />

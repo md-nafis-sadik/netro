@@ -1,3 +1,4 @@
+import { getReadableDate } from "@/services";
 import Link from "next/link";
 
 function JobPostItem({
@@ -8,6 +9,7 @@ function JobPostItem({
     title: string;
     location: string;
     experience: string;
+    deadline: string;
   };
 }) {
   return (
@@ -20,14 +22,14 @@ function JobPostItem({
         </div>
         <div className="flex-1 px-0 smpx-2 md:px-6 lg:px-10 sm:py-4 md:py-6">
           <span className="text-text-700 text-sm sm:text-base">
-            {item?.location}
+            Deadline: {getReadableDate(item?.deadline)}
           </span>
         </div>
-        <div className="flex-1 px-0 smpx-2 md:px-6 lg:px-10 sm:py-4 md:py-6">
+        {/* <div className="flex-1 px-0 smpx-2 md:px-6 lg:px-10 sm:py-4 md:py-6">
           <span className="text-text-700 text-sm sm:text-base">
             {item?.experience}
           </span>
-        </div>
+        </div> */}
       </div>
       <div className="flex-1 px-0 smpx-2 md:px-6 lg:px-10 sm:py-4 md:py-6">
         <Link

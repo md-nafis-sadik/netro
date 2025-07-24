@@ -50,7 +50,7 @@ function CareerTeams() {
     <section className="py-10 sm:py-16 md:py-20 lg:py-30 bg-black">
       <div className="containerX">
         <h2 className="title whiteGradient text-center">Being our teammate</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 divide-y divide-dashed divide-natural-900 pt-0 sm:pr-8 md:mt-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 divide-y divide-dashed divide-natural-900 pt-0 sm:pr-8 md:mt-10 sm:gap-5">
           {data?.map((item) => (
             <CareerTeamItem key={item?._id} item={item} />
           ))}

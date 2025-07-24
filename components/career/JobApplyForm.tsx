@@ -27,7 +27,7 @@ function JobApplyForm() {
             <input
               type="text"
               className="inputDark"
-              placeholder="Year’s of experience"
+              placeholder="Year's of experience"
             />
             <input
               type="text"
