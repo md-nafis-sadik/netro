@@ -1,8 +1,9 @@
-import SectionHeaderAnimated from "@/components/common/SectionHeaderAnimated";
-import FAQ from "@/components/faq/FAQ";
+import SectionHeader from "@/components/common/SectionHeader";
+import SectionSubHeader from "@/components/common/SectionSubHeader";
+import ProjectsPreviewServicesSkeleton from "@/components/projects/ProjectsPreviewServicesSkeleton";
+import ProjectsPreviewServicesWrapper from "@/components/projects/ProjectsPreviewServicesWrapper";
 import ServiceDetailsContent from "@/components/services/ServiceDetailsContent";
 import ServiceDetailsSkeleton from "@/components/services/ServiceDetailsSkeleton";
-import Testimonial from "@/components/testimonial/Testimonial";
 import TestimonialSkeleton from "@/components/testimonial/TestimonialSkeleton";
 import TestimonialWrapper from "@/components/testimonial/TestimonialWrapper";
 import { getGeneratedMetadata } from "@/lib/metadata";
@@ -37,7 +38,22 @@ const ServiceDetailsPage = async ({
         <ServiceDetailsContent slug={slug} />
       </Suspense>
 
-      <FAQ />
+      {/* <FAQ /> */}
+      <section className="bg-black flex_center flex-col w-full py-20">
+        <div className="containerX mt-10 md:mt-20">
+          <SectionSubHeader
+            dark
+            text="Project previews"
+            className="w-fit mx-auto"
+          />
+          <SectionHeader className="home_faq_header w-full mt-6">
+            Some prime previews from our memory lane
+          </SectionHeader>
+          <Suspense fallback={<ProjectsPreviewServicesSkeleton />}>
+            <ProjectsPreviewServicesWrapper />
+          </Suspense>
+        </div>
+      </section>
       <Suspense fallback={<TestimonialSkeleton />}>
         <TestimonialWrapper />
       </Suspense>

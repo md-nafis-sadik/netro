@@ -4,9 +4,15 @@ import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { cn } from "@/lib/utils";
 
-type SkeletonProps = React.HTMLAttributes<HTMLDivElement>;
+type SkeletonProps = React.HTMLAttributes<HTMLDivElement> & {
+  shimmerClassName?: string;
+};
 
-const Skeleton: React.FC<SkeletonProps> = ({ className = "", ...rest }) => {
+const Skeleton: React.FC<SkeletonProps> = ({
+  className = "",
+  shimmerClassName,
+  ...rest
+}) => {
   const shimmerRef = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
@@ -27,7 +33,10 @@ const Skeleton: React.FC<SkeletonProps> = ({ className = "", ...rest }) => {
     >
       <div
         ref={shimmerRef}
-        className="absolute top-0 left-[-100%] w-full h-full bg-gradient-to-r from-transparent via-white to-transparent"
+        className={cn(
+          "absolute top-0 left-[-100%] w-full h-full bg-gradient-to-r from-transparent via-white to-transparent",
+          shimmerClassName
+        )}
       />
     </div>
   );

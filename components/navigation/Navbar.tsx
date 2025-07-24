@@ -26,21 +26,14 @@ const Navbar: FC = () => {
     <nav
       className={cn(
         pathname === routes.homepage.link
-          ? "border-[#393939]"
-          : "bg-transparent border-natural-300",
-        "fixed top-0 w-full z-50 bg-black/20"
+          ? "border-[#393939] bg-black/20"
+          : "bg-black",
+        "fixed top-0 w-full z-50"
       )}
     >
       <div className="containerX flex flex-row items-center justify-between gap-4 py-3">
         <Link href={routes.homepage.link} className="h-fit">
-          <AppLogoIcon
-            className={cn(
-              "h-5 lg:h-7 w-auto",
-              pathname === routes.homepage.link
-                ? "text-white"
-                : "text-natural-black"
-            )}
-          />
+          <AppLogoIcon className={cn("h-5 lg:h-7 w-auto text-white")} />
         </Link>
 
         <div className="hidden min-[1160px]:flex flex-row items-center">
@@ -68,10 +61,7 @@ const Navbar: FC = () => {
 
                   <span
                     className={cn(
-                      pathname === routes.homepage.link
-                        ? "text-white"
-                        : "text-text-900",
-                      "text-sm font-normal !leading-[1.4] relative z-[2] font-inter"
+                      "text-white text-sm font-normal !leading-[1.4] relative z-[2] font-inter"
                     )}
                   >
                     {name}
@@ -79,11 +69,7 @@ const Navbar: FC = () => {
                   {megaMenu && (
                     <PlusRoundedSecondaryIcon
                       className="!h-5 !w-5 !shrink-0 transition_common group-hover:rotate-180 relative z-[3]"
-                      color={
-                        pathname === routes.homepage.link
-                          ? colors.white
-                          : colors.natural[900]
-                      }
+                      color={colors.white}
                     />
                   )}
                 </Link>
