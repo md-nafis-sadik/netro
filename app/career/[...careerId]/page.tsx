@@ -28,7 +28,7 @@ async function CareerDetails({
       <Suspense fallback={<JobDescriptionSkeleton />}>
         <JobDescriptionWrapper id={id} />
       </Suspense>
-      <JobApplyForm />
+      <JobApplyForm jobId={id} />
     </main>
   );
 }

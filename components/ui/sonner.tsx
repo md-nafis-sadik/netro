@@ -1,12 +1,12 @@
-"use client"
+"use client";
 
-import { useTheme } from "next-themes"
-import { Toaster as Sonner } from "sonner"
+import { useTheme } from "next-themes";
+import { Toaster as Sonner } from "sonner";
 
-type ToasterProps = React.ComponentProps<typeof Sonner>
+type ToasterProps = React.ComponentProps<typeof Sonner>;
 
 const Toaster = ({ ...props }: ToasterProps) => {
-  const { theme = "system" } = useTheme()
+  const { theme = "system" } = useTheme();
 
   return (
     <Sonner
@@ -15,17 +15,40 @@ const Toaster = ({ ...props }: ToasterProps) => {
       toastOptions={{
         classNames: {
           toast:
-            "group toast group-[.toaster]:bg-white group-[.toaster]:text-slate-950 group-[.toaster]:border-slate-200 group-[.toaster]:shadow-lg dark:group-[.toaster]:bg-slate-950 dark:group-[.toaster]:text-slate-50 dark:group-[.toaster]:border-slate-800",
-          description: "group-[.toast]:text-slate-500 dark:group-[.toast]:text-slate-400",
+            "group toast border p-4 rounded-md transition-all duration-300 shadow-md " +
+            "group-data-[type=success]:bg-green-50 group-data-[type=success]:border-status-success group-data-[type=success]:text-status-success " +
+            "group-data-[type=error]:bg-red-50 group-data-[type=error]:border-status-error group-data-[type=error]:text-status-error " +
+            "group-data-[type=warning]:bg-yellow-50 group-data-[type=warning]:border-status-warning group-data-[type=warning]:text-status-warning " +
+            "group-data-[type=info]:bg-blue-50 group-data-[type=info]:border-status-info group-data-[type=info]:text-status-info",
+
+          title:
+            "font-semibold text-base " +
+            "group-data-[type=success]:text-status-success " +
+            "group-data-[type=error]:text-status-error " +
+            "group-data-[type=warning]:text-status-warning " +
+            "group-data-[type=info]:text-status-info",
+
+          description:
+            "text-sm " +
+            "group-data-[type=success]:text-status-success " +
+            "group-data-[type=error]:text-status-error " +
+            "group-data-[type=warning]:text-status-warning " +
+            "group-data-[type=info]:text-status-info",
+
           actionButton:
-            "group-[.toast]:bg-slate-900 group-[.toast]:text-slate-50 dark:group-[.toast]:bg-slate-50 dark:group-[.toast]:text-slate-900",
+            "rounded-md border bg-white px-3 py-1 text-sm font-medium transition " +
+            "group-data-[type=success]:text-status-success " +
+            "group-data-[type=error]:text-status-error " +
+            "group-data-[type=warning]:text-status-warning " +
+            "group-data-[type=info]:text-status-info hover:bg-neutral-100",
+
           cancelButton:
-            "group-[.toast]:bg-slate-100 group-[.toast]:text-slate-500 dark:group-[.toast]:bg-slate-800 dark:group-[.toast]:text-slate-400",
+            "ml-2 text-xs text-natural-700 underline underline-offset-2 hover:text-black",
         },
       }}
       {...props}
     />
-  )
-}
+  );
+};
 
-export { Toaster }
+export { Toaster };
