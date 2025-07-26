@@ -540,3 +540,10 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+.portfolio_details_header {
+  background: linear-gradient(90deg, #000 0%, #757575 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
