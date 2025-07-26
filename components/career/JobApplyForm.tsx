@@ -1,9 +1,15 @@
 "use client";
-import { ErrorSvg, FileIcon } from "@/services/assets/svgs";
+import {
+  ArrowLongTailIcon,
+  ErrorSvg,
+  FileIcon,
+  SpinningIcon,
+  SuccessSvg,
+} from "@/services/assets/svgs";
 import { ChevronRight } from "lucide-react";
 import { GradientButton } from "../ui/gradient-button";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import { baseUrl } from "@/services/data/shared.data";
 import CVUploader from "../ui/CVUploader";
 import { Toaster } from "../ui/sonner";
@@ -51,13 +57,6 @@ function JobApplyForm({ jobId }: { jobId: string }) {
       setError({ message: "Please upload your CV" });
       toast.error("CV is required!", {
         description: "Please upload your CV.",
-        action: {
-          label: "Got it",
-          onClick: () => {},
-          actionButtonStyle: {
-            visibility: "hidden",
-          },
-        },
         icon: <ErrorSvg />,
         position: "top-right",
       });
@@ -90,7 +89,7 @@ function JobApplyForm({ jobId }: { jobId: string }) {
         if (res?.ok) {
           (event.target as HTMLFormElement).reset();
 
-          toast("Thank You!", {
+          toast.success("Thank You for your application!", {
             description: "We'll contact you shortly.",
             action: {
               label: "Got it",
@@ -98,16 +97,20 @@ function JobApplyForm({ jobId }: { jobId: string }) {
               actionButtonStyle: {
                 fontSize: "1rem",
                 fontWeight: 600,
-                backgroundColor: "#6455FF", // Replace with your main-500 color
-                color: "#fff",
               },
             },
+            icon: <SuccessSvg />,
             position: "top-right",
           });
         } else {
           setIsLoading(false);
           setIsSuccess(false);
           setError({ message: "An error occurred. Please try again.." });
+          toast.error("An error occurred!", {
+            description: "Application failed! Please try again later.",
+            icon: <ErrorSvg />,
+            position: "top-right",
+          });
           setTimeout(() => {
             setError({ message: "" });
           }, 2000);
@@ -195,8 +198,17 @@ function JobApplyForm({ jobId }: { jobId: string }) {
             <CVUploader setter={setCv} />
           </div>
           <GradientButton type="submit" className="!px-8">
-            <span className="text-white">Submit</span>
-            <ChevronRight size={24} />
+            {isLoading ? (
+              <Fragment>
+                <span className="!leading-none">Applying...</span>
+                <SpinningIcon className="w-5 h-5 md:w-6 md:h-6 text-white" />
+              </Fragment>
+            ) : (
+              <Fragment>
+                <span className="!leading-none">Apply</span>
+                <ChevronRight className="h-auto w-5 md:w-6 group-hover:translate-x-2 transition_common" />
+              </Fragment>
+            )}
           </GradientButton>
         </form>
       </div>

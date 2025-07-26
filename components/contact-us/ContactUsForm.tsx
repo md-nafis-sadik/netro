@@ -51,7 +51,7 @@ function ContactUsForm({ query = "" }: { query: string | undefined }) {
             setIsSuccess(false);
           }, 1000);
 
-          toast("Thank You!", {
+          toast.success("Thank You!", {
             description: "We'll contact you shortly.",
             action: {
               label: "Got it",
@@ -59,10 +59,9 @@ function ContactUsForm({ query = "" }: { query: string | undefined }) {
               actionButtonStyle: {
                 fontSize: "1rem",
                 fontWeight: 600,
-                backgroundColor: "#6455FF", // Replace with your main-500 color
-                color: "#fff",
               },
             },
+            icon: <SuccessSvg />,
             position: "top-right",
           });
         } else {
