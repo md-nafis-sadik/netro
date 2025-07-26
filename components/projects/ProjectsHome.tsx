@@ -8,6 +8,8 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { cn } from "@/lib/utils";
 
+gsap.registerPlugin(ScrollTrigger);
+
 const ProjectsHome = ({ data }: { data: any }) => {
   const cardsRef = useRef<HTMLDivElement | null>(null);
   const [activeIndex, setActiveIndex] = useState(0);

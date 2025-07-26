@@ -547,3 +547,16 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+.portfolio_details_key_preview {
+  background: linear-gradient(
+    91deg,
+    #676767 14.11%,
+    #909090 37.39%,
+    #fff 52.7%,
+    #676767 83.6%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

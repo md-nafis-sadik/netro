@@ -1,15 +1,10 @@
 import Link from "next/link";
 import { Button } from "../ui/button";
 import { ArrowLongTailIcon } from "@/services/assets/svgs";
-import { getReadableDate } from "@/services";
 import SectionHeader from "../common/SectionHeader";
 import { GradientButton } from "../ui/gradient-button";
 
 const ProjectDetails = ({ project }: any) => {
-  console.log(project);
-
-  console.log(project);
-
   return (
     <section className="pb-10 sm:pb-16 md:pb-20 lg:pb-30 font-inter">
       <div className="containerX py-10 md:py-[100px]">

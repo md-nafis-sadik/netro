@@ -1,5 +1,6 @@
 import { fetchWithDelay } from "@/lib/apiHandler";
 import ProjectDetails from "./ProjectDetails";
+import ProjectsDetailsPreview from "./ProjectsDetailsPreview";
 
 interface PortfolioDetailsResponse {
   data: any;
@@ -11,7 +12,12 @@ const ProjectDetailsWrapper = async ({ id: portfolioId }: { id: string }) => {
     `/portfolios/find-by-title/${portfolioId}`
   )) as PortfolioDetailsResponse;
 
-  return <ProjectDetails project={portfolioDetails} />;
+  return (
+    <>
+      <ProjectDetails project={portfolioDetails} />
+      <ProjectsDetailsPreview project={portfolioDetails} />
+    </>
+  );
 };
 
 export default ProjectDetailsWrapper;
