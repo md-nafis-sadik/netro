@@ -21,6 +21,7 @@ const ProjectsDetailsPreview = ({ project }: any) => {
                     : "col-span-4 md:col-span-2",
                   "relative h-[250px] md:h-[300px] overflow-hidden group"
                 )}
+                key={index}
               >
                 <Image
                   src={item}
