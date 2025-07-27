@@ -1,5 +1,4 @@
 "use client";
-import SectionSubHeader from "@/components/common/SectionSubHeader";
 import ProjectCard from "./ProjectCard";
 import SectionHeader from "../common/SectionHeader";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -7,79 +6,80 @@ import { useRef, useState } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { cn } from "@/lib/utils";
-import Image from "next/image";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const ProjectsDetailsPreview = ({ project }: any) => {
   const cardsRef = useRef<HTMLDivElement | null>(null);
-    const [activeIndex, setActiveIndex] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(0);
 
-    useGSAP(
-      () => {
-        const cards = gsap.utils.toArray<HTMLDivElement>(".stacked-card");
-        const total = cards.length;
-        const scaleDecay = 0.075;
-  
-        cards.forEach((card, i) => {
-          const reversedIndex = total - 1 - i;
-  
-          // Stack setup - initial positions
-          gsap.set(card, {
-            y: i * 60,
-            scale: 1,
-            zIndex: i,
-          });
-  
-          // Create ScrollTrigger for each card
-          const trigger = ScrollTrigger.create({
-            trigger: card,
-            start: "top center+=100",
-            end: "bottom top+=40",
-            scrub: 0.1,
-            onUpdate: (self) => {
-              const progress = self.progress;
-              const scale = 1 - progress * scaleDecay * (reversedIndex + 1);
-  
-              setActiveIndex(i);
-  
-              gsap.to(card, {
-                scale,
-                transition: "none",
-              });
-            },
-            // Important: This ensures the ScrollTrigger initializes properly on page load
-            invalidateOnRefresh: true,
-          });
-  
-          // Force immediate refresh/update to handle page loads at non-zero scroll positions
-          trigger.refresh();
+  useGSAP(
+    () => {
+      const cards = gsap.utils.toArray<HTMLDivElement>(".stacked-card");
+      const total = cards.length;
+      const scaleDecay = 0.075;
+
+      cards.forEach((card, i) => {
+        const reversedIndex = total - 1 - i;
+
+        // Stack setup - initial positions
+        gsap.set(card, {
+          y: i * 60,
+          scale: 1,
+          zIndex: i,
         });
-  
-        // Force immediate update of all ScrollTriggers to account for initial scroll position
-        ScrollTrigger.refresh();
-  
-        // Add a small delay to make sure ScrollTrigger has properly initialized
-        setTimeout(() => {
-          // Update each card based on current scroll position
-          cards.forEach((card, i) => {
-            const cardTrigger =
-              ScrollTrigger.getById(card.id) ||
-              ScrollTrigger.getAll().find((st) => st.trigger === card);
-  
-            if (cardTrigger) {
-              const reversedIndex = total - 1 - i;
-              const progress = cardTrigger.progress;
-              const scale = 1 - progress * scaleDecay * (reversedIndex + 1);
-  
-              // Set the initial scale based on current scroll position
-              gsap.set(card, {
-                scale,
-              });
-            }
-          });
-        }, 100);
-      },
-      { scope: cardsRef }
-    );
+
+        // Create ScrollTrigger for each card
+        const trigger = ScrollTrigger.create({
+          trigger: card,
+          start: "top center+=100",
+          end: "bottom top+=40",
+          scrub: 0.1,
+          onUpdate: (self) => {
+            const progress = self.progress;
+            const scale = 1 - progress * scaleDecay * (reversedIndex + 1);
+
+            setActiveIndex(i);
+
+            gsap.to(card, {
+              scale,
+              transition: "none",
+            });
+          },
+          // Important: This ensures the ScrollTrigger initializes properly on page load
+          invalidateOnRefresh: true,
+        });
+
+        // Force immediate refresh/update to handle page loads at non-zero scroll positions
+        trigger.refresh();
+      });
+
+      // Force immediate update of all ScrollTriggers to account for initial scroll position
+      ScrollTrigger.refresh();
+
+      // Add a small delay to make sure ScrollTrigger has properly initialized
+      setTimeout(() => {
+        // Update each card based on current scroll position
+        cards.forEach((card, i) => {
+          const cardTrigger =
+            ScrollTrigger.getById(card.id) ||
+            ScrollTrigger.getAll().find((st) => st.trigger === card);
+
+          if (cardTrigger) {
+            const reversedIndex = total - 1 - i;
+            const progress = cardTrigger.progress;
+            const scale = 1 - progress * scaleDecay * (reversedIndex + 1);
+
+            // Set the initial scale based on current scroll position
+            gsap.set(card, {
+              scale,
+            });
+          }
+        });
+      }, 100);
+    },
+    { scope: cardsRef }
+  );
 
   return (
     <section className="bg-black w-full py-20 relative">
@@ -87,30 +87,6 @@ const ProjectsDetailsPreview = ({ project }: any) => {
         <SectionHeader className="home_projects_header pb-10 md:pb-28">
           Some Key Previews
         </SectionHeader>
-
-        {/* <div className="containerX grid grid-cols-4 min-h-[600px] gap-6 md:gap-10">
-          {project?.data?.projectImages
-            ?.slice?.(0, 6)
-            ?.map((item: any, index: number) => (
-              <div
-                className={cn(
-                  index < 2 || index > 3
-                    ? "col-span-4 md:col-span-1"
-                    : "col-span-4 md:col-span-2",
-                  "relative h-[250px] md:h-[300px] overflow-hidden group"
-                )}
-                key={index}
-              >
-                <Image
-                  src={item}
-                  alt={project?.data?.title}
-                  width={1920}
-                  height={1280}
-                  className="w-full h-full object-cover group-hover:scale-105 transition_common"
-                />
-              </div>
-            ))}
-        </div> */}
 
         <div
           ref={cardsRef}
@@ -124,7 +100,7 @@ const ProjectsDetailsPreview = ({ project }: any) => {
               style={{
                 pointerEvents: activeIndex === index ? "auto" : "none",
               }}
-              item={{featuredImage: item}}
+              item={{ featuredImage: item }}
               key={index}
             />
           ))}

@@ -27,35 +27,13 @@ async function PortfolioDetails({
   let { portfolioId } = await params;
   portfolioId = purifyUrl({ urlString: portfolioId });
 
-  // TEMP DATA
-  const coreFeatures = [
-    "Tasbih Counting",
-    "Iftar Timings",
-    "Dua",
-    "Quran",
-    "Hadis",
-    "Islamic Calendar",
-  ];
-
-  const noteList = [
-    "The App comes with a customized backend and Admin Panel. Credentials has been shared.",
-    "Flutter Code. iOS App needs to run.",
-    "On Mac device with XCode (Expertise required)",
-    "Ad Network, Payment Methods are subject to setup yourself.",
-    "Installation is not included in 6 months support.",
-  ];
-
-  const adminCredentials = ["Email: 2rG6T@example.com", "Password: 12345678"];
-
-  // TEMP DATA
-
   return (
     <main className="">
       <Suspense fallback={<div>Loading...</div>}>
         <ProjectDetailsWrapper id={portfolioId} />
       </Suspense>
       <Suspense fallback={<DiscoverMoreProjectsSkeleton />}>
-        <DiscoverMoreProjectsWrapper />
+        <DiscoverMoreProjectsWrapper id={portfolioId} />
       </Suspense>
     </main>
   );

@@ -1,4 +1,3 @@
-"use client";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { ArrowLongTailIcon } from "@/services/assets/svgs";
@@ -26,56 +25,62 @@ const ProjectCard = ({
     >
       <Image
         src={item?.featuredImage}
-        alt={item?.title}
+        alt={item?.title || "Project"}
         className="min-h-full h-full min-w-full w-auto object-cover absolute_center"
         width={1920}
         height={1280}
       />
 
-      {(item?.author || item?.metaDescription || item?.tagList || item?.title) && <div
-        className={cn(
-          "min-w-full md:min-w-0 absolute left-0 transition_common mt-auto",
-          showBottom
-            ? "min-w-full bottom-0 h-max bg-blandGradient backdrop-blur-md"
-            : "project-home-blur md:-translate-x-full group-hover:translate-x-0 bottom-0 md:bottom-auto md:top-0 h-max md:h-full max-w-[320px]"
-        )}
-      >
-        <div className="p-6 md:p-8 h-full flex flex-col justify-between gap-6">
-          <div className="flex flex-col">
-            <Image
-              src={item?.author?.profileImage}
-              alt={item?.title}
-              className="h-auto w-20"
-              height={200}
-              width={300}
-            />
+      {/* Doing a check if any of the fields are available only then itll be shown otherwise wont! */}
+      {(item?.author ||
+        item?.metaDescription ||
+        item?.tagList ||
+        item?.title) && (
+        <div
+          className={cn(
+            "min-w-full md:min-w-0 absolute left-0 transition_common mt-auto",
+            showBottom
+              ? "min-w-full bottom-0 h-max bg-blandGradient backdrop-blur-md"
+              : "project-home-blur md:-translate-x-full group-hover:translate-x-0 bottom-0 md:bottom-auto md:top-0 h-max md:h-full max-w-[320px]"
+          )}
+        >
+          <div className="p-6 md:p-8 h-full flex flex-col justify-between gap-6">
+            <div className="flex flex-col">
+              <Image
+                src={item?.author?.profileImage}
+                alt={item?.title}
+                className="h-auto w-20"
+                height={200}
+                width={300}
+              />
 
-            <p
-              className={cn(
-                "text-sm sm:text-base font-normal !leading-[1.4] text-text-200 mt-4 sm:mt-5 md:mt-7 font-inter line-clamp-5"
-              )}
-            >
-              {item?.metaDescription}
-            </p>
-          </div>
-          <div className="flex flex-col">
-            <p
-              className={cn(
-                "text-[10px] md:text-xs font-normal !leading-[1.6] text-text-200 font-inter"
-              )}
-            >
-              {item?.tagList}
-            </p>
+              <p
+                className={cn(
+                  "text-sm sm:text-base font-normal !leading-[1.4] text-text-200 mt-4 sm:mt-5 md:mt-7 font-inter line-clamp-5"
+                )}
+              >
+                {item?.metaDescription}
+              </p>
+            </div>
+            <div className="flex flex-col">
+              <p
+                className={cn(
+                  "text-[10px] md:text-xs font-normal !leading-[1.6] text-text-200 font-inter"
+                )}
+              >
+                {item?.tagList}
+              </p>
 
-            <Link href={`/portfolio/${item?.title}`}>
-              <Button className="w-fit group mt-4 sm:mt-6 md:mt-12">
-                <span className="!leading-none">View Case</span>
-                <ArrowLongTailIcon className="h-auto w-5 md:w-6 group-hover:translate-x-2 transition_common" />
-              </Button>
-            </Link>
+              <Link href={`/portfolio/${item?.title}`}>
+                <Button className="w-fit group mt-4 sm:mt-6 md:mt-12">
+                  <span className="!leading-none">View Case</span>
+                  <ArrowLongTailIcon className="h-auto w-5 md:w-6 group-hover:translate-x-2 transition_common" />
+                </Button>
+              </Link>
+            </div>
           </div>
         </div>
-      </div>}
+      )}
     </div>
   );
 };
