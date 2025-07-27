@@ -98,7 +98,7 @@ const ProjectsHome = ({ data }: { data: any }) => {
           {data?.data?.slice(0, 5).map((item: any, index: number) => (
             <ProjectCard
               className={cn(
-                "!w-[90%] 2xl:!w-[1440px] min-[1620px]:!w-[1580px] stacked-card sticky left-0 top-0 mb-80"
+                "!w-[90%] 2xl:!w-[1440px] min-[1620px]:!w-full stacked-card sticky left-0 top-0 mb-80"
               )}
               style={{
                 pointerEvents: activeIndex === index ? "auto" : "none",

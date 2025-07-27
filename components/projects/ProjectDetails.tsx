@@ -25,7 +25,7 @@ const ProjectDetails = ({ project }: any) => {
       <div className="containerX">
         <div className="flex flex-col md:flex-row gap-6 sm:gap-16 md:gap-20">
           {/* LEFT PORTION */}
-          <div className="w-full max-w-[462px]">
+          <div className="w-full max-w-[482px]">
             <div className="w-full px-4 sm:px-7 py-6 sm:py-8 md:p-10 border border-dashed border-natural-300 font-inter flex flex-col gap-6 sticky top-20">
               <div>
                 <h2 className="titleMd text-text-900">Project info</h2>
@@ -57,7 +57,7 @@ const ProjectDetails = ({ project }: any) => {
               <div className="flex flex-row gap-6">
                 <Link href={"#applyForm"}>
                   <Button className="group max-w-max">
-                    <span className="!leading-none">Apply now</span>
+                    <span className="!leading-none">Live Preview</span>
                     <ArrowLongTailIcon className="h-auto w-5 md:w-6 group-hover:translate-x-2 transition_common" />
                   </Button>
                 </Link>
@@ -74,7 +74,7 @@ const ProjectDetails = ({ project }: any) => {
 
           {/* RIGHT PORTION */}
           <div
-            className="max-w-[60%]"
+            className="max-w-[55%]"
             dangerouslySetInnerHTML={{ __html: project?.data?.content }}
           />
         </div>

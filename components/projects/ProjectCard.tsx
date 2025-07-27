@@ -32,7 +32,7 @@ const ProjectCard = ({
         height={1280}
       />
 
-      <div
+      {(item?.author || item?.metaDescription || item?.tagList || item?.title) && <div
         className={cn(
           "min-w-full md:min-w-0 absolute left-0 transition_common mt-auto",
           showBottom
@@ -75,7 +75,7 @@ const ProjectCard = ({
             </Link>
           </div>
         </div>
-      </div>
+      </div>}
     </div>
   );
 };
