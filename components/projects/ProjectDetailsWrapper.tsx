@@ -12,6 +12,8 @@ const ProjectDetailsWrapper = async ({ id: portfolioId }: { id: string }) => {
     `/portfolios/find-by-title/${portfolioId}`
   )) as PortfolioDetailsResponse;
 
+  console.log(portfolioDetails);
+
   return (
     <>
       <ProjectDetails project={portfolioDetails} />

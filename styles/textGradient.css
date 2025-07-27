@@ -560,3 +560,16 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+.portfolio_discover_more_insights_header {
+  background: linear-gradient(
+    91deg,
+    #676767 14.25%,
+    #909090 36.66%,
+    #d8d8d8 51.4%,
+    #676767 81.15%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

@@ -1,3 +1,5 @@
+import DiscoverMoreProjectsSkeleton from "@/components/projects/DiscoverMoreProjectsSkeleton";
+import DiscoverMoreProjectsWrapper from "@/components/projects/DiscoverMoreProjectsWrapper";
 import ProjectDetailsWrapper from "@/components/projects/ProjectDetailsWrapper";
 import { getGeneratedMetadata } from "@/lib/metadata";
 import { purifyUrl } from "@/services";
@@ -51,6 +53,9 @@ async function PortfolioDetails({
     <main className="">
       <Suspense fallback={<div>Loading...</div>}>
         <ProjectDetailsWrapper id={portfolioId} />
+      </Suspense>
+      <Suspense fallback={<DiscoverMoreProjectsSkeleton />}>
+        <DiscoverMoreProjectsWrapper />
       </Suspense>
     </main>
   );

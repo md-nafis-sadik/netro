@@ -7,7 +7,7 @@ const ProjectsDetailsPreview = ({ project }: any) => {
     <section className="bg-black w-full py-20 relative">
       <div className="flex_center flex-col">
         <SectionHeader className="home_projects_header pb-10 md:pb-28">
-          Our Projects
+          Some Key Previews
         </SectionHeader>
 
         <div className="containerX grid grid-cols-4 min-h-[600px] gap-6 md:gap-10">
