@@ -52,18 +52,30 @@ const IntroWithMarqueeHome = () => {
       })
       .fromTo(
         allLetters,
-        { opacity: 0, y: 20, scale: 0.9 },
+        { opacity: 0.25 },
         {
           opacity: 1,
-          y: 0,
-          scale: 1,
           stagger: {
             amount: 2,
             each: 0.02,
           },
-          ease: "power2.out",
+          ease: "none",
         }
       );
+    // .fromTo(
+    //   allLetters,
+    //   { opacity: 0, y: 20, scale: 0.9 },
+    //   {
+    //     opacity: 1,
+    //     y: 0,
+    //     scale: 1,
+    //     stagger: {
+    //       amount: 2,
+    //       each: 0.02,
+    //     },
+    //     ease: "power2.out",
+    //   }
+    // );
 
     return () => ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
   }, []);

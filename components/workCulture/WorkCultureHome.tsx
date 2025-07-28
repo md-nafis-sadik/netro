@@ -114,14 +114,10 @@ const WorkCultureHome = () => {
     gsap.fromTo(
       allLetters,
       {
-        opacity: 0,
-        y: 20,
-        scale: 0.9,
+        opacity: 0.25,
       },
       {
         opacity: 1,
-        y: 0,
-        scale: 1,
         stagger: {
           amount: 2,
           each: 0.02,

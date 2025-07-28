@@ -25,7 +25,7 @@ const DiscoverMoreProjects = ({ data }: any) => {
                 className={cn(
                   "!min-w-[380px] md:!min-w-[600px] !h-[420px] md:!h-[640px] !max-h-[640px]"
                 )}
-                projectDescriptionClassName={"!line-clamp-1"}
+                projectDescriptionClassName={"!line-clamp-1 md:!line-clamp-5"}
                 item={item}
                 key={index}
               />
