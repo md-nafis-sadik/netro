@@ -7,7 +7,7 @@ import { GradientButton } from "../ui/gradient-button";
 const ProjectDetails = ({ project }: any) => {
   return (
     <section className="pb-10 sm:pb-16 md:pb-20 lg:pb-30 font-inter">
-      <div className="containerX py-10 md:py-[100px]">
+      <div className="containerX py-14 md:py-20 lg:py-[100px]">
         <SectionHeader className="portfolio_details_header w-fit text-start">
           {project?.data?.title || "Portfolio Title Not Found"}
         </SectionHeader>
@@ -25,7 +25,7 @@ const ProjectDetails = ({ project }: any) => {
       <div className="containerX">
         <div className="flex flex-col md:flex-row gap-6 sm:gap-16 md:gap-20">
           {/* LEFT PORTION */}
-          <div className="w-full max-w-[482px]">
+          <div className="w-full max-w-full md:max-w-[482px]">
             <div className="w-full px-4 sm:px-7 py-6 sm:py-8 md:p-10 border border-dashed border-natural-300 font-inter flex flex-col gap-6 sticky top-20">
               <div>
                 <h2 className="titleMd text-text-900">Project info</h2>
@@ -54,9 +54,9 @@ const ProjectDetails = ({ project }: any) => {
                 </div>
               </div>
 
-              <div className="flex flex-row gap-6">
+              <div className="flex flex-row gap-y-2 gap-x-2 md:gap-x-6 flex-wrap">
                 <Link href={"#applyForm"}>
-                  <Button className="group max-w-max">
+                  <Button className="group max-w-max h-full">
                     <span className="!leading-none">Live Preview</span>
                     <ArrowLongTailIcon className="h-auto w-5 md:w-6 group-hover:translate-x-2 transition_common" />
                   </Button>
@@ -74,7 +74,7 @@ const ProjectDetails = ({ project }: any) => {
 
           {/* RIGHT PORTION */}
           <div
-            className="max-w-[55%]"
+            className="max-w-full lg:max-w-[55%]"
             dangerouslySetInnerHTML={{ __html: project?.data?.content }}
           />
         </div>

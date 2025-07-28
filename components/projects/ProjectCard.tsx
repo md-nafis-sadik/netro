@@ -7,11 +7,13 @@ import Link from "next/link";
 const ProjectCard = ({
   item,
   className = "",
+  projectDescriptionClassName = "",
   showBottom = false,
   style = {},
 }: {
   item: any;
   className?: string;
+  projectDescriptionClassName?: string;
   showBottom?: boolean;
   style?: React.CSSProperties;
 }) => {
@@ -49,14 +51,15 @@ const ProjectCard = ({
               <Image
                 src={item?.author?.profileImage}
                 alt={item?.title}
-                className="h-auto w-20"
+                className="h-auto w-12 md:w-16 lg:w-20"
                 height={200}
                 width={300}
               />
 
               <p
                 className={cn(
-                  "text-sm sm:text-base font-normal !leading-[1.4] text-text-200 mt-4 sm:mt-5 md:mt-7 font-inter line-clamp-5"
+                  "text-sm sm:text-base font-normal !leading-[1.4] text-text-200 mt-4 sm:mt-5 md:mt-7 font-inter line-clamp-5",
+                  projectDescriptionClassName
                 )}
               >
                 {item?.metaDescription}

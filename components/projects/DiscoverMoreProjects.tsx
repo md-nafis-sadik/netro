@@ -22,7 +22,10 @@ const DiscoverMoreProjects = ({ data }: any) => {
           <div className="w-full min-h-fit flex flex-row gap-6 md:gap-10 py-10 md:py-20">
             {data?.map((item: any, index: number) => (
               <ProjectCard
-                className={cn("!min-w-[600px] !h-[640px] !max-h-[640px] mb-80")}
+                className={cn(
+                  "!min-w-[380px] md:!min-w-[600px] !h-[420px] md:!h-[640px] !max-h-[640px]"
+                )}
+                projectDescriptionClassName={"!line-clamp-1"}
                 item={item}
                 key={index}
               />
