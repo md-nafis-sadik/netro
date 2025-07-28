@@ -12,13 +12,8 @@ const ProjectDetails = ({ project }: any) => {
           {project?.data?.title || "Portfolio Title Not Found"}
         </SectionHeader>
 
-        <p className="font-inter text-sm md:text-2xl font-normal md:font-light !leading-[1.4] uppercase text-center md:text-start text-text-600 mt-6">
-          {project?.data?.tags?.map((tag: string, index: number) => (
-            <span key={index} className="mr-2 last:mr-0">
-              {tag}
-              {index < project.data.tags.length - 1 ? ", " : ""}
-            </span>
-          ))}
+        <p className="font-inter text-sm md:text-2xl font-normal md:font-light !leading-[1.4] uppercase text-start text-text-600 mt-6">
+          {project?.data?.category}
         </p>
       </div>
 
@@ -74,7 +69,7 @@ const ProjectDetails = ({ project }: any) => {
 
           {/* RIGHT PORTION */}
           <div
-            className="max-w-full lg:max-w-[55%]"
+            className="project-content max-w-full lg:max-w-[55%]"
             dangerouslySetInnerHTML={{ __html: project?.data?.content }}
           />
         </div>
