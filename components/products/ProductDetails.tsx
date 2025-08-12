@@ -9,79 +9,32 @@ import {
 import Image from "next/image";
 import { Button } from "../ui/button";
 import ProductsGallery from "./ProductsGallery";
+import { GradientButton } from "../ui/gradient-button";
+import Link from "next/link";
 
-function ProductDetails({ imageIndex = 0 }: { imageIndex: number }) {
-  const data = {
-    images: [
-      images.blog1,
-      images.blog2,
-      images.blog3,
-      images.blog1,
-      images.blog2,
-    ],
-    description:
-      "JazakAllah is the ultimate app for muslims, with Iftar Timings, Dua, Hadis, Azkar, Al-Quran, Tasbih Counting, Qibla Compass, Mosque Locator, Daily Prayer Notification, Islamic Calender, Makka Live, Islamic Wallpapers, Zakat Calculator, Islamic AI Chat Bot, Islamic Baby Name Generator and progress tracking. Stay connected to your faith, deepen your spiritual practice.",
-    features: [
-      "Tasbih Counter",
-      "Iftar Timings",
-      "Dua",
-      "Hadis",
-      "Azkar",
-      "Al – Quran",
-      "Qibla Compass",
-      "Islamic Calender",
-      "Mosque Locator",
-      "Makka Live",
-      "Daily Prayer Notification",
-      "Islamic Wallpapers",
-      "Zakat Calculator",
-      "Islamic Baby Name Generator",
-      "Prayer Timings",
-      "Islamic AI Chat Bot",
-      "MultiLingual (Arabic, Bangla, English, French, Hindi, Tuskish, Urdu)",
-    ],
-    notes: [
-      "Java 8 and 17 (JDK)",
-      "Flutter 3.19",
-      "Dart version 3.3.0",
-      "Google Maps API",
-      "Google Places API",
-      "One Signal",
-      "Firebase",
-      "RevenueCat",
-      "Chat GPT API",
-      "Google Play Store For In App Purchase",
-      "Node.js 19.9.0",
-      "Npm 10.2.4",
-      "Php 8.2",
-      "Domain & Hosting",
-      "Terminal Enabled on CPanel",
-    ],
-    apiKeys: {
-      title: "Islamic AI needs OpenAI API Key",
-      infos: [
-        "The App comes with a customized backend and Admin Panel. Credentials has been shared.",
-        "Flutter Code. iOS App needs to run",
-        "on Mac device with XCode (Expertise required)",
-        "Ad Network, Payment Methods are subject to setup yourself.",
-        "Installation is not included in 6 months support.",
-      ],
-    },
-    auth: {
-      email: "test@netrocreative.com",
-      password: "test1234",
-    },
-  };
-
+function ProductDetails({
+  imageIndex = 0,
+  data,
+}: {
+  imageIndex: number;
+  data: any;
+}) {
   return (
     <section className="pb-10 sm:pb-16 md:pb-20 lg:pb-30 ">
       <div className="containerX">
         <div className="flex flex-col-reverse md:flex-row gap-6 md:gap-10 lg:gap-16 xl:gap-20 font-inter">
           <div className="w-full">
-            <ProductsGallery
+            {/* <ProductsGallery
               className="hidden md:flex"
               images={data?.images}
               showImage={imageIndex}
+            /> */}
+            <Image
+              src={data.image}
+              alt="product"
+              width={2952}
+              height={1476}
+              className="w-full h-auto object-fill hidden md:block"
             />
             <p className="text-sm sm:text-base md:text-lg text-text-700 mt-4 sm:mt-6">
               {data?.description}
@@ -90,22 +43,24 @@ function ProductDetails({ imageIndex = 0 }: { imageIndex: number }) {
               <div>
                 <h4 className="titleLg">CORE FEATURES</h4>
                 <ul className="mt-4 sm:mt-6">
-                  {data?.features?.map((feature, index) => (
-                    <li
-                      className="flex items-center gap-6 sm:gap-10 md:gap-12"
-                      key={index}
-                    >
-                      <span className="text-base sm:text-lg text-text-200 font-semibold">
-                        01
-                      </span>
-                      <span className="flex-1  py-3 border-b border-dashed border-natural-300 text-sm sm:text-base md:text-lg text-text-900">
-                        {feature}
-                      </span>
-                    </li>
-                  ))}
+                  {(data?.features ?? []).map(
+                    (feature: string, index: number) => (
+                      <li
+                        className="flex items-center gap-6 sm:gap-10 md:gap-12"
+                        key={index}
+                      >
+                        <span className="text-base sm:text-lg text-text-200 font-semibold">
+                          {index > 9 ? index : `0${index}`}
+                        </span>
+                        <span className="flex-1  py-3 border-b border-dashed border-natural-300 text-sm sm:text-base md:text-lg text-text-900">
+                          {feature}
+                        </span>
+                      </li>
+                    )
+                  )}
                 </ul>
               </div>
-              <div className="flex gap-4 px-4 py-6 sm:p-6 bg-secondary-50 border border-dashed border-secondary-950">
+              {/* <div className="flex gap-4 px-4 py-6 sm:p-6 bg-secondary-50 border border-dashed border-secondary-950">
                 <ExclemetionIcon className="w-20 h-20 hidden md:block" />
                 <div>
                   <div className="flex items-center gap-4">
@@ -116,36 +71,21 @@ function ProductDetails({ imageIndex = 0 }: { imageIndex: number }) {
                   </div>
 
                   <ul className="list-disc mt-4 pl-4">
-                    {data?.apiKeys?.infos?.map((info, index) => (
-                      <li
-                        className="text-sm sm:text-base text-text-500"
-                        key={index}
-                      >
-                        {info}
-                      </li>
-                    ))}
+                    {(data?.apiKeys?.infos ?? []).map(
+                      (info: string, index: number) => (
+                        <li
+                          className="text-sm sm:text-base text-text-500"
+                          key={index}
+                        >
+                          {info}
+                        </li>
+                      )
+                    )}
                   </ul>
                 </div>
-              </div>
-              <div className="flex gap-4 px-4 py-6 sm:p-6 border border-dashed border-natural-300">
-                <UserIcon className="w-20 h-20 hidden md:block" />
-                <div>
-                  <div className="flex items-center gap-4">
-                    <UserIcon className="w-10 h-10 sm:w-16 sm:h-16 md:hidden" />
-                    <h4 className="titleMd md:text-4xl">Admin Login</h4>
-                  </div>
+              </div> */}
 
-                  <ul className="list-disc mt-4 pl-4">
-                    <li className="text-sm sm:text-base text-text-500">
-                      E-mail: {data?.auth?.email}
-                    </li>
-                    <li className="text-sm sm:text-base text-text-500">
-                      Password: {data?.auth?.password}
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div className="flex gap-4 px-4 py-6 sm:p-6 border border-dashed border-natural-300">
+              {/* <div className="flex gap-4 px-4 py-6 sm:p-6 border border-dashed border-natural-300">
                 <FileListIcon className="w-20 h-20 hidden md:block" />
                 <div>
                   <div className="flex items-center gap-4">
@@ -196,7 +136,7 @@ function ProductDetails({ imageIndex = 0 }: { imageIndex: number }) {
                   There are a few things you need for this project to work.
                 </p>
                 <ul className="mt-4 sm:mt-6">
-                  {data?.notes?.map((feature, index) => (
+                  {(data?.notes ?? []).map((feature: string, index: number) => (
                     <li
                       className="flex items-center gap-6 sm:gap-10 md:gap-12"
                       key={index}
@@ -210,34 +150,32 @@ function ProductDetails({ imageIndex = 0 }: { imageIndex: number }) {
                     </li>
                   ))}
                 </ul>
-              </div>
+              </div> */}
             </div>
           </div>
           <div className="w-full md:max-w-[462px]">
-            <ProductsGallery
+            {/* <ProductsGallery
               className="mb-6 md:hidden"
               images={data?.images}
               showImage={imageIndex}
+            /> */}
+            <Image
+              src={data.image}
+              alt="product"
+              width={2952}
+              height={1476}
+              className="w-full h-auto object-fill mb-6 md:hidden block"
             />
             <div className="w-full px-4 sm:px-7 py-6 sm:py-8 md:p-10 border border-dashed border-natural-300 font-inter flex flex-col sticky top-10">
-              <h2 className="titleMd text-text-900">
-                Jazakallah - The Complete Islamic App
-              </h2>
-              <p className="text-sm sm:text-base md:text-lg font-inter text-text-600 mt-2 sm:mt-3 md:mt-4">
-                Jazakallah is a complete Islamic app with prayer times, Quran,
-                duas, and tools to support your faith and daily worship.
-              </p>
-              <ul className="flex items-center gap-2 max-w-max mt-6 sm:mt-8 md:mt-10 mb-6 sm:mb-9 md:mb-12">
-                <li className="h-10 rounded-full px-2 py-2 flex items-center gap-1 border border-natural-300 select-none overflow-hidden hover:w-full max-w-max w-10 group duration-500 shrink-0">
-                  <ReactIcon
-                    className="shrink-0 "
-                    fillClass="group-hover:fill-main-350"
-                    strokeClass="group-hover:stroke-main-350"
-                  />
-                  <span className="opacity-0 invisible group-hover:opacity-100 group-hover:visible duration-300 whitespace-nowrap">
-                    React JS
-                  </span>
-                </li>
+              {data.title && (
+                <h2 className="titleMd text-text-900">{data.title}</h2>
+              )}
+              {data.shortDescription && (
+                <p className="text-sm sm:text-base md:text-lg font-inter text-text-600 mt-2 sm:mt-3 md:mt-4">
+                  {data.shortDescription}
+                </p>
+              )}
+              {/* <ul className="flex items-center gap-2 max-w-max mt-6 sm:mt-8 md:mt-10 mb-6 sm:mb-9 md:mb-12">
                 <li className="h-10 rounded-full px-2 py-2 flex items-center gap-1 border border-natural-300 select-none overflow-hidden hover:w-full max-w-max w-10 group duration-500 shrink-0">
                   <ReactIcon
                     className="shrink-0"
@@ -258,32 +196,67 @@ function ProductDetails({ imageIndex = 0 }: { imageIndex: number }) {
                     React JS
                   </span>
                 </li>
-                <li className="h-10 rounded-full px-2 py-2 flex items-center gap-1 border border-natural-300 select-none overflow-hidden hover:w-full max-w-max w-10 group duration-500 shrink-0">
-                  <ReactIcon
-                    className="shrink-0"
-                    fillClass="group-hover:fill-main-350"
-                    strokeClass="group-hover:stroke-main-350"
-                  />
-                  <span className="opacity-0 invisible group-hover:opacity-100 group-hover:visible duration-300 whitespace-nowrap">
-                    React JS
-                  </span>
-                </li>
-              </ul>
-              <div className="flex items-center justify-between gap-2 mb-6 sm:mb-8">
-                <h3 className="flex items-center gap-3 titleMd">
-                  <span className="text-text-200 line-through font-normal">
-                    $34
-                  </span>
-                  <span className="blackGradient">$34</span>
-                </h3>
-                <Button className="w-fit group">
-                  <span className="!leading-none">Buy now</span>
-                  <ArrowLongTailIcon className="h-auto w-5 md:w-6 group-hover:translate-x-2 transition_common" />
-                </Button>
-              </div>
-              <p className="text-xs text-text-600 font-inter">
-                Price is in US dollars and excludes tax and handling fees
-              </p>
+              </ul> */}
+              {(data.price || data.downloadAppLink || data.adminPanelLink) && (
+                <div className="flex flex-col items-center gap-2">
+                  {data.price && (
+                    <h3 className="flex items-center gap-3 titleMd">
+                      <span className="text-text-200 line-through font-normal">
+                        ${data.price}
+                      </span>
+                      <span className="blackGradient">${data.price}</span>
+                    </h3>
+                  )}
+
+                  {data.downloadAppLink && (
+                    <Button className="w-full group mt-12">
+                      <Image
+                        src={images.download}
+                        alt="Download"
+                        width={200}
+                        height={200}
+                        className="w-8"
+                      />
+                      <p className="text-sm md:text-lg font-inter font-normal text-white leading-[110%]">
+                        DOWNLOAD <span className="font-bold">APP</span>
+                      </p>
+                    </Button>
+                  )}
+                  {data.adminPanelLink && (
+                    <Link
+                      href={data.adminPanelLink}
+                      className="relative inline-block rounded-full p-[1px] hover:-translate-y-[2px] transition-all duration-300 bg-gradient-to-r from-[#483BDC] via-[#FFA8A9] to-[#82D3A4] w-full mt-1"
+                    >
+                      <span className="block text-center rounded-full text-sm md:text-lg bg-white px-6 py-4 text-gray-800 hover:bg-gray-50">
+                        TRY ADMIN PANEL
+                      </span>
+                    </Link>
+                  )}
+                </div>
+              )}
+              {data.auth && (
+                <div className="flex gap-4 px-4 py-6 sm:p-6 border border-dashed border-natural-300 mt-8">
+                  <UserIcon className="w-20 h-20 hidden md:block" />
+                  <div>
+                    <div className="flex items-center gap-4">
+                      <UserIcon className="w-10 h-10 sm:w-16 sm:h-16 md:hidden" />
+                      <h4 className="titleMd md:text-4xl">Admin Login</h4>
+                    </div>
+
+                    <ul className="list-disc mt-4 pl-4">
+                      <li className="text-sm sm:text-base text-text-500">
+                        E-mail: {data?.auth?.email}
+                      </li>
+                      <li className="text-sm sm:text-base text-text-500">
+                        Password: {data?.auth?.password}
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              )}
+              {data.note && (
+                <p className="text-xs text-text-600 font-inter">{data.note}</p>
+              )}
             </div>
           </div>
         </div>

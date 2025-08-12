@@ -92,6 +92,13 @@ export { default as naimurRahman } from "@/public/images/team/naimur-rahman.webp
 export { default as raihanulIslam } from "@/public/images/team/raihanul-islam.webp";
 // team
 
+//products
+export { default as jazakallahTop } from "@/public/images/product-details/1/top-jazakallah.jpg";
+export { default as jazakallahPreview1 } from "@/public/images/product-details/1/preview-1.png";
+export { default as jazakallahPreview2 } from "@/public/images/product-details/1/preview-2.png";
+export { default as jazakallahPreview3 } from "@/public/images/product-details/1/preview-3.png";
+export { default as jazakallahPreview4 } from "@/public/images/product-details/1/preview-4.png";
+
 export { default as termc } from "@/public/images/termc.webp";
 export { default as video } from "@/public/images/video.webp";
 export { default as yoowifiIcon } from "@/public/images/project/yoowifi-icon.webp";
