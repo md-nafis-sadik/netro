@@ -25,6 +25,10 @@
   backdrop-filter: blur(12px);
 }
 
+.product-show-blur {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, #000 100%);
+}
+
 .navbar-btn-gradient-dark {
   background: linear-gradient(
     to right,

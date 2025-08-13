@@ -10,7 +10,12 @@ import { cn } from "@/lib/utils";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const ProjectsHome = ({ data }: { data: any }) => {
+type ProjectsHomeProps = {
+  data: any;
+  type?: string; // optional
+};
+
+const ProjectsHome = ({ data, type }: ProjectsHomeProps) => {
   const cardsRef = useRef<HTMLDivElement | null>(null);
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -85,11 +90,20 @@ const ProjectsHome = ({ data }: { data: any }) => {
   return (
     <section className="bg-black w-full py-20 relative">
       <div className="flex_center flex-col">
-        <SectionSubHeader dark text="Explore Projects" />
+        {type !== "products" && (
+          <SectionSubHeader dark text="Explore Projects" />
+        )}
 
-        <SectionHeader className="home_projects_header pb-10 md:pb-28">
-          Our Projects
-        </SectionHeader>
+        {type !== "products" && (
+          <SectionHeader className="home_projects_header pb-10 md:pb-28">
+            Our Projects
+          </SectionHeader>
+        )}
+        {type === "products" && (
+          <SectionHeader className="home_projects_header pb-10 md:pb-28">
+            Some Key Previews
+          </SectionHeader>
+        )}
 
         <div
           ref={cardsRef}

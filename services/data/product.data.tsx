@@ -2,7 +2,7 @@ import { images } from "@/services";
 import { download } from "../assets/images";
 
 export const productsData: Record<string, any> = {
-  1: {
+  "telzen": {
     title: "Telzen- Enhancing the Telecom Experience",
     shortDescription:
       "Telzen, a next-generation telecom app, was designed with the user in mind, focusing exclusively on delivering a seamless, modern, and intuitive design.",
@@ -10,6 +10,43 @@ export const productsData: Record<string, any> = {
     images: [images.jazakallahTop],
     description:
       "In the rapidly evolving world of telecommunications, user experience (UX) and user interface (UI) are more critical than ever. Telzen, a next-generation telecom app, was designed with the user in mind, focusing exclusively on delivering a seamless, modern, and intuitive design. The project centered on creating a clean, user-friendly interface that would revolutionize the telecom experience, providing users with easy access to communication tools while embracing cutting-edge design trends.",
+    features: [
+      "Plans & Packages",
+      "Payments & Recharge",
+      "Usage Tracking",
+      "Roaming & International Services",
+      "Notifications & Alerts",
+      "Account Management",
+      "Security & Personalization",
+      "Network & Services",
+      "Gift & Sharing ",
+      "Shopping Features",
+      "News Portal",
+      "Online Payment Method",
+      "Zakat Calculator",
+      "Islamic Baby Name Generator",
+      "Prayer Timings",
+      "Islamic AI Chat Bot",
+      "MultiLingual (Arabic, Bangla, English, French, Hindi, Tuskish, Urdu)",
+    ],
+    productImages: {
+      data: [
+        { featuredImage: images.telzenPreview1 },
+        { featuredImage: images.telzenPreview2 },
+        { featuredImage: images.telzenPreview3 },
+        { featuredImage: images.telzenPreview4 },
+        { featuredImage: images.telzenPreview5 },
+      ],
+    },
+  },
+  "jazakallah": {
+    title: "Jazakallah - The Complete Islamic App",
+    shortDescription:
+      "Jazakallah is a complete Islamic app with prayer times, Quran, duas, and tools to support your faith and daily worship.",
+    image: images.jazakallahTop,
+    images: [images.jazakallahTop],
+    description:
+      "JazakAllah is the ultimate app for muslims, with Iftar Timings, Dua, Hadis, Azkar, Al-Quran, Tasbih Counting, Qibla Compass, Mosque Locator, Daily Prayer Notification, Islamic Calender, Makka Live, Islamic Wallpapers, Zakat Calculator, Islamic AI Chat Bot, Islamic Baby Name Generator and progress tracking. Stay connected to your faith, deepen your spiritual practice.",
     features: [
       "Tasbih Counter",
       "Iftar Timings",
@@ -29,57 +66,66 @@ export const productsData: Record<string, any> = {
       "Islamic AI Chat Bot",
       "MultiLingual (Arabic, Bangla, English, French, Hindi, Tuskish, Urdu)",
     ],
-    notes: [
-      "Java 8 and 17 (JDK)",
-      "Flutter 3.19",
-      "Dart version 3.3.0",
-      "Google Maps API",
-      "Google Places API",
-      "One Signal",
-      "Firebase",
-      "RevenueCat",
-      "Chat GPT API",
-      "Google Play Store For In App Purchase",
-      "Node.js 19.9.0",
-      "Npm 10.2.4",
-      "Php 8.2",
-      "Domain & Hosting",
-      "Terminal Enabled on CPanel",
-    ],
-    apiKeys: {
-      title: "Islamic AI needs OpenAI API Key",
-      infos: [
-        "The App comes with a customized backend and Admin Panel. Credentials has been shared.",
-        "Flutter Code. iOS App needs to run",
-        "on Mac device with XCode (Expertise required)",
-        "Ad Network, Payment Methods are subject to setup yourself.",
-        "Installation is not included in 6 months support.",
+    productImages: {
+      data: [
+        { featuredImage: images.jazakallahPreview1 },
+        { featuredImage: images.jazakallahPreview2 },
+        { featuredImage: images.jazakallahPreview3 },
+        { featuredImage: images.jazakallahPreview4 },
+        { featuredImage: images.jazakallahPreview5 },
       ],
     },
     auth: {
       email: "test@netrocreative.com",
       password: "12345678",
     },
-    downloadAppLink: "a",
-    adminPanelLink: "a",
-
-    myOtherApp: {
-      title: "My Other App",
-      shortDescription: "Another amazing product description...",
-      images: [images.blog3, images.blog1],
-      description: "This is another app with awesome features...",
-      features: ["Feature 1", "Feature 2"],
-      notes: ["Requirement 1", "Requirement 2"],
-      apiKeys: {
-        title: "Needs Some API Key",
-        infos: ["Setup instruction 1", "Setup instruction 2"],
-      },
-      auth: {
-        email: "demo@example.com",
-        password: "123456",
-      },
-      price: 50,
+    downloadAppLink:
+      "https://play.google.com/store/apps/details?id=com.netrocreative.jazakallah&hl=en",
+    adminPanelLink: "https://jazakallah-demo.products8.net/",
+  },
+  "smart-pathshala": {
+    title: "Smart Pathshala-  school management software",
+    shortDescription:
+      "Smart Patshala is an all-in-one school management software that connects Head Teachers, teachers, and students. Through its dashboard and mobile app, staff can manage classes and records, while students quickly access routines and results anytime.",
+    image: images.smartPathshalaTop,
+    images: [images.smartPathshalaTop],
+    description:
+      "Smart Pathshala is a comprehensive school management software designed to streamline academic and administrative tasks. It offers an intuitive dashboard and mobile app for Head Teachers and teachers to manage classes, schedules, and student records efficiently. Students can easily download their class routines and result reports, ensuring quick access to essential academic information. With its user-friendly interface and multi-platform access, Smart Pathshala enhances communication, improves productivity, and supports smooth school operations.",
+    features: [
+      "Student Attendance ",
+      "Teachers Attendance",
+      "Accounts",
+      "Exam Results",
+      "Leave Management",
+      "Notifications ",
+      "Event Management",
+      "Resident Management",
+      "Library Management",
+      "Birthday Wish",
+      "Students Management",
+      "Teachers Management",
+      "Blood Bank",
+      "Online Chatting",
+      "Lesson Planer",
+      "Enrolment Management ",
+      "Multilanguage (Bangla, English)",
+    ],
+    productImages: {
+      data: [
+        { featuredImage: images.smartPathshalaPreview1 },
+        { featuredImage: images.smartPathshalaPreview2 },
+        { featuredImage: images.smartPathshalaPreview3 },
+        { featuredImage: images.smartPathshalaPreview4 },
+        { featuredImage: images.smartPathshalaPreview5 },
+      ],
     },
+    auth: {
+      email: "test@netrocreative.com",
+      password: "12345678",
+    },
+    downloadAppLink:
+      "https://play.google.com/store/apps/details?id=com.netrocreative.jazakallah&hl=en",
+    adminPanelLink: "https://jazakallah-demo.products8.net/",
   },
   2: {
     title: "Jazakallah - The Complete Islamic App",
@@ -143,5 +189,14 @@ export const productsData: Record<string, any> = {
     downloadAppLink: "",
     adminPanelLink: "",
     note: "",
+    productImages: {
+      data: [
+        { featuredImage: images.jazakallahPreview1 },
+        { featuredImage: images.jazakallahPreview2 },
+        { featuredImage: images.jazakallahPreview3 },
+        { featuredImage: images.jazakallahPreview4 },
+        { featuredImage: images.jazakallahPreview5 },
+      ],
+    },
   },
 };

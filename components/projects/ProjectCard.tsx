@@ -10,12 +10,14 @@ const ProjectCard = ({
   projectDescriptionClassName = "",
   showBottom = false,
   style = {},
+  leftSlideClass = ""
 }: {
   item: any;
   className?: string;
   projectDescriptionClassName?: string;
   showBottom?: boolean;
   style?: React.CSSProperties;
+  leftSlideClass?: string;
 }) => {
   return (
     <div
@@ -43,7 +45,8 @@ const ProjectCard = ({
             "min-w-full md:min-w-0 absolute left-0 transition_common mt-auto",
             showBottom
               ? "min-w-full bottom-0 h-max bg-blandGradient backdrop-blur-md"
-              : "project-home-blur md:-translate-x-full group-hover:translate-x-0 bottom-0 md:bottom-auto md:top-0 h-max md:h-full max-w-[320px]"
+              : "project-home-blur md:-translate-x-full group-hover:translate-x-0 bottom-0 md:bottom-auto md:top-0 h-max md:h-full max-w-[320px]",
+              leftSlideClass
           )}
         >
           <div className="p-6 md:p-8 h-full flex flex-col justify-between gap-6">

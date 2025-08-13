@@ -8,8 +8,6 @@ import {
 } from "@/services/assets/svgs";
 import Image from "next/image";
 import { Button } from "../ui/button";
-import ProductsGallery from "./ProductsGallery";
-import { GradientButton } from "../ui/gradient-button";
 import Link from "next/link";
 
 function ProductDetails({
@@ -19,6 +17,7 @@ function ProductDetails({
   imageIndex: number;
   data: any;
 }) {
+
   return (
     <section className="pb-10 sm:pb-16 md:pb-20 lg:pb-30 ">
       <div className="containerX">
@@ -209,6 +208,7 @@ function ProductDetails({
                   )}
 
                   {data.downloadAppLink && (
+                    <Link href={data.downloadAppLink} className="w-full">
                     <Button className="w-full group mt-12">
                       <Image
                         src={images.download}
@@ -216,11 +216,13 @@ function ProductDetails({
                         width={200}
                         height={200}
                         className="w-8"
+                        
                       />
                       <p className="text-sm md:text-lg font-inter font-normal text-white leading-[110%]">
                         DOWNLOAD <span className="font-bold">APP</span>
                       </p>
                     </Button>
+                    </Link>
                   )}
                   {data.adminPanelLink && (
                     <Link
@@ -236,7 +238,7 @@ function ProductDetails({
               )}
               {data.auth && (
                 <div className="flex gap-4 px-4 py-6 sm:p-6 border border-dashed border-natural-300 mt-8">
-                  <UserIcon className="w-20 h-20 hidden md:block" />
+                  <UserIcon className="w-12 h-12 hidden md:block" />
                   <div>
                     <div className="flex items-center gap-4">
                       <UserIcon className="w-10 h-10 sm:w-16 sm:h-16 md:hidden" />

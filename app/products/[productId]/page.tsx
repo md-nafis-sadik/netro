@@ -1,22 +1,24 @@
 import OtherProducts from "@/components/products/OtherProducts";
 import ProductDetails from "@/components/products/ProductDetails";
 import ProjectsHome from "@/components/projects/ProjectsHome";
-import ProjectsHomeWrapper from "@/components/projects/ProjectsHomeWrapper";
 import Breadcrumbs from "@/components/shared/Breadcrumbs";
-import { images } from "@/services";
 import { productsData } from "@/services/data/product.data";
 import { Suspense } from "react";
 
-export default function SingleProductDetails({
+export default async function SingleProductDetails({
   params,
   searchParams,
 }: {
-  params: { productId: string | string[] };
-  searchParams: { image_index?: string };
+  params: Promise<{ productId: string | string[] }>;
+  searchParams: Promise<{ image_index?: string }>;
 }) {
-  const productKey = Array.isArray(params.productId)
-    ? params.productId[0]
-    : params.productId;
+  // Await the params and searchParams first
+  const resolvedParams = await params;
+  const resolvedSearchParams = await searchParams;
+
+  const productKey = Array.isArray(resolvedParams.productId)
+    ? resolvedParams.productId[0]
+    : resolvedParams.productId;
 
   const productData = productsData[productKey?.toLowerCase()];
 
@@ -29,15 +31,6 @@ export default function SingleProductDetails({
     { link: `/products/${productKey}`, name: productData.title },
   ];
 
-  const projectImages = {
-    data: [
-      { featuredImage: images.jazakallahPreview1 },
-      { featuredImage: images.jazakallahPreview2 },
-      { featuredImage: images.jazakallahPreview3 },
-      { featuredImage: images.jazakallahPreview4 },
-    ],
-  };
-
   return (
     <>
       <div className="py-4 sm:py-6 md:py-10 mt-20">
@@ -47,7 +40,7 @@ export default function SingleProductDetails({
       </div>
       <ProductDetails
         data={productData}
-        imageIndex={Number(searchParams.image_index || 0)}
+        imageIndex={Number(resolvedSearchParams.image_index || 0)}
       />
       <Suspense
         fallback={
@@ -56,7 +49,7 @@ export default function SingleProductDetails({
           </div>
         }
       >
-        <ProjectsHome data={projectImages} />
+        <ProjectsHome data={productData.productImages} type="products" />
       </Suspense>
       <OtherProducts />
     </>

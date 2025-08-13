@@ -93,11 +93,61 @@ export { default as raihanulIslam } from "@/public/images/team/raihanul-islam.we
 // team
 
 //products
-export { default as jazakallahTop } from "@/public/images/product-details/1/top-jazakallah.jpg";
-export { default as jazakallahPreview1 } from "@/public/images/product-details/1/preview-1.png";
-export { default as jazakallahPreview2 } from "@/public/images/product-details/1/preview-2.png";
-export { default as jazakallahPreview3 } from "@/public/images/product-details/1/preview-3.png";
-export { default as jazakallahPreview4 } from "@/public/images/product-details/1/preview-4.png";
+export { default as jazakallahTop } from "@/public/images/product-details/jazakallah/top.webp";
+export { default as jazakallahPreview1 } from "@/public/images/product-details/jazakallah/preview-1.webp";
+export { default as jazakallahPreview2 } from "@/public/images/product-details/jazakallah/preview-2.webp";
+export { default as jazakallahPreview3 } from "@/public/images/product-details/jazakallah/preview-3.webp";
+export { default as jazakallahPreview4 } from "@/public/images/product-details/jazakallah/preview-4.webp";
+export { default as jazakallahPreview5 } from "@/public/images/product-details/jazakallah/preview-5.webp";
+export { default as telzenTop } from "@/public/images/product-details/telzen/top.webp";
+export { default as telzenPreview1 } from "@/public/images/product-details/telzen/preview-1.webp";
+export { default as telzenPreview2 } from "@/public/images/product-details/telzen/preview-2.webp";
+export { default as telzenPreview3 } from "@/public/images/product-details/telzen/preview-3.webp";
+export { default as telzenPreview4 } from "@/public/images/product-details/telzen/preview-4.webp";
+export { default as telzenPreview5 } from "@/public/images/product-details/telzen/preview-5.webp";
+export { default as smartPathshalaTop } from "@/public/images/product-details/smart-pathshala/top.png";
+export { default as smartPathshalaPreview1 } from "@/public/images/product-details/smart-pathshala/preview-1.png";
+export { default as smartPathshalaPreview2 } from "@/public/images/product-details/smart-pathshala/preview-2.png";
+export { default as smartPathshalaPreview3 } from "@/public/images/product-details/smart-pathshala/preview-3.png";
+export { default as smartPathshalaPreview4 } from "@/public/images/product-details/smart-pathshala/preview-4.png";
+export { default as smartPathshalaPreview5 } from "@/public/images/product-details/smart-pathshala/preview-5.png";
+export { default as dokaniERPTop } from "@/public/images/product-details/dokani-erp/top.png";
+export { default as dokaniERPPreview1 } from "@/public/images/product-details/dokani-erp/preview-1.png";
+export { default as dokaniERPPreview2 } from "@/public/images/product-details/dokani-erp/preview-2.png";
+export { default as dokaniERPPreview3 } from "@/public/images/product-details/dokani-erp/preview-3.png";
+export { default as dokaniERPPreview4 } from "@/public/images/product-details/dokani-erp/preview-4.png";
+export { default as dokaniERPPreview5 } from "@/public/images/product-details/dokani-erp/preview-5.png";
+export { default as rimozenAITop } from "@/public/images/product-details/rimozen-ai/top.png";
+export { default as rimozenAIPreview1 } from "@/public/images/product-details/rimozen-ai/preview-1.png";
+export { default as rimozenAIPreview2 } from "@/public/images/product-details/rimozen-ai/preview-2.png";
+export { default as rimozenAIPreview3 } from "@/public/images/product-details/rimozen-ai/preview-3.png";
+export { default as rimozenAIPreview4 } from "@/public/images/product-details/rimozen-ai/preview-4.png";
+export { default as rimozenAIPreview5 } from "@/public/images/product-details/rimozen-ai/preview-5.png";
+export { default as kidsAITop } from "@/public/images/product-details/kids-ai/top.png";
+export { default as kidsAIPreview1 } from "@/public/images/product-details/kids-ai/preview-1.png";
+export { default as kidsAIPreview2 } from "@/public/images/product-details/kids-ai/preview-2.png";
+export { default as kidsAIPreview3 } from "@/public/images/product-details/kids-ai/preview-3.png";
+export { default as kidsAIPreview4 } from "@/public/images/product-details/kids-ai/preview-4.png";
+export { default as kidsAIPreview5 } from "@/public/images/product-details/kids-ai/preview-5.png";
+export { default as kiddzLearnTop } from "@/public/images/product-details/kiddz-learn/top.png";
+export { default as kiddzLearnPreview1 } from "@/public/images/product-details/kiddz-learn/preview-1.png";
+export { default as kiddzLearnPreview2 } from "@/public/images/product-details/kiddz-learn/preview-2.png";
+export { default as kiddzLearnPreview3 } from "@/public/images/product-details/kiddz-learn/preview-3.png";
+export { default as kiddzLearnPreview4 } from "@/public/images/product-details/kiddz-learn/preview-4.png";
+export { default as kiddzLearnPreview5 } from "@/public/images/product-details/kiddz-learn/preview-5.png";
+export { default as eventusTop } from "@/public/images/product-details/smart-pathshala/top.png";
+export { default as eventusPreview1 } from "@/public/images/product-details/eventus/preview-1.png";
+export { default as eventusPreview2 } from "@/public/images/product-details/eventus/preview-2.png";
+export { default as eventusPreview3 } from "@/public/images/product-details/eventus/preview-3.png";
+export { default as eventusPreview4 } from "@/public/images/product-details/eventus/preview-4.png";
+export { default as eventusPreview5 } from "@/public/images/product-details/eventus/preview-5.png";
+export { default as proAITop } from "@/public/images/product-details/pro-ai/top.png";
+export { default as proAIPreview1 } from "@/public/images/product-details/pro-ai/preview-1.png";
+export { default as proAIPreview2 } from "@/public/images/product-details/pro-ai/preview-2.png";
+export { default as proAIPreview3 } from "@/public/images/product-details/pro-ai/preview-3.png";
+export { default as proAIPreview4 } from "@/public/images/product-details/pro-ai/preview-4.png";
+export { default as proAIPreview5 } from "@/public/images/product-details/pro-ai/preview-5.png";
+
 
 export { default as termc } from "@/public/images/termc.webp";
 export { default as video } from "@/public/images/video.webp";
