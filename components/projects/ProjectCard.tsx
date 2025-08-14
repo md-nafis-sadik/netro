@@ -10,7 +10,7 @@ const ProjectCard = ({
   projectDescriptionClassName = "",
   showBottom = false,
   style = {},
-  leftSlideClass = ""
+  leftSlideClass = "",
 }: {
   item: any;
   className?: string;
@@ -31,8 +31,8 @@ const ProjectCard = ({
         src={item?.featuredImage}
         alt={item?.title || "Project"}
         className="min-h-full h-full min-w-full w-auto object-cover absolute_center"
-        width={1920}
-        height={1280}
+        width={3840}
+        height={2560}
       />
 
       {/* Doing a check if any of the fields are available only then itll be shown otherwise wont! */}
@@ -46,7 +46,7 @@ const ProjectCard = ({
             showBottom
               ? "min-w-full bottom-0 h-max bg-blandGradient backdrop-blur-md"
               : "project-home-blur md:-translate-x-full group-hover:translate-x-0 bottom-0 md:bottom-auto md:top-0 h-max md:h-full max-w-[320px]",
-              leftSlideClass
+            leftSlideClass
           )}
         >
           <div className="p-6 md:p-8 h-full flex flex-col justify-between gap-6">

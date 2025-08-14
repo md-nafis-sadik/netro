@@ -17,7 +17,6 @@ function ProductDetails({
   imageIndex: number;
   data: any;
 }) {
-
   return (
     <section className="pb-10 sm:pb-16 md:pb-20 lg:pb-30 ">
       <div className="containerX">
@@ -49,7 +48,7 @@ function ProductDetails({
                         key={index}
                       >
                         <span className="text-base sm:text-lg text-text-200 font-semibold">
-                          {index > 9 ? index : `0${index}`}
+                          {index + 1 > 9 ? index + 1 : `0${index + 1}`}
                         </span>
                         <span className="flex-1  py-3 border-b border-dashed border-natural-300 text-sm sm:text-base md:text-lg text-text-900">
                           {feature}
@@ -209,19 +208,18 @@ function ProductDetails({
 
                   {data.downloadAppLink && (
                     <Link href={data.downloadAppLink} className="w-full">
-                    <Button className="w-full group mt-12">
-                      <Image
-                        src={images.download}
-                        alt="Download"
-                        width={200}
-                        height={200}
-                        className="w-8"
-                        
-                      />
-                      <p className="text-sm md:text-lg font-inter font-normal text-white leading-[110%]">
-                        DOWNLOAD <span className="font-bold">APP</span>
-                      </p>
-                    </Button>
+                      <Button className="w-full group mt-12">
+                        <Image
+                          src={images.download}
+                          alt="Download"
+                          width={200}
+                          height={200}
+                          className="w-8"
+                        />
+                        <p className="text-sm md:text-lg font-inter font-normal text-white leading-[110%]">
+                          DOWNLOAD <span className="font-bold">APP</span>
+                        </p>
+                      </Button>
                     </Link>
                   )}
                   {data.adminPanelLink && (

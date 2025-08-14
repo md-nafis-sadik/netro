@@ -1,15 +1,23 @@
 import { cn } from "@/lib/utils";
 import Image, { StaticImageData } from "next/image";
 import { ArrowLongTailIcon } from "@/services/assets/svgs";
+import { GradientButton } from "../ui/gradient-button";
 
 interface IFProductCardProps {
   name: string;
   description: string;
   image?: StaticImageData;
   url?: string;
+  detailsUrl?: string;
 }
 
-const ProductCard = ({ name, description, image, url }: IFProductCardProps) => {
+const ProductCard = ({
+  name,
+  description,
+  image,
+  url,
+  detailsUrl,
+}: IFProductCardProps) => {
   return (
     <div className="relative w-full cursor-pointer select-none group">
       <div className="w-full h-auto min-h-[228px] relative">
@@ -40,13 +48,23 @@ const ProductCard = ({ name, description, image, url }: IFProductCardProps) => {
         {description}
       </p>
 
-      <a
-        className="mt-6 bg-main-400 hover:bg-main-500 flex items-center gap-2 p-[12px_20px_12px_24px] py-2 rounded-full w-fit text-white font-inter text-sm md:text-base font-bold !leading-[1.1]"
-        href={url}
-      >
-        <span>Download App</span>
-        <ArrowLongTailIcon className="text-white-100" />
-      </a>
+      <div className="flex flex-wrap gap-4 mt-6">
+        <a
+          className=" bg-main-400 hover:bg-main-500 flex items-center gap-2 p-[12px_20px_12px_24px] py-2 rounded-full w-fit text-white font-inter text-sm md:text-base font-bold !leading-[1.1]"
+          href={url}
+        >
+          <span>Download App</span>
+          <ArrowLongTailIcon className="text-white-100" />
+        </a>
+        {detailsUrl && (
+          <GradientButton href={detailsUrl} className="!py-2 md:py-3">
+            <span className="text-white text-sm md:text-base">
+              View Details
+            </span>
+            <ArrowLongTailIcon className="text-white-100" />
+          </GradientButton>
+        )}
+      </div>
     </div>
   );
 };

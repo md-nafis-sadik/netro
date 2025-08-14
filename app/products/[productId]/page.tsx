@@ -2,7 +2,7 @@ import OtherProducts from "@/components/products/OtherProducts";
 import ProductDetails from "@/components/products/ProductDetails";
 import ProjectsHome from "@/components/projects/ProjectsHome";
 import Breadcrumbs from "@/components/shared/Breadcrumbs";
-import { productsData } from "@/services/data/product.data";
+import { productDetailssData } from "@/services/data/product.data";
 import { Suspense } from "react";
 
 export default async function SingleProductDetails({
@@ -20,7 +20,7 @@ export default async function SingleProductDetails({
     ? resolvedParams.productId[0]
     : resolvedParams.productId;
 
-  const productData = productsData[productKey?.toLowerCase()];
+  const productData = productDetailssData[productKey?.toLowerCase()];
 
   if (!productData) {
     return <div className="mt-20 text-center">Product not found</div>;
@@ -45,7 +45,7 @@ export default async function SingleProductDetails({
       <Suspense
         fallback={
           <div className="h-screen flex items-center justify-center">
-            Loading projects...
+            Loading products...
           </div>
         }
       >

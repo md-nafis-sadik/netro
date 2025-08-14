@@ -15,15 +15,18 @@ const Products = () => {
         </SectionHeader>
 
         <div className="max-w-[952px] w-fit mx-auto grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-[60px] my-10 md:my-20">
-          {productsData.map(({ title, description, id, image, url }) => (
-            <ProductCard
-              name={title}
-              description={description}
-              key={id}
-              image={image}
-              url={url}
-            />
-          ))}
+          {productsData.map(
+            ({ title, description, id, image, url, detailsUrl }) => (
+              <ProductCard
+                name={title}
+                description={description}
+                key={id}
+                image={image}
+                url={url}
+                detailsUrl={detailsUrl}
+              />
+            )
+          )}
         </div>
 
         <ArrowLineupButton

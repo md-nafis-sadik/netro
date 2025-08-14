@@ -23,7 +23,7 @@ const OtherProductCard = ({ item }: IFProductCardProps) => {
         height={1280}
       />
 
-      {/* Doing a check if any of the fields are available only then itll be shown otherwise wont! */}
+      {/* Doing a check if any of the fields are available only then it will be shown otherwise wont! */}
       {(item?.author ||
         item?.metaDescription ||
         item?.tagList ||

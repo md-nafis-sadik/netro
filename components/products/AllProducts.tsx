@@ -1,42 +1,50 @@
 import { images } from "@/services";
 import ProductCardItem from "./ProductCardItem";
+import { productsData } from "@/services/data";
 
 function AllProducts({ query }: { query: string }) {
-  const data = [
-    {
-      _id: "1",
-      name: "Yoowifi",
-      description:
-        "A cutting-edge telecom project delivering seamless connectivity solutions.",
-      imageUrl: images.blog1,
-      tags: ["UX/UI Design", "Software Development"],
-    },
-    {
-      _id: "2",
-      name: "Indemnif.ai",
-      description:
-        "A cutting-edge telecom project delivering seamless connectivity solutions.",
-      imageUrl: images.blog1,
-      tags: ["Software Development", "SaaS Development"],
-    },
-    {
-      _id: "3",
-      name: "Artistry",
-      description:
-        "A cutting-edge telecom project delivering seamless connectivity solutions.",
-      imageUrl: images.blog1,
-      tags: ["SaaS Development"],
-    },
-    {
-      _id: "4",
-      name: "kanga",
-      description:
-        "A cutting-edge telecom project delivering seamless connectivity solutions.",
-      imageUrl: images.blog1,
-      tags: ["App Development"],
-    },
-  ];
+  // const data = [
+  //   {
+  //     _id: "1",
+  //     name: "Yoowifi",
+  //     description:
+  //       "A cutting-edge telecom project delivering seamless connectivity solutions.",
+  //     imageUrl: images.blog1,
+  //     tags: ["UX/UI Design", "Software Development"],
+  //   },
+  //   {
+  //     _id: "2",
+  //     name: "Indemnif.ai",
+  //     description:
+  //       "A cutting-edge telecom project delivering seamless connectivity solutions.",
+  //     imageUrl: images.blog1,
+  //     tags: ["Software Development", "SaaS Development"],
+  //   },
+  //   {
+  //     _id: "3",
+  //     name: "Artistry",
+  //     description:
+  //       "A cutting-edge telecom project delivering seamless connectivity solutions.",
+  //     imageUrl: images.blog1,
+  //     tags: ["SaaS Development"],
+  //   },
+  //   {
+  //     _id: "4",
+  //     name: "kanga",
+  //     description:
+  //       "A cutting-edge telecom project delivering seamless connectivity solutions.",
+  //     imageUrl: images.blog1,
+  //     tags: ["App Development"],
+  //   },
+  // ];
 
+  const data = productsData.slice(1).map((product) => ({
+    _id: product.id,
+    name: product.title,
+    description: product.description,
+    imageUrl: product.otherImage,
+    tags: ["App Development"],
+  }));
   const filteredByTag = (item: { tags?: string[] }) => {
     if (query === "All") return true;
     return item.tags?.includes(query);

@@ -36,9 +36,9 @@ function ProductCardItem({
         <Image
           src={item?.imageUrl || images.blog1}
           alt="product"
-          width={800}
-          height={800}
-          className="w-fit h-full object-fill"
+          width={2000}
+          height={2000}
+          className="w-fit h-full object-cover"
         />
         <div className="absolute_center bg-main-400/50 h-[100px] w-[100px] md:h-[140px] md:w-[140px] rounded-full transition_common duration-500 group-hover:scale-105 opacity-0 group-hover:opacity-100 flex_center">
           <p
