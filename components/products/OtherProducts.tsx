@@ -12,7 +12,7 @@ function OtherProducts() {
     author: {
       profileImage: product.image,
     },
-    url: product.url,
+    url: product.detailsUrl,
   }));
 
   return (

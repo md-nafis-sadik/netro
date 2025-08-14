@@ -44,6 +44,7 @@ function AllProducts({ query }: { query: string }) {
     description: product.description,
     imageUrl: product.otherImage,
     tags: ["App Development"],
+    url: product.detailsUrl
   }));
   const filteredByTag = (item: { tags?: string[] }) => {
     if (query === "All") return true;

@@ -16,6 +16,7 @@ function ProductCardItem({
     description?: string;
     imageUrl?: StaticImageData;
     tags?: string[];
+    url?: string;
   };
   titleClass?: string;
   descriptionClass?: string;
@@ -24,7 +25,7 @@ function ProductCardItem({
 }) {
   return (
     <Link
-      href={`/products/${item?._id}`}
+      href={item?.url ? item?.url : "/"}
       className={cn("w-full group", className)}
     >
       <div
