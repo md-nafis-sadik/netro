@@ -29,7 +29,7 @@ async function PortfolioDetails({
   portfolioId = purifyUrl({ urlString: portfolioId });
 
   return (
-    <main className="">
+    <main className="mt-20">
       <Suspense fallback={<ProjectDetailsSkeleton />}>
         <ProjectDetailsWrapper id={portfolioId} />
       </Suspense>

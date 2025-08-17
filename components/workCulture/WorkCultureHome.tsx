@@ -229,7 +229,7 @@ const WorkCultureHome = () => {
             className="text-2xl md:text-[40px] font-bold !leading-[1.2] mt-6 md:mt-10"
           />
 
-          <div className="mt-10 flex items-center gap-2 md:gap-4">
+          <div className="mt-10 flex flex-col sm:flex-row items-center gap-2 md:gap-4">
             <Link href={routes.career.link}>
               <Button className="w-fit group">
                 <span className="!leading-none">Join our team</span>

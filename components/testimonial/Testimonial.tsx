@@ -20,7 +20,7 @@ const Testimonial = ({ data }: any) => {
   const { onPrevButtonClick, onNextButtonClick } = useEmblaButtons(emblaApi);
 
   return (
-    <div className="containerX w-full py-20 md:py-[120px] relative">
+    <div className="containerX w-full py-20 md:py-[120px] relative overflow-x-hidden">
       <div className="w-fit relative mx-auto h-fit">
         <SectionHeader className="home_testimonial_header">
           See How We&apos;ve Made <br /> a Difference

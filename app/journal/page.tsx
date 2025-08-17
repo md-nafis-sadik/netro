@@ -5,7 +5,7 @@ import { Suspense } from "react";
 
 const JournalPage = () => {
   return (
-    <main className="relative">
+    <main className="relative mt-20">
       <PageThumbnail
         title="Our Journal"
         description="Latest Insights & Innovation"

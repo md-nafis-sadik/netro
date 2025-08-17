@@ -6,7 +6,7 @@ import { Suspense } from "react";
 
 const ServicePage = () => {
   return (
-    <main className="relative">
+    <main className="relative mt-20">
       <PageThumbnail
         title="What We Do"
         description="Know our strengths"

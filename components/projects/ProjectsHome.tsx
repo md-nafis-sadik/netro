@@ -107,12 +107,12 @@ const ProjectsHome = ({ data, type }: ProjectsHomeProps) => {
 
         <div
           ref={cardsRef}
-          className="flex flex-col items-center mb-40 w-full relative"
+          className="flex flex-col items-center w-full relative"
         >
           {data?.data?.slice(0, 5).map((item: any, index: number) => (
             <ProjectCard
               className={cn(
-                "!w-[90%] 2xl:!w-[1440px] min-[1620px]:!w-full stacked-card sticky left-0 top-0 mb-80"
+                "stacked-card sticky left-0 top-0 mb-80"
               )}
               style={{
                 pointerEvents: activeIndex === index ? "auto" : "none",

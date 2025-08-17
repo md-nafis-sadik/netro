@@ -22,7 +22,7 @@ const ProjectCard = ({
   return (
     <div
       className={cn(
-        "w-full h-[728px] max-h-[728px] md:h-[640px] md:max-h-[640px] lg:h-[740px] lg:max-h-[740px] overflow-hidden bg-text-700 group transition_common relative",
+        "w-full h-[728px] max-h-[728px] md:h-[500px] md:max-h-[640px] lg:h-auto lg:aspect-[31/18] overflow-hidden bg-text-700 group transition_common",
         className
       )}
       style={style}
@@ -54,14 +54,14 @@ const ProjectCard = ({
               <Image
                 src={item?.author?.profileImage}
                 alt={item?.title}
-                className="h-auto w-12 md:w-16 lg:w-20"
+                className="h-auto w-10 md:w-12 lg:w-14 xl:w-20"
                 height={200}
                 width={300}
               />
 
               <p
                 className={cn(
-                  "text-sm sm:text-base font-normal !leading-[1.4] text-text-200 mt-4 sm:mt-5 md:mt-7 font-inter line-clamp-5",
+                  "text-sm xl:text-base font-normal !leading-[1.4] text-text-200 mt-4 sm:mt-4 xl:mt-6 font-inter line-clamp-3",
                   projectDescriptionClassName
                 )}
               >
@@ -78,8 +78,10 @@ const ProjectCard = ({
               </p>
 
               <Link href={`/portfolio/${item?.title}`}>
-                <Button className="w-fit group mt-4 sm:mt-6 md:mt-12">
-                  <span className="!leading-none">View Case</span>
+                <Button className="w-fit group mt-4 sm:mt-5">
+                  <span className="!leading-none text-sm xl:text-base">
+                    View Project
+                  </span>
                   <ArrowLongTailIcon className="h-auto w-5 md:w-6 group-hover:translate-x-2 transition_common" />
                 </Button>
               </Link>

@@ -48,6 +48,24 @@ const sheetVariants = cva(
   }
 );
 
+const VisuallyHidden = ({ children }: { children: React.ReactNode }) => (
+  <span
+    style={{
+      position: "absolute",
+      width: "1px",
+      height: "1px",
+      padding: "0",
+      margin: "-1px",
+      overflow: "hidden",
+      clip: "rect(0, 0, 0, 0)",
+      whiteSpace: "nowrap",
+      border: "0",
+    }}
+  >
+    {children}
+  </span>
+);
+
 interface SheetContentProps
   extends React.ComponentPropsWithoutRef<typeof SheetPrimitive.Content>,
     VariantProps<typeof sheetVariants> {
@@ -69,6 +87,9 @@ const SheetContent = React.forwardRef<
         className={cn(sheetVariants({ side }), className)}
         {...props}
       >
+        <VisuallyHidden>
+          <SheetPrimitive.Title>Sheet</SheetPrimitive.Title>
+        </VisuallyHidden>
         <div className="absolute top-0 left-0 z-[60] h-full w-full bg-primary-dark">
           {children}
           <SheetPrimitive.Close className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-secondary">

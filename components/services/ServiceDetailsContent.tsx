@@ -25,17 +25,17 @@ const ServiceDetailsContent = async ({ slug }: { slug: string }) => {
         </p>
       </div>
 
-      <div className="w-full aspect-[20/9] relative overflow-hidden">
+      <div className="containerX relative overflow-hidden">
         <Image
           src={service?.data?.featuredImage}
           alt={`service image ${service?.data?.title}`}
-          className="absolute_center min-h-full min-w-full"
+          className="min-h-auto min-w-full"
           height={1280}
           width={1920}
         />
       </div>
 
-      <div className="containerX flex flex-col gap-10 py-10 md:py-20">
+      <div className="containerminX flex flex-col gap-10 py-10 md:py-20">
         <div
           className="content font-inter !pt-0"
           dangerouslySetInnerHTML={{ __html: service?.data?.content || "" }}

@@ -36,7 +36,7 @@ const JournalDetailsPage = async ({
   const purifiedId = purifyUrl({ urlString: journalIdString });
 
   return (
-    <main className="relative">
+    <main className="relative mt-20">
       <Suspense fallback={<JournalDetailsSkeleton />}>
         <JournalDetailsWrapper id={purifiedId as string} />
       </Suspense>

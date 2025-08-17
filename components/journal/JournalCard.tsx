@@ -35,16 +35,16 @@ const JournalCard = ({
     >
       <div
         className={cn(
-          "h-[196px] md:h-[308px] w-full relative overflow-hidden min-w-[260px] md:min-w-[400px]",
+          "w-full relative overflow-hidden min-w-[260px] md:min-w-[400px] aspect-[16/9]",
           imageContainerClassName
         )}
       >
         <Image
           src={image}
           alt="Blog 1"
-          className="min-w-full min-h-full object-cover absolute_center transition_common group-hover:scale-105"
+          className="w-full h-full object-cover absolute_center transition_common group-hover:scale-105"
           width={1280}
-          height={1280}
+          height={720} // 16:9 ratio
         />
       </div>
 

@@ -23,7 +23,7 @@ const ProjectsGallery = ({ data = [] }: IFProps) => {
   return (
     <section className="pt-10 pb-10 sm:pb-16 md:pb-20 lg:pb-30">
       {newData?.length > 0 ? (
-        <div className="grid md:grid-cols-2 gap-6 sm:gap-10 md:gap-16 lg:gap-20">
+        <div className="grid md:grid-cols-2 gap-6 sm:gap-10 md:gap-16 lg:gap-10">
           {newData?.map((item: any, index: number) => (
             <ProjectCard
               key={index}

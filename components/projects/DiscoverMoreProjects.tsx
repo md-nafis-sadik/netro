@@ -13,7 +13,7 @@ const DiscoverMoreProjects = ({ data }: any) => {
 
   return (
     <section className="w-full py-20 relative">
-      <SectionHeader className="home_projects_header">
+      <SectionHeader className="portfolio_details_header">
         Discover More Insights
       </SectionHeader>
 
@@ -23,7 +23,7 @@ const DiscoverMoreProjects = ({ data }: any) => {
             {data?.map((item: any, index: number) => (
               <ProjectCard
                 className={cn(
-                  "!min-w-[380px] md:!min-w-[600px] !h-[420px] md:!h-[640px] !max-h-[640px]"
+                  "!min-w-[380px] md:!min-w-[621px] !h-[220px] md:!h-[361px] !max-h-[361px]"
                 )}
                 projectDescriptionClassName={"!line-clamp-1 md:!line-clamp-5"}
                 item={item}

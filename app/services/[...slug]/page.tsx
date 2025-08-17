@@ -33,7 +33,7 @@ const ServiceDetailsPage = async ({
   slug = purifyUrl({ urlString: slug });
 
   return (
-    <main className="relative">
+    <main className="relative mt-20">
       <Suspense fallback={<ServiceDetailsSkeleton />}>
         <ServiceDetailsContent slug={slug} />
       </Suspense>

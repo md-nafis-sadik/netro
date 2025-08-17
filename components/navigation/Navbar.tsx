@@ -27,16 +27,21 @@ const Navbar: FC = () => {
       className={cn(
         pathname === routes.homepage.link
           ? "border-[#393939] bg-black/20"
-          : "bg-black",
+          : "bg-black lg:bg-neutral-300",
         "fixed top-0 w-full z-50"
       )}
     >
       <div className="containerX flex flex-row items-center justify-between gap-4 py-3">
         <Link href={routes.homepage.link} className="h-fit">
-          <AppLogoIcon className={cn("h-5 lg:h-7 w-auto text-white")} />
+          <AppLogoIcon
+            className={cn(
+              "h-5 lg:h-7 w-auto",
+              pathname === routes.homepage.link ? "text-white" : "text-white lg:text-black"
+            )}
+          />
         </Link>
 
-        <div className="hidden min-[1160px]:flex flex-row items-center">
+        <div className="hidden lg:flex flex-row items-center">
           {navbarData.map(({ link, name, megaMenu }, index) => {
             return (
               <div
@@ -54,14 +59,21 @@ const Navbar: FC = () => {
                       pathname === link &&
                         (pathname === routes.homepage.link
                           ? "navbar-btn-gradient-dark"
-                          : "navbar-btn-gradient-lite"),
+                          : ""),
                       "block navbar-btn-gradient absolute w-full h-1/2 bottom-0 left-0 z-[1]"
                     )}
                   />
 
                   <span
                     className={cn(
-                      "text-white text-sm font-normal !leading-[1.4] relative z-[2] font-inter"
+                      "text-sm font-normal !leading-[1.4] relative z-[2] font-inter",
+                      pathname === routes.homepage.link
+                        ? "text-white"
+                        : "text-white lg:text-black",
+                      pathname === link &&
+                        (pathname === routes.homepage.link
+                          ? ""
+                          : "font-semibold")
                     )}
                   >
                     {name}
@@ -69,7 +81,11 @@ const Navbar: FC = () => {
                   {megaMenu && (
                     <PlusRoundedSecondaryIcon
                       className="!h-5 !w-5 !shrink-0 transition_common group-hover:rotate-180 relative z-[3]"
-                      color={colors.white}
+                      color={
+                        pathname === routes.homepage.link
+                          ? colors.white
+                          : colors.black
+                      }
                     />
                   )}
                 </Link>
@@ -123,7 +139,7 @@ const Navbar: FC = () => {
         {/* MOBILE MENU */}
         <GradientButton
           className={cn("bg-black flex_center gap-2 group ps-[10px] md:px-3")}
-          containerClassName="block min-[1160px]:hidden"
+          containerClassName="block lg:hidden"
           onClick={() => setIsSheetOpen(true)}
         >
           <MenuIcon className="!h-5 !w-5 !shrink-0" />

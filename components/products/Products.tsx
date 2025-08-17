@@ -29,13 +29,13 @@ const Products = () => {
           )}
         </div>
 
-        <ArrowLineupButton
+        {/* <ArrowLineupButton
           lineColor={colors.secondary[300]}
           textClassName="text-white"
           className="mt-10 md:mt-20"
         >
           See all products
-        </ArrowLineupButton>
+        </ArrowLineupButton> */}
       </div>
     </section>
   );

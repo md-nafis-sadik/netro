@@ -5,12 +5,33 @@ import useEmblaCarousel from "embla-carousel-react";
 import { images } from "@/services";
 import SectionHeader from "../common/SectionHeader";
 import Autoplay from "embla-carousel-autoplay";
+import { useRef } from "react";
 
 const ServicesHome = () => {
-  const options = { align: "start", loop: false } as const;
-  const [emblaRef] = useEmblaCarousel(options, [
-    Autoplay({ delay: 3000, stopOnInteraction: false }),
-  ]);
+  const autoplay = useRef<ReturnType<typeof Autoplay> | null>(null);
+
+  if (!autoplay.current) {
+    autoplay.current = Autoplay({
+      delay: 3000,
+      stopOnInteraction: false,
+      playOnInit: false,
+    });
+  }
+
+  const [emblaRef, emblaApi] = useEmblaCarousel(
+    { align: "start", loop: false },
+    [autoplay.current]
+  );
+
+  const handleMouseEnter = () => {
+    if (autoplay.current) {
+      autoplay.current.play();
+    }
+  };
+
+  const handleMouseLeave = () => {
+    if (autoplay.current) autoplay.current.stop();
+  };
 
   return (
     <section className="flex_center flex-col mt-20 mb-[120px] overflow-hidden">
@@ -20,7 +41,12 @@ const ServicesHome = () => {
       </SectionHeader>
 
       <div className="containerX w-full mt-5 md:mt-10">
-        <div className="w-full" ref={emblaRef}>
+        <div
+          className="w-full"
+          ref={emblaRef}
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+        >
           <div className="w-full min-h-fit flex flex-row gap-6 md:gap-10 py-5 md:py-10 pe-4 md:pe-20">
             {/* Why noot looping this? -> Each image has different width */}
             <ServiceHomeCard

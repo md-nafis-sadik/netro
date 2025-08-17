@@ -1,4 +1,6 @@
+import Image from "next/image";
 import PageThumbnail from "../shared/PageThumbnail";
+import { images } from "@/services";
 
 const HeroAbout = () => {
   const url = "/videos/netro-video.mp4";
@@ -11,7 +13,7 @@ const HeroAbout = () => {
         titleClassName="about_us_othe_story w-fit"
       />
 
-      <div className="min-h-full min-w-full overflow-hidden">
+      {/* <div className="min-h-full min-w-full overflow-hidden">
         <video
           src={url}
           controls={false}
@@ -21,6 +23,15 @@ const HeroAbout = () => {
           loop
           height="100%"
           width="100%"
+        />
+      </div> */}
+      <div className="containerX">
+        <Image
+          src={images.officeImage2}
+          alt="about netro"
+          width={1280}
+          height={1280}
+          className="min-h-full h-full min-w-full w-auto object-cover"
         />
       </div>
     </section>
