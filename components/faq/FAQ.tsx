@@ -29,7 +29,7 @@ const FAQ = () => {
             <AccordionItem key={index} value={`item-${index}`}>
               <AccordionTrigger
                 className={cn(
-                  "text-sm md:text-xl font-medium md:font-bold text-white !leading-[1.4] md:!leading-[1.1] text-start font-inter"
+                  "text-sm md:text-xl text-white !leading-[1.4] md:!leading-[1.1] text-start font-inter data-[state=open]:font-bold"
                 )}
               >
                 {question}
