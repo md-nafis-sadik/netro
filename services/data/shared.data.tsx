@@ -162,7 +162,10 @@ export const footerData = {
       // { text: "Tools & Templates", href: "/resources/tools" },
       // { text: "Webinars / Workshops", href: "/resources/webinars" },
       // { text: "FAQs", href: "/faqs" },
-      { text: "Company Portfolio", href: "https://drive.google.com/file/d/13U3baPQyC8cg2tJdKEh5E43Alw23IHVH/view?usp=sharing" },
+      {
+        text: "Company Portfolio",
+        href: "https://drive.google.com/file/d/13U3baPQyC8cg2tJdKEh5E43Alw23IHVH/view?usp=sharing",
+      },
       // { text: "Brand Guideline", href: "/brand-guideline" },
     ],
   },
@@ -207,7 +210,7 @@ export const footerData = {
           className="h-5 w-5 md:h-6 md:w-6 text-black group-hover:text-white"
         />
       ),
-    },     
+    },
     {
       platform: "behance",
       href: "https://www.behance.net/netrosystems",
@@ -225,7 +228,7 @@ export const footerData = {
         <TwitterIcon className="h-5 w-5 md:h-6 md:w-6 text-black group-hover:text-white" />
       ),
     },
-    
+
     {
       platform: "instagram",
       href: "https://www.instagram.com/netrosystems",
@@ -246,7 +249,7 @@ export const footerData = {
         />
       ),
     },
-    
+
     // {
     //   platform: "telegram",
     //   href: "#",
@@ -277,8 +280,6 @@ export const footerData = {
         />
       ),
     },
-
-    
   ],
   actions: [{ text: "Go To Top", href: "#top" }],
 };

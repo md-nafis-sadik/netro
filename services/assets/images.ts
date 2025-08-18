@@ -97,8 +97,6 @@ export { default as jazakallahTop } from "@/public/images/product-details/jazaka
 export { default as jazakallahPreview1 } from "@/public/images/product-details/jazakallah/preview-1.webp";
 export { default as jazakallahPreview2 } from "@/public/images/product-details/jazakallah/preview-2.webp";
 export { default as jazakallahPreview3 } from "@/public/images/product-details/jazakallah/preview-3.webp";
-export { default as jazakallahPreview4 } from "@/public/images/product-details/jazakallah/preview-4.webp";
-export { default as jazakallahPreview5 } from "@/public/images/product-details/jazakallah/preview-5.webp";
 export { default as telzenTop } from "@/public/images/product-details/telzen/top.webp";
 export { default as telzenPreview1 } from "@/public/images/product-details/telzen/preview-1.webp";
 export { default as telzenPreview2 } from "@/public/images/product-details/telzen/preview-2.webp";
@@ -135,6 +133,7 @@ export { default as kiddzLearnPreview5 } from "@/public/images/product-details/k
 export { default as eventusTop } from "@/public/images/product-details/eventus/top.webp";
 export { default as eventusPreview1 } from "@/public/images/product-details/eventus/preview-1.webp";
 export { default as eventusPreview2 } from "@/public/images/product-details/eventus/preview-2.webp";
+export { default as eventusPreview3 } from "@/public/images/product-details/eventus/preview-3.webp";
 export { default as proAITop } from "@/public/images/product-details/pro-ai/top.webp";
 export { default as proAIPreview1 } from "@/public/images/product-details/pro-ai/preview-1.webp";
 export { default as proAIPreview2 } from "@/public/images/product-details/pro-ai/preview-2.webp";

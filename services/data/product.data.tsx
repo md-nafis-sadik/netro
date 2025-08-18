@@ -2,7 +2,7 @@ import { images } from "@/services";
 import { download } from "../assets/images";
 
 export const productDetailssData: Record<string, any> = {
-  "telzen": {
+  telzen: {
     title: "Telzen- Enhancing the Telecom Experience",
     shortDescription:
       "Telzen, a next-generation telecom app, was designed with the user in mind, focusing exclusively on delivering a seamless, modern, and intuitive design.",
@@ -34,7 +34,7 @@ export const productDetailssData: Record<string, any> = {
       ],
     },
   },
-  "jazakallah": {
+  jazakallah: {
     title: "Jazakallah - The Complete Islamic App",
     shortDescription:
       "Jazakallah is a complete Islamic app with prayer times, Quran, duas, and tools to support your faith and daily worship.",
@@ -66,8 +66,6 @@ export const productDetailssData: Record<string, any> = {
         { featuredImage: images.jazakallahPreview1 },
         { featuredImage: images.jazakallahPreview2 },
         { featuredImage: images.jazakallahPreview3 },
-        { featuredImage: images.jazakallahPreview4 },
-        { featuredImage: images.jazakallahPreview5 },
       ],
     },
     auth: {
@@ -273,7 +271,7 @@ export const productDetailssData: Record<string, any> = {
       "https://codecanyon.net/item/prochat-the-ultimate-ai-assistant/44970962",
     // adminPanelLink: "https://jazakallah-demo.products8.net/",
   },
-  "eventus": {
+  eventus: {
     title: "Eventus-  Events Booking Platform",
     shortDescription:
       "Eventus is an easy-to-use platform to discover, plan, and book events effortlessly, offering personalized recommendations, secure payments, and seamless organization for every occasion.",
@@ -299,6 +297,7 @@ export const productDetailssData: Record<string, any> = {
       data: [
         { featuredImage: images.eventusPreview1 },
         { featuredImage: images.eventusPreview2 },
+        { featuredImage: images.eventusPreview3 },
       ],
     },
     // auth: {
