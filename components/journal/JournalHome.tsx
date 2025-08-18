@@ -44,7 +44,7 @@ const OurJournal = ({ data }: any) => {
             className="mt-10 md:mt-20"
             href={routes.journal.link}
           >
-            See all products
+            See all journals
           </ArrowLineupButton>
         </div>
       </div>
