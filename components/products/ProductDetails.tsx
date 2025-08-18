@@ -17,6 +17,8 @@ function ProductDetails({
   imageIndex: number;
   data: any;
 }) {
+  console.log("liveLink:", data.liveLink);
+
   return (
     <section className="pb-10 sm:pb-16 md:pb-20 lg:pb-30 ">
       <div className="containerX">
@@ -195,7 +197,7 @@ function ProductDetails({
                   </span>
                 </li>
               </ul> */}
-              {(data.price || data.downloadAppLink || data.adminPanelLink) && (
+              {(data.price || data.downloadAppLink || data.adminPanelLink || data.liveLink) && (
                 <div className="flex flex-col items-center gap-2">
                   {data.price && (
                     <h3 className="flex items-center gap-3 titleMd">
@@ -207,8 +209,8 @@ function ProductDetails({
                   )}
 
                   {data.downloadAppLink && (
-                    <Link href={data.downloadAppLink} className="w-full">
-                      <Button className="w-full group mt-12">
+                    <Link href={data.downloadAppLink} className="w-full" passHref target="_blank" rel="noopener noreferrer">
+                      <Button className="w-full group mt-8 md:mt-12">
                         <Image
                           src={images.download}
                           alt="Download"
@@ -222,11 +224,20 @@ function ProductDetails({
                       </Button>
                     </Link>
                   )}
+                  {data.liveLink && (
+                    <Link href={data.liveLink} className="w-full" passHref target="_blank" rel="noopener noreferrer">
+                      <Button className="w-full group mt-8 md:mt-12">
+                        <p className="text-sm md:text-lg font-inter font-normal text-white leading-[110%]">
+                          Live <span className="font-bold">Preview</span>
+                        </p>
+                      </Button>
+                    </Link>
+                  )}
                   {data.adminPanelLink && (
                     <Link
                       href={data.adminPanelLink}
                       className="relative inline-block rounded-full p-[1px] hover:-translate-y-[2px] transition-all duration-300 bg-gradient-to-r from-[#483BDC] via-[#FFA8A9] to-[#82D3A4] w-full mt-1"
-                    >
+                     passHref target="_blank" rel="noopener noreferrer">
                       <span className="block text-center rounded-full text-sm md:text-lg bg-white px-6 py-4 text-gray-800 hover:bg-gray-50">
                         TRY ADMIN PANEL
                       </span>

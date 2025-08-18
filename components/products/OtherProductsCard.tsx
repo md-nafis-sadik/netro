@@ -12,7 +12,7 @@ const OtherProductCard = ({ item }: IFProductCardProps) => {
   return (
     <div
       className={cn(
-        "w-full h-[410px] max-h-[410px] md:h-[590px] md:max-h-[590px] lg:h-[610px] lg:max-h-[610px] min-w-[410px] sm:min-w-[410px] md:min-w-[610px] overflow-hidden bg-text-700 group transition_common relative"
+        "w-full h-[320px] max-h-[320px] md:h-[590px] md:max-h-[590px] lg:h-[610px] lg:max-h-[610px] min-w-[320px] sm:min-w-[410px] md:min-w-[610px] overflow-hidden bg-text-700 group transition_common relative"
       )}
     >
       <Image

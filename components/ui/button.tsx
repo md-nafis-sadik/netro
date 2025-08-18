@@ -14,7 +14,7 @@ const buttonVariants = cva(
         outlined: "bg-transparent border border-[#242424]",
       },
       size: {
-        default: "px-4 md:px-6 py-2 md:py-3",
+        default: "px-4 md:px-6 py-3",
         sm: "px-4 px-2",
         lg: "px-6 py-4",
         icon: "h-10 w-10",

@@ -117,7 +117,7 @@ export const productDetailssData: Record<string, any> = {
     //   password: "12345678",
     // },
     downloadAppLink:
-      "https://play.google.com/store/apps/details?id=com.netrocreative.qurioapp&pcampaignid=web_share",
+      "https://play.google.com/store/apps/details?id=com.smartpathshala.teacher&hl=en",
     // adminPanelLink: "https://jazakallah-demo.products8.net/",
   },
   "rimozen-ai": {
@@ -156,7 +156,7 @@ export const productDetailssData: Record<string, any> = {
     //   password: "12345678",
     // },
     downloadAppLink:
-      "https://play.google.com/store/apps/details?id=com.netrocreative.geniepers&pcampaignid=web_share",
+      "https://play.google.com/store/apps/details?id=com.netrosystems.rimozen&hl=en",
     // adminPanelLink: "https://jazakallah-demo.products8.net/",
   },
   "dokani-erp": {
@@ -192,8 +192,8 @@ export const productDetailssData: Record<string, any> = {
     //   email: "test@netrocreative.com",
     //   password: "12345678",
     // },
-    downloadAppLink:
-      "https://codecanyon.net/item/prochat-the-ultimate-ai-assistant/44970962",
+    // downloadAppLink:
+    //   "https://codecanyon.net/item/prochat-the-ultimate-ai-assistant/44970962",
     // adminPanelLink: "https://jazakallah-demo.products8.net/",
   },
   "kids-ai": {
@@ -230,8 +230,8 @@ export const productDetailssData: Record<string, any> = {
     //   email: "test@netrocreative.com",
     //   password: "12345678",
     // },
-    downloadAppLink:
-      "https://codecanyon.net/item/prochat-the-ultimate-ai-assistant/44970962",
+    // downloadAppLink:
+    //   "https://codecanyon.net/item/prochat-the-ultimate-ai-assistant/44970962",
     // adminPanelLink: "https://jazakallah-demo.products8.net/",
   },
   "kiddz-learn": {
@@ -268,7 +268,7 @@ export const productDetailssData: Record<string, any> = {
     //   password: "12345678",
     // },
     downloadAppLink:
-      "https://codecanyon.net/item/prochat-the-ultimate-ai-assistant/44970962",
+      "https://play.google.com/store/apps/details?id=com.netrocreative.qurioapp&pcampaignid=web_share",
     // adminPanelLink: "https://jazakallah-demo.products8.net/",
   },
   eventus: {
@@ -304,9 +304,10 @@ export const productDetailssData: Record<string, any> = {
     //   email: "test@netrocreative.com",
     //   password: "12345678",
     // },
-    downloadAppLink:
-      "https://codecanyon.net/item/prochat-the-ultimate-ai-assistant/44970962",
+    // downloadAppLink:
+    //   "https://codecanyon.net/item/prochat-the-ultimate-ai-assistant/44970962",
     // adminPanelLink: "https://jazakallah-demo.products8.net/",
+    liveLink: "https://dribbble.com/shots/26367536-Eventus-Streamlined-Event-Booking-Website-UI-UX"
   },
   "pro-ai": {
     title: "Pro AI- Perfect Writing, Smart Guidance",
@@ -343,7 +344,7 @@ export const productDetailssData: Record<string, any> = {
     //   password: "12345678",
     // },
     downloadAppLink:
-      "https://codecanyon.net/item/prochat-the-ultimate-ai-assistant/44970962",
+      "https://play.google.com/store/apps/details?id=com.netrosystemsltd.proai&hl=en",
     // adminPanelLink: "https://jazakallah-demo.products8.net/",
   },
 };
