@@ -33,14 +33,14 @@ function ContactUsDetails() {
               Phone
             </p>
             <p className="text-sm sm:text-base text-text-100 font-semibold leading-[22px] mt-2">
-              +88 01234567890
+              +880 1724244796
             </p>
-            <a href="#" className="flex items-center gap-2 group mt-6">
+            {/* <a href="#" className="flex items-center gap-2 group mt-6">
               <div className="bg-gradientGreen w-9 h-[1px] rounded-full"></div>
               <span className="text-white text-base font-bold group-hover:translate-x-1 duration-300">
                 See map
               </span>
-            </a>
+            </a> */}
           </div>
         </div>
         <div className="flex items-start gap-6 sm:gap-8 md:gap-10 w-full">
@@ -74,12 +74,12 @@ function ContactUsDetails() {
             <p className="text-sm sm:text-base text-text-100 font-semibold leading-[22px] mt-2">
               +44 7360251473
             </p>
-            <a href="#" className="flex items-center gap-2 group mt-6">
+            {/* <a href="#" className="flex items-center gap-2 group mt-6">
               <div className="bg-gradientGreen w-9 h-[1px] rounded-full"></div>
               <span className="text-white text-base font-bold group-hover:translate-x-1 duration-300">
                 See map
               </span>
-            </a>
+            </a> */}
           </div>
         </div>
       </div>

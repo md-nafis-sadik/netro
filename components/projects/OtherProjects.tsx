@@ -15,7 +15,7 @@ function OtherProjects() {
               <ProjectCard
                 key={index}
                 item={item}
-                className="relative bg-transparent min-w-[280px] sm:min-w-[400px] md:min-w-[522px]"
+                className="stacked-card sticky left-0 top-0 mb-40 lg:aspect-[21/9]"
                 showBottom={true}
               />
             ))}

@@ -22,7 +22,7 @@ const ProjectCard = ({
   return (
     <div
       className={cn(
-        "w-full h-[728px] max-h-[728px] md:h-[500px] md:max-h-[640px] lg:h-auto lg:aspect-[31/18] overflow-hidden bg-text-700 group transition_common",
+        "w-full aspect-[9/14] lg:aspect-[31/18] overflow-hidden bg-text-700 group transition_common",
         className
       )}
       style={style}

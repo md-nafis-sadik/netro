@@ -95,7 +95,7 @@ const ProjectsDetailsPreview = ({ project }: any) => {
           {project?.data?.projectImages?.map((item: any, index: number) => (
             <ProjectCard
               className={cn(
-                "!w-[90%] 2xl:!w-[1440px] min-[1620px]:!w-full stacked-card sticky left-0 top-0 mb-80"
+                "stacked-card sticky left-0 top-0 mb-40 lg:aspect-[21/9]"
               )}
               style={{
                 pointerEvents: activeIndex === index ? "auto" : "none",

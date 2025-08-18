@@ -112,7 +112,7 @@ const ProjectsHome = ({ data, type }: ProjectsHomeProps) => {
           {data?.data?.slice(0, 5).map((item: any, index: number) => (
             <ProjectCard
               className={cn(
-                "stacked-card sticky left-0 top-0 mb-80"
+                "stacked-card sticky left-0 top-0 mb-80 lg:aspect-[21/9]"
               )}
               style={{
                 pointerEvents: activeIndex === index ? "auto" : "none",
