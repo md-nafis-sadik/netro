@@ -3,8 +3,8 @@ import Image from "next/image";
 
 function ContactUsDetails() {
   return (
-    <section className="px-4 sm:px-10 md:px-16 lg:px-20 py-10 sm:py-12 md:py-15 bg-black">
-      <div className="grid md:grid-cols-2 gap-10 sm:gap-16 md:gap-20 break-all">
+    <section className="py-10 sm:py-12 md:py-15 bg-black">
+      <div className="containerX grid md:grid-cols-2 gap-10 sm:gap-16 md:gap-20 break-all">
         <div className="flex items-start gap-6 sm:gap-8 md:gap-10 w-full">
           <Image
             src={images.contact}
