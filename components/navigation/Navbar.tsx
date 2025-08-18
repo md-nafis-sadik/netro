@@ -21,13 +21,14 @@ const Navbar: FC = () => {
 
   const [isSheetOpen, setIsSheetOpen] = useState(false);
   const [megamenuOpening, setMegamenuOpening] = useState(false);
+  const [mobileMegaIndex, setMobileMegaIndex] = useState<number | null>(null);
 
   return (
     <nav
       className={cn(
         pathname === routes.homepage.link
           ? "border-[#393939] bg-black/20"
-          : "bg-black lg:bg-neutral-300",
+          : "bg-neutral-300",
         "fixed top-0 w-full z-50"
       )}
     >
@@ -36,7 +37,7 @@ const Navbar: FC = () => {
           <AppLogoIcon
             className={cn(
               "h-5 lg:h-7 w-auto",
-              pathname === routes.homepage.link ? "text-white" : "text-white lg:text-black"
+              pathname === routes.homepage.link ? "text-white" : "text-black"
             )}
           />
         </Link>
@@ -69,7 +70,7 @@ const Navbar: FC = () => {
                       "text-sm font-normal !leading-[1.4] relative z-[2] font-inter",
                       pathname === routes.homepage.link
                         ? "text-white"
-                        : "text-white lg:text-black",
+                        : "text-black",
                       pathname === link &&
                         (pathname === routes.homepage.link
                           ? ""
@@ -138,17 +139,28 @@ const Navbar: FC = () => {
 
         {/* MOBILE MENU */}
         <GradientButton
-          className={cn("bg-black flex_center gap-2 group ps-[10px] md:px-3")}
+          className={cn(
+            " flex_center gap-2 group ps-[10px] md:px-3",
+            pathname === routes.homepage.link
+              ? "bg-black"
+              : "!bg-neutral-300 !text-black"
+          )}
           containerClassName="block lg:hidden"
           onClick={() => setIsSheetOpen(true)}
         >
-          <MenuIcon className="!h-5 !w-5 !shrink-0" />
+          <MenuIcon
+            className={cn(
+              "!h-5 !w-5 !shrink-0 transition-colors",
+              pathname === routes.homepage.link ? "text-white" : "text-black",
+              "group-hover:text-white"
+            )}
+          />
           <span
             className={cn(
               pathname === routes.homepage.link
                 ? "text-white"
                 : "text-text-900",
-              "font-scoutcond text-lg font-bold text-white uppercase !leading-[0.9] group-hover:text-white transition_common"
+              "font-scoutcond text-lg font-bold uppercase !leading-[0.9] group-hover:text-white transition_common"
             )}
           >
             Menu
@@ -158,9 +170,12 @@ const Navbar: FC = () => {
       </div>
 
       <NavigationSheet
+        isHomapage={pathname === routes.homepage.link}
         isSheetOpen={isSheetOpen}
         closeSheet={() => setIsSheetOpen(false)}
         pathname={pathname}
+        mobileMegaIndex={mobileMegaIndex}
+        setMobileMegaIndex={setMobileMegaIndex}
       />
     </nav>
   );

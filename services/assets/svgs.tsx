@@ -835,11 +835,7 @@ export const LineIcon = ({
 
 // M
 
-export const MenuIcon = ({
-  className,
-  color = "#ffffff",
-  ...props
-}: IFSvgProps) => (
+export const MenuIcon = ({ className, ...props }: IFSvgProps) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="17"
@@ -851,7 +847,7 @@ export const MenuIcon = ({
   >
     <path
       d="M1.71429 9.33333V10.6667H15.0476V9.33333H1.71429ZM1.71429 4.88889V6.22222H15.0476V4.88889H1.71429Z"
-      fill={color}
+      fill="currentColor"
     />
   </svg>
 );
