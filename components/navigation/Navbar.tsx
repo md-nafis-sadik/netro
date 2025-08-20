@@ -27,8 +27,8 @@ const Navbar: FC = () => {
     <nav
       className={cn(
         pathname === routes.homepage.link
-          ? "border-[#393939]"
-          : "bg-black/20",
+          ? "border-[#393939] bg-black/20"
+          : "bg-black/15",
         "fixed top-0 w-full z-50"
       )}
     >
