@@ -14,20 +14,23 @@ import { usePathname, useRouter } from "next/navigation";
 import { FC, useState } from "react";
 import NavigationSheet from "./NavigationSheet";
 import DropupNavigationMenu from "./DropUpNavigationMenu";
+import { useNavbarColorDetection } from "@/hooks/useNavbarColorDetection";
 
 const Navbar: FC = () => {
   const pathname = usePathname();
   const router = useRouter();
+  const isDarkBackground = useNavbarColorDetection(pathname);
 
   const [isSheetOpen, setIsSheetOpen] = useState(false);
   const [megamenuOpening, setMegamenuOpening] = useState(false);
   const [mobileMegaIndex, setMobileMegaIndex] = useState<number | null>(null);
+  const isLightText = isDarkBackground;
 
   return (
     <nav
       className={cn(
         pathname === routes.homepage.link
-          ? "border-[#393939] bg-black/20"
+          ? "border-[#393939]"
           : "bg-black/15",
         "fixed top-0 w-full z-50"
       )}
@@ -36,8 +39,8 @@ const Navbar: FC = () => {
         <Link href={routes.homepage.link} className="h-fit">
           <AppLogoIcon
             className={cn(
-              "h-5 lg:h-7 w-auto",
-              pathname === routes.homepage.link ? "text-white" : "text-black"
+              "h-5 lg:h-7 w-auto transition-colors duration-300",
+              isLightText && pathname === routes.homepage.link ? "text-white" : "text-black"
             )}
           />
         </Link>
@@ -58,35 +61,26 @@ const Navbar: FC = () => {
                   <span
                     className={cn(
                       pathname === link &&
-                        (pathname === routes.homepage.link
-                          ? "navbar-btn-gradient-dark"
-                          : ""),
-                      "block navbar-btn-gradient absolute w-full h-1/2 bottom-0 left-0 z-[1]"
+                      (isLightText && pathname === routes.homepage.link
+                        ? "navbar-btn-gradient-dark"
+                        : "navbar-btn-gradient"),
+                      "block absolute w-full h-1/2 bottom-0 left-0 z-[1] transition-opacity duration-300"
                     )}
                   />
 
                   <span
                     className={cn(
-                      "text-sm font-normal !leading-[1.4] relative z-[2] font-inter",
-                      pathname === routes.homepage.link
-                        ? "text-white"
-                        : "text-black",
-                      pathname === link &&
-                        (pathname === routes.homepage.link
-                          ? ""
-                          : "font-semibold")
+                      "text-sm font-normal !leading-[1.4] relative z-[2] font-inter transition-colors duration-300",
+                      isLightText && pathname === routes.homepage.link ? "text-white" : "text-black",
+                      pathname.startsWith(link) && (pathname === routes.homepage.link ? "" : "font-semibold")
                     )}
                   >
                     {name}
                   </span>
                   {megaMenu && (
                     <PlusRoundedSecondaryIcon
-                      className="!h-5 !w-5 !shrink-0 transition_common group-hover:rotate-180 relative z-[3]"
-                      color={
-                        pathname === routes.homepage.link
-                          ? colors.white
-                          : colors.black
-                      }
+                      className="!h-5 !w-5 !shrink-0 transition-all duration-300 group-hover:rotate-180 relative z-[3]"
+                      color={isLightText && pathname === routes.homepage.link ? colors.white : colors.black}
                     />
                   )}
                 </Link>
@@ -94,9 +88,7 @@ const Navbar: FC = () => {
                   <Dividericon
                     className="w-[7px] h-7"
                     color={
-                      pathname === routes.homepage.link
-                        ? colors.natural[900]
-                        : colors.natural[200]
+                      colors.natural[900]
                     }
                   />
                 )}
@@ -141,26 +133,19 @@ const Navbar: FC = () => {
         <GradientButton
           className={cn(
             " flex_center gap-2 group ps-[10px] md:px-3",
-            pathname === routes.homepage.link
-              ? "bg-black"
-              : "!bg-neutral-300 !text-black"
+            "bg-black"
           )}
           containerClassName="block lg:hidden"
           onClick={() => setIsSheetOpen(true)}
         >
           <MenuIcon
             className={cn(
-              "!h-5 !w-5 !shrink-0 transition-colors",
-              pathname === routes.homepage.link ? "text-white" : "text-black",
-              "group-hover:text-white"
+              "!h-5 !w-5 !shrink-0 transition-colors text-white group-hover:text-white"
             )}
           />
           <span
             className={cn(
-              pathname === routes.homepage.link
-                ? "text-white"
-                : "text-text-900",
-              "font-scoutcond text-lg font-bold uppercase !leading-[0.9] group-hover:text-white transition_common"
+              "text-white font-scoutcond text-lg font-bold uppercase !leading-[0.9] group-hover:text-white transition_common"
             )}
           >
             Menu

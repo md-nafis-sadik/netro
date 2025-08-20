@@ -40,7 +40,7 @@ const NavigationSheet: FC<IFNavigationSheetProps> = ({
     <Sheet open={isSheetOpen} onOpenChange={closeSheet}>
       <SheetContent
         showCrossIcon={false}
-        className={`select-none ${isHomapage ? "bg-black" : "bg-neutral-300"}`}
+        className={`select-none bg-black`}
       >
         <SheetHeader className="hidden" />
 
@@ -48,8 +48,7 @@ const NavigationSheet: FC<IFNavigationSheetProps> = ({
         <div className="flex_center justify-end py-3 px-6 border-b border-dashed border-[#303030]">
           <GradientButton
             className={cn(
-              "flex_center gap-2 group",
-              isHomapage ? "bg-black" : "bg-neutral-300"
+              "flex_center gap-2 group bg-black"
             )}
             containerClassName="block w-fit"
             nonGradient
@@ -81,20 +80,17 @@ const NavigationSheet: FC<IFNavigationSheetProps> = ({
               >
                 <span
                   className={cn(
-                    pathname === link &&
-                      (pathname === routes.homepage.link
-                        ? "navbar-btn-gradient-dark"
-                        : "navbar-btn-gradient-lite"),
+                    pathname.startsWith(link) &&
+                    (pathname === routes.homepage.link
+                      ? "navbar-btn-gradient-dark"
+                      : "navbar-btn-gradient-lite"),
                     "block navbar-btn-gradient absolute w-full h-1/2 bottom-0 left-1/2 -translate-x-1/2 z-[1]"
                   )}
                 />
 
                 <span
                   className={cn(
-                    pathname === routes.homepage.link
-                      ? "font-bold text-white"
-                      : "font-normal text-black",
-                    " text-[28px] !leading-[1.2] relative z-[2] font-scoutcond uppercase"
+                    "font-bold text-white text-[28px] !leading-[1.2] relative z-[2] font-scoutcond uppercase"
                   )}
                 >
                   {name}
@@ -106,9 +102,8 @@ const NavigationSheet: FC<IFNavigationSheetProps> = ({
                       "!h-5 !w-5 !shrink-0 transition_common group-hover:rotate-180 relative z-[3]"
                     )}
                     color={
-                      pathname === routes.homepage.link
-                        ? colors.white
-                        : colors.black
+                      colors.white
+
                     }
                   />
                 )}
@@ -129,10 +124,10 @@ const NavigationSheet: FC<IFNavigationSheetProps> = ({
                     href={link} // the main /services route
                     onClick={closeSheet}
                     className={cn(
-                      "py-2 text-lg w-full text-center transition",
-                      pathname === routes.homepage.link
-                        ? "font-bold text-white"
-                        : "font-normal text-black"
+                      "py-2 text-lg w-full text-center transitionfont-bold text-white",
+                      pathname === link
+                        ? "font-bold"
+                        : "font-normal"
                     )}
                   >
                     All Services
@@ -143,10 +138,10 @@ const NavigationSheet: FC<IFNavigationSheetProps> = ({
                       href={item.link}
                       onClick={closeSheet}
                       className={cn(
-                        "py-2 text-lg w-full text-center transition",
-                        pathname === routes.homepage.link
-                          ? "font-bold text-white"
-                          : "font-normal text-black"
+                        "py-2 text-lg w-full text-center transition text-white",
+                        pathname.startsWith(item.link)
+                          ? "font-bold"
+                          : "font-normal"
                       )}
                     >
                       {item.name}
