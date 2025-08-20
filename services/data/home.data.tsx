@@ -142,21 +142,21 @@ export const productsData = [
     description:
       "From the religion responsibility we have created a solution that automates and makes easier to manage your Mosque. It also comes with a complete user app for practitioners.",
     url: "https://codecanyon.net/item/jazakallah-tasbih-counter-app/44905917",
-    detailsUrl: "/products/jazakallah",
+    detailsUrl: "https://jazakallah.org",
   },
   {
     id: "04",
-    image: images.product5,
+    image: images.product4,
     otherImage: images.smartPathshalaPreview1,
     title: "Smart pathshala",
     description:
       "Smart Pathshala is one of the apps that made by the brilliant people with ability to automate the educational Institute. Ask your Institute admin for onboarding!",
     url: "https://play.google.com/store/apps/details?id=com.netrocreative.qurioapp&pcampaignid=web_share",
-    detailsUrl: "/products/smart-pathshala",
+    detailsUrl: "https://smartpathshalabd.com",
   },
   {
     id: "05",
-    image: images.product4,
+    image: images.product5,
     otherImage: images.rimozenAIPreview1,
     title: "Rimozen AI",
     description:

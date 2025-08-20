@@ -13,9 +13,10 @@ gsap.registerPlugin(ScrollTrigger);
 type ProjectsHomeProps = {
   data: any;
   type?: string; // optional
+  linkCondition?: string;
 };
 
-const ProjectsHome = ({ data, type }: ProjectsHomeProps) => {
+const ProjectsHome = ({ data, type, linkCondition }: ProjectsHomeProps) => {
   const cardsRef = useRef<HTMLDivElement | null>(null);
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -119,6 +120,7 @@ const ProjectsHome = ({ data, type }: ProjectsHomeProps) => {
               }}
               item={item}
               key={index}
+              linkCondition={linkCondition}
             />
           ))}
         </div>

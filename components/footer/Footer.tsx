@@ -142,6 +142,8 @@ const Footer = () => {
                 <li key={index}>
                   <Link
                     href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className={cn(
                       "footer_el_text block mb-2 text-center sm:text-start font-inter hover:text-main-500 transition_common"
                     )}

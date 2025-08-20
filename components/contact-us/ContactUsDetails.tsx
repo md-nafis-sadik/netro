@@ -7,7 +7,7 @@ function ContactUsDetails() {
       <div className="containerX grid md:grid-cols-2 gap-10 sm:gap-16 md:gap-20 break-all">
         <div className="flex items-start gap-6 sm:gap-8 md:gap-10 w-full">
           <Image
-            src={images.contact}
+            src={images.contactv2}
             className="w-full max-w-28 sm:max-w-40 md:max-w-48 lg:max-w-56 max-h-28 sm:max-h-40 md:max-h-96 object-cover"
             width={300}
             height={300}

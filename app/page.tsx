@@ -1,6 +1,5 @@
 import { Suspense } from "react";
 import FAQ from "@/components/faq/FAQ";
-import Team from "@/components/team/Team";
 import Products from "@/components/products/Products";
 import HeroHome from "@/components/hero/HeroHome";
 import ServicesHome from "@/components/services/ServicesHome";
@@ -13,6 +12,7 @@ import JournalHomeWrapper from "@/components/journal/JournalHomeWrapper";
 import TestimonialWrapper from "@/components/testimonial/TestimonialWrapper";
 import TestimonialSkeleton from "@/components/testimonial/TestimonialSkeleton";
 import IntroWithMarqueeHome from "@/components/intro/IntroWithMarqueeHome";
+import TeamHomeWrapper from "@/components/team/TeamHomeWrapper";
 
 const HomePage = () => {
   return (
@@ -38,7 +38,15 @@ const HomePage = () => {
         <TestimonialWrapper />
       </Suspense>
       <StatisticsHome />
-      <Team />
+      <Suspense
+        fallback={
+          <div className="h-screen flex items-center justify-center">
+            Loading projects...
+          </div>
+        }
+      >
+        <TeamHomeWrapper />
+      </Suspense>
       <FAQ />
       <Suspense fallback={<JournalHomeSkeleton />}>
         <JournalHomeWrapper />

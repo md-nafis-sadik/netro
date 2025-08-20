@@ -1,8 +1,10 @@
+"use client"
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { ArrowLongTailIcon } from "@/services/assets/svgs";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const ProjectCard = ({
   item,
@@ -11,6 +13,7 @@ const ProjectCard = ({
   showBottom = false,
   style = {},
   leftSlideClass = "",
+  linkCondition,
 }: {
   item: any;
   className?: string;
@@ -18,12 +21,19 @@ const ProjectCard = ({
   showBottom?: boolean;
   style?: React.CSSProperties;
   leftSlideClass?: string;
+  linkCondition?: string;
 }) => {
+  const router = useRouter();
+
+  const isLink = linkCondition === "portfolio";
+
   return (
     <div
+    onClick={isLink ? () => router.push(`/portfolio/${item?.title}`) : undefined}
       className={cn(
         "w-full aspect-[82/115] lg:aspect-[31/18] overflow-hidden bg-text-700 group transition_common",
-        className
+        className,
+        isLink ? "cursor-pointer" : ""
       )}
       style={style}
     >
