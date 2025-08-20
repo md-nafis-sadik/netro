@@ -12,7 +12,7 @@ const OtherProductCard = ({ item }: IFProductCardProps) => {
   return (
     <div
       className={cn(
-        "w-full h-[320px] max-h-[320px] md:h-[590px] md:max-h-[590px] lg:h-[610px] lg:max-h-[610px] min-w-[320px] sm:min-w-[410px] md:min-w-[610px] overflow-hidden bg-text-700 group transition_common relative"
+        "w-full min-w-[90%] md:min-w-[621px] aspect-[31/18]  overflow-hidden bg-text-700 group transition_common relative"
       )}
     >
       <Image
@@ -35,7 +35,7 @@ const OtherProductCard = ({ item }: IFProductCardProps) => {
                 {item?.title}
               </p>
 
-              <p className="text-sm sm:text-base font-normal !leading-[1.4] text-text-200 mt-2 font-inter line-clamp-5">
+              <p className="text-xs sm:text-base font-normal !leading-[1.4] text-text-200 mt-2 font-inter line-clamp-5">
                 {item?.metaDescription}
               </p>
             </div>
@@ -50,7 +50,7 @@ const OtherProductCard = ({ item }: IFProductCardProps) => {
 
               <Link href={item?.url}>
                 <Button className="w-fit group">
-                  <span className="!leading-none">See Details</span>
+                  <span className="!leading-none text-sm md:text-base">See Details</span>
                   <ArrowLongTailIcon className="h-auto w-5 md:w-6 group-hover:translate-x-2 transition_common" />
                 </Button>
               </Link>

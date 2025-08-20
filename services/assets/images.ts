@@ -26,7 +26,8 @@ export { default as companyBlack10 } from "@/public/images/company/black-10.webp
 export { default as companyBlack11 } from "@/public/images/company/black-11.webp";
 export { default as companyBlack12 } from "@/public/images/company/black-12.webp";
 export { default as companyBlack13 } from "@/public/images/company/black-13.webp";
-export { default as contact } from "@/public/images/contact_v2.webp";
+export { default as contact } from "@/public/images/contact.webp";
+export { default as contactv2 } from "@/public/images/contact_v2.webp";
 export { default as cylindricalHalfStar } from "@/public/images/cylindrical-half-star-crystal.webp";
 export { default as diamondCrystal } from "@/public/images/diamond-crystal.webp";
 export { default as doubleLCrystal } from "@/public/images/double-l-crystal.webp";

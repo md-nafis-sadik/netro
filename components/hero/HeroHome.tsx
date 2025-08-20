@@ -15,6 +15,7 @@ const HeroHome = () => {
         className="absolute top-0 left-1/2 -translate-x-1/2 min-w-[1060px] min-h-[650px] z-[2]"
         height={650}
         width={1060}
+        priority
       />
 
       <div className="containerX relative flex flex-col-reverse lg:flex-row">

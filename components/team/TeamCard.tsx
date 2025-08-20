@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 import Image, { StaticImageData } from "next/image";
 
 interface IFTeamCardProps {
-  image: StaticImageData;
+  image: string;
   name: string;
   position: string;
   socials: {

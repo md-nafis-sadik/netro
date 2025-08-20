@@ -4,7 +4,7 @@ import { useGSAP } from "@gsap/react";
 import clsx from "clsx";
 import { servicesMenu, socialsData } from "@/services/data/shared.data";
 import { GradientButton } from "../ui/gradient-button";
-import { CallMissedIcon } from "@/services/assets/svgs";
+import { CalendarIcon } from "@/services/assets/svgs";
 import Link from "next/link";
 
 gsap.registerPlugin(useGSAP);
@@ -92,7 +92,7 @@ export default function DropupNavigationMenu({
           }
         >
           <span className="text-white">Schedule a call</span>
-          <CallMissedIcon className="!h-6 !w-6 !shrink-0" />
+          <CalendarIcon className="!h-6 !w-6 !shrink-0" />
         </GradientButton>
       </div>
     </div>

@@ -52,9 +52,10 @@ const ProductCard = ({
         <a
           className=" bg-main-400 hover:bg-main-500 flex items-center gap-2 p-[12px_20px_12px_24px] py-2 rounded-full w-fit text-white font-inter text-sm md:text-base font-bold !leading-[1.1]"
           href={detailsUrl ? detailsUrl : url}
-          {...(!detailsUrl && { target: "_blank", rel: "noopener noreferrer" })}
+          target= "_blank"
+          rel= "noopener noreferrer"
         >
-          {detailsUrl ? <span>See Details</span> : <span>Download App</span>}
+          <span>See Details</span>
           <ArrowLongTailIcon className="text-white-100" />
         </a>
         

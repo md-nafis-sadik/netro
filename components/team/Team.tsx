@@ -2,14 +2,27 @@
 import SectionSubHeader from "@/components/common/SectionSubHeader";
 import useEmblaCarousel from "embla-carousel-react";
 import TeamCard from "./TeamCard";
-import { teamData } from "@/services/data";
 import ArrowLineupButton from "@/components/ui/arrow-lineup-button";
 import colors from "@/lib/colors";
 import SectionHeader from "../common/SectionHeader";
 import Autoplay from "embla-carousel-autoplay";
 import { useRef } from "react";
 
-const Team = () => {
+type TeamMember = {
+  image: string;
+  name: string;
+  position: string;
+  socials: {
+    type: string;
+    link: string;
+    icon: React.ReactNode;
+  }[];
+};
+
+type TeamProps = {
+  teamData: TeamMember[];
+};
+const Team = ({teamData}: TeamProps) => {
   const autoplay = useRef<ReturnType<typeof Autoplay> | null>(null);
 
   if (!autoplay.current) {
