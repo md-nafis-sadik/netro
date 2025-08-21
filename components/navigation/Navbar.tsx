@@ -39,7 +39,7 @@ const Navbar: FC = () => {
         <Link href={routes.homepage.link} className="h-fit">
           <AppLogoIcon
             className={cn(
-              "h-5 lg:h-7 w-auto transition-colors duration-300",
+              "h-5 lg:h-7 w-auto transition-colors duration-100",
               isLightText && pathname === routes.homepage.link ? "text-white" : "text-black"
             )}
           />
@@ -64,13 +64,13 @@ const Navbar: FC = () => {
                       (isLightText && pathname === routes.homepage.link
                         ? "navbar-btn-gradient-dark"
                         : "navbar-btn-gradient"),
-                      "block absolute w-full h-1/2 bottom-0 left-0 z-[1] transition-opacity duration-300"
+                      "block absolute w-full h-1/2 bottom-0 left-0 z-[1] transition-opacity duration-100"
                     )}
                   />
 
                   <span
                     className={cn(
-                      "text-sm font-normal !leading-[1.4] relative z-[2] font-inter transition-colors duration-300",
+                      "text-sm font-normal !leading-[1.4] relative z-[2] font-inter transition-colors duration-100",
                       isLightText && pathname === routes.homepage.link ? "text-white" : "text-black",
                       pathname.startsWith(link) && (pathname === routes.homepage.link ? "" : "font-semibold")
                     )}
@@ -79,7 +79,7 @@ const Navbar: FC = () => {
                   </span>
                   {megaMenu && (
                     <PlusRoundedSecondaryIcon
-                      className="!h-5 !w-5 !shrink-0 transition-all duration-300 group-hover:rotate-180 relative z-[3]"
+                      className="!h-5 !w-5 !shrink-0 transition-all duration-100 group-hover:rotate-180 relative z-[3]"
                       color={isLightText && pathname === routes.homepage.link ? colors.white : colors.black}
                     />
                   )}
