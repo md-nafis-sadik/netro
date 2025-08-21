@@ -113,6 +113,28 @@ fbq('track', 'PageView');`,
             `,
           }}
         /> */}
+        <Script
+          id="visitor-tracking"
+          strategy="afterInteractive"
+          src="https://app.visitortracking.com/assets/js/tracer.js"
+        />
+
+        <Script
+          id="visitor-tracking-init"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+      function init_tracer() {
+        var tracer = new Tracer({
+          websiteId: "c87457c7-3ebb-4987-b4c8-9cd0a745586b",
+          async: true,
+          debug: false
+        });
+      }
+      window.onload = init_tracer;
+    `,
+          }}
+        />
       </body>
     </html>
   );
