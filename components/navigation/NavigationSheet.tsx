@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 import {
   PlusRoundedSecondaryIcon,
   CrossIcon,
-  CallMissedIcon,
+  CalendarIcon,
 } from "@/services/assets/svgs";
 import colors from "@/lib/colors";
 import { navbarData, routes, socialsData } from "@/services/data/shared.data";
@@ -146,7 +146,7 @@ const NavigationSheet: FC<IFNavigationSheetProps> = ({
         <div className="flex flex-col items-center gap-6 mt-8 md:mt-[60px]">
           <GradientButton className="px-5">
             <span className="text-white text-xs">Schedule a call</span>
-            <CallMissedIcon className="!h-6 !w-6 !shrink-0" />
+            <CalendarIcon className="!h-6 !w-6 !shrink-0" />
           </GradientButton>
 
           <div className="flex flex-row items-center gap-3">
