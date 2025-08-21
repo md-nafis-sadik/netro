@@ -1,4 +1,4 @@
-"use client";
+"use client"
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { ArrowLongTailIcon } from "@/services/assets/svgs";
@@ -29,9 +29,7 @@ const ProjectCard = ({
 
   return (
     <div
-      onClick={
-        isLink ? () => router.push(`/portfolio/${item?.title}`) : undefined
-      }
+    onClick={isLink ? () => router.push(`/portfolio/${item?.title}`) : undefined}
       className={cn(
         "w-full aspect-[82/115] lg:aspect-[31/18] overflow-hidden bg-text-700 group transition_common",
         className,
@@ -40,7 +38,7 @@ const ProjectCard = ({
       style={style}
     >
       <Image
-        src={item?.featuredImage?.replace(/ /g, "%20")}
+        src={item?.featuredImage}
         alt={item?.title || "Project"}
         className="min-h-full h-full min-w-full w-auto object-cover absolute_center"
         width={3840}
