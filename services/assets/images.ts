@@ -67,6 +67,7 @@ export { default as ratingGoodFirms } from "@/public/images/rating-goodfirms.web
 export { default as starCrystal } from "@/public/images/star-crystal.webp";
 export { default as starGlass } from "@/public/images/star-glass.webp";
 export { default as starMixerCrystal } from "@/public/images/star-mixer-crystal.webp";
+export { default as netroLogo } from "@/public/images/NetroLogo.webp";
 
 // team
 export { default as ashiqMahmed } from "@/public/images/team/asiq-mohammed.webp";
