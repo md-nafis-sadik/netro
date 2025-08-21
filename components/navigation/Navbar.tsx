@@ -31,7 +31,7 @@ const Navbar: FC = () => {
       className={cn(
         pathname === routes.homepage.link
           ? "border-[#393939]"
-          : "bg-black/15",
+          : "border-b border-dashed border-neutral-300 bg-white/70 backdrop-blur-[20px]",
         "fixed top-0 w-full z-50"
       )}
     >
