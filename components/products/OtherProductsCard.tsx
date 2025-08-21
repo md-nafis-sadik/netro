@@ -48,7 +48,7 @@ const OtherProductCard = ({ item }: IFProductCardProps) => {
                 {item?.tagList}
               </p>
 
-              <Link href={item?.url}>
+              <Link href={item?.url ? item?.url : `/portfolio/${item?.title}`}>
                 <Button className="w-fit group">
                   <span className="!leading-none text-sm md:text-base">See Details</span>
                   <ArrowLongTailIcon className="h-auto w-5 md:w-6 group-hover:translate-x-2 transition_common" />

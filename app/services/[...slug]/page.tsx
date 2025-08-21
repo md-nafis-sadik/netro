@@ -10,13 +10,6 @@ import { getGeneratedMetadata } from "@/lib/metadata";
 import { purifyUrl } from "@/services";
 import { Suspense } from "react";
 
-const serviceSlugMap: Record<string, string> = {
-  "software-development": "Software Development",
-  "product-design-ui-ux": "Product Design (UI/UX Design)",
-  "3d-product-animation": "3D Product Animation",
-  "saas-development-sqa": "SaaS Development & SQA",
-};
-
 export async function generateMetadata({
   params,
 }: {
@@ -25,8 +18,7 @@ export async function generateMetadata({
   let { slug } = await params;
   slug = Array.isArray(slug) ? slug.join("/") : slug;
   slug = purifyUrl({ urlString: slug });
-  const serviceTitle = serviceSlugMap[slug] || slug;
-  const id = purifyUrl({ urlString: serviceTitle });
+  const id = purifyUrl({ urlString: slug });
   const url = `/blogs/find-by-title/${id}`;
   return await getGeneratedMetadata({ apiUrl: url, metaTitle: id });
 }
@@ -39,12 +31,11 @@ const ServiceDetailsPage = async ({
   let { slug } = await params;
   slug = Array.isArray(slug) ? slug.join("/") : slug;
   slug = purifyUrl({ urlString: slug });
-  const serviceTitle = serviceSlugMap[slug] || slug;
 
   return (
-    <main className="relative mt-20">
+    <main className="relative">
       <Suspense fallback={<ServiceDetailsSkeleton />}>
-        <ServiceDetailsContent slug={serviceTitle} />
+        <ServiceDetailsContent slug={slug} />
       </Suspense>
 
       {/* <FAQ /> */}

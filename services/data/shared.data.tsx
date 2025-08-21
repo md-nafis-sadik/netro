@@ -93,22 +93,22 @@ export const servicesMenu = [
   {
     serialNo: "01",
     name: "Software Development",
-    link: "/services/software-development",
+    link: "/services/Software Development",
   },
   {
     serialNo: "02",
     name: "Product Design (UI/UX Design)",
-    link: "/services/product-design-ui-ux",
+    link: "/services/Product Design (UI/UX Design)",
   },
   {
     serialNo: "03",
     name: "3D Product Animation",
-    link: "/services/3d-product-animation",
+    link: "/services/3D Product Animation",
   },
   {
     serialNo: "04",
     name: "SaaS Development & SQA",
-    link: "/services/saas-development-sqa",
+    link: "/services/SaaS Development & SQA",
   },
 ];
 
