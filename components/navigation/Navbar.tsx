@@ -87,8 +87,8 @@ const Navbar: FC = () => {
                 {index < navbarData.length - 1 && (
                   <Dividericon
                     className="w-[7px] h-7"
-                    color={
-                      colors.natural[900]
+                    color={ pathname === routes.homepage.link ?
+                      colors.natural[900] : colors.natural[200]
                     }
                   />
                 )}
