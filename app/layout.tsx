@@ -7,11 +7,11 @@ import "@/styles/bgGradient.css";
 import "@/styles/animation.css";
 import Footer from "@/components/footer/Footer";
 import LetsTalk from "@/components/letsTalk/LetsTalkHome";
-import Navbar from "@/components/navigation/Navbar";
 import { cn } from "@/lib/utils";
 import LenisWrapper from "@/components/wrappers/LenisWrapper";
 import Script from "next/script";
 import Image from "next/image";
+import NavbarWrapper from "@/components/navigation/NavbarWrapper";
 
 export const metadata: Metadata = {
   title: "Netro Systems",
@@ -36,7 +36,7 @@ const RootLayout = ({
         )}
       >
         <LenisWrapper>
-          <Navbar />
+          <NavbarWrapper/>
           {children}
           <LetsTalk />
           <Footer />

@@ -1,7 +1,6 @@
 import Image from "next/image";
 import ArrowLineupButton from "../ui/arrow-lineup-button";
 import colors from "@/lib/colors";
-import { saasDevelopmentServiceData } from "@/services/data";
 import { routes } from "@/services/data/shared.data";
 
 const SaasDevelopmentService = ({ data }: any) => {
@@ -19,7 +18,7 @@ const SaasDevelopmentService = ({ data }: any) => {
 
       <div className="w-full md:w-3/5 flex-col gap-4 md:gap-6">
         <p className="font-scoutcond text-[48px] lg:text-[96px] font-bold !leading-none text-text-900 uppercase">
-          SaaS <br /> Development & SQA
+          {data?.title}
         </p>
 
         <div
@@ -27,7 +26,7 @@ const SaasDevelopmentService = ({ data }: any) => {
           dangerouslySetInnerHTML={{ __html: data.content }}
         />
 
-        <div className="flex flex-col mt-4 md:mt-6">
+        {/* <div className="flex flex-col mt-4 md:mt-6">
           {saasDevelopmentServiceData.map(({ serial, title }, index) => (
             <div
               className="flex flex-row items-center gap-6 lg:gap-12 py-4 lg:py-8"
@@ -42,7 +41,7 @@ const SaasDevelopmentService = ({ data }: any) => {
               </p>
             </div>
           ))}
-        </div>
+        </div> */}
 
         <ArrowLineupButton
           color={colors.main[400]}

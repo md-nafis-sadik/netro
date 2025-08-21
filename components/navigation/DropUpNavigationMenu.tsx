@@ -2,7 +2,7 @@ import { useRef, useEffect, JSX, Fragment } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import clsx from "clsx";
-import { servicesMenu, socialsData } from "@/services/data/shared.data";
+import { routes, socialsData } from "@/services/data/shared.data";
 import { GradientButton } from "../ui/gradient-button";
 import { CalendarIcon } from "@/services/assets/svgs";
 import Link from "next/link";
@@ -11,10 +11,12 @@ gsap.registerPlugin(useGSAP);
 
 type DropupNavigationMenuProps = {
   show: boolean;
+  servicesMenu: any[];
 };
 
 export default function DropupNavigationMenu({
   show,
+  servicesMenu,
 }: DropupNavigationMenuProps): JSX.Element {
   const menuRef = useRef<HTMLDivElement | null>(null);
   const tl = useRef<gsap.core.Timeline | null>(null);
@@ -54,14 +56,14 @@ export default function DropupNavigationMenu({
         {servicesMenu.map((service, serviceIndex) => (
           <Fragment key={`${service.name}_${serviceIndex}`}>
             <Link
-              href={service.link}
+              href={`${routes.services.link}/${service?.title}`}
               className="pt-6 pb-3 flex flex-row justify-between items-center hover:scale-105 transition_common hover:bg-black px-10 group"
             >
               <span className="text-2xl font-medium tracking-[0.48px] text-white">
-                {service.name}
+                {service?.title}
               </span>
               <span className="font-scoutcond text-[32px] font-bold text-text-750 group-hover:text-main-500 group-hover:scale-150 transition_common">
-                {service.serialNo}
+                {serviceIndex > 9 ? serviceIndex + 1 : `0${serviceIndex + 1}`}
               </span>
             </Link>
 

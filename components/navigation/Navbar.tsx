@@ -16,7 +16,12 @@ import NavigationSheet from "./NavigationSheet";
 import DropupNavigationMenu from "./DropUpNavigationMenu";
 import { useNavbarColorDetection } from "@/hooks/useNavbarColorDetection";
 
-const Navbar: FC = () => {
+type NavbarProps = {
+  show?: boolean;
+  services: any[];
+};
+
+const Navbar: FC<NavbarProps> = ({ show, services }) => {
   const pathname = usePathname();
   const router = useRouter();
   const isDarkBackground = useNavbarColorDetection(pathname);
@@ -40,7 +45,9 @@ const Navbar: FC = () => {
           <AppLogoIcon
             className={cn(
               "h-5 lg:h-7 w-auto transition-colors duration-100",
-              isLightText && pathname === routes.homepage.link ? "text-white" : "text-black"
+              isLightText && pathname === routes.homepage.link
+                ? "text-white"
+                : "text-black"
             )}
           />
         </Link>
@@ -61,9 +68,9 @@ const Navbar: FC = () => {
                   <span
                     className={cn(
                       pathname === link &&
-                      (isLightText && pathname === routes.homepage.link
-                        ? "navbar-btn-gradient-dark"
-                        : "navbar-btn-gradient"),
+                        (isLightText && pathname === routes.homepage.link
+                          ? "navbar-btn-gradient-dark"
+                          : "navbar-btn-gradient"),
                       "block absolute w-full h-1/2 bottom-0 left-0 z-[1] transition-opacity duration-100"
                     )}
                   />
@@ -71,8 +78,13 @@ const Navbar: FC = () => {
                   <span
                     className={cn(
                       "text-sm font-normal !leading-[1.4] relative z-[2] font-inter transition-colors duration-100",
-                      isLightText && pathname === routes.homepage.link ? "text-white" : "text-black",
-                      pathname.startsWith(link) && (pathname === routes.homepage.link ? "" : "font-semibold")
+                      isLightText && pathname === routes.homepage.link
+                        ? "text-white"
+                        : "text-black",
+                      pathname.startsWith(link) &&
+                        (pathname === routes.homepage.link
+                          ? ""
+                          : "font-semibold")
                     )}
                   >
                     {name}
@@ -80,20 +92,31 @@ const Navbar: FC = () => {
                   {megaMenu && (
                     <PlusRoundedSecondaryIcon
                       className="!h-5 !w-5 !shrink-0 transition-all duration-100 group-hover:rotate-180 relative z-[3]"
-                      color={isLightText && pathname === routes.homepage.link ? colors.white : colors.black}
+                      color={
+                        isLightText && pathname === routes.homepage.link
+                          ? colors.white
+                          : colors.black
+                      }
                     />
                   )}
                 </Link>
                 {index < navbarData.length - 1 && (
                   <Dividericon
                     className="w-[7px] h-7"
-                    color={ pathname === routes.homepage.link ?
-                      colors.natural[900] : colors.natural[200]
+                    color={
+                      pathname === routes.homepage.link
+                        ? colors.natural[900]
+                        : colors.natural[200]
                     }
                   />
                 )}
 
-                {megaMenu && <DropupNavigationMenu show={megamenuOpening} />}
+                {megaMenu && (
+                  <DropupNavigationMenu
+                    servicesMenu={services}
+                    show={megamenuOpening}
+                  />
+                )}
               </div>
             );
           })}
@@ -155,6 +178,7 @@ const Navbar: FC = () => {
       </div>
 
       <NavigationSheet
+        servicesMenu={services}
         isHomapage={pathname === routes.homepage.link}
         isSheetOpen={isSheetOpen}
         closeSheet={() => setIsSheetOpen(false)}
