@@ -18,39 +18,75 @@ const HomePage = () => {
   return (
     <main className="relative">
       <div className="relative">
-        <HeroHome />
-        <IntroWithMarqueeHome />
+        <section
+          data-bg-theme="dark" >
+          <HeroHome />
+        </section>
+        <section
+          data-bg-theme="light" >
+          <IntroWithMarqueeHome />
+        </section>
       </div>
-      <Suspense
-        fallback={
-          <div className="h-screen flex items-center justify-center">
-            Loading projects...
-          </div>
-        }
-      >
-        <ProjectsHomeWrapper />
-      </Suspense>
-      <ServicesHome />
-      <Products />
-      <WorkCultureHome />
-      <PricingHome />
-      <Suspense fallback={<TestimonialSkeleton />}>
-        <TestimonialWrapper />
-      </Suspense>
-      <StatisticsHome />
-      <Suspense
-        fallback={
-          <div className="h-screen flex items-center justify-center">
-            Loading projects...
-          </div>
-        }
-      >
-        <TeamHomeWrapper />
-      </Suspense>
-      <FAQ />
-      <Suspense fallback={<JournalHomeSkeleton />}>
-        <JournalHomeWrapper />
-      </Suspense>
+      <section
+        data-bg-theme="dark" >
+        <Suspense
+          fallback={
+            <div className="h-screen flex items-center justify-center">
+              Loading projects...
+            </div>
+          }
+        >
+          <ProjectsHomeWrapper />
+        </Suspense>
+      </section>
+      <section
+        data-bg-theme="light" >
+        <ServicesHome />
+      </section>
+      <section
+        data-bg-theme="dark" >
+        <Products />
+      </section>
+      <section
+        data-bg-theme="light" >
+        <WorkCultureHome />
+      </section>
+      <section
+        data-bg-theme="dark" >
+        <PricingHome />
+      </section>
+      <section
+        data-bg-theme="light" >
+        <Suspense fallback={<TestimonialSkeleton />}>
+          <TestimonialWrapper />
+        </Suspense>
+      </section>
+      <section
+        data-bg-theme="dark" >
+        <StatisticsHome />
+      </section>
+      <section
+        data-bg-theme="light" >
+        <Suspense
+          fallback={
+            <div className="h-screen flex items-center justify-center">
+              Loading projects...
+            </div>
+          }
+        >
+          <TeamHomeWrapper />
+        </Suspense>
+      </section>
+      <section
+        data-bg-theme="dark" >
+        <FAQ />
+      </section>
+      <section
+        data-bg-theme="light" >
+        <Suspense fallback={<JournalHomeSkeleton />}>
+          <JournalHomeWrapper />
+        </Suspense>
+      </section>
     </main>
   );
 };

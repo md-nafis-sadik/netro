@@ -24,7 +24,7 @@ const RootLayout = ({
   children: React.ReactNode;
 }>) => {
   return (
-    <html lang="en">
+    <html lang="en" data-arp="">
       <body
         className={cn(
           inter.variable,
