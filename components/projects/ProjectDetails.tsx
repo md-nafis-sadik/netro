@@ -69,7 +69,7 @@ const ProjectDetails = ({ project }: any) => {
 
           {/* RIGHT PORTION */}
           <div
-            className="project-content max-w-full lg:max-w-[55%]"
+            className="project-content max-w-full lg:max-w-[55%] break-words"
             dangerouslySetInnerHTML={{ __html: project?.data?.content }}
           />
         </div>

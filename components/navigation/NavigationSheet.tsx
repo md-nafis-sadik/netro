@@ -5,15 +5,10 @@ import { cn } from "@/lib/utils";
 import {
   PlusRoundedSecondaryIcon,
   CrossIcon,
-  CallMissedIcon,
+  CalendarIcon,
 } from "@/services/assets/svgs";
 import colors from "@/lib/colors";
-import {
-  navbarData,
-  routes,
-  socialsData,
-  servicesMenu,
-} from "@/services/data/shared.data";
+import { navbarData, routes, socialsData } from "@/services/data/shared.data";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
@@ -24,6 +19,7 @@ interface IFNavigationSheetProps {
   pathname: string;
   mobileMegaIndex: number | null;
   setMobileMegaIndex: (index: number | null) => void;
+  servicesMenu: any[];
 }
 
 const NavigationSheet: FC<IFNavigationSheetProps> = ({
@@ -33,23 +29,19 @@ const NavigationSheet: FC<IFNavigationSheetProps> = ({
   pathname,
   mobileMegaIndex,
   setMobileMegaIndex,
+  servicesMenu,
 }) => {
   const router = useRouter();
 
   return (
     <Sheet open={isSheetOpen} onOpenChange={closeSheet}>
-      <SheetContent
-        showCrossIcon={false}
-        className={`select-none bg-black`}
-      >
+      <SheetContent showCrossIcon={false} className={`select-none bg-black`}>
         <SheetHeader className="hidden" />
 
         {/* Close Button */}
         <div className="flex_center justify-end py-3 px-6 border-b border-dashed border-[#303030]">
           <GradientButton
-            className={cn(
-              "flex_center gap-2 group bg-black"
-            )}
+            className={cn("flex_center gap-2 group bg-black")}
             containerClassName="block w-fit"
             nonGradient
             onClick={closeSheet}
@@ -81,9 +73,9 @@ const NavigationSheet: FC<IFNavigationSheetProps> = ({
                 <span
                   className={cn(
                     pathname.startsWith(link) &&
-                    (pathname === routes.homepage.link
-                      ? "navbar-btn-gradient-dark"
-                      : "navbar-btn-gradient-lite"),
+                      (pathname === routes.homepage.link
+                        ? "navbar-btn-gradient-dark"
+                        : "navbar-btn-gradient-lite"),
                     "block navbar-btn-gradient absolute w-full h-1/2 bottom-0 left-1/2 -translate-x-1/2 z-[1]"
                   )}
                 />
@@ -101,10 +93,7 @@ const NavigationSheet: FC<IFNavigationSheetProps> = ({
                     className={cn(
                       "!h-5 !w-5 !shrink-0 transition_common group-hover:rotate-180 relative z-[3]"
                     )}
-                    color={
-                      colors.white
-
-                    }
+                    color={colors.white}
                   />
                 )}
               </button>
@@ -125,9 +114,7 @@ const NavigationSheet: FC<IFNavigationSheetProps> = ({
                     onClick={closeSheet}
                     className={cn(
                       "py-2 text-lg w-full text-center transitionfont-bold text-white",
-                      pathname === link
-                        ? "font-bold"
-                        : "font-normal"
+                      pathname === link ? "font-bold" : "font-normal"
                     )}
                   >
                     All Services
@@ -135,16 +122,18 @@ const NavigationSheet: FC<IFNavigationSheetProps> = ({
                   {servicesMenu.map((item, i) => (
                     <Link
                       key={i}
-                      href={item.link}
+                      href={`${routes.services.link}/${item?.title}`}
                       onClick={closeSheet}
                       className={cn(
                         "py-2 text-lg w-full text-center transition text-white",
-                        pathname.startsWith(item.link)
+                        pathname.startsWith(
+                          `${routes.services.link}/${item?.title}`
+                        )
                           ? "font-bold"
                           : "font-normal"
                       )}
                     >
-                      {item.name}
+                      {item?.title}
                     </Link>
                   ))}
                 </div>
@@ -157,7 +146,7 @@ const NavigationSheet: FC<IFNavigationSheetProps> = ({
         <div className="flex flex-col items-center gap-6 mt-8 md:mt-[60px]">
           <GradientButton className="px-5">
             <span className="text-white text-xs">Schedule a call</span>
-            <CallMissedIcon className="!h-6 !w-6 !shrink-0" />
+            <CalendarIcon className="!h-6 !w-6 !shrink-0" />
           </GradientButton>
 
           <div className="flex flex-row items-center gap-3">

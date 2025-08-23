@@ -22,6 +22,7 @@ const ViewAbout = ({ reverse }: { reverse?: boolean }) => {
 
   const containerRef = useRef<HTMLDivElement>(null);
   const paragraphRef = useRef<HTMLParagraphElement>(null);
+  const isInitializedRef = useRef(false);
 
   const [selectedIndex, setSelectedIndex] = useState<number>(1);
 
@@ -44,15 +45,34 @@ const ViewAbout = ({ reverse }: { reverse?: boolean }) => {
     };
   }, [emblaApi]);
 
+  // Reset scroll position when component mounts from navigation
+  useEffect(() => {
+    if (!isInitializedRef.current) {
+      window.scrollTo(0, 0);
+
+      const timeoutId = setTimeout(() => {
+        window.scrollTo(0, 0);
+        ScrollTrigger.refresh();
+      }, 50);
+
+      isInitializedRef.current = true;
+
+      return () => clearTimeout(timeoutId);
+    }
+  }, []);
+
   useLayoutEffect(() => {
     const container = containerRef.current;
     const paragraphEl = paragraphRef.current;
     if (!container || !paragraphEl) return;
 
-    // Clear first in case of rerenders (like navigation)
+    // Kill all existing ScrollTriggers first
+    ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+
     paragraphEl.innerHTML = "";
 
-    // Use the raw string instead of textContent
+    window.scrollTo(0, 0);
+
     const words = paragraphText.split(" ");
 
     words.forEach((word) => {
@@ -69,34 +89,49 @@ const ViewAbout = ({ reverse }: { reverse?: boolean }) => {
 
     const allLetters = paragraphEl.querySelectorAll("span span");
 
-    // Main timeline for pinning and revealing
-    gsap
-      .timeline({
-        scrollTrigger: {
-          trigger: container,
-          start: "top top",
-          end: "+=100%",
-          pin: true,
-          scrub: 1,
-          markers: false,
-        },
-      })
-      .fromTo(
-        allLetters,
-        { opacity: 0, y: 20, scale: 0.9 },
-        {
-          opacity: 1,
-          y: 0,
-          scale: 1,
-          stagger: {
-            amount: 2,
-            each: 0.02,
-          },
-          ease: "power2.out",
-        }
-      );
+    // Wait for DOM to be ready and scroll position to be reset
+    const setupAnimation = () => {
+      // Force refresh to recalculate all positions
+      ScrollTrigger.refresh();
 
-    return () => ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: container,
+            start: "top top",
+            end: "+=100%",
+            pin: true,
+            scrub: 1,
+            markers: false,
+            invalidateOnRefresh: true,
+            refreshPriority: -1,
+            onRefresh: () => {
+              window.scrollTo(0, 0);
+            },
+          },
+        })
+        .fromTo(
+          allLetters,
+          { opacity: 0, y: 20, scale: 0.9 },
+          {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            stagger: {
+              amount: 2,
+              each: 0.02,
+            },
+            ease: "power2.out",
+          }
+        );
+    };
+
+    const timeoutId = setTimeout(setupAnimation, 100);
+
+    return () => {
+      clearTimeout(timeoutId);
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+    };
   }, []);
 
   return (
@@ -142,7 +177,6 @@ const ViewAbout = ({ reverse }: { reverse?: boolean }) => {
           </div>
         </div>
       </div>
-
       <p
         className={cn(
           "text-2xl md:text-5xl font-bold !leading-[1.4] text-text-900 mt-20 md:mt-16",

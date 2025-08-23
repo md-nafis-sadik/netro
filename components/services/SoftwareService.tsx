@@ -1,4 +1,3 @@
-import { softwareServicesData } from "@/services/data";
 import Image from "next/image";
 import ArrowLineupButton from "../ui/arrow-lineup-button";
 import colors from "@/lib/colors";
@@ -27,7 +26,7 @@ const SoftwareService = ({ data }: any) => {
           dangerouslySetInnerHTML={{ __html: data.content }}
         />
 
-        <div className="flex flex-col mt-4 md:mt-6">
+        {/* <div className="flex flex-col mt-4 md:mt-6">
           {softwareServicesData.map(({ serial, title }, index) => (
             <div
               className="flex flex-row items-center gap-6 lg:gap-12 py-4 lg:py-8"
@@ -42,7 +41,7 @@ const SoftwareService = ({ data }: any) => {
               </p>
             </div>
           ))}
-        </div>
+        </div> */}
 
         <ArrowLineupButton
           color={colors.main[400]}

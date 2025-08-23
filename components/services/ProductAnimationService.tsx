@@ -1,7 +1,6 @@
 import colors from "@/lib/colors";
 import ArrowLineupButton from "../ui/arrow-lineup-button";
 import Image from "next/image";
-import { productAnimationServiceData } from "@/services/data";
 import { routes } from "@/services/data/shared.data";
 
 const ProductAnimationService = ({ data }: any) => {
@@ -27,7 +26,7 @@ const ProductAnimationService = ({ data }: any) => {
           dangerouslySetInnerHTML={{ __html: data.content }}
         />
 
-        <div className="flex flex-col mt-4 md:mt-6">
+        {/* <div className="flex flex-col mt-4 md:mt-6">
           {productAnimationServiceData.map(({ serial, title }, index) => (
             <div
               className="flex flex-row items-center gap-6 lg:gap-12 py-4 lg:py-8"
@@ -42,7 +41,7 @@ const ProductAnimationService = ({ data }: any) => {
               </p>
             </div>
           ))}
-        </div>
+        </div> */}
 
         <ArrowLineupButton
           color={colors.main[400]}

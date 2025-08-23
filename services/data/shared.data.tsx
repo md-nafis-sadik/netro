@@ -89,29 +89,6 @@ export const navbarData = [
   // },
 ];
 
-export const servicesMenu = [
-  {
-    serialNo: "01",
-    name: "Software Development",
-    link: "/services/software-development",
-  },
-  {
-    serialNo: "02",
-    name: "Product Design (UI/UX Design)",
-    link: "/services/product-design-ui-ux",
-  },
-  {
-    serialNo: "03",
-    name: "3D Product Animation",
-    link: "/services/3d-product-animation",
-  },
-  {
-    serialNo: "04",
-    name: "SaaS Development & SQA",
-    link: "/services/saas-development-sqa",
-  },
-];
-
 export const footerData = {
   inquiries: {
     title: "INQUIRIES",

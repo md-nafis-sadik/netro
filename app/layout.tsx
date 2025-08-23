@@ -7,11 +7,11 @@ import "@/styles/bgGradient.css";
 import "@/styles/animation.css";
 import Footer from "@/components/footer/Footer";
 import LetsTalk from "@/components/letsTalk/LetsTalkHome";
-import Navbar from "@/components/navigation/Navbar";
 import { cn } from "@/lib/utils";
 import LenisWrapper from "@/components/wrappers/LenisWrapper";
 import Script from "next/script";
 import Image from "next/image";
+import NavbarWrapper from "@/components/navigation/NavbarWrapper";
 
 export const metadata: Metadata = {
   title: "Netro Systems",
@@ -36,7 +36,7 @@ const RootLayout = ({
         )}
       >
         <LenisWrapper>
-          <Navbar />
+          <NavbarWrapper/>
           {children}
           <LetsTalk />
           <Footer />
@@ -113,6 +113,28 @@ fbq('track', 'PageView');`,
             `,
           }}
         /> */}
+        <Script
+          id="visitor-tracking"
+          strategy="afterInteractive"
+          src="https://app.visitortracking.com/assets/js/tracer.js"
+        />
+
+        <Script
+          id="visitor-tracking-init"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+      function init_tracer() {
+        var tracer = new Tracer({
+          websiteId: "c87457c7-3ebb-4987-b4c8-9cd0a745586b",
+          async: true,
+          debug: false
+        });
+      }
+      window.onload = init_tracer;
+    `,
+          }}
+        />
       </body>
     </html>
   );
