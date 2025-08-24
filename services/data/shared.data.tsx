@@ -29,6 +29,7 @@ export const routes = {
     name: "Services",
     link: "/services/all",
     activeRoute: "/services/all",
+    childLink: "/services",
   },
   portfolio: {
     name: "Portfolio",

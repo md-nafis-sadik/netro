@@ -46,7 +46,7 @@ const SaasDevelopmentService = ({ data }: any) => {
         <ArrowLineupButton
           color={colors.main[400]}
           className="mt-6 md:mt-10"
-          href={`${routes.services.link}/${data?.title}`}
+          href={`${routes.services.childLink}/${data?.title}`}
         >
           See full details
         </ArrowLineupButton>

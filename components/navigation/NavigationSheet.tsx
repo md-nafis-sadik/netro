@@ -122,12 +122,12 @@ const NavigationSheet: FC<IFNavigationSheetProps> = ({
                   {servicesMenu.map((item, i) => (
                     <Link
                       key={i}
-                      href={`${routes.services.link}/${item?.title}`}
+                      href={`${routes.services.childLink}/${item?.title}`}
                       onClick={closeSheet}
                       className={cn(
                         "py-2 text-lg w-full text-center transition text-white",
                         pathname.startsWith(
-                          `${routes.services.link}/${item?.title}`
+                          `${routes.services.childLink}/${item?.title}`
                         )
                           ? "font-bold"
                           : "font-normal"
