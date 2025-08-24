@@ -98,16 +98,12 @@ const ViewAbout = ({ reverse }: { reverse?: boolean }) => {
         .timeline({
           scrollTrigger: {
             trigger: container,
-            start: "top top",
-            end: "+=100%",
-            pin: true,
-            scrub: 1,
+            start: "top top", // pin as soon as section hits top
+            end: "+=300%", // extend timeline (longer = smoother)
+            pin: true, // keep section fixed
+            scrub: 1, // animation tied to scroll
             markers: false,
             invalidateOnRefresh: true,
-            refreshPriority: -1,
-            onRefresh: () => {
-              window.scrollTo(0, 0);
-            },
           },
         })
         .fromTo(
@@ -117,10 +113,7 @@ const ViewAbout = ({ reverse }: { reverse?: boolean }) => {
             opacity: 1,
             y: 0,
             scale: 1,
-            stagger: {
-              amount: 2,
-              each: 0.02,
-            },
+            stagger: { each: 0.02, amount: 2 },
             ease: "power2.out",
           }
         );
