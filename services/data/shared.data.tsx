@@ -27,8 +27,8 @@ export const routes = {
   },
   services: {
     name: "Services",
-    link: "/services",
-    activeRoute: "/services",
+    link: "/services/all",
+    activeRoute: "/services/all",
   },
   portfolio: {
     name: "Portfolio",

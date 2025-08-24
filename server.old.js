@@ -7,20 +7,11 @@ const port = process.env.port || 3000;
 
 const app = next({ dev, hostname, port });
 const handle = app.getRequestHandler();
-
 app.prepare().then(() => {
   createServer(async (req, res) => {
     try {
       const parsedUrl = parse(req.url, true);
       const { pathname, query } = parsedUrl;
-
-      // Add redirect for both /services and /services/ to /services/all
-      if (pathname === "/services" || pathname === "/services/") {
-        res.writeHead(302, { Location: "/services/all" });
-        res.end();
-        return;
-      }
-
       if (pathname === "/a") {
         await app.render(req, res, "/a", query);
       } else if (pathname === "/b") {

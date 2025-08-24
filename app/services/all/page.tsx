@@ -3,6 +3,13 @@ import ServiceStrengthAreas from "@/components/services/ServiceStrengthAreas";
 import ServicesWrapper from "@/components/services/ServicesWrapper";
 import PageThumbnail from "@/components/shared/PageThumbnail";
 import { Suspense } from "react";
+import { Metadata } from "next";
+
+// Fixed metadata for the services page
+export const metadata: Metadata = {
+  title: "Our Services - What We Do",
+  description: "Know our strengths and discover what we can do for you",
+};
 
 const ServicePage = () => {
   return (
