@@ -13,7 +13,7 @@ const OtherProductCard = ({ item }: IFProductCardProps) => {
   return (
     <div
       className={cn(
-        "w-full min-w-[90%] md:min-w-[621px] aspect-[328/360] lg:aspect-[31/18] overflow-hidden bg-text-700 group transition_common relative"
+        "w-full min-w-[90%] md:min-w-[621px] aspect-[82/115] lg:aspect-[31/18] overflow-hidden bg-text-700 group transition_common relative"
       )}
     >
       <Image
@@ -30,16 +30,16 @@ const OtherProductCard = ({ item }: IFProductCardProps) => {
         item?.title) && (
         <div
           className={cn(
-            "absolute left-0 bottom-[-2px] md:bottom-0 w-full md:top-0 h-[60%] md:h-full md:max-w-[50%] project-home-blur transition_common " +
+            "absolute left-0 bottom-[-2px] md:bottom-0 w-full md:top-0 h-[55%] md:h-full md:max-w-[50%] project-home-blur transition_common " +
               // md+ screens: slide in from left
               "md:-translate-x-full md:group-hover:translate-x-0 translate-x-0 translate-y-0"
           )}
         >
-          <div className="pr-7 pl-5 pb-6 pt-6 md:pr-12 md:pl-10 md:pt-12 md:pb-12 h-full flex flex-col justify-between gap-6">
+          <div className="pr-6 pl-4 pb-5 pt-5 md:pr-12 md:pl-10 md:pt-12 md:pb-12 h-full flex flex-col justify-between gap-4 md:gap-6">
             <Image
               src={images.netroLogo}
               alt={item?.title}
-              className="h-auto w-10 md:w-12 lg:w-14"
+              className="h-auto w-9 md:w-12 lg:w-14"
               height={200}
               width={300}
             />
@@ -60,7 +60,7 @@ const OtherProductCard = ({ item }: IFProductCardProps) => {
               </p>
 
               <Link href={item?.url ? item?.url : `/portfolio/${item?.title}`}>
-                <Button className="w-fit group mt-4">
+                <Button className="w-fit group mt-3 md:mt-4 py-2">
                   <span className="!leading-none text-xs md:text-base">
                     See Details
                   </span>

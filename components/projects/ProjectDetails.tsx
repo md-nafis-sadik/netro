@@ -50,16 +50,23 @@ const ProjectDetails = ({ project }: any) => {
               </div>
 
               <div className="flex flex-row gap-y-2 gap-x-2 md:gap-x-6 flex-wrap">
-                <Link href={"#applyForm"}>
-                  <Button className="group max-w-max h-full">
-                    <span className="!leading-none">Live Preview</span>
-                    <ArrowLongTailIcon className="h-auto w-5 md:w-6 group-hover:translate-x-2 transition_common" />
-                  </Button>
-                </Link>
+                {project?.data?.liveUrl && (
+                  <Link
+                    href={project?.data?.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Button className="group max-w-max h-full">
+                      <span className="!leading-none">Live Preview</span>
+                      <ArrowLongTailIcon className="h-auto w-5 md:w-6 group-hover:translate-x-2 transition_common" />
+                    </Button>
+                  </Link>
+                )}
+
                 <GradientButton
                   className="w-fit !bg-white !text-black hover:!text-white h-full"
                   containerClassName="max-w-max"
-                  href={project?.data?.link}
+                  href="/contact-us"
                 >
                   <span className="!leading-none">Talk to an expert</span>
                 </GradientButton>
