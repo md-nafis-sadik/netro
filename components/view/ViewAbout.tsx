@@ -91,17 +91,26 @@ const ViewAbout = ({ reverse }: { reverse?: boolean }) => {
 
     // Wait for DOM to be ready and scroll position to be reset
     const setupAnimation = () => {
-      // Force refresh to recalculate all positions
+      let startValue = "top -50%";
+
+      if (window.innerWidth < 768) {
+        startValue = "top top"; // mobile
+      } else if (window.innerWidth < 1024) {
+        startValue = "top -30%"; // tablet
+      } else if (window.innerWidth < 1700) {
+        startValue = "top -40%"; // laptop
+      }
+
       ScrollTrigger.refresh();
 
       gsap
         .timeline({
           scrollTrigger: {
             trigger: container,
-            start: "top -55%", // pin as soon as section hits top
-            end: "+=300%", // extend timeline (longer = smoother)
-            pin: true, // keep section fixed
-            scrub: 1, // animation tied to scroll
+            start: startValue,
+            end: "+=300%",
+            pin: true,
+            scrub: 1,
             markers: false,
             invalidateOnRefresh: true,
           },
