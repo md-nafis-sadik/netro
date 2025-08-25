@@ -182,11 +182,11 @@ const WhatWeAreGreatAt = () => {
         </SectionHeader>
       </div>
 
-      <div className="containerX flex">
+      <div className="containerX flex flex-col md:flex-row">
         {/* Left Section - Sticky */}
         <div
           ref={leftSectionRef}
-          className="hidden md:flex w-1/2 sticky top-0 h-screen  flex-col pr-8 bg-white space-y-10 py-20"
+          className="flex w-full md:w-1/2 md:sticky top-0 md:h-screen flex-col pr-8 bg-white space-y-10 py-8 md:py-20"
         >
           {whatWeAreGreatAtData.categories.map((category, index) => (
             <p
@@ -204,8 +204,8 @@ const WhatWeAreGreatAt = () => {
         </div>
 
         {/* Right Section - Scrollable */}
-        <div ref={rightSectionRef} className="hidden md:block w-1/2 bg-white">
-          <div className="py-20 px-16">
+        <div ref={rightSectionRef} className="block w-full md:w-1/2 bg-white">
+          <div className="py-6 md:py-20 px-4 md:px-16">
             {whatWeAreGreatAtData.categories.map((category, categoryIndex) => (
               <div key={categoryIndex}>
                 {whatWeAreGreatAtData.item[categoryIndex].map(
