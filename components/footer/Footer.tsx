@@ -10,7 +10,7 @@ import GoTopButton from "../navigation/GoTopButton";
 
 const Footer = () => {
   return (
-    <footer className="bg-white py-10 md:py-20">
+    <footer className="bg-white py-10 md:py-20" data-bg-theme="light">
       <div className="containerX">
         <div className="grid grid-cols-1 sm:grid-cols-4 md:grid-cols-7 min-[1120px]:grid-cols-11 gap-10 md:gap-6">
           {/* Inquiries */}

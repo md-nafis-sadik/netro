@@ -6,7 +6,7 @@ import { footerData } from "@/services/data/shared.data";
 
 const LetsTalkHome = () => {
   return (
-    <section className="bg-black">
+    <section className="bg-black" data-bg-theme="dark">
       <div className="containerX py-[60px] md:py-20 flex flex-col lg:flex-row items-center gap-[42px] justify-between">
         <div>
           <SectionHeader className="text-white text-start mt-0 md:text-[134px]">
