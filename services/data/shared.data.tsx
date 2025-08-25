@@ -127,7 +127,7 @@ export const footerData = {
   support: {
     title: "SUPPORT",
     links: [
-      { text: "Privacy Policy", href: "privacy-policy" },
+      { text: "Privacy Policy", href: "/privacy-policy" },
       // { text: "Terms of Service", href: "/terms-of-service" },
       { text: "Help Center", href: routes.contact.link },
     ],

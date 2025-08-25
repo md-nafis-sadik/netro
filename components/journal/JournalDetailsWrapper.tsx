@@ -31,18 +31,18 @@ const JournalDetailsWrapper = async ({ id }: { id: string }) => {
         titleClassName="text-[#1D1D1D] text-[48px] md:text-[64px] lg:text-[96px]"
       />
 
-      <div className="relative h-[300px] md:h-[420px] lg:h-[600px] w-full overflow-hidden">
+      <div className="containerX relative overflow-hidden w-full">
         <Image
           src={journalData?.featuredImage || images.blog1}
           alt={journalData?.title || "Blog image 1"}
-          className="absolute_center min-h-full min-w-full object-cover"
+          className="h-[300px] md:h-[420px] lg:h-[550px] min-w-full object-cover"
           loading="lazy"
           height={1280}
           width={1920}
         />
       </div>
 
-      <div className="containerX max-w-[952px] mx-auto">
+      <div className="containerX max-w-[952px] px-4 sm:px-8 lg:px-0">
         <div
           className="content font-inter"
           dangerouslySetInnerHTML={{ __html: journalData?.content || "" }}

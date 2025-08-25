@@ -15,7 +15,7 @@ const ServiceDetailsContent = async ({ slug }: { slug: string }) => {
           {service?.data?.title || "Service Title Not Found"}
         </SectionHeader>
 
-        <p className="font-inter text-sm md:text-2xl font-normal md:font-light !leading-[1.4] uppercase text-center md:text-start text-text-600 mt-6">
+        <p className="font-inter text-sm md:text-2xl font-normal md:font-light !leading-[1.4] uppercase text-text-600 mt-6">
           {service?.data?.tags?.map((tag: string, index: number) => (
             <span key={index} className="mr-2 last:mr-0">
               {tag}
@@ -25,17 +25,17 @@ const ServiceDetailsContent = async ({ slug }: { slug: string }) => {
         </p>
       </div>
 
-      <div className="containerX relative overflow-hidden">
+      <div className="containerX relative overflow-hidden w-full">
         <Image
           src={service?.data?.featuredImage}
           alt={`service image ${service?.data?.title}`}
-          className="min-h-auto min-w-full"
+          className="min-h-auto min-w-full object-cover"
           height={1280}
           width={1920}
         />
       </div>
 
-      <div className="containerminX flex flex-col gap-10 py-10 md:py-20">
+      <div className="containerX max-w-[952px] px-4 sm:px-8 lg:px-0 py-10">
         <div
           className="content font-inter !pt-0"
           dangerouslySetInnerHTML={{ __html: service?.data?.content || "" }}
