@@ -98,7 +98,7 @@ const ViewAbout = ({ reverse }: { reverse?: boolean }) => {
         .timeline({
           scrollTrigger: {
             trigger: container,
-            start: "top top", // pin as soon as section hits top
+            start: "top -55%", // pin as soon as section hits top
             end: "+=300%", // extend timeline (longer = smoother)
             pin: true, // keep section fixed
             scrub: 1, // animation tied to scroll
