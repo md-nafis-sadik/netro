@@ -43,6 +43,9 @@ const ProjectCard = ({
         className="min-h-full h-full min-w-full w-auto object-cover absolute_center"
         width={3840}
         height={2560}
+        {...(item?.blurDataURL
+          ? { placeholder: "blur", blurDataURL: item.blurDataURL }
+          : {})}
       />
 
       {/* Doing a check if any of the fields are available only then itll be shown otherwise wont! */}
@@ -67,6 +70,9 @@ const ProjectCard = ({
                 className="h-auto w-10 md:w-12 lg:w-14 xl:w-20"
                 height={200}
                 width={300}
+                {...(item?.author?.blurDataURL
+                  ? { placeholder: "blur", blurDataURL: item.author.blurDataURL }
+                  : {})}
               />
 
               <p

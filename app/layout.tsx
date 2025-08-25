@@ -9,6 +9,7 @@ import Footer from "@/components/footer/Footer";
 import LetsTalk from "@/components/letsTalk/LetsTalkHome";
 import { cn } from "@/lib/utils";
 import LenisWrapper from "@/components/wrappers/LenisWrapper";
+import ScrollToTopOnRouteChange from "@/components/common/ScrollToTopOnRouteChange";
 import Script from "next/script";
 import Image from "next/image";
 import NavbarWrapper from "@/components/navigation/NavbarWrapper";
@@ -37,6 +38,7 @@ const RootLayout = ({
         )}
       >
         <LenisWrapper>
+          <ScrollToTopOnRouteChange />
           <NavbarWrapper />
           {children}
           <LetsTalk />
