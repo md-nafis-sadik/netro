@@ -16,7 +16,7 @@ function Career() {
         <JobPostsWrapper />
       </Suspense>
       <CareerTeams />
-      <ViewAbout reverse={true} />
+      <ViewAbout />
     </main>
   );
 }
