@@ -35,7 +35,7 @@ const JournalDetailsWrapper = async ({ id }: { id: string }) => {
         <Image
           src={journalData?.featuredImage || images.blog1}
           alt={journalData?.title || "Blog image 1"}
-          className="h-[300px] md:h-[420px] lg:h-[550px] min-w-full object-cover"
+          className="h-auto md:h-[420px] lg:h-[550px] min-w-full object-cover"
           loading="lazy"
           height={1280}
           width={1920}

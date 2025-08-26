@@ -11,7 +11,6 @@ import { cn } from "@/lib/utils";
 import LenisWrapper from "@/components/wrappers/LenisWrapper";
 import ScrollToTopOnRouteChange from "@/components/common/ScrollToTopOnRouteChange";
 import Script from "next/script";
-import Image from "next/image";
 import NavbarWrapper from "@/components/navigation/NavbarWrapper";
 
 export const metadata: Metadata = {
@@ -27,6 +26,13 @@ const RootLayout = ({
 }>) => {
   return (
     <html lang="en" data-arp="">
+      <head>
+        {/* Pinterest HTML Tag */}
+        <meta
+          name="p:domain_verify"
+          content="d3e1e64d68283f173bfd561c99e55ed1"
+        />
+      </head>
       <body
         className={cn(
           inter.variable,
@@ -51,30 +57,7 @@ const RootLayout = ({
           </ParallaxContainer> */}
         </LenisWrapper>
 
-        {/* <Script
-          id="facebook-pixel"
-          dangerouslySetInnerHTML={{
-            __html: `!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1063313381986362');
-fbq('track', 'PageView');`,
-          }}
-        ></Script>
-        <noscript>
-          <Image
-            alt="Facebook Pixel"
-            height="1"
-            width="1"
-            style={{ display: "none", visibility: "hidden" }}
-            src="https://www.facebook.com/tr?id=1063313381986362&ev=PageView&noscript=1"
-          />
-        </noscript>
+        {/* Google Tag Manager (noscript) */}
         <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-N8P5R6GX"
@@ -83,8 +66,11 @@ fbq('track', 'PageView');`,
             style={{ display: "none", visibility: "hidden" }}
           ></iframe>
         </noscript>
+
+        {/* Google Tag Manager */}
         <Script
           id="google-tag-manager"
+          strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `
               (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -93,49 +79,6 @@ fbq('track', 'PageView');`,
               'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
               })(window,document,'script','dataLayer','GTM-N8P5R6GX');
             `,
-          }}
-        />
-        <Script
-          id="visitor-tracking"
-          async
-          defer
-          src="https://app.visitortracking.com/assets/js/tracer.js"
-        ></Script>
-        <Script
-          id="visitor-tracking-init"
-          dangerouslySetInnerHTML={{
-            __html: `
-              function init_tracer() {
-                var tracer = new Tracer({
-                  websiteId : "c87457c7-3ebb-4987-b4c8-9cd0a745586b",
-                  async : true,
-                  debug : false
-                });
-              }
-              window.onload = init_tracer;
-            `,
-          }}
-        /> */}
-        <Script
-          id="visitor-tracking"
-          strategy="afterInteractive"
-          src="https://app.visitortracking.com/assets/js/tracer.js"
-        />
-
-        <Script
-          id="visitor-tracking-init"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-      function init_tracer() {
-        var tracer = new Tracer({
-          websiteId: "c87457c7-3ebb-4987-b4c8-9cd0a745586b",
-          async: true,
-          debug: false
-        });
-      }
-      window.onload = init_tracer;
-    `,
           }}
         />
 
@@ -149,11 +92,64 @@ fbq('track', 'PageView');`,
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-477VTHLW93');
-    `,
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-477VTHLW93');
+            `,
+          }}
+        />
+
+        {/* Meta Pixel */}
+        <Script
+          id="facebook-pixel"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `!function(f,b,e,v,n,t,s)
+              {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+              n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+              if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+              n.queue=[];t=b.createElement(e);t.async=!0;
+              t.src=v;s=b.getElementsByTagName(e)[0];
+              s.parentNode.insertBefore(t,s)}(window, document,'script',
+              'https://connect.facebook.net/en_US/fbevents.js');
+              fbq('init', '1544916789712387');
+              fbq('track', 'PageView');`,
+          }}
+        />
+
+        {/* Facebook Pixel noscript fallback */}
+        <noscript>
+          <img
+            height="1"
+            width="1"
+            style={{ display: "none" }}
+            src="https://www.facebook.com/tr?id=1544916789712387&ev=PageView&noscript=1"
+            alt="facebook-pixel"
+          />
+        </noscript>
+
+        {/* Visitor Tracking */}
+        <Script
+          id="visitor-tracking"
+          strategy="afterInteractive"
+          src="https://app.visitortracking.com/assets/js/tracer.js"
+        />
+
+        <Script
+          id="visitor-tracking-init"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+            function init_tracer() {
+              var tracer = new Tracer({
+                websiteId: "c87457c7-3ebb-4987-b4c8-9cd0a745586b",
+                async: true,
+                debug: false
+              });
+            }
+            window.onload = init_tracer;
+          `,
           }}
         />
       </body>
