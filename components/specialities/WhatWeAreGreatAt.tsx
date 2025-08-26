@@ -1,5 +1,5 @@
 "use client";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import SectionHeader from "../common/SectionHeader";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -11,30 +11,54 @@ gsap.registerPlugin(ScrollTrigger);
 
 const WhatWeAreGreatAt = () => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const leftSectionRef = useRef<HTMLDivElement>(null);
   const rightSectionRef = useRef<HTMLDivElement>(null);
+  const [activeCategory, setActiveCategory] = useState<number>(0);
+  const triggersCreated = useRef(false);
+
+  // Function to determine active category based on scroll position
+  const updateActiveCategoryFromScroll = () => {
+    const rightSection = rightSectionRef.current;
+    if (!rightSection) return;
+
+    const items = rightSection.querySelectorAll("[data-item]");
+    const scrollPosition = window.scrollY;
+
+    for (let i = items.length - 1; i >= 0; i--) {
+      const item = items[i] as HTMLElement;
+      const itemTop = item.offsetTop - window.innerHeight * 0.4;
+
+      if (scrollPosition >= itemTop) {
+        const [categoryIndex] = item.dataset.item?.split("-").map(Number) || [
+          0,
+        ];
+        setActiveCategory(categoryIndex);
+        break;
+      }
+    }
+  };
+
+  useEffect(() => {
+    // Update active category on mount based on current scroll position
+    updateActiveCategoryFromScroll();
+
+    // Also update on scroll to handle refresh scenarios
+    const handleScroll = () => {
+      updateActiveCategoryFromScroll();
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   useGSAP(() => {
     const container = containerRef.current;
-    const leftSection = leftSectionRef.current;
     const rightSection = rightSectionRef.current;
 
-    if (!container || !leftSection || !rightSection) return;
+    if (!container || !rightSection || triggersCreated.current) return;
+    triggersCreated.current = true;
 
-    // Create ScrollTrigger context
     const ctx = gsap.context(() => {
-      let totalItems = 0;
-      let itemStartIndices: number[] = [];
-
-      // Calculate start indices for each category
-      whatWeAreGreatAtData.categories.forEach((_, categoryIndex) => {
-        itemStartIndices.push(totalItems);
-        totalItems += whatWeAreGreatAtData.item[categoryIndex].length;
-      });
-
       // Create scroll triggers for each item
-      let currentItemIndex = 0;
-
       whatWeAreGreatAtData.categories.forEach((category, categoryIndex) => {
         const items = whatWeAreGreatAtData.item[categoryIndex];
 
@@ -42,137 +66,31 @@ const WhatWeAreGreatAt = () => {
           const rightItem = rightSection.querySelector(
             `[data-item="${categoryIndex}-${itemIndex}"]`
           );
-          const leftCategory = leftSection.querySelector(
-            `[data-category="${categoryIndex}"]`
-          );
 
-          if (!rightItem || !leftCategory) return;
+          if (!rightItem) return;
 
           ScrollTrigger.create({
             trigger: rightItem,
             start: "top 60%",
             end: "bottom 40%",
-            onEnter: () => {
-              // Update left category styling
-              gsap.set(leftCategory, {
-                fontWeight: "bold",
-                color: "#000000",
-                duration: 0.3,
-                ease: "power2.out",
-              });
-
-              // Reset other categories
-              whatWeAreGreatAtData.categories.forEach((_, idx) => {
-                if (idx !== categoryIndex) {
-                  const otherCategory = leftSection.querySelector(
-                    `[data-category="${idx}"]`
-                  );
-                  if (otherCategory) {
-                    gsap.set(otherCategory, {
-                      fontWeight: "normal",
-                      color: "#9CA3AF",
-                      duration: 0.3,
-                      ease: "power2.out",
-                    });
-                  }
-                }
-              });
-
-              // Highlight current right item
-              // gsap.to(rightItem, {
-              //   opacity: 1,
-              //   y: 0,
-              //   duration: 0.5,
-              //   ease: "power2.out",
-              // });
+            onEnter: () => setActiveCategory(categoryIndex),
+            onEnterBack: () => setActiveCategory(categoryIndex),
+            onLeaveBack: () => {
+              // When scrolling back past the first item of a category
+              if (itemIndex === 0 && categoryIndex > 0) {
+                setActiveCategory(categoryIndex - 1);
+              }
             },
-            // onLeave: () => {
-            //   gsap.to(rightItem, {
-            //     opacity: 0.7,
-            //     y: 10,
-            //     duration: 0.3,
-            //     ease: "power2.out",
-            //   });
-            // },
-            onEnterBack: () => {
-              // Update left category styling
-              gsap.set(leftCategory, {
-                fontWeight: "bold",
-                color: "#000000",
-                duration: 0.3,
-                ease: "power2.out",
-              });
-
-              // Reset other categories
-              whatWeAreGreatAtData.categories.forEach((_, idx) => {
-                if (idx !== categoryIndex) {
-                  const otherCategory = leftSection.querySelector(
-                    `[data-category="${idx}"]`
-                  );
-                  if (otherCategory) {
-                    gsap.set(otherCategory, {
-                      fontWeight: "normal",
-                      color: "#9CA3AF",
-                      duration: 0.3,
-                      ease: "power2.out",
-                    });
-                  }
-                }
-              });
-
-              // Highlight current right item
-              // gsap.to(rightItem, {
-              //   fontWeight: "normal",
-              //   opacity: 1,
-              //   y: 0,
-              //   duration: 0.5,
-              //   ease: "power2.out",
-              // });
-            },
-            // onLeaveBack: () => {
-            //   gsap.to(rightItem, {
-            //     fontWeight: "bold",
-            //     opacity: 0.7,
-            //     y: 10,
-            //     duration: 0.3,
-            //     ease: "power2.out",
-            //   });
-            // },
           });
-
-          currentItemIndex++;
         });
       });
-
-      // Initialize first category as active
-      const firstCategory = leftSection.querySelector(`[data-category="0"]`);
-      if (firstCategory) {
-        gsap.set(firstCategory, {
-          fontWeight: "bold",
-          color: "#000000",
-        });
-      }
     }, container);
 
     return () => {
       ctx.revert();
+      triggersCreated.current = false;
     };
   }, []);
-
-  // Flatten all items for rendering
-  const allItems = whatWeAreGreatAtData.categories.flatMap(
-    (category, categoryIndex) =>
-      whatWeAreGreatAtData.item[categoryIndex].map((item, itemIndex) => ({
-        category,
-        item,
-        categoryIndex,
-        itemIndex,
-        globalIndex:
-          whatWeAreGreatAtData.item
-            .slice(0, categoryIndex)
-            .reduce((acc, curr) => acc + curr.length, 0) + itemIndex,
-      }))
-  );
 
   return (
     <section className="py-10 md:py-[120px]">
@@ -184,19 +102,15 @@ const WhatWeAreGreatAt = () => {
 
       <div className="containerX flex flex-col md:flex-row">
         {/* Left Section - Sticky */}
-        <div
-          ref={leftSectionRef}
-          className="flex w-full md:w-1/2 md:sticky top-0 md:h-screen flex-col pr-8 bg-white space-y-10 py-8 md:py-20"
-        >
+        <div className="flex w-full md:w-1/2 md:sticky top-0 md:h-screen flex-col pr-8 bg-white space-y-10 py-8 md:py-20">
           {whatWeAreGreatAtData.categories.map((category, index) => (
             <p
               key={category}
-              data-category={index}
-              className="font-inter text-4xl text-text-600 font-normal transition-all duration-300 cursor-pointer hover:text-black leading-[1.1]"
-              style={{
-                fontWeight: index === 0 ? "bold" : "normal",
-                color: index === 0 ? "#000000" : "#9CA3AF",
-              }}
+              className={`font-inter text-4xl transition-all duration-300 cursor-pointer hover:text-black leading-[1.1] ${
+                activeCategory === index
+                  ? "font-bold text-black"
+                  : "font-normal text-text-600"
+              }`}
             >
               {category}
             </p>
@@ -213,7 +127,6 @@ const WhatWeAreGreatAt = () => {
                     <div
                       key={`${categoryIndex}-${itemIndex}`}
                       data-item={`${categoryIndex}-${itemIndex}`}
-                      className="opacity-70 transform translate-y-2 transition-all duration-500"
                     >
                       <div className="flex items-start mb-6">
                         <span className="text-2xl font-bold text-text-200 !leading-[1.4] mr-12">
@@ -230,7 +143,7 @@ const WhatWeAreGreatAt = () => {
                           backgroundImage:
                             "repeating-linear-gradient(to right, currentColor 0 5px, transparent 5px 10px)",
                           backgroundRepeat: "repeat-x",
-                          color: "#EDEDED", // light gray
+                          color: "#EDEDED",
                           maskImage:
                             "linear-gradient(to right, transparent, black 20%, black 80%, transparent)",
                           WebkitMaskImage:
