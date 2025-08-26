@@ -23,6 +23,7 @@ const ViewAbout = ({ reverse }: { reverse?: boolean }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const paragraphRef = useRef<HTMLParagraphElement>(null);
   const isInitializedRef = useRef(false);
+  const [isReady, setIsReady] = useState(false);
 
   const [selectedIndex, setSelectedIndex] = useState<number>(1);
 
@@ -45,23 +46,25 @@ const ViewAbout = ({ reverse }: { reverse?: boolean }) => {
     };
   }, [emblaApi]);
 
-  // Reset scroll position when component mounts from navigation
+  // Reset scroll position and wait for everything to be ready
   useEffect(() => {
     if (!isInitializedRef.current) {
+      // Reset scroll to top
       window.scrollTo(0, 0);
 
-      const timeoutId = setTimeout(() => {
-        window.scrollTo(0, 0);
-        ScrollTrigger.refresh();
-      }, 50);
+      // Set a flag to indicate we're ready after a brief delay
+      const readyTimer = setTimeout(() => {
+        setIsReady(true);
+        isInitializedRef.current = true;
+      }, 100);
 
-      isInitializedRef.current = true;
-
-      return () => clearTimeout(timeoutId);
+      return () => clearTimeout(readyTimer);
     }
   }, []);
 
   useLayoutEffect(() => {
+    if (!isReady) return;
+
     const container = containerRef.current;
     const paragraphEl = paragraphRef.current;
     if (!container || !paragraphEl) return;
@@ -70,8 +73,6 @@ const ViewAbout = ({ reverse }: { reverse?: boolean }) => {
     ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
 
     paragraphEl.innerHTML = "";
-
-    window.scrollTo(0, 0);
 
     const words = paragraphText.split(" ");
 
@@ -89,8 +90,8 @@ const ViewAbout = ({ reverse }: { reverse?: boolean }) => {
 
     const allLetters = paragraphEl.querySelectorAll("span span");
 
-    // Wait for DOM to be ready and scroll position to be reset
-    const setupAnimation = () => {
+    // Wait for the next tick to ensure DOM is updated
+    requestAnimationFrame(() => {
       let startValue = "top -50%";
 
       if (window.innerWidth < 768) {
@@ -101,6 +102,7 @@ const ViewAbout = ({ reverse }: { reverse?: boolean }) => {
         startValue = "top -40%"; // laptop
       }
 
+      // Refresh ScrollTrigger to recalculate positions
       ScrollTrigger.refresh();
 
       gsap
@@ -111,7 +113,7 @@ const ViewAbout = ({ reverse }: { reverse?: boolean }) => {
             end: "+=300%",
             pin: true,
             scrub: 1,
-            markers: false,
+            markers: false, // Set to true for debugging if needed
             invalidateOnRefresh: true,
           },
         })
@@ -126,15 +128,15 @@ const ViewAbout = ({ reverse }: { reverse?: boolean }) => {
             ease: "power2.out",
           }
         );
-    };
 
-    const timeoutId = setTimeout(setupAnimation, 100);
+      // Refresh again after animation setup
+      ScrollTrigger.refresh();
+    });
 
     return () => {
-      clearTimeout(timeoutId);
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
-  }, []);
+  }, [isReady, paragraphText]);
 
   return (
     <section
@@ -172,6 +174,7 @@ const ViewAbout = ({ reverse }: { reverse?: boolean }) => {
                     width={1280}
                     height={1280}
                     className="min-h-full h-full min-w-full w-auto object-cover absolute_center"
+                    priority={index === 0} // Add priority to first image for faster loading
                   />
                 </div>
               </div>
