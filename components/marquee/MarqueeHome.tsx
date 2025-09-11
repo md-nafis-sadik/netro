@@ -20,7 +20,7 @@ const MarqueeHome: FC<IFMarqueeHomeProps> = ({ dark, className }) => {
         dark
           ? "bg-[#1D1D1D] z-[3] border-[#525252]"
           : "bg-[#DFE5FF] z-[2] border-[#C2CED7]",
-        "flex items-center justify-between py-4 md:py-8 !w-[120vw] border border-dashed h-20 md:h-[120px] lg:h-[166px]",
+        "flex items-center justify-between py-4 md:py-8 !w-[120vw] border border-dashed h-16 md:h-20 lg:h-[120px]",
         className
       )}
     >
@@ -29,7 +29,7 @@ const MarqueeHome: FC<IFMarqueeHomeProps> = ({ dark, className }) => {
           key={index}
           src={image.src}
           alt={`Marquee image ${index + 1}`}
-          className="w-auto h-8 md:h-12 mx-4 md:mx-10 lg:mx-20 xl:mx-24"
+          className="w-auto h-6 md:h-8 mx-4 md:mx-10 lg:mx-20 xl:mx-24"
           height={image.height}
           width={image.width}
         />

@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { ArrowLongTailIcon } from "@/services/assets/svgs";
@@ -14,6 +14,7 @@ const ProjectCard = ({
   style = {},
   leftSlideClass = "",
   linkCondition,
+  shrinkedInGrid = false,
 }: {
   item: any;
   className?: string;
@@ -22,6 +23,7 @@ const ProjectCard = ({
   style?: React.CSSProperties;
   leftSlideClass?: string;
   linkCondition?: string;
+  shrinkedInGrid?: boolean;
 }) => {
   const router = useRouter();
 
@@ -29,7 +31,9 @@ const ProjectCard = ({
 
   return (
     <div
-    onClick={isLink ? () => router.push(`/portfolio/${item?.title}`) : undefined}
+      onClick={
+        isLink ? () => router.push(`/portfolio/${item?.title}`) : undefined
+      }
       className={cn(
         "w-full aspect-[82/115] lg:aspect-[31/18] overflow-hidden bg-text-700 group transition_common",
         className,
@@ -58,13 +62,14 @@ const ProjectCard = ({
             "min-w-full md:min-w-0 absolute left-0 transition_common mt-auto",
             showBottom
               ? "min-w-full bottom-0 h-max bg-blandGradient backdrop-blur-md"
-              : "project-home-blur md:-translate-x-full group-hover:translate-x-0 bottom-0 md:bottom-auto md:top-0 h-max md:h-full max-w-[320px]",
-            leftSlideClass
+              : "project-home-blur md:-translate-x-full group-hover:translate-x-0 bottom-0 md:bottom-auto md:top-0 h-max md:h-full",
+            leftSlideClass,
+            shrinkedInGrid ? "aspect-[1/1]" : "aspect-[1/2]"
           )}
         >
           <div className="p-6 md:p-8 h-full flex flex-col justify-between gap-6">
             <div className="flex flex-col">
-              <Image
+              {/* <Image
                 src={item?.author?.profileImage}
                 alt={item?.title}
                 className="h-auto w-10 md:w-12 lg:w-14 xl:w-20"
@@ -73,7 +78,7 @@ const ProjectCard = ({
                 {...(item?.author?.blurDataURL
                   ? { placeholder: "blur", blurDataURL: item.author.blurDataURL }
                   : {})}
-              />
+              /> */}
 
               <p
                 className={cn(
@@ -87,14 +92,17 @@ const ProjectCard = ({
             <div className="flex flex-col">
               <p
                 className={cn(
-                  "text-[10px] md:text-xs font-normal !leading-[1.6] text-text-200 font-inter"
+                  "text-[10px] md:text-xs font-normal !leading-[1.6] text-white font-inter"
                 )}
               >
-                {item?.tagList}
+                {item?.category}
               </p>
 
-              <Link href={`/portfolio/${item?.title}`}>
-                <Button className="w-fit group mt-4 sm:mt-5">
+              <Link
+                href={`/portfolio/${item?.title}`}
+                className="mt-4 sm:mt-5 lg:mt-12"
+              >
+                <Button className="w-fit group">
                   <span className="!leading-none text-sm xl:text-base">
                     View Project
                   </span>

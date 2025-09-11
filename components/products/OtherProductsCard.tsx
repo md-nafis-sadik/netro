@@ -36,15 +36,15 @@ const OtherProductCard = ({ item }: IFProductCardProps) => {
           )}
         >
           <div className="pr-6 pl-4 pb-5 pt-5 md:pr-12 md:pl-10 md:pt-12 md:pb-12 h-full flex flex-col justify-between gap-4 md:gap-6">
-            <Image
+            {/* <Image
               src={images.netroLogo}
               alt={item?.title}
               className="h-auto w-9 md:w-12 lg:w-14"
               height={200}
               width={300}
-            />
+            /> */}
 
-            <div className="flex flex-col">
+            <div className="flex flex-col mt-auto">
               <p className="text-text-50 font-bold font-scoutcond text-[20px] md:text-[30px] leading-4 md:leading-8 line-clamp-1">
                 {item?.title}
               </p>

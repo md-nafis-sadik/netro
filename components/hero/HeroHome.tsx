@@ -8,7 +8,7 @@ import { Button } from "../ui/button";
 
 const HeroHome = () => {
   return (
-    <section className="bg-black lg:min-h-[900px] relative overflow-hidden">
+    <section className="bg-black min-[1600px]:min-h-[900px] relative overflow-hidden">
       <Image
         src={images.heroTopGradient}
         alt="hero section top gradient"
@@ -29,7 +29,7 @@ const HeroHome = () => {
           />
         </div>
 
-        <div className="w-full lg:w-1/2 pb-10 pt-20 lg:py-[180px] lg:ps-10 relative z-[2]">
+        <div className="w-full lg:w-1/2 pb-10 pt-20 2xl:py-[120px] min-[1600px]:py-[180px] lg:ps-10 relative z-[2]">
           {/* TITLES */}
           <div
             className={cn(
@@ -210,7 +210,7 @@ const HeroHome = () => {
             </div>
           </div>
 
-          <div className="flex flex-row items-center justify-center lg:justify-start mt-10 lg:mt-20 gap-2 sm:gap-4 lg:gap-6 relative w-full max-w-full overflow-hidden px-4 sm:px-0">
+          <div className="flex flex-row items-center justify-center lg:justify-start mt-10 min-[1600px]:mt-20 gap-2 sm:gap-4 lg:gap-6 relative w-full max-w-full overflow-hidden px-4 sm:px-0">
             <a
               href="https://clutch.co/profile/netro-systems"
               className="flex-shrink min-w-0"

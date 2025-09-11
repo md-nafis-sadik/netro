@@ -28,6 +28,7 @@ const ProjectsGallery = ({ data = [] }: IFProps) => {
             <ProjectCard
               key={index}
               item={item}
+              shrinkedInGrid={(index + 1) % 3 !== 0}
               className={cn(
                 "relative bg-transparent",
                 (index + 1) % 3 === 0 ? "md:col-span-2" : ""
