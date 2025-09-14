@@ -10,7 +10,7 @@ import {
 } from "@/services/assets/svgs";
 import { navbarData, routes } from "@/services/data/shared.data";
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { FC, useState } from "react";
 import NavigationSheet from "./NavigationSheet";
 import DropupNavigationMenu from "./DropUpNavigationMenu";
@@ -23,21 +23,20 @@ type NavbarProps = {
 
 const Navbar: FC<NavbarProps> = ({ show, services }) => {
   const pathname = usePathname();
-  const router = useRouter();
   const isDarkBackground = useNavbarColorDetection(pathname);
 
   const [isSheetOpen, setIsSheetOpen] = useState(false);
   const [megamenuOpening, setMegamenuOpening] = useState(false);
   const [mobileMegaIndex, setMobileMegaIndex] = useState<number | null>(null);
-  const isLightText = isDarkBackground;
-
+  const isLightText = !isDarkBackground;
   return (
     <nav
       className={cn(
         pathname === routes.homepage.link
           ? "border-[#393939]"
           : "border-b border-dashed border-neutral-300 bg-white/70 backdrop-blur-[20px]",
-        "fixed top-0 w-full z-50"
+        "fixed top-0 w-full z-50",
+        isDarkBackground ? "bg-white/70 backdrop-blur-[20px]" : "bg-black"
       )}
     >
       <div className="containerX flex flex-row items-center justify-between gap-4 py-3">

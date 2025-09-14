@@ -43,7 +43,7 @@ const IntroWithMarqueeHome = () => {
       .timeline({
         scrollTrigger: {
           trigger: container,
-          start: "top top",
+          start: "top 60px",
           end: "+=100%",
           pin: true,
           scrub: 1,
@@ -62,20 +62,6 @@ const IntroWithMarqueeHome = () => {
           ease: "none",
         }
       );
-    // .fromTo(
-    //   allLetters,
-    //   { opacity: 0, y: 20, scale: 0.9 },
-    //   {
-    //     opacity: 1,
-    //     y: 0,
-    //     scale: 1,
-    //     stagger: {
-    //       amount: 2,
-    //       each: 0.02,
-    //     },
-    //     ease: "power2.out",
-    //   }
-    // );
 
     return () => ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
   }, []);
