@@ -187,8 +187,11 @@ const ViewAbout = ({ reverse }: { reverse?: boolean }) => {
           "text-2xl md:text-5xl font-bold !leading-[1.4] text-text-900 mt-20 md:mt-16",
           reverse ? "md:mb-14" : "md:mb-[100px]"
         )}
-        ref={paragraphRef}
-      />
+        // ref={paragraphRef}
+      >
+        Netro Systems fosters innovation, collaboration, diversity, and growth,
+        creating impactful software solutions in a vibrant, inclusive culture.
+      </p>
     </section>
   );
 };

@@ -345,3 +345,19 @@ export const testimonialsData = [
     title: "CTO - FutureTech Solutions",
   },
 ];
+
+export const clientCompanyData = [
+  images.companyBlack1,
+  images.companyBlack2,
+  images.companyBlack3,
+  images.companyBlack4,
+  images.companyBlack5,
+  images.companyBlack6,
+  images.companyBlack7,
+  images.companyBlack8,
+  images.companyBlack9,
+  images.companyBlack10,
+  images.companyBlack11,
+  images.companyBlack12,
+  images.companyBlack13,
+];

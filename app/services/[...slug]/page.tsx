@@ -71,7 +71,7 @@ const ServiceDetailsPage = async ({
             className="w-fit mx-auto"
           />
           <SectionHeader className="home_faq_header w-full mt-6">
-            Some prime previews from our memory lane
+            DISCOVER MORE PROJECTS
           </SectionHeader>
           <Suspense fallback={<ProjectsPreviewServicesSkeleton />}>
             <ProjectsPreviewServicesWrapper />

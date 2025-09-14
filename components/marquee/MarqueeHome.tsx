@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import { marqueeHomeData } from "@/services/data";
+import { clientCompanyData } from "@/services/data/shared.data";
 import Image from "next/image";
 import { FC } from "react";
 import Marquee from "react-fast-marquee";
@@ -24,7 +24,7 @@ const MarqueeHome: FC<IFMarqueeHomeProps> = ({ dark, className }) => {
         className
       )}
     >
-      {marqueeHomeData.map((image, index) => (
+      {clientCompanyData.map((image, index) => (
         <Image
           key={index}
           src={image.src}
