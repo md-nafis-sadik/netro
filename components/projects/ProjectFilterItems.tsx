@@ -32,14 +32,14 @@ function ProjectFilterItems({
 
   return (
     <div className="w-full">
-      <div className="p-3 border-x-0 sm:border-x border-y border-dashed border-natural-300 ">
+      <div className="p-3">
         <SliderContainer className="relative overflow-hidden">
           <ul className="flex items-center gap-2">
             {productLists.map((item, index) => (
               <Fragment key={index}>
                 <li
                   className={cn(
-                    "px-6 sm:px-7 md:px-8 py-2 sm:py-3 text-sm text-text-900 font-semibold cursor-pointer font-inter whitespace-nowrap",
+                    "px-6 sm:px-7 md:px-8 py-2 sm:py-3 text-sm text-text-900 font-semibold cursor-pointer font-inter whitespace-nowrap rounded-[40px]",
                     query === item?.category ? "bg-main-400 text-white" : ""
                   )}
                   onClick={() => handleTabClick(item?.category)}

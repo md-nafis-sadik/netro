@@ -13,7 +13,7 @@ async function PortfolioPage({
   const query = (await searchParams)?.filtered_by || "All";
 
   return (
-    <main className="relative mt-20">
+    <main className="relative mt-[60px]">
       <PageThumbnail
         title="Our Projects"
         description="showcase"
