@@ -9,11 +9,11 @@ async function Products({
   const query = (await searchParams)?.filteredBy || "All";
 
   return (
-    <>
+    <div className="mt-[60px]">
       <PageThumbnail title="Our Products" description="showcase" />
       {/* <ProjectFilterItems query={query} /> */}
       <AllProducts query={query} />
-    </>
+    </div>
   );
 }
 

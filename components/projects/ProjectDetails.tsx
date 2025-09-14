@@ -7,12 +7,12 @@ import { GradientButton } from "../ui/gradient-button";
 const ProjectDetails = ({ project }: any) => {
   return (
     <section className="pb-10 sm:pb-16 md:pb-20 lg:pb-30 font-inter">
-      <div className="containerX py-14 md:py-20 lg:py-[100px]">
+      <div className="containerX pt-4 lg:pt-2 pb-14 lg:pb-12">
         <SectionHeader className="portfolio_details_header w-fit text-start">
           {project?.data?.title || "Portfolio Title Not Found"}
         </SectionHeader>
 
-        <p className="font-inter text-sm md:text-2xl font-normal md:font-light !leading-[1.4] uppercase text-start text-text-600 mt-6">
+        <p className="font-inter text-sm md:text-2xl font-normal md:font-light !leading-[1.4] uppercase text-start text-text-600">
           {project?.data?.category}
         </p>
       </div>

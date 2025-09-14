@@ -9,7 +9,7 @@ import TestimonialSkeleton from "@/components/testimonial/TestimonialSkeleton";
 
 const AboutPage = () => {
   return (
-    <main className="mt-20">
+    <main className="mt-[60px]">
       <HeroAbout />
       <StatisticsAbout />
       <ViewAbout />

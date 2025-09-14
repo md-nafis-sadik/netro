@@ -8,7 +8,7 @@ async function ContactUs({
 }) {
   const query = (await searchParams)?.budget;
   return (
-    <section className="mt-20 md:mt-16">
+    <section className="mt-[60px]">
       <ContactUsForm query={query} />
       <ContactUsDetails />
     </section>

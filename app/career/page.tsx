@@ -7,7 +7,7 @@ import { Suspense } from "react";
 
 function Career() {
   return (
-    <main className="mt-20 md:mt-24">
+    <main className="mt-[60px]">
       <PageThumbnail
         title="Current openings"
         description="Available Opportunities"

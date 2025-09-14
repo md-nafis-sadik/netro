@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 const ServicePage = () => {
   return (
-    <main className="relative mt-20">
+    <main className="relative mt-[60px]">
       <PageThumbnail
         title="What We Do"
         description="Know our strengths"

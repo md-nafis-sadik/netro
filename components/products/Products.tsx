@@ -1,8 +1,6 @@
 import SectionSubHeader from "@/components/common/SectionSubHeader";
 import { productsData } from "@/services/data";
 import ProductCard from "./ProductCard";
-import ArrowLineupButton from "@/components/ui/arrow-lineup-button";
-import colors from "@/lib/colors";
 import SectionHeader from "../common/SectionHeader";
 
 const Products = () => {

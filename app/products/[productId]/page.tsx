@@ -33,7 +33,7 @@ export default async function SingleProductDetails({
 
   return (
     <>
-      <div className="py-4 sm:py-6 md:py-10 mt-20">
+      <div className="py-4 sm:py-6 md:py-10 mt-[60px]">
         <div className="containerX">
           <Breadcrumbs breadcrumbs={breadcrumbs} />
         </div>

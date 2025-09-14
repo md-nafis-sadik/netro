@@ -15,7 +15,7 @@ const DiscoverMoreProjects = ({ data }: any) => {
   return (
     <section className="w-full py-20 relative">
       <SectionHeader className="portfolio_details_header">
-        Discover More Insights
+        DISCOVER MORE PROJECTS
       </SectionHeader>
 
       <div className="containerX w-full overflow-hidden">

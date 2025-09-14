@@ -18,7 +18,7 @@ async function CareerDetails({
   ];
 
   return (
-    <main className="relative mt-20 md:mt-24">
+    <main className="relative mt-[60px]">
       <div className="py-4 sm:py-6 md:py-10">
         <div className="containerX">
           <Breadcrumbs breadcrumbs={breadcrumbs} />
