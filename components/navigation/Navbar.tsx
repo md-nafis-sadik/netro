@@ -28,7 +28,7 @@ const Navbar: FC<NavbarProps> = ({ show, services }) => {
   const [isSheetOpen, setIsSheetOpen] = useState(false);
   const [megamenuOpening, setMegamenuOpening] = useState(false);
   const [mobileMegaIndex, setMobileMegaIndex] = useState<number | null>(null);
-  const isLightText = !isDarkBackground;
+  const isLightText = isDarkBackground;
   return (
     <nav
       className={cn(
@@ -36,7 +36,9 @@ const Navbar: FC<NavbarProps> = ({ show, services }) => {
           ? "border-[#393939]"
           : "border-b border-dashed border-neutral-300 bg-white/70 backdrop-blur-[20px]",
         "fixed top-0 w-full z-50",
-        isDarkBackground ? "bg-white/70 backdrop-blur-[20px]" : "bg-black"
+        !isDarkBackground
+          ? "bg-white/20 backdrop-blur-[20px]"
+          : "bg-black/20 backdrop-blur-[20px]"
       )}
     >
       <div className="containerX flex flex-row items-center justify-between gap-4 py-3">
