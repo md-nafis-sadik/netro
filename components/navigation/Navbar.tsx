@@ -32,13 +32,13 @@ const Navbar: FC<NavbarProps> = ({ show, services }) => {
   return (
     <nav
       className={cn(
+        !isDarkBackground
+          ? "bg-white/20 backdrop-blur-[20px]"
+          : "bg-black/20 backdrop-blur-[20px]",
         pathname === routes.homepage.link
           ? "border-[#393939]"
           : "border-b border-dashed border-neutral-300 bg-white/70 backdrop-blur-[20px]",
-        "fixed top-0 w-full z-50",
-        !isDarkBackground
-          ? "bg-white/20 backdrop-blur-[20px]"
-          : "bg-black/20 backdrop-blur-[20px]"
+        "fixed top-0 w-full z-50"
       )}
     >
       <div className="containerX flex flex-row items-center justify-between gap-4 py-3">
