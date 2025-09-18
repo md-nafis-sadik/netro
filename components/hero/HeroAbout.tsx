@@ -27,7 +27,7 @@ const HeroAbout = () => {
       </div> */}
       <div className="containerX">
         <Image
-          src={images.officeImage2}
+          src={images.officeImage6}
           alt="about netro"
           width={1280}
           height={1280}

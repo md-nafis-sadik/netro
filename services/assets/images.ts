@@ -43,6 +43,8 @@ export { default as officeImage1 } from "@/public/images/office-image/1.webp";
 export { default as officeImage2 } from "@/public/images/office-image/2.webp";
 export { default as officeImage3 } from "@/public/images/office-image/3.webp";
 export { default as officeImage4 } from "@/public/images/office-image/4.webp";
+export { default as officeImage5 } from "@/public/images/office-image/5.webp";
+export { default as officeImage6 } from "@/public/images/office-image/6.webp";
 export { default as project3 } from "@/public/images/project/project-3.webp";
 export { default as project4 } from "@/public/images/project/project-4.webp";
 export { default as project5 } from "@/public/images/project/project-5.webp";
