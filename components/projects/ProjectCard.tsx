@@ -31,9 +31,9 @@ const ProjectCard = ({
 
   return (
     <div
-      onClick={
-        isLink ? () => router.push(`/portfolio/${item?.title}`) : undefined
-      }
+      // onClick={
+      //   isLink ? () => router.push(`/portfolio/${item?.title}`) : undefined
+      // }
       className={cn(
         "w-full aspect-[82/115] lg:aspect-[31/18] overflow-hidden bg-text-700 group transition_common",
         className,

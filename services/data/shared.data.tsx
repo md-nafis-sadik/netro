@@ -37,7 +37,7 @@ export const routes = {
     activeRoute: "/portfolio",
   },
   career: {
-    name: "Career",
+    name: "Join us",
     link: "/career",
     activeRoute: "/career",
   },
@@ -79,6 +79,10 @@ export const navbarData = [
   {
     name: routes.about.name,
     link: routes.about.link,
+  },
+  {
+    name: routes.career.name,
+    link: routes.career.link,
   },
   {
     name: routes.contact.name,
