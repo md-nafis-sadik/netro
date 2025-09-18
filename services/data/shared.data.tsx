@@ -17,7 +17,6 @@ import {
 import {} from "@/services/assets/svgs";
 
 export const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
-export const netroWhatsappLink = "https://wa.me/message/O7VDJ52RI3Q5G1";
 
 export const routes = {
   homepage: {
@@ -301,7 +300,7 @@ export const socialsData = [
         color={colors.white}
       />
     ),
-    link: netroWhatsappLink,
+    link: "https://wa.me/message/O7VDJ52RI3Q5G1",
   },
   {
     icon: (
@@ -365,3 +364,9 @@ export const clientCompanyData = [
   images.companyBlack12,
   images.companyBlack13,
 ];
+
+export const contactData = {
+  netroContactMail: "hello@netrosystems.com",
+  netroContactPhone: "+880 1724244796",
+  netroWhatsappLink: "https://wa.me/message/O7VDJ52RI3Q5G1",
+};

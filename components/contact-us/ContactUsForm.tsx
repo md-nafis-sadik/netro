@@ -11,7 +11,7 @@ import { Button } from "../ui/button";
 import BudgetTags from "./BudgetTags";
 import ContactItem from "./ContactItem";
 import { Fragment, useState } from "react";
-import { baseUrl, netroWhatsappLink } from "@/services/data/shared.data";
+import { baseUrl, contactData } from "@/services/data/shared.data";
 import { Toaster } from "../ui/sonner";
 import { toast } from "sonner";
 
@@ -95,8 +95,8 @@ function ContactUsForm({ query = "" }: { query: string | undefined }) {
                   />
                 }
                 title="Whatsapp Link"
-                linkText={netroWhatsappLink}
-                link={netroWhatsappLink}
+                linkText={contactData.netroWhatsappLink}
+                link={contactData.netroWhatsappLink}
               />
               {/* <ContactItem
                 icon={
@@ -112,8 +112,8 @@ function ContactUsForm({ query = "" }: { query: string | undefined }) {
               <ContactItem
                 icon={<MailIcon className="w-6 h-6 sm:w-8 sm:h-8" />}
                 title="Email Us"
-                linkText="hello@netrosystems.com"
-                link="mailto:hello@netrosystems.com"
+                linkText={contactData.netroContactMail}
+                link={`mailto:${contactData.netroContactMail}`}
                 isBordered={false}
               />
             </div>

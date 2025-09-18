@@ -1,4 +1,5 @@
 import { images } from "@/services";
+import { contactData } from "@/services/data/shared.data";
 import Image from "next/image";
 
 function ContactUsDetails() {
@@ -27,13 +28,13 @@ function ContactUsDetails() {
               Email
             </p>
             <p className="text-sm sm:text-base text-text-100 font-semibold leading-[22px] mt-2">
-              hello@netrosystems.com
+              {contactData.netroContactMail}
             </p>
             <p className="text-xs sm:text-sm text-text-200 mt-4  uppercase">
               Phone
             </p>
             <p className="text-sm sm:text-base text-text-100 font-semibold leading-[22px] mt-2">
-              +880 1724244796
+              {contactData.netroContactPhone}
             </p>
             {/* <a href="#" className="flex items-center gap-2 group mt-6">
               <div className="bg-gradientGreen w-9 h-[1px] rounded-full"></div>
@@ -66,7 +67,7 @@ function ContactUsDetails() {
               Email
             </p>
             <p className="text-sm sm:text-base text-text-100 font-semibold leading-[22px] mt-2">
-              contact@netrosystems.com
+              {contactData.netroContactMail}
             </p>
             <p className="text-xs sm:text-sm text-text-200 mt-4 uppercase">
               Phone
