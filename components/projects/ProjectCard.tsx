@@ -31,11 +31,11 @@ const ProjectCard = ({
 
   return (
     <div
-      // onClick={
-      //   isLink ? () => router.push(`/portfolio/${item?.title}`) : undefined
-      // }
+      onClick={
+        isLink ? () => router.push(`/portfolio/${item?.title}`) : undefined
+      }
       className={cn(
-        "w-full aspect-[82/115] lg:aspect-[31/18] overflow-hidden bg-text-700 group transition_common",
+        "w-full aspect-[0.6/1] md:aspect-[82/115] lg:aspect-[31/18] overflow-hidden bg-text-700 group transition_common",
         className,
         isLink ? "cursor-pointer" : ""
       )}
@@ -61,8 +61,8 @@ const ProjectCard = ({
           className={cn(
             "min-w-full md:min-w-0 absolute left-0 transition_common mt-auto",
             showBottom
-              ? "min-w-full bottom-0 h-max bg-blandGradient backdrop-blur-md"
-              : "project-home-blur md:-translate-x-full group-hover:translate-x-0 bottom-0 md:bottom-auto md:top-0 h-max md:h-full",
+              ? "min-w-full bottom-0 h-[228px] bg-blandGradient backdrop-blur-md"
+              : "project-home-blur md:-translate-x-full group-hover:translate-x-0 bottom-0 md:bottom-auto md:top-0 h-[228px] md:h-full",
             leftSlideClass,
             shrinkedInGrid ? "aspect-[1/1]" : "aspect-[1/2]"
           )}
@@ -92,7 +92,7 @@ const ProjectCard = ({
             <div className="flex flex-col">
               <p
                 className={cn(
-                  "text-[10px] md:text-xs font-normal !leading-[1.6] text-white font-inter"
+                  "text-[11px] md:text-xs font-normal !leading-[1.6] text-white font-inter"
                 )}
               >
                 {item?.category}
@@ -100,7 +100,7 @@ const ProjectCard = ({
 
               <Link
                 href={`/portfolio/${item?.title}`}
-                className="mt-4 sm:mt-5 lg:mt-12"
+                className="mt-4 sm:mt-5 lg:mt-12 w-fit"
               >
                 <Button className="w-fit group">
                   <span className="!leading-none text-sm xl:text-base">

@@ -7,12 +7,9 @@ type JobsResponse = {
 };
 
 const JobPostsWrapper = async () => {
-  let jobs = (await fetchWithDelay(`/jobs/all`)) as JobsResponse;
-  const activeJobs = jobs?.data?.filter(
-    (item: any) => item?.status === "active"
-  );
+  let jobs = (await fetchWithDelay(`/jobs/active`)) as JobsResponse;
 
-  return <JobPosts jobs={activeJobs} />;
+  return <JobPosts jobs={jobs?.data} />;
 };
 
 export default JobPostsWrapper;

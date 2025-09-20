@@ -1,5 +1,4 @@
 import { GradientButton } from "@/components/ui/gradient-button";
-import { inter } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
 import { CheckedCircleIcon } from "@/services/assets/svgs";
 import CardTransitionUpWithDelay from "../animations/CardTransitionUpWithDelay";
@@ -29,6 +28,7 @@ const PricingHomeCard = ({
   return (
     <CardTransitionUpWithDelay
       index={index}
+      duration={0.5}
       className={cn(
         "pricing-card w-full 2xl:w-[410px] h-full max-w-full md:max-w-[410px] p-[2px] transition_common"
       )}

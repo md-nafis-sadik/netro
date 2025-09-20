@@ -37,7 +37,8 @@ const ProjectsDetailsPreview = ({ project }: any) => {
           scrub: 0.1,
           onUpdate: (self) => {
             const progress = self.progress;
-            const scale = 1 - progress * scaleDecay * (reversedIndex + 1);
+            const scale =
+              1 - (progress / 1.5) * scaleDecay * (reversedIndex + 1);
 
             setActiveIndex(i);
 

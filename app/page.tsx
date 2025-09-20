@@ -18,17 +18,14 @@ const HomePage = () => {
   return (
     <main className="relative">
       <div className="relative">
-        <section
-          data-bg-theme="dark" >
+        <section data-bg-theme="dark">
           <HeroHome />
         </section>
-        <section
-          data-bg-theme="light" >
+        <section data-bg-theme="light">
           <IntroWithMarqueeHome />
         </section>
       </div>
-      <section
-        data-bg-theme="dark" >
+      <section data-bg-theme="dark">
         <Suspense
           fallback={
             <div className="h-screen flex items-center justify-center">
@@ -39,34 +36,27 @@ const HomePage = () => {
           <ProjectsHomeWrapper />
         </Suspense>
       </section>
-      <section
-        data-bg-theme="light" >
+      <section data-bg-theme="light">
         <ServicesHome />
       </section>
-      <section
-        data-bg-theme="dark" >
+      <section data-bg-theme="dark">
         <Products />
       </section>
-      <section
-        data-bg-theme="light" >
+      <section data-bg-theme="light">
         <WorkCultureHome />
       </section>
-      <section
-        data-bg-theme="dark" >
+      <section data-bg-theme="dark">
         <PricingHome />
       </section>
-      <section
-        data-bg-theme="light" >
+      <section data-bg-theme="light">
         <Suspense fallback={<TestimonialSkeleton />}>
           <TestimonialWrapper />
         </Suspense>
       </section>
-      <section
-        data-bg-theme="dark" >
+      <section data-bg-theme="dark">
         <StatisticsHome />
       </section>
-      <section
-        data-bg-theme="light" >
+      <section data-bg-theme="light">
         <Suspense
           fallback={
             <div className="h-screen flex items-center justify-center">
@@ -77,12 +67,10 @@ const HomePage = () => {
           <TeamHomeWrapper />
         </Suspense>
       </section>
-      <section
-        data-bg-theme="dark" >
+      <section data-bg-theme="dark">
         <FAQ />
       </section>
-      <section
-        data-bg-theme="light" >
+      <section data-bg-theme="light">
         <Suspense fallback={<JournalHomeSkeleton />}>
           <JournalHomeWrapper />
         </Suspense>

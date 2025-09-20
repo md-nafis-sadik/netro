@@ -1,8 +1,6 @@
-import { inter } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
-import CardTransitionUp from "../animations/CardTransitionUpWithDelay";
 
 interface IFCardProps {
   image: StaticImageData;
@@ -28,9 +26,10 @@ const JournalCard = ({
   contentContainerClassName,
 }: IFCardProps) => {
   return (
-    <CardTransitionUp
-      index={index}
-      duration={0.75}
+    <div
+      // index={index}
+      // duration={0.5}
+      // startAnim={100}
       className={cn("w-full group", className)}
     >
       <div
@@ -69,7 +68,7 @@ const JournalCard = ({
           {date}
         </p>
       </Link>
-    </CardTransitionUp>
+    </div>
   );
 };
 

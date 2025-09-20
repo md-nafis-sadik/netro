@@ -11,6 +11,7 @@ interface CardTransitionUpWithDelayProps {
   index: number;
   duration?: number;
   className?: string;
+  startAnim?: number;
 }
 
 const CardTransitionUpWithDelay: React.FC<CardTransitionUpWithDelayProps> = ({
@@ -18,6 +19,7 @@ const CardTransitionUpWithDelay: React.FC<CardTransitionUpWithDelayProps> = ({
   index,
   duration,
   className,
+  startAnim,
 }) => {
   const cardRef = useRef<HTMLDivElement>(null);
 
@@ -41,7 +43,11 @@ const CardTransitionUpWithDelay: React.FC<CardTransitionUpWithDelayProps> = ({
           transition: "none",
           scrollTrigger: {
             trigger: cardRef.current,
-            start: "top 95%",
+            start: startAnim
+              ? `top ${startAnim}%`
+              : window?.innerWidth > 768
+              ? "top 80%"
+              : "top 100%",
             toggleActions: "play none none none",
             once: true,
           },

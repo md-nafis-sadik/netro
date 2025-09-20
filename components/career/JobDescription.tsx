@@ -47,7 +47,7 @@ function JobDescription({ job }: any) {
                 </div>
               </div>
 
-              <Link href={"#applyForm"}>
+              <Link href={"#applyForm"} className="w-fit">
                 <Button className="group max-w-max">
                   <span className="!leading-none">Apply now</span>
                   <ArrowLongTailIcon className="h-auto w-5 md:w-6 group-hover:translate-x-2 transition_common" />
