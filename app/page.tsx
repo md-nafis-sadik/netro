@@ -13,6 +13,7 @@ import TestimonialWrapper from "@/components/testimonial/TestimonialWrapper";
 import TestimonialSkeleton from "@/components/testimonial/TestimonialSkeleton";
 import IntroWithMarqueeHome from "@/components/intro/IntroWithMarqueeHome";
 import TeamHomeWrapper from "@/components/team/TeamHomeWrapper";
+import MarqueeHome from "@/components/marquee/MarqueeHome";
 
 const HomePage = () => {
   return (
@@ -21,6 +22,11 @@ const HomePage = () => {
         <section data-bg-theme="dark">
           <HeroHome />
         </section>
+
+        <section className="overflow-hidden">
+          <MarqueeHome dark={false} className="" />
+        </section>
+
         <section data-bg-theme="light">
           <IntroWithMarqueeHome />
         </section>

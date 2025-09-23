@@ -43,7 +43,7 @@ const IntroWithMarqueeHome = () => {
       .timeline({
         scrollTrigger: {
           trigger: container,
-          start: "top 60px",
+          start: "top",
           end: "+=100%",
           pin: true,
           scrub: 1,
@@ -71,9 +71,6 @@ const IntroWithMarqueeHome = () => {
       ref={containerRef}
       className="w-full min-h-[240px] md:min-h-[280px] lg:min-h-[380px] relative z-10 overflow-hidden"
     >
-      {/* Hero Marquee Section */}
-      <MarqueeHome dark={false} className="" />
-
       {/* Text Reveal Section */}
       <div className="containerX flex flow-row items-center overflow-hidden h-full md:h-screen px-4 md:px-0 py-20 md:py-0">
         <p
