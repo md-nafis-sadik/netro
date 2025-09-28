@@ -146,17 +146,17 @@ function JobApplyForm({ jobId }: { jobId: string }) {
               required
             />
             <input
-              type="number"
+              type="email"
               name="email"
               className="inputDark"
-              placeholder="Mobile Number"
+              placeholder="Email Address, eg: user@website.com"
               required
             />
             <input
-              type="email"
+              type="number"
               name="number"
               className="inputDark"
-              placeholder="Email Address, eg: user@website.com"
+              placeholder="Mobile Number"
               required
             />
             <input
