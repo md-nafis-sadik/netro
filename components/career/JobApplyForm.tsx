@@ -24,31 +24,38 @@ function JobApplyForm({ jobId }: { jobId: string }) {
 
   const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+
     const form = event.target as HTMLFormElement;
-    const firstName = (form.elements.namedItem("firstName") as HTMLInputElement)
+    const name = (form.elements.namedItem("name") as HTMLInputElement)?.value;
+    const location = (form.elements.namedItem("location") as HTMLInputElement)
       ?.value;
-    const lastName = (form.elements.namedItem("lastName") as HTMLInputElement)
-      ?.value;
-    const email = (form.elements.namedItem("email") as HTMLInputElement)?.value;
     const number = (form.elements.namedItem("number") as HTMLInputElement)
       ?.value;
-    const salaryExpectation = (
-      form.elements.namedItem("salaryExpectation") as HTMLInputElement
-    )?.value;
+    const email = (form.elements.namedItem("email") as HTMLInputElement)?.value;
     const experience = (
       form.elements.namedItem("experience") as HTMLInputElement
     )?.value;
     const previousCompany = (
       form.elements.namedItem("previousCompany") as HTMLInputElement
     )?.value;
-    const location = (form.elements.namedItem("location") as HTMLInputElement)
-      ?.value;
+    const salaryExpectation = (
+      form.elements.namedItem("salaryExpectation") as HTMLInputElement
+    )?.value;
     const liveUrl = (form.elements.namedItem("liveUrl") as HTMLInputElement)
       ?.value;
 
     const formData = new FormData();
 
-    if (!firstName || !lastName || !email || !number || !location || !liveUrl) {
+    if (
+      !name ||
+      !location ||
+      !number ||
+      !email ||
+      !experience ||
+      !previousCompany ||
+      !salaryExpectation ||
+      !liveUrl
+    ) {
       setError({ message: "Please fill all the fields" });
       return;
     }
@@ -65,13 +72,13 @@ function JobApplyForm({ jobId }: { jobId: string }) {
 
     const data = {
       job: jobId,
-      name: `${firstName} ${lastName}`,
+      name,
       email,
       number,
       location,
-      salaryExpectation,
       experience,
       previousCompany,
+      salaryExpectation,
       liveUrl,
     };
 
@@ -88,6 +95,7 @@ function JobApplyForm({ jobId }: { jobId: string }) {
       .then((res) => {
         if (res?.ok) {
           (event.target as HTMLFormElement).reset();
+          setCv(null);
 
           toast.success("Thank You for your application!", {
             description: "We'll contact you shortly.",
@@ -133,23 +141,16 @@ function JobApplyForm({ jobId }: { jobId: string }) {
           <div className="grid sm:grid-cols-2 gap-4 sm:gap-6 md:gap-10  w-full truncate">
             <input
               type="text"
-              name="firstName"
+              name="name"
               className="inputDark"
               placeholder="Full Name"
               required
             />
             <input
               type="text"
-              name="lastName"
+              name="location"
               className="inputDark"
               placeholder="Address"
-              required
-            />
-            <input
-              type="email"
-              name="email"
-              className="inputDark"
-              placeholder="Email Address, eg: user@website.com"
               required
             />
             <input
@@ -160,29 +161,29 @@ function JobApplyForm({ jobId }: { jobId: string }) {
               required
             />
             <input
-              type="text"
-              name="salaryExpectation"
+              type="email"
+              name="email"
               className="inputDark"
-              placeholder="Year's of experience"
+              placeholder="Email Address, eg: user@website.com"
               required
             />
             <input
               type="text"
               name="experience"
               className="inputDark"
-              placeholder="Previous Company"
+              placeholder="Year's of experience"
               required
             />
             <input
               type="text"
               name="previousCompany"
               className="inputDark"
-              placeholder="Current Monthly Salary"
+              placeholder="Previous Company"
               required
             />
             <input
               type="text"
-              name="location"
+              name="salaryExpectation"
               className="inputDark"
               placeholder="Expected Monthly Salary"
               required
