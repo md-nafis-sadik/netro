@@ -14,8 +14,11 @@ import { Fragment, useState } from "react";
 import { baseUrl, contactData } from "@/services/data/shared.data";
 import { Toaster } from "../ui/sonner";
 import { toast } from "sonner";
+import { useSearchParams } from "next/navigation";
 
 function ContactUsForm({ query = "" }: { query: string | undefined }) {
+  const searchParams = useSearchParams();
+
   const [isLoading, setIsLoading] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [isError, setIsError] = useState(false);
@@ -135,6 +138,7 @@ function ContactUsForm({ query = "" }: { query: string | undefined }) {
                 name="email"
                 className="input"
                 placeholder="Your Email"
+                defaultValue={searchParams.get("email") || ""}
               />
               <textarea
                 name="message"

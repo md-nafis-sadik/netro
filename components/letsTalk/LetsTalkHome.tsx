@@ -1,10 +1,22 @@
+"use client";
 import { GradientButton } from "@/components/ui/gradient-button";
 import { cn } from "@/lib/utils";
 import { ArrowTopRIghtIcon } from "@/services/assets/svgs";
 import SectionHeader from "../common/SectionHeader";
-import { footerData } from "@/services/data/shared.data";
+import { footerData, routes } from "@/services/data/shared.data";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 const LetsTalkHome = () => {
+  const router = useRouter();
+  const [email, setEmail] = useState<string>("");
+
+  const handleContactSupport = () => {
+    if (!email) return;
+    setEmail("");
+    router.push(routes.contact.link + `?email=${email}`);
+  };
+
   return (
     <section className="bg-black" data-bg-theme="dark">
       <div className="containerX py-[60px] md:py-20 flex flex-col lg:flex-row items-center gap-[42px] justify-between">
@@ -30,31 +42,34 @@ const LetsTalkHome = () => {
         </div>
 
         <div className="email_input_gradient p-[2px] !rounded-[100px] transition_common group relative w-full sm:w-auto">
-          <form className="!bg-black ps-6 py-3 pe-1 md:pe-3 h-[54px] md:h-[70px] flex items-center gap-4 content-bg-gradient-primary !rounded-[100px]">
+          <div className="!bg-black ps-6 py-3 pe-1 md:pe-3 h-[54px] md:h-[70px] flex items-center gap-4 content-bg-gradient-primary !rounded-[100px]">
             <input
               type="email"
               placeholder="Ex: user@website.com"
               className={cn(
                 "text-sm md:text-base font-normal !leading-[1.3] bg-transparent border-none outline-none text-white placeholder:bg-clip-text placeholder:text-transparent placeholder:bg-gradient-to-r placeholder:from-[#959595] placeholder:via-white placeholder:to-[#676767] h-full font-inter max-w-[148px] md:max-w-full"
               )}
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
             <div className="hidden sm:block">
-            <GradientButton
-              type="submit"
-              className="py-2 md:py-3 h-[38px] md:h-[46px]"
-            >
-              <span>Submit</span>
-            </GradientButton>
-            </div>
-            <div className="absolute sm:hidden" style={{right: "8px"}}>
               <GradientButton
-              type="submit"
-              className="py-2 md:py-3 h-[38px] md:h-[46px]"
-            >
-              <span>Submit</span>
-            </GradientButton>
+                type="submit"
+                className="py-2 md:py-3 h-[38px] md:h-[46px]"
+                onClick={handleContactSupport}
+              >
+                <span>Submit</span>
+              </GradientButton>
             </div>
-          </form>
+            <div className="absolute sm:hidden" style={{ right: "8px" }}>
+              <GradientButton
+                type="submit"
+                className="py-2 md:py-3 h-[38px] md:h-[46px]"
+              >
+                <span>Submit</span>
+              </GradientButton>
+            </div>
+          </div>
         </div>
       </div>
     </section>
