@@ -240,7 +240,7 @@ function JobApplyForm({ jobId }: { jobId: string }) {
 
             <div className="flex flex-col gap-2">
               <label className="text-neutral-300">Upload CV</label>
-              <CVUploader setter={setCv} />
+              <CVUploader key={cv ? cv.name : "empty"} setter={setCv} />
             </div>
           </div>
           <GradientButton type="submit" className="!px-8">
