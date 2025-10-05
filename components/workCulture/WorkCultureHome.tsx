@@ -25,8 +25,8 @@ const WorkCultureHome = () => {
 
   const imageCards = [
     {
-      image: images.officeImage1,
-      alt: "office image 1",
+      image: images.officeImage8,
+      alt: "office image 8",
     },
     {
       image: images.officeImage4,

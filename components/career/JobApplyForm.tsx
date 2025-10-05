@@ -1,14 +1,7 @@
 "use client";
-import {
-  ArrowLongTailIcon,
-  ErrorSvg,
-  FileIcon,
-  SpinningIcon,
-  SuccessSvg,
-} from "@/services/assets/svgs";
+import { ErrorSvg, SpinningIcon, SuccessSvg } from "@/services/assets/svgs";
 import { ChevronRight } from "lucide-react";
 import { GradientButton } from "../ui/gradient-button";
-import { useRouter } from "next/navigation";
 import { Fragment, useState } from "react";
 import { baseUrl } from "@/services/data/shared.data";
 import CVUploader from "../ui/CVUploader";
@@ -16,11 +9,8 @@ import { Toaster } from "../ui/sonner";
 import { toast } from "sonner";
 
 function JobApplyForm({ jobId }: { jobId: string }) {
-  const router = useRouter();
   const [cv, setCv] = useState<File | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [isSuccess, setIsSuccess] = useState<boolean>(false);
-  const [error, setError] = useState<{ message: string }>({ message: "" });
 
   const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -56,12 +46,15 @@ function JobApplyForm({ jobId }: { jobId: string }) {
       !salaryExpectation ||
       !liveUrl
     ) {
-      setError({ message: "Please fill all the fields" });
+      toast.error("Please fill all the fields", {
+        description: "All fields are required.",
+        icon: <ErrorSvg />,
+        position: "top-right",
+      });
       return;
     }
 
     if (!cv) {
-      setError({ message: "Please upload your CV" });
       toast.error("CV is required!", {
         description: "Please upload your CV.",
         icon: <ErrorSvg />,
@@ -85,8 +78,6 @@ function JobApplyForm({ jobId }: { jobId: string }) {
     formData.append("single", cv);
     formData.append("data", JSON.stringify(data));
     setIsLoading(true);
-    setError({ message: "" });
-    setIsSuccess(false);
 
     fetch(`${baseUrl}/resumes/create`, {
       method: "POST",
@@ -112,16 +103,12 @@ function JobApplyForm({ jobId }: { jobId: string }) {
           });
         } else {
           setIsLoading(false);
-          setIsSuccess(false);
-          setError({ message: "An error occurred. Please try again.." });
+
           toast.error("An error occurred!", {
             description: "Application failed! Please try again later.",
             icon: <ErrorSvg />,
             position: "top-right",
           });
-          setTimeout(() => {
-            setError({ message: "" });
-          }, 2000);
         }
       })
       .finally(() => {
@@ -138,65 +125,123 @@ function JobApplyForm({ jobId }: { jobId: string }) {
           onSubmit={handleFormSubmit}
           className="flex flex-col gap-10 sm:gap-16 md:gap-20 items-center mt-6 sm:mt-10 md:mt-16 lg:mt-20"
         >
-          <div className="grid sm:grid-cols-2 gap-4 sm:gap-6 md:gap-10  w-full truncate">
-            <input
-              type="text"
-              name="name"
-              className="inputDark"
-              placeholder="Full Name"
-              required
-            />
-            <input
-              type="text"
-              name="location"
-              className="inputDark"
-              placeholder="Address"
-              required
-            />
-            <input
-              type="number"
-              name="number"
-              className="inputDark"
-              placeholder="Mobile Number"
-              required
-            />
-            <input
-              type="email"
-              name="email"
-              className="inputDark"
-              placeholder="Email Address, eg: user@website.com"
-              required
-            />
-            <input
-              type="text"
-              name="experience"
-              className="inputDark"
-              placeholder="Year's of experience"
-              required
-            />
-            <input
-              type="text"
-              name="previousCompany"
-              className="inputDark"
-              placeholder="Previous Company"
-              required
-            />
-            <input
-              type="text"
-              name="salaryExpectation"
-              className="inputDark"
-              placeholder="Expected Monthly Salary"
-              required
-            />
-            <input
-              type="text"
-              name="liveUrl"
-              className="inputDark"
-              placeholder="Add Portfolio URL (Dribbble, Behance, Github, Drive)"
-              required
-            />
+          <div className="grid sm:grid-cols-2 gap-y-4 sm:gap-y-6 gap-x-4 sm:gap-x-6 md:gap-x-10 w-full truncate">
+            {/* FULL NAME */}
+            <div className="flex flex-col gap-2">
+              <label htmlFor="name" className="text-neutral-300">
+                Full Name
+              </label>
+              <input
+                type="text"
+                name="name"
+                className="inputDark"
+                placeholder="Full Name"
+                required
+              />
+            </div>
 
-            <CVUploader setter={setCv} />
+            {/* LOCATION */}
+            <div className="flex flex-col gap-2">
+              <label htmlFor="location" className="text-neutral-300">
+                Address
+              </label>
+              <input
+                type="text"
+                name="location"
+                className="inputDark"
+                placeholder="Address"
+                required
+              />
+            </div>
+
+            {/* MOBILE NUMBER */}
+            <div className="flex flex-col gap-2">
+              <label htmlFor="number" className="text-neutral-300">
+                Mobile Number
+              </label>
+              <input
+                type="number"
+                name="number"
+                className="inputDark"
+                placeholder="Mobile Number"
+                required
+              />
+            </div>
+
+            {/* EMAIL */}
+            <div className="flex flex-col gap-2">
+              <label htmlFor="email" className="text-neutral-300">
+                Email
+              </label>
+              <input
+                type="email"
+                name="email"
+                className="inputDark"
+                placeholder="Email Address, eg: user@website.com"
+                required
+              />
+            </div>
+
+            {/* EXPERIENCE */}
+            <div className="flex flex-col gap-2">
+              <label htmlFor="experience" className="text-neutral-300">
+                Experience
+              </label>
+              <input
+                type="text"
+                name="experience"
+                className="inputDark"
+                placeholder="Year's of experience"
+                required
+              />
+            </div>
+
+            {/* PREVIOUS COMPANY */}
+            <div className="flex flex-col gap-2">
+              <label htmlFor="previousCompany" className="text-neutral-300">
+                Previous Company
+              </label>
+              <input
+                type="text"
+                name="previousCompany"
+                className="inputDark"
+                placeholder="Previous Company"
+                required
+              />
+            </div>
+
+            {/* SALARY EXPECTATION */}
+            <div className="flex flex-col gap-2">
+              <label htmlFor="salaryExpectation" className="text-neutral-300">
+                Salary Expectation
+              </label>
+              <input
+                type="text"
+                name="salaryExpectation"
+                className="inputDark"
+                placeholder="Expected Monthly Salary"
+                required
+              />
+            </div>
+
+            {/* PORTFOLIO */}
+            <div className="flex flex-col gap-2">
+              <label htmlFor="liveUrl" className="text-neutral-300">
+                Portfolio
+              </label>
+              <input
+                type="text"
+                name="liveUrl"
+                className="inputDark"
+                placeholder="Add Portfolio URL (Dribbble, Behance, Github, Drive)"
+                required
+              />
+            </div>
+
+            <div className="flex flex-col gap-2">
+              <label className="text-neutral-300">Upload CV</label>
+              <CVUploader setter={setCv} />
+            </div>
           </div>
           <GradientButton type="submit" className="!px-8">
             {isLoading ? (
