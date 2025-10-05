@@ -137,7 +137,7 @@ function ContactUsForm({ query = "" }: { query: string | undefined }) {
                 placeholder="Your Email"
               />
               <textarea
-                name="queries"
+                name="message"
                 className="input h-30"
                 placeholder="Tell Us About Your Quires"
               />
