@@ -5,6 +5,7 @@ import Image from "next/image";
 import { socialsData } from "@/services/data/shared.data";
 import ZRotationText from "../animations/ZRotationText";
 import { Button } from "../ui/button";
+import ExpandableButtonList from "./partials/ExpandableButtonList";
 
 const HeroHome = () => {
   return (
@@ -38,34 +39,34 @@ const HeroHome = () => {
           >
             <div className="flex items-center justify-center lg:justify-start w-full">
               <ZRotationText
-                text="D"
+                text="I"
                 delay={0.5}
-                gradientTextClass="home_hero_design_d"
+                gradientTextClass="home_hero_ideate_i"
+              />
+              <ZRotationText
+                text="D"
+                delay={0.52}
+                gradientTextClass="home_hero_ideate_d"
               />
               <ZRotationText
                 text="E"
-                delay={0.52}
-                gradientTextClass="home_hero_design_e"
-              />
-              <ZRotationText
-                text="S"
                 delay={0.54}
-                gradientTextClass="home_hero_design_s"
+                gradientTextClass="home_hero_ideate_e"
               />
               <ZRotationText
-                text="I"
+                text="A"
                 delay={0.56}
-                gradientTextClass="home_hero_design_i"
+                gradientTextClass="home_hero_ideate_a"
               />
               <ZRotationText
-                text="G"
+                text="T"
                 delay={0.58}
-                gradientTextClass="home_hero_design_g"
+                gradientTextClass="home_hero_ideate_t"
               />
               <ZRotationText
-                text="N"
+                text="E"
                 delay={0.6}
-                gradientTextClass="home_hero_design_n"
+                gradientTextClass="home_hero_ideate_e"
               />
             </div>
             <div className="flex flex-row items-end w-full">
@@ -73,27 +74,27 @@ const HeroHome = () => {
                 <ZRotationText
                   text="D"
                   delay={0.75}
-                  gradientTextClass="home_hero_development_d"
+                  gradientTextClass="home_hero_develop_deploy_d"
                 />
                 <ZRotationText
                   text="E"
                   delay={0.77}
-                  gradientTextClass="home_hero_development_e1"
+                  gradientTextClass="home_hero_develop_deploy_e1"
                 />
                 <ZRotationText
                   text="V"
                   delay={0.79}
-                  gradientTextClass="home_hero_development_v"
+                  gradientTextClass="home_hero_develop_deploy_v"
                 />
                 <ZRotationText
                   text="E"
                   delay={0.81}
-                  gradientTextClass="home_hero_development_e2"
+                  gradientTextClass="home_hero_develop_deploy_e2"
                 />
                 <ZRotationText
                   text="L"
                   delay={0.83}
-                  gradientTextClass="home_hero_development_l"
+                  gradientTextClass="home_hero_develop_deploy_l"
                 />
                 {/* <BallBounceText
                 className={cn(
@@ -106,32 +107,52 @@ const HeroHome = () => {
                 <ZRotationText
                   text="O"
                   delay={1.0}
-                  gradientTextClass="home_hero_development_p"
+                  gradientTextClass="home_hero_develop_deploy_p"
                 />
                 <ZRotationText
                   text="P"
                   delay={1.25}
-                  gradientTextClass="home_hero_development_p"
+                  gradientTextClass="home_hero_develop_deploy_p"
                 />
                 <ZRotationText
-                  text="M"
+                  text=","
                   delay={1.27}
-                  gradientTextClass="home_hero_development_m"
+                  gradientTextClass="home_hero_develop_deploy_comma"
+                />
+                <ZRotationText
+                  text="D"
+                  delay={1.29}
+                  gradientTextClass="home_hero_develop_deploy_d2"
                 />
                 <ZRotationText
                   text="E"
-                  delay={1.29}
-                  gradientTextClass="home_hero_development_e3"
-                />
-                <ZRotationText
-                  text="N"
                   delay={1.31}
-                  gradientTextClass="home_hero_development_n"
+                  gradientTextClass="home_hero_develop_deploy_e3"
                 />
                 <ZRotationText
-                  text="T"
+                  text="P"
                   delay={1.33}
-                  gradientTextClass="home_hero_development_t"
+                  gradientTextClass="home_hero_develop_deploy_p2"
+                />
+                <ZRotationText
+                  text="L"
+                  delay={1.35}
+                  gradientTextClass="home_hero_develop_deploy_l2"
+                />
+                <ZRotationText
+                  text="O"
+                  delay={1.37}
+                  gradientTextClass="home_hero_develop_deploy_o2"
+                />
+                <ZRotationText
+                  text="Y"
+                  delay={1.39}
+                  gradientTextClass="home_hero_develop_deploy_y"
+                />
+                <ZRotationText
+                  text="."
+                  delay={1.41}
+                  gradientTextClass="home_hero_develop_deploy_dot"
                 />
               </div>
             </div>
@@ -179,12 +200,13 @@ const HeroHome = () => {
               "text-sm md:text-xl font-normal !leading-normal text-text-200 mt-1 font-inter text-center lg:text-start max-w-[562px] mx-auto lg:mx-0"
             )}
           >
-            Empowering brands with user-focused designs and seamless
-            development.
+            From concept to deployment, we engineer digital experiences that
+            drive business growth. We help with Modern UIUX design and
+            word-class software development for enterprises.
           </p>
 
           {/* CONNECT & SOCIALS */}
-          <div className="flex flex-col md:flex-row justify-center lg:justify-start items-center gap-6 mt-8 md:mt-10">
+          <div className="flex md:hidden flex-col md:flex-row justify-center lg:justify-start items-center gap-6 mt-8 md:mt-10">
             <a
               href="https://tidycal.com/netrosystems/discussion"
               target="_blank"
@@ -209,6 +231,7 @@ const HeroHome = () => {
               ))}
             </div>
           </div>
+          <ExpandableButtonList className="hidden md:flex" />
 
           <div className="flex flex-row items-center justify-center lg:justify-start mt-10 min-[1600px]:mt-20 gap-2 sm:gap-4 lg:gap-6 relative w-full max-w-full overflow-hidden px-4 sm:px-0">
             <a

@@ -13,6 +13,7 @@ import {
   WhatsappOutlinedIcon,
   PinterestIcon,
   CodeCanyonIcon,
+  CalendarIcon,
 } from "../assets/svgs";
 import {} from "@/services/assets/svgs";
 
@@ -295,12 +296,23 @@ export const successStoryData = [
 export const socialsData = [
   {
     icon: (
+      <CalendarIcon
+        className="!w-5 md:!w-6 !h-5 md:!h-6 !shrink-0"
+        color={colors.white}
+      />
+    ),
+    link: "https://wa.me/message/O7VDJ52RI3Q5G1",
+    text: "Schedule a call",
+  },
+  {
+    icon: (
       <WhatsappOutlinedIcon
         className="!w-5 md:!w-6 !h-5 md:!h-6 !shrink-0"
         color={colors.white}
       />
     ),
     link: "https://wa.me/message/O7VDJ52RI3Q5G1",
+    text: "WhatsApp",
   },
   {
     icon: (
@@ -310,6 +322,7 @@ export const socialsData = [
       />
     ),
     link: "https://t.me/netrosystems",
+    text: "Telegram",
   },
   {
     icon: (
@@ -319,6 +332,7 @@ export const socialsData = [
       />
     ),
     link: "http://linkedin.com/company/netrosystems",
+    text: "LinkedIn",
   },
 ];
 
