@@ -18,6 +18,7 @@ import {
 import {} from "@/services/assets/svgs";
 
 export const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
+export const tidycalMettingUrl = "https://tidycal.com/netrosystems/discussion";
 
 export const routes = {
   homepage: {
@@ -293,7 +294,7 @@ export const successStoryData = [
   },
 ];
 
-export const socialsData = [
+export const homeHeroSocialsData = [
   {
     icon: (
       <CalendarIcon
@@ -301,7 +302,7 @@ export const socialsData = [
         color={colors.white}
       />
     ),
-    link: "https://wa.me/message/O7VDJ52RI3Q5G1",
+    link: tidycalMettingUrl,
     text: "Schedule a call",
   },
   {
@@ -333,6 +334,36 @@ export const socialsData = [
     ),
     link: "http://linkedin.com/company/netrosystems",
     text: "LinkedIn",
+  },
+];
+
+export const socialsData = [
+  {
+    icon: (
+      <WhatsappOutlinedIcon
+        className="!w-5 md:!w-6 !h-5 md:!h-6 !shrink-0"
+        color={colors.white}
+      />
+    ),
+    link: "https://wa.me/message/O7VDJ52RI3Q5G1",
+  },
+  {
+    icon: (
+      <TelegramOutlinedIcon
+        className="!w-5 md:!w-6 !h-5 md:!h-6 !shrink-0 text-white"
+        color={colors.white}
+      />
+    ),
+    link: "https://t.me/netrosystems",
+  },
+  {
+    icon: (
+      <LinkedinOutlinedIcon
+        className="!w-5 md:!w-6 !h-5 md:!h-6 !shrink-0 text-white"
+        color={colors.white}
+      />
+    ),
+    link: "http://linkedin.com/company/netrosystems",
   },
 ];
 

@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { socialsData } from "@/services/data/shared.data";
+import { homeHeroSocialsData } from "@/services/data/shared.data";
 import { cn } from "@/lib/utils";
 
 interface ExpandableButtonProps {
@@ -64,7 +64,7 @@ const ExpandableButtonList = ({ className }: { className?: string }) => {
         className
       )}
     >
-      {socialsData.map((social, index) => (
+      {homeHeroSocialsData.map((social, index) => (
         <ExpandableButton
           key={index}
           link={social.link}

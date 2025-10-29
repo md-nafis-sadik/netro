@@ -2,6 +2,7 @@ import { fetchWithDelay } from "@/lib/apiHandler";
 import { ArrowLongTailIcon } from "@/services/assets/svgs";
 import Image from "next/image";
 import SectionHeader from "../common/SectionHeader";
+import { tidycalMettingUrl } from "@/services/data/shared.data";
 
 const ServiceDetailsContent = async ({ slug }: { slug: string }) => {
   let service = (await fetchWithDelay(
@@ -42,7 +43,7 @@ const ServiceDetailsContent = async ({ slug }: { slug: string }) => {
         />
 
         <a
-          href="https://tidycal.com/netrosystems/discussion"
+          href={tidycalMettingUrl}
           target="_blank"
           rel="noreferrer"
           className="btn_primary transition-colors duration-500 min-w-[180px] max-w-max sm:min-w-0 text-xs sm:text-base group flex flex-row items-center gap-2 mt-10"

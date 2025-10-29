@@ -238,7 +238,7 @@
   -webkit-text-fill-color: transparent;
 }
 
-.home_hero_deploy_d {
+.home_hero_succeed_s {
   background: linear-gradient(
         to bottom right,
         #ecabb7 0%,
@@ -257,7 +257,7 @@
   -webkit-text-fill-color: transparent;
 }
 
-.home_hero_deploy_e {
+.home_hero_succeed_u {
   background: linear-gradient(
         to bottom right,
         #d6a5ce 0%,
@@ -276,7 +276,7 @@
   -webkit-text-fill-color: transparent;
 }
 
-.home_hero_deploy_p {
+.home_hero_succeed_c1 {
   background: radial-gradient(
     151.61% 93.91% at 26.53% 86.46%,
     #d8a6c6 0%,
@@ -288,7 +288,7 @@
   -webkit-text-fill-color: transparent;
 }
 
-.home_hero_deploy_l {
+.home_hero_succeed_c2 {
   background: linear-gradient(
         to bottom right,
         #e1aead 0%,
@@ -307,7 +307,7 @@
   -webkit-text-fill-color: transparent;
 }
 
-.home_hero_deploy_o {
+.home_hero_succeed_e1 {
   background: linear-gradient(to bottom right, #cba8ca 0%, #dcaaba 48%) bottom
       right / 50% 50% no-repeat,
     linear-gradient(to bottom left, #cba8ca 0%, #dcaaba 48%) bottom left / 50%
@@ -321,7 +321,21 @@
   -webkit-text-fill-color: transparent;
 }
 
-.home_hero_deploy_y {
+.home_hero_succeed_e2 {
+  background: linear-gradient(to bottom right, #cba8ca 0%, #dcaaba 48%) bottom
+      right / 50% 50% no-repeat,
+    linear-gradient(to bottom left, #cba8ca 0%, #dcaaba 48%) bottom left / 50%
+      50% no-repeat,
+    linear-gradient(to top left, #cba8ca 0%, #dcaaba 48%) top left / 50% 50%
+      no-repeat,
+    linear-gradient(to top right, #cba8ca 0%, #dcaaba 48%) top right / 50% 50%
+      no-repeat;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.home_hero_succeed_d {
   background: linear-gradient(
         to bottom right,
         #b5a1e4 0%,
@@ -340,7 +354,7 @@
   -webkit-text-fill-color: transparent;
 }
 
-.home_hero_deploy_dot {
+.home_hero_succeed_exclamation {
   background: linear-gradient(to bottom right, #a99df3 0%, #b09feb 48%) bottom
       right / 50% 50% no-repeat,
     linear-gradient(to bottom left, #a99df3 0%, #b09feb 48%) bottom left / 50%

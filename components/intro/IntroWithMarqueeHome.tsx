@@ -2,7 +2,6 @@
 import { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import MarqueeHome from "../marquee/MarqueeHome";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -11,7 +10,7 @@ const IntroWithMarqueeHome = () => {
   const paragraphRef = useRef<HTMLParagraphElement>(null);
 
   const paragraphText =
-    "Netro Systems fosters innovation, collaboration, diversity, and growth, creating impactful software solutions in a vibrant, inclusive culture.";
+    "Empowering the future of Telecom, Fintech, Edtech, and SaaS with innovative & scalable software solutions.";
 
   useLayoutEffect(() => {
     const container = containerRef.current;
@@ -43,7 +42,7 @@ const IntroWithMarqueeHome = () => {
       .timeline({
         scrollTrigger: {
           trigger: container,
-          start: "top",
+          start: "top top",
           end: "+=100%",
           pin: true,
           scrub: 1,
@@ -52,9 +51,13 @@ const IntroWithMarqueeHome = () => {
       })
       .fromTo(
         allLetters,
-        { opacity: 0.25 },
         {
           opacity: 1,
+          color: "#000000",
+        },
+        {
+          opacity: 1,
+          color: "#5536F5",
           stagger: {
             amount: 2,
             each: 0.02,
@@ -75,7 +78,7 @@ const IntroWithMarqueeHome = () => {
       <div className="containerX flex flow-row items-center overflow-hidden h-full md:h-screen px-4 md:px-0 py-20 md:py-0">
         <p
           ref={paragraphRef}
-          className="w-full md:w-3/5 text-2xl md:text-5xl text-center font-bold !leading-[1.4] text-text-900 font-inter mx-auto"
+          className="w-full md:w-[75%] text-2xl md:text-5xl text-center font-bold !leading-[1.4] text-text-900 font-inter mx-auto"
         />
       </div>
     </div>

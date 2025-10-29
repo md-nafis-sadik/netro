@@ -2,7 +2,7 @@ import { cn } from "@/lib/utils";
 import { images } from "@/services";
 import { CalendarIcon } from "@/services/assets/svgs";
 import Image from "next/image";
-import { socialsData } from "@/services/data/shared.data";
+import { socialsData, tidycalMettingUrl } from "@/services/data/shared.data";
 import ZRotationText from "../animations/ZRotationText";
 import { Button } from "../ui/button";
 import ExpandableButtonList from "./partials/ExpandableButtonList";
@@ -119,6 +119,7 @@ const HeroHome = () => {
                   delay={1.27}
                   gradientTextClass="home_hero_develop_deploy_comma"
                 />
+                <span className="ms-2"></span>
                 <ZRotationText
                   text="D"
                   delay={1.29}
@@ -158,39 +159,44 @@ const HeroHome = () => {
             </div>
             <div className="flex items-center justify-center lg:justify-start w-full">
               <ZRotationText
-                text="D"
+                text="S"
                 delay={1.5}
-                gradientTextClass="home_hero_deploy_d"
+                gradientTextClass="home_hero_succeed_s"
+              />
+              <ZRotationText
+                text="U"
+                delay={1.52}
+                gradientTextClass="home_hero_succeed_u"
+              />
+              <ZRotationText
+                text="C"
+                delay={1.54}
+                gradientTextClass="home_hero_succeed_c1"
+              />
+              <ZRotationText
+                text="C"
+                delay={1.56}
+                gradientTextClass="home_hero_succeed_c2"
               />
               <ZRotationText
                 text="E"
-                delay={1.52}
-                gradientTextClass="home_hero_deploy_e"
-              />
-              <ZRotationText
-                text="P"
-                delay={1.54}
-                gradientTextClass="home_hero_deploy_p"
-              />
-              <ZRotationText
-                text="L"
-                delay={1.56}
-                gradientTextClass="home_hero_deploy_l"
-              />
-              <ZRotationText
-                text="O"
                 delay={1.58}
-                gradientTextClass="home_hero_deploy_o"
+                gradientTextClass="home_hero_succeed_e1"
               />
               <ZRotationText
-                text="Y"
+                text="E"
                 delay={1.6}
-                gradientTextClass="home_hero_deploy_y"
+                gradientTextClass="home_hero_succeed_e2"
               />
               <ZRotationText
-                text="."
+                text="D"
                 delay={1.62}
-                gradientTextClass="home_hero_deploy_dot"
+                gradientTextClass="home_hero_succeed_d"
+              />
+              <ZRotationText
+                text="!"
+                delay={1.62}
+                gradientTextClass="home_hero_succeed_exclamation"
               />
             </div>
           </div>
@@ -208,7 +214,7 @@ const HeroHome = () => {
           {/* CONNECT & SOCIALS */}
           <div className="flex md:hidden flex-col md:flex-row justify-center lg:justify-start items-center gap-6 mt-8 md:mt-10">
             <a
-              href="https://tidycal.com/netrosystems/discussion"
+              href={tidycalMettingUrl}
               target="_blank"
               rel="noopener noreferrer"
             >

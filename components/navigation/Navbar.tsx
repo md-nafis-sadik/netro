@@ -136,7 +136,7 @@ const Navbar: FC<NavbarProps> = ({ show, services }) => {
             containerClassName="hidden min-[1160px]:block"
             onClick={() =>
               window.open(
-                "https://tidycal.com/netrosystems/discussion",
+                tidycalMettingUrl,
                 "_blank"
               )
             }

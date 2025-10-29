@@ -2,7 +2,11 @@ import { useRef, useEffect, JSX, Fragment } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import clsx from "clsx";
-import { routes, socialsData } from "@/services/data/shared.data";
+import {
+  routes,
+  socialsData,
+  tidycalMettingUrl,
+} from "@/services/data/shared.data";
 import { GradientButton } from "../ui/gradient-button";
 import { CalendarIcon } from "@/services/assets/svgs";
 import Link from "next/link";
@@ -89,9 +93,7 @@ export default function DropupNavigationMenu({
 
         <GradientButton
           containerClassName="!shrink-0"
-          onClick={() =>
-            window.open("https://tidycal.com/netrosystems/discussion", "_blank")
-          }
+          onClick={() => window.open(tidycalMettingUrl, "_blank")}
         >
           <span className="text-white">Schedule a call</span>
           <CalendarIcon className="!h-6 !w-6 !shrink-0" />
