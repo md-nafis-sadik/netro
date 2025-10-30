@@ -30,7 +30,7 @@ const ExpandableButton: React.FC<ExpandableButtonProps> = ({
     <div className={cn("flex items-center px-[14px]", expanded ? `gap-2` : "")}>
       <div
         className={`overflow-hidden transition-all duration-500 ease-in-out ${
-          expanded ? "max-w-[200px] opacity-100 pl-2" : "max-w-0 opacity-0 pl-0"
+          expanded ? "w-[132px] opacity-100 pl-2" : "w-0 opacity-0 pl-0"
         }`}
       >
         <span className="text-white font-bold whitespace-nowrap inline-block">
