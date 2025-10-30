@@ -124,6 +124,7 @@ export const TidycalModal: React.FC = () => {
                   .fill("ok")
                   .map((_, i) => (
                     <SelectItem
+                      key={i}
                       value={`Theme ${i + 1}`}
                       className="hover:bg-natural-300"
                     >
@@ -199,6 +200,7 @@ export const TidycalModal: React.FC = () => {
                 .fill("ok")
                 .map((_, i) => (
                   <button
+                    key={i}
                     onClick={() => {
                       setActiveStage(2);
                     }}
