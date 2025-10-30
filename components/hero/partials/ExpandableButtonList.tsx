@@ -1,7 +1,11 @@
 "use client";
 import React, { useState } from "react";
-import { homeHeroSocialsData } from "@/services/data/shared.data";
+import {
+  homeHeroSocialsData,
+  tidycalMettingUrl,
+} from "@/services/data/shared.data";
 import { cn } from "@/lib/utils";
+import { useTidycalModal } from "@/contexts/TidycalModalContext";
 
 interface ExpandableButtonProps {
   link: string;
@@ -20,7 +24,39 @@ const ExpandableButton: React.FC<ExpandableButtonProps> = ({
   expanded = false,
   onHoverChange,
 }) => {
-  return (
+  const { open } = useTidycalModal();
+
+  const content = (
+    <div className={cn("flex items-center px-[14px]", expanded ? `gap-2` : "")}>
+      <div
+        className={`overflow-hidden transition-all duration-500 ease-in-out ${
+          expanded ? "max-w-[200px] opacity-100 pl-2" : "max-w-0 opacity-0 pl-0"
+        }`}
+      >
+        <span className="text-white font-bold whitespace-nowrap inline-block">
+          {text}
+        </span>
+      </div>
+      <div className="shrink-0 text-white flex items-center justify-center">
+        {icon}
+      </div>
+    </div>
+  );
+
+  return link === tidycalMettingUrl ? (
+    <button
+      type="button"
+      onClick={open}
+      onMouseEnter={() => onHoverChange?.(true)}
+      onMouseLeave={() => onHoverChange?.(false)}
+      className={cn(
+        `group h-12 rounded-full flex items-center justify-center cursor-pointer overflow-hidden shadow-lg shrink-0 transition-all duration-300 font-inter`,
+        expanded ? "bg-main-600" : "bg-main-950"
+      )}
+    >
+      {content}
+    </button>
+  ) : (
     <a
       href={link}
       target="_blank"
@@ -32,24 +68,7 @@ const ExpandableButton: React.FC<ExpandableButtonProps> = ({
         expanded ? "bg-main-600" : "bg-main-950"
       )}
     >
-      <div
-        className={cn("flex items-center px-[14px]", expanded ? `gap-2` : "")}
-      >
-        <div
-          className={`overflow-hidden transition-all duration-500 ease-in-out ${
-            expanded
-              ? "max-w-[200px] opacity-100 pl-2"
-              : "max-w-0 opacity-0 pl-0"
-          }`}
-        >
-          <span className="text-white font-bold whitespace-nowrap inline-block">
-            {text}
-          </span>
-        </div>
-        <div className="shrink-0 text-white flex items-center justify-center">
-          {icon}
-        </div>
-      </div>
+      {content}
     </a>
   );
 };

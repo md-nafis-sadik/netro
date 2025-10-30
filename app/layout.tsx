@@ -12,6 +12,8 @@ import LenisWrapper from "@/components/wrappers/LenisWrapper";
 import ScrollToTopOnRouteChange from "@/components/common/ScrollToTopOnRouteChange";
 import Script from "next/script";
 import NavbarWrapper from "@/components/navigation/NavbarWrapper";
+import { TidycalModal } from "@/components/shared/TidycalModal";
+import { TidycalModalProvider } from "@/contexts/TidycalModalContext";
 
 export const metadata: Metadata = {
   title: "Netro Systems",
@@ -43,19 +45,23 @@ const RootLayout = ({
           "bg-white min-h-screen text-neutral-700 relative"
         )}
       >
-        <LenisWrapper>
-          <ScrollToTopOnRouteChange />
-          <NavbarWrapper />
-          {children}
-          <LetsTalk />
-          <Footer />
-          {/* <ParallaxContainer
+        <TidycalModalProvider>
+          <LenisWrapper>
+            <ScrollToTopOnRouteChange />
+            <NavbarWrapper />
+            {children}
+            <LetsTalk />
+            <Footer />
+            {/* <ParallaxContainer
             containerClassName="fixed bottom-10 right-10 z-50"
             scaleAmount={1.5}
-          >
+            >
             <ContactPin />
           </ParallaxContainer> */}
-        </LenisWrapper>
+          </LenisWrapper>
+
+          <TidycalModal />
+        </TidycalModalProvider>
 
         {/* Google Tag Manager (noscript) */}
         <noscript>
