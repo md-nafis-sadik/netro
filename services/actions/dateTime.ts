@@ -1,13 +1,27 @@
 export const timestampDisplay = (timestamp: number) => {
   const date = new Date(timestamp * 1000);
 
+  // Use fixed, manual month mapping (not locale-based)
+  const monthNames = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+
   const day = date.getDate();
-  const month = date.toLocaleString("en-US", { month: "long" });
+  const month = monthNames[date.getMonth()];
   const year = date.getFullYear();
 
-  const formattedDate = `${day} ${month}, ${year}`;
-
-  return formattedDate;
+  return `${day} ${month}, ${year}`;
 };
 
 export const getReadableDate = (input: string) => {

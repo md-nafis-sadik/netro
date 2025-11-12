@@ -1,16 +1,14 @@
 "use client";
 import SectionSubHeader from "@/components/common/SectionSubHeader";
-import useEmblaCarousel from "embla-carousel-react";
-import JournalCard from "./JournalCard";
 import ArrowLineupButton from "@/components/ui/arrow-lineup-button";
 import colors from "@/lib/colors";
-import SectionHeader from "../common/SectionHeader";
 import { timestampDisplay } from "@/services";
-import { useRouter } from "next/navigation";
 import { routes } from "@/services/data/shared.data";
+import useEmblaCarousel from "embla-carousel-react";
+import SectionHeader from "../common/SectionHeader";
+import JournalCard from "./JournalCard";
 
 const OurJournal = ({ data }: any) => {
-  const router = useRouter();
   const options = { align: "start", loop: false } as const;
   const [emblaRef] = useEmblaCarousel(options);
 
