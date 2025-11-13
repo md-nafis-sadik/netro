@@ -17,7 +17,7 @@ import Script from "next/script";
 
 export const metadata: Metadata = {
   title: "Netro Systems",
-  description: "",
+  description: "𝗖𝘂𝘀𝘁𝗼𝗺 𝘀𝗼𝗳𝘁𝘄𝗮𝗿𝗲 𝗱𝗲𝘃𝗲𝗹𝗼𝗽𝗺𝗲𝗻𝘁 𝘀𝗼𝗹𝘂𝘁𝗶𝗼𝗻𝘀 - 𝗯𝘂𝗶𝗹𝘁 𝗳𝗼𝗿 𝘆𝗼𝘂𝗿 𝗯𝘂𝘀𝗶𝗻𝗲𝘀𝘀.",
 };
 
 const RootLayout = ({
