@@ -132,5 +132,19 @@ body {
       z-index: 1;
     }
   }
+
+  .custom_scroller::-webkit-scrollbar {
+    width: 8px;
+  }
+  .custom_scroller::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .custom_scroller::-webkit-scrollbar-thumb {
+    background-color: rgba(100, 100, 100, 0.5);
+    border-radius: 4px;
+  }
+  
 }
-.project-content strong { font-weight: 900 !important; }
+.project-content strong {
+  font-weight: 900 !important;
+}
