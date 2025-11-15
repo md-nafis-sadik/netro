@@ -2,7 +2,7 @@ import ScrollToTopOnRouteChange from "@/components/common/ScrollToTopOnRouteChan
 import Footer from "@/components/footer/Footer";
 import LetsTalk from "@/components/letsTalk/LetsTalkHome";
 import NavbarWrapper from "@/components/navigation/NavbarWrapper";
-import { TidycalModal } from "@/components/shared/TidycalModal";
+import { TidycalModal } from "@/components/tidycal/TidycalModal";
 import LenisWrapper from "@/components/wrappers/LenisWrapper";
 import { TidycalModalProvider } from "@/contexts/TidycalModalContext";
 import { bonbon, inter, scout, scoutCond, yesevaOne } from "@/lib/fonts";

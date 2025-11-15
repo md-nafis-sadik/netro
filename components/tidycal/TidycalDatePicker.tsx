@@ -1,20 +1,9 @@
+import { useTidycalModal } from "@/contexts/TidycalModalContext";
 import { DayPicker } from "react-day-picker";
 
-interface DatePickerProps {
-  selectedDate: Date | undefined;
-  setSelectedDate: (date: Date | undefined) => void;
-  setActiveStage: (stage: number) => void;
-  fromDate: Date;
-  toDate: Date;
-}
-
-function DatePicker({
-  selectedDate,
-  setSelectedDate,
-  setActiveStage,
-  fromDate,
-  toDate,
-}: DatePickerProps) {
+function TidycalDatePicker() {
+  const { selectedDate, setSelectedDate, setActiveStage, fromDate, toDate } =
+    useTidycalModal();
   return (
     <DayPicker
       mode="single"
@@ -112,4 +101,4 @@ function DatePicker({
   );
 }
 
-export default DatePicker;
+export default TidycalDatePicker;
