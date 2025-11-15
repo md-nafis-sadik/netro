@@ -1,19 +1,17 @@
 import { useTidycalModal } from "@/contexts/TidycalModalContext";
+import { getDateRangeFromTimezone } from "@/services";
 import { DayPicker } from "react-day-picker";
 
 function TidycalDatePicker() {
-  const { selectedDate, setSelectedDate, setActiveStage, fromDate, toDate } =
-    useTidycalModal();
+  const { state, getTidySlots } = useTidycalModal();
+  const { fromDate, toDate } = getDateRangeFromTimezone(state?.timezone);
   return (
     <DayPicker
       mode="single"
-      selected={selectedDate}
-      onSelect={(value) => {
-        setSelectedDate(value);
-        setActiveStage(1);
-      }}
+      selected={state.date}
+      onSelect={(value) => getTidySlots(value)}
       disabled={{ before: fromDate, after: toDate }}
-      defaultMonth={new Date(2025, 10, 15)}
+      defaultMonth={new Date()}
       showOutsideDays={false}
       classNames={{
         months: "flex flex-col items-center justify-center relative", // center align

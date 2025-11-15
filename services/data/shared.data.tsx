@@ -1,21 +1,21 @@
 import colors from "@/lib/colors";
+import {} from "@/services/assets/svgs";
 import { images } from "../assets";
 import {
   BehanceIcon,
+  CalendarIcon,
+  CodeCanyonIcon,
   DribbleIcon,
   FacebookIcon,
   GithubIcon,
   InstagramIcon,
   LinkedinOutlinedIcon,
+  PinterestIcon,
   TelegramOutlinedIcon,
   TwitterIcon,
-  YoutubeIcon,
   WhatsappOutlinedIcon,
-  PinterestIcon,
-  CodeCanyonIcon,
-  CalendarIcon,
+  YoutubeIcon,
 } from "../assets/svgs";
-import {} from "@/services/assets/svgs";
 
 export const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
 export const tidycalMettingUrl = "https://tidycal.com/netrosystems/discussion";
