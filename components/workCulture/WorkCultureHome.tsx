@@ -115,9 +115,11 @@ const WorkCultureHome = () => {
       allLetters,
       {
         opacity: 0.25,
+        color: "#000000",
       },
       {
         opacity: 1,
+        color: "#5536F5",
         stagger: {
           amount: 2,
           each: 0.02,
