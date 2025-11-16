@@ -1,9 +1,10 @@
 import { useTidycalModal } from "@/contexts/TidycalModalContext";
+import { formatFullDateTimeTZ, ISOToTime } from "@/services";
 import { CalendarSecondaryIcon, PublicGlobeIcon } from "@/services/assets/svgs";
 import { Button } from "../ui/button";
 
 function TidycalConfirmation() {
-  const { handleCloseModal } = useTidycalModal();
+  const { handleCloseModal, state } = useTidycalModal();
   return (
     <div className="flex flex-col flex-1">
       <div className="flex-grow flex_center flex-col">
@@ -17,13 +18,14 @@ function TidycalConfirmation() {
         <p className="flex flex-row gap-2 items-center justify-start w-full mt-8">
           <PublicGlobeIcon className="!h-6 !w-6 shrink-0 text-main-600" />
           <span className="text-text-200 text-base !leading-normal font-normal">
-            (+06:00) Dhaka
+            {state.timezone?.label}
           </span>
         </p>
         <p className="flex flex-row gap-2 items-center justify-start w-full mt-4">
           <CalendarSecondaryIcon className="!h-6 !w-6 shrink-0 text-main-600" />
           <span className="text-text-200 text-base !leading-normal font-normal">
-            Wednesday, October 29, 2025 at 12:00PM
+            {formatFullDateTimeTZ(state.date, state.timezone?.key)} at&nbsp;
+            {ISOToTime(state.slot, state.timezone?.key)}
           </span>
         </p>
       </div>

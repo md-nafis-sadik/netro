@@ -13,7 +13,10 @@ import {
 
 function TidycalTimezone() {
   const { activeStage, state, dispatch } = useTidycalModal();
-  const timezones = useMemo(() => Object.values(timezonesData), []);
+  const timezones = useMemo(
+    () => Object.entries(timezonesData), // array of [key, value]
+    []
+  );
 
   // Virtualized row renderer
   const VirtualizedRow = ({
@@ -23,17 +26,23 @@ function TidycalTimezone() {
   }: {
     index?: number;
     style?: React.CSSProperties;
-    timezones: string[];
+    timezones: [string, string][]; // [key, value]
   }) => {
-    const timezone = timezones[index || 0] || "";
+    const [tzKey, tzLabel] = timezones[index || 0];
+
     return (
       <div style={style}>
         <DropdownMenuItem
-          key={timezone}
+          key={tzKey}
           className="hover:bg-natural-black text-white"
-          onClick={() => dispatch({ type: "timezone", payload: timezone })}
+          onClick={() =>
+            dispatch({
+              type: "timezone",
+              payload: { key: tzKey, label: tzLabel },
+            })
+          }
         >
-          {timezone}
+          {tzLabel}
         </DropdownMenuItem>
       </div>
     );
@@ -48,7 +57,7 @@ function TidycalTimezone() {
         <DropdownMenuTrigger className="w-full rounded-none border border-natural-700 text-white-100 min-h-[46px] px-3">
           <div className="flex justify-start items-center gap-[10px]">
             <PublicGlobeIcon className="!h-6 !w-6 shrink-0 text-main-600" />
-            {state?.timezone || "Timezone"}
+            {state?.timezone?.key || "Timezone"}
             <ChevronDown className="!w-4 !h-4 ml-auto text-text-400" />
           </div>
         </DropdownMenuTrigger>

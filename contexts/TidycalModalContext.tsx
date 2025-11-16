@@ -1,6 +1,6 @@
 "use client";
 
-import { dateToISO, getDateRangeFromTimezone } from "@/services";
+import { dateToISO, envConfig, getDateRangeFromTimezone } from "@/services";
 import timezones from "@/services/data/timezones.json";
 import {
   createContext,
@@ -11,6 +11,7 @@ import {
   useRef,
   useState,
 } from "react";
+import { toast } from "sonner";
 
 interface TidycalModalContextType {
   isOpen: boolean;
@@ -25,11 +26,15 @@ interface TidycalModalContextType {
   handleCloseModal: () => void;
   setActiveStage: (stage: number) => void;
   dispatch: React.Dispatch<{ type: string; payload?: any }>;
-  getTidySlots: (date: Date) => Promise<any>;
+  getTidySlots: (date: Date | undefined) => Promise<any>;
+  handleAppointment: (event: React.FormEvent<HTMLFormElement>) => void;
 }
 
 interface TidycalModalState {
-  timezone: string;
+  timezone: {
+    key: string;
+    label: string;
+  };
   date: Date | undefined;
   dates: {
     from: Date | undefined;
@@ -50,10 +55,18 @@ interface TidycalModalState {
     isError: boolean;
     error: any;
   };
+  bookingStates: {
+    isLoading: boolean;
+    isError: boolean;
+    error: any;
+  };
 }
 
 const initialState: TidycalModalState = {
-  timezone: "",
+  timezone: {
+    key: "",
+    label: "",
+  },
   date: undefined,
   dates: {
     from: undefined,
@@ -70,6 +83,11 @@ const initialState: TidycalModalState = {
     isError: false,
     error: "",
   },
+  bookingStates: {
+    isLoading: false,
+    isError: false,
+    error: "",
+  },
 };
 
 function reducer(
@@ -78,14 +96,29 @@ function reducer(
 ) {
   switch (action.type) {
     case "timezone":
-      return { ...state, timezone: action.payload };
+      console.log("Timezone changed to:", action.payload);
+      const { fromDate, toDate } = getDateRangeFromTimezone(
+        action.payload?.key
+      );
+      return {
+        ...state,
+        timezone: action.payload,
+        dates: {
+          from: fromDate,
+          to: toDate,
+        },
+      };
     case "date":
-      const start_at = dateToISO({ date: action.payload });
+      const start_at = dateToISO({
+        date: action.payload,
+        timeZone: state.timezone?.key,
+      });
       const end_at = dateToISO({
         date: action.payload,
         hour: 23,
         minute: 59,
         second: 59,
+        timeZone: state.timezone?.key,
       });
       return {
         ...state,
@@ -103,8 +136,17 @@ function reducer(
       return { ...state, slots: action.payload };
     case "states":
       return { ...state, states: { ...state.states, ...action.payload } };
+    case "bookingStates":
+      return {
+        ...state,
+        bookingStates: { ...state.bookingStates, ...action.payload },
+      };
     case "reset":
-      return initialState;
+      return {
+        ...initialState,
+        dates: { ...state.dates },
+        timezone: state.timezone,
+      };
     default:
       return state;
   }
@@ -146,7 +188,7 @@ export const TidycalModalProvider = ({
       });
       setActiveStage(1);
       const res = await fetch(
-        `/api/tidycal/timeslots?bookingTypeId=699029&starts_at=${start_at}&ends_at=${end_at}`
+        `/api/tidycal/timeslots?bookingTypeId=${envConfig.tidycalBookingTypeId}&starts_at=${start_at}&ends_at=${end_at}`
       );
       const data = await res.json();
       dispatch({ type: "slots", payload: data?.data || [] });
@@ -162,10 +204,51 @@ export const TidycalModalProvider = ({
     }
   };
 
-  const handleTimezone = (timezone: string) => {
-    dispatch({ type: "timezone", payload: timezone });
-    // After setting timezone, fetch slots for the selected date if available
-    const { fromDate, toDate } = getDateRangeFromTimezone(timezone);
+  const handleAppointment = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    try {
+      const { slot, end_at, timezone, name, email } = state || {};
+
+      if (!slot || !end_at || !timezone?.key || !name || !email) {
+        toast.error("Please fill all required fields.");
+        return;
+      } else {
+        dispatch({
+          type: "bookingStates",
+          payload: { isLoading: true, isError: false, error: null },
+        });
+        const res = await fetch("/api/tidycal/booking", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            bookingTypeId: envConfig.tidycalBookingTypeId,
+            starts_at: slot,
+            timezone: timezone?.key,
+            name,
+            email,
+            booking_questions: [],
+            notes: "",
+          }),
+        });
+        const data = await res.json();
+        if (!res.ok) {
+          throw new Error(data?.message || "Failed to create booking");
+        }
+        dispatch({
+          type: "bookingStates",
+          payload: { isLoading: false, isError: false, error: null },
+        });
+        setActiveStage(3);
+      }
+    } catch (error) {
+      dispatch({
+        type: "bookingStates",
+        payload: { isLoading: false, isError: true, error: error },
+      });
+      toast.error("Failed to create booking. Please try again.");
+    }
   };
 
   useEffect(() => {
@@ -173,7 +256,13 @@ export const TidycalModalProvider = ({
     const currentLabel = (timezones as Record<string, string>)[
       currentTimezone || ""
     ];
-    dispatch({ type: "timezone", payload: currentLabel || "" });
+    dispatch({
+      type: "timezone",
+      payload: {
+        key: currentTimezone || "",
+        label: currentLabel || "",
+      },
+    });
   }, []);
 
   return (
@@ -192,6 +281,7 @@ export const TidycalModalProvider = ({
         state,
         dispatch,
         getTidySlots,
+        handleAppointment,
       }}
     >
       {children}

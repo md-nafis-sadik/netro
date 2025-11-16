@@ -45,7 +45,7 @@ function TidyTimeSlots() {
             onClick={() => handleSlotClick(item?.starts_at)}
             className="text-white font-inter text-base min-h-[46px] w-full bg-natural-black hover:bg-main-600 transition-colors rounded-md"
           >
-            {ISOToTime(item.starts_at, state.timezone)}
+            {ISOToTime(item.starts_at, state.timezone?.key)}
           </button>
         ))}
       </div>
