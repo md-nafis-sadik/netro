@@ -1,5 +1,4 @@
 import { fetchWithDelay } from "@/lib/apiHandler";
-import React from "react";
 import JobPosts from "./JobPosts";
 
 type JobsResponse = {
@@ -8,7 +7,6 @@ type JobsResponse = {
 
 const JobPostsWrapper = async () => {
   let jobs = (await fetchWithDelay(`/jobs/active`)) as JobsResponse;
-
   return <JobPosts jobs={jobs?.data} />;
 };
 

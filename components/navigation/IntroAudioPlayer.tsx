@@ -31,12 +31,10 @@ const IntroAudioPlayer = ({ pathname }: IFProps) => {
         await testAudio.play();
         testAudio.pause();
         setCanAutoplay(true);
-        console.log("Autoplay is supported");
 
         // If autoplay is supported, try to start our audio
         attemptAutoplay();
       } catch (error) {
-        console.log("Autoplay not supported, waiting for user interaction");
         setCanAutoplay(false);
         setIsLoading(false);
       }
@@ -48,15 +46,12 @@ const IntroAudioPlayer = ({ pathname }: IFProps) => {
         await audio.play();
         setIsPlaying(true);
         setIsLoading(false);
-        console.log("Autoplay successful");
       } catch (error) {
-        console.log("Autoplay failed:", error);
         setIsLoading(false);
       }
     };
 
     const handleLoadedData = () => {
-      console.log("Audio loaded");
       setIsLoading(false);
 
       // Clear any existing timer
@@ -83,7 +78,6 @@ const IntroAudioPlayer = ({ pathname }: IFProps) => {
 
     // Fallback timer to stop loading after 3 seconds
     loadingTimer = setTimeout(() => {
-      console.log("Loading timeout reached");
       setIsLoading(false);
       if (!userInteracted && canAutoplay) {
         attemptAutoplay();
@@ -122,7 +116,6 @@ const IntroAudioPlayer = ({ pathname }: IFProps) => {
           }, 300);
 
           setIsPlaying(true);
-          console.log("Audio autoplayed after user gesture");
         } catch (error) {
           console.error("User gesture-triggered autoplay failed:", error);
         }

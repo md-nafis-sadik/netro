@@ -80,7 +80,7 @@ function TidycalForm() {
           </Button>
           <Button
             type="submit"
-            className="bg-main-600 hover:bg-main-500"
+            className="bg-main-600 min-w-[212px] hover:bg-main-500"
             disabled={state.bookingStates.isLoading}
           >
             <span>

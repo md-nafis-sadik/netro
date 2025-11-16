@@ -1,3 +1,4 @@
+import { envConfig } from "@/services";
 import { NextResponse } from "next/server";
 
 export async function GET(req: Request) {
@@ -14,7 +15,7 @@ export async function GET(req: Request) {
     );
   }
 
-  const url = `https://tidycal.com/api/booking-types/${bookingTypeId}/timeslots?starts_at=${starts_at}&ends_at=${ends_at}`;
+  const url = `${envConfig.tidycalApiKey}/booking-types/${bookingTypeId}/timeslots?starts_at=${starts_at}&ends_at=${ends_at}`;
 
   const res = await fetch(url, {
     headers: {

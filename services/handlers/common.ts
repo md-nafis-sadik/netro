@@ -63,7 +63,6 @@ export function getDateRangeFromTimezone(
   tzString?: string,
   days: number = 10
 ): { fromDate: Date; toDate: Date } {
-  console.log(tzString);
   const timeZone = tzString || Intl.DateTimeFormat().resolvedOptions().timeZone;
   const now = new Date();
 

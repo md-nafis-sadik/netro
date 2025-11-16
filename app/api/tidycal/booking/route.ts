@@ -1,3 +1,4 @@
+import { envConfig } from "@/services";
 import { NextResponse } from "next/server";
 
 export async function POST(req: Request) {
@@ -21,7 +22,7 @@ export async function POST(req: Request) {
     );
   }
 
-  const url = `https://tidycal.com/api/booking-types/699029/bookings`;
+  const url = `${envConfig.tidycalApiKey}/booking-types/699029/bookings`;
 
   const res = await fetch(url, {
     method: "POST",

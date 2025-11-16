@@ -96,7 +96,6 @@ function reducer(
 ) {
   switch (action.type) {
     case "timezone":
-      console.log("Timezone changed to:", action.payload);
       const { fromDate, toDate } = getDateRangeFromTimezone(
         action.payload?.key
       );
@@ -264,6 +263,17 @@ export const TidycalModalProvider = ({
       },
     });
   }, []);
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isOpen]);
 
   return (
     <TidycalModalContext.Provider
