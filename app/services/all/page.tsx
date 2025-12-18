@@ -5,11 +5,33 @@ import PageThumbnail from "@/components/shared/PageThumbnail";
 import { Suspense } from "react";
 import { Metadata } from "next";
 
-// Fixed metadata for the services page
+
+const OG_IMAGE_URL = "https://netrosystems.com/images/og-image.jpg";
+
 export const metadata: Metadata = {
-  title: "Our Services - What We Do",
-  description: "Know our strengths and discover what we can do for you",
+  title: "Software Development, 3D Animation, UI/UX & SaaS | Netro Systems",
+  description: "Explore Netro Systems’ services - Software Development, 3D Product Animation, UI/UX Design, and SaaS Development with SQA for startups and enterprises.",
+  keywords: "software development, 3D product animation, UI/UX design, SaaS development, SQA services, software company Bangladesh, digital product solutions",
+  
+  openGraph: {
+    title: "Software Development, 3D Animation, UI/UX & SaaS | Netro Systems",
+    description: "Explore Netro Systems’ services - Software Development, 3D Product Animation, UI/UX Design, and SaaS Development with SQA for startups and enterprises.",
+    url: "https://netrosystems.com/services/all",
+    siteName: "Netro Systems",
+    images: [{ url: OG_IMAGE_URL, width: 1200, height: 630, alt: "Netro Systems Services" }],
+    locale: "en_US",
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Software Development, 3D Animation, UI/UX & SaaS | Netro Systems",
+    description: "Explore Netro Systems’ services - Software Development, 3D Product Animation, UI/UX Design, and SaaS Development with SQA for startups and enterprises.",
+    images: [OG_IMAGE_URL],
+    creator: "@netrosystems",
+  },
 };
+
 
 const ServicePage = () => {
   return (
