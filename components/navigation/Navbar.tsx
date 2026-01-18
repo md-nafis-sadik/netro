@@ -1,10 +1,11 @@
 "use client";
 import { GradientButton } from "@/components/ui/gradient-button";
+import { useNavbarColorDetection } from "@/hooks/useNavbarColorDetection";
 import colors from "@/lib/colors";
 import { cn } from "@/lib/utils";
 import {
   AppLogoIcon,
-  Dividericon,
+  ArrowLongTailIcon,
   MenuIcon,
   PlusRoundedSecondaryIcon,
 } from "@/services/assets/svgs";
@@ -12,9 +13,8 @@ import { navbarData, routes } from "@/services/data/shared.data";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FC, useState } from "react";
-import NavigationSheet from "./NavigationSheet";
 import DropupNavigationMenu from "./DropUpNavigationMenu";
-import { useNavbarColorDetection } from "@/hooks/useNavbarColorDetection";
+import NavigationSheet from "./NavigationSheet";
 
 type NavbarProps = {
   show?: boolean;
@@ -38,28 +38,32 @@ const Navbar: FC<NavbarProps> = ({ show, services }) => {
         pathname === routes.homepage.link
           ? "border-[#393939]"
           : "border-b border-dashed border-neutral-300 bg-white/70 backdrop-blur-[20px]",
-        "fixed top-0 w-full z-50"
+        "fixed top-0 w-full z-50",
       )}
     >
-      <div className="containerX flex flex-row items-center justify-between gap-4 py-3">
+      <div className="containerX flex flex-row items-center justify-between lg:justify-start gap-4 md:gap-10 py-3">
         <Link href={routes.homepage.link} className="h-fit">
           <AppLogoIcon
             className={cn(
               "h-5 lg:h-7 w-auto transition-colors duration-100",
               isLightText && pathname === routes.homepage.link
                 ? "text-white"
-                : "text-black"
+                : "text-black",
             )}
           />
         </Link>
 
-        <div className="hidden lg:flex flex-row items-center">
+        <div className="hidden flex-1 lg:flex flex-row items-center">
           {navbarData.map(({ link, name, megaMenu }, index) => {
+            const isLastIndex = index === navbarData.length - 1;
             return (
               <div
                 onMouseEnter={() => megaMenu && setMegamenuOpening(true)}
                 onMouseLeave={() => megaMenu && setMegamenuOpening(false)}
-                className="flex flex-row items-center relative"
+                className={cn(
+                  "flex flex-row items-center relative",
+                  isLastIndex ? "flex lg:hidden" : "",
+                )}
                 key={index}
               >
                 <Link
@@ -72,7 +76,7 @@ const Navbar: FC<NavbarProps> = ({ show, services }) => {
                         (isLightText && pathname === routes.homepage.link
                           ? "navbar-btn-gradient-dark"
                           : "navbar-btn-gradient"),
-                      "block absolute w-full h-1/2 bottom-0 left-0 z-[1] transition-opacity duration-100"
+                      "block absolute w-full h-1/2 bottom-0 left-0 z-[1] transition-opacity duration-100",
                     )}
                   />
 
@@ -85,7 +89,7 @@ const Navbar: FC<NavbarProps> = ({ show, services }) => {
                       pathname.startsWith(link) &&
                         (pathname === routes.homepage.link
                           ? ""
-                          : "font-semibold")
+                          : "font-semibold"),
                     )}
                   >
                     {name}
@@ -101,7 +105,7 @@ const Navbar: FC<NavbarProps> = ({ show, services }) => {
                     />
                   )}
                 </Link>
-                {index < navbarData.length - 1 && (
+                {/* {index < navbarData.length - 1 && (
                   <Dividericon
                     className="w-[7px] h-7"
                     color={
@@ -110,7 +114,7 @@ const Navbar: FC<NavbarProps> = ({ show, services }) => {
                         : colors.natural[200]
                     }
                   />
-                )}
+                )} */}
 
                 {megaMenu && (
                   <DropupNavigationMenu
@@ -122,6 +126,13 @@ const Navbar: FC<NavbarProps> = ({ show, services }) => {
             );
           })}
         </div>
+        <Link
+          href={routes.contact.link}
+          className="bg-main-400 hover:bg-main-500  hidden lg:flex items-center gap-2 p-[12px_20px_12px_24px] py-2 rounded-full w-fit text-white font-inter text-sm md:text-base font-bold !leading-[1.1]"
+        >
+          <span>Contact</span>
+          <ArrowLongTailIcon className="text-white-100" />
+        </Link>
 
         {/* <div className="flex flex-row items-center gap-2 md:gap-3"> */}
         {/* ON/OFF MUSIC */}
@@ -157,19 +168,19 @@ const Navbar: FC<NavbarProps> = ({ show, services }) => {
         <GradientButton
           className={cn(
             " flex_center gap-2 group ps-[10px] md:px-3",
-            "bg-black"
+            "bg-black",
           )}
           containerClassName="block lg:hidden"
           onClick={() => setIsSheetOpen(true)}
         >
           <MenuIcon
             className={cn(
-              "!h-5 !w-5 !shrink-0 transition-colors text-white group-hover:text-white"
+              "!h-5 !w-5 !shrink-0 transition-colors text-white group-hover:text-white",
             )}
           />
           <span
             className={cn(
-              "text-white font-scoutcond text-lg font-bold uppercase !leading-[0.9] group-hover:text-white transition_common"
+              "text-white font-scoutcond text-lg font-bold uppercase !leading-[0.9] group-hover:text-white transition_common",
             )}
           >
             Menu
