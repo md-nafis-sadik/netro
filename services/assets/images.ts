@@ -150,3 +150,12 @@ export { default as telzenTop } from "@/public/images/product-details/telzen/top
 export { default as yoowifiIcon } from "@/public/images/project/yoowifi-icon.webp";
 export { default as termc } from "@/public/images/termc.webp";
 export { default as video } from "@/public/images/video.webp";
+
+// icons 
+export { default as bannerIcon1 } from "@/public/images/icons/banner-icon-1.webp";
+export { default as bannerIcon2 } from "@/public/images/icons/banner-icon-2.webp";
+export { default as bannerIcon3 } from "@/public/images/icons/banner-icon-3.webp";
+export { default as bannerIcon4 } from "@/public/images/icons/banner-icon-4.webp";
+export { default as bannerIcon5 } from "@/public/images/icons/banner-icon-5.webp";
+export { default as bannerIcon6 } from "@/public/images/icons/banner-icon-6.webp";
+

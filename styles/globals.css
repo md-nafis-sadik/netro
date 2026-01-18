@@ -105,7 +105,6 @@ body {
     -webkit-text-fill-color: transparent;
     background-clip: text;
     text-fill-color: transparent;
-
   }
 
   .whiteGradient {
@@ -154,6 +153,9 @@ body {
   }
   .explore-bg {
     background: linear-gradient(90deg, #8082ff 0.06%, #ffa77c 99.94%);
+  }
+  .gradientBorder {
+    background: linear-gradient(0deg, #434b61 0%, #7b86a6 100%);
   }
 }
 .project-content strong {
