@@ -4,13 +4,14 @@ import { useEffect, useState } from "react";
 
 export const useNavbarColorDetection = (pathname: string) => {
   const [isDarkBackground, setIsDarkBackground] = useState(true);
-
+  const [isScrolled, setIsScrolled] = useState<boolean>(false);
 
   useEffect(() => {
     let rafId: number | null = null;
 
     const updateNavbarColor = () => {
-      const sections = document.querySelectorAll<HTMLElement>("[data-bg-theme]");
+      const sections =
+        document.querySelectorAll<HTMLElement>("[data-bg-theme]");
       const navbarHeight = 80; // adjust if your navbar height is different
       let currentSection: HTMLElement | null = null;
       let maxTop = -Infinity;
@@ -54,5 +55,15 @@ export const useNavbarColorDetection = (pathname: string) => {
     };
   }, [pathname]);
 
-  return isDarkBackground;
+  useEffect(() => {
+    const onScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+    };
+  }, []);
+
+  return { isDarkBackground, isScrolled };
 };

@@ -14,6 +14,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FC, useState } from "react";
 import DropupNavigationMenu from "./DropUpNavigationMenu";
+import NavbarExplore from "./NavbarExplore";
 import NavigationSheet from "./NavigationSheet";
 
 type NavbarProps = {
@@ -23,7 +24,7 @@ type NavbarProps = {
 
 const Navbar: FC<NavbarProps> = ({ show, services }) => {
   const pathname = usePathname();
-  const isDarkBackground = useNavbarColorDetection(pathname);
+  const { isDarkBackground, isScrolled } = useNavbarColorDetection(pathname);
 
   const [isSheetOpen, setIsSheetOpen] = useState(false);
   const [megamenuOpening, setMegamenuOpening] = useState(false);
@@ -41,6 +42,7 @@ const Navbar: FC<NavbarProps> = ({ show, services }) => {
         "fixed top-0 w-full z-50",
       )}
     >
+      <NavbarExplore show={!isScrolled} />
       <div className="containerX flex flex-row items-center justify-between lg:justify-start gap-4 md:gap-10 py-3">
         <Link href={routes.homepage.link} className="h-fit">
           <AppLogoIcon

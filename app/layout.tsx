@@ -15,17 +15,21 @@ import "@/styles/textGradient.css";
 import type { Metadata } from "next";
 import Script from "next/script";
 
-const OG_IMAGE_URL = "https://opengraph.b-cdn.net/production/images/eb88ff5b-9a69-4dac-b58d-da9c8cd8817b.png?token=4uWAqpARQAFN7EqcR0HXXkE6w0lWaWBdIUPe_Do_LWM&height=577&width=1200&expires=33301964835";
+const OG_IMAGE_URL =
+  "https://opengraph.b-cdn.net/production/images/eb88ff5b-9a69-4dac-b58d-da9c8cd8817b.png?token=4uWAqpARQAFN7EqcR0HXXkE6w0lWaWBdIUPe_Do_LWM&height=577&width=1200&expires=33301964835";
 
 export const metadata: Metadata = {
   title: "Netro Systems | Software Development & Product Design Company",
-  description: "Netro Systems is a software company delivering software development, SaaS, UI/UX design, and 3D product animation solutions for global clients.",
-  keywords: "software company Bangladesh, product design, SaaS, UI/UX design, 3D animation, digital solutions",
-  
+  description:
+    "Netro Systems is a software company delivering software development, SaaS, UI/UX design, and 3D product animation solutions for global clients.",
+  keywords:
+    "software company Bangladesh, product design, SaaS, UI/UX design, 3D animation, digital solutions",
+
   // Open Graph tags
   openGraph: {
     title: "Netro Systems | Software Development & Product Design Company",
-    description: "Netro Systems is a software company delivering software development, SaaS, UI/UX design, and 3D product animation solutions for global clients.",
+    description:
+      "Netro Systems is a software company delivering software development, SaaS, UI/UX design, and 3D product animation solutions for global clients.",
     url: "https://netrosystems.com",
     siteName: "Netro Systems",
     images: [
@@ -39,16 +43,17 @@ export const metadata: Metadata = {
     locale: "en_US",
     type: "website",
   },
-  
+
   // Twitter Card tags
   twitter: {
     card: "summary_large_image",
     title: "Netro Systems | Software Development & Product Design Company",
-    description: "Netro Systems is a software company delivering software development, SaaS, UI/UX design, and 3D product animation solutions for global clients.",
+    description:
+      "Netro Systems is a software company delivering software development, SaaS, UI/UX design, and 3D product animation solutions for global clients.",
     images: [OG_IMAGE_URL],
     creator: "@netrosystems", // Add your Twitter handle if you have one
   },
-  
+
   // Additional metadata
   robots: {
     index: true,
@@ -56,12 +61,12 @@ export const metadata: Metadata = {
     googleBot: {
       index: true,
       follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
     },
   },
-  
+
   // Verification for Google Search Console (if you have one)
   // verification: {
   //   google: "your-google-verification-code",
@@ -82,7 +87,7 @@ const RootLayout = ({
           yesevaOne.variable,
           scoutCond.variable,
           scout.variable,
-          "bg-white min-h-screen text-neutral-700 relative"
+          "bg-white min-h-screen text-neutral-700 relative",
         )}
       >
         <TidycalModalProvider>
