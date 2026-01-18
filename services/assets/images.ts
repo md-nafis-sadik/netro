@@ -147,11 +147,17 @@ export { default as telzenPreview4 } from "@/public/images/product-details/telze
 export { default as telzenPreview5 } from "@/public/images/product-details/telzen/preview-5.webp";
 export { default as telzenTop } from "@/public/images/product-details/telzen/top.webp";
 
+export { default as about1 } from "@/public/images/about-1.webp";
+export { default as about2 } from "@/public/images/about-2.webp";
+export { default as logo } from "@/public/images/logo.webp";
 export { default as yoowifiIcon } from "@/public/images/project/yoowifi-icon.webp";
+export { default as support1 } from "@/public/images/support-1.webp";
+export { default as support2 } from "@/public/images/support-2.webp";
+export { default as support3 } from "@/public/images/support-3.webp";
 export { default as termc } from "@/public/images/termc.webp";
 export { default as video } from "@/public/images/video.webp";
 
-// icons 
+// icons
 export { default as bannerIcon1 } from "@/public/images/icons/banner-icon-1.webp";
 export { default as bannerIcon2 } from "@/public/images/icons/banner-icon-2.webp";
 export { default as bannerIcon3 } from "@/public/images/icons/banner-icon-3.webp";
@@ -159,3 +165,11 @@ export { default as bannerIcon4 } from "@/public/images/icons/banner-icon-4.webp
 export { default as bannerIcon5 } from "@/public/images/icons/banner-icon-5.webp";
 export { default as bannerIcon6 } from "@/public/images/icons/banner-icon-6.webp";
 
+// countries flags
+export { default as austrailia } from "@/public/images/countries/austrailia.webp";
+export { default as brazil } from "@/public/images/countries/brazil.webp";
+export { default as canada } from "@/public/images/countries/canada.webp";
+export { default as england } from "@/public/images/countries/england.webp";
+export { default as germany } from "@/public/images/countries/germany.webp";
+export { default as southAfrica } from "@/public/images/countries/south-africa.webp";
+export { default as usa } from "@/public/images/countries/usa.webp";

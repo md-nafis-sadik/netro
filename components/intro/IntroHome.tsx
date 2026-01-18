@@ -1,87 +1,155 @@
-"use client";
-import { useLayoutEffect, useRef } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { images } from "@/services";
+import { AppLogoIcon } from "@/services/assets/svgs";
+import { countries } from "@/services/data/countries";
+import Image from "next/image";
+import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 
-// Register ScrollTrigger plugin
-gsap.registerPlugin(ScrollTrigger);
-
-const IntroHome = () => {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const paragraphRef = useRef<HTMLParagraphElement>(null);
-
-  useLayoutEffect(() => {
-    const paragraphEl = paragraphRef.current;
-    if (!paragraphEl) return;
-
-    const text = paragraphEl.textContent || "";
-    const words = text.split(" ");
-    paragraphEl.innerHTML = "";
-
-    words.forEach((word) => {
-      const wordSpan = document.createElement("span");
-      wordSpan.className = "inline-block mr-[0.25em]";
-
-      [...word].forEach((letter) => {
-        const letterSpan = document.createElement("span");
-        letterSpan.textContent = letter;
-        letterSpan.className = "inline-block opacity-0";
-        wordSpan.appendChild(letterSpan);
-      });
-
-      paragraphEl.appendChild(wordSpan);
-    });
-
-    const allLetters = paragraphEl.querySelectorAll("span span");
-
-    gsap.fromTo(
-      allLetters,
-      {
-        opacity: 0,
-        y: 20,
-        scale: 0.9,
-      },
-      {
-        opacity: 1,
-        y: 0,
-        scale: 1,
-        stagger: {
-          amount: 2,
-          each: 0.02,
-        },
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: "top top",
-          end: "+=100%", // scroll for 1x viewport height
-          scrub: 1.2,
-          pin: true,
-          markers: false,
-        },
-      }
-    );
-
-    return () => {
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-    };
-  }, []);
-
+function IntroHome() {
   return (
-    <div
-      ref={containerRef}
-      className="containerX flex flow-row items-center overflow-hidden h-full md:h-screen px-4 md:px-0 py-20 md:py-0"
-    >
-      <div className="hidden md:block w-2/5" />
-
-      <p
-        ref={paragraphRef}
-        className="w-full md:w-3/5 text-2xl md:text-5xl font-bold !leading-[1.4] text-text-900"
-      >
-        Netro Systems fosters innovation, collaboration, diversity, and growth,
-        creating impactful software solutions in a vibrant, inclusive culture.
-      </p>
-    </div>
+    <section data-bg-theme="light" className="py-15 font-inter">
+      <div className="container2X">
+        <div className="flex gap-44 items-start">
+          <AppLogoIcon className="w-28 shrink-0" />
+          <div className="text-4xl text-black-800 align-middle leading-[110%] max-w-[994px] ml-auto">
+            We are{" "}
+            <Image
+              src={images.logo}
+              className="size-12 object-contain inline-block"
+              alt="logo icon"
+              title="logo icon"
+            />
+            Netro Systems fosters innovation, collaboration, diversity, and
+            growth, creating{" "}
+            <div className="inline-flex items-center -space-x-3 -mt-4 translate-y-3">
+              <Image
+                src={images.about1}
+                className="size-12 object-contain shrink-0"
+                alt="logo icon"
+                title="logo icon"
+              />
+              <Image
+                src={images.about2}
+                className="size-12 object-contain shrink-0"
+                alt="logo icon"
+                title="logo icon"
+              />
+            </div>
+            impactful software solutionsin a vibrant, inclusive culture.
+          </div>
+        </div>
+        <div className="grid grid-cols-12 grid-rows-5 gap-4 mt-11">
+          {/* Projects Delivered */}
+          <div className="col-span-4 row-span-5 border border-black-800 flex flex-col justify-between gap-6 p-6">
+            <h3 className="text-[4rem] leading-[120%] text-black-800 font-bold ">
+              70+
+            </h3>
+            <div className="">
+              <p className="text-base md:text-lg text-black-800 font-semibold leading-[140%]">
+                Projects Delivered
+              </p>
+              <p className="line-clamp-3 text-base text-text-700 leading-[120%] mt-2">
+                Including FinTech, SaaS, Telecom,
+                <br /> HealthCare, <br />
+                AI technology, MVP, eCommerce and many
+              </p>
+            </div>
+          </div>
+          {/* Support 24/7, Guaranteed! */}
+          <div className="col-span-4 col-start-5 flex items-center justify-between gap-3 border border-black-50 px-6 py-5">
+            <div>
+              <p className="text-base md:text-lg text-black-800 font-semibold leading-[140%]">
+                Support 24/7, Guaranteed!
+              </p>
+              <p className="text-sm text-text-700 leading-[120%] mt-1">
+                From deployment to production our dedicated team ensures your
+                support.
+              </p>
+            </div>
+            <div className="*:data-[slot=avatar]:ring-background flex -space-x-2 *:data-[slot=avatar]:ring-2 *:data-[slot=avatar]:grayscale">
+              <Avatar>
+                <AvatarImage
+                  src={images.support1.src}
+                  alt="postman icon"
+                  className="size-10"
+                />
+                <AvatarFallback>PM</AvatarFallback>
+              </Avatar>
+              <Avatar>
+                <AvatarImage
+                  src={images.support2.src}
+                  alt="integration icon"
+                  className="size-10"
+                />
+                <AvatarFallback>SE</AvatarFallback>
+              </Avatar>
+              <Avatar>
+                <AvatarImage
+                  src={images.support3.src}
+                  alt="Jira icon"
+                  className="size-10"
+                />
+                <AvatarFallback>JS</AvatarFallback>
+              </Avatar>
+            </div>
+          </div>
+          {/* Our Clients in 19+ Countries */}
+          <div className="col-span-8 col-start-5 row-start-5 flex items-center justify-between gap-6 border border-black-50 px-6 py-5">
+            <div>
+              <p className="text-base md:text-lg text-black-800 font-semibold leading-[140%]">
+                Our Clients in 19+ Countries
+              </p>
+              <p className="text-sm text-text-700 leading-[120%] mt-1">
+                We collaborate with startups and businesses across the US,
+                Europe, and Asia.
+              </p>
+            </div>
+            <div className="*:data-[slot=avatar]:ring-background flex -space-x-2 *:data-[slot=avatar]:ring-2 *:data-[slot=avatar]:grayscale border rounded-full p-1">
+              {countries?.map((country) => (
+                <Avatar key={country?.code}>
+                  <AvatarImage
+                    src={country?.image.src}
+                    alt={country?.name}
+                    className="size-10"
+                  />
+                  <AvatarFallback>{country?.code}</AvatarFallback>
+                </Avatar>
+              ))}
+            </div>
+          </div>
+          {/* Client Satisfaction */}
+          <div className="col-span-4 row-span-3 col-start-5 row-start-2 border border-black-800 flex flex-col justify-between gap-6  px-6 py-5">
+            <h3 className="text-[4rem] leading-[120%] text-black-800 font-bold ">
+              99%
+            </h3>
+            <div className="">
+              <p className="text-base md:text-lg text-black-800 font-semibold leading-[140%]">
+                Client Satisfaction
+              </p>
+              <p className="line-clamp-3 text-base text-text-700 leading-[120%] mt-2">
+                Rated 4.85 over all the platforms. Over the time we have ensured
+                exactly what your business aims for.
+              </p>
+            </div>
+          </div>
+          {/* Positive Outcomes */}
+          <div className="col-span-4 row-span-4 col-start-9 row-start-1 border border-black-800 flex flex-col justify-between gap-6 p-6">
+            <h3 className="text-[4rem] leading-[120%] text-black-800 font-bold ">
+              35X
+            </h3>
+            <div className="">
+              <p className="text-base md:text-lg text-black-800 font-semibold leading-[140%]">
+                Positive Outcomes
+              </p>
+              <p className="line-clamp-3 text-base text-text-700 leading-[120%] mt-2">
+                Your investment on scalable software always pay backs with great
+                ROI.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   );
-};
+}
 
 export default IntroHome;

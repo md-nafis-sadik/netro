@@ -14,6 +14,7 @@ import TestimonialSkeleton from "@/components/testimonial/TestimonialSkeleton";
 import IntroWithMarqueeHome from "@/components/intro/IntroWithMarqueeHome";
 import TeamHomeWrapper from "@/components/team/TeamHomeWrapper";
 import MarqueeHome from "@/components/marquee/MarqueeHome";
+import IntroHome from "@/components/intro/IntroHome";
 
 const HomePage = () => {
   return (
@@ -23,13 +24,12 @@ const HomePage = () => {
           <HeroHome />
         </section>
 
-        <section className="overflow-hidden">
+        {/* <section className="overflow-hidden">
           <MarqueeHome dark={false} className="" />
-        </section>
+        </section> */}
 
-        <section data-bg-theme="light">
-          <IntroWithMarqueeHome />
-        </section>
+        
+          <IntroHome />
       </div>
       <section data-bg-theme="dark">
         <Suspense

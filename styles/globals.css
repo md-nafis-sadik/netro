@@ -10,6 +10,9 @@ body {
   .containerX {
     @apply w-full max-w-[1500px] mx-auto px-4 sm:px-8 xl:px-16 2xl:px-28;
   }
+  .container2X {
+    @apply w-full max-w-[1920px] mx-auto px-4 sm:px-8 xl:px-16 2xl:px-20;
+  }
   .containerminX {
     @apply w-full max-w-[1116px] mx-auto px-4 sm:px-8 xl:px-16 2xl:px-28;
   }

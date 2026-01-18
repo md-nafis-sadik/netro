@@ -37,6 +37,8 @@ export default {
         black: {
           DEFAULT: "#000000",
           900: "#0A0400",
+          800: "#03020B",
+          50: "#E1E2E5",
         },
         main: {
           50: "#ECEFFF",

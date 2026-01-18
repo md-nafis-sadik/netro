@@ -4,7 +4,7 @@ import ExpandableButtonList from "./partials/ExpandableButtonList";
 
 function HeroHome() {
   return (
-    <section className="relative pt-40 lg:pt-52 pb-10 lg:min-h-[835px] flex_center overflow-hidden">
+    <div className="relative pt-40 lg:pt-52 pb-10 lg:min-h-[835px] flex_center overflow-hidden">
       <div className="containerX max-w-[964px] relative z-[99] text-center">
         <p className="para text-white">Your Trusted Tech Company</p>
         <h1 className="titleGradient text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-scoutcond font-black uppercase leading-[80%] my-1">
@@ -109,7 +109,7 @@ function HeroHome() {
         alt="Hero Banner"
         title="Hero banner"
       />
-    </section>
+    </div>
   );
 }
 

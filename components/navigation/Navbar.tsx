@@ -4,8 +4,8 @@ import { useNavbarColorDetection } from "@/hooks/useNavbarColorDetection";
 import colors from "@/lib/colors";
 import { cn } from "@/lib/utils";
 import {
-  AppLogoIcon,
   ArrowLongTailIcon,
+  LogoIcon,
   MenuIcon,
   PlusRoundedSecondaryIcon,
 } from "@/services/assets/svgs";
@@ -39,13 +39,13 @@ const Navbar: FC<NavbarProps> = ({ show, services }) => {
         pathname === routes.homepage.link
           ? "border-[#393939]"
           : "border-b border-dashed border-neutral-300 bg-white/70 backdrop-blur-[20px]",
-        "fixed top-0 w-full z-50",
+        "fixed top-0 w-full z-[999]",
       )}
     >
       <NavbarExplore show={!isScrolled} />
-      <div className="containerX flex flex-row items-center justify-between lg:justify-start gap-4 md:gap-10 py-3">
+      <div className="container2X 2xl:px-28 flex flex-row items-center justify-between lg:justify-start gap-4 md:gap-10 py-3">
         <Link href={routes.homepage.link} className="h-fit">
-          <AppLogoIcon
+          <LogoIcon
             className={cn(
               "h-5 lg:h-7 w-auto transition-colors duration-100",
               isLightText && pathname === routes.homepage.link
