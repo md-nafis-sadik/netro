@@ -99,6 +99,15 @@ body {
     -webkit-text-fill-color: transparent;
   }
 
+  .titleGradient {
+    background: linear-gradient(164.37deg, #ffffff 11.44%, #86c9ff 63.98%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+
+  }
+
   .whiteGradient {
     background: linear-gradient(
       90deg,

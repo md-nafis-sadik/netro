@@ -1,11 +1,12 @@
 "use client";
-import React, { useState } from "react";
+import { useTidycalModal } from "@/contexts/TidycalModalContext";
+import { cn } from "@/lib/utils";
+import { RightArrowIcon } from "@/services/assets/svgs";
 import {
   homeHeroSocialsData,
   tidycalMettingUrl,
 } from "@/services/data/shared.data";
-import { cn } from "@/lib/utils";
-import { useTidycalModal } from "@/contexts/TidycalModalContext";
+import React, { useState } from "react";
 
 interface ExpandableButtonProps {
   link: string;
@@ -27,18 +28,28 @@ const ExpandableButton: React.FC<ExpandableButtonProps> = ({
   const { open } = useTidycalModal();
 
   const content = (
-    <div className={cn("flex items-center px-[14px]", expanded ? `gap-2` : "")}>
+    <div
+      className={cn(
+        "flex items-center pl-3.5",
+        expanded ? `gap-2 pr-2` : "pr-3.5",
+      )}
+    >
       <div
         className={`overflow-hidden transition-all duration-500 ease-in-out ${
           expanded ? "w-[132px] opacity-100 pl-2" : "w-0 opacity-0 pl-0"
         }`}
       >
-        <span className="text-white font-bold whitespace-nowrap inline-block">
+        <span className="text-black-900 font-medium whitespace-nowrap inline-block">
           {text}
         </span>
       </div>
-      <div className="shrink-0 text-white flex items-center justify-center">
-        {icon}
+      <div
+        className={cn(
+          "shrink-0 text-white flex items-center justify-center",
+          expanded ? "p-2 rounded-full bg-main-600" : "",
+        )}
+      >
+        {expanded ? <RightArrowIcon className="size-6" /> : icon}
       </div>
     </div>
   );
@@ -51,7 +62,7 @@ const ExpandableButton: React.FC<ExpandableButtonProps> = ({
       onMouseLeave={() => onHoverChange?.(false)}
       className={cn(
         `group h-12 rounded-full flex items-center justify-center cursor-pointer overflow-hidden shadow-lg shrink-0 transition-all duration-300 font-inter`,
-        expanded ? "bg-main-600" : "bg-main-950"
+        expanded ? "bg-white" : "bg-main-900",
       )}
     >
       {content}
@@ -65,7 +76,7 @@ const ExpandableButton: React.FC<ExpandableButtonProps> = ({
       onMouseLeave={() => onHoverChange?.(false)}
       className={cn(
         `group h-12 rounded-full flex items-center justify-center cursor-pointer overflow-hidden shadow-lg shrink-0 transition-all duration-300 font-inter`,
-        expanded ? "bg-main-600" : "bg-main-950"
+        expanded ? "bg-white" : "bg-main-950",
       )}
     >
       {content}
@@ -79,8 +90,8 @@ const ExpandableButtonList = ({ className }: { className?: string }) => {
   return (
     <div
       className={cn(
-        "flex flex-col md:flex-row justify-center lg:justify-start items-center gap-4 mt-8 md:mt-10",
-        className
+        "flex flex-col md:flex-row justify-center items-center gap-4 mt-8 md:mt-10",
+        className,
       )}
     >
       {homeHeroSocialsData.map((social, index) => (

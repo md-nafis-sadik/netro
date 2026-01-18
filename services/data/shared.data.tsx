@@ -303,7 +303,7 @@ export const homeHeroSocialsData = [
       />
     ),
     link: tidycalMettingUrl,
-    text: "Schedule a call",
+    text: "Book A Free Call",
   },
   {
     icon: (

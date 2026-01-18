@@ -34,7 +34,10 @@ export default {
           DEFAULT: "#FFFFFF",
           100: "#fafafa",
         },
-        black: "#000000",
+        black: {
+          DEFAULT: "#000000",
+          900: "#0A0400",
+        },
         main: {
           50: "#ECEFFF",
           100: "#DDE1FF",
@@ -71,6 +74,7 @@ export default {
         },
         text: {
           disabled: "#D0D0D0",
+          rgb44: "rgba(207, 215, 238, 0.44)",
           50: "#FFFFFF",
           100: "#E7E7E7",
           200: "#D1D1D1",

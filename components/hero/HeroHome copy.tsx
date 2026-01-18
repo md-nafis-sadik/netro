@@ -1,0 +1,290 @@
+import { cn } from "@/lib/utils";
+import { images } from "@/services";
+import { CalendarIcon } from "@/services/assets/svgs";
+import { socialsData, tidycalMettingUrl } from "@/services/data/shared.data";
+import Image from "next/image";
+import ZRotationText from "../animations/ZRotationText";
+import { Button } from "../ui/button";
+import ExpandableButtonList from "./partials/ExpandableButtonList";
+
+const HeroHome = () => {
+  return (
+    <section className="bg-black min-[1600px]:min-h-[900px] relative overflow-hidden">
+      <Image
+        src={images.heroTopGradient}
+        alt="hero section top gradient"
+        className="absolute top-0 left-1/2 -translate-x-1/2 min-w-[1060px] min-h-[650px] z-[2]"
+        height={650}
+        width={1060}
+        priority
+      />
+
+      <div className="containerX relative flex flex-col-reverse lg:flex-row">
+        <div className="w-full lg:w-1/2 min-h-[400px] lg:min-h-full relative bg-transparent">
+          <Image
+            src={images.netroHeroCrystal}
+            alt="netro hero crystal image"
+            className="absolute_center lg:!right-auto object-cover max-w-[340px] lg:max-w-full h-auto lg:max-h-full"
+            height={1400}
+            width={1920}
+          />
+        </div>
+
+        <div className="w-full lg:w-1/2 pb-10 pt-20 2xl:py-[120px] min-[1600px]:py-[180px] lg:ps-10 relative z-[2]">
+          {/* TITLES */}
+          <div
+            className={cn(
+              "hero-text-gradient text-[66px] md:text-[96px] lg:text-[128px] uppercase font-bold !leading-[0.8] font-scoutcond !text-center lg:text-start",
+            )}
+          >
+            <div className="flex items-center justify-center lg:justify-start w-full">
+              <ZRotationText
+                text="I"
+                delay={0.5}
+                gradientTextClass="home_hero_ideate_i"
+              />
+              <ZRotationText
+                text="D"
+                delay={0.52}
+                gradientTextClass="home_hero_ideate_d"
+              />
+              <ZRotationText
+                text="E"
+                delay={0.54}
+                gradientTextClass="home_hero_ideate_e"
+              />
+              <ZRotationText
+                text="A"
+                delay={0.56}
+                gradientTextClass="home_hero_ideate_a"
+              />
+              <ZRotationText
+                text="T"
+                delay={0.58}
+                gradientTextClass="home_hero_ideate_t"
+              />
+              <ZRotationText
+                text="E"
+                delay={0.6}
+                gradientTextClass="home_hero_ideate_e"
+              />
+            </div>
+            <div className="flex flex-row items-end w-full">
+              <div className="flex items-center justify-center lg:justify-start w-full">
+                <ZRotationText
+                  text="D"
+                  delay={0.75}
+                  gradientTextClass="home_hero_develop_deploy_d"
+                />
+                <ZRotationText
+                  text="E"
+                  delay={0.77}
+                  gradientTextClass="home_hero_develop_deploy_e1"
+                />
+                <ZRotationText
+                  text="V"
+                  delay={0.79}
+                  gradientTextClass="home_hero_develop_deploy_v"
+                />
+                <ZRotationText
+                  text="E"
+                  delay={0.81}
+                  gradientTextClass="home_hero_develop_deploy_e2"
+                />
+                <ZRotationText
+                  text="L"
+                  delay={0.83}
+                  gradientTextClass="home_hero_develop_deploy_l"
+                />
+                {/* <BallBounceText
+                className={cn(
+                  "text-[66px] md:text-[86px] lg:text-[116px] inline-block font-normal font-bonbon !leading-[0.8] mt-4 home_hero_development_o"
+                )}
+                delay={1.0}
+              >
+                O
+              </BallBounceText> */}
+                <ZRotationText
+                  text="O"
+                  delay={1.0}
+                  gradientTextClass="home_hero_develop_deploy_p"
+                />
+                <ZRotationText
+                  text="P"
+                  delay={1.25}
+                  gradientTextClass="home_hero_develop_deploy_p"
+                />
+                <ZRotationText
+                  text=","
+                  delay={1.27}
+                  gradientTextClass="home_hero_develop_deploy_comma"
+                />
+                <span className="ms-2"></span>
+                <ZRotationText
+                  text="D"
+                  delay={1.29}
+                  gradientTextClass="home_hero_develop_deploy_d2"
+                />
+                <ZRotationText
+                  text="E"
+                  delay={1.31}
+                  gradientTextClass="home_hero_develop_deploy_e3"
+                />
+                <ZRotationText
+                  text="P"
+                  delay={1.33}
+                  gradientTextClass="home_hero_develop_deploy_p2"
+                />
+                <ZRotationText
+                  text="L"
+                  delay={1.35}
+                  gradientTextClass="home_hero_develop_deploy_l2"
+                />
+                <ZRotationText
+                  text="O"
+                  delay={1.37}
+                  gradientTextClass="home_hero_develop_deploy_o2"
+                />
+                <ZRotationText
+                  text="Y"
+                  delay={1.39}
+                  gradientTextClass="home_hero_develop_deploy_y"
+                />
+                <ZRotationText
+                  text="."
+                  delay={1.41}
+                  gradientTextClass="home_hero_develop_deploy_dot"
+                />
+              </div>
+            </div>
+            <div className="flex items-center justify-center lg:justify-start w-full">
+              <ZRotationText
+                text="S"
+                delay={1.5}
+                gradientTextClass="home_hero_succeed_s"
+              />
+              <ZRotationText
+                text="U"
+                delay={1.52}
+                gradientTextClass="home_hero_succeed_u"
+              />
+              <ZRotationText
+                text="C"
+                delay={1.54}
+                gradientTextClass="home_hero_succeed_c1"
+              />
+              <ZRotationText
+                text="C"
+                delay={1.56}
+                gradientTextClass="home_hero_succeed_c2"
+              />
+              <ZRotationText
+                text="E"
+                delay={1.58}
+                gradientTextClass="home_hero_succeed_e1"
+              />
+              <ZRotationText
+                text="E"
+                delay={1.6}
+                gradientTextClass="home_hero_succeed_e2"
+              />
+              <ZRotationText
+                text="D"
+                delay={1.62}
+                gradientTextClass="home_hero_succeed_d"
+              />
+              <ZRotationText
+                text="!"
+                delay={1.62}
+                gradientTextClass="home_hero_succeed_exclamation"
+              />
+            </div>
+          </div>
+
+          <p
+            className={cn(
+              "text-sm md:text-xl font-normal !leading-normal text-text-200 mt-1 font-inter text-center lg:text-start max-w-[562px] mx-auto lg:mx-0",
+            )}
+          >
+            From concept to deployment, we engineer digital experiences that
+            drive business growth. We help with Modern UIUX design and
+            word-class software development for enterprises.
+          </p>
+
+          {/* CONNECT & SOCIALS */}
+          <div className="flex md:hidden flex-col md:flex-row justify-center lg:justify-start items-center gap-6 mt-8 md:mt-10">
+            <a
+              href={tidycalMettingUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button className="!shrink-0 bg-main-600 hover:bg-main-500">
+                <span className="text-white">Schedule a call</span>
+                <CalendarIcon className="!h-6 !w-6 !shrink-0" />
+              </Button>
+            </a>
+
+            <div className="flex flex-row items-center gap-3">
+              {socialsData.map(({ link, icon }, index) => (
+                <a
+                  className="h-12 w-12 rounded-full transition_common bg-main-950 hover:bg-main-600 flex_center"
+                  href={link}
+                  key={index}
+                  target="_blank"
+                >
+                  {icon}
+                </a>
+              ))}
+            </div>
+          </div>
+          <ExpandableButtonList className="hidden md:flex" />
+
+          <div className="flex flex-row items-center justify-center lg:justify-start mt-10 min-[1600px]:mt-20 gap-2 sm:gap-4 lg:gap-6 relative w-full max-w-full overflow-hidden px-4 sm:px-0">
+            <a
+              href="https://clutch.co/profile/netro-systems"
+              className="flex-shrink min-w-0"
+            >
+              <Image
+                src={images.ratingClutch}
+                alt="clutch rating"
+                className="w-full h-auto max-w-[80px] xs:max-w-[100px] sm:max-w-[120px] md:max-w-[140px] lg:max-w-[160px] object-contain"
+                height={100}
+                width={400}
+              />
+            </a>
+
+            <div className="h-[30px] sm:h-[38px] lg:h-[46px] border-[1px] border-[#353535] border-dashed flex-shrink-0" />
+
+            <a
+              href="https://www.trustpilot.com/review/netrosystems.com"
+              className="flex-shrink min-w-0"
+            >
+              <Image
+                src={images.ratingTrustpilot}
+                alt="trustpilot rating"
+                className="w-full h-auto max-w-[80px] xs:max-w-[100px] sm:max-w-[120px] md:max-w-[140px] lg:max-w-[160px] object-contain"
+                height={100}
+                width={400}
+              />
+            </a>
+
+            <div className="h-[30px] sm:h-[38px] lg:h-[46px] border-[1px] border-[#353535] border-dashed flex-shrink-0" />
+
+            <a
+              href="https://www.goodfirms.co/company/netro-systems-limited"
+              className="flex-shrink min-w-0"
+            >
+              <Image
+                src={images.ratingGoodFirms}
+                alt="goodfirms rating"
+                className="w-full h-auto max-w-[80px] xs:max-w-[100px] sm:max-w-[120px] md:max-w-[140px] lg:max-w-[160px] object-contain"
+                height={100}
+                width={400}
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};

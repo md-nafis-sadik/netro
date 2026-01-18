@@ -1,6 +1,7 @@
 import { cn } from "@/lib/utils";
+import { SVGProps } from "react";
 
-interface IFSvgProps {
+interface IFSvgProps extends SVGProps<SVGSVGElement> {
   className?: string;
   color?: string;
   fillClass?: string;
