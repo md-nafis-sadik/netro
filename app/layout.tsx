@@ -95,7 +95,7 @@ const RootLayout = ({
             <ScrollToTopOnRouteChange />
             <NavbarWrapper />
             {children}
-            <LetsTalk />
+            {/* <LetsTalk /> */}
             <Footer />
             {/* <ParallaxContainer
             containerClassName="fixed bottom-10 right-10 z-50"

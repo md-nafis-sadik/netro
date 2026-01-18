@@ -98,6 +98,9 @@ export default {
           950: "#0F0F0F",
           black: "#000000",
         },
+        darkbg: {
+          DEFAULT: "#03020B",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",

@@ -14,6 +14,7 @@ import TestimonialSkeleton from "@/components/testimonial/TestimonialSkeleton";
 import IntroWithMarqueeHome from "@/components/intro/IntroWithMarqueeHome";
 import TeamHomeWrapper from "@/components/team/TeamHomeWrapper";
 import MarqueeHome from "@/components/marquee/MarqueeHome";
+import ContactUsFormV2 from "@/components/contact-us/ContactUsFormV2";
 
 const HomePage = () => {
   return (
@@ -75,6 +76,9 @@ const HomePage = () => {
       </section>
       <section data-bg-theme="dark">
         <FAQ />
+      </section>
+      <section data-bg-theme="dark">
+        <ContactUsFormV2 />
       </section>
       <section data-bg-theme="light">
         <Suspense fallback={<JournalHomeSkeleton />}>

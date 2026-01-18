@@ -23,16 +23,16 @@ const GoTopButton = ({ className }: IFGoTopButtonProps) => {
   return (
     <button
       className={cn(
-        "border border-[#E8E8E8] p-3 flex flex-row items-center justify-center gap-1 md:gap-2 rounded-full group hover:shadow-sm hover:bg-slate-100 transition_common",
+        "border border-[#E8E8E8] py-2.5 px-6 flex flex-row items-center justify-center gap-1 md:gap-2 rounded-full group hover:shadow-sm text-white hover:bg-slate-100 transition_common hover:text-darkbg",
         className
       )}
       onClick={scrollToTop}
     >
       <ArrowUp
-        color="#343434"
-        className="h-4 md:h-5 w-4 md:w-5 relative top-0 group-hover:-top-1 transition_common"
+        // color="#FFF"
+        className="h-4 md:h-5 w-4 md:w-5 relative top-0 group-hover:-top-1 text-white group-hover:text-darkbg transition_common"
       />
-      <p className="text-[#343434] text-base font-semibold !leading-[1.6]">
+      <p className="text-base font-semibold !leading-[1.6]">
         Go to Top
       </p>
     </button>

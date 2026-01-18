@@ -150,3 +150,4 @@ export { default as telzenTop } from "@/public/images/product-details/telzen/top
 export { default as yoowifiIcon } from "@/public/images/project/yoowifi-icon.webp";
 export { default as termc } from "@/public/images/termc.webp";
 export { default as video } from "@/public/images/video.webp";
+export { default as footerBgPattern } from "@/public/images/footer-bg-pattern.webp";

@@ -7,11 +7,13 @@ import {
 import { footerData } from "@/services/data/shared.data";
 import Link from "next/link";
 import GoTopButton from "../navigation/GoTopButton";
+import { images } from "@/services";
+import Image from "next/image";
 
 const Footer = () => {
   return (
-    <footer className="bg-white py-10 md:py-20" data-bg-theme="light">
-      <div className="containerX">
+    <footer className="bg-darkbg py-10 md:py-20 relative overflow-hidden" data-bg-theme="light">
+      <div className="containerX relative z-30">
         <div className="grid grid-cols-1 sm:grid-cols-4 md:grid-cols-7 min-[1120px]:grid-cols-11 gap-10 md:gap-6">
           {/* Inquiries */}
           <div className="col-span-2 md:col-span-3 flex items-center sm:items-start flex-col">
@@ -40,7 +42,7 @@ const Footer = () => {
                 {footerData.inquiries.phone}
               </a>
             </div>
-            <div className="flex items-center gap-6 mt-4 md:mt-2">
+            <div className="flex items-center gap-6 mt-4">
               <div className="h-8 w-8 rounded-full bg-natural-100 flex_center">
                 <AtTheRateIcon className="h-[14px] w-[14px] !shrink-0" />
               </div>
@@ -68,7 +70,7 @@ const Footer = () => {
                   <Link
                     href={link.href}
                     className={cn(
-                      "footer_el_text block mb-2 text-center sm:text-start font-inter hover:text-main-500 transition_common"
+                      "footer_el_text block mb-4 text-center sm:text-start font-inter hover:text-main-300 transition_common"
                     )}
                   >
                     {link.text}
@@ -93,7 +95,7 @@ const Footer = () => {
                   <Link
                     href={link.href}
                     className={cn(
-                      "footer_el_text block mb-2 text-center sm:text-start font-inter hover:text-main-500 transition_common"
+                      "footer_el_text block mb-4 text-center sm:text-start font-inter hover:text-main-300 transition_common"
                     )}
                   >
                     {link.text}
@@ -118,7 +120,7 @@ const Footer = () => {
                   <Link
                     href={link.href}
                     className={cn(
-                      "footer_el_text block mb-2 text-center sm:text-start font-inter hover:text-main-500 transition_common"
+                      "footer_el_text block mb-4 text-center sm:text-start font-inter hover:text-main-300 transition_common"
                     )}
                   >
                     {link.text}
@@ -145,7 +147,7 @@ const Footer = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className={cn(
-                      "footer_el_text block mb-2 text-center sm:text-start font-inter hover:text-main-500 transition_common"
+                      "footer_el_text block mb-4 text-center sm:text-start font-inter hover:text-main-300 transition_common"
                     )}
                   >
                     {link.text}
@@ -178,33 +180,10 @@ const Footer = () => {
             </a>
           ))}
         </div>
-
-        <p className="text-sm font-normal !leading-[1.7] text-text-600 text-center mt-10 md:mt-[60px]">
-          Netro Systems is a leading software design and development company
-          dedicated to transforming ideas into innovative digital solutions.
-          Specializing in **UI/UX design**, **web development**, **mobile
-          applications**, and **SaaS solutions**, we combine creativity with
-          cutting-edge technology to deliver exceptional user experiences and
-          high-performing products. At Netro, we partner with startups,
-          enterprises, and businesses of all sizes to build custom software that
-          drives growth, efficiency, and digital transformation. Our approach is
-          rooted in collaboration, ensuring that every project aligns with the
-          client&appos;s vision, goals, and audience needs. <br />
-          <br /> With a team of skilled designers, developers, and strategists,
-          Netro Systems has successfully delivered solutions across industries
-          such as **e-commerce**, **healthcare**, **finance**, and
-          **technology**. We pride ourselves on our agile methodologies,
-          user-centered design principles, and a commitment to excellence. From
-          crafting minimum viable products (MVPs) for startups to developing
-          enterprise-level software, Netro Systems ensures scalability,
-          security, and performance. Our mission is to empower businesses to
-          thrive in a rapidly evolving digital landscape. By prioritizing
-          **innovation**, **quality**, and **client satisfaction**, we aim to be
-          the dynamic force driving your success. Let Netro Systems be your
-          partner in building the future—one solution at A time. **Your vision,
-          our innovation.**
-        </p>
       </div>
+
+      <Image src={images.footerBgPattern} alt="Footer Background Pattern" className="absolute inset-0 z-10 w-[1448px] h-[1086px] object-contain opacity-100 left-[10%] pointer-events-none bottom-0" />
+      <div className="absolute top-[60%] z-0 w-[1710px] h-[1001px] rounded-full bg-[#6766FF] blur-[218px]"></div>
     </footer>
   );
 };
