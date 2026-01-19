@@ -16,6 +16,9 @@ body {
   .containerminX {
     @apply w-full max-w-[1116px] mx-auto px-4 sm:px-8 xl:px-16 2xl:px-28;
   }
+  .container {
+    @apply w-full max-w-[1312px] mx-auto px-4;
+  }
 
   .label {
     @apply text-base text-neutral-800 font-medium;

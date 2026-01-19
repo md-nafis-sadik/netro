@@ -49,7 +49,7 @@ const ProjectCard = ({
         />
       </div>
       <div
-        className="w-full max-w-[401px] xl:max-w-lg flex flex-col justify-evenly backdrop:blur-md text-white p-8 font-inter"
+        className="w-full max-w-[401px] flex flex-col justify-evenly backdrop:blur-md text-white p-8 font-inter"
         style={{
           background: item?.backgroundColor,
         }}

@@ -89,7 +89,7 @@ function ProjectsHome() {
       data-bg-theme="dark"
       className="pt-10 md:pt-16 lg:pt-20 pb-10 bg-blue-900"
     >
-      <div className="container2X flex_center flex-col">
+      <div className="container flex_center flex-col">
         <SectionSubHeader
           dark
           text="Explore Projects"
@@ -105,9 +105,7 @@ function ProjectsHome() {
         >
           {projects.map((item: IProject, index: number) => (
             <ProjectCard
-              className={cn(
-                "stacked-card sticky left-0 top-0 mb-80",
-              )}
+              className={cn("stacked-card sticky left-0 top-0 mb-80")}
               style={{
                 pointerEvents: activeIndex === index ? "auto" : "none",
               }}

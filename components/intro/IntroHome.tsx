@@ -7,10 +7,10 @@ import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 function IntroHome() {
   return (
     <section data-bg-theme="light" className="py-10 md:py-15 font-inter">
-      <div className="container2X">
+      <div className="container">
         <div className="flex gap-44 items-start">
           <AppLogoIcon className="w-28 shrink-0" />
-          <div className="text-4xl text-black-800 align-middle leading-[110%] max-w-[994px] ml-auto">
+          <div className="text-4xl font-normal text-black-800 align-middle leading-[110%] max-w-[994px] ml-auto">
             We are{" "}
             <Image
               src={images.logo}

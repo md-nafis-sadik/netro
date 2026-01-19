@@ -1,8 +1,7 @@
-import { cn } from "@/lib/utils";
 import {
-  StarBigIcon,
-  PrizeBigIcon,
   AwardBigIcon,
+  PrizeBigIcon,
+  StarBigIcon,
 } from "@/services/assets/svgs";
 
 interface AwardItemProps {
@@ -25,7 +24,10 @@ const AwardItem = ({ icon, title, description, year }: AwardItemProps) => {
     <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 md:gap-6 group">
       {/* Icon Container */}
       <div className="flex-shrink-0 overflow-hidden relative w-16 h-16 md:w-20 md:h-20 bg-[#16153F] rounded-2xl flex_center transition-transform group-hover:scale-110">
-        <IconComponent className="w-8 h-8 md:w-10 md:h-10 z-10 relative" color="white" />
+        <IconComponent
+          className="w-8 h-8 md:w-10 md:h-10 z-10 relative"
+          color="white"
+        />
         <span className="absolute bottom-0">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -59,9 +61,9 @@ const AwardItem = ({ icon, title, description, year }: AwardItemProps) => {
                 width="105.449"
                 height="76.1602"
                 filterUnits="userSpaceOnUse"
-                color-interpolation-filters="sRGB"
+                colorInterpolationFilters="sRGB"
               >
-                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                <feFlood floodOpacity="0" result="BackgroundImageFix" />
                 <feBlend
                   mode="normal"
                   in="SourceGraphic"
@@ -81,8 +83,8 @@ const AwardItem = ({ icon, title, description, year }: AwardItemProps) => {
                 y2="56.1606"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop stop-color="white" />
-                <stop offset="1" stop-color="white" stop-opacity="0.4" />
+                <stop stopColor="white" />
+                <stop offset="1" stopColor="white" stopOpacity="0.4" />
               </linearGradient>
             </defs>
           </svg>
@@ -102,9 +104,7 @@ const AwardItem = ({ icon, title, description, year }: AwardItemProps) => {
 
         {/* Year */}
         <div className="flex-shrink-0">
-          <p className="text-sm md:text-lg text-gray-200 font-inter">
-            {year}
-          </p>
+          <p className="text-sm md:text-lg text-gray-200 font-inter">{year}</p>
         </div>
       </div>
     </div>

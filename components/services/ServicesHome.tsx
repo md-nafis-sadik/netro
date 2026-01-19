@@ -90,7 +90,7 @@ function ServicesHome() {
       data-bg-theme="light"
       className="py-10 md:py-16 lg:py-20 font-inter"
     >
-      <div className="container2X flex_center flex-col">
+      <div className="container flex_center flex-col">
         <SectionSubHeader
           text="Services"
           className="services-sub border-dashed border-natural-350"
@@ -100,14 +100,14 @@ function ServicesHome() {
           Solutions for You
         </SectionHeader>
 
-        <div className="flex w-full mt-10 md:mt-16 lg:mt-20 gap-10 md:gap-16 lg:gap-20">
+        <div className="flex justify-between w-full mt-10 md:mt-16 lg:mt-20 gap-8">
           <div className="flex-1 flex flex-col">
             {servicesData?.map((service: IService, index: number) => (
               <Link
                 key={service?._id}
                 href="/"
                 className={cn(
-                  "service-item flex items-center gap-4 min-h-20 max-w-max transition-colors",
+                  "whitespace-nowrap service-item flex items-center gap-4 min-h-20 max-w-max transition-colors",
                   activeService === index ? "text-black" : "text-black/25",
                 )}
                 onMouseEnter={() => setActiveService(index)}
