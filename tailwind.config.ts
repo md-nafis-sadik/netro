@@ -104,6 +104,15 @@ export default {
           950: "#0F0F0F",
           black: "#000000",
         },
+        darkbg: {
+          DEFAULT: "#03020B",
+        },
+        darkPurplebg: {
+          DEFAULT: "#060023",
+        },
+        "new-main": {
+          950: "#201650"
+        },
         orange: {
           500: "#FFA77C",
         },

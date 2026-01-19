@@ -62,7 +62,7 @@ const JournalCard = ({
 
         <p
           className={cn(
-            "text-sm font-normal !leading-[1.1] text-natural-700 mt-2 md:mt-3 font-inter"
+            "text-sm font-normal !leading-[1.1] text-text-750 mt-2 md:mt-3 font-inter"
           )}
         >
           {date}

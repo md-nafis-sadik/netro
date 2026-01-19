@@ -164,6 +164,11 @@ export { default as support2 } from "@/public/images/support-2.webp";
 export { default as support3 } from "@/public/images/support-3.webp";
 export { default as termc } from "@/public/images/termc.webp";
 export { default as video } from "@/public/images/video.webp";
+export { default as footerBgPattern } from "@/public/images/footer-bg-pattern.webp";
+export { default as awardsBgUp } from "@/public/images/award-pattern-up.webp";
+export { default as awardsBgDown } from "@/public/images/award-pattern-down.webp";
+export { default as contactBg } from "@/public/images/contact-bg.webp";
+export { default as asiqMohammedNew } from "@/public/images/team/asiq-mohammed-new.webp";
 
 // icons
 export { default as bannerIcon1 } from "@/public/images/icons/banner-icon-1.webp";
