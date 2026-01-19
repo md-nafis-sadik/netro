@@ -101,6 +101,12 @@ export default {
         darkbg: {
           DEFAULT: "#03020B",
         },
+        darkPurplebg: {
+          DEFAULT: "#060023",
+        },
+        "new-main": {
+          950: "#201650"
+        },
       },
       borderRadius: {
         lg: "var(--radius)",

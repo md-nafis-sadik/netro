@@ -151,3 +151,7 @@ export { default as yoowifiIcon } from "@/public/images/project/yoowifi-icon.web
 export { default as termc } from "@/public/images/termc.webp";
 export { default as video } from "@/public/images/video.webp";
 export { default as footerBgPattern } from "@/public/images/footer-bg-pattern.webp";
+export { default as awardsBgUp } from "@/public/images/award-pattern-up.webp";
+export { default as awardsBgDown } from "@/public/images/award-pattern-down.webp";
+export { default as contactBg } from "@/public/images/contact-bg.webp";
+export { default as asiqMohammedNew } from "@/public/images/team/asiq-mohammed-new.webp";

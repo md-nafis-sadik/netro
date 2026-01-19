@@ -427,6 +427,13 @@
   -webkit-text-fill-color: transparent;
 }
 
+.home_statistics_header_v2 {
+  background: linear-gradient(164deg, #fff 11.44%, #86c9ff 63.98%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .home_team_header {
   background: linear-gradient(
     90deg,
@@ -475,13 +482,6 @@
     "liga" off,
     "clig" off;
 
-  /* Display/Display • Bold • 96 • 90% */
-  font-family: ScoutCond;
-  font-size: 96px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 90%; /* 86.4px */
-  text-transform: uppercase;
 }
 
 /* SERVICES */

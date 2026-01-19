@@ -46,8 +46,12 @@ body {
     @apply text-5xl sm:text-7xl md:text-9xl leading-[90%] font-scoutcond font-bold uppercase;
   }
 
+  .title-v2 {
+    @apply text-5xl sm:text-6xl md:text-8xl leading-[90%] font-scoutcond font-bold uppercase;
+  }
+
   .titleLg {
-    @apply text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold font-scoutcond leading-[100%] uppercase;
+    @apply text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold font-scoutcond leading-[90%] uppercase;
   }
 
   .titleMd {
@@ -69,6 +73,11 @@ body {
   .budgetTag {
     @apply px-4 py-3 rounded-full border border-dashed border-natural-300 text-sm text-text-900 font-medium flex-1 whitespace-nowrap text-center cursor-pointer;
   }
+
+  .budgetTagV2 {
+    @apply px-4 py-3 rounded-full bg-white text-sm text-text-900 font-medium flex-1 whitespace-nowrap text-center cursor-pointer;
+  }
+
   .activeBudgetTag {
     @apply border-solid border-main-400 bg-main-50 text-main-400;
   }
@@ -105,7 +114,6 @@ body {
     -webkit-text-fill-color: transparent;
     background-clip: text;
     text-fill-color: transparent;
-
   }
 
   .whiteGradient {

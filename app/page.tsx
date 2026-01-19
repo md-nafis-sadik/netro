@@ -15,6 +15,8 @@ import IntroWithMarqueeHome from "@/components/intro/IntroWithMarqueeHome";
 import TeamHomeWrapper from "@/components/team/TeamHomeWrapper";
 import MarqueeHome from "@/components/marquee/MarqueeHome";
 import ContactUsFormV2 from "@/components/contact-us/ContactUsFormV2";
+import TeamV2 from "@/components/team/TeamV2";
+import AwardsRecognition from "@/components/awards/AwardsRecognition";
 
 const HomePage = () => {
   return (
@@ -61,24 +63,19 @@ const HomePage = () => {
         </Suspense>
       </section>
       <section data-bg-theme="dark">
-        <StatisticsHome />
-      </section>
-      <section data-bg-theme="light">
-        <Suspense
-          fallback={
-            <div className="h-screen flex items-center justify-center">
-              Loading projects...
-            </div>
-          }
-        >
-          <TeamHomeWrapper />
-        </Suspense>
-      </section>
-      <section data-bg-theme="dark">
         <FAQ />
       </section>
       <section data-bg-theme="dark">
+        <TeamV2 />
+      </section>
+      <section data-bg-theme="light">
+        <AwardsRecognition />
+      </section>
+      <section data-bg-theme="dark">
         <ContactUsFormV2 />
+      </section>
+      <section data-bg-theme="dark">
+        <StatisticsHome />
       </section>
       <section data-bg-theme="light">
         <Suspense fallback={<JournalHomeSkeleton />}>

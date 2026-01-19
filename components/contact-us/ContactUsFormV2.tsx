@@ -81,50 +81,29 @@ function ContactUsFormV2() {
   };
 
   return (
-    <div className="pt-10 sm:pt-16 md:pt-20 pb-8 sm:pb-16 md:pb-20 lg:pb-30">
+    <div className="relative pt-8 sm:pt-20 md:pt-24 pb-8 sm:pb-16 md:pb-20 lg:pb-24">
+      <div
+        className="absolute inset-0 -z-10"
+        style={{
+          backgroundImage: "url('/images/contact-bg.webp')",
+          backgroundSize: "152.318% 152.318%",
+          backgroundPosition: "-49.593px -197.87px",
+          backgroundRepeat: "no-repeat",
+          backgroundColor: "lightgray",
+          transform: "scaleX(-1)",
+        }}
+      />
       <div className="containerX">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 justify-between">
-          <div className="lg:col-span-6">
-            <h1 className="title blackGradient">Get in touch</h1>
-            <p className="text-sm sm:text-base md:text-xl lg:text-2xl text-text-600 uppercase leading-[140%] mt-6 md:mt-5">
-              Contact with us
-            </p>
-            <div className="mt-6 sm:mt-8 md:mt-10">
-              <ContactItem
-                icon={
-                  <WhatsappOutlinedIcon
-                    className="w-6 h-6 sm:w-8 sm:h-8"
-                    color="#000000"
-                  />
-                }
-                title="Whatsapp Link"
-                linkText={contactData.netroWhatsappLink}
-                link={contactData.netroWhatsappLink}
-              />
-              {/* <ContactItem
-                icon={
-                  <TelegramOutlinedIcon
-                    className="w-6 h-6 sm:w-8 sm:h-8"
-                    color="#000000"
-                  />
-                }
-                title="Telegram Link"
-                linkText="https://t.me/netrosystems"
-                link="https://t.me/netrosystems"
-              /> */}
-              <ContactItem
-                icon={<MailIcon className="w-6 h-6 sm:w-8 sm:h-8" />}
-                title="Email Us"
-                linkText={contactData.netroContactMail}
-                link={`mailto:${contactData.netroContactMail}`}
-                isBordered={false}
-              />
-            </div>
-          </div>
+          <div className="lg:col-span-6"></div>
           <div className="w-full lg:col-span-5 lg:col-start-8">
+            <h1 className="title-v2 text-white">Contact Us</h1>
+            <p className="text-sm sm:text-base md:text-base lg:text-lg text-white leading-[140%]">
+              Tell us your concern and queries
+            </p>
             <form
               action="#"
-              className="w-full px-4 sm:px-7 md:px-10 py-6 sm:py-8 md:py-10 border border-dashed border-natural-300 flex flex-col gap-6 sm:gap-8 md:gap-10"
+              className="w-full flex flex-col gap-4 sm:gap-5 md:gap-6 mt-4 md:mt-6 lg:mt-8 xl:mt-10"
               onSubmit={handleSubmit}
             >
               <input
@@ -146,7 +125,7 @@ function ContactUsFormV2() {
                 placeholder="Tell Us About Your Quires"
               />
               <div className="">
-                <p className="text-base text-text-700 leading-[120%] font-medium">
+                <p className="text-base text-white leading-[120%] font-medium">
                   Project Budget
                 </p>
                 <BudgetTags query={query} />
@@ -176,10 +155,10 @@ function ContactUsFormV2() {
               </p>
             ) : (
               <p
-                className={`text-black flex items-center p-2 gap-2 opacity-0 select-none pointer-events-none`}
+                className={`text-white flex items-center p-2 gap-2 opacity-0 select-none pointer-events-none`}
               >
-                <SuccessSvg />
-                <span>All Ok</span>
+                {/* <SuccessSvg />
+                <span>All Ok</span> */}
               </p>
             )}
           </div>

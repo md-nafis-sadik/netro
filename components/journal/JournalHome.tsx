@@ -15,7 +15,7 @@ const OurJournal = ({ data }: any) => {
   return (
     <section className="bg-white flex_center flex-col my-20 w-full">
       <SectionSubHeader text="Latest about" />
-      <SectionHeader className="home_journal_header_v2 mt-6">
+      <SectionHeader className="home_journal_header_v2 text-5xl md:text-[96px] mt-2">
         Blogs & Updates
       </SectionHeader>
 

@@ -15,14 +15,14 @@ function BudgetTags({ query = "" }: { query: string | undefined }) {
   return (
     <ul className="mt-4 flex items-center flex-wrap gap-3">
       <li
-        className={cn("budgetTag", query === "5k-15k" ? "activeBudgetTag" : "")}
+        className={cn("budgetTagV2", query === "5k-15k" ? "activeBudgetTag" : "")}
         onClick={() => handleTabClick("5k-15k")}
       >
         5k-15k
       </li>
       <li
         className={cn(
-          "budgetTag",
+          "budgetTagV2",
           query === "15k-50k" ? "activeBudgetTag" : ""
         )}
         onClick={() => handleTabClick("15k-50k")}
@@ -31,7 +31,7 @@ function BudgetTags({ query = "" }: { query: string | undefined }) {
       </li>
       <li
         className={cn(
-          "budgetTag",
+          "budgetTagV2",
           query === "50k-250k" ? "activeBudgetTag" : ""
         )}
         onClick={() => handleTabClick("50k-250k")}
@@ -39,7 +39,7 @@ function BudgetTags({ query = "" }: { query: string | undefined }) {
         50k-250k
       </li>
       <li
-        className={cn("budgetTag", query === "250k" ? "activeBudgetTag" : "")}
+        className={cn("budgetTagV2", query === "250k" ? "activeBudgetTag" : "")}
         onClick={() => handleTabClick("250k")}
       >
         {" "}
