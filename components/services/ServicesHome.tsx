@@ -101,19 +101,19 @@ function ServicesHome() {
         </SectionHeader>
 
         <div className="flex w-full mt-10 md:mt-16 lg:mt-20 gap-10 md:gap-16 lg:gap-20">
-          <div className="flex-1 flex flex-col gap-6">
+          <div className="flex-1 flex flex-col">
             {servicesData?.map((service: IService, index: number) => (
               <Link
                 key={service?._id}
                 href="/"
                 className={cn(
-                  "service-item flex items-center gap-4 min-h-16 max-w-max transition-colors",
+                  "service-item flex items-center gap-4 min-h-20 max-w-max transition-colors",
                   activeService === index ? "text-black" : "text-black/25",
                 )}
                 onMouseEnter={() => setActiveService(index)}
                 onMouseLeave={() => setActiveService(0)}
               >
-                <span className="text-xl font-medium">
+                <span className="text-xl font-medium duration-300">
                   {index < 9 ? "0" + (index + 1) : index + 1}
                 </span>
 

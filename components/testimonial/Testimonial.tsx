@@ -1,79 +1,46 @@
-"use client";
-import TestimonialCard from "./TestimonialCard";
-import useEmblaCarousel from "embla-carousel-react";
-import { cn } from "@/lib/utils";
-import useEmblaButtons from "@/hooks/EmblaCarousel";
-import {
-  LeftSignIcon,
-  QuoteStraightIcon,
-  RightSignIcon,
-} from "@/services/assets/svgs";
-import Autoplay from "embla-carousel-autoplay";
+import { images } from "@/services";
+import Image from "next/image";
 import SectionHeader from "../common/SectionHeader";
+import SectionSubHeader from "../common/SectionSubHeader";
 
-const Testimonial = ({ data }: any) => {
-  const autoplayOptions = { delay: 3000 };
-  const options = { align: "start", loop: true } as const;
-  const [emblaRef, emblaApi] = useEmblaCarousel(options, [
-    Autoplay(autoplayOptions),
-  ]);
-  const { onPrevButtonClick, onNextButtonClick } = useEmblaButtons(emblaApi);
-
+function Testimonial() {
   return (
-    <div className="containerX w-full py-20 md:py-[120px] relative overflow-x-hidden">
-      <div className="w-fit relative mx-auto h-fit">
-        <SectionHeader className="home_testimonial_header">
-          See How We&apos;ve Made <br /> a Difference
+    <section
+      data-bg-theme="light"
+      className="bg-orange-500 py-10 md:py-16 lg:py-20 font-inter"
+    >
+      <div className="container2X flex_center flex-col">
+        <SectionSubHeader text="Services" className="services-sub" />
+
+        <SectionHeader className="services-title mt-5 text-black">
+          Solutions for You
         </SectionHeader>
 
-        <QuoteStraightIcon className="absolute -top-[20%] -right-[14%] w-[20%] z-[-1] h-auto !shrink-0" />
-      </div>
-
-      {/* CAROUSEL */}
-      <div className="w-full overflow-x-hidden">
-        <div className="w-full" ref={emblaRef}>
-          <div className="flex gap-3 md:gap-6 lg:gap-8 w-full">
-            {data?.map((item: any, index: number) => (
-              <TestimonialCard
-                key={index}
-                name={item?.name}
-                title={item?.occupation}
-                avatar={item?.imageUrl}
-                message={item?.review}
-              />
-            ))}
+        <div className="w-full grid grid-cols-3 grid-rows-3 gap-4 mt-10 md:mt-16 lg:mt-20">
+          <div className="bg-white p-6 ">
+            <q className="text-lg leading-[150%]">
+              Working with Layzo felt like unlocking a new level of creativity.
+              They understood our vision instantly and brought it to life with
+              precision and bold design choices. The result? A brand presence
+              we&apos;re truly proud of.
+            </q>
+            <div className="flex items-center">
+              <Image src={images.avatar} alt="Avatar" className="size-11 " />
+              <div>
+                <h3>Kevin Arnold</h3>
+                <p>Co-Founder & CEO</p>
+              </div>
+            </div>
           </div>
+          <div className="row-span-2 col-start-1 row-start-2 border">2</div>
+          <div className="row-span-2 col-start-2 row-start-1 border">3</div>
+          <div className="col-start-2 row-start-3 border">4</div>
+          <div className="col-start-3 row-start-1 border">5</div>
+          <div className="row-span-2 col-start-3 row-start-2 border">6</div>
         </div>
       </div>
-
-      <div className="hidden md:flex_center gap-8 mt-10 md:mt-[60px]">
-        <button
-          aria-label="move left button"
-          className={cn(
-            "btn bg-white transition-all duration-300 h-10 md:h-[60px] w-10 md:w-[60px] border border-natural-300 hover:bg-main-500 group rounded-full flex_center"
-          )}
-          onClick={onPrevButtonClick}
-        >
-          <LeftSignIcon
-            className="h-6 w-6 md:h-[32px] md:w-[32px] group-hover:text-white"
-            color={"currentColor"}
-          />
-        </button>
-        <button
-          aria-label="move right button"
-          className={cn(
-            "btn bg-white transition-all duration-300 h-10 md:h-[60px] w-10 md:w-[60px] border border-natural-300 hover:bg-main-500 group rounded-full flex_center "
-          )}
-          onClick={onNextButtonClick}
-        >
-          <RightSignIcon
-            className="h-6 w-6 md:h-[32px] md:w-[32px] group-hover:text-white"
-            color={"currentColor"}
-          />
-        </button>
-      </div>
-    </div>
+    </section>
   );
-};
+}
 
 export default Testimonial;

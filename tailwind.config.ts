@@ -104,6 +104,9 @@ export default {
           950: "#0F0F0F",
           black: "#000000",
         },
+        orange: {
+          500: "#FFA77C",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",

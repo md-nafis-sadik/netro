@@ -10,6 +10,7 @@ import Revoluation from "@/components/services/Revoluation";
 import ServicesHome from "@/components/services/ServicesHome";
 import StatisticsHome from "@/components/statistics/StatisticsHome";
 import TeamHomeWrapper from "@/components/team/TeamHomeWrapper";
+import Testimonial from "@/components/testimonial/Testimonial";
 import TestimonialSkeleton from "@/components/testimonial/TestimonialSkeleton";
 import TestimonialWrapper from "@/components/testimonial/TestimonialWrapper";
 import WorkCultureHome from "@/components/workCulture/WorkCultureHome";
@@ -23,6 +24,7 @@ const HomePage = () => {
       <ProjectsHome />
       <ServicesHome />
       <Revoluation />
+      <Testimonial />
       <section data-bg-theme="dark">
         <Products />
       </section>
@@ -32,11 +34,11 @@ const HomePage = () => {
       <section data-bg-theme="dark">
         <PricingHome />
       </section>
-      <section data-bg-theme="light">
+      {/* <section data-bg-theme="light">
         <Suspense fallback={<TestimonialSkeleton />}>
           <TestimonialWrapper />
         </Suspense>
-      </section>
+      </section> */}
       <section data-bg-theme="dark">
         <StatisticsHome />
       </section>
