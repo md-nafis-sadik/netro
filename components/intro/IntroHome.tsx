@@ -39,11 +39,11 @@ function IntroHome() {
         </div>
         <div className="grid grid-cols-12 grid-rows-5 gap-4 mt-11">
           {/* Projects Delivered */}
-          <div className="col-span-4 row-span-5 border border-black-800 flex flex-col justify-between gap-6 p-6">
-            <h3 className="text-[4rem] leading-[120%] text-black-800 font-bold ">
+          <div className="col-span-4 row-span-5 flex flex-col justify-between gap-6 p-6 relative">
+            <h3 className="text-[4rem] leading-[120%] text-black-800 font-bold relative z-50">
               70+
             </h3>
-            <div className="">
+            <div className="relative z-50">
               <p className="text-base md:text-lg text-black-800 font-semibold leading-[140%]">
                 Projects Delivered
               </p>
@@ -53,6 +53,13 @@ function IntroHome() {
                 AI technology, MVP, eCommerce and many
               </p>
             </div>
+            <Image
+              src={images.about3}
+              alt="projects delivered"
+              width={1000}
+              height={1000}
+              className="absolute top-0 left-0 w-full h-full object-cover z-10"
+            />
           </div>
           {/* Support 24/7, Guaranteed! */}
           <div className="col-span-4 col-start-5 flex items-center justify-between gap-3 border border-black-50 px-6 py-5">
@@ -117,11 +124,11 @@ function IntroHome() {
             </div>
           </div>
           {/* Client Satisfaction */}
-          <div className="col-span-4 row-span-3 col-start-5 row-start-2 border border-black-800 flex flex-col justify-between gap-6  px-6 py-5">
-            <h3 className="text-[4rem] leading-[120%] text-black-800 font-bold ">
+          <div className="col-span-4 row-span-3 col-start-5 row-start-2 flex flex-col justify-between gap-6  px-6 py-5 relative">
+            <h3 className="text-[4rem] leading-[120%] text-black-800 font-bold relative z-50">
               99%
             </h3>
-            <div className="">
+            <div className="relative z-50">
               <p className="text-base md:text-lg text-black-800 font-semibold leading-[140%]">
                 Client Satisfaction
               </p>
@@ -130,13 +137,20 @@ function IntroHome() {
                 exactly what your business aims for.
               </p>
             </div>
+            <Image
+              src={images.about4}
+              alt="projects delivered"
+              width={1000}
+              height={1000}
+              className="absolute top-0 left-0 w-full h-full object-cover z-10"
+            />
           </div>
           {/* Positive Outcomes */}
-          <div className="col-span-4 row-span-4 col-start-9 row-start-1 border border-black-800 flex flex-col justify-between gap-6 p-6">
-            <h3 className="text-[4rem] leading-[120%] text-black-800 font-bold ">
+          <div className="col-span-4 row-span-4 col-start-9 row-start-1 flex flex-col justify-between gap-6 p-6 relative">
+            <h3 className="text-[4rem] leading-[120%] text-black-800 font-bold relative z-50">
               35X
             </h3>
-            <div className="">
+            <div className="relative z-50">
               <p className="text-base md:text-lg text-black-800 font-semibold leading-[140%]">
                 Positive Outcomes
               </p>
@@ -145,6 +159,13 @@ function IntroHome() {
                 ROI.
               </p>
             </div>
+            <Image
+              src={images.about5}
+              alt="projects delivered"
+              width={1000}
+              height={1000}
+              className="absolute top-0 left-0 w-full h-full object-cover z-10"
+            />
           </div>
         </div>
       </div>

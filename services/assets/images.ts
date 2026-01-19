@@ -149,6 +149,9 @@ export { default as telzenTop } from "@/public/images/product-details/telzen/top
 
 export { default as about1 } from "@/public/images/about-1.webp";
 export { default as about2 } from "@/public/images/about-2.webp";
+export { default as about3 } from "@/public/images/about-3.webp";
+export { default as about4 } from "@/public/images/about-4.webp";
+export { default as about5 } from "@/public/images/about-5.webp";
 export { default as logo } from "@/public/images/logo.webp";
 export { default as yoowifiIcon } from "@/public/images/project/yoowifi-icon.webp";
 export { default as support1 } from "@/public/images/support-1.webp";
