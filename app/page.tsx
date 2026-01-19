@@ -6,6 +6,7 @@ import JournalHomeWrapper from "@/components/journal/JournalHomeWrapper";
 import PricingHome from "@/components/pricing/PricingHome";
 import Products from "@/components/products/Products";
 import ProjectsHome from "@/components/projects/ProjectsHome";
+import Revoluation from "@/components/services/Revoluation";
 import ServicesHome from "@/components/services/ServicesHome";
 import StatisticsHome from "@/components/statistics/StatisticsHome";
 import TeamHomeWrapper from "@/components/team/TeamHomeWrapper";
@@ -17,32 +18,11 @@ import { Suspense } from "react";
 const HomePage = () => {
   return (
     <main className="relative">
-      <div className="relative">
-        <section data-bg-theme="dark">
-          <HeroHome />
-        </section>
-
-        {/* <section className="overflow-hidden">
-          <MarqueeHome dark={false} className="" />
-        </section> */}
-
-        <IntroHome />
-      </div>
+      <HeroHome />
+      <IntroHome />
       <ProjectsHome />
-      {/* <section data-bg-theme="dark">
-        <Suspense
-          fallback={
-            <div className="h-screen flex items-center justify-center">
-              Loading projects...
-            </div>
-          }
-        >
-          <ProjectsHomeWrapper />
-        </Suspense>
-      </section> */}
-      <section data-bg-theme="light">
-        <ServicesHome />
-      </section>
+      <ServicesHome />
+      <Revoluation />
       <section data-bg-theme="dark">
         <Products />
       </section>

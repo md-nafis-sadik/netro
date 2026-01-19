@@ -1,4 +1,5 @@
 import { images } from "../assets";
+import { IService } from "../types";
 
 export const coreStrengthsServicesData = [
   {
@@ -42,3 +43,41 @@ export const coreStrengthsServicesData = [
     text: "Modern design for seamless, user-focused telecom experiences.",
   },
 ];
+
+export const servicesData: readonly IService[] = Object.freeze([
+  {
+    _id: "service-01",
+    title: "SaaS, MVP Development",
+    description:
+      "Tailored software solutions designed to meet your unique business needs and drive growth.",
+    image: images.blog1,
+  },
+  {
+    _id: "service-02",
+    title: "App Development",
+    description:
+      "Tailored software solutions designed to meet your unique business needs and drive growth.",
+    image: images.blog2,
+  },
+  {
+    _id: "service-03",
+    title: "Vibe Coding: MVP",
+    description:
+      "Tailored software solutions designed to meet your unique business needs and drive growth.",
+    image: images.blog3,
+  },
+  {
+    _id: "service-04",
+    title: "SQA, Deployment, Support",
+    description:
+      "Tailored software solutions designed to meet your unique business needs and drive growth.",
+    image: images.blog2,
+  },
+  {
+    _id: "service-05",
+    title: "UIUX Design, Branding",
+    description:
+      "Tailored software solutions designed to meet your unique business needs and drive growth.",
+    image: images.blog3,
+  },
+]);

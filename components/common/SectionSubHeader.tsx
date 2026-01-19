@@ -14,7 +14,7 @@ const SectionSubHeader = ({ text, dark, className }: IFSubHeader) => {
         dark
           ? "border-dashed border-natural-800 text-text-600 bg-[#101010]"
           : "border-transparent text-text-700 bg-[#F0F0F0]",
-        className
+        className,
       )}
     >
       {text}

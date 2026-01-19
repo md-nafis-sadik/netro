@@ -462,17 +462,14 @@ export const Download3DIcon = ({
 
 // E
 
-export const EyeIcon = ({
-  className,
-  ...props
-}: IFSvgProps) => (
+export const EyeIcon = ({ className, ...props }: IFSvgProps) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="24"
     height="24"
     viewBox="0 0 24 24"
     fill="none"
-       className={className}
+    className={className}
     {...props}
   >
     <path
@@ -1145,6 +1142,45 @@ export const RightArrowIcon = ({
       d="M20 7.16675L17.65 9.51675L26.95 18.8334H6.66669V22.1667H26.95L17.65 31.4834L20 33.8334L33.3334 20.5001L20 7.16675Z"
       fill={color}
     />
+  </svg>
+);
+
+export const RightLongArrowIcon = ({
+  className,
+  color = "#6766FF",
+  ...props
+}: IFSvgProps) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="64"
+    height="64"
+    viewBox="0 0 64 64"
+    fill="none"
+    className={className}
+    {...props}
+  >
+    <path
+      d="M38.4 6.3999L33.92 10.8799L51.84 28.7999H0V35.1999H51.84L33.92 53.1199L38.4 57.5999L64 31.9999L38.4 6.3999Z"
+      fill={color}
+    />
+    <path
+      d="M38.4 6.3999L33.92 10.8799L51.84 28.7999H0V35.1999H51.84L33.92 53.1199L38.4 57.5999L64 31.9999L38.4 6.3999Z"
+      fill="url(#paint0_linear_3344_1912)"
+      fillOpacity="0.2"
+    />
+    <defs>
+      <linearGradient
+        id="paint0_linear_3344_1912"
+        x1="32.1488"
+        y1="6.3999"
+        x2="32.1488"
+        y2="57.5999"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop stopColor="white" />
+        <stop offset="1" stopColor="white" stopOpacity="0.4" />
+      </linearGradient>
+    </defs>
   </svg>
 );
 

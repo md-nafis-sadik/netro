@@ -401,6 +401,13 @@
   -webkit-text-fill-color: transparent;
 }
 
+.home_ai_header {
+ background: linear-gradient(164deg, #FFF 11.44%, #FFA8A9 63.98%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .home_testimonial_header {
   background: linear-gradient(90deg, #000 0.06%, #929292 20.04%, #292929 59.7%);
   background-clip: text;
