@@ -1,7 +1,8 @@
 "use client";
-import { Button } from "@/components/ui/button";
+import colors from "@/lib/colors";
 import { cn } from "@/lib/utils";
-import { ArrowLongTailIcon } from "@/services/assets/svgs";
+import { IProject } from "@/services";
+import { ArrowLongTailIcon, EyeIcon } from "@/services/assets/svgs";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -16,7 +17,7 @@ const ProjectCard = ({
   linkCondition,
   shrinkedInGrid = false,
 }: {
-  item: any;
+  item: IProject;
   className?: string;
   projectDescriptionClassName?: string;
   showBottom?: boolean;
@@ -31,88 +32,60 @@ const ProjectCard = ({
 
   return (
     <div
-      onClick={
-        isLink ? () => router.push(`/portfolio/${item?.title}`) : undefined
-      }
       className={cn(
-        "w-full aspect-[0.6/1] md:aspect-[82/115] lg:aspect-[31/18] overflow-hidden bg-text-700 group transition_common",
+        "w-full overflow-hidden bg-text-700 group transition_common flex",
         className,
-        isLink ? "cursor-pointer" : ""
+        isLink ? "cursor-pointer" : "",
       )}
-      style={style}
     >
-      <Image
-        src={item?.featuredImage}
-        alt={item?.title || "Project"}
-        className="min-h-full h-full min-w-full w-auto object-cover absolute_center"
-        width={3840}
-        height={2560}
-        {...(item?.blurDataURL
-          ? { placeholder: "blur", blurDataURL: item.blurDataURL }
-          : {})}
-      />
-
-      {/* Doing a check if any of the fields are available only then itll be shown otherwise wont! */}
-      {(item?.author ||
-        item?.metaDescription ||
-        item?.tagList ||
-        item?.title) && (
-        <div
-          className={cn(
-            "min-w-full md:min-w-0 absolute left-0 transition_common mt-auto",
-            showBottom
-              ? "min-w-full bottom-0 h-[228px] bg-blandGradient backdrop-blur-md"
-              : "project-home-blur md:-translate-x-full group-hover:translate-x-0 bottom-0 md:bottom-auto md:top-0 h-[228px] md:h-full",
-            leftSlideClass,
-            shrinkedInGrid ? "aspect-[1/1]" : "aspect-[1/2]"
-          )}
-        >
-          <div className="p-6 md:p-8 h-full flex flex-col justify-between gap-6">
-            <div className="flex flex-col">
-              {/* <Image
-                src={item?.author?.profileImage}
-                alt={item?.title}
-                className="h-auto w-10 md:w-12 lg:w-14 xl:w-20"
-                height={200}
-                width={300}
-                {...(item?.author?.blurDataURL
-                  ? { placeholder: "blur", blurDataURL: item.author.blurDataURL }
-                  : {})}
-              /> */}
-
-              <p
-                className={cn(
-                  "text-sm xl:text-base font-normal !leading-[1.4] text-text-200 mt-4 sm:mt-4 xl:mt-6 font-inter line-clamp-3",
-                  projectDescriptionClassName
-                )}
-              >
-                {item?.metaDescription}
-              </p>
-            </div>
-            <div className="flex flex-col">
-              <p
-                className={cn(
-                  "text-[11px] md:text-xs font-normal !leading-[1.6] text-white font-inter"
-                )}
-              >
-                {item?.category}
-              </p>
-
+      <div className="relative">
+        <Image
+          src={item?.backgroundImage}
+          alt={item?.name || "Project"}
+          width={1280}
+          height={600}
+          placeholder="blur"
+          className="flex-1 w-full h-full"
+        />
+      </div>
+      <div
+        className="w-full max-w-[401px] xl:max-w-lg flex flex-col justify-evenly backdrop:blur-md text-white p-8 font-inter"
+        style={{
+          background: item?.backgroundColor,
+        }}
+      >
+        <div>
+          <h2 className="text-4xl font-black leading-[100%]">{item?.name}</h2>
+          <p className="text-lg leading-[140%]">{item?.description}</p>
+        </div>
+        <div>
+          <p className="text-xs leading-[160%] text-center">
+            {item?.buttonPurpose}
+          </p>
+          <div className="flex_center gap-3 mt-3">
+            {item?.buttons.map((button, index) => (
               <Link
-                href={`/portfolio/${item?.title}`}
-                className="mt-4 sm:mt-5 lg:mt-12 w-fit"
+                key={index}
+                href={button?.url}
+                className={cn(
+                  "flex-1 flex_center gap-2 py-3 rounded-full text-base font-bold leading-[110%]",
+                  index === 0 ? "bg-black text-white" : "bg-white text-black",
+                )}
               >
-                <Button className="w-fit group">
-                  <span className="!leading-none text-sm xl:text-base">
-                    View Project
-                  </span>
-                  <ArrowLongTailIcon className="h-auto w-5 md:w-6 group-hover:translate-x-2 transition_common" />
-                </Button>
+                {button.text}
+                {index === 0 ? (
+                  <EyeIcon className="text-white size-6" />
+                ) : (
+                  <ArrowLongTailIcon
+                    color={colors.main[600]}
+                    className="size-6"
+                  />
+                )}
               </Link>
-            </div>
+            ))}
           </div>
         </div>
-      )}
+      </div>
     </div>
   );
 };

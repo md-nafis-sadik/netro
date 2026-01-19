@@ -34,6 +34,9 @@ export default {
           DEFAULT: "#FFFFFF",
           100: "#fafafa",
         },
+        blue: {
+          900: "#060023",
+        },
         black: {
           DEFAULT: "#000000",
           900: "#0A0400",

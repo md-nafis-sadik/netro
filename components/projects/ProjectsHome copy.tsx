@@ -1,18 +1,22 @@
 "use client";
-import { cn } from "@/lib/utils";
-import { IProject } from "@/services";
-import { projects } from "@/services/data";
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
+import SectionSubHeader from "@/components/common/SectionSubHeader";
+import ProjectCard from "./ProjectCard";
+import SectionHeader from "../common/SectionHeader";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRef, useState } from "react";
-import SectionHeader from "../common/SectionHeader";
-import SectionSubHeader from "../common/SectionSubHeader";
-import ProjectCard from "./ProjectCard";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { cn } from "@/lib/utils";
 
 gsap.registerPlugin(ScrollTrigger);
 
-function ProjectsHome() {
+type ProjectsHomeProps = {
+  data: any;
+  type?: string; // optional
+  linkCondition?: string;
+};
+
+const ProjectsHome = ({ data, type, linkCondition }: ProjectsHomeProps) => {
   const cardsRef = useRef<HTMLDivElement | null>(null);
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -81,44 +85,48 @@ function ProjectsHome() {
         });
       }, 100);
     },
-    { scope: cardsRef },
+    { scope: cardsRef }
   );
 
   return (
-    <section
-      data-bg-theme="dark"
-      className="pt-10 md:pt-16 lg:pt-20 pb-10 bg-blue-900"
-    >
-      <div className="container2X flex_center flex-col">
-        <SectionSubHeader
-          dark
-          text="Explore Projects"
-          className="border-0 bg-main-950 text-white"
-        />
-        <SectionHeader className="home_projects_header">
-          Our Projects
-        </SectionHeader>
+    <section className="bg-black w-full py-20 relative">
+      <div className="flex_center flex-col">
+        {type !== "products" && (
+          <SectionSubHeader dark text="Explore Projects" />
+        )}
+
+        {type !== "products" && (
+          <SectionHeader className="home_projects_header pb-10 md:pb-28">
+            Our Projects
+          </SectionHeader>
+        )}
+        {type === "products" && (
+          <SectionHeader className="home_projects_header pb-10 md:pb-28">
+            Some Key Previews
+          </SectionHeader>
+        )}
 
         <div
           ref={cardsRef}
-          className="flex flex-col items-center w-full relative mt-12 md:mt-16 lg:mt-20"
+          className="flex flex-col items-center w-full relative"
         >
-          {projects.map((item: IProject, index: number) => (
+          {data?.data?.slice(0, 5).map((item: any, index: number) => (
             <ProjectCard
               className={cn(
-                "stacked-card sticky left-0 top-0 mb-80",
+                "stacked-card sticky left-0 top-0 mb-80 lg:aspect-[21/9]"
               )}
               style={{
                 pointerEvents: activeIndex === index ? "auto" : "none",
               }}
               item={item}
               key={index}
+              linkCondition={linkCondition}
             />
           ))}
         </div>
       </div>
     </section>
   );
-}
+};
 
 export default ProjectsHome;

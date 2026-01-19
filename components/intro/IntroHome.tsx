@@ -6,7 +6,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 
 function IntroHome() {
   return (
-    <section data-bg-theme="light" className="py-15 font-inter">
+    <section data-bg-theme="light" className="py-10 md:py-15 font-inter">
       <div className="container2X">
         <div className="flex gap-44 items-start">
           <AppLogoIcon className="w-28 shrink-0" />

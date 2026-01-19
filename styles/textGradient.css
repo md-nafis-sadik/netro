@@ -239,17 +239,13 @@
 }
 
 .home_hero_succeed_s {
-  background: linear-gradient(
-        to bottom right,
-        #ecabb7 0%,
-        #e5a8be 24%,
-        #f6aeae 48%
-      )
+  background:
+    linear-gradient(to bottom right, #ecabb7 0%, #e5a8be 24%, #f6aeae 48%)
       bottom right / 50% 50% no-repeat,
     linear-gradient(to bottom left, #ecabb7 0%, #e5a8be 24%, #f6aeae 48%) bottom
       left / 50% 50% no-repeat,
-    linear-gradient(to top left, #ecabb7 0%, #e5a8be 24%, #f6aeae 48%) top left /
-      50% 50% no-repeat,
+    linear-gradient(to top left, #ecabb7 0%, #e5a8be 24%, #f6aeae 48%) top
+      left / 50% 50% no-repeat,
     linear-gradient(to top right, #ecabb7 0%, #e5a8be 24%, #f6aeae 48%) top
       right / 50% 50% no-repeat;
   background-clip: text;
@@ -258,17 +254,13 @@
 }
 
 .home_hero_succeed_u {
-  background: linear-gradient(
-        to bottom right,
-        #d6a5ce 0%,
-        #d8a4cb 24%,
-        #e3a8bf 48%
-      )
+  background:
+    linear-gradient(to bottom right, #d6a5ce 0%, #d8a4cb 24%, #e3a8bf 48%)
       bottom right / 50% 50% no-repeat,
     linear-gradient(to bottom left, #d6a5ce 0%, #d8a4cb 24%, #e3a8bf 48%) bottom
       left / 50% 50% no-repeat,
-    linear-gradient(to top left, #d6a5ce 0%, #d8a4cb 24%, #e3a8bf 48%) top left /
-      50% 50% no-repeat,
+    linear-gradient(to top left, #d6a5ce 0%, #d8a4cb 24%, #e3a8bf 48%) top
+      left / 50% 50% no-repeat,
     linear-gradient(to top right, #d6a5ce 0%, #d8a4cb 24%, #e3a8bf 48%) top
       right / 50% 50% no-repeat;
   background-clip: text;
@@ -289,17 +281,13 @@
 }
 
 .home_hero_succeed_c2 {
-  background: linear-gradient(
-        to bottom right,
-        #e1aead 0%,
-        #e1aeb0 24%,
-        #dcaaba 48%
-      )
+  background:
+    linear-gradient(to bottom right, #e1aead 0%, #e1aeb0 24%, #dcaaba 48%)
       bottom right / 50% 50% no-repeat,
     linear-gradient(to bottom left, #e1aead 0%, #e1aeb0 24%, #dcaaba 48%) bottom
       left / 50% 50% no-repeat,
-    linear-gradient(to top left, #e1aead 0%, #e1aeb0 24%, #dcaaba 48%) top left /
-      50% 50% no-repeat,
+    linear-gradient(to top left, #e1aead 0%, #e1aeb0 24%, #dcaaba 48%) top
+      left / 50% 50% no-repeat,
     linear-gradient(to top right, #e1aead 0%, #e1aeb0 24%, #dcaaba 48%) top
       right / 50% 50% no-repeat;
   background-clip: text;
@@ -308,8 +296,9 @@
 }
 
 .home_hero_succeed_e1 {
-  background: linear-gradient(to bottom right, #cba8ca 0%, #dcaaba 48%) bottom
-      right / 50% 50% no-repeat,
+  background:
+    linear-gradient(to bottom right, #cba8ca 0%, #dcaaba 48%) bottom right / 50%
+      50% no-repeat,
     linear-gradient(to bottom left, #cba8ca 0%, #dcaaba 48%) bottom left / 50%
       50% no-repeat,
     linear-gradient(to top left, #cba8ca 0%, #dcaaba 48%) top left / 50% 50%
@@ -322,8 +311,9 @@
 }
 
 .home_hero_succeed_e2 {
-  background: linear-gradient(to bottom right, #cba8ca 0%, #dcaaba 48%) bottom
-      right / 50% 50% no-repeat,
+  background:
+    linear-gradient(to bottom right, #cba8ca 0%, #dcaaba 48%) bottom right / 50%
+      50% no-repeat,
     linear-gradient(to bottom left, #cba8ca 0%, #dcaaba 48%) bottom left / 50%
       50% no-repeat,
     linear-gradient(to top left, #cba8ca 0%, #dcaaba 48%) top left / 50% 50%
@@ -336,17 +326,13 @@
 }
 
 .home_hero_succeed_d {
-  background: linear-gradient(
-        to bottom right,
-        #b5a1e4 0%,
-        #c3a5d5 24%,
-        #cfa9c3 48%
-      )
+  background:
+    linear-gradient(to bottom right, #b5a1e4 0%, #c3a5d5 24%, #cfa9c3 48%)
       bottom right / 50% 50% no-repeat,
     linear-gradient(to bottom left, #b5a1e4 0%, #c3a5d5 24%, #cfa9c3 48%) bottom
       left / 50% 50% no-repeat,
-    linear-gradient(to top left, #b5a1e4 0%, #c3a5d5 24%, #cfa9c3 48%) top left /
-      50% 50% no-repeat,
+    linear-gradient(to top left, #b5a1e4 0%, #c3a5d5 24%, #cfa9c3 48%) top
+      left / 50% 50% no-repeat,
     linear-gradient(to top right, #b5a1e4 0%, #c3a5d5 24%, #cfa9c3 48%) top
       right / 50% 50% no-repeat;
   background-clip: text;
@@ -355,8 +341,9 @@
 }
 
 .home_hero_succeed_exclamation {
-  background: linear-gradient(to bottom right, #a99df3 0%, #b09feb 48%) bottom
-      right / 50% 50% no-repeat,
+  background:
+    linear-gradient(to bottom right, #a99df3 0%, #b09feb 48%) bottom right / 50%
+      50% no-repeat,
     linear-gradient(to bottom left, #a99df3 0%, #b09feb 48%) bottom left / 50%
       50% no-repeat,
     linear-gradient(to top left, #a99df3 0%, #b09feb 48%) top left / 50% 50%
@@ -369,13 +356,7 @@
 }
 
 .home_projects_header {
-  background: linear-gradient(
-    91deg,
-    #676767 14.11%,
-    #909090 37.39%,
-    #fff 52.7%,
-    #676767 83.6%
-  );
+  background: linear-gradient(164deg, #fff 11.44%, #86c9ff 63.98%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -532,7 +513,9 @@
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-feature-settings: "liga" off, "clig" off;
+  font-feature-settings:
+    "liga" off,
+    "clig" off;
 }
 
 /* OUR PROJECTS */
