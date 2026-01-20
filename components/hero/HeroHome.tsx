@@ -20,7 +20,7 @@ function HeroHome() {
           From concept to development, we engineer digital experiences that
           drive business growth.​
         </p>
-        <ExpandableButtonList className="hidden md:flex mt-10" />
+        <ExpandableButtonList className="mt-10" />
         <div className="w-full max-w-[874px] mx-auto flex items-center h-12 sm:h-16 md:h-[92px] border border-text-rgb44 bg-white/30 mt-20 md:mt-28 lg:mt-[152px]">
           <a
             href="https://clutch.co/profile/netro-systems"
