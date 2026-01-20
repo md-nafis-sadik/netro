@@ -111,7 +111,7 @@ function ServicesHome() {
                   activeService === index ? "text-black" : "text-black/25",
                 )}
                 onMouseEnter={() => setActiveService(index)}
-                onMouseLeave={() => setActiveService(0)}
+                // onMouseLeave={() => setActiveService(0)}
               >
                 <span className="text-xl font-medium duration-300">
                   {index < 9 ? "0" + (index + 1) : index + 1}

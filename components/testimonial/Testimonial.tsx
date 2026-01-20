@@ -52,7 +52,10 @@ function Testimonial() {
   };
 
   return (
-    <section className="bg-orange-500 pb-10 pt-10 md:pt-16 lg:pt-20">
+    <section
+      data-bg-theme="light"
+      className="bg-orange-500 pb-10 pt-10 md:pt-16 lg:pt-20"
+    >
       <div className="container flex_center flex-col">
         <SectionSubHeader text="Services" />
         <SectionHeader className="mt-5 text-black">
@@ -92,7 +95,9 @@ function Testimonial() {
             onMouseLeave={() => pauseVideo(1)}
           >
             <video
-              ref={(el) => { videoRefs.current[1] = el; }}
+              ref={(el) => {
+                videoRefs.current[1] = el;
+              }}
               loop
               muted
               playsInline
@@ -104,7 +109,7 @@ function Testimonial() {
               />
             </video>
 
-            {currentPlay  !== 1 && (
+            {currentPlay !== 1 && (
               <div className="video_bg absolute inset-0 flex_center">
                 <button type="button" onClick={() => handleFirstClick(1)}>
                   <PlayIcon className="size-16" />
@@ -120,7 +125,9 @@ function Testimonial() {
             onMouseLeave={() => pauseVideo(2)}
           >
             <video
-              ref={(el) => { videoRefs.current[2] = el; }}
+              ref={(el) => {
+                videoRefs.current[2] = el;
+              }}
               loop
               muted
               playsInline
@@ -132,7 +139,7 @@ function Testimonial() {
               />
             </video>
 
-            {currentPlay  !== 2 && (
+            {currentPlay !== 2 && (
               <div className="video_bg absolute inset-0 flex_center">
                 <button type="button" onClick={() => handleFirstClick(2)}>
                   <PlayIcon className="size-16" />
@@ -194,7 +201,9 @@ function Testimonial() {
             onMouseLeave={() => pauseVideo(3)}
           >
             <video
-              ref={(el) => { videoRefs.current[3] = el; }}
+              ref={(el) => {
+                videoRefs.current[3] = el;
+              }}
               loop
               muted
               playsInline
@@ -206,7 +215,7 @@ function Testimonial() {
               />
             </video>
 
-            {currentPlay  !== 3 && (
+            {currentPlay !== 3 && (
               <div className="video_bg absolute inset-0 flex_center">
                 <button type="button" onClick={() => handleFirstClick(3)}>
                   <PlayIcon className="size-16" />

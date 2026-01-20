@@ -187,3 +187,6 @@ export { default as england } from "@/public/images/countries/england.webp";
 export { default as germany } from "@/public/images/countries/germany.webp";
 export { default as southAfrica } from "@/public/images/countries/south-africa.webp";
 export { default as usa } from "@/public/images/countries/usa.webp";
+
+// process image
+export { default as process1 } from "@/public/images/process-1.webp";

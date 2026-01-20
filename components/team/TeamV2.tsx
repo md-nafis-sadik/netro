@@ -2,8 +2,8 @@
 import SectionSubHeader from "@/components/common/SectionSubHeader";
 import ArrowLineupButton from "@/components/ui/arrow-lineup-button";
 import colors from "@/lib/colors";
-import SectionHeader from "../common/SectionHeader";
 import { teamDataV2 } from "@/services/data/team.data";
+import SectionHeader from "../common/SectionHeader";
 import TeamCardV2 from "./TeamCardV2";
 
 const TeamV2 = () => {
@@ -18,7 +18,7 @@ const TeamV2 = () => {
       <div className="containerX w-full mt-6 md:my-20">
         <div className="w-full">
           <div className="w-full grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-            {teamDataV2.map(({ image, name, position }, index) => (
+            {teamDataV2.map(({ image, name, position }, index: number) => (
               <TeamCardV2
                 key={index}
                 image={image}
