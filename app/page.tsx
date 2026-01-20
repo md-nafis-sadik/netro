@@ -5,6 +5,7 @@ import HeroHome from "@/components/hero/HeroHome";
 import IntroHome from "@/components/intro/IntroHome";
 import JournalHomeSkeleton from "@/components/journal/JournalHomeSkeleton";
 import JournalHomeWrapper from "@/components/journal/JournalHomeWrapper";
+import MarqueeHome from "@/components/marquee/MarqueeHome";
 import PricingHome from "@/components/pricing/PricingHome";
 import Products from "@/components/products/Products";
 import ProjectsHome from "@/components/projects/ProjectsHome";
@@ -26,6 +27,7 @@ const HomePage = () => {
       <Revoluation />
       <Testimonial />
       <Products />
+      <MarqueeHome />
       <section data-bg-theme="light">
         <WorkCultureHome />
       </section>
