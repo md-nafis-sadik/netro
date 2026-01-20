@@ -3,3 +3,4 @@ export * from "./awards";
 export * from "./home.data";
 export * from "./services.data";
 export * from "./project.data"
+export * from "./product.data";

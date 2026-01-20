@@ -25,9 +25,7 @@ const HomePage = () => {
       <ServicesHome />
       <Revoluation />
       <Testimonial />
-      <section data-bg-theme="dark">
-        <Products />
-      </section>
+      <Products />
       <section data-bg-theme="light">
         <WorkCultureHome />
       </section>

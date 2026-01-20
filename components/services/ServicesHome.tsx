@@ -11,7 +11,7 @@ import SectionHeader from "../common/SectionHeader";
 import SectionSubHeader from "../common/SectionSubHeader";
 
 function ServicesHome() {
-  const [activeService, setActiveService] = useState(3);
+  const [activeService, setActiveService] = useState(0);
 
   const sectionRef = useRef<HTMLDivElement | null>(null);
   const imageRef = useRef<HTMLDivElement | null>(null);
@@ -111,7 +111,7 @@ function ServicesHome() {
                   activeService === index ? "text-black" : "text-black/25",
                 )}
                 onMouseEnter={() => setActiveService(index)}
-                onMouseLeave={() => setActiveService(3)}
+                onMouseLeave={() => setActiveService(0)}
               >
                 <span className="text-xl font-medium duration-300">
                   {index < 9 ? "0" + (index + 1) : index + 1}

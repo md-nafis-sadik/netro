@@ -1,5 +1,4 @@
 import { images } from "@/services";
-import { download } from "../assets/images";
 
 export const productDetailssData: Record<string, any> = {
   telzen: {
@@ -307,7 +306,8 @@ export const productDetailssData: Record<string, any> = {
     // downloadAppLink:
     //   "https://codecanyon.net/item/prochat-the-ultimate-ai-assistant/44970962",
     // adminPanelLink: "https://jazakallah-demo.products8.net/",
-    liveLink: "https://dribbble.com/shots/26367536-Eventus-Streamlined-Event-Booking-Website-UI-UX"
+    liveLink:
+      "https://dribbble.com/shots/26367536-Eventus-Streamlined-Event-Booking-Website-UI-UX",
   },
   "pro-ai": {
     title: "Pro AI- Perfect Writing, Smart Guidance",
@@ -348,3 +348,49 @@ export const productDetailssData: Record<string, any> = {
     // adminPanelLink: "https://jazakallah-demo.products8.net/",
   },
 };
+
+export const productsData = [
+  {
+    id: "01",
+    image: images.product1,
+    title: "EcoTrack Mobile App",
+    tag: "Mobile Development",
+    description:
+      "Carbon footprint tracking and eco-friendly lifestyle recommendations.",
+    url: "https://trivialy.co",
+    detailsUrl: "/products/eco-track-mobile-app",
+  },
+
+  {
+    id: "02",
+    image: images.product2,
+    title: "EcoTrack Mobile App",
+    tag: "Mobile Development",
+    description:
+      "Carbon footprint tracking and eco-friendly lifestyle recommendations.",
+    url: "https://trivialy.co",
+    detailsUrl: "/products/eco-track-mobile-app",
+  },
+
+  {
+    id: "03",
+    image: images.product3,
+    title: "EcoTrack Mobile App",
+    tag: "Mobile Development",
+    description:
+      "Carbon footprint tracking and eco-friendly lifestyle recommendations.",
+    url: "https://trivialy.co",
+    detailsUrl: "/products/eco-track-mobile-app",
+  },
+
+  {
+    id: "04",
+    image: images.product4,
+    title: "EcoTrack Mobile App",
+    tag: "Mobile Development",
+    description:
+      "Carbon footprint tracking and eco-friendly lifestyle recommendations.",
+    url: "https://trivialy.co",
+    detailsUrl: "/products/eco-track-mobile-app",
+  },
+];

@@ -52,7 +52,7 @@ function Testimonial() {
   };
 
   return (
-    <section className="bg-orange-500 py-10 md:py-16 lg:py-20">
+    <section className="bg-orange-500 pb-10 pt-10 md:pt-16 lg:pt-20">
       <div className="container flex_center flex-col">
         <SectionSubHeader text="Services" />
         <SectionHeader className="mt-5 text-black">
@@ -92,7 +92,7 @@ function Testimonial() {
             onMouseLeave={() => pauseVideo(1)}
           >
             <video
-              ref={(el) => (videoRefs.current[1] = el)}
+              ref={(el) => { videoRefs.current[1] = el; }}
               loop
               muted
               playsInline
@@ -120,7 +120,7 @@ function Testimonial() {
             onMouseLeave={() => pauseVideo(2)}
           >
             <video
-              ref={(el) => (videoRefs.current[2] = el)}
+              ref={(el) => { videoRefs.current[2] = el; }}
               loop
               muted
               playsInline
@@ -194,7 +194,7 @@ function Testimonial() {
             onMouseLeave={() => pauseVideo(3)}
           >
             <video
-              ref={(el) => (videoRefs.current[3] = el)}
+              ref={(el) => { videoRefs.current[3] = el; }}
               loop
               muted
               playsInline
