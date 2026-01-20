@@ -1444,6 +1444,28 @@ export const StarBigIcon = ({
   </svg>
 );
 
+export const PlayIcon = ({
+  className,
+  color = "white",
+  ...props
+}: IFSvgProps) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="64"
+    height="64"
+    viewBox="0 0 64 64"
+    fill="none"
+    className={className}
+    {...props}
+  >
+    <rect width="64" height="64" rx="32" fill="white" fillOpacity="0.2" />
+    <path
+      d="M45.018 30.4086C46.3429 31.1927 46.3221 33.1171 44.9806 33.8725L26.8694 44.0698C25.5278 44.8251 23.8716 43.8449 23.8883 42.3054L24.1127 21.522C24.1293 19.9825 25.8063 19.0383 27.1312 19.8225L45.018 30.4086Z"
+      fill={color}
+    />
+  </svg>
+);
+
 export const PrizeBigIcon = ({
   className,
   color = "white",
