@@ -30,16 +30,16 @@ const ExpandableButton: React.FC<ExpandableButtonProps> = ({
   const content = (
     <div
       className={cn(
-        "flex items-center pl-3.5",
-        expanded ? `gap-2 pr-2` : "pr-3.5",
+        "flex items-center pl-2.5 sm:pl-3.5",
+        expanded ? `gap-2 pr-2` : " pr-2.5 sm:pr-3.5",
       )}
     >
       <div
         className={`overflow-hidden transition-all duration-500 ease-in-out ${
-          expanded ? "w-[132px] opacity-100 pl-2" : "w-0 opacity-0 pl-0"
+          expanded ? "w-20 lg:w-[132px] opacity-100" : "w-0 opacity-0 pl-0"
         }`}
       >
-        <span className="text-black-900 font-medium whitespace-nowrap inline-block">
+        <span className="text-sm sm:text-base text-black-900 font-medium whitespace-nowrap inline-block">
           {text}
         </span>
       </div>
@@ -49,7 +49,7 @@ const ExpandableButton: React.FC<ExpandableButtonProps> = ({
           expanded ? "p-2 rounded-full bg-main-600" : "",
         )}
       >
-        {expanded ? <RightArrowIcon className="size-6" /> : icon}
+        {expanded ? <RightArrowIcon className="size-4 sm:size-6" /> : icon}
       </div>
     </div>
   );
@@ -61,7 +61,7 @@ const ExpandableButton: React.FC<ExpandableButtonProps> = ({
       onMouseEnter={() => onHoverChange?.(true)}
       onMouseLeave={() => onHoverChange?.(false)}
       className={cn(
-        `group h-12 rounded-full flex items-center justify-center cursor-pointer overflow-hidden shadow-lg shrink-0 transition-all duration-300 font-inter`,
+        `group h-10 sm:h-12 rounded-full flex items-center justify-center cursor-pointer overflow-hidden shadow-lg shrink-0 transition-all duration-300 font-inter`,
         expanded ? "bg-white" : "bg-main-900",
       )}
     >
@@ -75,7 +75,7 @@ const ExpandableButton: React.FC<ExpandableButtonProps> = ({
       onMouseEnter={() => onHoverChange?.(true)}
       onMouseLeave={() => onHoverChange?.(false)}
       className={cn(
-        `group h-12 rounded-full flex items-center justify-center cursor-pointer overflow-hidden shadow-lg shrink-0 transition-all duration-300 font-inter`,
+        `group h-10 sm:h-12 rounded-full flex items-center justify-center cursor-pointer overflow-hidden shadow-lg shrink-0 transition-all duration-300 font-inter`,
         expanded ? "bg-white" : "bg-main-950",
       )}
     >
@@ -90,7 +90,7 @@ const ExpandableButtonList = ({ className }: { className?: string }) => {
   return (
     <div
       className={cn(
-        "flex flex-col md:flex-row justify-center items-center gap-4 mt-8 md:mt-10",
+        "flex justify-center items-center gap-3 sm:gap-4 mt-8 md:mt-10",
         className,
       )}
     >
