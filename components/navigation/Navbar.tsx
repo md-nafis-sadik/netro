@@ -43,7 +43,7 @@ const Navbar: FC<NavbarProps> = ({ show, services }) => {
       )}
     >
       <NavbarExplore show={!isScrolled} />
-      <div className="container2X 2xl:px-28 flex flex-row items-center justify-between lg:justify-start gap-4 md:gap-10 py-3">
+      <div className="container flex flex-row items-center justify-between lg:justify-start gap-4 md:gap-10 py-3">
         <Link href={routes.homepage.link} className="h-fit">
           <LogoIcon
             className={cn(

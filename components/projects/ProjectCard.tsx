@@ -63,7 +63,7 @@ const ProjectCard = ({
             {item?.buttonPurpose}
           </p>
           <div className="flex_center gap-3 mt-3">
-            {item?.buttons.map((button, index) => (
+            {item?.buttons?.map((button, index) => (
               <Link
                 key={index}
                 href={button?.url}
