@@ -20,13 +20,13 @@ const HomePage = () => {
     <main className="relative">
       <HeroHome />
       <IntroHome />
-      <ProjectsHome />
+      {/* <ProjectsHome />
       <ServicesHome />
       <Revoluation />
       <Testimonial />
       <Products />
       <MarqueeHome />
-      <ProcessFollowed />
+      <ProcessFollowed /> */}
       <section data-bg-theme="dark">
         <TeamV2 />
       </section>
