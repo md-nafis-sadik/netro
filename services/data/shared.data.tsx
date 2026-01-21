@@ -108,24 +108,36 @@ export const footerData = {
     links: [
       { text: "About Us", href: routes.about.link },
       { text: "Join Our Team", href: routes.career.link },
-      // { text: "Our Process", href: "/process" },
-      // { text: "Client Reviews", href: "/reviews" },
+      { text: "Our Process", href: "/process" },
+      { text: "Client Reviews", href: "/reviews" },
       { text: "Portfolio", href: routes.portfolio.link },
-      // { text: "Case Studies", href: "/case-studies" },
+      { text: "Case Studies", href: "/case-studies" },
     ],
   },
   services: {
     title: "SERVICES",
     links: [
-      { text: "Software Development", href: "/services/Software Development" },
+      { text: "UI/UX Design", href: "/services/Product Design (UI/UX Design)" },
       {
-        text: "Product Design (UI/UX Design)",
+        text: "Branding & Identity",
         href: "/services/Product Design (UI/UX Design)",
       },
-      { text: "3D Product Animation", href: "/services/3D Product Animation" },
+      { text: "Web Development", href: "/services/Software Development" },
       {
-        text: "SaaS Development & SQA",
+        text: "Mobile App Development",
+        href: "/services/Software Development",
+      },
+      {
+        text: "SaaS Development",
         href: "/services/SaaS Development & SQA",
+      },
+      {
+        text: "MVP Development",
+        href: "#",
+      },
+      {
+        text: "3D Animation",
+        href: "/services/3D Product Animation",
       },
     ],
   },
@@ -133,26 +145,26 @@ export const footerData = {
     title: "SUPPORT",
     links: [
       { text: "Privacy Policy", href: "/privacy-policy" },
-      // { text: "Terms of Service", href: "/terms-of-service" },
+      { text: "Terms of Service", href: "/terms-of-service" },
       { text: "Help Center", href: routes.contact.link },
     ],
   },
   resources: {
     title: "RESOURCES",
     links: [
-      // { text: "Our Journal", href: "/journal" },
-      // { text: "Whitepapers & E-books", href: "/resources/whitepapers" },
-      // { text: "Tools & Templates", href: "/resources/tools" },
-      // { text: "Webinars / Workshops", href: "/resources/webinars" },
-      // { text: "FAQs", href: "/faqs" },
-      {
-        text: "Company Portfolio",
-        href: "https://drive.google.com/file/d/13U3baPQyC8cg2tJdKEh5E43Alw23IHVH/view?usp=sharing",
-      },
+      { text: "Our Journal", href: "/journal" },
+      { text: "Whitepapers & E-books", href: "/resources/whitepapers" },
+      { text: "Tools & Templates", href: "/resources/tools" },
+      { text: "Webinars / Workshops", href: "/resources/webinars" },
+      { text: "FAQs", href: "/faqs" },
+      // {
+      //   text: "Company Portfolio",
+      //   href: "https://drive.google.com/file/d/13U3baPQyC8cg2tJdKEh5E43Alw23IHVH/view?usp=sharing",
+      // },
       // { text: "Brand Guideline", href: "/brand-guideline" },
     ],
   },
-  copyright: "© 2019 - 2025 • Netro Systems, All Rights Reserved.",
+  copyright: "© 2022 - 2025 • Netro Systems, All Rights Reserved.",
   socialLinks: [
     {
       platform: "linkedin",

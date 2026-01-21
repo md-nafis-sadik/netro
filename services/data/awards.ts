@@ -1,27 +1,35 @@
+import { StaticImageData } from "next/image";
+import { images } from "../assets";
+
 export interface IAward {
   icon: "star" | "prize" | "award";
   title: string;
   description: string;
   year: string;
+  image?: StaticImageData;
 }
 
 export const awardsData: IAward[] = [
   {
     icon: "star",
     title: "Behance Feature",
-    description: "Highlighted for outstanding ideas, compelling storytelling, and design work",
+    description:
+      "Highlighted for outstanding ideas, compelling storytelling, and design work",
     year: "Jan - 2023",
+    image: images.topClutch,
   },
   {
     icon: "prize",
     title: "Awwwards Honorable Mention",
     description: "Recognized for innovation and creativity in web design",
     year: "Aug - 2022",
+    image: images.raterGreat,
   },
   {
     icon: "award",
     title: "Design Excellence Award",
     description: "Honored for cutting-edge UI/UX designs and brand experiences",
     year: "March - 2023",
+    image: images.globalAward,
   },
 ];

@@ -178,6 +178,10 @@ export { default as bannerIcon4 } from "@/public/images/icons/banner-icon-4.webp
 export { default as bannerIcon5 } from "@/public/images/icons/banner-icon-5.webp";
 export { default as bannerIcon6 } from "@/public/images/icons/banner-icon-6.webp";
 
+export { default as globalAward } from "@/public/images/awards/global-award-fall.webp";
+export { default as raterGreat } from "@/public/images/awards/rater-great.webp";
+export { default as topClutch } from "@/public/images/awards/top-clutch-award.webp";
+
 // countries flags
 export { default as austrailia } from "@/public/images/countries/austrailia.webp";
 export { default as brazil } from "@/public/images/countries/brazil.webp";

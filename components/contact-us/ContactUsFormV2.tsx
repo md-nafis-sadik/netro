@@ -81,9 +81,9 @@ function ContactUsFormV2() {
   };
 
   return (
-    <div className="relative pt-8 sm:pt-20 md:pt-24 pb-8 sm:pb-16 md:pb-20 lg:pb-24">
+    <div className="relative">
       <div
-        className="absolute inset-0 -z-10"
+        className="absolute inset-0 -z-10 hidden md:block"
         style={{
           backgroundImage: "url('/images/contact-bg.webp')",
           backgroundSize: "152.318% 152.318%",
@@ -93,7 +93,8 @@ function ContactUsFormV2() {
           transform: "scaleX(-1)",
         }}
       />
-      <div className="containerX">
+      <div className="">Hello</div>
+      <div className="containerX bg-black pt-8 sm:pt-20 md:pt-24 pb-8 sm:pb-16 md:pb-20 lg:pb-24">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 justify-between">
           <div className="lg:col-span-6"></div>
           <div className="w-full lg:col-span-5 lg:col-start-8">

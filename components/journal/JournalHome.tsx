@@ -21,7 +21,7 @@ const OurJournal = ({ data }: any) => {
 
       <div className="containerX w-full overflow-hidden mt-5 md:mt-10">
         <div className="w-full" ref={emblaRef}>
-          <div className="w-full min-h-fit flex flex-row gap-6 md:gap-10 py-5 md:py-10">
+          <div className="w-full grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6 md:gap-10 py-5 md:py-10">
             {data?.map((item: any, index: number) => (
               <JournalCard
                 index={index}

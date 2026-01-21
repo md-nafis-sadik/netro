@@ -12,27 +12,30 @@ import Image from "next/image";
 
 const Footer = () => {
   return (
-    <footer className="bg-darkbg py-10 md:py-20 relative overflow-hidden" data-bg-theme="light">
-      <div className="containerX relative z-30">
+    <footer
+      className="bg-darkbg py-10 md:py-20 relative overflow-hidden"
+      data-bg-theme="light"
+    >
+      <div className="containerX relative px-6 z-30">
         <div className="grid grid-cols-1 sm:grid-cols-4 md:grid-cols-7 min-[1120px]:grid-cols-11 gap-10 md:gap-6">
           {/* Inquiries */}
           <div className="col-span-2 md:col-span-3 flex items-center sm:items-start flex-col">
             <p
               className={cn(
-                "footer_el_title text-center sm:text-start font-scoutcond"
+                "footer_el_title text-center sm:text-start font-scoutcond",
               )}
             >
               {footerData.inquiries.title}
             </p>
             <p
               className={cn(
-                "footer_el_text mt-4 md:mt-8 text-center sm:text-start font-inter"
+                "footer_el_text mt-4 md:mt-8 text-center sm:text-start font-inter",
               )}
             >
               {footerData.inquiries.address}
             </p>
             <div className="flex items-center gap-6 mt-4 md:mt-6">
-              <div className="h-8 w-8 rounded-full bg-natural-100 flex_center">
+              <div className="h-8 w-8 rounded-full bg-natural-100 flex_center hidden md:flex">
                 <CallIcon className="h-[14px] w-[14px] !shrink-0" />
               </div>
               <a
@@ -43,7 +46,7 @@ const Footer = () => {
               </a>
             </div>
             <div className="flex items-center gap-6 mt-4">
-              <div className="h-8 w-8 rounded-full bg-natural-100 flex_center">
+              <div className="h-8 w-8 rounded-full bg-natural-100 flex_center hidden md:flex">
                 <AtTheRateIcon className="h-[14px] w-[14px] !shrink-0" />
               </div>
               <a
@@ -59,7 +62,7 @@ const Footer = () => {
           <div className="col-span-2 flex items-center sm:items-start flex-col">
             <p
               className={cn(
-                "footer_el_title text-center sm:text-start font-scoutcond"
+                "footer_el_title text-center sm:text-start font-scoutcond",
               )}
             >
               {footerData.companyInfo.title}
@@ -70,7 +73,7 @@ const Footer = () => {
                   <Link
                     href={link.href}
                     className={cn(
-                      "footer_el_text block mb-4 text-center sm:text-start font-inter hover:text-main-300 transition_common"
+                      "footer_el_text block mb-4 text-center sm:text-start font-inter hover:text-main-300 transition_common",
                     )}
                   >
                     {link.text}
@@ -84,7 +87,7 @@ const Footer = () => {
           <div className="col-span-2 flex items-center sm:items-start flex-col">
             <p
               className={cn(
-                "footer_el_title text-center sm:text-start font-scoutcond"
+                "footer_el_title text-center sm:text-start font-scoutcond",
               )}
             >
               {footerData.services.title}
@@ -95,7 +98,7 @@ const Footer = () => {
                   <Link
                     href={link.href}
                     className={cn(
-                      "footer_el_text block mb-4 text-center sm:text-start font-inter hover:text-main-300 transition_common"
+                      "footer_el_text block mb-4 text-center sm:text-start font-inter hover:text-main-300 transition_common",
                     )}
                   >
                     {link.text}
@@ -109,7 +112,7 @@ const Footer = () => {
           <div className="col-span-2 flex items-center sm:items-start flex-col">
             <p
               className={cn(
-                "footer_el_title text-center sm:text-start font-scoutcond"
+                "footer_el_title text-center sm:text-start font-scoutcond",
               )}
             >
               {footerData.support.title}
@@ -120,7 +123,7 @@ const Footer = () => {
                   <Link
                     href={link.href}
                     className={cn(
-                      "footer_el_text block mb-4 text-center sm:text-start font-inter hover:text-main-300 transition_common"
+                      "footer_el_text block mb-4 text-center sm:text-start font-inter hover:text-main-300 transition_common",
                     )}
                   >
                     {link.text}
@@ -134,7 +137,7 @@ const Footer = () => {
           <div className="col-span-2 flex items-center sm:items-start flex-col">
             <p
               className={cn(
-                "footer_el_title text-center sm:text-start font-scoutcond"
+                "footer_el_title text-center sm:text-start font-scoutcond",
               )}
             >
               {footerData.resources.title}
@@ -147,7 +150,7 @@ const Footer = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className={cn(
-                      "footer_el_text block mb-4 text-center sm:text-start font-inter hover:text-main-300 transition_common"
+                      "footer_el_text block mb-4 text-center sm:text-start font-inter hover:text-main-300 transition_common",
                     )}
                   >
                     {link.text}
@@ -156,7 +159,7 @@ const Footer = () => {
               ))}
             </ul>
 
-            <GoTopButton className="mt-4 md:mt-10 pe-6" />
+            <GoTopButton className="mt-4 md:mt-8 pe-6" />
           </div>
         </div>
 
@@ -168,7 +171,7 @@ const Footer = () => {
           {footerData.copyright}
         </p>
 
-        <div className="flex flex-row items-center justify-center flex-wrap gap-[10px] md:gap-3 mt-12">
+        <div className="flex flex-row items-center justify-center flex-wrap gap-[10px] md:gap-3 mt-12 max-w-[90%] md:max-w-full mx-auto">
           {footerData.socialLinks.map(({ href, icon }, index) => (
             <a
               className="bg-natural-100 flex_center h-10 w-10 md:h-12 md:w-12 rounded-full hover:bg-black transition_common group"
@@ -182,8 +185,12 @@ const Footer = () => {
         </div>
       </div>
 
-      <Image src={images.footerBgPattern} alt="Footer Background Pattern" className="absolute inset-0 z-10 w-[1448px] h-[1086px] object-contain opacity-100 left-[10%] pointer-events-none bottom-0" />
-      <div className="absolute top-[60%] z-0 w-[1710px] h-[1001px] rounded-full bg-[#6766FF] blur-[218px]"></div>
+      <Image
+        src={images.footerBgPattern}
+        alt="Footer Background Pattern"
+        className="absolute left-0 bottom-0 z-10 w-full h-[86%] object-contain object-bottom opacity-100 pointer-events-none"
+      />
+      <div className="absolute bottom-[-742px] md:left-0 left-[-379px] z-0 w-[1120px] md:w-[1710px] h-[967px] md:h-[1001px] rounded-full bg-[#6766FF] blur-[218px]"></div>
     </footer>
   );
 };
