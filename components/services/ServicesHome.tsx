@@ -100,20 +100,20 @@ function ServicesHome() {
           Solutions for You
         </SectionHeader>
 
-        <div className="flex justify-between w-full mt-10 md:mt-16 lg:mt-20 gap-8">
+        <div className="flex flex-col lg:flex-row justify-between w-full mt-10 md:mt-16 lg:mt-20 gap-8">
           <div className="flex-1 flex flex-col">
             {servicesData?.map((service: IService, index: number) => (
               <Link
                 key={service?._id}
                 href="/"
                 className={cn(
-                  "whitespace-nowrap service-item flex items-center gap-4 min-h-20 max-w-max transition-colors",
+                  "whitespace-nowrap service-item flex items-center gap-4 min-h-8 xs:min-h-10 sm:min-h-16 lg:min-h-20 max-w-max transition-colors",
                   activeService === index ? "text-black" : "text-black/25",
                 )}
                 onMouseEnter={() => setActiveService(index)}
-                // onMouseLeave={() => setActiveService(0)}
+                onMouseLeave={() => setActiveService(0)}
               >
-                <span className="text-xl font-medium duration-300">
+                <span className="text-xl font-medium duration-300 font-scoutcond">
                   {index < 9 ? "0" + (index + 1) : index + 1}
                 </span>
 
@@ -121,14 +121,14 @@ function ServicesHome() {
                   className={cn(
                     "duration-500 origin-left",
                     activeService === index
-                      ? "size-16 scale-100"
+                      ? "size-6 sm:size-10 xl:size-16 scale-100"
                       : "size-0 scale-90",
                   )}
                 />
 
                 <h3
                   className={cn(
-                    "text-5xl duration-500",
+                    "text-sm xs:text-xl sm:text-3xl xl:text-5xl duration-500",
                     activeService === index
                       ? "font-bold scale-[1.02]"
                       : "font-normal scale-100",
@@ -142,7 +142,7 @@ function ServicesHome() {
 
           <div
             ref={imageRef}
-            className="service-image relative w-full max-w-[540px] h-[410px]"
+            className="service-image relative w-full lg:max-w-[540px] lg:h-[410px]"
           >
             <Image
               src={servicesData[activeService].image}

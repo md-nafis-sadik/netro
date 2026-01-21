@@ -88,7 +88,7 @@ function IntroHome() {
             </div>
           </div>
           {/* Our Clients in 19+ Countries */}
-          <div className="row-span-2 lg:row-span-1 lg:col-span-7 lg:col-start-4 lg:row-start-5 flex flex-col lg:flex-row items-center justify-between gap-14 lg:gap-6 border border-black-50 px-3 sm:px-4 md:px-6 py-3 sm:py-5">
+          <div className="row-span-2 lg:row-span-1 lg:col-span-7 col-start-2 lg:col-start-4 lg:row-start-5 flex flex-col lg:flex-row items-center justify-between gap-14 lg:gap-6 border border-black-50 px-3 sm:px-4 md:px-6 py-3 sm:py-5">
             <div>
               <p className="text-xs sm:text-base md:text-lg text-black-800 font-semibold leading-[140%]">
                 Our Clients in 19+ Countries
@@ -111,7 +111,7 @@ function IntroHome() {
             </div>
           </div>
           {/* Client Satisfaction */}
-          <div className="row-span-2 lg:col-span-4 lg:row-span-3 lg:col-start-4 lg:row-start-2 flex flex-col justify-between gap-14 lg:gap-6  px-3 sm:px-4 md:px-6 py-3 sm:py-5 relative">
+          <div className="row-span-2 row-start-4 lg:col-span-4 lg:row-span-3 col-start-1 lg:col-start-4 lg:row-start-2 flex flex-col justify-between gap-14 lg:gap-6  px-3 sm:px-4 md:px-6 py-3 sm:py-5 relative">
             <h3 className="text-4xl md:text-5xl lg:text-[4rem] leading-[120%] text-black-800 font-bold relative z-50">
               99%
             </h3>

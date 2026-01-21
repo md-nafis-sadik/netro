@@ -21,6 +21,7 @@ const HomePage = () => {
       <HeroHome />
       <IntroHome />
       <ProjectsHome />
+      <ServicesHome />
       {/* 
       <ServicesHome />
       <Revoluation />
