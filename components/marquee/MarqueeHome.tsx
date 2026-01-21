@@ -12,8 +12,11 @@ interface IFMarqueeHomeProps {
 
 const MarqueeHome: FC<IFMarqueeHomeProps> = ({ dark, className }) => {
   return (
-    <section data-bg-theme="light" className="overflow-hidden py-30">
-      <SectionHeader className="mt-0 mb-16 text-black">
+    <section
+      data-bg-theme="light"
+      className="overflow-hidden py-6 sm:py-10 md:py-20 lg:py-30"
+    >
+      <SectionHeader className="mt-0 mb-6 sm:mb-10 md:mb-16 text-black px-4 sm:px-6">
         Brands we have served
       </SectionHeader>
       <Marquee
@@ -26,7 +29,7 @@ const MarqueeHome: FC<IFMarqueeHomeProps> = ({ dark, className }) => {
         {clientCompanyData.map((image, index) => (
           <div
             key={index}
-            className="mx-0.5 size-40 flex_center bg-natural-100 p-9"
+            className="mx-0.5 size-24 sm:size-32 md:size-40 flex_center bg-natural-100 p-9"
           >
             <Image
               src={image.src}

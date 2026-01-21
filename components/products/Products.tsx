@@ -99,7 +99,7 @@ function Products() {
     <section
       ref={sectionRef}
       data-bg-theme="dark"
-      className="bg-darkPurplebg pb-10 pt-10 md:pt-16 lg:pt-20"
+      className="bg-darkPurplebg pb-8 pt-8 md:pt-16 lg:pt-20"
     >
       <div className="container flex_center flex-col">
         <SectionSubHeader
@@ -112,19 +112,19 @@ function Products() {
           OUR Products
         </SectionHeader>
 
-        <ul className="w-full flex flex-col gap-3 mt-16">
+        <ul className="w-full flex flex-col gap-12 md:gap-6 lg:gap-3 mt-6 sm:mt-10 md:mt-16">
           {productsData.map((product) => (
             <li
               key={product.id}
-              className="product-item flex items-center even:flex-row-reverse gap-[105px]"
+              className="product-item flex flex-col md:flex-row md:items-center md:even:flex-row-reverse md:gap-[105px] max-w-96 mx-auto md:max-w-none gap-4"
             >
-              <div className="relative max-w-[605px] product-image">
+              <div className="relative w-full md:max-w-[605px] product-image">
                 <Image
                   src={product.image}
                   alt="product image"
                   width={700}
                   height={500}
-                  className="w-full h-[492px] object-contain"
+                  className="w-full xl:h-[492px] object-contain"
                 />
                 <Image
                   src={images.dotBg}
@@ -133,20 +133,20 @@ function Products() {
                 />
               </div>
 
-              <div className="product-text font-inter max-w-[481px]">
-                <p className="px-4 py-2 rounded-lg bg-main-950 text-white max-w-max text-sm font-medium leading-[140%]">
+              <div className="product-text font-inter w-full md:max-w-[481px]">
+                <p className="px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg bg-main-950 text-white max-w-max text-xs sm:text-sm sm:font-medium leading-[140%]">
                   {product.tag}
                 </p>
-                <h2 className="text-3xl text-white font-bold leading-[110%] mt-3 mb-1">
+                <h2 className="text-base sm:text-xl lg:text-3xl text-white font-bold leading-[110%] mt-3 mb-1">
                   {product.title}
                 </h2>
-                <p className="text-base text-text-600 leading-[120%]">
+                <p className="text-xs sm:text-sm lg:text-base text-text-600 leading-[120%]">
                   {product.description}
                 </p>
 
                 <Link
                   href={routes.contact.link}
-                  className="bg-main-400 hover:bg-main-500 hidden lg:flex items-center gap-2 p-[12px_20px_12px_24px] rounded-full w-fit text-white font-inter text-sm md:text-base font-bold mt-7"
+                  className="bg-main-400 hover:bg-main-500 flex items-center gap-2 p-[8px_16px_8px_20px] sm:p-[12px_20px_12px_24px] rounded-full w-fit text-white font-inter text-sm md:text-base font-bold mt-6 sm:mt-7"
                 >
                   <span>View Details</span>
                   <ArrowLongTailIcon className="text-white-100" />

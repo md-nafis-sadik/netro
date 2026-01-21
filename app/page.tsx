@@ -24,13 +24,9 @@ const HomePage = () => {
       <ServicesHome />
       <Revoluation />
       <Testimonial />
-      {/* 
-      
-      
-      <Testimonial />
       <Products />
       <MarqueeHome />
-      <ProcessFollowed /> */}
+      <ProcessFollowed />
       <section data-bg-theme="dark">
         <TeamV2 />
       </section>
