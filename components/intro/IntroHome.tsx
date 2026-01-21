@@ -8,7 +8,7 @@ function IntroHome() {
   return (
     <section data-bg-theme="light" className="py-10 md:py-15 font-inter">
       <div className="container">
-        <div className="flex flex-col md:flex-row gap-4 sm:gap-8 md:gap-12 2xl:gap-44 items-center md:items-start">
+        <div className="flex flex-col md:flex-row gap-4 sm:gap-8 md:gap-12 items-center md:items-start justify-between">
           <AppLogoIcon className="w-28 shrink-0" />
           <div className="text-lg sm:text-xl md:text-2xl 2xl:text-4xl font-normal text-black-800 align-middle leading-[110%] max-w-[994px] ml-auto text-center md:text-left">
             We are{" "}

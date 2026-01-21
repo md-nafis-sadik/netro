@@ -1,6 +1,32 @@
 import { images } from "@/services";
 
-
+export const bannerIcons = [
+  {
+    id: "01",
+    title: "Android",
+    icon: images.js,
+  },
+  {
+    id: "02",
+    title: "JavaScript",
+    icon: images.android,
+  },
+  {
+    id: "03",
+    title: "PHP",
+    icon: images.php,
+  },
+  {
+    id: "04",
+    title: "Python",
+    icon: images.python,
+  },
+  {
+    id: "05",
+    title: "Swift",
+    icon: images.swift,
+  },
+];
 
 export const faqData = [
   {

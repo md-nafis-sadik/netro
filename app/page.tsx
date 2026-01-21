@@ -20,7 +20,8 @@ const HomePage = () => {
     <main className="relative">
       <HeroHome />
       <IntroHome />
-      {/* <ProjectsHome />
+      <ProjectsHome />
+      {/* 
       <ServicesHome />
       <Revoluation />
       <Testimonial />
