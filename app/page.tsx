@@ -22,9 +22,11 @@ const HomePage = () => {
       <IntroHome />
       <ProjectsHome />
       <ServicesHome />
-      {/* 
-      <ServicesHome />
       <Revoluation />
+      <Testimonial />
+      {/* 
+      
+      
       <Testimonial />
       <Products />
       <MarqueeHome />
