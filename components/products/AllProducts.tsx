@@ -42,7 +42,7 @@ function AllProducts({ query }: { query: string }) {
     _id: product.id,
     name: product.title,
     description: product.description,
-    imageUrl: product.otherImage,
+    imageUrl: product.image,
     tags: ["App Development"],
     url: product.detailsUrl
   }));
