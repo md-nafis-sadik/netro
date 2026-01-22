@@ -84,10 +84,10 @@ const Navbar: FC<NavbarProps> = ({ show, services }) => {
 
                   <span
                     className={cn(
-                      "text-sm font-normal !leading-[1.4] relative z-[2] font-inter transition-colors duration-100",
-                      isLightText && pathname === routes.homepage.link
-                        ? "text-white"
-                        : "text-black",
+                      "text-sm font-normal !leading-[1.4] relative z-[2] font-inter transition-colors duration-100 text-white",
+                      // isLightText && pathname === routes.homepage.link
+                      //   ? "text-white"
+                      //   : "text-black",
                       pathname.startsWith(link) &&
                         (pathname === routes.homepage.link
                           ? ""
