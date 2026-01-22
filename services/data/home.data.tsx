@@ -17,14 +17,14 @@ export const bannerIcons = [
     icon: images.swift,
   },
   {
-    id: "04",
-    title: "Python",
-    icon: images.python,
-  },
-  {
     id: "03",
     title: "PHP",
     icon: images.php,
+  },
+  {
+    id: "04",
+    title: "Python",
+    icon: images.python,
   },
 ];
 
