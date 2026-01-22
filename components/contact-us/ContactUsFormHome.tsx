@@ -115,7 +115,7 @@ function ContactUsFormHome() {
         className="block md:hidden w-full h-auto aspect-[360/474]"
       />
 
-      <div className="containerX bg-[#060023] md:bg-transparent pb-10 md:pb-16 lg:pb-20 pt-10 md:pt-16 lg:pt-20">
+      <div className="containerX bg-darkPurplebg md:bg-transparent pb-10 md:pb-16 lg:pb-20 pt-10 md:pt-16 lg:pt-20">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-6 justify-between -mt-4 md:mt-0">
           <div className="w-full md:col-span-12 md:col-start-8">
             <h1 className="title-v2 text-white">Contact Us</h1>
