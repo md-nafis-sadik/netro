@@ -152,6 +152,10 @@ export { default as telzenPreview3 } from "@/public/images/product-details/telze
 export { default as telzenPreview4 } from "@/public/images/product-details/telzen/preview-4.webp";
 export { default as telzenPreview5 } from "@/public/images/product-details/telzen/preview-5.webp";
 export { default as telzenTop } from "@/public/images/product-details/telzen/top.webp";
+export { default as easyTruck } from "@/public/images/product/easy-truck.webp";
+export { default as pathshala } from "@/public/images/product/pathshala.webp";
+export { default as remozen } from "@/public/images/product/remozen.webp";
+export { default as trivia } from "@/public/images/product/trivia.webp";
 
 export { default as about1 } from "@/public/images/about-1.webp";
 export { default as about2 } from "@/public/images/about-2.webp";
