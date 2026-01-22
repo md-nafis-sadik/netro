@@ -7,7 +7,7 @@ function Testimonial() {
   return (
     <section
       data-bg-theme="light"
-      className="bg-orange-500 pb-10 pt-10 md:pt-16 lg:pt-20"
+      className="bg-orange-500 pb-10 pt-10 md:pt-16 lg:pt-20 overflow-hidden"
     >
       <div className="container flex_center flex-col">
         <SectionSubHeader text="Services" />

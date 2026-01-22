@@ -21,7 +21,7 @@ function ServicesHome() {
     <section
       ref={sectionRef}
       data-bg-theme="light"
-      className="py-10 md:py-16 lg:py-20 font-inter"
+      className="py-10 md:py-16 lg:py-20 font-inter overflow-hidden"
     >
       <div className="container flex_center flex-col">
         <SectionSubHeader
