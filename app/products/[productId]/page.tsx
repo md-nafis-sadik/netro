@@ -49,7 +49,7 @@ export default async function SingleProductDetails({
           </div>
         }
       >
-        <ProjectsHome data={productData.productImages} type="products" />
+        <ProjectsHome />
       </Suspense>
       <OtherProducts />
     </>
