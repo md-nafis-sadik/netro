@@ -50,34 +50,34 @@ export const servicesData: readonly IService[] = Object.freeze([
     title: "SaaS, MVP Development",
     description:
       "Tailored software solutions designed to meet your unique business needs and drive growth.",
-    image: images.blog1,
+    image: images.service1,
   },
   {
     _id: "service-02",
     title: "App Development",
     description:
       "Tailored software solutions designed to meet your unique business needs and drive growth.",
-    image: images.blog2,
+    image: images.service2,
   },
   {
     _id: "service-03",
     title: "Vibe Coding: MVP",
     description:
       "Tailored software solutions designed to meet your unique business needs and drive growth.",
-    image: images.blog3,
+    image: images.service3,
   },
   {
     _id: "service-04",
     title: "SQA, Deployment, Support",
     description:
       "Tailored software solutions designed to meet your unique business needs and drive growth.",
-    image: images.blog2,
+    image: images.service4,
   },
   {
     _id: "service-05",
     title: "UIUX Design, Branding",
     description:
       "Tailored software solutions designed to meet your unique business needs and drive growth.",
-    image: images.blog3,
+    image: images.service5,
   },
 ]);

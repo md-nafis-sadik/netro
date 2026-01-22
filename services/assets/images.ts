@@ -156,6 +156,13 @@ export { default as easyTruck } from "@/public/images/product/easy-truck.webp";
 export { default as pathshala } from "@/public/images/product/pathshala.webp";
 export { default as remozen } from "@/public/images/product/remozen.webp";
 export { default as trivia } from "@/public/images/product/trivia.webp";
+export {
+  default as service1,
+  default as service2,
+  default as service3,
+  default as service4,
+  default as service5,
+} from "@/public/images/service-1.webp";
 
 export { default as about1 } from "@/public/images/about-1.webp";
 export { default as about2 } from "@/public/images/about-2.webp";
