@@ -24,6 +24,7 @@ const AwardsRecognition = () => {
           alt="Awards background pattern"
           className="w-full h-auto"
         />
+        
       </div>
 
       <div className="relative z-10 flex_center flex-col w-full">
@@ -36,7 +37,7 @@ const AwardsRecognition = () => {
           Awards & Recognition
         </SectionHeader>
 
-        <div className="containerX mt-10 md:mt-20 lg:mt-36 w-full">
+        <div className="containerX mt-8 md:mt-16 lg:mt-20 w-full">
           <div className="max-w-full flex justify-center items-center overflow-x-auto scrollbar-hide gap-8 md:gap-16">
             <Image src={images.topClutch} alt="award" width={590} height={694} className="max-w-[270px] md:mr-9" />
             <Image src={images.raterGreat} alt="award" width={590} height={694} className="max-w-[300px] hidden md:block" />
