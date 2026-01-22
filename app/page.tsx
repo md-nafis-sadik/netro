@@ -19,12 +19,12 @@ import { Suspense } from "react";
 const HomePage = () => {
   return (
     <main className="relative">
-      <HeroHome />
+      {/* <HeroHome />
       <IntroHome />
       <ProjectsHome />
       <ServicesHome />
       <Revoluation />
-      <Testimonial />
+      <Testimonial /> */}
       <section data-bg-theme="dark">
         <Products />
       </section>

@@ -15,6 +15,8 @@ import { baseUrl, contactData } from "@/services/data/shared.data";
 import { Toaster } from "../ui/sonner";
 import { toast } from "sonner";
 import { useSearchParams } from "next/navigation";
+import Image from "next/image";
+import { images } from "@/services";
 
 function ContactUsFormV2() {
   const searchParams = useSearchParams();
@@ -93,8 +95,16 @@ function ContactUsFormV2() {
           transform: "scaleX(-1)",
         }}
       />
-      <div className="">Hello</div>
-      <div className="containerX bg-black pt-8 sm:pt-20 md:pt-24 pb-8 sm:pb-16 md:pb-20 lg:pb-24">
+
+      <Image
+        src={images.contactImage}
+        alt="Contact Image"
+        width={360}
+        height={474}
+        className="block md:hidden w-full h-auto aspect-[360/474]"
+      />
+
+      <div className="containerX bg-[#060023] md:bg-transparent pt-8 sm:pt-20 md:pt-24 pb-8 sm:pb-16 md:pb-20 lg:pb-24">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 justify-between">
           <div className="lg:col-span-6"></div>
           <div className="w-full lg:col-span-5 lg:col-start-8">
@@ -132,7 +142,7 @@ function ContactUsFormV2() {
                 <BudgetTags query={query} />
               </div>
               <Button
-                className="w-fit group min-w-[195px]"
+                className="w-full md:w-fit group min-w-[195px]"
                 type="submit"
                 disabled={isLoading}
               >

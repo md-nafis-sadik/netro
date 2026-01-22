@@ -8,7 +8,7 @@ const StatisticsHome = () => {
   return (
     <section className="bg-black pt-20 pb-20 md:pb-[120px] select-none">
       <div className="containerX">
-        <SectionHeader className="home_statistics_header_v2 text-5xl md:text-[96px] mt-0 hidden sm:flex">
+        <SectionHeader className="home_statistics_header_v2 text-5xl md:text-[96px] mt-0 hidden sm:block">
           Our Success Story
         </SectionHeader>
 
