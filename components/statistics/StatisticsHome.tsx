@@ -8,11 +8,11 @@ const StatisticsHome = () => {
   return (
     <section className="bg-black pt-20 pb-20 md:pb-[120px] select-none">
       <div className="containerX">
-        <SectionHeader className="home_statistics_header_v2 text-5xl md:text-[96px] mt-0">
+        <SectionHeader className="home_statistics_header_v2 text-5xl md:text-[96px] mt-0 hidden sm:flex">
           Our Success Story
         </SectionHeader>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-10 mt-10 md:mt-20 lg:mt-[80px]">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-10 mt-0 md:mt-20 lg:mt-[80px]">
           {successStoryDataV2.map(({ type, value, ext, color }, index) => (
             <div
               className="flex flex-col items-center gap-1 md:gap-3"

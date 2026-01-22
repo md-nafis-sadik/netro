@@ -178,6 +178,10 @@ export { default as php } from "@/public/images/icons/php.webp";
 export { default as python } from "@/public/images/icons/python.webp";
 export { default as swift } from "@/public/images/icons/swift.webp";
 
+export { default as globalAward } from "@/public/images/awards/global-award-fall.webp";
+export { default as raterGreat } from "@/public/images/awards/rater-great.webp";
+export { default as topClutch } from "@/public/images/awards/top-clutch-award.webp";
+
 // countries flags
 export { default as austrailia } from "@/public/images/countries/austrailia.webp";
 export { default as brazil } from "@/public/images/countries/brazil.webp";

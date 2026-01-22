@@ -37,7 +37,7 @@ const AwardsRecognition = () => {
         </SectionHeader>
 
         <div className="containerX mt-10 md:mt-20 lg:mt-36 w-full">
-          <div className="max-w-5xl mx-auto flex flex-col gap-8 md:gap-12">
+          <div className="max-w-5xl mx-auto grid grid-cols-3 gap-8 md:gap-12">
             {awardsData.map((award, index) => (
               <AwardItem key={index} {...award} />
             ))}
