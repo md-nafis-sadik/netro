@@ -8,8 +8,6 @@ import {
   WhatsappOutlinedIcon,
 } from "@/services/assets/svgs";
 import { Button } from "../ui/button";
-import BudgetTags from "./BudgetTags";
-import ContactItem from "./ContactItem";
 import { Fragment, useState } from "react";
 import { baseUrl, contactData } from "@/services/data/shared.data";
 import { Toaster } from "../ui/sonner";
@@ -17,10 +15,11 @@ import { toast } from "sonner";
 import { useSearchParams } from "next/navigation";
 import Image from "next/image";
 import { images } from "@/services";
+import { cn } from "@/lib/utils";
 
-function ContactUsFormV2() {
+function ContactUsFormHome() {
   const searchParams = useSearchParams();
-  const query = "";
+  const [selectedBudget, setSelectedBudget] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [isError, setIsError] = useState(false);
@@ -31,14 +30,26 @@ function ContactUsFormV2() {
     const email = (form.elements.namedItem("email") as HTMLInputElement)?.value;
     const message = (form.elements.namedItem("message") as HTMLInputElement)
       ?.value;
+    
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!email || !emailRegex.test(email)) {
+      toast.error("Invalid Email", {
+        description: "Please enter a valid email address.",
+        icon: <ErrorSvg />,
+        position: "top-right",
+      });
+      return;
+    }
+    
     const formData = new FormData();
     const data = {
       email,
       message,
     };
     formData.append("data", JSON.stringify(data));
-    if (query) {
-      formData.append("budget", query);
+    if (selectedBudget) {
+      formData.append("budget", selectedBudget);
     }
     setIsLoading(true);
     setIsError(false);
@@ -105,9 +116,8 @@ function ContactUsFormV2() {
       />
 
       <div className="containerX bg-[#060023] md:bg-transparent pb-10 md:pb-16 lg:pb-20 pt-10 md:pt-16 lg:pt-20">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 justify-between -mt-4 md:mt-0">
-          <div className="lg:col-span-6"></div>
-          <div className="w-full lg:col-span-5 lg:col-start-8">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 justify-between -mt-4 md:mt-0">
+          <div className="w-full md:col-span-12 md:col-start-8">
             <h1 className="title-v2 text-white">Contact Us</h1>
             <p className="text-sm sm:text-base md:text-base lg:text-lg text-white leading-[140%]">
               Tell us your concern and queries
@@ -139,7 +149,39 @@ function ContactUsFormV2() {
                 <p className="text-base text-white leading-[120%] font-medium">
                   Project Budget
                 </p>
-                <BudgetTags query={query} />
+                <ul className="mt-4 grid grid-cols-2 md:grid-cols-4 flex-wrap gap-3">
+                  <li
+                    className={cn("budgetTagV2", selectedBudget === "5k-15k" ? "activeBudgetTagV2" : "")}
+                    onClick={() => setSelectedBudget("5k-15k")}
+                  >
+                    5k-15k
+                  </li>
+                  <li
+                    className={cn(
+                      "budgetTagV2",
+                      selectedBudget === "15k-50k" ? "activeBudgetTagV2" : ""
+                    )}
+                    onClick={() => setSelectedBudget("15k-50k")}
+                  >
+                    15k-50k
+                  </li>
+                  <li
+                    className={cn(
+                      "budgetTagV2",
+                      selectedBudget === "50k-250k" ? "activeBudgetTagV2" : ""
+                    )}
+                    onClick={() => setSelectedBudget("50k-250k")}
+                  >
+                    50k-250k
+                  </li>
+                  <li
+                    className={cn("budgetTagV2", selectedBudget === "250k" ? "activeBudgetTagV2" : "")}
+                    onClick={() => setSelectedBudget("250k")}
+                  >
+                    {"< "}
+                    250k
+                  </li>
+                </ul>
               </div>
               <Button
                 className="w-full md:w-fit group min-w-[195px] mt-6"
@@ -181,4 +223,4 @@ function ContactUsFormV2() {
   );
 }
 
-export default ContactUsFormV2;
+export default ContactUsFormHome;

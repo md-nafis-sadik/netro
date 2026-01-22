@@ -88,6 +88,10 @@ body {
     @apply border-solid border-main-400 bg-main-50 text-main-400;
   }
 
+  .activeBudgetTagV2 {
+    @apply border-solid border-main-400 bg-main-400 text-white;
+  }
+
   .btn {
     @apply inline-flex items-center justify-center gap-2 whitespace-nowrap text-base font-bold !leading-[1.1] rounded-full transition_common hover:-translate-y-[2px];
   }

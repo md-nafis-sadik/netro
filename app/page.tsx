@@ -1,5 +1,5 @@
 import AwardsRecognition from "@/components/awards/AwardsRecognition";
-import ContactUsFormV2 from "@/components/contact-us/ContactUsFormV2";
+import ContactUsFormHome from "@/components/contact-us/ContactUsFormHome";
 import HeroHome from "@/components/hero/HeroHome";
 import IntroHome from "@/components/intro/IntroHome";
 import JournalHomeSkeleton from "@/components/journal/JournalHomeSkeleton";
@@ -34,7 +34,7 @@ const HomePage = () => {
         <AwardsRecognition />
       </section>
       <section data-bg-theme="dark">
-        <ContactUsFormV2 />
+        <ContactUsFormHome />
       </section>
       <section data-bg-theme="dark">
         <StatisticsHome />
