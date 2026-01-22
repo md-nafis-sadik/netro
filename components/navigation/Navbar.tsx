@@ -1,20 +1,19 @@
 "use client";
-import { GradientButton } from "@/components/ui/gradient-button";
 import { useNavbarColorDetection } from "@/hooks/useNavbarColorDetection";
 import colors from "@/lib/colors";
 import { cn } from "@/lib/utils";
 import {
+  AppLogoIcon,
   ArrowLongTailIcon,
-  LogoIcon,
-  MenuIcon,
-  PlusRoundedSecondaryIcon,
+  ChevronBottomIcon,
+  DashboardIcon,
 } from "@/services/assets/svgs";
+import { servicesData } from "@/services/data";
 import { navbarData, routes } from "@/services/data/shared.data";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FC, useState } from "react";
 import DropupNavigationMenu from "./DropUpNavigationMenu";
-import NavbarExplore from "./NavbarExplore";
 import NavigationSheet from "./NavigationSheet";
 
 type NavbarProps = {
@@ -32,27 +31,28 @@ const Navbar: FC<NavbarProps> = ({ show, services }) => {
   const isLightText = isDarkBackground;
   return (
     <nav
-      className={cn(
-        !isDarkBackground
-          ? "bg-white/20 backdrop-blur-[20px]"
-          : "bg-black/20 backdrop-blur-[20px]",
-        pathname === routes.homepage.link
-          ? "border-[#393939]"
-          : "border-b border-dashed border-neutral-300 bg-white/70 backdrop-blur-[20px]",
-        "fixed top-0 w-full z-[999]",
-      )}
+      // className={cn(
+      //   !isDarkBackground
+      //     ? "bg-white/20 backdrop-blur-[20px]"
+      //     : "bg-black/20 backdrop-blur-[20px]",
+      //   pathname === routes.homepage.link
+      //     ? "border-[#393939]"
+      //     : "border-b border-dashed border-neutral-300 bg-white/70 backdrop-blur-[20px]",
+      //   "fixed top-6 left-1/2 -translate-x-1/2 w-full max-w-[787px] mx-auto z-[999]",
+      // )}
+      className="fixed lg:top-6 left-1/2 -translate-x-1/2 shadow-nav w-full lg:max-w-[787px] lg:bg-blue-900 lg:border border-blue-950 lg:rounded-full z-[999] p-3 pl-6 bg-blue-900/40 backdrop-blur-[20px]"
     >
-      <NavbarExplore show={!isScrolled} />
-      <div className="container flex flex-row items-center justify-between lg:justify-start gap-4 md:gap-10 py-3">
+      <div className="w-full flex flex-row items-center justify-between lg:justify-start gap-4 md:gap-10">
         <Link href={routes.homepage.link} className="h-fit">
-          <LogoIcon
+          {/* <LogoIcon
             className={cn(
               "h-5 lg:h-7 w-auto transition-colors duration-100",
               isLightText && pathname === routes.homepage.link
                 ? "text-white"
                 : "text-black",
             )}
-          />
+          /> */}
+          <AppLogoIcon className="w-24 sm:w-[138px] shrink-0" color="#BEDAFF" />
         </Link>
 
         <div className="hidden flex-1 lg:flex flex-row items-center">
@@ -84,10 +84,10 @@ const Navbar: FC<NavbarProps> = ({ show, services }) => {
 
                   <span
                     className={cn(
-                      "text-sm font-normal !leading-[1.4] relative z-[2] font-inter transition-colors duration-100",
-                      isLightText && pathname === routes.homepage.link
-                        ? "text-white"
-                        : "text-black",
+                      "text-sm font-normal !leading-[1.4] relative z-[2] font-inter transition-colors duration-100 text-white",
+                      // isLightText && pathname === routes.homepage.link
+                      //   ? "text-white"
+                      //   : "text-black",
                       pathname.startsWith(link) &&
                         (pathname === routes.homepage.link
                           ? ""
@@ -97,14 +97,7 @@ const Navbar: FC<NavbarProps> = ({ show, services }) => {
                     {name}
                   </span>
                   {megaMenu && (
-                    <PlusRoundedSecondaryIcon
-                      className="!h-5 !w-5 !shrink-0 transition-all duration-100 group-hover:rotate-180 relative z-[3]"
-                      color={
-                        isLightText && pathname === routes.homepage.link
-                          ? colors.white
-                          : colors.black
-                      }
-                    />
+                    <ChevronBottomIcon className="!shrink-0 transition-all duration-300 group-hover:rotate-180 relative z-[3]" />
                   )}
                 </Link>
                 {/* {index < navbarData.length - 1 && (
@@ -120,7 +113,7 @@ const Navbar: FC<NavbarProps> = ({ show, services }) => {
 
                 {megaMenu && (
                   <DropupNavigationMenu
-                    servicesMenu={services}
+                    servicesMenu={servicesData}
                     show={megamenuOpening}
                   />
                 )}
@@ -130,10 +123,13 @@ const Navbar: FC<NavbarProps> = ({ show, services }) => {
         </div>
         <Link
           href={routes.contact.link}
-          className="bg-main-400 hover:bg-main-500  hidden lg:flex items-center gap-2 p-[12px_20px_12px_24px] py-2 rounded-full w-fit text-white font-inter text-sm md:text-base font-bold !leading-[1.1]"
+          className="bg-white hidden lg:flex items-center gap-2 p-[12px_20px_12px_24px] py-2 rounded-full w-fit text-black font-inter text-sm md:text-base font-bold !leading-[1.1] group overflow-hidden"
         >
           <span>Contact</span>
-          <ArrowLongTailIcon className="text-white-100" />
+          <ArrowLongTailIcon
+            color={colors.black}
+            className="group-hover:translate-x-1 duration-300"
+          />
         </Link>
 
         {/* <div className="flex flex-row items-center gap-2 md:gap-3"> */}
@@ -167,15 +163,13 @@ const Navbar: FC<NavbarProps> = ({ show, services }) => {
           </GradientButton> */}
 
         {/* MOBILE MENU */}
-        <GradientButton
-          className={cn(
-            " flex_center gap-2 group ps-[10px] md:px-3",
-            "bg-black",
-          )}
-          containerClassName="block lg:hidden"
+        <button
+          type="button"
           onClick={() => setIsSheetOpen(true)}
+          className="border-none outline-none lg:hidden"
         >
-          <MenuIcon
+          <DashboardIcon />
+          {/* <MenuIcon
             className={cn(
               "!h-5 !w-5 !shrink-0 transition-colors text-white group-hover:text-white",
             )}
@@ -186,13 +180,13 @@ const Navbar: FC<NavbarProps> = ({ show, services }) => {
             )}
           >
             Menu
-          </span>
-        </GradientButton>
+          </span> */}
+        </button>
         {/* </div> */}
       </div>
 
       <NavigationSheet
-        servicesMenu={services}
+        servicesMenu={servicesData}
         isHomapage={pathname === routes.homepage.link}
         isSheetOpen={isSheetOpen}
         closeSheet={() => setIsSheetOpen(false)}

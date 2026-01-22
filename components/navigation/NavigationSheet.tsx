@@ -1,16 +1,17 @@
-import { FC } from "react";
 import { Sheet, SheetContent, SheetHeader } from "@/components/ui/sheet";
-import { GradientButton } from "../ui/gradient-button";
+import colors from "@/lib/colors";
 import { cn } from "@/lib/utils";
 import {
-  PlusRoundedSecondaryIcon,
-  CrossIcon,
   CalendarIcon,
+  CrossIcon,
+  PlusRoundedSecondaryIcon,
 } from "@/services/assets/svgs";
-import colors from "@/lib/colors";
 import { navbarData, routes, socialsData } from "@/services/data/shared.data";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { FC } from "react";
+import { GradientButton } from "../ui/gradient-button";
+import { IService } from "@/services";
 
 interface IFNavigationSheetProps {
   isSheetOpen: boolean;
@@ -19,7 +20,7 @@ interface IFNavigationSheetProps {
   pathname: string;
   mobileMegaIndex: number | null;
   setMobileMegaIndex: (index: number | null) => void;
-  servicesMenu: any[];
+  servicesMenu: readonly IService[];
 }
 
 const NavigationSheet: FC<IFNavigationSheetProps> = ({
@@ -35,7 +36,10 @@ const NavigationSheet: FC<IFNavigationSheetProps> = ({
 
   return (
     <Sheet open={isSheetOpen} onOpenChange={closeSheet}>
-      <SheetContent showCrossIcon={false} className={`select-none bg-black`}>
+      <SheetContent
+        showCrossIcon={false}
+        className={`select-none bg-black z-[999]`}
+      >
         <SheetHeader className="hidden" />
 
         {/* Close Button */}
@@ -62,7 +66,7 @@ const NavigationSheet: FC<IFNavigationSheetProps> = ({
                 onClick={() => {
                   if (megaMenu) {
                     setMobileMegaIndex(
-                      mobileMegaIndex === index ? null : index
+                      mobileMegaIndex === index ? null : index,
                     );
                   } else {
                     closeSheet();
@@ -76,13 +80,13 @@ const NavigationSheet: FC<IFNavigationSheetProps> = ({
                       (pathname === routes.homepage.link
                         ? "navbar-btn-gradient-dark"
                         : "navbar-btn-gradient-lite"),
-                    "block navbar-btn-gradient absolute w-full h-1/2 bottom-0 left-1/2 -translate-x-1/2 z-[1]"
+                    "block navbar-btn-gradient absolute w-full h-1/2 bottom-0 left-1/2 -translate-x-1/2 z-[1]",
                   )}
                 />
 
                 <span
                   className={cn(
-                    "font-bold text-white text-[28px] !leading-[1.2] relative z-[2] font-scoutcond uppercase"
+                    "font-bold text-white text-[28px] !leading-[1.2] relative z-[2] font-scoutcond uppercase",
                   )}
                 >
                   {name}
@@ -91,7 +95,7 @@ const NavigationSheet: FC<IFNavigationSheetProps> = ({
                 {megaMenu && (
                   <PlusRoundedSecondaryIcon
                     className={cn(
-                      "!h-5 !w-5 !shrink-0 transition_common group-hover:rotate-180 relative z-[3]"
+                      "!h-5 !w-5 !shrink-0 transition_common group-hover:rotate-180 relative z-[3]",
                     )}
                     color={colors.white}
                   />
@@ -105,7 +109,7 @@ const NavigationSheet: FC<IFNavigationSheetProps> = ({
                     "flex flex-col items-center w-full mt-2 overflow-hidden transition-all duration-300",
                     mobileMegaIndex === index
                       ? "max-h-[1000px] mt-2"
-                      : "max-h-0"
+                      : "max-h-0",
                   )}
                 >
                   {/* Main Services link */}
@@ -114,7 +118,7 @@ const NavigationSheet: FC<IFNavigationSheetProps> = ({
                     onClick={closeSheet}
                     className={cn(
                       "py-2 text-lg w-full text-center transitionfont-bold text-white",
-                      pathname === link ? "font-bold" : "font-normal"
+                      pathname === link ? "font-bold" : "font-normal",
                     )}
                   >
                     All Services
@@ -127,10 +131,10 @@ const NavigationSheet: FC<IFNavigationSheetProps> = ({
                       className={cn(
                         "py-2 text-lg w-full text-center transition text-white",
                         pathname.startsWith(
-                          `${routes.services.childLink}/${item?.title}`
+                          `${routes.services.childLink}/${item?.title}`,
                         )
                           ? "font-bold"
-                          : "font-normal"
+                          : "font-normal",
                       )}
                     >
                       {item?.title}

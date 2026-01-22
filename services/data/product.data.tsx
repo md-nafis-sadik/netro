@@ -352,44 +352,44 @@ export const productDetailssData: Record<string, any> = {
 export const productsData = [
   {
     id: "01",
-    image: images.product1,
-    title: "EcoTrack Mobile App",
-    tag: "Mobile Development",
+    image: images.easyTruck,
+    title: "Easy Truck",
+    tag: "Software Solution",
     description:
-      "Carbon footprint tracking and eco-friendly lifestyle recommendations.",
+      "A unified, first-of-its-kind platform that solves a major market gap: logistics support at the heavy-industry level. Easy Truck reinvents how logistic trucks get onboarded and managed in developing countries.",
     url: "https://trivialy.co",
     detailsUrl: "/products/eco-track-mobile-app",
   },
 
   {
     id: "02",
-    image: images.product2,
-    title: "EcoTrack Mobile App",
-    tag: "Mobile Development",
+    image: images.pathshala,
+    title: "Smart Pathshala",
+    tag: "Software Solution",
     description:
-      "Carbon footprint tracking and eco-friendly lifestyle recommendations.",
+      "Smart Pathshala is a smart, all-in-one digital platform built to simplify school and college management. It seamlessly connects administrators, teachers, students, and parents through a unified system for attendance, academics, fees, and communication.",
     url: "https://trivialy.co",
     detailsUrl: "/products/eco-track-mobile-app",
   },
 
   {
     id: "03",
-    image: images.product3,
-    title: "EcoTrack Mobile App",
-    tag: "Mobile Development",
+    image: images.remozen,
+    title: "Remozen AI",
+    tag: "Software Solution",
     description:
-      "Carbon footprint tracking and eco-friendly lifestyle recommendations.",
+      "Rimozen AI is a smart AI assistant app designed to help users think faster, content creation, idea generation, and everyday problem-solving in a simple, user-friendly interface. Rimozen AI brings the power of artificial intelligence directly to your smartphone, making productivity effortless and accessible anytime.",
     url: "https://trivialy.co",
     detailsUrl: "/products/eco-track-mobile-app",
   },
 
   {
     id: "04",
-    image: images.product4,
-    title: "EcoTrack Mobile App",
-    tag: "Mobile Development",
+    image: images.trivia,
+    title: "Make My Trivia",
+    tag: "Software Solution",
     description:
-      "Carbon footprint tracking and eco-friendly lifestyle recommendations.",
+      "Make My Trivia is an interactive platform that creates fun, engaging trivia games for events, teams, and brands. It helps organizations boost participation through customized quizzes, live competitions, and audience engagement activities. Designed for entertainment with purpose, Make My Trivia turns knowledge into an exciting, memorable experience.",
     url: "https://trivialy.co",
     detailsUrl: "/products/eco-track-mobile-app",
   },

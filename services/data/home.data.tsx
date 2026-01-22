@@ -12,9 +12,9 @@ export const bannerIcons = [
     icon: images.android,
   },
   {
-    id: "03",
-    title: "PHP",
-    icon: images.php,
+    id: "05",
+    title: "Swift",
+    icon: images.swift,
   },
   {
     id: "04",
@@ -22,9 +22,9 @@ export const bannerIcons = [
     icon: images.python,
   },
   {
-    id: "05",
-    title: "Swift",
-    icon: images.swift,
+    id: "03",
+    title: "PHP",
+    icon: images.php,
   },
 ];
 

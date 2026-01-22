@@ -1,6 +1,6 @@
 "use client";
 
-import { images } from "@/services";
+import colors from "@/lib/colors";
 import { ArrowLongTailIcon } from "@/services/assets/svgs";
 import { productsData } from "@/services/data";
 import { routes } from "@/services/data/shared.data";
@@ -11,6 +11,7 @@ import Link from "next/link";
 import { useEffect, useRef } from "react";
 import SectionHeader from "../common/SectionHeader";
 import SectionSubHeader from "../common/SectionSubHeader";
+import ArrowLineupButton from "../ui/arrow-lineup-button";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -99,7 +100,7 @@ function Products() {
     <section
       ref={sectionRef}
       data-bg-theme="dark"
-      className="bg-darkPurplebg pb-8 pt-8 md:pt-16 lg:pt-20"
+      className="bg-darkPurplebg pb-8 pt-8 md:pt-16 lg:pt-20 overflow-hidden"
     >
       <div className="container flex_center flex-col">
         <SectionSubHeader
@@ -107,12 +108,11 @@ function Products() {
           text="Made for business, by us"
           className="products-sub border-0 bg-main-950 text-white"
         />
-
         <SectionHeader className="products-title home_projects_header mt-2">
           OUR Products
         </SectionHeader>
 
-        <ul className="w-full flex flex-col gap-12 md:gap-6 lg:gap-3 mt-6 sm:mt-10 md:mt-16">
+        <ul className="w-full flex flex-col gap-12 md:gap-6 lg:gap-3 my-6 sm:my-10 md:my-16">
           {productsData.map((product) => (
             <li
               key={product.id}
@@ -126,11 +126,11 @@ function Products() {
                   height={500}
                   className="w-full xl:h-[492px] object-contain"
                 />
-                <Image
+                {/* <Image
                   src={images.dotBg}
                   alt="product background"
                   className="absolute inset-0 w-full h-full object-cover pointer-events-none"
-                />
+                /> */}
               </div>
 
               <div className="product-text font-inter w-full md:max-w-[481px]">
@@ -155,6 +155,12 @@ function Products() {
             </li>
           ))}
         </ul>
+        <ArrowLineupButton
+          lineColor={colors.secondary[300]}
+          textClassName="text-white"
+        >
+          See More
+        </ArrowLineupButton>
       </div>
     </section>
   );

@@ -35,6 +35,7 @@ export default {
           100: "#fafafa",
         },
         blue: {
+          950: "#131C53",
           900: "#060023",
         },
         black: {
@@ -153,6 +154,9 @@ export default {
           "linear-gradient(90deg, #483BDC 30%, #FFA8A9 70.5%, #82D3A4 100%)",
         blandGradient:
           "linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, #002F25 100%)",
+      },
+      boxShadow: {
+        nav: "0 4px 4px 0 rgba(0, 0, 0, 0.25)",
       },
     },
   },

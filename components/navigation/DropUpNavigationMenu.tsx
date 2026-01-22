@@ -1,21 +1,22 @@
-import { useRef, useEffect, JSX, Fragment } from "react";
-import { gsap } from "gsap";
-import { useGSAP } from "@gsap/react";
-import clsx from "clsx";
+import { IService } from "@/services";
+import { CalendarIcon } from "@/services/assets/svgs";
 import {
   routes,
   socialsData,
   tidycalMettingUrl,
 } from "@/services/data/shared.data";
-import { GradientButton } from "../ui/gradient-button";
-import { CalendarIcon } from "@/services/assets/svgs";
+import { useGSAP } from "@gsap/react";
+import clsx from "clsx";
+import { gsap } from "gsap";
 import Link from "next/link";
+import { Fragment, JSX, useEffect, useRef } from "react";
+import { GradientButton } from "../ui/gradient-button";
 
 gsap.registerPlugin(useGSAP);
 
 type DropupNavigationMenuProps = {
   show: boolean;
-  servicesMenu: any[];
+  servicesMenu: readonly IService[];
 };
 
 export default function DropupNavigationMenu({
@@ -38,7 +39,7 @@ export default function DropupNavigationMenu({
         display: "block",
         duration: 0.3,
         ease: "power2.out",
-      }
+      },
     );
   }, []);
 
@@ -52,13 +53,13 @@ export default function DropupNavigationMenu({
     <div
       ref={menuRef}
       className={clsx(
-        "absolute -bottom-[560px] mb-2 left-0 min-w-[474px] min-h-[60px] bg-[#1C1C1C] shadow-md py-10 z-50 services-dropdown"
+        "absolute -bottom-[560px] mb-2 left-0 min-w-[474px] min-h-[60px] bg-[#1C1C1C] shadow-md py-10 z-50 services-dropdown",
       )}
       style={{ display: "none" }}
     >
       <ul className="flex flex-col overflow-hidden">
         {servicesMenu.map((service, serviceIndex) => (
-          <Fragment key={`${service.name}_${serviceIndex}`}>
+          <Fragment key={`${service.title}_${serviceIndex}`}>
             <Link
               href={`${routes.services.childLink}/${service?.title}`}
               className="pt-6 pb-3 flex flex-row justify-between items-center hover:scale-105 transition_common hover:bg-black px-10 group"

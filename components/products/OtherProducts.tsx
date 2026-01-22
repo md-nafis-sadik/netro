@@ -15,7 +15,7 @@ function OtherProducts() {
     _id: product.id,
     title: product.title,
     metaDescription: product.description,
-    featuredImage: product.otherImage,
+    featuredImage: product.image,
     tagList: "",
     author: {
       profileImage: product.image,

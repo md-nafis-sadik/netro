@@ -1,11 +1,11 @@
 "use client";
-import ProjectCard from "./ProjectCard";
-import SectionHeader from "../common/SectionHeader";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useRef, useState } from "react";
+import { cn } from "@/lib/utils";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { cn } from "@/lib/utils";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useRef, useState } from "react";
+import SectionHeader from "../common/SectionHeader";
+import ProjectCard from "./ProjectCard";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -79,7 +79,7 @@ const ProjectsDetailsPreview = ({ project }: any) => {
         });
       }, 100);
     },
-    { scope: cardsRef }
+    { scope: cardsRef },
   );
 
   return (
@@ -96,12 +96,12 @@ const ProjectsDetailsPreview = ({ project }: any) => {
           {project?.data?.projectImages?.map((item: any, index: number) => (
             <ProjectCard
               className={cn(
-                "stacked-card sticky left-0 top-0 mb-40 lg:aspect-[21/9]"
+                "stacked-card sticky left-0 top-0 mb-40 lg:aspect-[21/9]",
               )}
               style={{
                 pointerEvents: activeIndex === index ? "auto" : "none",
               }}
-              item={{ featuredImage: item }}
+              item={item}
               key={index}
             />
           ))}

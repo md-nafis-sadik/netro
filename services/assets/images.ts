@@ -152,6 +152,17 @@ export { default as telzenPreview3 } from "@/public/images/product-details/telze
 export { default as telzenPreview4 } from "@/public/images/product-details/telzen/preview-4.webp";
 export { default as telzenPreview5 } from "@/public/images/product-details/telzen/preview-5.webp";
 export { default as telzenTop } from "@/public/images/product-details/telzen/top.webp";
+export { default as easyTruck } from "@/public/images/product/easy-truck.webp";
+export { default as pathshala } from "@/public/images/product/pathshala.webp";
+export { default as remozen } from "@/public/images/product/remozen.webp";
+export { default as trivia } from "@/public/images/product/trivia.webp";
+export {
+  default as service1,
+  default as service2,
+  default as service3,
+  default as service4,
+  default as service5,
+} from "@/public/images/service-1.webp";
 
 export { default as about1 } from "@/public/images/about-1.webp";
 export { default as about2 } from "@/public/images/about-2.webp";
@@ -161,6 +172,7 @@ export { default as about5 } from "@/public/images/about-5.webp";
 export { default as awardsBgDown } from "@/public/images/award-pattern-down.webp";
 export { default as awardsBgUp } from "@/public/images/award-pattern-up.webp";
 export { default as contactBg } from "@/public/images/contact-bg.webp";
+export { default as contactImage } from "@/public/images/contact-image.webp";
 export { default as footerBgPattern } from "@/public/images/footer-bg-pattern.webp";
 export { default as logo } from "@/public/images/logo.webp";
 export { default as yoowifiIcon } from "@/public/images/project/yoowifi-icon.webp";
@@ -170,7 +182,6 @@ export { default as support3 } from "@/public/images/support-3.webp";
 export { default as asiqMohammedNew } from "@/public/images/team/asiq-mohammed-new.webp";
 export { default as termc } from "@/public/images/termc.webp";
 export { default as video } from "@/public/images/video.webp";
-export { default as contactImage } from "@/public/images/contact-image.webp";
 
 // icons
 export { default as android } from "@/public/images/icons/android.webp";

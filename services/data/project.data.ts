@@ -5,9 +5,9 @@ import { routes } from "./shared.data";
 export const projects: readonly IProject[] = Object.freeze([
   {
     _id: "prod_001",
-    name: "Simigo- vibrant eSIM Brand",
+    name: "Simigo- A Vibrant eSIM Brand",
     description:
-      "The brand focused on youth centric packages, connectivity & flexibility.",
+      "We have designed architecture of the brand that brings youthfulness and energy in your roaming experience.",
     buttonPurpose: "Live Project URL and Case Study-",
     backgroundImage: images.simgo,
     backgroundColor: "linear-gradient(180deg, #86C9FF 0%, #563EF0 100%)",
@@ -25,9 +25,9 @@ export const projects: readonly IProject[] = Object.freeze([
   },
   {
     _id: "prod_002",
-    name: "Short Project Brief Goes  here. Short",
+    name: "UniSavi- Global Higher Education",
     description:
-      "Short Project Brief Goes  here. Short Project Brief Goes  here.",
+      "Keeping Fexibility with State-Of-Art Technology We Have Build UniSavi that Eases Higher Education.",
     buttonPurpose: "Project Case Study and Lots more",
     backgroundImage: images.unisavi,
     backgroundColor: "linear-gradient(180deg, #F9D20E 0%, #F99B0E 100%)",
@@ -44,9 +44,9 @@ export const projects: readonly IProject[] = Object.freeze([
   },
   {
     _id: "prod_003",
-    name: "Short Project Brief Goes  here. Short",
+    name: "Telzen- VPN, eSIM & More!",
     description:
-      "Short Project Brief Goes  here. Short Project Brief Goes  here.",
+      "Nature Inspired Advance Technology That Comes With Affordable Roaming eSIM Data, VPN and Physical SIM.",
     buttonPurpose: "Project Case Study and Lots more",
     backgroundImage: images.telzen,
     backgroundColor: "linear-gradient(180deg, #00DE71 0%, #014A43 100%)",
@@ -64,10 +64,10 @@ export const projects: readonly IProject[] = Object.freeze([
 
   {
     _id: "prod_004",
-    name: "Short Project Brief Goes  here. Short",
+    name: "Kanga- Business Slot Booking",
     description:
-      "Short Project Brief Goes  here. Short Project Brief Goes  here.",
-    buttonPurpose: "Project Case Study and Lots more",
+      "Customers search for local businesses and book slots directly. Businesses manage customers, accounts, and staff in one place — that’s what Kanga is, today!",
+    buttonPurpose: "Live Project URL and Case Study-",
     backgroundImage: images.kanga,
     backgroundColor: "linear-gradient(180deg, #86C9FF 0%, #563EF0 100%)",
     buttons: [
@@ -85,9 +85,9 @@ export const projects: readonly IProject[] = Object.freeze([
 
   {
     _id: "prod_005",
-    name: "Short Project Brief Goes  here. Short",
+    name: "NLC Fund- Best Loan Management",
     description:
-      "Short Project Brief Goes  here. Short Project Brief Goes  here.",
+      "First Time ever we have made this platform that eases loan application, term-sheet generation, loan execution and so many!",
     buttonPurpose: "Project Case Study and Lots more",
     backgroundImage: images.nlc,
     backgroundColor: "linear-gradient(180deg, #F9D20E 0%, #F99B0E 100%)",
