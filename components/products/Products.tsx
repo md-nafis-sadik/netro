@@ -21,21 +21,21 @@ function Products() {
   useEffect(() => {
     const ctx = gsap.context(() => {
       /* ---------- Header ---------- */
-      gsap.fromTo(
-        ".products-sub, .products-title",
-        { autoAlpha: 0, y: 24, scale: 0.96 },
-        {
-          autoAlpha: 1,
-          y: 0,
-          scale: 1,
-          duration: 1.2,
-          ease: "expo.out",
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: "top 80%",
-          },
-        },
-      );
+      // gsap.fromTo(
+      //   ".products-sub, .products-title",
+      //   { autoAlpha: 0, y: 24, scale: 0.96 },
+      //   {
+      //     autoAlpha: 1,
+      //     y: 0,
+      //     scale: 1,
+      //     duration: 1.2,
+      //     ease: "expo.out",
+      //     scrollTrigger: {
+      //       trigger: sectionRef.current,
+      //       start: "top 80%",
+      //     },
+      //   },
+      // );
 
       /* ---------- Product Rows ---------- */
       gsap.utils.toArray<HTMLElement>(".product-item").forEach((item, i) => {

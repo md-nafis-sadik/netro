@@ -118,6 +118,7 @@ function ProcessFollowed() {
       duration: 0.4,
       ease: "power3.out",
     });
+    setActiveIndex(0);
   };
 
   return (

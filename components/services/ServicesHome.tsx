@@ -1,88 +1,21 @@
 "use client";
+import { useServiceAnimation } from "@/hooks/useServiceAnimation";
 import { cn } from "@/lib/utils";
 import { IService } from "@/services";
 import { RightLongArrowIcon } from "@/services/assets/svgs";
 import { servicesData } from "@/services/data";
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
 import SectionHeader from "../common/SectionHeader";
 import SectionSubHeader from "../common/SectionSubHeader";
 
+gsap.registerPlugin(ScrollTrigger);
+
 function ServicesHome() {
-  const [activeService, setActiveService] = useState(0);
-
-  const sectionRef = useRef<HTMLDivElement | null>(null);
-  const imageRef = useRef<HTMLDivElement | null>(null);
-
-  /* ---------------- INITIAL LOAD ---------------- */
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.fromTo(
-        ".services-sub, .services-title",
-        { autoAlpha: 0, y: 24, scale: 0.96 },
-        {
-          autoAlpha: 1,
-          y: 0,
-          scale: 1,
-          duration: 1,
-          stagger: 0.12,
-          ease: "expo.out",
-        },
-      );
-
-      gsap.fromTo(
-        ".service-item",
-        { autoAlpha: 0, x: -24, scale: 0.96 },
-        {
-          autoAlpha: 1,
-          x: 0,
-          scale: 1,
-          duration: 0.9,
-          stagger: 0.1,
-          delay: 0.2,
-          ease: "power3.out",
-        },
-      );
-
-      gsap.fromTo(
-        ".service-image",
-        { autoAlpha: 0, scale: 0.96 },
-        {
-          autoAlpha: 1,
-          scale: 1,
-          duration: 1.1,
-          delay: 0.4,
-          ease: "expo.out",
-        },
-      );
-    }, sectionRef);
-
-    return () => ctx.revert();
-  }, []);
-
-  /* ---------------- IMAGE SMOOTH CHANGE ---------------- */
-  useEffect(() => {
-    if (!imageRef.current) return;
-
-    gsap.fromTo(
-      imageRef.current,
-      {
-        autoAlpha: 0,
-        scale: 0.98,
-        y: 12,
-      },
-      {
-        autoAlpha: 1,
-        scale: 1,
-        y: 0,
-        duration: 0.6,
-        ease: "power3.out",
-        overwrite: "auto",
-      },
-    );
-  }, [activeService]);
+  const { sectionRef, imageRef, activeService, setActiveService } =
+    useServiceAnimation();
 
   return (
     <section
