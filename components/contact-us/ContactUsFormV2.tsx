@@ -104,8 +104,8 @@ function ContactUsFormV2() {
         className="block md:hidden w-full h-auto aspect-[360/474]"
       />
 
-      <div className="containerX bg-[#060023] md:bg-transparent pt-8 sm:pt-20 md:pt-24 pb-8 sm:pb-16 md:pb-20 lg:pb-24">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 justify-between">
+      <div className="containerX bg-[#060023] md:bg-transparent pb-10 md:pb-16 lg:pb-20 pt-10 md:pt-16 lg:pt-20">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 justify-between -mt-4 md:mt-0">
           <div className="lg:col-span-6"></div>
           <div className="w-full lg:col-span-5 lg:col-start-8">
             <h1 className="title-v2 text-white">Contact Us</h1>
@@ -142,7 +142,7 @@ function ContactUsFormV2() {
                 <BudgetTags query={query} />
               </div>
               <Button
-                className="w-full md:w-fit group min-w-[195px]"
+                className="w-full md:w-fit group min-w-[195px] mt-6"
                 type="submit"
                 disabled={isLoading}
               >

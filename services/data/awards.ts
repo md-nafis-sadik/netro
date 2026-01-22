@@ -7,6 +7,7 @@ export interface IAward {
   description: string;
   year: string;
   image?: StaticImageData;
+  imageClassName?: string;
 }
 
 export const awardsData: IAward[] = [
@@ -17,6 +18,7 @@ export const awardsData: IAward[] = [
       "Highlighted for outstanding ideas, compelling storytelling, and design work",
     year: "Jan - 2023",
     image: images.topClutch,
+    imageClassName: "aspect-[326/347]",
   },
   {
     icon: "prize",
@@ -24,6 +26,7 @@ export const awardsData: IAward[] = [
     description: "Recognized for innovation and creativity in web design",
     year: "Aug - 2022",
     image: images.raterGreat,
+    imageClassName: "aspect-[295/347]",
   },
   {
     icon: "award",
@@ -31,5 +34,6 @@ export const awardsData: IAward[] = [
     description: "Honored for cutting-edge UI/UX designs and brand experiences",
     year: "March - 2023",
     image: images.globalAward,
+    imageClassName: "aspect-[396/340]",
   },
 ];
