@@ -10,7 +10,7 @@ import ProjectsHome from "@/components/projects/ProjectsHome";
 import Revoluation from "@/components/services/Revoluation";
 import ServicesHome from "@/components/services/ServicesHome";
 import StatisticsHome from "@/components/statistics/StatisticsHome";
-import TeamV2 from "@/components/team/TeamV2";
+import TeamV2 from "@/components/team/Team";
 import Testimonial from "@/components/testimonial/Testimonial";
 import ProcessFollowed from "@/components/view/ProcessFollowed";
 import { Suspense } from "react";

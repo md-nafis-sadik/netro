@@ -1,6 +1,6 @@
 import { images } from "../assets";
 
-export const teamDataV2 = [
+export const teamData = [
   {
     name: "Asiq Mohammad",
     position: "Founder & CEO",
