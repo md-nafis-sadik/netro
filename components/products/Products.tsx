@@ -1,7 +1,6 @@
 "use client";
 
 import colors from "@/lib/colors";
-import { images } from "@/services";
 import { ArrowLongTailIcon } from "@/services/assets/svgs";
 import { productsData } from "@/services/data";
 import { routes } from "@/services/data/shared.data";
@@ -103,7 +102,6 @@ function Products() {
       data-bg-theme="dark"
       className="bg-darkPurplebg pb-8 pt-8 md:pt-16 lg:pt-20 overflow-hidden"
     >
-      
       <div className="container flex_center flex-col">
         <SectionSubHeader
           dark
@@ -128,11 +126,11 @@ function Products() {
                   height={500}
                   className="w-full xl:h-[492px] object-contain"
                 />
-                <Image
+                {/* <Image
                   src={images.dotBg}
                   alt="product background"
                   className="absolute inset-0 w-full h-full object-cover pointer-events-none"
-                />
+                /> */}
               </div>
 
               <div className="product-text font-inter w-full md:max-w-[481px]">

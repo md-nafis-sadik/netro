@@ -182,7 +182,6 @@ export { default as support3 } from "@/public/images/support-3.webp";
 export { default as asiqMohammedNew } from "@/public/images/team/asiq-mohammed-new.webp";
 export { default as termc } from "@/public/images/termc.webp";
 export { default as video } from "@/public/images/video.webp";
-export { default as contactImage } from "@/public/images/contact-image.webp";
 
 // icons
 export { default as android } from "@/public/images/icons/android.webp";

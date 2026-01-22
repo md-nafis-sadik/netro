@@ -6,7 +6,7 @@ import { teamData } from "@/services/data/team.data";
 import SectionHeader from "../common/SectionHeader";
 import TeamCard from "./TeamCard";
 
-const Team = () => {
+const TeamV2 = () => {
   return (
     <section className="flex_center flex-col pb-10 md:pb-16 lg:pb-20 pt-10 md:pt-16 lg:pt-20 select-none bg-darkPurplebg">
       <SectionSubHeader text="The force behind" blue />
@@ -47,4 +47,4 @@ const Team = () => {
   );
 };
 
-export default Team;
+export default TeamV2;
