@@ -137,6 +137,27 @@ export const BehanceIcon = ({
 
 // C
 
+export const ChevronBottomIcon = ({
+  className,
+  color = "#ffffff",
+  ...props
+}: IFSvgProps) => (
+  <svg
+    width="13"
+    height="8"
+    viewBox="0 0 13 8"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    className={className}
+    {...props}
+  >
+    <path
+      d="M6.26855 7.43066C5.94043 7.43066 5.63965 7.29622 5.36621 7.02734L0.307617 1.85254C0.207357 1.74772 0.129883 1.63379 0.0751953 1.51074C0.0250651 1.38314 0 1.24642 0 1.10059C0 0.895508 0.0478516 0.710938 0.143555 0.546875C0.243815 0.378255 0.375977 0.246094 0.540039 0.150391C0.704102 0.0501302 0.886393 0 1.08691 0C1.39225 0 1.66113 0.116211 1.89355 0.348633L6.54883 5.14062H5.99512L10.6367 0.348633C10.8691 0.116211 11.1357 0 11.4365 0C11.637 0 11.8193 0.0501302 11.9834 0.150391C12.1475 0.246094 12.2773 0.378255 12.373 0.546875C12.4733 0.710938 12.5234 0.895508 12.5234 1.10059C12.5234 1.39681 12.4209 1.64746 12.2158 1.85254L7.16406 7.02734C7.02734 7.16406 6.88607 7.26432 6.74023 7.32812C6.5944 7.39193 6.43717 7.42611 6.26855 7.43066Z"
+      fill={color}
+    />
+  </svg>
+);
+
 export const CodeIcon = ({
   className,
   color = "#212121",
@@ -343,6 +364,23 @@ export const CodeCanyonIcon = ({ className, color }: IFSvgProps) => (
 );
 
 // D
+
+export const DashboardIcon = ({ className, ...props }: IFSvgProps) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    className={className}
+    {...props}
+  >
+    <path
+      d="M4 8H8V4H4V8ZM10 20H14V16H10V20ZM4 20H8V16H4V20ZM4 14H8V10H4V14ZM10 14H14V10H10V14ZM16 4V8H20V4H16ZM10 8H14V4H10V8ZM16 14H20V10H16V14ZM16 20H20V16H16V20Z"
+      fill="white"
+    />
+  </svg>
+);
 
 export const DividerFadingDashes = ({ className, ...props }: IFSvgProps) => (
   <svg

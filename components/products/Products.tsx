@@ -99,7 +99,7 @@ function Products() {
     <section
       ref={sectionRef}
       data-bg-theme="dark"
-      className="bg-darkPurplebg pb-8 pt-8 md:pt-16 lg:pt-20"
+      className="bg-darkPurplebg pb-8 pt-8 md:pt-16 lg:pt-20 overflow-hidden"
     >
       <div className="container flex_center flex-col">
         <SectionSubHeader
