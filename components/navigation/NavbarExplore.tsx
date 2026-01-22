@@ -5,14 +5,14 @@ function NavbarExplore({ show }: { show?: boolean }) {
   return (
     <div
       className={cn(
-        "explore-bg flex_center gap-4 overflow-hidden duration-300",
+        "explore-bg flex_center gap-4 overflow-hidden duration-300 px-4",
         show ? "h-8" : "h-0",
       )}
     >
-      <p className="text-sm text-white leading-[120%]">
+      <p className="text-[10px] xs:text-xs sm:text-sm text-white leading-[120%]">
         Introducing our brand new portfolio section. Explore it today!
       </p>
-      <ArrowLongTailIcon className="text-white-100 size-6" />
+      <ArrowLongTailIcon className="hidden sm:block text-white-100 size-6" />
     </div>
   );
 }

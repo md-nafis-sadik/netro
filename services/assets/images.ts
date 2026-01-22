@@ -29,6 +29,7 @@ export { default as contact } from "@/public/images/contact.webp";
 export { default as contactv2 } from "@/public/images/contact_v2.webp";
 export { default as cylindricalHalfStar } from "@/public/images/cylindrical-half-star-crystal.webp";
 export { default as diamondCrystal } from "@/public/images/diamond-crystal.webp";
+export { default as dotBg } from "@/public/images/dot-bg.webp";
 export { default as doubleLCrystal } from "@/public/images/double-l-crystal.webp";
 export { default as download3d } from "@/public/images/download-3d.webp";
 export { default as download } from "@/public/images/download.webp";
@@ -157,27 +158,26 @@ export { default as about2 } from "@/public/images/about-2.webp";
 export { default as about3 } from "@/public/images/about-3.webp";
 export { default as about4 } from "@/public/images/about-4.webp";
 export { default as about5 } from "@/public/images/about-5.webp";
+export { default as awardsBgDown } from "@/public/images/award-pattern-down.webp";
+export { default as awardsBgUp } from "@/public/images/award-pattern-up.webp";
+export { default as contactBg } from "@/public/images/contact-bg.webp";
+export { default as footerBgPattern } from "@/public/images/footer-bg-pattern.webp";
 export { default as logo } from "@/public/images/logo.webp";
 export { default as yoowifiIcon } from "@/public/images/project/yoowifi-icon.webp";
 export { default as support1 } from "@/public/images/support-1.webp";
 export { default as support2 } from "@/public/images/support-2.webp";
 export { default as support3 } from "@/public/images/support-3.webp";
+export { default as asiqMohammedNew } from "@/public/images/team/asiq-mohammed-new.webp";
 export { default as termc } from "@/public/images/termc.webp";
 export { default as video } from "@/public/images/video.webp";
-export { default as footerBgPattern } from "@/public/images/footer-bg-pattern.webp";
-export { default as awardsBgUp } from "@/public/images/award-pattern-up.webp";
-export { default as awardsBgDown } from "@/public/images/award-pattern-down.webp";
-export { default as contactBg } from "@/public/images/contact-bg.webp";
 export { default as contactImage } from "@/public/images/contact-image.webp";
-export { default as asiqMohammedNew } from "@/public/images/team/asiq-mohammed-new.webp";
 
 // icons
-export { default as bannerIcon1 } from "@/public/images/icons/banner-icon-1.webp";
-export { default as bannerIcon2 } from "@/public/images/icons/banner-icon-2.webp";
-export { default as bannerIcon3 } from "@/public/images/icons/banner-icon-3.webp";
-export { default as bannerIcon4 } from "@/public/images/icons/banner-icon-4.webp";
-export { default as bannerIcon5 } from "@/public/images/icons/banner-icon-5.webp";
-export { default as bannerIcon6 } from "@/public/images/icons/banner-icon-6.webp";
+export { default as android } from "@/public/images/icons/android.webp";
+export { default as js } from "@/public/images/icons/js.webp";
+export { default as php } from "@/public/images/icons/php.webp";
+export { default as python } from "@/public/images/icons/python.webp";
+export { default as swift } from "@/public/images/icons/swift.webp";
 
 export { default as globalAward } from "@/public/images/awards/global-award-fall.webp";
 export { default as raterGreat } from "@/public/images/awards/rater-great.webp";
@@ -191,3 +191,6 @@ export { default as england } from "@/public/images/countries/england.webp";
 export { default as germany } from "@/public/images/countries/germany.webp";
 export { default as southAfrica } from "@/public/images/countries/south-africa.webp";
 export { default as usa } from "@/public/images/countries/usa.webp";
+
+// process image
+export { default as process1 } from "@/public/images/process-1.webp";

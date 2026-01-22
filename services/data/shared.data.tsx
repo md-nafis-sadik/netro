@@ -315,7 +315,7 @@ export const homeHeroSocialsData = [
       />
     ),
     link: tidycalMettingUrl,
-    text: "Book A Free Call",
+    text: "Book a call",
   },
   {
     icon: (

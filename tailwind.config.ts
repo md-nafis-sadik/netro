@@ -117,6 +117,9 @@ export default {
         orange: {
           500: "#FFA77C",
         },
+        green: {
+          500: "#7FFBAF",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",

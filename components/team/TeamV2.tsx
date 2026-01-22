@@ -2,8 +2,8 @@
 import SectionSubHeader from "@/components/common/SectionSubHeader";
 import ArrowLineupButton from "@/components/ui/arrow-lineup-button";
 import colors from "@/lib/colors";
-import SectionHeader from "../common/SectionHeader";
 import { teamDataV2 } from "@/services/data/team.data";
+import SectionHeader from "../common/SectionHeader";
 import TeamCardV2 from "./TeamCardV2";
 
 const TeamV2 = () => {

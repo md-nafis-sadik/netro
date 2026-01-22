@@ -24,6 +24,7 @@ const colors = {
     700: "#BB6C02",
     800: "#985308",
     900: "#7C440B",
+    950: "#FF9D00",
   },
   status: {
     success: "#2CC672",
