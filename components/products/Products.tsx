@@ -1,5 +1,6 @@
 "use client";
 
+import colors from "@/lib/colors";
 import { images } from "@/services";
 import { ArrowLongTailIcon } from "@/services/assets/svgs";
 import { productsData } from "@/services/data";
@@ -11,6 +12,7 @@ import Link from "next/link";
 import { useEffect, useRef } from "react";
 import SectionHeader from "../common/SectionHeader";
 import SectionSubHeader from "../common/SectionSubHeader";
+import ArrowLineupButton from "../ui/arrow-lineup-button";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -112,7 +114,7 @@ function Products() {
           OUR Products
         </SectionHeader>
 
-        <ul className="w-full flex flex-col gap-12 md:gap-6 lg:gap-3 mt-6 sm:mt-10 md:mt-16">
+        <ul className="w-full flex flex-col gap-12 md:gap-6 lg:gap-3 my-6 sm:my-10 md:my-16">
           {productsData.map((product) => (
             <li
               key={product.id}
@@ -155,6 +157,12 @@ function Products() {
             </li>
           ))}
         </ul>
+        <ArrowLineupButton
+          lineColor={colors.secondary[300]}
+          textClassName="text-white"
+        >
+          See More
+        </ArrowLineupButton>
       </div>
     </section>
   );

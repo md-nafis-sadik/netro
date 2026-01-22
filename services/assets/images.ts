@@ -161,6 +161,7 @@ export { default as about5 } from "@/public/images/about-5.webp";
 export { default as awardsBgDown } from "@/public/images/award-pattern-down.webp";
 export { default as awardsBgUp } from "@/public/images/award-pattern-up.webp";
 export { default as contactBg } from "@/public/images/contact-bg.webp";
+export { default as contactImage } from "@/public/images/contact-image.webp";
 export { default as footerBgPattern } from "@/public/images/footer-bg-pattern.webp";
 export { default as logo } from "@/public/images/logo.webp";
 export { default as yoowifiIcon } from "@/public/images/project/yoowifi-icon.webp";
