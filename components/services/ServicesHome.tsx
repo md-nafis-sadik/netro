@@ -4,14 +4,10 @@ import { cn } from "@/lib/utils";
 import { IService } from "@/services";
 import { RightLongArrowIcon } from "@/services/assets/svgs";
 import { servicesData } from "@/services/data";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
 import Link from "next/link";
 import SectionHeader from "../common/SectionHeader";
 import SectionSubHeader from "../common/SectionSubHeader";
-
-gsap.registerPlugin(ScrollTrigger);
 
 function ServicesHome() {
   const { sectionRef, imageRef, activeService, setActiveService } =

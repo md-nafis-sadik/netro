@@ -13,7 +13,11 @@ import StatisticsHome from "@/components/statistics/StatisticsHome";
 import Team from "@/components/team/Team";
 import Testimonial from "@/components/testimonial/Testimonial";
 import ProcessFollowed from "@/components/view/ProcessFollowed";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Suspense } from "react";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const HomePage = () => {
   return (
