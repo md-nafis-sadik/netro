@@ -8,6 +8,7 @@ import Autoplay from "embla-carousel-autoplay";
 import useEmblaCarousel from "embla-carousel-react";
 import SectionHeader from "../common/SectionHeader";
 import TeamCard from "./TeamCard";
+import { useAppearanceAnimation } from "@/hooks/useAppearanceAnimation";
 
 const Team = () => {
   const autoplayPlugin = useRef(Autoplay({ delay: 3000 }));
@@ -15,8 +16,20 @@ const Team = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel(options, [
     autoplayPlugin.current,
   ]);
+  const sectionRef = useAppearanceAnimation(".animate-item2", {
+    x: 100,
+    y: 0,
+    opacity: 0,
+    duration: 1,
+    stagger: 0.2,
+    ease: "back.out(1.7)",
+    delay: 0.1,
+  });
   return (
-    <section className="flex_center flex-col pb-8 md:pb-16 lg:pb-20 pt-10 md:pt-16 lg:pt-20 select-none bg-darkPurplebg">
+    <section
+      className="flex_center flex-col pb-8 md:pb-16 lg:pb-20 pt-10 md:pt-16 lg:pt-20 select-none bg-darkPurplebg"
+      ref={sectionRef}
+    >
       <SectionSubHeader text="The force behind" blue />
 
       <div>
@@ -39,7 +52,7 @@ const Team = () => {
             "
           >
             {teamData.map(({ image, name, position }, index) => (
-              <div key={index} className="team-card">
+              <div key={index} className="team-card animate-item2">
                 <TeamCard image={image} name={name} position={position} />
               </div>
             ))}
@@ -51,7 +64,10 @@ const Team = () => {
         <div className="w-full" ref={emblaRef}>
           <div className="w-full flex">
             {teamData.map(({ image, name, position }, index) => (
-              <div key={index} className="min-w-[48%] lg:min-w-0 mx-2">
+              <div
+                key={index}
+                className="min-w-[48%] lg:min-w-0 mx-2 animate-item2"
+              >
                 <TeamCard image={image} name={name} position={position} />
               </div>
             ))}
