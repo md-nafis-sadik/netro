@@ -1,10 +1,54 @@
+"use client";
+
 import { images } from "@/services";
 import { AppLogoIcon } from "@/services/assets/svgs";
 import { countries } from "@/services/data/countries";
+import { useGSAP } from "@gsap/react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
+import { useRef } from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 
 function IntroHome() {
+  const card1Ref = useRef<HTMLDivElement>(null);
+  const card2Ref = useRef<HTMLDivElement>(null);
+  const card3Ref = useRef<HTMLDivElement>(null);
+  const card4Ref = useRef<HTMLDivElement>(null);
+  const card5Ref = useRef<HTMLDivElement>(null);
+
+  useGSAP(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    const cards = [card1Ref, card2Ref, card3Ref, card4Ref, card5Ref];
+
+    cards.forEach((cardRef, index) => {
+      if (cardRef.current) {
+        gsap.fromTo(
+          cardRef.current,
+          {
+            y: 100,
+            opacity: 0,
+            scale: 0.95,
+          },
+          {
+            y: 0,
+            opacity: 1,
+            scale: 1,
+            duration: 0.8,
+            delay: index * 0.15,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: cardRef.current,
+              start: "top 85%",
+              toggleActions: "play none none none",
+            },
+          },
+        );
+      }
+    });
+  }, []);
+
   return (
     <section
       data-bg-theme="light"
@@ -42,7 +86,10 @@ function IntroHome() {
         </div>
         <div className="grid grid-cols-2 lg:grid-cols-10 grid-rows-5 gap-4 mt-11">
           {/* Projects Delivered */}
-          <div className="row-span-2 lg:col-span-3 lg:row-span-5 flex flex-col justify-between gap-14 lg:gap-6 p-3 sm:p-4 md:p-6 relative">
+          <div
+            ref={card1Ref}
+            className="row-span-2 lg:col-span-3 lg:row-span-5 flex flex-col justify-between gap-14 lg:gap-6 p-3 sm:p-4 md:p-6 relative"
+          >
             <h3 className="text-4xl md:text-5xl lg:text-[4rem] leading-[120%] text-black-800 font-bold relative z-50">
               70+
             </h3>
@@ -65,7 +112,10 @@ function IntroHome() {
             />
           </div>
           {/* Support 24/7, Guaranteed! */}
-          <div className="col-span-2 lg:col-span-4 lg:col-start-4 flex items-center justify-between gap-3 border border-black-50 px-3 sm:px-4 md:px-6 py-3 sm:py-5">
+          <div
+            ref={card2Ref}
+            className="col-span-2 lg:col-span-4 lg:col-start-4 flex items-center justify-between gap-3 border border-black-50 px-3 sm:px-4 md:px-6 py-3 sm:py-5"
+          >
             <div>
               <p className="text-xs sm:text-base md:text-lg text-black-800 font-semibold leading-[140%]">
                 Support 24/7, Guaranteed!
@@ -91,7 +141,10 @@ function IntroHome() {
             </div>
           </div>
           {/* Our Clients in 19+ Countries */}
-          <div className="row-span-2 lg:row-span-1 lg:col-span-7 col-start-2 lg:col-start-4 lg:row-start-5 flex flex-col lg:flex-row items-center justify-between gap-14 lg:gap-6 border border-black-50 px-3 sm:px-4 md:px-6 py-3 sm:py-5">
+          <div
+            ref={card3Ref}
+            className="row-span-2 lg:row-span-1 lg:col-span-7 col-start-2 lg:col-start-4 lg:row-start-5 flex flex-col lg:flex-row items-center justify-between gap-14 lg:gap-6 border border-black-50 px-3 sm:px-4 md:px-6 py-3 sm:py-5"
+          >
             <div>
               <p className="text-xs sm:text-base md:text-lg text-black-800 font-semibold leading-[140%]">
                 Our Clients in 19+ Countries
@@ -114,7 +167,10 @@ function IntroHome() {
             </div>
           </div>
           {/* Client Satisfaction */}
-          <div className="row-span-2 row-start-4 lg:col-span-4 lg:row-span-3 col-start-1 lg:col-start-4 lg:row-start-2 flex flex-col justify-between gap-14 lg:gap-6  px-3 sm:px-4 md:px-6 py-3 sm:py-5 relative">
+          <div
+            ref={card4Ref}
+            className="row-span-2 row-start-4 lg:col-span-4 lg:row-span-3 col-start-1 lg:col-start-4 lg:row-start-2 flex flex-col justify-between gap-14 lg:gap-6  px-3 sm:px-4 md:px-6 py-3 sm:py-5 relative"
+          >
             <h3 className="text-4xl md:text-5xl lg:text-[4rem] leading-[120%] text-black-800 font-bold relative z-50">
               99%
             </h3>
@@ -136,7 +192,10 @@ function IntroHome() {
             />
           </div>
           {/* Positive Outcomes */}
-          <div className="row-span-2 col-start-2 lg:col-span-3 lg:row-span-4 lg:col-start-8 row-start-1 flex flex-col justify-between gap-14 lg:gap-6 p-3 sm:p-4 md:p-6 relative">
+          <div
+            ref={card5Ref}
+            className="row-span-2 col-start-2 lg:col-span-3 lg:row-span-4 lg:col-start-8 row-start-1 flex flex-col justify-between gap-14 lg:gap-6 p-3 sm:p-4 md:p-6 relative"
+          >
             <h3 className="text-4xl md:text-5xl lg:text-[4rem] leading-[120%] text-black-800 font-bold relative z-50">
               35X
             </h3>
