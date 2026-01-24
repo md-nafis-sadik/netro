@@ -11,6 +11,8 @@ import { useRef } from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 
 function IntroHome() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const introTextRef = useRef<HTMLDivElement>(null);
   const card1Ref = useRef<HTMLDivElement>(null);
   const card2Ref = useRef<HTMLDivElement>(null);
   const card3Ref = useRef<HTMLDivElement>(null);
@@ -19,6 +21,67 @@ function IntroHome() {
 
   useGSAP(() => {
     gsap.registerPlugin(ScrollTrigger);
+
+    // Pin section and animate text color letter by letter
+    if (sectionRef.current && introTextRef.current) {
+      // Helper function to recursively wrap text nodes in spans
+      const wrapTextNodes = (element: HTMLElement) => {
+        const childNodes = Array.from(element.childNodes);
+        const spans: HTMLSpanElement[] = [];
+
+        childNodes.forEach((node) => {
+          if (node.nodeType === Node.TEXT_NODE && node.textContent?.trim()) {
+            const text = node.textContent;
+            const fragment = document.createDocumentFragment();
+
+            text.split("").forEach((char) => {
+              const span = document.createElement("span");
+              span.textContent = char;
+              span.style.color = "#888";
+              span.className = "char-animate";
+              fragment.appendChild(span);
+              spans.push(span);
+            });
+
+            node.parentNode?.replaceChild(fragment, node);
+          } else if (
+            node.nodeType === Node.ELEMENT_NODE &&
+            node.nodeName !== "IMG"
+          ) {
+            spans.push(...wrapTextNodes(node as HTMLElement));
+          }
+        });
+
+        return spans;
+      };
+
+      const allSpans = wrapTextNodes(introTextRef.current);
+      console.log("Total characters to animate:", allSpans.length);
+
+      if (allSpans.length > 0) {
+        // Create ScrollTrigger for pinning
+        ScrollTrigger.create({
+          trigger: sectionRef.current,
+          start: "top 10%",
+          end: `+=${Math.max(allSpans.length * 10, 2000)}`,
+          pin: true,
+          pinSpacing: true,
+          scrub: 1,
+          onUpdate: (self) => {
+            const progress = self.progress;
+            const charsToColor = Math.floor(progress * allSpans.length);
+
+            allSpans.forEach((span, index) => {
+              if (index < charsToColor) {
+                gsap.set(span, { color: "#000" });
+              } else {
+                gsap.set(span, { color: "#888" });
+              }
+            });
+          },
+        });
+      }
+    }
 
     const cards = [card1Ref, card2Ref, card3Ref, card4Ref, card5Ref];
 
@@ -51,13 +114,17 @@ function IntroHome() {
 
   return (
     <section
+      ref={sectionRef}
       data-bg-theme="light"
       className="py-10 md:py-15 font-inter overflow-hidden"
     >
       <div className="container">
         <div className="flex flex-col md:flex-row gap-4 sm:gap-8 md:gap-12 items-center md:items-start justify-between">
           <AppLogoIcon className="w-28 shrink-0" />
-          <div className="text-lg sm:text-xl md:text-2xl 2xl:text-4xl font-normal text-black-800 align-middle leading-[110%] max-w-[994px] ml-auto text-center md:text-left">
+          <div
+            ref={introTextRef}
+            className="text-lg sm:text-xl md:text-2xl 2xl:text-4xl font-normal align-middle leading-[110%] max-w-[994px] ml-auto text-center md:text-left"
+          >
             We are{" "}
             <Image
               src={images.logo}
