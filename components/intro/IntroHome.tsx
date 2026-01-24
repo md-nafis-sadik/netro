@@ -6,6 +6,7 @@ import { AppLogoIcon } from "@/services/assets/svgs";
 import { homeIntroData } from "@/services/data";
 import { countries } from "@/services/data/countries";
 import Image from "next/image";
+import NumberCounter from "../animations/NumberCounter";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 
 function IntroHome() {
@@ -18,6 +19,7 @@ function IntroHome() {
     card4Ref,
     card5Ref,
     aboutRef,
+    logoIconRef,
   } = useIntroAnimation();
 
   return (
@@ -35,30 +37,14 @@ function IntroHome() {
           >
             We are{" "}
             <Image
+              ref={logoIconRef}
               src={images.logo}
-              className="size-5 sm:size-7 xl:size-12 object-contain inline-block"
+              className="size-5 sm:size-7 xl:size-12 object-contain inline-block logo-icon"
               alt="logo icon"
               title="logo icon"
             />
             Netro Systems fosters innovation, collaboration, diversity, and
             growth, creating{" "}
-            {/* <div className="inline-flex items-center -space-x-3 xl:-mt-4 translate-y-1 xl:translate-y-3 relative">
-              <Image
-                ref={currentImageRef}
-                src={homeIntroData[currentIndex]}
-                className="size-5 sm:size-7 xl:size-12 object-contain shrink-0 relative z-10"
-                alt="logo icon"
-                title="logo icon"
-              />
-
-              <Image
-                ref={nextImageRef}
-                src={homeIntroData[nextIndex]}
-                className="size-5 sm:size-7 xl:size-12 object-contain shrink-0 drop-shadow-intro relative z-20"
-                alt="logo icon"
-                title="logo icon"
-              />
-            </div> */}
             <Avatar
               ref={aboutRef}
               className="inline-flex items-center xl:-mt-4 translate-y-1 xl:translate-y-3 relative rounded-none size-5 sm:size-7 xl:size-12"
@@ -82,9 +68,14 @@ function IntroHome() {
             ref={card1Ref}
             className="row-span-2 lg:col-span-3 lg:row-span-5 flex flex-col justify-between gap-14 lg:gap-6 p-3 sm:p-4 md:p-6 relative"
           >
-            <h3 className="text-4xl md:text-5xl lg:text-[4rem] leading-[120%] text-black-800 font-bold relative z-50">
-              70+
-            </h3>
+            <p className="text-4xl md:text-5xl lg:text-[4rem] leading-[120%] text-black-800 font-bold relative z-50">
+              <NumberCounter
+                value={70}
+                duration={5}
+                className="text-4xl md:text-5xl lg:text-[4rem] leading-[120%] text-black-800 font-bold relative z-50"
+              />
+              <span>+</span>
+            </p>
             <div className="relative z-50">
               <p className="text-xs sm:text-base md:text-lg text-black-800 font-semibold leading-[140%]">
                 Projects Delivered
@@ -163,9 +154,14 @@ function IntroHome() {
             ref={card4Ref}
             className="row-span-2 row-start-4 lg:col-span-4 lg:row-span-3 col-start-1 lg:col-start-4 lg:row-start-2 flex flex-col justify-between gap-14 lg:gap-6  px-3 sm:px-4 md:px-6 py-3 sm:py-5 relative"
           >
-            <h3 className="text-4xl md:text-5xl lg:text-[4rem] leading-[120%] text-black-800 font-bold relative z-50">
-              99%
-            </h3>
+            <p className="text-4xl md:text-5xl lg:text-[4rem] leading-[120%] text-black-800 font-bold relative z-50">
+              <NumberCounter
+                value={99}
+                duration={5}
+                className="text-4xl md:text-5xl lg:text-[4rem] leading-[120%] text-black-800 font-bold relative z-50"
+              />
+              <span>%</span>
+            </p>
             <div className="relative z-50">
               <p className="text-xs sm:text-base md:text-lg text-black-800 font-semibold leading-[140%]">
                 Client Satisfaction
@@ -188,9 +184,14 @@ function IntroHome() {
             ref={card5Ref}
             className="row-span-2 col-start-2 lg:col-span-3 lg:row-span-4 lg:col-start-8 row-start-1 flex flex-col justify-between gap-14 lg:gap-6 p-3 sm:p-4 md:p-6 relative"
           >
-            <h3 className="text-4xl md:text-5xl lg:text-[4rem] leading-[120%] text-black-800 font-bold relative z-50">
-              35X
-            </h3>
+            <p className="text-4xl md:text-5xl lg:text-[4rem] leading-[120%] text-black-800 font-bold relative z-50">
+              <NumberCounter
+                value={35}
+                duration={5}
+                className="text-4xl md:text-5xl lg:text-[4rem] leading-[120%] text-black-800 font-bold relative z-50"
+              />
+              <span>X</span>
+            </p>
             <div className="relative z-50">
               <p className="text-xs sm:text-base md:text-lg text-black-800 font-semibold leading-[140%]">
                 Positive Outcomes

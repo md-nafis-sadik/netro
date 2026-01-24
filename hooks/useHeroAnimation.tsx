@@ -1,5 +1,6 @@
+import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 
 export const useHeroAnimation = () => {
   const avatarRef = useRef<HTMLDivElement | null>(null);
@@ -7,7 +8,7 @@ export const useHeroAnimation = () => {
   const descriptionRef = useRef<HTMLParagraphElement | null>(null);
 
   /* ---------- TITLE ANIMATION ---------- */
-  useEffect(() => {
+  useGSAP(() => {
     if (!titleRef.current) return;
 
     const titleElements = titleRef.current.querySelectorAll(".title-line");
@@ -31,7 +32,7 @@ export const useHeroAnimation = () => {
   }, []);
 
   /* ---------- DESCRIPTION ANIMATION ---------- */
-  useEffect(() => {
+  useGSAP(() => {
     if (!descriptionRef.current) return;
 
     gsap.set(descriptionRef.current, {
@@ -48,62 +49,88 @@ export const useHeroAnimation = () => {
     });
   }, []);
 
-  /* ---------- AVATAR AUTO CYCLE ---------- */
-  useEffect(() => {
+  /* ---------- AVATAR/CAROUSEL ANIMATION ---------- */
+  useGSAP(() => {
     if (!avatarRef.current) return;
 
-    const avatars = avatarRef.current.querySelectorAll(".hero-avatar");
+    const images = avatarRef.current.querySelectorAll(".hero-avatar");
+    if (images.length === 0) return;
 
-    if (avatars.length === 0) return;
+    const totalImages = images.length;
+    const switchInterval = 3; // Duration to show each image (seconds)
+    const animationDuration = 0.6; // Duration of the animation itself
+    const masterTimeline = gsap.timeline({ repeat: -1 }); // -1 means infinite loop
 
-    // Set all avatars to invisible initially except the first one
-    gsap.set(avatars, { autoAlpha: 0 });
-    gsap.set(avatars[0], { autoAlpha: 1, x: 0, y: 0, scale: 1 });
+    const buildCarouselSequence = () => {
+      for (let i = 0; i < totalImages; i++) {
+        const currentIdx = i;
+        const nextIdx = (i + 1) % totalImages;
+        const currentImage = images[currentIdx] as HTMLElement;
+        const nextImage = images[nextIdx] as HTMLElement;
+        const delayBeforeNewImage = 0.15;
 
-    const tl = gsap.timeline({ repeat: -1 });
+        // Set up z-index for this animation cycle
+        masterTimeline.set(
+          nextImage,
+          { zIndex: 10 },
+          currentIdx === 0 ? 1.5 : undefined, // First animation starts after title animations
+        );
+        masterTimeline.set(currentImage, { zIndex: 5 }, "<");
 
-    avatars.forEach((avatar, i) => {
-      const nextAvatar = avatars[(i + 1) % avatars.length];
+        // Current image shrinks
+        masterTimeline.to(
+          currentImage,
+          {
+            scale: 0,
+            opacity: 0,
+            duration: animationDuration,
+            ease: "power2.in",
+          },
+          currentIdx === 0 ? 1.5 : undefined,
+        );
 
-      // Add delay only for display time, not on repeat
-      if (i === 0) {
-        tl.to({}, { duration: 2 }); // Initial delay for first avatar
-      } else {
-        tl.to({}, { duration: 2 }); // Delay between transitions
+        // Next image appears and scales up (starts before current finishes)
+        masterTimeline.fromTo(
+          nextImage,
+          {
+            opacity: 0,
+            scale: 0,
+            x: 40,
+          },
+          {
+            opacity: 1,
+            scale: 1,
+            x: 0,
+            duration: animationDuration,
+            ease: "power2.out",
+          },
+          currentIdx === 0
+            ? `1.5+${delayBeforeNewImage}`
+            : `-=${animationDuration - delayBeforeNewImage}`,
+        );
+
+        // Hold the next image visible for switchInterval duration
+        masterTimeline.to(nextImage, { opacity: 1 }, `+=${switchInterval}`);
       }
+    };
 
-      // Animate current avatar going down and fading out
-      tl.to(avatar, {
-        y: 50,
-        autoAlpha: 0,
-        scale: 0.8,
-        duration: 0.8,
-        ease: "power2.in",
-      });
-
-      // Animate next avatar coming from right and popping in
-      tl.fromTo(
-        nextAvatar,
-        {
-          x: 50,
-          y: -20,
-          autoAlpha: 0,
-          scale: 0.7,
-        },
-        {
-          x: 0,
-          y: 0,
-          autoAlpha: 1,
-          scale: 1,
-          duration: 0.8,
-          ease: "back.out(1.7)",
-        },
-        "-=0.1",
-      );
+    // Set initial state - first image visible
+    gsap.set(images, {
+      opacity: 0,
+      scale: 0.3,
+      x: 0,
     });
 
+    gsap.set(images[0], {
+      opacity: 1,
+      scale: 1,
+      zIndex: 5,
+    });
+
+    buildCarouselSequence();
+
     return () => {
-      tl.kill();
+      masterTimeline.kill();
     };
   }, []);
 

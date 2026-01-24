@@ -12,6 +12,7 @@ export const useIntroAnimation = () => {
   const card4Ref = useRef<HTMLDivElement>(null);
   const card5Ref = useRef<HTMLDivElement>(null);
   const aboutRef = useRef<HTMLDivElement | null>(null);
+  const logoIconRef = useRef<HTMLImageElement>(null);
 
   useGSAP(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -103,56 +104,118 @@ export const useIntroAnimation = () => {
 
     // Avatar cycling animation ============
     if (!aboutRef.current) return;
-    const avatars = aboutRef.current.querySelectorAll(".intro-about");
-    if (avatars.length === 0) return;
-    // Set all avatars to invisible initially except the first one
-    gsap.set(avatars, { autoAlpha: 0 });
-    gsap.set(avatars[0], { autoAlpha: 1, x: 0, y: 0, scale: 1 });
 
-    const tl = gsap.timeline({ repeat: -1 });
+    const images = aboutRef.current.querySelectorAll(".intro-about");
+    if (images.length === 0) return;
 
-    avatars.forEach((avatar, i) => {
-      const nextAvatar = avatars[(i + 1) % avatars.length];
+    const totalImages = images.length;
+    const switchInterval = 3; // Duration to show each image (seconds)
+    const animationDuration = 0.6; // Duration of the animation itself
+    const masterTimeline = gsap.timeline({ repeat: -1 }); // -1 means infinite loop
 
-      // Add delay only for display time, not on repeat
-      if (i === 0) {
-        tl.to({}, { duration: 2 }); // Initial delay for first avatar
-      } else {
-        tl.to({}, { duration: 2 }); // Delay between transitions
+    const buildCarouselSequence = () => {
+      for (let i = 0; i < totalImages; i++) {
+        const currentIdx = i;
+        const nextIdx = (i + 1) % totalImages;
+        const currentImage = images[currentIdx] as HTMLElement;
+        const nextImage = images[nextIdx] as HTMLElement;
+        const delayBeforeNewImage = 0.15;
+
+        // Set up z-index for this animation cycle
+        masterTimeline.set(
+          nextImage,
+          { zIndex: 10 },
+          currentIdx === 0 ? 1.5 : undefined, // First animation starts after title animations
+        );
+        masterTimeline.set(currentImage, { zIndex: 5 }, "<");
+
+        // Current image shrinks
+        masterTimeline.to(
+          currentImage,
+          {
+            scale: 0,
+            opacity: 0,
+            duration: animationDuration,
+            ease: "power2.in",
+          },
+          currentIdx === 0 ? 1.5 : undefined,
+        );
+
+        // Next image appears and scales up (starts before current finishes)
+        masterTimeline.fromTo(
+          nextImage,
+          {
+            opacity: 0,
+            scale: 0,
+            x: 40,
+          },
+          {
+            opacity: 1,
+            scale: 1,
+            x: 0,
+            duration: animationDuration,
+            ease: "power2.out",
+          },
+          currentIdx === 0
+            ? `1.5+${delayBeforeNewImage}`
+            : `-=${animationDuration - delayBeforeNewImage}`,
+        );
+
+        // Hold the next image visible for switchInterval duration
+        masterTimeline.to(nextImage, { opacity: 1 }, `+=${switchInterval}`);
       }
+    };
 
-      // Animate current avatar going down and fading out
-      tl.to(avatar, {
-        y: 50,
-        autoAlpha: 0,
-        scale: 0.8,
-        duration: 0.8,
-        ease: "power2.in",
-      });
-
-      // Animate next avatar coming from right and popping in
-      tl.fromTo(
-        nextAvatar,
-        {
-          x: 50,
-          y: -20,
-          autoAlpha: 0,
-          scale: 0.7,
-        },
-        {
-          x: 0,
-          y: 0,
-          autoAlpha: 1,
-          scale: 1,
-          duration: 0.8,
-          ease: "back.out(1.7)",
-        },
-        "-=0.1",
-      );
+    // Set initial state - first image visible
+    gsap.set(images, {
+      opacity: 0,
+      scale: 0.3,
+      x: 0,
     });
 
+    gsap.set(images[0], {
+      opacity: 1,
+      scale: 1,
+      zIndex: 5,
+    });
+
+    buildCarouselSequence();
+
+    // Logo icon animation
+    if (logoIconRef.current) {
+      gsap.fromTo(
+        logoIconRef.current,
+        {
+          opacity: 0,
+          scale: 0,
+          rotation: -180,
+        },
+        {
+          opacity: 1,
+          scale: 1,
+          rotation: 0,
+          duration: 1,
+          ease: "back.out",
+          scrollTrigger: {
+            trigger: logoIconRef.current,
+            start: "top 85%",
+            toggleActions: "play none none none",
+          },
+        },
+      );
+
+      // Continuous gentle rotation on hover
+      logoIconRef.current.addEventListener("mouseenter", () => {
+        gsap.to(logoIconRef.current, {
+          rotation: 360,
+          duration: 0.8,
+          ease: "power2.inOut",
+        });
+      });
+    }
+
     return () => {
-      tl.kill();
+      masterTimeline.kill();
     };
   }, []);
 
@@ -165,5 +228,6 @@ export const useIntroAnimation = () => {
     card4Ref,
     card5Ref,
     aboutRef,
+    logoIconRef,
   };
 };
