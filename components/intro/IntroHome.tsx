@@ -1,133 +1,24 @@
 "use client";
 
+import { useIntroAnimation } from "@/hooks/useIntroAnimation";
 import { images } from "@/services";
 import { AppLogoIcon } from "@/services/assets/svgs";
+import { homeIntroData } from "@/services/data";
 import { countries } from "@/services/data/countries";
-import { useGSAP } from "@gsap/react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 
 function IntroHome() {
-  const sectionRef = useRef<HTMLElement>(null);
-  const introTextRef = useRef<HTMLDivElement>(null);
-  const card1Ref = useRef<HTMLDivElement>(null);
-  const card2Ref = useRef<HTMLDivElement>(null);
-  const card3Ref = useRef<HTMLDivElement>(null);
-  const card4Ref = useRef<HTMLDivElement>(null);
-  const card5Ref = useRef<HTMLDivElement>(null);
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [nextIndex, setNextIndex] = useState(1);
-  const homeIntroData = [
-    images.about1,
-    images.about2,
-    images.about3,
-    images.about4,
-  ]; // Your 4 images
-
-  useGSAP(() => {
-    gsap.registerPlugin(ScrollTrigger);
-
-    // Pin section and animate text color letter by letter
-    if (sectionRef.current && introTextRef.current) {
-      // Helper function to recursively wrap text nodes in spans
-      const wrapTextNodes = (element: HTMLElement) => {
-        const childNodes = Array.from(element.childNodes);
-        const spans: HTMLSpanElement[] = [];
-
-        childNodes.forEach((node) => {
-          if (node.nodeType === Node.TEXT_NODE && node.textContent?.trim()) {
-            const text = node.textContent;
-            const fragment = document.createDocumentFragment();
-
-            text.split("").forEach((char) => {
-              const span = document.createElement("span");
-              span.textContent = char;
-              span.style.color = "#888";
-              span.className = "char-animate";
-              fragment.appendChild(span);
-              spans.push(span);
-            });
-
-            node.parentNode?.replaceChild(fragment, node);
-          } else if (
-            node.nodeType === Node.ELEMENT_NODE &&
-            node.nodeName !== "IMG"
-          ) {
-            spans.push(...wrapTextNodes(node as HTMLElement));
-          }
-        });
-
-        return spans;
-      };
-
-      const allSpans = wrapTextNodes(introTextRef.current);
-
-      if (allSpans.length > 0) {
-        // Create ScrollTrigger for pinning
-        ScrollTrigger.create({
-          trigger: sectionRef.current,
-          start: "top 10%",
-          end: `+=${Math.max(allSpans.length * 10, 2000)}`,
-          pin: true,
-          pinSpacing: true,
-          scrub: 1,
-          onUpdate: (self) => {
-            const progress = self.progress;
-            const charsToColor = Math.floor(progress * allSpans.length);
-
-            allSpans.forEach((span, index) => {
-              if (index < charsToColor) {
-                gsap.set(span, { color: "#000" });
-              } else {
-                gsap.set(span, { color: "#888" });
-              }
-            });
-          },
-        });
-      }
-    }
-
-    const cards = [card1Ref, card2Ref, card3Ref, card4Ref, card5Ref];
-
-    cards.forEach((cardRef, index) => {
-      if (cardRef.current) {
-        gsap.fromTo(
-          cardRef.current,
-          {
-            y: 100,
-            opacity: 0,
-            scale: 0.95,
-          },
-          {
-            y: 0,
-            opacity: 1,
-            scale: 1,
-            duration: 0.8,
-            delay: index * 0.15,
-            ease: "power2.out",
-            scrollTrigger: {
-              trigger: cardRef.current,
-              start: "top 85%",
-              toggleActions: "play none none none",
-            },
-          },
-        );
-      }
-    });
-  }, []);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      //  set current index to next index and next index to (next index + 1) % length
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % homeIntroData.length);
-      setNextIndex((prevIndex) => (prevIndex + 1) % homeIntroData.length);
-    }, 2000); // Change images every 2 seconds
-
-    return () => clearInterval(interval);
-  }, [homeIntroData.length]);
+  const {
+    sectionRef,
+    introTextRef,
+    card1Ref,
+    card2Ref,
+    card3Ref,
+    card4Ref,
+    card5Ref,
+    aboutRef,
+  } = useIntroAnimation();
 
   return (
     <section
@@ -151,22 +42,38 @@ function IntroHome() {
             />
             Netro Systems fosters innovation, collaboration, diversity, and
             growth, creating{" "}
-            <div className="inline-flex items-center -space-x-3 xl:-mt-4 translate-y-1 xl:translate-y-3">
+            {/* <div className="inline-flex items-center -space-x-3 xl:-mt-4 translate-y-1 xl:translate-y-3 relative">
               <Image
+                ref={currentImageRef}
                 src={homeIntroData[currentIndex]}
-                className="size-5 sm:size-7 xl:size-12 object-contain shrink-0"
+                className="size-5 sm:size-7 xl:size-12 object-contain shrink-0 relative z-10"
                 alt="logo icon"
                 title="logo icon"
               />
 
               <Image
+                ref={nextImageRef}
                 src={homeIntroData[nextIndex]}
-                className="size-5 sm:size-7 xl:size-12 object-contain shrink-0 drop-shadow-intro"
+                className="size-5 sm:size-7 xl:size-12 object-contain shrink-0 drop-shadow-intro relative z-20"
                 alt="logo icon"
                 title="logo icon"
               />
-            </div>
-            impactful software solutionsin a vibrant, inclusive culture.
+            </div> */}
+            <Avatar
+              ref={aboutRef}
+              className="inline-flex items-center xl:-mt-4 translate-y-1 xl:translate-y-3 relative rounded-none size-5 sm:size-7 xl:size-12"
+            >
+              {homeIntroData.map((item) => (
+                <Image
+                  key={item.id}
+                  src={item.image.src}
+                  alt="tech icon"
+                  className="absolute inset-0 object-contain opacity-0 intro-about"
+                  fill
+                />
+              ))}
+            </Avatar>
+            impactful software solutions in a vibrant, inclusive culture.
           </div>
         </div>
         <div className="grid grid-cols-2 lg:grid-cols-10 grid-rows-5 gap-4 mt-11">
