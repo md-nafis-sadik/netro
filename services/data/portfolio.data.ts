@@ -1,3 +1,4 @@
+import ProjectDescription from "@/components/projects/ProjectDescription";
 import { images } from "../assets";
 
 // Portfolio Categories
@@ -14,41 +15,107 @@ export const portfolios = [
   {
     _id: "simigo-esim-branding-and-digital-marketing",
     title: "Simigo - A Vibrant eSIM Brand",
-    subtitle: "The brand focused on youth centric packages, connectivity & flexibility.",
+    subtitle:
+      "The brand focused on youth centric packages, connectivity & flexibility.",
     metaTitle: "Simigo - A Vibrant eSIM Brand | Netro Portfolio",
     metaDescription:
       "We have designed architecture of the brand that brings youthfulness and energy in your roaming experience.",
     category: "Branding",
     clientOrigin: "United States",
-    timeline: "3 Months",
+    timeline: "4 Months",
     liveUrl: "https://www.simigo.com/",
-    backgroundImage: images.simgo,
+    backgroundImageUrl: "/images/project/simigo-bg.webp",
     topImage: images.simigoTop,
-    backgroundColor: "linear-gradient(180deg, #86C9FF 0%, #563EF0 100%)",
-    thumbnail: images.simgo,
-    featuredImage: images.simgo,
+    backgroundColor: "lightgray",
+    projectDescription:
+      "Simigo is a smart eSIM app that lets you stay connected without a physical SIM. Instantly buy, activate, and manage affordable data plans",
+    descriptionImages: [
+      images.simigoLaptop,
+      images.simigoPhone,
+      images.simigoShopping,
+    ],
+    detailPoints: [
+      {
+        title: "Client origin",
+        points: ["United States"],
+      },
+      {
+        title: "Industry",
+        points: ["Telecom", "eSIM"],
+      },
+      {
+        title: "Tech Stack",
+        points: ["Node.Js", "React.Js", "Flutter"],
+      },
+      {
+        title: "Platforms",
+        points: ["PWA", "Android App", "iOS App"],
+      },
+      {
+        title: "Timeline",
+        points: ["4 Months"],
+      },
+    ],
+    problemIdentification:
+      "Most eSIM platforms struggle with fragmented carrier integrations, where inconsistent APIs increase development and maintenance.",
+    problemIdentificationPoints: [
+      {
+        number: "1",
+        title: "Complex Carrier",
+        description:
+          "Multiple carriers mean inconsistent APIs, custom logic, and high maintenance overhead.",
+        position: "left",
+      },
+      {
+        number: "2",
+        title: "Activation Flow",
+        description:
+          "Provisioning delays and failed activations create edge cases that are difficult to debug and support.",
+        position: "right",
+      },
+      {
+        number: "3",
+        title: "Usage Visibility",
+        description:
+          "Lack of real-time data usage APIs makes monitoring, alerts, and auto top-ups unreliable.",
+        position: "left",
+      },
+      {
+        number: "4",
+        title: "Scaling Regions",
+        description:
+          "Handling traffic spikes, multi-region routing, and cost optimization remains technically challenging.",
+        position: "right",
+      },
+    ],
+    solutionDescription:
+      "Simigo’s architecture simplifies activation flows, reduces integration overhead, and enables scalable multi-region deployments—allowing teams to launch faster, operate efficiently, and optimize costs without added technical complexity.",
+    solutionPoints: [
+      {
+        title: "Solution 1",
+        points: ["Improved eSIM provision with a single button clicked"],
+      },
+      {
+        title: "Solution 2",
+        points: [
+          "Youth-focused UI design, Vibrant and growth focused UX implemented",
+        ],
+      },
+      {
+        title: "Solution 3",
+        points: [
+          "Advance and lightweight codebase ensures lower server maintenance cost and interrupted service.",
+        ],
+      },
+      {
+        title: "Solution 4",
+        points: [
+          "Cost saving system architecture and automation helps reducing maintenance cost and company can offer MOST AFFORDABLE eSIM PLANS!",
+        ],
+      },
+    ],
+    solutionImage: images.simigoSolution,
     url: "/portfolio/simigo-esim-branding-and-digital-marketing",
-    projectImages: [images.simgo],
-    tagList: "Branding, Digital Marketing, eSIM",
-    content: `
-      <h2>Project Overview</h2>
-      <p>Simigo is a cutting-edge eSIM brand that revolutionizes the way people experience mobile connectivity while traveling. We crafted a vibrant and energetic brand identity that resonates with modern travelers.</p>
-      
-      <h3>Our Approach</h3>
-      <p>We focused on creating a brand that embodies youth, energy, and seamless connectivity. The visual identity uses bold colors and dynamic elements to represent the freedom of borderless communication.</p>
-      
-      <h3>Key Features</h3>
-      <ul>
-        <li>Modern and vibrant brand identity</li>
-        <li>User-friendly digital experience</li>
-        <li>Comprehensive marketing strategy</li>
-        <li>Responsive web design</li>
-        <li>Social media presence</li>
-      </ul>
-      
-      <h3>Results</h3>
-      <p>The brand successfully launched with strong market reception, attracting thousands of users in the first quarter. The vibrant visual identity helped differentiate Simigo in a competitive market.</p>
-    `,
   },
   {
     _id: "unisavi-branding-and-digital-marketing",
@@ -61,6 +128,7 @@ export const portfolios = [
     timeline: "6 Months",
     liveUrl: "https://www.unisavi.com/",
     backgroundImage: images.unisavi,
+    topImage: images.unisavi,
     backgroundColor: "linear-gradient(180deg, #F9D20E 0%, #F99B0E 100%)",
     thumbnail: images.unisavi,
     featuredImage: images.unisavi,
@@ -99,6 +167,7 @@ export const portfolios = [
     timeline: "4 Months",
     liveUrl: "https://www.telzen.com/",
     backgroundImage: images.telzen,
+    topImage: images.telzen,
     backgroundColor: "linear-gradient(180deg, #00DE71 0%, #014A43 100%)",
     thumbnail: images.telzen,
     featuredImage: images.telzen,
@@ -136,6 +205,7 @@ export const portfolios = [
     timeline: "5 Months",
     liveUrl: "https://www.kangabooking.com/",
     backgroundImage: images.kanga,
+    topImage: images.kanga,
     backgroundColor: "linear-gradient(180deg, #FF6B9D 0%, #C06C84 100%)",
     thumbnail: images.kanga,
     featuredImage: images.kanga,
@@ -175,6 +245,7 @@ export const portfolios = [
     timeline: "8 Months",
     liveUrl: "https://www.nlcfund.com/",
     backgroundImage: images.nlc,
+    topImage: images.nlc,
     backgroundColor: "linear-gradient(180deg, #4A90E2 0%, #2C3E50 100%)",
     thumbnail: images.nlc,
     featuredImage: images.nlc,
@@ -217,6 +288,6 @@ export const getPortfoliosByCategory = (category: string) => {
     return portfolios;
   }
   return portfolios.filter(
-    (portfolio) => portfolio.category.toLowerCase() === category.toLowerCase()
+    (portfolio) => portfolio.category.toLowerCase() === category.toLowerCase(),
   );
 };

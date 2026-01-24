@@ -44,6 +44,7 @@ const ProjectCard = ({
           alt={item?.name || "Project"}
           width={1280}
           height={600}
+          placeholder="blur"
           className="flex-1 w-full h-full"
         />
       </div>
