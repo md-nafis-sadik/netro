@@ -1,56 +1,16 @@
 "use client";
 
+import { useHeroAnimation } from "@/hooks/useHeroAnimation";
 import colors from "@/lib/colors";
 import { images } from "@/services";
 import { StarIcon, StarShadowIcon } from "@/services/assets/svgs";
 import { bannerIcons } from "@/services/data";
-import gsap from "gsap";
 import Image from "next/image";
-import { useEffect, useRef } from "react";
 import { Avatar } from "../ui/avatar";
 import ExpandableButtonList from "./partials/ExpandableButtonList";
 
 function HeroHome() {
-  const avatarRef = useRef<HTMLDivElement | null>(null);
-
-  /* ---------- AVATAR AUTO CYCLE ---------- */
-  useEffect(() => {
-    if (!avatarRef.current) return;
-
-    const avatars = avatarRef.current.querySelectorAll(".hero-avatar");
-
-    const tl = gsap.timeline({ repeat: -1 });
-
-    avatars.forEach((avatar, i) => {
-      tl.fromTo(
-        avatar,
-        { autoAlpha: 0, scale: 0.7, rotate: -15, y: 10 },
-        {
-          autoAlpha: 1,
-          scale: 1,
-          rotate: 0,
-          y: 0,
-          duration: 0.8,
-          ease: "elastic.out(1, 0.6)",
-        },
-      ).to(
-        avatar,
-        {
-          autoAlpha: 0,
-          scale: 0.7,
-          rotate: 15,
-          y: -10,
-          duration: 0.8,
-          ease: "power3.in",
-        },
-        "+=2",
-      );
-    });
-
-    return () => {
-      tl.kill();
-    };
-  }, []);
+  const { avatarRef, titleRef, descriptionRef } = useHeroAnimation();
 
   return (
     <section
@@ -58,13 +18,25 @@ function HeroHome() {
       className="relative pt-52 pb-10 sm:min-h-dvh flex_center overflow-hidden"
     >
       <div className="containerX max-w-[964px] relative z-[99] text-center">
-        <h1 className="titleGradient text-4xl xs:text-5xl md:text-6xl lg:text-8xl font-scoutcond font-black uppercase !leading-[80%] mb-4 sm:my-1">
-          AI <span className="italic font-bold">Inspired</span> <br />
-          <div className="inline-flex items-end">
-            Idea to{" "}
+        <h1
+          ref={titleRef}
+          className="mb-4 sm:my-1 text-[2.75rem] xs:text-5xl md:text-6xl lg:text-8xl font-scoutcond font-black uppercase !leading-[80%]"
+        >
+          <div
+            className="titleGradient title-line"
+            style={{ transformStyle: "preserve-3d" }}
+          >
+            AI <span className="md:italic md:font-bold">Inspired</span>{" "}
+            <span className="md:hidden">Idea</span>
+          </div>
+          <div
+            className="titleGradient title-line flex justify-center items-end flex-wrap"
+            style={{ transformStyle: "preserve-3d" }}
+          >
+            <span className="hidden md:inline mr-1.5">Idea </span> to{" "}
             <Avatar
               ref={avatarRef}
-              className="size-8 md:size-10 lg:size-16 rounded-none -mr-1 md:-mr-3 relative overflow-hidden"
+              className="size-11 lg:size-16 rounded-none -mx-1 md:-mr-3 relative overflow-hidden"
             >
               {bannerIcons.map((item) => (
                 <Image
@@ -76,13 +48,20 @@ function HeroHome() {
                 />
               ))}
             </Avatar>{" "}
-            <span className="italic font-bold">development,</span>
+            <span className="md:italic md:font-bold">development,</span>
           </div>{" "}
-          <br />
-          Deploy to Succeed!
+          <span
+            className="titleGradient title-line inline-block"
+            style={{ transformStyle: "preserve-3d" }}
+          >
+            Deploy to Succeed!
+          </span>
         </h1>
 
-        <p className="text-sm md:text-base lg:text-lg text-text-200 max-w-md mx-auto">
+        <p
+          ref={descriptionRef}
+          className="text-sm md:text-base lg:text-lg text-text-200 max-w-md mx-auto"
+        >
           From concept to development, we engineer digital experiences that
           drive business growth.​
         </p>

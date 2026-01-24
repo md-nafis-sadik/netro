@@ -87,7 +87,7 @@ function ProjectsHome() {
   return (
     <section
       data-bg-theme="dark"
-      className="pt-10 md:pt-16 lg:pt-20 pb-10 bg-blue-900"
+      className="pt-10 md:pt-16 lg:pt-20 pb-10 bg-blue-900 "
     >
       <div className="container flex_center flex-col">
         <SectionSubHeader

@@ -118,13 +118,14 @@ function ProcessFollowed() {
       duration: 0.4,
       ease: "power3.out",
     });
+    setActiveIndex(0);
   };
 
   return (
     <section
       ref={sectionRef}
       data-bg-theme="light"
-      className="bg-green-500 pb-10 pt-10 md:pt-16 lg:pt-20"
+      className="bg-green-500 pb-10 pt-10 md:pt-16 lg:pt-20 overflow-hidden"
     >
       <div className="container flex_center flex-col">
         <SectionSubHeader text="How we make" className="process-sub" />
