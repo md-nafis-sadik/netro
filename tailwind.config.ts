@@ -157,6 +157,9 @@ export default {
       },
       boxShadow: {
         nav: "0 4px 4px 0 rgba(0, 0, 0, 0.25)",
+        intro: "-4px 4px 12px 0 rgba(0, 0, 0, 0.36)",
+      },
+      dropShadow: {
       },
     },
   },
