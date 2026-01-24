@@ -32,9 +32,9 @@ export default function DropupNavigationMenu({
     tl.current = gsap.timeline({ paused: true });
     tl.current.fromTo(
       menuRef.current,
-      { y: 10, autoAlpha: 0, display: "none" },
+      { y: 70, autoAlpha: 0, display: "none" },
       {
-        y: -10,
+        y: 60,
         autoAlpha: 1,
         display: "block",
         duration: 0.3,

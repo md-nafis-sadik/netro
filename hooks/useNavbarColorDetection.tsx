@@ -1,5 +1,8 @@
 "use client";
 
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect, useState } from "react";
 
 export const useNavbarColorDetection = (pathname: string) => {
@@ -62,6 +65,36 @@ export const useNavbarColorDetection = (pathname: string) => {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => {
       window.removeEventListener("scroll", onScroll);
+    };
+  }, []);
+
+  useGSAP(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    const showAnim = gsap
+      .from(".main-tool-bar", {
+        yPercent: -150,
+        paused: true,
+        duration: 0.6,
+        ease: "power2.out",
+      })
+      .progress(1);
+
+    const trigger = ScrollTrigger.create({
+      start: "top top",
+      end: "max",
+      onUpdate: (self) => {
+        if (self.direction === -1) {
+          showAnim.play();
+        } else {
+          showAnim.reverse();
+        }
+      },
+    });
+
+    return () => {
+      trigger.kill();
+      showAnim.kill();
     };
   }, []);
 
