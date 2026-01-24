@@ -7,7 +7,7 @@ import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 
 function IntroHome() {
@@ -18,6 +18,14 @@ function IntroHome() {
   const card3Ref = useRef<HTMLDivElement>(null);
   const card4Ref = useRef<HTMLDivElement>(null);
   const card5Ref = useRef<HTMLDivElement>(null);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [nextIndex, setNextIndex] = useState(1);
+  const homeIntroData = [
+    images.about1,
+    images.about2,
+    images.about3,
+    images.about4,
+  ]; // Your 4 images
 
   useGSAP(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -111,6 +119,16 @@ function IntroHome() {
     });
   }, []);
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      //  set current index to next index and next index to (next index + 1) % length
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % homeIntroData.length);
+      setNextIndex((prevIndex) => (prevIndex + 1) % homeIntroData.length);
+    }, 2000); // Change images every 2 seconds
+
+    return () => clearInterval(interval);
+  }, [homeIntroData.length]);
+
   return (
     <section
       ref={sectionRef}
@@ -135,14 +153,14 @@ function IntroHome() {
             growth, creating{" "}
             <div className="inline-flex items-center -space-x-3 xl:-mt-4 translate-y-1 xl:translate-y-3">
               <Image
-                src={images.about1}
+                src={homeIntroData[currentIndex]}
                 className="size-5 sm:size-7 xl:size-12 object-contain shrink-0"
                 alt="logo icon"
                 title="logo icon"
               />
 
               <Image
-                src={images.about2}
+                src={homeIntroData[nextIndex]}
                 className="size-5 sm:size-7 xl:size-12 object-contain shrink-0 drop-shadow-intro"
                 alt="logo icon"
                 title="logo icon"

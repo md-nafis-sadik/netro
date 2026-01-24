@@ -101,3 +101,30 @@ export const pricingData = [
     ],
   },
 ];
+
+export const homeIntroData = [
+  {
+    id: 1,
+    image: images.about1,
+    alt: "about image 1",
+    title: "about image 1",
+  },
+  {
+    id: 2,
+    image: images.about2,
+    alt: "about image 2",
+    title: "about image 2",
+  },
+  {
+    id: 3,
+    image: images.about1,
+    alt: "about image 2",
+    title: "about image 2",
+  },
+  {
+    id: 4,
+    image: images.about2,
+    alt: "about image 2",
+    title: "about image 2",
+  },
+];
