@@ -34,7 +34,7 @@ const JournalCard = ({
     >
       <div
         className={cn(
-          "w-full relative overflow-hidden min-w-[260px] md:min-w-[400px] aspect-[16/9]",
+          "w-full relative overflow-hidden aspect-[16/9]",
           imageContainerClassName
         )}
       >

@@ -205,3 +205,11 @@ export { default as usa } from "@/public/images/countries/usa.webp";
 
 // process image
 export { default as process1 } from "@/public/images/process-1.webp";
+
+//projects
+export { default as simigoBg } from "@/public/images/project/simigo-bg.webp";
+export { default as simigoTop } from "@/public/images/project/simigo-top.webp";
+export { default as simigoLaptop } from "@/public/images/project/simigo-laptop.webp";
+export { default as simigoPhone } from "@/public/images/project/simigo-phone.webp";
+export { default as simigoShopping } from "@/public/images/project/simigo-shopping.webp";
+

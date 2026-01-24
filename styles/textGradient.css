@@ -402,7 +402,7 @@
 }
 
 .home_ai_header {
- background: linear-gradient(164deg, #FFF 11.44%, #FFA8A9 63.98%);
+  background: linear-gradient(164deg, #fff 11.44%, #ffa8a9 63.98%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -482,7 +482,6 @@
   font-feature-settings:
     "liga" off,
     "clig" off;
-
 }
 
 /* SERVICES */
@@ -606,10 +605,10 @@
 }
 
 .portfolio_details_header {
-  background: linear-gradient(90deg, #000 0%, #757575 100%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #fff;
+  font-feature-settings:
+    "liga" off,
+    "clig" off;
 }
 
 .portfolio_details_key_preview {

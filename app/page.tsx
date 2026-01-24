@@ -1,5 +1,5 @@
 import AwardsRecognition from "@/components/awards/AwardsRecognition";
-import ContactUsFormV2 from "@/components/contact-us/ContactUsFormV2";
+import ContactUsFormHome from "@/components/contact-us/ContactUsFormHome";
 import HeroHome from "@/components/hero/HeroHome";
 import IntroHome from "@/components/intro/IntroHome";
 import JournalHomeSkeleton from "@/components/journal/JournalHomeSkeleton";
@@ -10,7 +10,7 @@ import ProjectsHome from "@/components/projects/ProjectsHome";
 import Revoluation from "@/components/services/Revoluation";
 import ServicesHome from "@/components/services/ServicesHome";
 import StatisticsHome from "@/components/statistics/StatisticsHome";
-import TeamV2 from "@/components/team/Team";
+import Team from "@/components/team/Team";
 import Testimonial from "@/components/testimonial/Testimonial";
 import ProcessFollowed from "@/components/view/ProcessFollowed";
 import { Suspense } from "react";
@@ -28,13 +28,13 @@ const HomePage = () => {
       <MarqueeHome />
       <ProcessFollowed />
       <section data-bg-theme="dark">
-        <TeamV2 />
+        <Team />
       </section>
       <section data-bg-theme="light">
         <AwardsRecognition />
       </section>
       <section data-bg-theme="dark">
-        <ContactUsFormV2 />
+        <ContactUsFormHome />
       </section>
       <section data-bg-theme="dark">
         <StatisticsHome />

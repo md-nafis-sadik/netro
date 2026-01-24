@@ -1,4 +1,3 @@
-import { inter } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
 import Image, { StaticImageData } from "next/image";
 
@@ -6,11 +5,12 @@ interface IFTeamCardProps {
   image: StaticImageData;
   name: string;
   position: string;
+  className?: string;
 }
 
-const TeamCard = ({ image, name, position }: IFTeamCardProps) => {
+const TeamCard = ({ image, name, position, className }: IFTeamCardProps) => {
   return (
-    <div className="w-full h-full select-none group">
+    <div className={cn("w-full h-full select-none group", className)}>
       <Image
         src={image}
         alt={name}

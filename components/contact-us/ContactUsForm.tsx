@@ -29,6 +29,18 @@ function ContactUsForm({ query = "" }: { query: string | undefined }) {
     const email = (form.elements.namedItem("email") as HTMLInputElement)?.value;
     const message = (form.elements.namedItem("message") as HTMLInputElement)
       ?.value;
+    
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!email || !emailRegex.test(email)) {
+      toast.error("Invalid Email", {
+        description: "Please enter a valid email address.",
+        icon: <ErrorSvg />,
+        position: "top-right",
+      });
+      return;
+    }
+    
     const formData = new FormData();
     const data = {
       email,

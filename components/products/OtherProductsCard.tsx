@@ -10,6 +10,8 @@ interface IFProductCardProps {
 }
 
 const OtherProductCard = ({ item }: IFProductCardProps) => {
+  const imageSrc = item?.featuredImage || item?.backgroundImage || images.netroLogo;
+  
   return (
     <div
       className={cn(
@@ -17,7 +19,7 @@ const OtherProductCard = ({ item }: IFProductCardProps) => {
       )}
     >
       <Image
-        src={item?.featuredImage}
+        src={imageSrc}
         alt={item?.title || "Project"}
         className="min-h-full h-full min-w-full w-auto object-cover absolute_center"
         width={1920}

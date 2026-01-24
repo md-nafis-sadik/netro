@@ -1,22 +1,14 @@
 import ProjectFilterItems from "./ProjectFilterItems";
-import { fetchWithDelay } from "@/lib/apiHandler";
+import { portfolioCategories } from "@/services/data/portfolio.data";
 
 interface IProjectFilterItems {
   query?: string;
 }
 
-interface CategoriesResponse {
-  data: any;
-}
-
 const ProjectFilterItemWrapper = async ({ query }: IProjectFilterItems) => {
-  let categories: CategoriesResponse = (await fetchWithDelay(
-    `/portfolio-categories/all`
-  )) as CategoriesResponse;
-
   return (
     <ProjectFilterItems
-      categoryData={categories?.data}
+      categoryData={portfolioCategories}
       query={query as string}
     />
   );

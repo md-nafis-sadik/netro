@@ -12,9 +12,8 @@ import TeamCard from "./TeamCard";
 const TeamV2 = () => {
   const autoplayPlugin = useRef(Autoplay({ delay: 3000 }));
   const options = { align: "start", loop: true } as const;
-  const [emblaRef, emblaApi] = useEmblaCarousel(options, [
-    autoplayPlugin.current,
-  ]);
+  const [emblaRef] = useEmblaCarousel(options, [autoplayPlugin.current]);
+
   return (
     <section className="flex_center flex-col pb-8 md:pb-16 lg:pb-20 pt-10 md:pt-16 lg:pt-20 select-none bg-darkPurplebg">
       <SectionSubHeader text="The force behind" blue />
@@ -36,7 +35,12 @@ const TeamV2 = () => {
           >
             {teamData.map(({ image, name, position }, index) => (
               <div key={index} className="min-w-[48%] lg:min-w-0">
-                <TeamCard image={image} name={name} position={position} />
+                <TeamCard
+                  image={image}
+                  name={name}
+                  position={position}
+                  className="team-card"
+                />
               </div>
             ))}
           </div>
@@ -47,7 +51,12 @@ const TeamV2 = () => {
           <div className="w-full flex">
             {teamData.map(({ image, name, position }, index) => (
               <div key={index} className="min-w-[48%] lg:min-w-0 mx-2">
-                <TeamCard image={image} name={name} position={position} />
+                <TeamCard
+                  image={image}
+                  name={name}
+                  position={position}
+                  className="team-card"
+                />
               </div>
             ))}
           </div>
