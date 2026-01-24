@@ -1766,3 +1766,26 @@ export const AwardBigIcon = ({
     </defs>
   </svg>
 );
+
+export const ArrowPointerIcon = ({
+  className,
+  color = "#FFC400",
+  ...props
+}: IFSvgProps) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="49"
+    height="49"
+    viewBox="0 0 49 49"
+    fill="none"
+    className={className}
+    {...props}
+  >
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M12.7418 29.5255C12.3833 29.4341 12.0557 29.2488 11.7925 28.9888C11.5293 28.7288 11.3401 28.4033 11.2444 28.046C11.1486 27.6886 11.1497 27.3122 11.2477 26.9554C11.3456 26.5987 11.5367 26.2744 11.8015 26.016L30.9539 7.28918C32.3528 5.92222 34.6946 7.06333 34.4802 9.00669L33.0342 22.2074L40.8873 32.9182C42.045 34.4956 40.5855 36.6536 38.6917 36.1671L12.7414 29.5239L12.7418 29.5255Z"
+      fill={color}
+    />
+  </svg>
+);
