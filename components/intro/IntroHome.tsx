@@ -56,7 +56,6 @@ function IntroHome() {
       };
 
       const allSpans = wrapTextNodes(introTextRef.current);
-      console.log("Total characters to animate:", allSpans.length);
 
       if (allSpans.length > 0) {
         // Create ScrollTrigger for pinning
@@ -141,9 +140,10 @@ function IntroHome() {
                 alt="logo icon"
                 title="logo icon"
               />
+
               <Image
                 src={images.about2}
-                className="size-5 sm:size-7 xl:size-12 object-contain shrink-0"
+                className="size-5 sm:size-7 xl:size-12 object-contain shrink-0 drop-shadow-intro"
                 alt="logo icon"
                 title="logo icon"
               />
