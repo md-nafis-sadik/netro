@@ -7,8 +7,6 @@ import { useRef, useState } from "react";
 import SectionHeader from "../common/SectionHeader";
 import ProjectCard from "./ProjectCard";
 
-gsap.registerPlugin(ScrollTrigger);
-
 const ProjectsDetailsPreview = ({ project }: any) => {
   const cardsRef = useRef<HTMLDivElement | null>(null);
   const [activeIndex, setActiveIndex] = useState(0);

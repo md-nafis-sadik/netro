@@ -1,9 +1,7 @@
 "use client";
-import { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
+import { useLayoutEffect, useRef } from "react";
 
 const IntroWithMarqueeHome = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -63,7 +61,7 @@ const IntroWithMarqueeHome = () => {
             each: 0.02,
           },
           ease: "none",
-        }
+        },
       );
 
     return () => ScrollTrigger.getAll().forEach((trigger) => trigger.kill());

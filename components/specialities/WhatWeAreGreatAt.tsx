@@ -1,13 +1,10 @@
 "use client";
-import { useRef, useState, useEffect } from "react";
-import SectionHeader from "../common/SectionHeader";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { whatWeAreGreatAtData } from "@/services/data";
 import { useGSAP } from "@gsap/react";
-
-// Register ScrollTrigger plugin
-gsap.registerPlugin(ScrollTrigger);
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useEffect, useRef, useState } from "react";
+import SectionHeader from "../common/SectionHeader";
 
 const WhatWeAreGreatAt = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -64,7 +61,7 @@ const WhatWeAreGreatAt = () => {
 
         items.forEach((item, itemIndex) => {
           const rightItem = rightSection.querySelector(
-            `[data-item="${categoryIndex}-${itemIndex}"]`
+            `[data-item="${categoryIndex}-${itemIndex}"]`,
           );
 
           if (!rightItem) return;
@@ -151,7 +148,7 @@ const WhatWeAreGreatAt = () => {
                         }}
                       />
                     </div>
-                  )
+                  ),
                 )}
               </div>
             ))}

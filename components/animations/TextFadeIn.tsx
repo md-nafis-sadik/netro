@@ -1,10 +1,7 @@
 "use client";
-import React, { useRef, useEffect, useState } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { cn } from "@/lib/utils";
-
-gsap.registerPlugin(ScrollTrigger);
+import { gsap } from "gsap";
+import React, { useEffect, useRef, useState } from "react";
 
 interface TextFadeInProps {
   text: string;
@@ -45,7 +42,7 @@ const TextFadeIn: React.FC<TextFadeInProps> = ({ text, className = "" }) => {
             stagger: 0.05,
             ease: "power1.out",
           },
-          wordIndex * 0.2
+          wordIndex * 0.2,
         );
       });
 
@@ -115,7 +112,7 @@ const TextFadeIn: React.FC<TextFadeInProps> = ({ text, className = "" }) => {
                       >
                         {char}
                       </span>
-                    )
+                    ),
                   )}
               </div>
             ))}

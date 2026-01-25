@@ -1,10 +1,7 @@
 "use client";
-import { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-// Register ScrollTrigger plugin
-gsap.registerPlugin(ScrollTrigger);
+import { useLayoutEffect, useRef } from "react";
 
 const IntroHome = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -58,7 +55,7 @@ const IntroHome = () => {
           pin: true,
           markers: false,
         },
-      }
+      },
     );
 
     return () => {

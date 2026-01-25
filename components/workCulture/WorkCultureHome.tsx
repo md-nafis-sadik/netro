@@ -12,9 +12,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { useLayoutEffect, useRef, useState } from "react";
 
-// Register ScrollTrigger plugin
-gsap.registerPlugin(ScrollTrigger);
-
 const WorkCultureHome = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const paragraphRef = useRef<HTMLParagraphElement>(null);
@@ -133,7 +130,7 @@ const WorkCultureHome = () => {
           pin: true,
           markers: false,
         },
-      }
+      },
     );
   };
 
@@ -209,7 +206,7 @@ const WorkCultureHome = () => {
                 duration: 0.45,
                 ease: "power1.out",
               });
-            }
+            },
           );
         },
       },

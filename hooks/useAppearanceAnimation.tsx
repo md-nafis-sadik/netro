@@ -1,13 +1,7 @@
 "use client";
 
-import { useEffect, useRef } from "react";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-// Register ScrollTrigger plugin
-if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger);
-}
+import { useEffect, useRef } from "react";
 
 export interface AnimationOptions {
   y?: number;
@@ -23,7 +17,7 @@ export interface AnimationOptions {
 
 export const useAppearanceAnimation = (
   selector: string,
-  options: AnimationOptions = {}
+  options: AnimationOptions = {},
 ) => {
   const containerRef = useRef<HTMLElement>(null);
   const animationRef = useRef<gsap.core.Timeline | null>(null);
@@ -71,7 +65,7 @@ export const useAppearanceAnimation = (
           stagger,
           ease,
           delay,
-        }
+        },
       );
     }, containerRef);
 
