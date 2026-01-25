@@ -12,7 +12,7 @@ const DiscoverMoreProjects = ({ data }: any) => {
   // ]);
 
   return (
-    <section className="w-full p-12 md:p-24 lg:p-32 relative bg-darkPurplebg">
+    <section className="w-full py-12 md:py-24 lg:py-32 relative bg-darkPurplebg">
       <DescriptionHeader title="Releted Works" className="mb-6 md:mb-8 lg:mb-10" />
 
       <div className="container w-full overflow-hidden">

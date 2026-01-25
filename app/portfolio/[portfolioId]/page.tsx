@@ -1,9 +1,11 @@
 import dynamic from "next/dynamic";
 
 import { purifyUrl } from "@/services";
-import { getPortfolioById } from "@/services/data/portfolio.data";
+import { getPortfolioById, portfolios } from "@/services/data/portfolio.data";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
+import CustomCardGrid from "@/components/shared/CustomCardGrid";
+import DiscoverMoreProjects from "@/components/projects/DiscoverMoreProjects";
 
 const PulseBlock = ({ className }: { className?: string }) => (
   <div
@@ -71,12 +73,25 @@ async function PortfolioDetails({
     data: portfolioData,
   };
 
+  const morePortfolioData = portfolios
+    .filter((p) => p._id !== portfolioId)
+    .splice(0, 3);
+
   return (
     <main className="mt-[60px]">
       <ProjectDetails project={portfolioDetails} />
       <ProjectDescription project={portfolioDetails} />
       <ProjectSolution project={portfolioDetails} />
       <ProjectBranding project={portfolioDetails} />
+      <CustomCardGrid
+        card1={portfolioDetails?.data?.card1}
+        card2={portfolioDetails?.data?.card2}
+        card3={portfolioDetails?.data?.card3}
+        card4={portfolioDetails?.data?.card4}
+        card5={portfolioDetails?.data?.card5}
+        className="py-12 md:py-24 lg:py-32"
+      />
+      <DiscoverMoreProjects data={morePortfolioData} />
     </main>
   );
 }
