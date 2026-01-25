@@ -205,7 +205,7 @@ function CustomCardGrid({
           </div>
         )}
 
-        <div className="grid grid-cols-2 lg:grid-cols-10 grid-rows-5 gap-4 mt-11">
+        <div className="grid grid-cols-2 lg:grid-cols-10 grid-rows-5 gap-4 mt-6 md:mt-8 lg:mt-11">
           {/* Card 1 - Projects Delivered */}
           {card1 && (
             <div

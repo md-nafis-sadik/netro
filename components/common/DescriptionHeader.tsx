@@ -42,7 +42,7 @@ const DescriptionHeader = ({
         <div className="flex-shrink-0">
           <div
             className={cn(
-              "text-2xl sm:text-4xl md:text-[56px] leading-[90%] font-scoutcond font-bold uppercase",
+              "text-5xl md:text-[56px] leading-[90%] font-scoutcond font-bold uppercase",
               titleClassName,
               variantClasses[variant].title,
             )}
