@@ -18,7 +18,7 @@ const ProjectDescription = ({ project }: any) => {
   return (
     <section
       ref={sectionRef}
-      className="font-inter bg-darkPurplebg p-10 md:p-16 lg:p-20"
+      className="font-inter bg-darkPurplebg py-8 md:py-16 lg:py-20"
     >
       <div className="container">
         <DescriptionHeader
@@ -81,7 +81,7 @@ const ProjectDescription = ({ project }: any) => {
             alt={project?.data?.title || "Project Image"}
             width={1176}
             height={648}
-            className="w-full mt-13 md:mt-20 lg:mt-32"
+            className="w-full mt-10 md:mt-16 lg:mt-32"
           />
         </div>
       </div>

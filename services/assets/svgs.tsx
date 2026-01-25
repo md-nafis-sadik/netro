@@ -1789,3 +1789,45 @@ export const ArrowPointerIcon = ({
     />
   </svg>
 );
+
+export const StarBreadcrumbSmallIcon = ({
+  className,
+  color = "#FFC400",
+  ...props
+}: IFSvgProps) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="12"
+    height="12"
+    viewBox="0 0 12 12"
+    fill="none"
+    className={className}
+    {...props}
+  >
+    <path
+      d="M6 0L7.62054 4.37946L12 6L7.62054 7.62054L6 12L4.37946 7.62054L0 6L4.37946 4.37946L6 0Z"
+      fill={color}
+    />
+  </svg>
+);
+
+export const StarBreadcrumbBigIcon = ({
+  className,
+  color = "#FFC400",
+  ...props
+}: IFSvgProps) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="16"
+    height="16"
+    viewBox="0 0 16 16"
+    fill="none"
+    className={className}
+    {...props}
+  >
+    <path
+      d="M8 0L10.1607 5.83927L16 8L10.1607 10.1607L8 16L5.83927 10.1607L0 8L5.83927 5.83927L8 0Z"
+      fill={color}
+    />
+  </svg>
+);
