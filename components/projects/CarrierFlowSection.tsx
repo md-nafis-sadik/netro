@@ -21,6 +21,7 @@ const CarrierFlowSection = ({ items }: any) => {
                 stroke="#FF9F43"
                 strokeWidth="3"
                 strokeDasharray="8 8"
+                
               />
             </svg>
 
