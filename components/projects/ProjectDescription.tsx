@@ -18,7 +18,7 @@ const ProjectDescription = ({ project }: any) => {
   return (
     <section
       ref={sectionRef}
-      className="font-inter bg-darkPurplebg p-10 md:p-16 lg:p-20"
+      className="font-inter bg-darkPurplebg py-10 md:py-16 lg:py-20"
     >
       <div className="container">
         <DescriptionHeader

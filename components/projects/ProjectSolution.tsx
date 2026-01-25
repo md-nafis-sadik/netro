@@ -9,7 +9,7 @@ const ProjectSolution = ({ project }: any) => {
   const imgRef = useRef<HTMLDivElement>(null);
   useAnimation(imgRef, {});
   return (
-    <section className="font-inter bg-white p-10 md:p-16 lg:p-28">
+    <section className="font-inter bg-white py-10 md:py-16 lg:py-28">
       <div className="container">
         <DescriptionHeader
           title="The Solution"
@@ -23,7 +23,8 @@ const ProjectSolution = ({ project }: any) => {
           detailPoints={project.data.solutionPoints}
           title="The Solution"
           variant="white" // or "white", "blue", "gradient"
-          className="lg:grid-cols-4 mt-6 md:mt-8 lg:mt-14"
+          className="grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mt-6 md:mt-8 lg:mt-14"
+          boxClassName="last:col-span-1"
         />
         <div ref={imgRef}>
           <Image
