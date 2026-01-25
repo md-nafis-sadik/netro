@@ -93,17 +93,7 @@ function ContactUsFormHome() {
 
   return (
     <div className="relative  xl:min-h-dvh flex flex-col justify-center">
-      <div
-        className="absolute inset-0 -z-10 hidden md:block"
-        // style={{
-        //   backgroundImage: "url('/images/contact-bg.webp')",
-        //   backgroundSize: "152.318% 152.318%",
-        //   backgroundPosition: "-49.593px -197.87px",
-        //   backgroundRepeat: "no-repeat",
-        //   backgroundColor: "lightgray",
-        //   transform: "scaleX(-1)",
-        // }}
-      />
+      <div className="absolute inset-0 -z-10 hidden md:block" />
 
       <Image
         src={images.contactBg}
