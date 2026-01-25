@@ -13,7 +13,7 @@ import { useAppearanceAnimation } from "@/hooks/useAppearanceAnimation";
 const Team = () => {
   const autoplayPlugin = useRef(Autoplay({ delay: 3000 }));
   const options = { align: "start", loop: true } as const;
-  const [emblaRef, emblaApi] = useEmblaCarousel(options, [
+  const [emblaRef] = useEmblaCarousel(options, [
     autoplayPlugin.current,
   ]);
   const sectionRef = useAppearanceAnimation(".animate-item2", {
@@ -27,7 +27,7 @@ const Team = () => {
   });
   return (
     <section
-      className="flex_center flex-col pb-8 md:pb-16 lg:pb-20 pt-10 md:pt-16 lg:pt-20 select-none bg-darkPurplebg"
+      className="flex_center flex-col pb-8 md:pb-16 lg:pb-20 pt-10 md:pt-16 lg:pt-20 select-none bg-darkPurplebg overflow-hidden"
       ref={sectionRef}
     >
       <SectionSubHeader text="The force behind" blue />

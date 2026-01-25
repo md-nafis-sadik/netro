@@ -15,8 +15,6 @@ export const useIntroAnimation = () => {
   const logoIconRef = useRef<HTMLImageElement>(null);
 
   useGSAP(() => {
-    gsap.registerPlugin(ScrollTrigger);
-
     if (sectionRef.current && introTextRef.current) {
       const wrapTextNodes = (element: HTMLElement) => {
         const childNodes = Array.from(element.childNodes);
@@ -53,7 +51,7 @@ export const useIntroAnimation = () => {
       if (allSpans.length > 0) {
         ScrollTrigger.create({
           trigger: sectionRef.current,
-          start: "top 10%",
+          start: "top 6%",
           end: `+=${Math.max(allSpans.length * 10, 2000)}`,
           pin: true,
           pinSpacing: true,

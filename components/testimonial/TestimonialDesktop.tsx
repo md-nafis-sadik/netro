@@ -1,120 +1,19 @@
 "use client";
 
+import { useTestimonialAnimation } from "@/hooks/useTestimonial";
 import { images } from "@/services";
 import { PlayIcon } from "@/services/assets/svgs";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
-
-gsap.registerPlugin(ScrollTrigger);
 
 function TestimonialDesktop() {
-  const [currentPlay, setCurrentPlay] = useState<number | null>(null);
-  const [hasClickedOnce, setHasClickedOnce] = useState(false);
-
-  const videoRefs = useRef<Record<number, HTMLVideoElement | null>>({});
-  const containerRef = useRef<HTMLDivElement | null>(null);
-
-  const stopAllVideos = () => {
-    Object.values(videoRefs.current).forEach((video) => {
-      video?.pause();
-    });
-  };
-
-  const playVideo = async (id: number) => {
-    if (!hasClickedOnce) return;
-
-    stopAllVideos();
-
-    const video = videoRefs.current[id];
-    if (video) {
-      await video.play();
-      setCurrentPlay(id);
-    }
-  };
-
-  const pauseVideo = (id: number) => {
-    const video = videoRefs.current[id];
-    if (video) {
-      video.pause();
-    }
-    setCurrentPlay(null);
-  };
-
-  const handleFirstClick = async (id: number) => {
-    setHasClickedOnce(true);
-
-    stopAllVideos();
-
-    const video = videoRefs.current[id];
-    if (video) {
-      await video.play();
-      setCurrentPlay(id);
-    }
-  };
-
-  /* ---------- ANIMATIONS ---------- */
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      // Text cards animation - staggered fade and slide up
-      gsap.fromTo(
-        ".testimonial-text-card",
-        {
-          autoAlpha: 0,
-          y: 60,
-          scale: 0.95,
-        },
-        {
-          autoAlpha: 1,
-          y: 0,
-          scale: 1,
-          duration: 1,
-          stagger: 0.15,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: containerRef.current,
-            start: "top 75%",
-            toggleActions: "play none none none",
-          },
-        },
-      );
-
-      // Video cards animation - scale and fade in
-      gsap.fromTo(
-        ".testimonial-video-card",
-        {
-          autoAlpha: 0,
-          scale: 0.85,
-          rotateY: -15,
-        },
-        {
-          autoAlpha: 1,
-          scale: 1,
-          rotateY: 0,
-          duration: 1.2,
-          stagger: 0.2,
-          ease: "power4.out",
-          scrollTrigger: {
-            trigger: containerRef.current,
-            start: "top 70%",
-            toggleActions: "play none none none",
-          },
-        },
-      );
-
-      // Play button pulse animation
-      gsap.to(".play-button", {
-        scale: 1.1,
-        duration: 0.8,
-        ease: "power1.inOut",
-        repeat: -1,
-        yoyo: true,
-      });
-    }, containerRef);
-
-    return () => ctx.revert();
-  }, []);
+  const {
+    videoRefs,
+    containerRef,
+    currentPlay,
+    playVideo,
+    pauseVideo,
+    handleFirstClick,
+  } = useTestimonialAnimation();
 
   return (
     <div
