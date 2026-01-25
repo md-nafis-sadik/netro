@@ -3,6 +3,7 @@ import useEmblaCarousel from "embla-carousel-react";
 import SectionHeader from "../common/SectionHeader";
 import Autoplay from "embla-carousel-autoplay";
 import OtherProductCard from "../products/OtherProductsCard";
+import DescriptionHeader from "../common/DescriptionHeader";
 
 const DiscoverMoreProjects = ({ data }: any) => {
   const options = { align: "start", loop: false } as const;
@@ -11,14 +12,12 @@ const DiscoverMoreProjects = ({ data }: any) => {
   ]);
 
   return (
-    <section className="w-full py-20 relative">
-      <SectionHeader className="portfolio_details_header">
-        DISCOVER MORE PROJECTS
-      </SectionHeader>
+    <section className="w-full p-12 md:p-24 lg:p-32 relative bg-darkPurplebg">
+      <DescriptionHeader title="Releted Works" className="mb-6 md:mb-8 lg:mb-10" />
 
-      <div className="containerX w-full overflow-hidden">
+      <div className="container w-full overflow-hidden">
         <div className="w-full" ref={emblaRef}>
-          <div className="w-full min-h-fit flex flex-row gap-6 md:gap-10 py-10 md:py-20">
+          <div className="w-full min-h-fit flex flex-row gap-4 md:gap-6">
             {data?.map((item: any, index: number) => (
               <OtherProductCard item={item} key={index} />
             ))}

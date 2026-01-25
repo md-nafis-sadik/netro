@@ -16,7 +16,7 @@ const Footer = () => {
       className="bg-darkbg py-10 md:py-20 relative overflow-hidden"
       data-bg-theme="light"
     >
-      <div className="containerX relative px-6 z-30">
+      <div className="container relative z-30">
         <div className="grid grid-cols-1 sm:grid-cols-4 md:grid-cols-7 min-[1120px]:grid-cols-11 gap-10 md:gap-6">
           {/* Inquiries */}
           <div className="col-span-2 md:col-span-3 flex items-center sm:items-start flex-col">

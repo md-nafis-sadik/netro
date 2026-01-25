@@ -17,12 +17,7 @@
 }
 
 .project-home-blur {
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0.5) 0%,
-    rgba(1, 42, 33, 0.25) 100%
-  );
-  backdrop-filter: blur(12px);
+background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, rgba(0, 0, 0, 0.50) 50%, #000 100%);
 }
 
 .product-show-blur {

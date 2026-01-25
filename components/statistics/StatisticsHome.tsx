@@ -7,7 +7,7 @@ import { successStoryDataV2 } from "@/services/data/success.data";
 const StatisticsHome = () => {
   return (
     <section className="bg-black pt-20 pb-20 md:pb-[120px] select-none">
-      <div className="containerX">
+      <div className="container">
         <SectionHeader className="home_statistics_header_v2 text-5xl md:text-[96px] mt-0 hidden sm:block">
           Our Success Story
         </SectionHeader>

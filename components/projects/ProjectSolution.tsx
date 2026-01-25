@@ -6,7 +6,7 @@ import DescriptionBoxes from "../common/DescriptionBoxes";
 const ProjectSolution = ({ project }: any) => {
   return (
     <section className="font-inter bg-white p-10 md:p-16 lg:p-28">
-      <div className="containerX">
+      <div className="container">
         <DescriptionHeader
           title="The Solution"
           text={

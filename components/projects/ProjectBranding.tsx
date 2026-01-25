@@ -1,13 +1,11 @@
 "use client";
 import Image from "next/image";
 import DescriptionHeader from "../common/DescriptionHeader";
-import CarrierFlowSection from "./CarrierFlowSection";
-import DescriptionBoxes from "../common/DescriptionBoxes";
 
 const ProjectBranding = ({ project }: any) => {
   return (
     <section className="font-inter bg-darkPurplebg p-10 md:p-16 lg:p-20">
-      <div className="containerX">
+      <div className="container">
         <DescriptionHeader
           title="Software Branding"
           text={

@@ -41,9 +41,9 @@ async function PortfolioDetails({
       <Suspense fallback={<ProjectDetailsSkeleton />}>
         <ProjectDetailsWrapper id={portfolioId} />
       </Suspense>
-      {/* <Suspense fallback={<DiscoverMoreProjectsSkeleton />}>
+      <Suspense fallback={<DiscoverMoreProjectsSkeleton />}>
         <DiscoverMoreProjectsWrapper id={portfolioId} />
-      </Suspense> */}
+      </Suspense>
     </main>
   );
 }

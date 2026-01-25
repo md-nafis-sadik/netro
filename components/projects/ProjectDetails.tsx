@@ -19,7 +19,7 @@ const ProjectDetails = ({ project }: any) => {
           backgroundColor: "lightgray",
         }}
       >
-        <div className="containerX overflow-hidden">
+        <div className="container overflow-hidden">
           <div className="flex items-center gap-2 text-white">
             <span>Portfolio</span>
             <svg
