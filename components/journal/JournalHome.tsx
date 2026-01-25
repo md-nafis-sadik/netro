@@ -4,13 +4,12 @@ import ArrowLineupButton from "@/components/ui/arrow-lineup-button";
 import colors from "@/lib/colors";
 import { timestampDisplay } from "@/services";
 import { routes } from "@/services/data/shared.data";
-import useEmblaCarousel from "embla-carousel-react";
 import SectionHeader from "../common/SectionHeader";
 import JournalCard from "./JournalCard";
 
 const OurJournal = ({ data }: any) => {
-  const options = { align: "start", loop: false } as const;
-  const [emblaRef] = useEmblaCarousel(options);
+  // const options = { align: "start", loop: false } as const;
+  // const [emblaRef] = useEmblaCarousel(options);
 
   return (
     <section className="bg-white flex_center flex-col my-20 w-full">
@@ -20,7 +19,7 @@ const OurJournal = ({ data }: any) => {
       </SectionHeader>
 
       <div className="containerX w-full overflow-hidden mt-5 md:mt-10">
-        <div className="w-full" ref={emblaRef}>
+        <div className="w-full">
           <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10 py-5 md:py-10">
             {data?.map((item: any, index: number) => (
               <JournalCard

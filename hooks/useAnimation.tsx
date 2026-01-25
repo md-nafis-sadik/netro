@@ -5,6 +5,7 @@ import { RefObject } from "react";
 type AnimateOptions = {
   y?: number;
   x?: number;
+  alpha?: number;
   scale?: number;
   opacity?: number;
   duration?: number;
@@ -25,6 +26,8 @@ export function useStaggerReveal(
       gsap.from(ref.current.children, {
         opacity: options.opacity ?? 0,
         y: options.y ?? 40,
+        x: options.x ?? 0,
+        alpha: options.alpha ?? 0,
         scale: options.scale ?? 0.95,
         duration: options.duration ?? 0.8,
         stagger: options.stagger ?? 0.2,

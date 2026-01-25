@@ -10,12 +10,12 @@ import SectionHeader from "../common/SectionHeader";
 import SectionSubHeader from "../common/SectionSubHeader";
 
 function ServicesHome() {
-  const { sectionRef, imageRef, activeService, setActiveService } =
+  const { itemRef, imageRef, activeService, setActiveService } =
     useServiceAnimation();
 
   return (
     <section
-      ref={sectionRef}
+       
       data-bg-theme="light"
       className="py-10 md:py-16 lg:py-20 font-inter overflow-hidden"
     >
@@ -30,7 +30,7 @@ function ServicesHome() {
         </SectionHeader>
 
         <div className="flex flex-col lg:flex-row justify-between w-full mt-10 md:mt-16 lg:mt-20 gap-8">
-          <div className="flex-1 flex flex-col">
+          <div ref={itemRef}  className="flex-1 flex flex-col">
             {servicesData?.map((service: IService, index: number) => (
               <Link
                 key={service?._id}

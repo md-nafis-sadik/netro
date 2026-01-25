@@ -21,12 +21,11 @@ const icons = {
 };
 
 function ProcessFollowed() {
-  const { sectionRef, imageRef, handleHover, handleLeave,activeIndex } =
+  const { cardsRef, imageRef, handleHover, handleLeave, activeIndex } =
     useProcessAnimation();
 
   return (
     <section
-      ref={sectionRef}
       data-bg-theme="light"
       className="bg-green-500 pb-10 pt-10 md:pt-16 lg:pt-20 overflow-hidden"
     >
@@ -37,7 +36,10 @@ function ProcessFollowed() {
         </SectionHeader>
 
         <div className="w-full relative mt-6 sm:mt-10 md:mt-16">
-          <div className="process-grid grid grid-cols-1 sm:grid-cols-4 gap-6 sm:gap-4 md:gap-8 mb-12">
+          <div
+            className="process-grid grid grid-cols-1 sm:grid-cols-4 gap-6 sm:gap-4 md:gap-8 mb-12"
+            ref={cardsRef}
+          >
             {processData.map((item, index) => {
               const isActive = activeIndex === index;
 

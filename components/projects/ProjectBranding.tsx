@@ -56,12 +56,17 @@ const ProjectBranding = ({ project }: any) => {
             className="w-full mt-13 md:mt-20 lg:mt-32"
           />
         </div>
-        <div className="grid grid-cols-2 grid-rows-5 gap-4  mt-13 md:mt-20 lg:mt-32">
-          <div className="col-span-2 row-span-2 bg-[#014A43]">1</div>
-          <div className="row-span-2 row-start-3 bg-[#014A43]">2</div>
-          <div className="row-span-2 row-start-3 bg-[#014A43]">3</div>
-          <div className="row-start-5 bg-[#014A43]">4</div>
-          <div className="row-start-5 bg-[#014A43]">5</div>
+        <div className="grid grid-cols-6 grid-rows-5 gap-4  mt-13 md:mt-20 lg:mt-32">
+          <div className="col-span-6 row-span-2 bg-[#014A43]">1</div>
+          <div className="col-span-3 row-span-2 row-start-3 bg-[#014A43]">
+            2
+          </div>
+          <div className="col-span-3 row-span-2 row-start-3 bg-[#014A43]">
+            3
+          </div>
+          <div className="col-span-2 row-start-5 bg-[#014A43] h-[300px]">4</div>
+          <div className="col-span-2 row-start-5 bg-[#014A43] h-[300px]">4</div>
+          <div className="col-span-2 row-start-5 bg-[#014A43] h-[300px]">5</div>
         </div>
       </div>
     </section>

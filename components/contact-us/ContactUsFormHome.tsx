@@ -1,21 +1,19 @@
 "use client";
+import { cn } from "@/lib/utils";
+import { images } from "@/services";
 import {
   ArrowLongTailIcon,
   ErrorSvg,
-  MailIcon,
   SpinningIcon,
   SuccessSvg,
-  WhatsappOutlinedIcon,
 } from "@/services/assets/svgs";
-import { Button } from "../ui/button";
-import { Fragment, useState } from "react";
-import { baseUrl, contactData } from "@/services/data/shared.data";
-import { Toaster } from "../ui/sonner";
-import { toast } from "sonner";
-import { useSearchParams } from "next/navigation";
+import { baseUrl } from "@/services/data/shared.data";
 import Image from "next/image";
-import { images } from "@/services";
-import { cn } from "@/lib/utils";
+import { useSearchParams } from "next/navigation";
+import { Fragment, useState } from "react";
+import { toast } from "sonner";
+import { Button } from "../ui/button";
+import { Toaster } from "../ui/sonner";
 
 function ContactUsFormHome() {
   const searchParams = useSearchParams();
@@ -30,7 +28,7 @@ function ContactUsFormHome() {
     const email = (form.elements.namedItem("email") as HTMLInputElement)?.value;
     const message = (form.elements.namedItem("message") as HTMLInputElement)
       ?.value;
-    
+
     // Email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!email || !emailRegex.test(email)) {
@@ -41,7 +39,7 @@ function ContactUsFormHome() {
       });
       return;
     }
-    
+
     const formData = new FormData();
     const data = {
       email,
@@ -94,25 +92,32 @@ function ContactUsFormHome() {
   };
 
   return (
-    <div className="relative">
+    <div className="relative  xl:min-h-dvh flex flex-col justify-center">
       <div
         className="absolute inset-0 -z-10 hidden md:block"
-        style={{
-          backgroundImage: "url('/images/contact-bg.webp')",
-          backgroundSize: "152.318% 152.318%",
-          backgroundPosition: "-49.593px -197.87px",
-          backgroundRepeat: "no-repeat",
-          backgroundColor: "lightgray",
-          transform: "scaleX(-1)",
-        }}
+        // style={{
+        //   backgroundImage: "url('/images/contact-bg.webp')",
+        //   backgroundSize: "152.318% 152.318%",
+        //   backgroundPosition: "-49.593px -197.87px",
+        //   backgroundRepeat: "no-repeat",
+        //   backgroundColor: "lightgray",
+        //   transform: "scaleX(-1)",
+        // }}
       />
 
       <Image
+        src={images.contactBg}
+        alt="Contact Image"
+        width={1440}
+        height={800}
+        className="w-full h-full hidden md:block object-cover origin-left md:absolute top-0 left-0 -z-10"
+      />
+      <Image
         src={images.contactImage}
         alt="Contact Image"
-        width={360}
-        height={474}
-        className="block md:hidden w-full h-auto aspect-[360/474]"
+        width={1440}
+        height={800}
+        className="w-full h-full md:hidden object-cover origin-left md:absolute top-0 left-0 -z-10"
       />
 
       <div className="containerX bg-darkPurplebg md:bg-transparent pb-10 md:pb-16 lg:pb-20 pt-10 md:pt-16 lg:pt-20">
@@ -151,7 +156,10 @@ function ContactUsFormHome() {
                 </p>
                 <ul className="mt-4 grid grid-cols-2 md:grid-cols-4 flex-wrap gap-3">
                   <li
-                    className={cn("budgetTagV2", selectedBudget === "5k-15k" ? "activeBudgetTagV2" : "")}
+                    className={cn(
+                      "budgetTagV2",
+                      selectedBudget === "5k-15k" ? "activeBudgetTagV2" : "",
+                    )}
                     onClick={() => setSelectedBudget("5k-15k")}
                   >
                     5k-15k
@@ -159,7 +167,7 @@ function ContactUsFormHome() {
                   <li
                     className={cn(
                       "budgetTagV2",
-                      selectedBudget === "15k-50k" ? "activeBudgetTagV2" : ""
+                      selectedBudget === "15k-50k" ? "activeBudgetTagV2" : "",
                     )}
                     onClick={() => setSelectedBudget("15k-50k")}
                   >
@@ -168,14 +176,17 @@ function ContactUsFormHome() {
                   <li
                     className={cn(
                       "budgetTagV2",
-                      selectedBudget === "50k-250k" ? "activeBudgetTagV2" : ""
+                      selectedBudget === "50k-250k" ? "activeBudgetTagV2" : "",
                     )}
                     onClick={() => setSelectedBudget("50k-250k")}
                   >
                     50k-250k
                   </li>
                   <li
-                    className={cn("budgetTagV2", selectedBudget === "250k" ? "activeBudgetTagV2" : "")}
+                    className={cn(
+                      "budgetTagV2",
+                      selectedBudget === "250k" ? "activeBudgetTagV2" : "",
+                    )}
                     onClick={() => setSelectedBudget("250k")}
                   >
                     {"< "}
