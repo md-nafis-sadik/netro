@@ -1,77 +1,27 @@
+import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
+import { useAnimation, useStaggerReveal } from "./useAnimation";
 
 export const useServiceAnimation = () => {
   const [activeService, setActiveService] = useState(0);
-
-  const sectionRef = useRef<HTMLDivElement | null>(null);
+  const itemRef = useRef<HTMLDivElement | null>(null);
   const imageRef = useRef<HTMLDivElement | null>(null);
 
-  /* ---------------- INITIAL LOAD WITH SCROLL TRIGGER ---------------- */
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      // Animate headers
-      gsap.fromTo(
-        ".services-sub, .services-title",
-        { autoAlpha: 0, y: 24, scale: 0.96 },
-        {
-          autoAlpha: 1,
-          y: 0,
-          scale: 1,
-          duration: 1,
-          stagger: 0.12,
-          ease: "expo.out",
-          scrollTrigger: {
-            trigger: ".services-sub",
-            start: "top 80%",
-            toggleActions: "play none none none",
-          },
-        },
-      );
+  useStaggerReveal(itemRef, {
+    alpha: 0,
+    x: -60,
+    scale: 0.95,
+  });
 
-      // Animate service items from left
-      gsap.fromTo(
-        ".service-item",
-        { autoAlpha: 0, x: -60, scale: 0.95 },
-        {
-          autoAlpha: 1,
-          x: 0,
-          scale: 1,
-          duration: 0.8,
-          stagger: 0.12,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: ".service-item",
-            start: "top 85%",
-            toggleActions: "play none none none",
-          },
-        },
-      );
-
-      // Animate service image
-      gsap.fromTo(
-        ".service-image",
-        { autoAlpha: 0, scale: 0.9, x: 40 },
-        {
-          autoAlpha: 1,
-          scale: 1,
-          x: 0,
-          duration: 1,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: ".service-image",
-            start: "top 85%",
-            toggleActions: "play none none none",
-          },
-        },
-      );
-    }, sectionRef);
-
-    return () => ctx.revert();
-  }, []);
+  useAnimation(imageRef, {
+    alpha: 0,
+    scale: 0.9,
+    x: 40,
+  });
 
   /* ---------------- IMAGE SMOOTH CHANGE ---------------- */
-  useEffect(() => {
+  useGSAP(() => {
     if (!imageRef.current) return;
 
     gsap.fromTo(
@@ -92,7 +42,7 @@ export const useServiceAnimation = () => {
     );
   }, [activeService]);
   return {
-    sectionRef,
+    itemRef,
     imageRef,
     activeService,
     setActiveService,

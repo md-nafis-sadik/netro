@@ -24,8 +24,6 @@ const CardTransitionUpWithDelay: React.FC<CardTransitionUpWithDelayProps> = ({
   const cardRef = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
-    gsap.registerPlugin(ScrollTrigger);
-
     if (cardRef.current) {
       gsap.fromTo(
         cardRef.current,

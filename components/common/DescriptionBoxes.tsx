@@ -1,4 +1,7 @@
+"use client";
+import { useStaggerReveal } from "@/hooks/useAnimation";
 import { cn } from "@/lib/utils";
+import { useRef } from "react";
 
 interface DescriptionBoxesProps {
   detailPoints: any[];
@@ -36,10 +39,13 @@ const DescriptionBoxes = ({
   className = "",
   detailPoints = [],
 }: DescriptionBoxesProps) => {
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  useStaggerReveal(containerRef, {});
   const currentVariant = variantStyles[variant];
 
   return (
     <div
+      ref={containerRef}
       className={cn(
         "grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-9 mt-6 md:mt-8 lg:mt-10 text-center",
         className,

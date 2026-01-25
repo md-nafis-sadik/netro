@@ -1,23 +1,86 @@
-import AwardsRecognition from "@/components/awards/AwardsRecognition";
-import ContactUsFormHome from "@/components/contact-us/ContactUsFormHome";
+import dynamic from "next/dynamic";
+
 import HeroHome from "@/components/hero/HeroHome";
 import IntroHome from "@/components/intro/IntroHome";
 import JournalHomeSkeleton from "@/components/journal/JournalHomeSkeleton";
-import JournalHomeWrapper from "@/components/journal/JournalHomeWrapper";
-import MarqueeHome from "@/components/marquee/MarqueeHome";
-import Products from "@/components/products/Products";
-import ProjectsHome from "@/components/projects/ProjectsHome";
-import Revoluation from "@/components/services/Revoluation";
-import ServicesHome from "@/components/services/ServicesHome";
-import StatisticsHome from "@/components/statistics/StatisticsHome";
-import Team from "@/components/team/Team";
-import Testimonial from "@/components/testimonial/Testimonial";
-import ProcessFollowed from "@/components/view/ProcessFollowed";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Suspense } from "react";
 
-gsap.registerPlugin(ScrollTrigger);
+const PulseBlock = ({ className }: { className?: string }) => (
+  <div
+    className={`w-full min-h-[260px] animate-pulse bg-neutral-900/10 ${className ?? ""}`}
+    aria-busy="true"
+    aria-live="polite"
+  />
+);
+
+const ProjectsHome = dynamic(
+  () => import("@/components/projects/ProjectsHome"),
+  {
+    loading: () => <PulseBlock className="min-h-[360px]" />,
+  },
+);
+
+const ServicesHome = dynamic(
+  () => import("@/components/services/ServicesHome"),
+  {
+    loading: () => <PulseBlock />,
+  },
+);
+
+const Revoluation = dynamic(() => import("@/components/services/Revoluation"), {
+  loading: () => <PulseBlock />,
+});
+
+const Testimonial = dynamic(
+  () => import("@/components/testimonial/Testimonial"),
+  {
+    loading: () => <PulseBlock />,
+  },
+);
+
+const Products = dynamic(() => import("@/components/products/Products"), {
+  loading: () => <PulseBlock />,
+});
+
+const MarqueeHome = dynamic(() => import("@/components/marquee/MarqueeHome"), {
+  loading: () => <PulseBlock className="min-h-[140px]" />,
+});
+
+const ProcessFollowed = dynamic(
+  () => import("@/components/view/ProcessFollowed"),
+  {
+    loading: () => <PulseBlock />,
+  },
+);
+
+const Team = dynamic(() => import("@/components/team/Team"), {
+  loading: () => <PulseBlock />,
+});
+
+const AwardsRecognition = dynamic(
+  () => import("@/components/awards/AwardsRecognition"),
+  {
+    loading: () => <PulseBlock />,
+  },
+);
+
+const ContactUsFormHome = dynamic(
+  () => import("@/components/contact-us/ContactUsFormHome"),
+  {
+    loading: () => <PulseBlock className="min-h-[420px]" />,
+  },
+);
+
+const StatisticsHome = dynamic(
+  () => import("@/components/statistics/StatisticsHome"),
+  {
+    loading: () => <PulseBlock />,
+  },
+);
+
+const JournalHomeWrapper = dynamic(
+  () => import("@/components/journal/JournalHomeWrapper"),
+  { loading: () => <JournalHomeSkeleton /> },
+);
 
 const HomePage = () => {
   return (
@@ -44,9 +107,7 @@ const HomePage = () => {
         <StatisticsHome />
       </section>
       <section data-bg-theme="light">
-        <Suspense fallback={<JournalHomeSkeleton />}>
-          <JournalHomeWrapper />
-        </Suspense>
+        <JournalHomeWrapper />
       </section>
     </main>
   );

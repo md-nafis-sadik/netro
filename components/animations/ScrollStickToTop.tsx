@@ -1,9 +1,7 @@
 "use client";
-import React, { useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
+import React, { useEffect, useRef } from "react";
 
 type ScrollStickToTopProps = {
   children: React.ReactNode; // Content for the stack cards

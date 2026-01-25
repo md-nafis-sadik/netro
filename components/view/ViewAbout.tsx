@@ -8,8 +8,6 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 
-gsap.registerPlugin(ScrollTrigger);
-
 const ViewAbout = ({ reverse }: { reverse?: boolean }) => {
   const options = {
     align: "center",
@@ -126,7 +124,7 @@ const ViewAbout = ({ reverse }: { reverse?: boolean }) => {
             scale: 1,
             stagger: { each: 0.02, amount: 2 },
             ease: "power2.out",
-          }
+          },
         );
 
       // Refresh again after animation setup
@@ -143,7 +141,7 @@ const ViewAbout = ({ reverse }: { reverse?: boolean }) => {
       ref={containerRef}
       className={cn(
         "containerX overflow-hidden w-full flex",
-        reverse ? "flex-col-reverse" : "flex-col"
+        reverse ? "flex-col-reverse" : "flex-col",
       )}
     >
       <div className="mx-auto w-full mt-6 md:mt-10 mb-10 md:mb-0 h-[234px] min-h-[234px] md:h-[544px] md:min-h-[544px] lg:h-[660px] lg:min-h-[660px] overflow-hidden">
@@ -160,7 +158,7 @@ const ViewAbout = ({ reverse }: { reverse?: boolean }) => {
                     selectedIndex === index
                       ? "h-[234px] md:h-[544px]"
                       : "h-[186px] md:h-[434px]",
-                    index === aboutViewData.length - 1 && "me-4 md:me-6"
+                    index === aboutViewData.length - 1 && "me-4 md:me-6",
                   )}
                   style={{
                     transform:
@@ -185,7 +183,7 @@ const ViewAbout = ({ reverse }: { reverse?: boolean }) => {
       <p
         className={cn(
           "text-2xl md:text-5xl font-bold !leading-[1.4] text-text-900 mt-20 md:mt-16",
-          reverse ? "md:mb-14" : "md:mb-[100px]"
+          reverse ? "md:mb-14" : "md:mb-[100px]",
         )}
         // ref={paragraphRef}
       >

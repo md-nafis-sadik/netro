@@ -1,51 +1,13 @@
 import gsap from "gsap";
 import { useEffect, useRef, useState } from "react";
+import { useStaggerReveal } from "./useAnimation";
 
 export const useProcessAnimation = () => {
   const [activeIndex, setActiveIndex] = useState(0);
-
   const sectionRef = useRef<HTMLElement | null>(null);
+  const cardsRef = useRef<HTMLDivElement | null>(null);
   const imageRef = useRef<HTMLDivElement | null>(null);
-
-  /* ---------- SCROLL REVEAL ---------- */
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.fromTo(
-        ".process-sub, .process-title",
-        { autoAlpha: 0, y: 24, scale: 0.96 },
-        {
-          autoAlpha: 1,
-          y: 0,
-          scale: 1,
-          duration: 1,
-          stagger: 0.15,
-          ease: "expo.out",
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: "top 80%",
-          },
-        },
-      );
-
-      gsap.fromTo(
-        ".process-card",
-        { autoAlpha: 0, y: 30 },
-        {
-          autoAlpha: 1,
-          y: 0,
-          duration: 0.9,
-          stagger: 0.15,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: ".process-grid",
-            start: "top 80%",
-          },
-        },
-      );
-    }, sectionRef);
-
-    return () => ctx.revert();
-  }, []);
+  useStaggerReveal(cardsRef, {});
 
   /* ---------- IMAGE CHANGE ANIMATION ---------- */
   useEffect(() => {
@@ -99,7 +61,7 @@ export const useProcessAnimation = () => {
   };
 
   return {
-    sectionRef,
+    cardsRef,
     imageRef,
     handleHover,
     handleLeave,

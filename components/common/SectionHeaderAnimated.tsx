@@ -1,12 +1,8 @@
 "use client";
-import { scoutCond } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
 import { useGSAP } from "@gsap/react";
-import ScrollTrigger from "gsap/ScrollTrigger";
 import gsap from "gsap";
 import { useRef } from "react";
-
-gsap.registerPlugin(ScrollTrigger);
 
 interface IFHeader {
   dark?: boolean;
@@ -64,7 +60,7 @@ const SectionHeaderAnimated = ({ dark, lite, text, className }: IFHeader) => {
           stagger: 0.1,
           duration: 0.8,
           ease: "power2.out",
-        }
+        },
       );
 
       // Cleanup
@@ -72,7 +68,7 @@ const SectionHeaderAnimated = ({ dark, lite, text, className }: IFHeader) => {
         tl.kill();
       };
     },
-    { scope: containerRef }
+    { scope: containerRef },
   );
 
   return (
@@ -82,7 +78,7 @@ const SectionHeaderAnimated = ({ dark, lite, text, className }: IFHeader) => {
         "text-5xl md:text-[128px] font-bold !leading-[0.9] uppercase text-center font-scoutcond",
         dark && "text-black",
         lite && "text-white",
-        className
+        className,
       )}
     />
   );

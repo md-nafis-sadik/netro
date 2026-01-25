@@ -1,4 +1,7 @@
+"use client";
+import { useAnimation } from "@/hooks/useAnimation";
 import { cn } from "@/lib/utils";
+import { useRef } from "react";
 
 interface DescriptionHeaderProps {
   text?: string;
@@ -17,6 +20,14 @@ const DescriptionHeader = ({
   titleClassName = "",
   descriptionClassName = "",
 }: DescriptionHeaderProps) => {
+  const titleRef = useRef<HTMLDivElement | null>(null);
+  const textRef = useRef<HTMLDivElement | null>(null);
+  useAnimation(titleRef, {
+    y: 40,
+  });
+  useAnimation(textRef, {
+    y: 40,
+  });
   const variantClasses = {
     default: {
       title: "text-white",
@@ -39,7 +50,7 @@ const DescriptionHeader = ({
   return (
     <div className={cn("flex flex-col items-center gap-4 md:gap-6", className)}>
       {title && (
-        <div className="flex-shrink-0">
+        <div ref={titleRef} className="flex-shrink-0">
           <div
             className={cn(
               "text-5xl md:text-[56px] leading-[90%] font-scoutcond font-bold uppercase",
@@ -53,8 +64,9 @@ const DescriptionHeader = ({
       )}
       {text && (
         <div
+          ref={textRef}
           className={cn(
-            "!text-lg sm:!text-2xl md:!text-4xl !leading-[110%] text-center max-w-[874px]" ,
+            "!text-lg sm:!text-2xl md:!text-4xl !leading-[110%] text-center max-w-[874px]",
             descriptionClassName,
             variantClasses[variant].description,
           )}

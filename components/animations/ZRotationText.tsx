@@ -1,10 +1,7 @@
 "use client";
-import React, { useEffect, useRef } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { cn } from "@/lib/utils";
-
-gsap.registerPlugin(ScrollTrigger);
+import { gsap } from "gsap";
+import { useEffect, useRef } from "react";
 
 interface ZRotationTextProps {
   text: string;
@@ -73,7 +70,7 @@ const ZRotationText = ({
             ease: "power4.in",
           },
         },
-        0
+        0,
       )
       .to(
         cloneChars,
@@ -84,7 +81,7 @@ const ZRotationText = ({
             each: 0.02,
           },
         },
-        0.001
+        0.001,
       )
       .to(
         cloneChars,
@@ -95,7 +92,7 @@ const ZRotationText = ({
             each: 0.02,
           },
         },
-        0
+        0,
       );
 
     return () => {
