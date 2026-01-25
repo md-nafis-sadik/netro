@@ -23,7 +23,8 @@ const ProjectSolution = ({ project }: any) => {
           detailPoints={project.data.solutionPoints}
           title="The Solution"
           variant="white" // or "white", "blue", "gradient"
-          className="lg:grid-cols-4 mt-6 md:mt-8 lg:mt-14"
+          className="grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mt-6 md:mt-8 lg:mt-14"
+          boxClassName="last:col-span-1"
         />
         <div ref={imgRef}>
           <Image

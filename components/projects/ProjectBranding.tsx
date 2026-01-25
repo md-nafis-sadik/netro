@@ -56,17 +56,25 @@ const ProjectBranding = ({ project }: any) => {
             className="w-full mt-10 md:mt-16 lg:mt-32"
           />
         </div>
-        <div className="grid grid-cols-6 grid-rows-5 gap-4  mt-13 md:mt-20 lg:mt-32">
-          <div className="col-span-6 row-span-2 bg-[#014A43]">1</div>
-          <div className="col-span-3 row-span-2 row-start-3 bg-[#014A43]">
+        <div className="grid md:grid-cols-6 gap-4  mt-10 md:mt-20 lg:mt-32">
+          <div className="md:col-span-6 md:row-span-2 bg-[#014A43] h-[218px] sm:h-[420px] lg:h-[648px]">
+            1
+          </div>
+          <div className="md:col-span-3 md:row-span-2 md:row-start-3 bg-[#014A43] h-[218px] sm:h-[420px] lg:h-[648px]">
             2
           </div>
-          <div className="col-span-3 row-span-2 row-start-3 bg-[#014A43]">
+          <div className="md:col-span-3 md:row-span-2 md:row-start-3 bg-[#014A43] h-[218px] sm:h-[420px] lg:h-[648px]">
             3
           </div>
-          <div className="col-span-2 row-start-5 bg-[#014A43] h-[300px]">4</div>
-          <div className="col-span-2 row-start-5 bg-[#014A43] h-[300px]">4</div>
-          <div className="col-span-2 row-start-5 bg-[#014A43] h-[300px]">5</div>
+          <div className="md:col-span-2 md:row-start-5 bg-[#014A43] h-[218px] sm:h-[420px] lg:h-[365px]">
+            4
+          </div>
+          <div className="md:col-span-2 md:row-start-5 bg-[#014A43] h-[218px] sm:h-[420px] lg:h-[365px]">
+            4
+          </div>
+          <div className="md:col-span-2 md:row-start-5 bg-[#014A43] h-[218px] sm:h-[420px] lg:h-[365px]">
+            5
+          </div>
         </div>
       </div>
     </section>
