@@ -20,7 +20,7 @@ const ProjectDescription = ({ project }: any) => {
       ref={sectionRef}
       className="font-inter bg-darkPurplebg p-10 md:p-16 lg:p-20"
     >
-      <div className="containerX">
+      <div className="container">
         <DescriptionHeader
           title="Project Description"
           text={

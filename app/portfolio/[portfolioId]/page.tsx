@@ -1,11 +1,37 @@
-import DiscoverMoreProjectsSkeleton from "@/components/projects/DiscoverMoreProjectsSkeleton";
-import DiscoverMoreProjectsWrapper from "@/components/projects/DiscoverMoreProjectsWrapper";
-import ProjectDetailsSkeleton from "@/components/projects/ProjectDetailsSkeleton";
-import ProjectDetailsWrapper from "@/components/projects/ProjectDetailsWrapper";
-import { getPortfolioById } from "@/services/data/portfolio.data";
+import dynamic from "next/dynamic";
+
 import { purifyUrl } from "@/services";
-import { Suspense } from "react";
+import { getPortfolioById } from "@/services/data/portfolio.data";
 import { Metadata } from "next";
+import { notFound } from "next/navigation";
+
+const PulseBlock = ({ className }: { className?: string }) => (
+  <div
+    className={`w-full min-h-[180px] animate-pulse bg-neutral-900/10 ${className ?? ""}`}
+    aria-busy="true"
+    aria-live="polite"
+  />
+);
+
+const ProjectDetails = dynamic(
+  () => import("@/components/projects/ProjectDetails"),
+  { loading: () => <PulseBlock className="min-h-[240px]" /> },
+);
+
+const ProjectDescription = dynamic(
+  () => import("@/components/projects/ProjectDescription"),
+  { loading: () => <PulseBlock /> },
+);
+
+const ProjectSolution = dynamic(
+  () => import("@/components/projects/ProjectSolution"),
+  { loading: () => <PulseBlock /> },
+);
+
+const ProjectBranding = dynamic(
+  () => import("@/components/projects/ProjectBranding"),
+  { loading: () => <PulseBlock /> },
+);
 
 export async function generateMetadata({
   params,
@@ -35,18 +61,24 @@ async function PortfolioDetails({
 }) {
   let { portfolioId } = await params;
   portfolioId = purifyUrl({ urlString: portfolioId });
+  const portfolioData = getPortfolioById(portfolioId);
+
+  if (!portfolioData) {
+    notFound();
+  }
+
+  const portfolioDetails = {
+    data: portfolioData,
+  };
 
   return (
     <main className="mt-[60px]">
-      <Suspense fallback={<ProjectDetailsSkeleton />}>
-        <ProjectDetailsWrapper id={portfolioId} />
-      </Suspense>
-      {/* <Suspense fallback={<DiscoverMoreProjectsSkeleton />}>
-        <DiscoverMoreProjectsWrapper id={portfolioId} />
-      </Suspense> */}
+      <ProjectDetails project={portfolioDetails} />
+      <ProjectDescription project={portfolioDetails} />
+      <ProjectSolution project={portfolioDetails} />
+      <ProjectBranding project={portfolioDetails} />
     </main>
   );
 }
 
 export default PortfolioDetails;
-
