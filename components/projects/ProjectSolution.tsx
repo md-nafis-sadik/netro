@@ -1,9 +1,13 @@
 "use client";
+import { useAnimation } from "@/hooks/useAnimation";
 import Image from "next/image";
-import DescriptionHeader from "../common/DescriptionHeader";
+import { useRef } from "react";
 import DescriptionBoxes from "../common/DescriptionBoxes";
+import DescriptionHeader from "../common/DescriptionHeader";
 
 const ProjectSolution = ({ project }: any) => {
+  const imgRef = useRef<HTMLDivElement>(null);
+  useAnimation(imgRef, {});
   return (
     <section className="font-inter bg-white p-10 md:p-16 lg:p-28">
       <div className="containerX">
@@ -21,13 +25,15 @@ const ProjectSolution = ({ project }: any) => {
           variant="white" // or "white", "blue", "gradient"
           className="lg:grid-cols-4 mt-6 md:mt-8 lg:mt-14"
         />
-        <Image
-          src={project?.data?.solutionImage}
-          alt={project?.data?.title || "Project Image"}
-          width={1176}
-          height={648}
-          className="w-full mt-10 md:mt-16 lg:mt-20"
-        />
+        <div ref={imgRef}>
+          <Image
+            src={project?.data?.solutionImage}
+            alt={project?.data?.title || "Project Image"}
+            width={1176}
+            height={648}
+            className="w-full mt-10 md:mt-16 lg:mt-20"
+          />
+        </div>
       </div>
     </section>
   );

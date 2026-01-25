@@ -1,6 +1,5 @@
 import ScrollToTopOnRouteChange from "@/components/common/ScrollToTopOnRouteChange";
 import Footer from "@/components/footer/Footer";
-import LetsTalk from "@/components/letsTalk/LetsTalkHome";
 import NavbarWrapper from "@/components/navigation/NavbarWrapper";
 import { TidycalModal } from "@/components/tidycal/TidycalModal";
 import LenisWrapper from "@/components/wrappers/LenisWrapper";
@@ -12,8 +11,11 @@ import "@/styles/app.css";
 import "@/styles/bgGradient.css";
 import "@/styles/globals.css";
 import "@/styles/textGradient.css";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import type { Metadata } from "next";
 import Script from "next/script";
+gsap.registerPlugin(ScrollTrigger);
 
 const OG_IMAGE_URL =
   "https://opengraph.b-cdn.net/production/images/eb88ff5b-9a69-4dac-b58d-da9c8cd8817b.png?token=4uWAqpARQAFN7EqcR0HXXkE6w0lWaWBdIUPe_Do_LWM&height=577&width=1200&expires=33301964835";
