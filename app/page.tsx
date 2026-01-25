@@ -94,21 +94,11 @@ const HomePage = () => {
       <Products />
       <MarqueeHome />
       <ProcessFollowed />
-      <section data-bg-theme="dark">
-        <Team />
-      </section>
-      <section data-bg-theme="light">
-        <AwardsRecognition />
-      </section>
-      <section data-bg-theme="dark">
-        <ContactUsFormHome />
-      </section>
-      <section data-bg-theme="dark">
-        <StatisticsHome />
-      </section>
-      <section data-bg-theme="light">
-        <JournalHomeWrapper />
-      </section>
+      <Team />
+      <AwardsRecognition />
+      <ContactUsFormHome />
+      <StatisticsHome />
+      <JournalHomeWrapper />
     </main>
   );
 };
