@@ -213,4 +213,7 @@ export { default as simigoLaptop } from "@/public/images/project/simigo-laptop.w
 export { default as simigoPhone } from "@/public/images/project/simigo-phone.webp";
 export { default as simigoShopping } from "@/public/images/project/simigo-shopping.webp";
 export { default as simigoSolution } from "@/public/images/project/simigo-solution.webp";
+export { default as simigoBranding1 } from "@/public/images/project/simigo-branding-1.webp";
+export { default as simigoBranding2 } from "@/public/images/project/simigo-branding-2.webp";
+export { default as simigoWireframe1 } from "@/public/images/project/simigo-wireframe-1.webp";
 

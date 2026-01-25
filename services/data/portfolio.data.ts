@@ -115,6 +115,12 @@ export const portfolios = [
       },
     ],
     solutionImage: images.simigoSolution,
+    softwareBrandingDetails:
+      "Keeping mind the brand essence and real market research we have build such a UX that can impact user’s usage behavior. Here you can see a glimpse.",
+    brandingImages: [images.simigoBranding1, images.simigoBranding2],
+    wireframeDetails:
+      "It might seems weird but we do practices this kind of a standard practice.",
+    wireframeImages: [images.simigoWireframe1],
     url: "/portfolio/simigo-esim-branding-and-digital-marketing",
   },
   {
