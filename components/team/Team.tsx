@@ -38,7 +38,7 @@ const Team = () => {
         </SectionHeader>
       </div>
 
-      <div className="containerX w-full mt-6 mb-6 md:my-20 hidden lg:block">
+      <div className="container w-full mt-6 mb-6 md:my-20 hidden lg:block">
         <div className="w-full">
           <div
             className="

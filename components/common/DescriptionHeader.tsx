@@ -48,12 +48,12 @@ const DescriptionHeader = ({
   };
 
   return (
-    <div className={cn("flex flex-col items-center gap-4 md:gap-6", className)}>
+    <div className={cn("flex flex-col items-center gap-6", className)}>
       {title && (
         <div ref={titleRef} className="flex-shrink-0">
           <div
             className={cn(
-              "text-2xl sm:text-4xl md:text-[56px] leading-[90%] font-scoutcond font-bold uppercase",
+              "text-5xl md:text-[56px] leading-[90%] font-scoutcond font-bold uppercase text-center",
               titleClassName,
               variantClasses[variant].title,
             )}
@@ -66,7 +66,7 @@ const DescriptionHeader = ({
         <div
           ref={textRef}
           className={cn(
-            "!text-lg sm:!text-2xl md:!text-4xl !leading-[110%] text-center max-w-[874px]",
+            "!text-sm sm:!text-xl lg:!text-4xl !leading-[110%] text-center max-w-[874px]",
             descriptionClassName,
             variantClasses[variant].description,
           )}

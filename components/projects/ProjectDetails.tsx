@@ -1,4 +1,8 @@
 "use client";
+import {
+  StarBreadcrumbBigIcon,
+  StarBreadcrumbSmallIcon,
+} from "@/services/assets/svgs";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import Image from "next/image";
@@ -58,7 +62,7 @@ const ProjectDetails = ({ project }: any) => {
   return (
     <section ref={sectionRef} className="font-inter mt-[-60px]">
       <div
-        className="pt-4 lg:pt-48"
+        className="pt-24 lg:pt-40 xl:pt-48"
         style={{
           backgroundImage: `url('${project?.data?.backgroundImageUrl}')`,
           backgroundPosition: "50%",
@@ -70,35 +74,29 @@ const ProjectDetails = ({ project }: any) => {
         <div className="container overflow-hidden">
           <div
             ref={breadcrumbRef}
-            className="flex items-center gap-2 text-white"
+            className="flex items-center gap-2 text-white text-xs md:text-sm lg:text-base"
           >
             <span>Portfolio</span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              viewBox="0 0 16 16"
-              fill="none"
-            >
-              <path
-                d="M8 0L10.1607 5.83927L16 8L10.1607 10.1607L8 16L5.83927 10.1607L0 8L5.83927 5.83927L8 0Z"
-                fill="#FFC400"
-              />
-            </svg>
-            <span className="font-semibold">
+            <span className="hidden md:block">
+              <StarBreadcrumbBigIcon />
+            </span>
+            <span className="block md:hidden">
+              <StarBreadcrumbSmallIcon />
+            </span>
+            <span className="font-normal md:font-semibold">
               {project?.data?.title || "Portfolio Title Not Found"}
             </span>
           </div>
           <div
             ref={titleRef}
-            className="portfolio_details_header text-xl md:text-3xl lg:text-5xl xl:text-6xl font-bold w-fit text-start leading-[120%] mt-4"
+            className="portfolio_details_header text-[28px] md:text-4xl lg:text-5xl xl:text-6xl font-bold w-fit text-start leading-[120%] mt-4"
           >
             {project?.data?.title || "Portfolio Title Not Found"}
           </div>
 
           <p
             ref={subtitleRef}
-            className="font-inter text-sm md:text-xl lg:text-2xl font-normal md:font-light !leading-[1.4] text-start text-white mt-2"
+            className="font-inter text-sm md:text-lg lg:text-xl xl:text-2xl font-normal md:font-light !leading-[1.4] text-start text-white mt-2"
           >
             {project?.data?.subtitle || "Portfolio Subtitle Not Found"}
           </p>
@@ -109,7 +107,7 @@ const ProjectDetails = ({ project }: any) => {
                 alt={project?.data?.title || "Portfolio Background"}
                 width={1176}
                 height={648}
-                className="w-full -mb-28 mt-14"
+                className="w-full mb-0 md:-mb-28 mt-12 md:mt-14"
               />
             </div>
           )}

@@ -9,7 +9,7 @@ const ProjectSolution = ({ project }: any) => {
   const imgRef = useRef<HTMLDivElement>(null);
   useAnimation(imgRef, {});
   return (
-    <section className="font-inter bg-white py-10 md:py-16 lg:py-28">
+    <section className="font-inter bg-white py-8 md:py-16 lg:py-28">
       <div className="container">
         <DescriptionHeader
           title="The Solution"

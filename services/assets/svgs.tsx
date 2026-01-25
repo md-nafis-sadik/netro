@@ -1774,8 +1774,6 @@ export const ArrowPointerIcon = ({
 }: IFSvgProps) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="49"
-    height="49"
     viewBox="0 0 49 49"
     fill="none"
     className={className}
@@ -1785,6 +1783,92 @@ export const ArrowPointerIcon = ({
       fillRule="evenodd"
       clipRule="evenodd"
       d="M12.7418 29.5255C12.3833 29.4341 12.0557 29.2488 11.7925 28.9888C11.5293 28.7288 11.3401 28.4033 11.2444 28.046C11.1486 27.6886 11.1497 27.3122 11.2477 26.9554C11.3456 26.5987 11.5367 26.2744 11.8015 26.016L30.9539 7.28918C32.3528 5.92222 34.6946 7.06333 34.4802 9.00669L33.0342 22.2074L40.8873 32.9182C42.045 34.4956 40.5855 36.6536 38.6917 36.1671L12.7414 29.5239L12.7418 29.5255Z"
+      fill={color}
+    />
+  </svg>
+);
+
+export const DashedCurvePathDesktop = ({
+  className,
+  color = "#FF9F43",
+  ...props
+}: IFSvgProps) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 423 447"
+    fill="none"
+    className={className}
+    preserveAspectRatio="xMidYMid meet"
+    {...props}
+  >
+    <path
+      d="M41.5068 1.48438C115.507 11.9844 243.59 27.5359 340.504 66.4844C436.229 104.955 394.703 177.133 340.504 188.484L61.5042 245.484C-11.3123 261.196 -28.5064 355.484 70.2624 374.196C157.849 390.79 358.817 429.496 422.007 444.984"
+      stroke={color}
+      strokeWidth="3"
+      strokeDasharray="8 8"
+    />
+  </svg>
+);
+
+export const DashedCurvePathMobile = ({
+  className,
+  color = "#FF9F43",
+  ...props
+}: IFSvgProps) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 310 312"
+    fill="none"
+    className={className}
+    preserveAspectRatio="xMidYMid meet"
+    {...props}
+  >
+    <path
+      d="M198.815 0.462891C236.815 15.9629 182.476 -6.54197 262.206 25.4629C340.957 57.0751 306.794 131.135 262.206 140.463L51.3147 188.963C-8.58987 201.873 -23.9537 250.707 51.3147 284.963C117.745 315.197 62.9622 295.76 116.962 310.963"
+      stroke={color}
+      strokeWidth="3"
+      strokeDasharray="8 8"
+    />
+  </svg>
+);
+
+export const StarBreadcrumbSmallIcon = ({
+  className,
+  color = "#FFC400",
+  ...props
+}: IFSvgProps) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="12"
+    height="12"
+    viewBox="0 0 12 12"
+    fill="none"
+    className={className}
+    {...props}
+  >
+    <path
+      d="M6 0L7.62054 4.37946L12 6L7.62054 7.62054L6 12L4.37946 7.62054L0 6L4.37946 4.37946L6 0Z"
+      fill={color}
+    />
+  </svg>
+);
+
+export const StarBreadcrumbBigIcon = ({
+  className,
+  color = "#FFC400",
+  ...props
+}: IFSvgProps) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="16"
+    height="16"
+    viewBox="0 0 16 16"
+    fill="none"
+    className={className}
+    {...props}
+  >
+    <path
+      d="M8 0L10.1607 5.83927L16 8L10.1607 10.1607L8 16L5.83927 10.1607L0 8L5.83927 5.83927L8 0Z"
       fill={color}
     />
   </svg>

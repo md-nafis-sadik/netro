@@ -12,7 +12,7 @@ const ProjectBranding = ({ project }: any) => {
   useAnimation(secondImgRef, {});
   useAnimation(thiredImgRef, {});
   return (
-    <section className="font-inter bg-darkPurplebg py-10 md:py-16 lg:py-20">
+    <section className="font-inter bg-darkPurplebg py-8 md:py-16 lg:py-20">
       <div className="container">
         <DescriptionHeader
           title="Software Branding"
@@ -27,7 +27,7 @@ const ProjectBranding = ({ project }: any) => {
             alt={project?.data?.title || "Project Image"}
             width={1176}
             height={648}
-            className="w-full mt-10 md:mt-16 lg:mt-20"
+            className="w-full mt-6 md:mt-16 lg:mt-20"
           />
         </div>
         <div ref={secondImgRef}>
@@ -36,15 +36,15 @@ const ProjectBranding = ({ project }: any) => {
             alt={project?.data?.title || "Project Image"}
             width={1176}
             height={648}
-            className="w-full mt-10 md:mt-16 lg:mt-20"
+            className="w-full mt-6 md:mt-16 lg:mt-20"
           />
         </div>
         <DescriptionHeader
-          title="Wireframes"
+          title="Wireframes to  Final Design"
           text={
             project?.data?.wireframeDetails || "Wireframe details not found."
           }
-          className="mt-24 md:mt-32 lg:mt-40"
+          className="mt-16 md:mt-28 lg:mt-40"
         />
 
         <div ref={thiredImgRef}>
@@ -53,7 +53,7 @@ const ProjectBranding = ({ project }: any) => {
             alt={project?.data?.title || "Project Image"}
             width={1176}
             height={648}
-            className="w-full mt-13 md:mt-20 lg:mt-32"
+            className="w-full mt-10 md:mt-16 lg:mt-32"
           />
         </div>
         <div className="grid md:grid-cols-6 gap-4  mt-10 md:mt-20 lg:mt-32">

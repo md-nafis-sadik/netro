@@ -13,7 +13,7 @@ const OtherProductCard = ({ item }: IFProductCardProps) => {
   return (
     <div
       className={cn(
-        "w-full min-w-[90%] md:min-w-[621px] aspect-[82/115] lg:aspect-[31/18] overflow-hidden bg-neutral-50 group transition_common relative"
+        "w-full min-w-[90%] 2xl:min-w-[376px] aspect-[328/418] xl:aspect-[376/460] last:aspect-[328/418] md:last:aspect-[376/240] xl:last:aspect-[376/460] last:col-span-1 md:last:col-span-2 xl:last:col-span-1 overflow-hidden bg-neutral-50 group transition_common relative",
       )}
     >
       <Image
@@ -30,12 +30,10 @@ const OtherProductCard = ({ item }: IFProductCardProps) => {
         item?.title) && (
         <div
           className={cn(
-            "absolute left-0 bottom-[-2px] md:bottom-0 w-full md:top-0 h-[55%] md:h-full md:max-w-[50%] project-home-blur transition_common " +
-              // md+ screens: slide in from left
-              "md:-translate-x-full md:group-hover:translate-x-0 translate-x-0 translate-y-0"
+            "absolute left-0 bottom-0 w-full h-[45%] xl:h-[40%] md:max-w-full project-home-blur transition_common ",
           )}
         >
-          <div className="pr-6 pl-4 pb-5 pt-5 md:pr-12 md:pl-10 md:pt-12 md:pb-12 h-full flex flex-col justify-between gap-4 md:gap-6">
+          <div className="pr-6 pl-4 pb-4 pt-5 md:pr-14 md:pl-6 md:pt-12 md:pb-6 h-full flex flex-col justify-between gap-4 md:gap-6">
             {/* <Image
               src={images.netroLogo}
               alt={item?.title}
@@ -45,20 +43,20 @@ const OtherProductCard = ({ item }: IFProductCardProps) => {
             /> */}
 
             <div className="flex flex-col mt-auto">
-              <p className="text-text-50 font-bold font-scoutcond text-[20px] md:text-[30px] leading-4 md:leading-8 line-clamp-1">
+              <p className="text-text-50 font-bold font-scoutcond text-[32px] xl:text-[36px] 2xl:text-[40px] leading-[100%] line-clamp-1">
                 {item?.title}
               </p>
-              <p className="text-xs sm:text-base font-normal !leading-[1.4] text-text-200 mt-2 font-inter line-clamp-2">
+              <p className="text-xs md:text-sm 2xl:text-base font-normal !leading-[1.4] text-text-200 mt-3 font-inter line-clamp-2">
                 {item?.metaDescription}
               </p>
-              <p
+              {/* <p
                 className={cn(
                   "text-[10px] md:text-xs font-normal !leading-[1.6] text-text-200 font-inter"
                 )}
               >
                 {item?.tagList}
-              </p>
-
+              </p> */}
+              {/* 
               <Link href={item?.url ? item?.url : `/portfolio/${item?.title}`}>
                 <Button className="w-fit group mt-3 md:mt-4 py-2">
                   <span className="!leading-none text-xs md:text-base">
@@ -66,7 +64,7 @@ const OtherProductCard = ({ item }: IFProductCardProps) => {
                   </span>
                   <ArrowLongTailIcon className="h-auto w-5 md:w-6 group-hover:translate-x-2 transition_common" />
                 </Button>
-              </Link>
+              </Link> */}
             </div>
           </div>
         </div>

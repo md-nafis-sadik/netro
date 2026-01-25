@@ -78,7 +78,7 @@ const AwardsRecognition = () => {
           </SectionHeader>
         </div>
 
-        <div className="containerX mt-8 md:mt-16 lg:mt-20 w-full">
+        <div className="container mt-8 md:mt-16 lg:mt-20 w-full">
           {/* Desktop XL+: Show 3 items WITHOUT carousel */}
           <div className="hidden xl:flex justify-center items-center gap-8 lg:gap-12 xl:gap-16">
             <div className="flex justify-center animate-item">
