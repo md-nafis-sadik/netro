@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from "react";
 
 interface IFSvgProps extends React.SVGProps<SVGSVGElement> {
   color?: string;
@@ -71,80 +71,121 @@ const DashedCurvePointerMobile = ({
 
 const CarrierFlowSection = ({ items }: any) => {
   const sectionRef = useRef<HTMLDivElement>(null);
+  const lastScrollY = useRef<number>(0);
 
   useEffect(() => {
     const loadGSAP = async () => {
       try {
-        const { gsap } = await import('gsap');
-        const { ScrollTrigger } = await import('gsap/ScrollTrigger');
-        
+        const { gsap } = await import("gsap");
+        const { ScrollTrigger } = await import("gsap/ScrollTrigger");
+
         gsap.registerPlugin(ScrollTrigger);
 
         if (!sectionRef.current) return;
 
         // Desktop arrow animation
-        const desktopPath = document.querySelector('#desktop-path') as SVGPathElement;
-        const desktopArrow = document.querySelector('#desktop-arrow') as SVGGElement;
-        
+        const desktopPath = document.querySelector(
+          "#desktop-path",
+        ) as SVGPathElement;
+        const desktopArrow = document.querySelector(
+          "#desktop-arrow",
+        ) as SVGGElement;
+
         if (desktopPath && desktopArrow) {
           const pathLength = desktopPath.getTotalLength();
-          
-          gsap.to({}, {
-            scrollTrigger: {
-              trigger: sectionRef.current,
-              start: "top center",
-              end: "bottom center",
-              scrub: 1,
-              onUpdate: (self: any) => {
-                const progress = self.progress;
-                const point = desktopPath.getPointAtLength(progress * pathLength);
-                const nextPoint = desktopPath.getPointAtLength(Math.min((progress * pathLength) + 2, pathLength));
-                
-                const angle = Math.atan2(nextPoint.y - point.y, nextPoint.x - point.x) * (180 / Math.PI);
-                
-                gsap.set(desktopArrow, {
-                  x: point.x - 327,
-                  y: point.y - 188,
-                  rotation: angle,
-                  transformOrigin: "center center"
-                });
-              }
-            }
-          });
+
+          gsap.to(
+            {},
+            {
+              scrollTrigger: {
+                trigger: sectionRef.current,
+                start: "top center",
+                end: "bottom center",
+                scrub: 1,
+                onUpdate: (self: any) => {
+                  const progress = self.progress;
+                  const point = desktopPath.getPointAtLength(
+                    progress * pathLength,
+                  );
+                  const nextPoint = desktopPath.getPointAtLength(
+                    Math.min(progress * pathLength + 2, pathLength),
+                  );
+
+                  // Detect scroll direction
+                  const currentScrollY = window.scrollY;
+                  const isScrollingDown = currentScrollY > lastScrollY.current;
+                  lastScrollY.current = currentScrollY;
+
+                  const angle =
+                    Math.atan2(nextPoint.y - point.y, nextPoint.x - point.x) *
+                    (180 / Math.PI);
+                  // Flip arrow based on scroll direction
+                  const adjustedAngle = !isScrollingDown ? angle : angle + 180;
+
+                  gsap.set(desktopArrow, {
+                    x: point.x - 327,
+                    y: point.y - 188,
+                    rotation: adjustedAngle,
+                    transformOrigin: "center center",
+                  });
+                },
+              },
+            },
+          );
         }
 
         // Mobile arrow animation
-        const mobilePath = document.querySelector('#mobile-path') as SVGPathElement;
-        const mobileArrow = document.querySelector('#mobile-arrow') as SVGGElement;
-        
+        const mobilePath = document.querySelector(
+          "#mobile-path",
+        ) as SVGPathElement;
+        const mobileArrow = document.querySelector(
+          "#mobile-arrow",
+        ) as SVGGElement;
+
         if (mobilePath && mobileArrow) {
           const pathLength = mobilePath.getTotalLength();
-          
-          gsap.to({}, {
-            scrollTrigger: {
-              trigger: sectionRef.current,
-              start: "top center",
-              end: "bottom center",
-              scrub: 1,
-              onUpdate: (self: any) => {
-                const progress = self.progress;
-                const point = mobilePath.getPointAtLength(progress * pathLength);
-                const nextPoint = mobilePath.getPointAtLength(Math.min((progress * pathLength) + 2, pathLength));
-                
-                const angle = Math.atan2(nextPoint.y - point.y, nextPoint.x - point.x) * (180 / Math.PI);
-                
-                gsap.set(mobileArrow, {
-                  x: point.x - 179,
-                  y: point.y - 155,
-                  rotation: angle,
-                  transformOrigin: "center center"
-                });
-              }
-            }
-          });
+
+          gsap.to(
+            {},
+            {
+              scrollTrigger: {
+                trigger: sectionRef.current,
+                start: "top center",
+                end: "bottom center",
+                scrub: 1,
+                onUpdate: (self: any) => {
+                  const progress = self.progress;
+                  const point = mobilePath.getPointAtLength(
+                    progress * pathLength,
+                  );
+                  const nextPoint = mobilePath.getPointAtLength(
+                    Math.min(progress * pathLength + 2, pathLength),
+                  );
+
+                  // Detect scroll direction
+                  const currentScrollY = window.scrollY;
+                  const isScrollingDown = currentScrollY > lastScrollY.current;
+                  lastScrollY.current = currentScrollY;
+
+                  const angle =
+                    Math.atan2(nextPoint.y - point.y, nextPoint.x - point.x) *
+                    (180 / Math.PI);
+                  // Flip arrow based on scroll direction
+                  const adjustedAngle = isScrollingDown ? angle : angle + 180;
+
+                  gsap.set(mobileArrow, {
+                    x: point.x - 179,
+                    y: point.y - 155,
+                    rotation: adjustedAngle,
+                    transformOrigin: "center center",
+                  });
+                },
+              },
+            },
+          );
         }
       } catch (error) {
-        console.error('Error loading GSAP:', error);
+        console.error("Error loading GSAP:", error);
       }
     };
 
