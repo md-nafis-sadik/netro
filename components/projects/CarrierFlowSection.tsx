@@ -20,12 +20,24 @@ const DashedCurvePointerDesktop = ({
     className={className}
     {...props}
   >
+    <defs>
+      <mask id="desktop-mask">
+        <path
+          id="desktop-mask-path"
+          d="M41.5068 1.48438C115.507 11.9844 243.59 27.5359 340.504 66.4844C436.229 104.955 394.703 177.133 340.504 188.484L61.5042 245.484C-11.3123 261.196 -28.5064 355.484 70.2624 374.196C157.849 390.79 358.817 429.496 422.007 444.984"
+          stroke="white"
+          strokeWidth="3"
+          fill="none"
+        />
+      </mask>
+    </defs>
     <path
       id="desktop-path"
       d="M41.5068 1.48438C115.507 11.9844 243.59 27.5359 340.504 66.4844C436.229 104.955 394.703 177.133 340.504 188.484L61.5042 245.484C-11.3123 261.196 -28.5064 355.484 70.2624 374.196C157.849 390.79 358.817 429.496 422.007 444.984"
       stroke="#FF9F43"
       strokeWidth="3"
       strokeDasharray="8 8"
+      mask="url(#desktop-mask)"
     />
     <g id="desktop-arrow">
       <path
@@ -52,11 +64,23 @@ const DashedCurvePointerMobile = ({
     className={className}
     {...props}
   >
+    <defs>
+      <mask id="mobile-mask">
+        <path
+          id="mobile-mask-path"
+          d="M198.815 0.462891C236.815 15.9629 182.476 -6.54197 262.206 25.4629C340.957 57.0751 306.794 131.135 262.206 140.463L51.3147 188.963C-8.58987 201.873 -23.9537 250.707 51.3147 284.963C117.745 315.197 62.9622 295.76 116.962 310.963"
+          stroke="white"
+          strokeWidth="3"
+          fill="none"
+        />
+      </mask>
+    </defs>
     <path
       id="mobile-path"
       d="M198.815 0.462891C236.815 15.9629 182.476 -6.54197 262.206 25.4629C340.957 57.0751 306.794 131.135 262.206 140.463L51.3147 188.963C-8.58987 201.873 -23.9537 250.707 51.3147 284.963C117.745 315.197 62.9622 295.76 116.962 310.963"
       stroke="#FF9F43"
       strokeDasharray="8 8"
+      mask="url(#mobile-mask)"
     />
     <g id="mobile-arrow">
       <path
@@ -83,16 +107,45 @@ const CarrierFlowSection = ({ items }: any) => {
 
         if (!sectionRef.current) return;
 
-        // Desktop arrow animation
+        // Desktop arrow animation + masked draw
         const desktopPath = document.querySelector(
           "#desktop-path",
+        ) as SVGPathElement;
+        const desktopMaskPath = document.querySelector(
+          "#desktop-mask-path",
         ) as SVGPathElement;
         const desktopArrow = document.querySelector(
           "#desktop-arrow",
         ) as SVGGElement;
 
-        if (desktopPath && desktopArrow) {
+        if (desktopPath && desktopArrow && desktopMaskPath) {
           const pathLength = desktopPath.getTotalLength();
+          const desktopDash =
+            desktopPath.getAttribute("stroke-dasharray") || "8 8";
+
+          // Animate mask to reveal dashed stroke (keeps dash visible during draw)
+          gsap.fromTo(
+            desktopMaskPath,
+            {
+              strokeDasharray: `${pathLength} ${pathLength}`,
+              strokeDashoffset: pathLength,
+            },
+            {
+              strokeDashoffset: 0,
+              duration: 1.8,
+              ease: "power2.inOut",
+              scrollTrigger: {
+                trigger: sectionRef.current,
+                start: "top 75%",
+                once: true,
+              },
+              onComplete: () =>
+                gsap.set(desktopMaskPath, {
+                  strokeDasharray: desktopDash,
+                  strokeDashoffset: 0,
+                }),
+            },
+          );
 
           gsap.to(
             {},
@@ -134,16 +187,45 @@ const CarrierFlowSection = ({ items }: any) => {
           );
         }
 
-        // Mobile arrow animation
+        // Mobile arrow animation + masked draw
         const mobilePath = document.querySelector(
           "#mobile-path",
+        ) as SVGPathElement;
+        const mobileMaskPath = document.querySelector(
+          "#mobile-mask-path",
         ) as SVGPathElement;
         const mobileArrow = document.querySelector(
           "#mobile-arrow",
         ) as SVGGElement;
 
-        if (mobilePath && mobileArrow) {
+        if (mobilePath && mobileArrow && mobileMaskPath) {
           const pathLength = mobilePath.getTotalLength();
+          const mobileDash =
+            mobilePath.getAttribute("stroke-dasharray") || "8 8";
+
+          // Animate mask to reveal dashed stroke (keeps dash visible during draw)
+          gsap.fromTo(
+            mobileMaskPath,
+            {
+              strokeDasharray: `${pathLength} ${pathLength}`,
+              strokeDashoffset: pathLength,
+            },
+            {
+              strokeDashoffset: 0,
+              duration: 1.8,
+              ease: "power2.inOut",
+              scrollTrigger: {
+                trigger: sectionRef.current,
+                start: "top 75%",
+                once: true,
+              },
+              onComplete: () =>
+                gsap.set(mobileMaskPath, {
+                  strokeDasharray: mobileDash,
+                  strokeDashoffset: 0,
+                }),
+            },
+          );
 
           gsap.to(
             {},
