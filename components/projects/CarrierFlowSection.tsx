@@ -1,10 +1,79 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import { useCarrierFlowAnimation } from "@/hooks/usePortfolio";
+import React from "react";
 
 interface IFSvgProps extends React.SVGProps<SVGSVGElement> {
   color?: string;
 }
+
+
+const CarrierFlowSection = ({ items }: any) => {
+  const { sectionRef } = useCarrierFlowAnimation();
+
+  return (
+    <div className="pt-20" ref={sectionRef}>
+      <div className="max-w-[1176px] w-full mx-auto relative">
+        {/* Desktop version */}
+        <DashedCurvePointerDesktop className="absolute top-10 lg:top-16 left-1/2 translate-x-[-60%] hidden sm:block w-full max-w-[40%] md:max-w-[30%] lg:max-w-[40%] h-[80%]" />
+
+        {/* Mobile version */}
+        <DashedCurvePointerMobile className="absolute top-0 left-0 block sm:hidden w-full max-w-[90%] xs:max-w-[50%] h-full" />
+
+        {/* Content items */}
+        <div
+          className="relative grid grid-rows-4 gap-8 sm:gap-4 md:gap-0"
+          style={{ zIndex: 0, height: "100%" }}
+        >
+          {items.map((item: any, index: number) => (
+            <div key={index} className="flex items-start">
+              <div
+                className={`flex items-start gap-8 ${
+                  item.position === "right" ? "sm:ml-auto" : ""
+                }`}
+              >
+                {item.position === "left" && (
+                  <div className="flex items-center gap-6 md:gap-10 lg:gap-14 sm:max-w-[450px]">
+                    <span className="text-[62px] sm:text-[83px] md:text-[104px] lg:text-[125px] xl:text-[140px] font-bold text-[#FFFCC5] leading-none select-none font-scoutcond">
+                      {item.number}
+                    </span>
+                    <div className="max-w-[340px]">
+                      <h3 className="text-base sm:text-lg md:text-2xl lg:text-3xl xl:text-4xl font-bold text-white">
+                        {item.title}
+                      </h3>
+                      <p className="text-gray-300 text-xs sm:text-sm md:text-base lg:text-lg leading-relaxed">
+                        {item.description}
+                      </p>
+                    </div>
+                  </div>
+                )}
+                {item.position === "right" && (
+                  <div className="flex items-center gap-6 md:gap-10 lg:gap-14 sm:max-w-[450px]">
+                    <span className="text-[62px] sm:text-[83px] md:text-[104px] lg:text-[125px] xl:text-[140px] font-bold text-[#FFFCC5] leading-none select-none font-scoutcond">
+                      {item.number}
+                    </span>
+                    <div className="max-w-[340px]">
+                      <h3 className="text-base sm:text-lg md:text-2xl lg:text-3xl xl:text-4xl font-bold text-white">
+                        {item.title}
+                      </h3>
+                      <p className="text-gray-300 text-xs sm:text-sm md:text-base lg:text-lg leading-relaxed">
+                        {item.description}
+                      </p>
+                    </div>
+                  </div>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default CarrierFlowSection;
+
+
 
 const DashedCurvePointerDesktop = ({
   className,
@@ -92,252 +161,3 @@ const DashedCurvePointerMobile = ({
     </g>
   </svg>
 );
-
-const CarrierFlowSection = ({ items }: any) => {
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const lastScrollY = useRef<number>(0);
-
-  useEffect(() => {
-    const loadGSAP = async () => {
-      try {
-        const { gsap } = await import("gsap");
-        const { ScrollTrigger } = await import("gsap/ScrollTrigger");
-
-        gsap.registerPlugin(ScrollTrigger);
-
-        if (!sectionRef.current) return;
-
-        // Desktop arrow animation + masked draw
-        const desktopPath = document.querySelector(
-          "#desktop-path",
-        ) as SVGPathElement;
-        const desktopMaskPath = document.querySelector(
-          "#desktop-mask-path",
-        ) as SVGPathElement;
-        const desktopArrow = document.querySelector(
-          "#desktop-arrow",
-        ) as SVGGElement;
-
-        if (desktopPath && desktopArrow && desktopMaskPath) {
-          const pathLength = desktopPath.getTotalLength();
-          const desktopDash =
-            desktopPath.getAttribute("stroke-dasharray") || "8 8";
-
-          // Animate mask to reveal dashed stroke (keeps dash visible during draw)
-          gsap.fromTo(
-            desktopMaskPath,
-            {
-              strokeDasharray: `${pathLength} ${pathLength}`,
-              strokeDashoffset: pathLength,
-            },
-            {
-              strokeDashoffset: 0,
-              duration: 1.8,
-              ease: "power2.inOut",
-              scrollTrigger: {
-                trigger: sectionRef.current,
-                start: "top 75%",
-                once: true,
-              },
-              onComplete: () =>
-                gsap.set(desktopMaskPath, {
-                  strokeDasharray: desktopDash,
-                  strokeDashoffset: 0,
-                }),
-            },
-          );
-
-          gsap.to(
-            {},
-            {
-              scrollTrigger: {
-                trigger: sectionRef.current,
-                start: "top center",
-                end: "bottom center",
-                scrub: 1,
-                onUpdate: (self: any) => {
-                  const progress = self.progress;
-                  const point = desktopPath.getPointAtLength(
-                    progress * pathLength,
-                  );
-                  const nextPoint = desktopPath.getPointAtLength(
-                    Math.min(progress * pathLength + 2, pathLength),
-                  );
-
-                  // Detect scroll direction
-                  const currentScrollY = window.scrollY;
-                  const isScrollingDown = currentScrollY > lastScrollY.current;
-                  lastScrollY.current = currentScrollY;
-
-                  const angle =
-                    Math.atan2(nextPoint.y - point.y, nextPoint.x - point.x) *
-                    (180 / Math.PI);
-                  // Flip arrow based on scroll direction
-                  const adjustedAngle = !isScrollingDown ? angle : angle + 180;
-
-                  gsap.set(desktopArrow, {
-                    x: point.x - 327,
-                    y: point.y - 188,
-                    rotation: adjustedAngle,
-                    transformOrigin: "center center",
-                  });
-                },
-              },
-            },
-          );
-        }
-
-        // Mobile arrow animation + masked draw
-        const mobilePath = document.querySelector(
-          "#mobile-path",
-        ) as SVGPathElement;
-        const mobileMaskPath = document.querySelector(
-          "#mobile-mask-path",
-        ) as SVGPathElement;
-        const mobileArrow = document.querySelector(
-          "#mobile-arrow",
-        ) as SVGGElement;
-
-        if (mobilePath && mobileArrow && mobileMaskPath) {
-          const pathLength = mobilePath.getTotalLength();
-          const mobileDash =
-            mobilePath.getAttribute("stroke-dasharray") || "8 8";
-
-          // Animate mask to reveal dashed stroke (keeps dash visible during draw)
-          gsap.fromTo(
-            mobileMaskPath,
-            {
-              strokeDasharray: `${pathLength} ${pathLength}`,
-              strokeDashoffset: pathLength,
-            },
-            {
-              strokeDashoffset: 0,
-              duration: 1.8,
-              ease: "power2.inOut",
-              scrollTrigger: {
-                trigger: sectionRef.current,
-                start: "top 75%",
-                once: true,
-              },
-              onComplete: () =>
-                gsap.set(mobileMaskPath, {
-                  strokeDasharray: mobileDash,
-                  strokeDashoffset: 0,
-                }),
-            },
-          );
-
-          gsap.to(
-            {},
-            {
-              scrollTrigger: {
-                trigger: sectionRef.current,
-                start: "top center",
-                end: "bottom center",
-                scrub: 1,
-                onUpdate: (self: any) => {
-                  const progress = self.progress;
-                  const point = mobilePath.getPointAtLength(
-                    progress * pathLength,
-                  );
-                  const nextPoint = mobilePath.getPointAtLength(
-                    Math.min(progress * pathLength + 2, pathLength),
-                  );
-
-                  // Detect scroll direction
-                  const currentScrollY = window.scrollY;
-                  const isScrollingDown = currentScrollY > lastScrollY.current;
-                  lastScrollY.current = currentScrollY;
-
-                  const angle =
-                    Math.atan2(nextPoint.y - point.y, nextPoint.x - point.x) *
-                    (180 / Math.PI);
-                  // Flip arrow based on scroll direction
-                  const adjustedAngle = isScrollingDown ? angle : angle + 180;
-
-                  gsap.set(mobileArrow, {
-                    x: point.x - 179,
-                    y: point.y - 155,
-                    rotation: adjustedAngle,
-                    transformOrigin: "center center",
-                  });
-                },
-              },
-            },
-          );
-        }
-      } catch (error) {
-        console.error("Error loading GSAP:", error);
-      }
-    };
-
-    loadGSAP();
-
-    return () => {
-      if (ScrollTrigger) {
-        ScrollTrigger.getAll().forEach((trigger: any) => trigger.kill());
-      }
-    };
-  }, []);
-
-  return (
-    <div className="pt-20" ref={sectionRef}>
-      <div className="max-w-[1176px] w-full mx-auto relative">
-        {/* Desktop version */}
-        <DashedCurvePointerDesktop className="absolute top-10 lg:top-16 left-1/2 translate-x-[-60%] hidden sm:block w-full max-w-[40%] md:max-w-[30%] lg:max-w-[40%] h-[80%]" />
-
-        {/* Mobile version */}
-        <DashedCurvePointerMobile className="absolute top-0 left-0 block sm:hidden w-full max-w-[90%] xs:max-w-[50%] h-full" />
-
-        {/* Content items */}
-        <div
-          className="relative grid grid-rows-4 gap-8 sm:gap-4 md:gap-0"
-          style={{ zIndex: 0, height: "100%" }}
-        >
-          {items.map((item: any, index: number) => (
-            <div key={index} className="flex items-start">
-              <div
-                className={`flex items-start gap-8 ${
-                  item.position === "right" ? "sm:ml-auto" : ""
-                }`}
-              >
-                {item.position === "left" && (
-                  <div className="flex items-center gap-6 md:gap-10 lg:gap-14 sm:max-w-[450px]">
-                    <span className="text-[62px] sm:text-[83px] md:text-[104px] lg:text-[125px] xl:text-[140px] font-bold text-[#FFFCC5] leading-none select-none font-scoutcond">
-                      {item.number}
-                    </span>
-                    <div className="max-w-[340px]">
-                      <h3 className="text-base sm:text-lg md:text-2xl lg:text-3xl xl:text-4xl font-bold text-white">
-                        {item.title}
-                      </h3>
-                      <p className="text-gray-300 text-xs sm:text-sm md:text-base lg:text-lg leading-relaxed">
-                        {item.description}
-                      </p>
-                    </div>
-                  </div>
-                )}
-                {item.position === "right" && (
-                  <div className="flex items-center gap-6 md:gap-10 lg:gap-14 sm:max-w-[450px]">
-                    <span className="text-[62px] sm:text-[83px] md:text-[104px] lg:text-[125px] xl:text-[140px] font-bold text-[#FFFCC5] leading-none select-none font-scoutcond">
-                      {item.number}
-                    </span>
-                    <div className="max-w-[340px]">
-                      <h3 className="text-base sm:text-lg md:text-2xl lg:text-3xl xl:text-4xl font-bold text-white">
-                        {item.title}
-                      </h3>
-                      <p className="text-gray-300 text-xs sm:text-sm md:text-base lg:text-lg leading-relaxed">
-                        {item.description}
-                      </p>
-                    </div>
-                  </div>
-                )}
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-};
-
-export default CarrierFlowSection;

@@ -4,7 +4,21 @@ import Image from "next/image";
 import { useRef } from "react";
 import DescriptionBoxes from "../common/DescriptionBoxes";
 import DescriptionHeader from "../common/DescriptionHeader";
-import CarrierFlowSection from "./CarrierFlowSection";
+// import CarrierFlowSection from "./CarrierFlowSection";
+import dynamic from "next/dynamic";
+
+const PulseBlock = ({ className }: { className?: string }) => (
+  <div
+    className={`w-full min-h-[180px] animate-pulse bg-neutral-900/10 ${className ?? ""}`}
+    aria-busy="true"
+    aria-live="polite"
+  />
+);
+
+const CarrierFlowSection = dynamic(
+  () => import("./CarrierFlowSection"),
+  { loading: () => <PulseBlock className="min-h-[240px]" /> },
+);
 
 const ProjectDescription = ({ project }: any) => {
   const sectionRef = useRef<HTMLElement>(null);
