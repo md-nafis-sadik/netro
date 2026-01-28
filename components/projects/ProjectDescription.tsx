@@ -15,10 +15,9 @@ const PulseBlock = ({ className }: { className?: string }) => (
   />
 );
 
-const CarrierFlowSection = dynamic(
-  () => import("./CarrierFlowSection"),
-  { loading: () => <PulseBlock className="min-h-[240px]" /> },
-);
+const CarrierFlowSection = dynamic(() => import("./CarrierFlowSection"), {
+  loading: () => <PulseBlock className="min-h-[240px]" />,
+});
 
 const ProjectDescription = ({ project }: any) => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -28,6 +27,9 @@ const ProjectDescription = ({ project }: any) => {
   useAnimation(firstImageRef, {});
   useAnimation(lastImageRef, {});
   useStaggerReveal(gridRef, {});
+
+  const descriptionImages = project?.data?.descriptionImages || [];
+  const hasImages = descriptionImages.length > 0;
 
   return (
     <section
@@ -43,40 +45,45 @@ const ProjectDescription = ({ project }: any) => {
           }
         />
         <DescriptionBoxes
-          detailPoints={project.data.detailPoints}
+          detailPoints={project?.data?.detailPoints}
           title="Section Title"
           variant="blue" // or "white", "blue", "gradient"
           className="additional-classes"
         />
 
-        <div ref={firstImageRef}>
-          <Image
-            src={project?.data?.descriptionImages[0]}
-            alt={project?.data?.title || "Project Image"}
-            width={1176}
-            height={648}
-            className="w-full mt-10 md:mt-16 lg:mt-20"
-          />
-        </div>
-        <div
-          ref={gridRef}
-          className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-10 mt-6 md:mt-8 lg:mt-10 mb-16 md:mb-24 lg:mb-30"
-        >
-          <Image
-            src={project?.data?.descriptionImages[1]}
-            alt={project?.data?.title || "Project Image"}
-            width={568}
-            height={633}
-            className="w-full"
-          />
-          <Image
-            src={project?.data?.descriptionImages[2]}
-            alt={project?.data?.title || "Project Image"}
-            width={568}
-            height={633}
-            className="w-full"
-          />
-        </div>
+        {hasImages && descriptionImages[0] && (
+          <div ref={firstImageRef}>
+            <Image
+              src={descriptionImages[0]}
+              alt={project?.data?.title || "Project Image"}
+              width={1176}
+              height={648}
+              className="w-full mt-10 md:mt-16 lg:mt-20"
+            />
+          </div>
+        )}
+
+        {descriptionImages.length >= 3 && (
+          <div
+            ref={gridRef}
+            className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-10 mt-6 md:mt-8 lg:mt-10 mb-16 md:mb-24 lg:mb-30"
+          >
+            <Image
+              src={descriptionImages[1]}
+              alt={project?.data?.title || "Project Image"}
+              width={568}
+              height={633}
+              className="w-full"
+            />
+            <Image
+              src={descriptionImages[2]}
+              alt={project?.data?.title || "Project Image"}
+              width={568}
+              height={633}
+              className="w-full"
+            />
+          </div>
+        )}
 
         <DescriptionHeader
           title="Problem identification"
@@ -89,15 +96,18 @@ const ProjectDescription = ({ project }: any) => {
         <CarrierFlowSection
           items={project?.data?.problemIdentificationPoints}
         />
-        <div ref={lastImageRef}>
-          <Image
-            src={project?.data?.descriptionImages[0]}
-            alt={project?.data?.title || "Project Image"}
-            width={1176}
-            height={648}
-            className="w-full mt-10 md:mt-16 lg:mt-32"
-          />
-        </div>
+
+        {hasImages && descriptionImages[0] && (
+          <div ref={lastImageRef}>
+            <Image
+              src={descriptionImages[0]}
+              alt={project?.data?.title || "Project Image"}
+              width={1176}
+              height={648}
+              className="w-full mt-10 md:mt-16 lg:mt-32"
+            />
+          </div>
+        )}
       </div>
     </section>
   );

@@ -30,7 +30,7 @@ const JournalCard = ({
       // index={index}
       // duration={0.5}
       // startAnim={100}
-      className={cn("w-full group", className)}
+      className={cn("w-full group animate-item-card", className)}
     >
       <div
         className={cn(

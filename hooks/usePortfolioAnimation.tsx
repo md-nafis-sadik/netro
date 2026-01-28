@@ -4,10 +4,13 @@ export const useCarrierFlowAnimation = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    let ScrollTrigger: any = null;
+
     const loadGSAP = async () => {
       try {
         const { gsap } = await import("gsap");
-        const { ScrollTrigger } = await import("gsap/ScrollTrigger");
+        const ScrollTriggerModule = await import("gsap/ScrollTrigger");
+        ScrollTrigger = ScrollTriggerModule.ScrollTrigger;
 
         gsap.registerPlugin(ScrollTrigger);
 

@@ -6,13 +6,26 @@ import { timestampDisplay } from "@/services";
 import { routes } from "@/services/data/shared.data";
 import SectionHeader from "../common/SectionHeader";
 import JournalCard from "./JournalCard";
+import { useAppearanceAnimation } from "@/hooks/useAppearanceAnimation";
 
 const OurJournal = ({ data }: any) => {
   // const options = { align: "start", loop: false } as const;
   // const [emblaRef] = useEmblaCarousel(options);
+  const sectionRef = useAppearanceAnimation(".animate-item-card", {
+    x: 100,
+    y: 0,
+    opacity: 0,
+    duration: 1,
+    stagger: 0.2,
+    ease: "back.out(1.7)",
+    delay: 0.1,
+  });
 
   return (
-    <section className="bg-white flex_center flex-col my-20 w-full">
+    <section
+      ref={sectionRef}
+      className="bg-white flex_center flex-col my-20 w-full"
+    >
       <SectionSubHeader text="Latest about" />
       <SectionHeader className="home_journal_header_v2 text-5xl md:text-[96px] mt-2">
         Blogs & Updates
