@@ -33,7 +33,7 @@ const OurJournal = ({ data }: any) => {
 
       <div className="container w-full overflow-hidden mt-5 md:mt-10">
         <div className="w-full">
-          <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10 py-5 md:py-10">
+          <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 py-5 md:py-10">
             {data?.map((item: any, index: number) => (
               <JournalCard
                 index={index}
@@ -54,7 +54,7 @@ const OurJournal = ({ data }: any) => {
             className="mt-10 md:mt-20"
             href={routes.journal.link}
           >
-            See all journals
+            See our latest posts
           </ArrowLineupButton>
         </div>
       </div>

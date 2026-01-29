@@ -71,12 +71,13 @@ function ServicesHome() {
 
           <div
             ref={imageRef}
-            className="service-image relative w-full lg:max-w-[540px] lg:h-[410px]"
+            className="service-image relative w-full lg:max-w-[540px] lg:h-[410px] rounded-2xl md:rounded-3xl overflow-hidden"
           >
             <Image
               src={servicesData[activeService].image}
               alt="service image"
               className="w-full h-full object-contain will-change-transform"
+
             />
           </div>
         </div>

@@ -34,7 +34,7 @@ const JournalCard = ({
     >
       <div
         className={cn(
-          "w-full relative overflow-hidden aspect-[16/9]",
+          "w-full relative overflow-hidden aspect-[410/308] rounded-xl md:rounded-2xl",
           imageContainerClassName
         )}
       >
@@ -42,8 +42,8 @@ const JournalCard = ({
           src={image}
           alt="Blog 1"
           className="w-full h-full object-cover absolute_center transition_common group-hover:scale-105"
-          width={1280}
-          height={720} // 16:9 ratio
+          width={1230}
+          height={920} // 410/308 ratio
         />
       </div>
 
@@ -53,7 +53,7 @@ const JournalCard = ({
       >
         <p
           className={cn(
-            "text-lg md:text-2xl !leading-normal md:!leading-[1.16] font-bold text-natural-700 font-inter",
+            "text-lg md:text-2xl !leading-normal md:!leading-[1.16] font-bold text-[#474747] font-inter",
             titleClassName
           )}
         >

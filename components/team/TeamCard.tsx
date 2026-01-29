@@ -14,9 +14,9 @@ const TeamCard = ({ image, name, position, className }: IFTeamCardProps) => {
       <Image
         src={image}
         alt={name}
-        className="w-full aspect-[382/450] object-cover object-top p-1"
-        width={382}
-        height={450}
+        className="w-full aspect-[400/450] object-cover object-top rounded-xl lg:rounded-2xl"
+        width={800}
+        height={900}
       />
 
       <div className="mt-2 sm:mt-3 lg:mt-5">

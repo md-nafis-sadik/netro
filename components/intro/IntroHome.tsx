@@ -36,13 +36,13 @@ function IntroHome() {
             className="text-lg sm:text-xl md:text-2xl 2xl:text-4xl font-normal align-middle leading-[110%] max-w-[994px] ml-auto text-center md:text-left"
           >
             We are{" "}
-            <Image
+            {/* <Image
               ref={logoIconRef}
               src={images.logo}
               className="size-5 sm:size-7 xl:size-12 object-contain inline-block logo-icon"
               alt="logo icon"
               title="logo icon"
-            />
+            /> */}
             Netro Systems fosters innovation, collaboration, diversity, and
             growth, creating{" "}
             <Avatar
@@ -66,7 +66,7 @@ function IntroHome() {
           {/* Projects Delivered */}
           <div
             ref={card1Ref}
-            className="row-span-2 lg:col-span-3 lg:row-span-5 flex flex-col justify-between gap-14 lg:gap-6 p-3 sm:p-4 md:p-6 relative"
+            className="row-span-2 lg:col-span-3 lg:row-span-5 flex flex-col justify-between gap-14 lg:gap-6 p-3 sm:p-4 md:p-6 relative rounded-2xl md:rounded-3xl overflow-hidden"
           >
             <p className="text-4xl md:text-5xl lg:text-[4rem] leading-[120%] text-black-800 font-bold relative z-50">
               <NumberCounter
@@ -97,7 +97,7 @@ function IntroHome() {
           {/* Support 24/7, Guaranteed! */}
           <div
             ref={card2Ref}
-            className="col-span-2 lg:col-span-4 lg:col-start-4 flex items-center justify-between gap-3 border border-black-50 px-3 sm:px-4 md:px-6 py-3 sm:py-5"
+            className="col-span-2 lg:col-span-4 lg:col-start-4 flex items-center justify-between gap-3 border border-black-50 px-3 sm:px-4 md:px-6 py-3 sm:py-5 rounded-2xl md:rounded-3xl overflow-hidden"
           >
             <div>
               <p className="text-xs sm:text-base md:text-lg text-black-800 font-semibold leading-[140%]">
@@ -126,7 +126,7 @@ function IntroHome() {
           {/* Our Clients in 19+ Countries */}
           <div
             ref={card3Ref}
-            className="row-span-2 lg:row-span-1 lg:col-span-7 col-start-2 lg:col-start-4 lg:row-start-5 flex flex-col lg:flex-row items-center justify-between gap-14 lg:gap-6 border border-black-50 px-3 sm:px-4 md:px-6 py-3 sm:py-5"
+            className="row-span-2 lg:row-span-1 lg:col-span-7 col-start-2 lg:col-start-4 lg:row-start-5 flex flex-col lg:flex-row items-center justify-between gap-14 lg:gap-6 border border-black-50 px-3 sm:px-4 md:px-6 py-3 sm:py-5 rounded-2xl md:rounded-3xl overflow-hidden"
           >
             <div>
               <p className="text-xs sm:text-base md:text-lg text-black-800 font-semibold leading-[140%]">
@@ -152,7 +152,7 @@ function IntroHome() {
           {/* Client Satisfaction */}
           <div
             ref={card4Ref}
-            className="row-span-2 row-start-4 lg:col-span-4 lg:row-span-3 col-start-1 lg:col-start-4 lg:row-start-2 flex flex-col justify-between gap-14 lg:gap-6  px-3 sm:px-4 md:px-6 py-3 sm:py-5 relative"
+            className="row-span-2 row-start-4 lg:col-span-4 lg:row-span-3 col-start-1 lg:col-start-4 lg:row-start-2 flex flex-col justify-between gap-14 lg:gap-6  px-3 sm:px-4 md:px-6 py-3 sm:py-5 relative rounded-2xl md:rounded-3xl overflow-hidden"
           >
             <p className="text-4xl md:text-5xl lg:text-[4rem] leading-[120%] text-black-800 font-bold relative z-50">
               <NumberCounter
@@ -182,7 +182,7 @@ function IntroHome() {
           {/* Positive Outcomes */}
           <div
             ref={card5Ref}
-            className="row-span-2 col-start-2 lg:col-span-3 lg:row-span-4 lg:col-start-8 row-start-1 flex flex-col justify-between gap-14 lg:gap-6 p-3 sm:p-4 md:p-6 relative"
+            className="row-span-2 col-start-2 lg:col-span-3 lg:row-span-4 lg:col-start-8 row-start-1 flex flex-col justify-between gap-14 lg:gap-6 p-3 sm:p-4 md:p-6 relative rounded-2xl md:rounded-3xl overflow-hidden"
           >
             <p className="text-4xl md:text-5xl lg:text-[4rem] leading-[120%] text-black-800 font-bold relative z-50">
               <NumberCounter

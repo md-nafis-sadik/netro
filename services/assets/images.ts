@@ -86,6 +86,8 @@ export { default as ahammedLincon } from "@/public/images/team/ahamed-lincon.web
 export { default as altamiraTripty } from "@/public/images/team/altamira-tripty.webp";
 export { default as anikaEbnath } from "@/public/images/team/anika-ebnath.webp";
 export { default as ashiqMahmed } from "@/public/images/team/asiq-mohammed.webp";
+export { default as kamrulHasan } from "@/public/images/team/kamrul-hasan.webp";
+export { default as arifulHaqueJocky } from "@/public/images/team/ariful-haque-jocky.webp";
 export { default as asmaAfrin } from "@/public/images/team/asma-afrin.webp";
 export { default as ektiarAlam } from "@/public/images/team/ektiar-alam.webp";
 export { default as fozlayRabbi } from "@/public/images/team/fozlay-rabbi.webp";
@@ -205,6 +207,9 @@ export { default as usa } from "@/public/images/countries/usa.webp";
 
 // process image
 export { default as process1 } from "@/public/images/process-1.webp";
+export { default as process2 } from "@/public/images/process-2.webp";
+export { default as process3 } from "@/public/images/process-3.webp";
+export { default as process4 } from "@/public/images/process-4.webp";
 
 //projects
 export { default as simigoBg } from "@/public/images/project/simigo-bg.webp";

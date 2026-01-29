@@ -24,6 +24,7 @@ function ProcessFollowed() {
   const { cardsRef, imageRef, handleHover, handleLeave, activeIndex } =
     useProcessAnimation();
 
+
   return (
     <section
       data-bg-theme="light"
@@ -50,7 +51,7 @@ function ProcessFollowed() {
                   onMouseLeave={(e) => handleLeave(e.currentTarget)}
                   className={cn(
                     "process-card py-5 px-3 md:p-3 border-b w-full relative cursor-pointer",
-                    "after:absolute after:left-0 after:-bottom-0.5 after:h-[3px] after:w-full after:origin-left after:transition-transform after:duration-700",
+                    "after:absolute after:left-0 after:-bottom-0.5 after:h-[5px] after:w-full after:origin-left after:transition-transform after:duration-700 rounded-xl md:rounded-2xl overflow-hidden",
                     isActive
                       ? "bg-white border-[#74E49F] after:bg-[#3654FF] after:scale-x-100"
                       : "border-[#74E49F] after:bg-[#3654FF] after:scale-x-0",
@@ -75,9 +76,9 @@ function ProcessFollowed() {
             <Image
               src={processData[activeIndex].image}
               alt="process active image"
-              width={1200}
-              height={800}
-              className="w-full h-auto will-change-transform"
+              width={2400}
+              height={1600}
+              className="w-full h-auto will-change-transform rounded-2xl md:rounded-3xl"
             />
           </div>
         </div>

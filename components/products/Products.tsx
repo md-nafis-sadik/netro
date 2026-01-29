@@ -40,8 +40,8 @@ function Products() {
                 <Image
                   src={product.image}
                   alt="product image"
-                  width={700}
-                  height={500}
+                  width={672}
+                  height={378}
                   className="w-full xl:h-[492px] object-contain"
                 />
                 {/* <Image

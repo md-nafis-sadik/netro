@@ -15,7 +15,7 @@ export const processData = [
     description:
       "We map product goals to technical strategy, selecting tools and architectures built for scale.",
     icon: "architecture",
-    image: images.process1,
+    image: images.process2,
   },
   {
     id: 3,
@@ -23,7 +23,7 @@ export const processData = [
     description:
       "We shape how the experience works and feels, ensuring clarity, efficiency, and delight.",
     icon: "design",
-    image: images.process1,
+    image: images.process3,
   },
   {
     id: 4,
@@ -31,6 +31,6 @@ export const processData = [
     description:
       "We bring the product to life with clean, reliable code and iterative delivery focused on outcomes.",
     icon: "development",
-    image: images.process1,
+    image: images.process4,
   },
 ];

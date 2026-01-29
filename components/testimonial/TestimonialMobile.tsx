@@ -25,7 +25,7 @@ function TestimonialMobile() {
           <div className="flex w-full">
             {[1, 2, 3].map((item) => (
               <div className="w-80 shrink-0 px-2" key={item}>
-                <div className="bg-white px-4 py-5 flex flex-col justify-between mb-3">
+                <div className="bg-white px-4 py-5 flex flex-col justify-between mb-3 rounded-xl">
                   <q className="text-sm leading-[150%] text-black-800">
                     Working with Layzo felt like unlocking a new level of
                     creativity. They understood our vision instantly and brought
@@ -48,7 +48,7 @@ function TestimonialMobile() {
                     </div>
                   </div>
                 </div>
-                <div className="relative cursor-pointer">
+                <div className="relative cursor-pointer rounded-xl overflow-hidden">
                   <video
                     ref={(el) => {
                       videoRefs.current[item] = el;

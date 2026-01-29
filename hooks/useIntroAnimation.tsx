@@ -15,62 +15,63 @@ export const useIntroAnimation = () => {
   const logoIconRef = useRef<HTMLImageElement>(null);
 
   useGSAP(() => {
-    if (sectionRef.current && introTextRef.current) {
-      const wrapTextNodes = (element: HTMLElement) => {
-        const childNodes = Array.from(element.childNodes);
-        const spans: HTMLSpanElement[] = [];
+    // ===== TEXT ANIMATION - COMMENTED OUT =====
+    // if (sectionRef.current && introTextRef.current) {
+    //   const wrapTextNodes = (element: HTMLElement) => {
+    //     const childNodes = Array.from(element.childNodes);
+    //     const spans: HTMLSpanElement[] = [];
 
-        childNodes.forEach((node) => {
-          if (node.nodeType === Node.TEXT_NODE && node.textContent?.trim()) {
-            const text = node.textContent;
-            const fragment = document.createDocumentFragment();
+    //     childNodes.forEach((node) => {
+    //       if (node.nodeType === Node.TEXT_NODE && node.textContent?.trim()) {
+    //         const text = node.textContent;
+    //         const fragment = document.createDocumentFragment();
 
-            text.split("").forEach((char) => {
-              const span = document.createElement("span");
-              span.textContent = char;
-              span.style.color = "#888";
-              span.className = "char-animate";
-              fragment.appendChild(span);
-              spans.push(span);
-            });
+    //         text.split("").forEach((char) => {
+    //           const span = document.createElement("span");
+    //           span.textContent = char;
+    //           span.style.color = "#888";
+    //           span.className = "char-animate";
+    //           fragment.appendChild(span);
+    //           spans.push(span);
+    //         });
 
-            node.parentNode?.replaceChild(fragment, node);
-          } else if (
-            node.nodeType === Node.ELEMENT_NODE &&
-            node.nodeName !== "IMG"
-          ) {
-            spans.push(...wrapTextNodes(node as HTMLElement));
-          }
-        });
+    //         node.parentNode?.replaceChild(fragment, node);
+    //       } else if (
+    //         node.nodeType === Node.ELEMENT_NODE &&
+    //         node.nodeName !== "IMG"
+    //       ) {
+    //         spans.push(...wrapTextNodes(node as HTMLElement));
+    //       }
+    //     });
 
-        return spans;
-      };
+    //     return spans;
+    //   };
 
-      const allSpans = wrapTextNodes(introTextRef.current);
+    //   const allSpans = wrapTextNodes(introTextRef.current);
 
-      if (allSpans.length > 0) {
-        ScrollTrigger.create({
-          trigger: sectionRef.current,
-          start: "top 6%",
-          end: `+=${Math.max(allSpans.length * 10, 2000)}`,
-          pin: true,
-          pinSpacing: true,
-          scrub: 1,
-          onUpdate: (self) => {
-            const progress = self.progress;
-            const charsToColor = Math.floor(progress * allSpans.length);
+    //   if (allSpans.length > 0) {
+    //     ScrollTrigger.create({
+    //       trigger: sectionRef.current,
+    //       start: "top 6%",
+    //       end: `+=${Math.max(allSpans.length * 10, 2000)}`,
+    //       pin: true,
+    //       pinSpacing: true,
+    //       scrub: 1,
+    //       onUpdate: (self) => {
+    //         const progress = self.progress;
+    //         const charsToColor = Math.floor(progress * allSpans.length);
 
-            allSpans.forEach((span, index) => {
-              if (index < charsToColor) {
-                gsap.set(span, { color: "#000" });
-              } else {
-                gsap.set(span, { color: "#888" });
-              }
-            });
-          },
-        });
-      }
-    }
+    //         allSpans.forEach((span, index) => {
+    //           if (index < charsToColor) {
+    //             gsap.set(span, { color: "#000" });
+    //           } else {
+    //             gsap.set(span, { color: "#888" });
+    //           }
+    //         });
+    //       },
+    //     });
+    //   }
+    // }
 
     const cards = [card1Ref, card2Ref, card3Ref, card4Ref, card5Ref];
 

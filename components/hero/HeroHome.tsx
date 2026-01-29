@@ -67,7 +67,7 @@ function HeroHome() {
         </p>
 
         <ExpandableButtonList />
-        <div className="w-full max-w-[874px] mx-auto flex items-center h-24 xs:h-28 sm:h-16 md:h-[92px] border border-text-rgb44 bg-white/30 mt-20 md:mt-28 lg:mt-[152px] text-left font-inter">
+        <div className="w-full max-w-[874px] mx-auto flex items-center h-24 xs:h-28 sm:h-16 md:h-[92px] border border-text-rgb44 bg-white/30 mt-20 md:mt-28 lg:mt-[152px] text-left font-inter rounded-xl md:rounded-2xl">
           <a
             href="https://clutch.co/profile/netro-systems"
             className="flex-1 shrink-0 inline-flex flex-col sm:flex-row sm:items-center p-3 md:p-6 gap-2 sm:gap-4"

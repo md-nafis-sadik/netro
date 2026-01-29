@@ -31,7 +31,7 @@ function ProjectsHome() {
         >
           {projects.map((item: IProject, index: number) => (
             <ProjectCard
-              className={cn("stacked-card sticky left-0 top-0 mb-60 lg:mb-80")}
+              className={cn("stacked-card sticky left-0 top-0 mb-60 lg:mb-80 rounded-2xl md:rounded-3xl")}
               style={{
                 pointerEvents: activeIndex === index ? "auto" : "none",
               }}
