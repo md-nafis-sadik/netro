@@ -158,13 +158,13 @@ export { default as easyTruck } from "@/public/images/product/easy-truck.webp";
 export { default as pathshala } from "@/public/images/product/pathshala.webp";
 export { default as remozen } from "@/public/images/product/remozen.webp";
 export { default as trivia } from "@/public/images/product/trivia.webp";
-export {
-  default as service1,
-  default as service2,
-  default as service3,
-  default as service4,
-  default as service5,
-} from "@/public/images/service-1.webp";
+export { default as service1 } from "@/public/images/service-1.webp";
+export { default as service2 } from "@/public/images/service-2.webp";
+export { default as service3 } from "@/public/images/service-3.webp";
+export { default as service4 } from "@/public/images/service-4.webp";
+export { default as service5 } from "@/public/images/service-5.webp";
+export { default as service6 } from "@/public/images/service-6.webp";
+export { default as service7 } from "@/public/images/service-7.webp";
 
 export { default as about1 } from "@/public/images/about-1.webp";
 export { default as about2 } from "@/public/images/about-2.webp";
@@ -221,4 +221,12 @@ export { default as simigoSolution } from "@/public/images/project/simigo-soluti
 export { default as simigoBranding1 } from "@/public/images/project/simigo-branding-1.webp";
 export { default as simigoBranding2 } from "@/public/images/project/simigo-branding-2.webp";
 export { default as simigoWireframe1 } from "@/public/images/project/simigo-wireframe-1.webp";
-
+export { default as simigoWireSkeleton } from "@/public/images/project/simigo-wireframe-skeleton.webp";
+export { default as simigoWireComplete } from "@/public/images/project/simigo-wireframe-complete.webp";
+export { default as simigoWireGrid1 } from "@/public/images/project/simigo-wireframe-grid-1.webp";
+export { default as simigoWireGrid2 } from "@/public/images/project/simigo-wireframe-grid-2.webp";
+export { default as simigoWireGrid3 } from "@/public/images/project/simigo-wireframe-grid-3.webp";
+export { default as simigoWireGrid4 } from "@/public/images/project/simigo-wireframe-grid-4.webp";
+export { default as simigoWireGrid5 } from "@/public/images/project/simigo-wireframe-grid-5.webp";
+export { default as simigoWireGrid6 } from "@/public/images/project/simigo-wireframe-grid-6.webp";
+export { default as simigoProblemIdentify } from "@/public/images/project/simigo-problem-identify.webp";

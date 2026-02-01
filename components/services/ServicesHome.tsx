@@ -31,7 +31,7 @@ function ServicesHome() {
 
         <div className="flex flex-col lg:flex-row justify-between w-full mt-10 md:mt-16 lg:mt-20 gap-8">
           <div ref={itemRef}  className="flex-1 flex flex-col">
-            {servicesData?.map((service: IService, index: number) => (
+            {servicesData.slice(0, 5).map((service: IService, index: number) => (
               <Link
                 key={service?._id}
                 href="/"
@@ -77,7 +77,8 @@ function ServicesHome() {
               src={servicesData[activeService].image}
               alt="service image"
               className="w-full h-full object-contain will-change-transform"
-
+              width={1288}
+              height={1072}
             />
           </div>
         </div>

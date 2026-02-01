@@ -148,39 +148,39 @@ function ContactUsFormHome() {
                   <li
                     className={cn(
                       "budgetTagV2",
-                      selectedBudget === "5k-15k" ? "activeBudgetTagV2" : "",
+                      selectedBudget === "" ? "activeBudgetTagV2" : "",
                     )}
-                    onClick={() => setSelectedBudget("5k-15k")}
+                    onClick={() => setSelectedBudget("")}
                   >
-                    5k-15k
+                    Not Specified
                   </li>
                   <li
                     className={cn(
                       "budgetTagV2",
-                      selectedBudget === "15k-50k" ? "activeBudgetTagV2" : "",
+                      selectedBudget === "5k-25k" ? "activeBudgetTagV2" : "",
                     )}
-                    onClick={() => setSelectedBudget("15k-50k")}
+                    onClick={() => setSelectedBudget("5k-25k")}
                   >
-                    15k-50k
+                    5k-25k
                   </li>
                   <li
                     className={cn(
                       "budgetTagV2",
-                      selectedBudget === "50k-250k" ? "activeBudgetTagV2" : "",
+                      selectedBudget === "25k-100k" ? "activeBudgetTagV2" : "",
                     )}
-                    onClick={() => setSelectedBudget("50k-250k")}
+                    onClick={() => setSelectedBudget("25k-100k")}
                   >
-                    50k-250k
+                    25k-100k
                   </li>
                   <li
                     className={cn(
                       "budgetTagV2",
-                      selectedBudget === "250k" ? "activeBudgetTagV2" : "",
+                      selectedBudget === "<100k" ? "activeBudgetTagV2" : "",
                     )}
-                    onClick={() => setSelectedBudget("250k")}
+                    onClick={() => setSelectedBudget("<100k")}
                   >
                     {"< "}
-                    250k
+                    100k
                   </li>
                 </ul>
               </div>

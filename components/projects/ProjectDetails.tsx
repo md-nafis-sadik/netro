@@ -105,9 +105,9 @@ const ProjectDetails = ({ project }: any) => {
               <Image
                 src={project?.data?.topImage}
                 alt={project?.data?.title || "Portfolio Background"}
-                width={1176}
-                height={648}
-                className="w-full mb-0 md:-mb-28 mt-12 md:mt-14"
+                width={2352}
+                height={1296}
+                className="w-full mb-0 md:-mb-28 mt-12 md:mt-14 rounded-t-3xl md:rounded-t-[32px]"
               />
             </div>
           )}

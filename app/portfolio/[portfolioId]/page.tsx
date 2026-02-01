@@ -6,6 +6,7 @@ import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import CustomCardGrid from "@/components/shared/CustomCardGrid";
 import DiscoverMoreProjects from "@/components/projects/DiscoverMoreProjects";
+import ContactUsFormHome from "@/components/contact-us/ContactUsFormHome";
 
 const PulseBlock = ({ className }: { className?: string }) => (
   <div
@@ -91,6 +92,7 @@ async function PortfolioDetails({
         card5={portfolioDetails?.data?.card5}
         className="py-12 md:py-24 lg:py-32"
       />
+      <ContactUsFormHome />
       <DiscoverMoreProjects data={morePortfolioData} />
     </main>
   );

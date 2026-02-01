@@ -121,7 +121,7 @@ export const portfolios = [
     brandingImages: [images.simigoBranding1, images.simigoBranding2],
     wireframeDetails:
       "It might seems weird but we do practices this kind of a standard practice.",
-    wireframeImages: [images.simigoWireframe1],
+    wireframeImages: [images.simigoWireSkeleton, images.simigoWireComplete],
     url: "/portfolio/simigo-esim-branding-and-digital-marketing",
     card1: {
       value: 200,
@@ -170,6 +170,15 @@ export const portfolios = [
         "Because of the stable software and technological standpoint Simigo gets 3x more funding than expected.",
       backgroundImage: images.about5,
     },
+    problemIdentificationImage: images.simigoProblemIdentify,
+    wireframeGridImages: [
+      images.simigoWireGrid1,
+      images.simigoWireGrid2,
+      images.simigoWireGrid3,
+      images.simigoWireGrid4,
+      images.simigoWireGrid5,
+      images.simigoWireGrid6,
+    ]
   },
   {
     _id: "unisavi-branding-and-digital-marketing",

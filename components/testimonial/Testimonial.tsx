@@ -10,9 +10,9 @@ function Testimonial() {
       className="bg-orange-500 pb-10 pt-10 md:pt-16 lg:pt-20 overflow-hidden"
     >
       <div className="container flex_center flex-col">
-        <SectionSubHeader text="Services" />
+        <SectionSubHeader text="client reviews" />
         <SectionHeader className="mt-5 text-black">
-          Solutions for You
+          Client recommends
         </SectionHeader>
         <TestimonialDesktop />
       </div>

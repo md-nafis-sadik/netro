@@ -56,9 +56,9 @@ const ProjectDescription = ({ project }: any) => {
             <Image
               src={descriptionImages[0]}
               alt={project?.data?.title || "Project Image"}
-              width={1176}
-              height={648}
-              className="w-full mt-10 md:mt-16 lg:mt-20"
+              width={2352}
+              height={1296}
+              className="w-full mt-10 md:mt-16 lg:mt-20 rounded-2xl md:rounded-3xl"
             />
           </div>
         )}
@@ -71,16 +71,16 @@ const ProjectDescription = ({ project }: any) => {
             <Image
               src={descriptionImages[1]}
               alt={project?.data?.title || "Project Image"}
-              width={568}
-              height={633}
-              className="w-full"
+              width={1136}
+              height={1266}
+              className="w-full rounded-2xl md:rounded-3xl"
             />
             <Image
               src={descriptionImages[2]}
               alt={project?.data?.title || "Project Image"}
-              width={568}
-              height={633}
-              className="w-full"
+              width={1136}
+              height={1266}
+              className="w-full rounded-2xl md:rounded-3xl"
             />
           </div>
         )}
@@ -97,14 +97,14 @@ const ProjectDescription = ({ project }: any) => {
           items={project?.data?.problemIdentificationPoints}
         />
 
-        {hasImages && descriptionImages[0] && (
+        {project?.data?.problemIdentificationPoints && project?.data?.problemIdentificationImage && (
           <div ref={lastImageRef}>
             <Image
-              src={descriptionImages[0]}
+              src={project?.data?.problemIdentificationImage}
               alt={project?.data?.title || "Project Image"}
-              width={1176}
-              height={648}
-              className="w-full mt-10 md:mt-16 lg:mt-32"
+              width={2352}
+              height={1296}
+              className="w-full mt-10 md:mt-16 lg:mt-32 rounded-2xl md:rounded-3xl"
             />
           </div>
         )}

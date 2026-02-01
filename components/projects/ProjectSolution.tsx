@@ -30,9 +30,9 @@ const ProjectSolution = ({ project }: any) => {
           <Image
             src={project?.data?.solutionImage}
             alt={project?.data?.title || "Project Image"}
-            width={1176}
-            height={648}
-            className="w-full mt-10 md:mt-16 lg:mt-20"
+            width={2352}
+            height={1296}
+            className="w-full mt-10 md:mt-16 lg:mt-20 rounded-2xl md:rounded-3xl"
           />
         </div>
       </div>

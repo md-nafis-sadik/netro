@@ -6,11 +6,13 @@ import { images } from "@/services";
 import { StarIcon, StarShadowIcon } from "@/services/assets/svgs";
 import { bannerIcons } from "@/services/data";
 import Image from "next/image";
+import { useState } from "react";
 import { Avatar } from "../ui/avatar";
 import ExpandableButtonList from "./partials/ExpandableButtonList";
 
 function HeroHome() {
   const { avatarRef, titleRef, descriptionRef } = useHeroAnimation();
+  const [videoLoaded, setVideoLoaded] = useState(false);
 
   return (
     <section
@@ -166,13 +168,26 @@ function HeroHome() {
           </a>
         </div>
       </div>
-      {/* hero banner image  */}
+      {/* hero banner image - placeholder until video loads */}
       <Image
         src={images.banner}
-        className="absolute bottom-0 left-0 w-full h-full object-fill"
+        className={`absolute bottom-0 left-0 w-full h-full object-fill transition-opacity duration-500 ${
+          videoLoaded ? "opacity-0" : "opacity-100"
+        }`}
         alt="Hero Banner"
         title="Hero banner"
       />
+      {/* hero background video */}
+      <video
+        className="absolute bottom-0 left-0 w-full h-full object-fill"
+        autoPlay
+        loop
+        muted
+        playsInline
+        onLoadedData={() => setVideoLoaded(true)}
+      >
+        <source src="/videos/hero-video.mp4" type="video/mp4" />
+      </video>
     </section>
   );
 }

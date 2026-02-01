@@ -24,7 +24,7 @@ const variantStyles = {
   },
   blue: {
     border: "border-[#20338F]",
-    title: "text-[#3654FF]",
+    title: "text-[#FFC400]",
     subpoint: "text-white",
   },
   gradient: {

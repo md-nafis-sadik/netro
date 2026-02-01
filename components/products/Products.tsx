@@ -52,7 +52,7 @@ function Products() {
               </div>
 
               <div className="product-text font-inter w-full md:max-w-[481px]">
-                <p className="px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg bg-main-950 text-white max-w-max text-xs sm:text-sm sm:font-medium leading-[140%]">
+                <p className="px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg bg-[#131C53] text-white max-w-max text-xs sm:text-sm sm:font-medium leading-[140%]">
                   {product.tag}
                 </p>
                 <h2 className="text-base sm:text-xl lg:text-3xl text-white font-bold leading-[110%] mt-3 mb-1">
@@ -64,7 +64,7 @@ function Products() {
 
                 <Link
                   href={routes.contact.link}
-                  className="bg-main-400 hover:bg-main-500 flex items-center gap-2 p-[8px_16px_8px_20px] sm:p-[12px_20px_12px_24px] rounded-full w-fit text-white font-inter text-sm md:text-base font-bold mt-6 sm:mt-7"
+                  className="bg-main-600 hover:bg-main-700 flex items-center gap-2 p-[8px_16px_8px_20px] sm:p-[12px_20px_12px_24px] rounded-full w-fit text-white font-inter text-sm md:text-base font-bold mt-6 sm:mt-7"
                 >
                   <span>View Details</span>
                   <ArrowLongTailIcon className="text-white-100" />
