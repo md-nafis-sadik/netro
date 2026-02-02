@@ -17,7 +17,7 @@ export const findServiceBySlug = (slug: string): IService | undefined => {
     (service) =>
       service.slug === slug ||
       service.title.toLowerCase().replace(/\s+/g, "-") === slug.toLowerCase() ||
-      service.title.toLowerCase() === slug.toLowerCase()
+      service.title.toLowerCase() === slug.toLowerCase(),
   );
 };
 
@@ -25,7 +25,7 @@ export const findServiceByTitle = (title: string): IService | undefined => {
   return servicesData.find(
     (service) =>
       service.title.toLowerCase() === title.toLowerCase() ||
-      service.slug === title.toLowerCase().replace(/\s+/g, "-")
+      service.slug === title.toLowerCase().replace(/\s+/g, "-"),
   );
 };
 
@@ -78,13 +78,76 @@ export const servicesData: readonly IService[] = Object.freeze([
     title: "AI-Powered Development",
     slug: "ai-powered-development",
     subtitle: "Integrate AI into your products",
+    descTitle: "AI-Powered Software Engineering",
     description:
       "We help startups, enterprises, and global brands integrate AI into their products, workflow, and infrastructure through end-to-end engineering.",
     image: images.service1,
     featuredImage: images.service1,
     icon: <AIMenuIcon color="#FFC400" />,
     link: "/services/ai-powered-development",
-    tags: ["Artificial Intelligence", "Machine Learning", "AI Integration", "Automation"],
+    tags: [
+      "Artificial Intelligence",
+      "Machine Learning",
+      "AI Integration",
+      "Automation",
+    ],
+    deliverablesTitle: "WHAT WE DELIVER",
+    deliverablesDescription: "Our services cover both greenfield AI builds and augmentation of existing platforms.",
+    deliverables: [
+      {
+        title: "AI Application Development",
+        description: "We design and build AI-native applications such as:",
+        bgColor: "#BEDAFF",
+        textColor: "#000000",
+        features: [
+          "AI copilots & productivity agents",
+          "Enterprise search & knowledge systems",
+          "Recommendation & personalization engines",
+          "Model orchestration & agent design",
+          "Retrieval-Augmented Generation (RAG)",
+          "Predictive analytics & forecasting models",
+          "Document & contract intelligence (OCR + NLP)",
+          "AI chat & voice contact automation",
+          "Vector databases & embeddings",
+          "Knowledge graph integration",
+        ],
+      },
+      {
+        title: "AI Integration for Existing Software",
+        description: "We integrate AI into CRMs, ERPs, SaaS platforms, and proprietary systems without requiring full rewrites.",
+        bgColor: "#FFB199",
+        textColor: "#000000",
+        features: [
+          "AI onboarding flows inside existing products",
+          "Automated ticket classification for support tools",
+          "AI-generated insights inside analytics dashboards",
+          "Intelligent recommendations for e-commerce platforms",
+          "REST / GraphQL extension layers",
+          "Microservices with async event buses",
+          "Multi-model routing & fallback patterns",
+          "Cloud-hosted MLOps pipelines (Azure, AWS, GCP)",
+          "BYOM (Bring-Your-Own-Model) or vendor LLMs",
+        ],
+      },
+      {
+        title: "Autonomous & Multi-Agent Systems",
+        description: "We build systems that execute tasks end-to-end with minimal human input:",
+        bgColor: "#B4F4C0",
+        textColor: "#000000",
+        features: [
+          "DevOps task automation",
+          "Procurement agents",
+          "HR and recruiting automation",
+          "Data enrichment & research agents",
+          "Email + document triage",
+          "Compliance & auditing automation",
+          "Task decomposition & planning",
+          "Multi-agent orchestration frameworks",
+          "Latency-aware tool calling",
+          "Workflow/state persistence",
+        ],
+      },
+    ],
     content: `
       <h2>Transform Your Business with AI-Powered Solutions</h2>
       <p>At Netro, we specialize in integrating cutting-edge artificial intelligence into your products, workflows, and infrastructure. Our team of experienced AI engineers and data scientists work closely with you to identify opportunities where AI can drive meaningful business outcomes.</p>
@@ -101,20 +164,28 @@ export const servicesData: readonly IService[] = Object.freeze([
       <p>We work with modern AI frameworks including TensorFlow, PyTorch, OpenAI, and more to deliver scalable, production-ready AI solutions. Whether you're looking to automate processes, enhance user experiences, or unlock insights from your data, we have the expertise to make it happen.</p>
     `,
     metaTitle: "AI-Powered Development Services | Netro Systems",
-    metaDescription: "Integrate AI into your products with our end-to-end AI development services. Custom ML models, NLP, computer vision, and more."
+    metaDescription:
+      "Integrate AI into your products with our end-to-end AI development services. Custom ML models, NLP, computer vision, and more.",
   },
   {
     _id: "service-02",
     title: "SaaS Development & SQA",
     slug: "saas-development-sqa",
     subtitle: "Expertise over 5 years with 30+ apps",
+    descTitle: "AI-Powered Software Engineering",
+
     description:
       "Building a SaaS product or MVP isn't about writing the most code. It's about validating the right idea quickly, engineering it properly, and setting yourself up to scale without painful rewrites later.",
     image: images.service2,
     featuredImage: images.service2,
     icon: <SAASMenuIcon color="#FF7036" />,
     link: "/services/saas-development-sqa",
-    tags: ["SaaS Development", "MVP Development", "Software Quality Assurance", "Scalable Solutions"],
+    tags: [
+      "SaaS Development",
+      "MVP Development",
+      "Software Quality Assurance",
+      "Scalable Solutions",
+    ],
     content: `
       <h2>Build Scalable SaaS Products That Last</h2>
       <p>With over 5 years of experience and 30+ successful SaaS applications delivered, we understand what it takes to build products that scale. Our approach focuses on rapid validation, solid engineering practices, and long-term sustainability.</p>
@@ -133,20 +204,28 @@ export const servicesData: readonly IService[] = Object.freeze([
       <p>Quality is not an afterthought—it's built into every stage of development. Our SQA services ensure your SaaS product is reliable, secure, and performs optimally under real-world conditions.</p>
     `,
     metaTitle: "SaaS Development & Quality Assurance Services | Netro Systems",
-    metaDescription: "Expert SaaS development with 5+ years experience. Build scalable, reliable products with comprehensive QA and testing."
+    metaDescription:
+      "Expert SaaS development with 5+ years experience. Build scalable, reliable products with comprehensive QA and testing.",
   },
   {
     _id: "service-03",
     title: "Software Development",
     slug: "software-development",
     subtitle: "We develop apps with craftsmanship",
+    descTitle: "AI-Powered Software Engineering",
+
     description:
       "Great apps aren't just about features—they're about performance, usability, and reliability. We design and build mobile and web applications that feel intuitive, scale smoothly, and integrate seamlessly with modern backend and AI systems.",
     image: images.service3,
     featuredImage: images.service3,
     icon: <AppMenuIcon color="#7AD58D" />,
     link: "/services/software-development",
-    tags: ["Custom Software", "Web Development", "Enterprise Solutions", "API Development"],
+    tags: [
+      "Custom Software",
+      "Web Development",
+      "Enterprise Solutions",
+      "API Development",
+    ],
     content: `
       <h2>Custom Software Development Built for Your Business</h2>
       <p>Whether you need a custom web application, enterprise software, or complex backend systems, we deliver solutions that are robust, scalable, and tailored to your specific requirements.</p>
@@ -166,20 +245,28 @@ export const servicesData: readonly IService[] = Object.freeze([
       <p>From startups to enterprises, we've helped businesses across industries build software that drives growth and operational efficiency.</p>
     `,
     metaTitle: "Custom Software Development Services | Netro Systems",
-    metaDescription: "Professional software development with craftsmanship. Web apps, enterprise solutions, and scalable backend systems."
+    metaDescription:
+      "Professional software development with craftsmanship. Web apps, enterprise solutions, and scalable backend systems.",
   },
   {
     _id: "service-04",
     title: "3D Product Animation",
     slug: "3d-product-animation",
     subtitle: "Bring your products to life with stunning visuals",
+    descTitle: "AI-Powered Software Engineering",
+
     description:
       "High-quality 3D product animations transform how you showcase your products online. Whether it's for marketing, e-commerce, or presentations, our 3D animation services help you stand out and engage your audience.",
     image: images.service4,
     featuredImage: images.service4,
     icon: <VibeMenuIcon color="#8F73FF" />,
     link: "/services/3d-product-animation",
-    tags: ["3D Animation", "Product Visualization", "3D Modeling", "Visual Effects"],
+    tags: [
+      "3D Animation",
+      "Product Visualization",
+      "3D Modeling",
+      "Visual Effects",
+    ],
     content: `
       <h2>Bring Your Products to Life with 3D Animation</h2>
       <p>High-quality 3D product animations can transform how you showcase your products online. Whether it's for marketing, e-commerce, or presentations, our 3D animation services help you stand out and engage your audience.</p>
@@ -196,13 +283,16 @@ export const servicesData: readonly IService[] = Object.freeze([
       <p>We use industry-leading tools like Blender, Cinema 4D, and Three.js to create stunning visuals that captivate your audience and drive conversions.</p>
     `,
     metaTitle: "3D Product Animation Services | Netro Systems",
-    metaDescription: "Professional 3D product animation and visualization services. Create stunning product showcases for marketing and e-commerce."
+    metaDescription:
+      "Professional 3D product animation and visualization services. Create stunning product showcases for marketing and e-commerce.",
   },
   {
     _id: "service-05",
     title: "Product Design (UI/UX Design)",
     slug: "product-design-ui-ux-design",
     subtitle: "We don't leave you even after development",
+    descTitle: "AI-Powered Software Engineering",
+
     description:
       "Good design isn't just how a product looks. It's how it behaves, how easily users move through it, and how confidently they achieve their goals. We design user experiences that are intuitive, scalable, and aligned with real business outcomes.",
     image: images.service5,
@@ -229,20 +319,28 @@ export const servicesData: readonly IService[] = Object.freeze([
       <p>We don't just make things look pretty—we solve problems. Every design decision is backed by research, tested with users, and measured against business goals. We work closely with developers to ensure designs are implemented pixel-perfect.</p>
     `,
     metaTitle: "UI/UX Design & Product Design Services | Netro Systems",
-    metaDescription: "Expert UI/UX design services. Create intuitive, beautiful products that users love and that drive business results."
+    metaDescription:
+      "Expert UI/UX design services. Create intuitive, beautiful products that users love and that drive business results.",
   },
   {
     _id: "service-06",
     title: "App Development",
     slug: "app-development",
     subtitle: "Years of expertise and proven portfolio",
+    descTitle: "AI-Powered Software Engineering",
+
     description:
       "Great software isn't just built—it's tested, deployed, monitored, and supported in the real world. We help teams make sure their applications are reliable, secure, and ready for growth long after the first release.",
     image: images.service6,
     featuredImage: images.service6,
     icon: <UIMenuIcon color="#FF7036" />,
     link: "/services/app-development",
-    tags: ["Mobile Apps", "iOS Development", "Android Development", "Cross-Platform"],
+    tags: [
+      "Mobile Apps",
+      "iOS Development",
+      "Android Development",
+      "Cross-Platform",
+    ],
     content: `
       <h2>Mobile Apps That Users Love</h2>
       <p>In today's mobile-first world, your app needs to be fast, intuitive, and reliable. We build native and cross-platform mobile applications that deliver exceptional user experiences on both iOS and Android.</p>
@@ -260,21 +358,30 @@ export const servicesData: readonly IService[] = Object.freeze([
       <h3>Why Choose Us:</h3>
       <p>With years of experience and a proven portfolio of successful apps, we know what it takes to build mobile applications that users engage with daily. From initial concept to App Store submission and beyond, we're with you every step of the way.</p>
     `,
-    metaTitle: "Mobile App Development Services | iOS & Android | Netro Systems",
-    metaDescription: "Expert mobile app development for iOS and Android. Native and cross-platform apps built with years of proven expertise."
+    metaTitle:
+      "Mobile App Development Services | iOS & Android | Netro Systems",
+    metaDescription:
+      "Expert mobile app development for iOS and Android. Native and cross-platform apps built with years of proven expertise.",
   },
   {
     _id: "service-07",
     title: "Branding & Stationery",
     slug: "branding-stationery",
     subtitle: "We build visually appealing brands",
+    descTitle: "AI-Powered Software Engineering",
+
     description:
       "Good design isn't just how a product looks. It's how it behaves, how easily users move through it, and how confidently they achieve their goals. We design user experiences that are intuitive, scalable, and aligned with real business outcomes.",
     image: images.service7,
     featuredImage: images.service7,
     icon: <BrandingMenuIcon color="#7AD58D" />,
     link: "/services/branding-stationery",
-    tags: ["Brand Identity", "Logo Design", "Visual Identity", "Brand Strategy"],
+    tags: [
+      "Brand Identity",
+      "Logo Design",
+      "Visual Identity",
+      "Brand Strategy",
+    ],
     content: `
       <h2>Build a Brand That Stands Out</h2>
       <p>Your brand is more than just a logo—it's the complete experience your customers have with your company. We create comprehensive brand identities that tell your story and connect with your audience.</p>
@@ -293,6 +400,7 @@ export const servicesData: readonly IService[] = Object.freeze([
       <p>Whether you're a startup building your brand from scratch or an established company looking for a refresh, we'll help you create a visual identity that resonates with your target audience and sets you apart from the competition.</p>
     `,
     metaTitle: "Branding & Stationery Design Services | Netro Systems",
-    metaDescription: "Professional branding and stationery design. Create a memorable visual identity that stands out and connects with your audience."
+    metaDescription:
+      "Professional branding and stationery design. Create a memorable visual identity that stands out and connects with your audience.",
   },
 ]);

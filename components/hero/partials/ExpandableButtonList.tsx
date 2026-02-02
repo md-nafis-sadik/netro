@@ -15,6 +15,7 @@ interface ExpandableButtonProps {
   bgColorDefault?: string;
   bgColorHover?: string;
   expanded?: boolean;
+  blue?: boolean;
   onHoverChange?: (hovering: boolean) => void;
 }
 
@@ -24,8 +25,24 @@ const ExpandableButton: React.FC<ExpandableButtonProps> = ({
   text,
   expanded = false,
   onHoverChange,
+  blue = false,
 }) => {
   const { open } = useTidycalModal();
+
+  let baColor;
+  let baColor2;
+
+  if (blue) {
+    baColor = "bg-main-600";
+  } else {
+    baColor = "bg-main-950";
+  }
+
+  if (blue) {
+    baColor2 = "bg-main-600";
+  } else {
+    baColor2 = "bg-main-900";
+  }
 
   const content = (
     <div
@@ -62,7 +79,7 @@ const ExpandableButton: React.FC<ExpandableButtonProps> = ({
       onMouseLeave={() => onHoverChange?.(false)}
       className={cn(
         `group h-10 sm:h-12 rounded-full flex items-center justify-center cursor-pointer overflow-hidden shadow-lg shrink-0 transition-all duration-300 font-inter`,
-        expanded ? "bg-white" : "bg-main-900",
+        expanded ? "bg-white" : baColor2,
       )}
     >
       {content}
@@ -76,7 +93,7 @@ const ExpandableButton: React.FC<ExpandableButtonProps> = ({
       onMouseLeave={() => onHoverChange?.(false)}
       className={cn(
         `group h-10 sm:h-12 rounded-full flex items-center justify-center cursor-pointer overflow-hidden shadow-lg shrink-0 transition-all duration-300 font-inter`,
-        expanded ? "bg-white" : "bg-main-950",
+        expanded ? "bg-white" : baColor,
       )}
     >
       {content}
@@ -84,7 +101,13 @@ const ExpandableButton: React.FC<ExpandableButtonProps> = ({
   );
 };
 
-const ExpandableButtonList = ({ className }: { className?: string }) => {
+const ExpandableButtonList = ({
+  className,
+  blue = false,
+}: {
+  className?: string;
+  blue?: boolean;
+}) => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
@@ -104,6 +127,7 @@ const ExpandableButtonList = ({ className }: { className?: string }) => {
             hoveredIndex === null ? index === 0 : hoveredIndex === index
           }
           onHoverChange={(hovering) => setHoveredIndex(hovering ? index : null)}
+          blue={blue}
         />
       ))}
     </div>
