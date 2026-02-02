@@ -43,7 +43,7 @@ function ServiceMenuItem({
 }) {
   return (
     <Link
-      href={`${routes.services.childLink}/${service?.title}`}
+      href={`${service.link}`}
       className={clsx(
         "flex items-start gap-[10px] transition_common px-[9px] pt-[9px] pb-3 group rounded-[8px]",
         isActive
