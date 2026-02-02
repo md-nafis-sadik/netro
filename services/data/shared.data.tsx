@@ -422,6 +422,7 @@ export const clientCompanyData = [
   // images.companyBlack13,
   images.companyBlack1,
   images.companyBlack2,
+  images.companyBlack3,
   // images.companyBlack4,
   // images.companyBlack5,
   // images.companyBlack6,

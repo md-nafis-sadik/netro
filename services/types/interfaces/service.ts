@@ -8,4 +8,5 @@ export type IService = Readonly<{
   description: string;
   image: StaticImageData;
   icon?: React.ReactNode;
+  link?: string;
 }>;

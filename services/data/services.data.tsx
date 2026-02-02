@@ -63,6 +63,7 @@ export const servicesData: readonly IService[] = Object.freeze([
       "We help startups, enterprises, and global brands integrate AI into their products, workflow, and infrastructure through end-to-end engineering.",
     image: images.service1,
     icon: <AIMenuIcon color="#FFC400" />,
+    link: "/services/ai-powered-development",
   },
   {
     _id: "service-02",
@@ -72,6 +73,7 @@ export const servicesData: readonly IService[] = Object.freeze([
       "Building a SaaS product or MVP isn’t about writing the most code. It’s about validating the right idea quickly, engineering it properly, and setting yourself up to scale without painful rewrites later.",
     image: images.service2,
     icon: <SAASMenuIcon color="#FF7036" />,
+    link: "/services/ai-powered-development",
   },
   {
     _id: "service-03",
@@ -81,6 +83,7 @@ export const servicesData: readonly IService[] = Object.freeze([
       "Great apps aren’t just about features—they’re about performance, usability, and reliability. We design and build mobile and web applications that feel intuitive, scale smoothly, and integrate seamlessly with modern backend and AI systems.",
     image: images.service3,
     icon: <AppMenuIcon color="#7AD58D" />,
+    link: "/services/ai-powered-development",
   },
   {
     _id: "service-04",
@@ -90,6 +93,7 @@ export const servicesData: readonly IService[] = Object.freeze([
       "Vibe Coding is our rapid MVP delivery approach designed for teams that need to move fast, validate ideas early, and get real user feedback—without sacrificing code quality or future scalability. It’s not about rushing. It’s about momentum, focus, and shipping the right thing at the right time.",
     image: images.service4,
     icon: <VibeMenuIcon color="#8F73FF" />,
+    link: "/services/ai-powered-development",
   },
   {
     _id: "service-05",
@@ -99,6 +103,7 @@ export const servicesData: readonly IService[] = Object.freeze([
       "Good design isn’t just how a product looks. It’s how it behaves, how easily users move through it, and how confidently they achieve their goals. We design user experiences that are intuitive, scalable, and aligned with real business outcomes.",
     image: images.service5,
     icon: <SQAMenuIcon color="#FFC400" />,
+    link: "/services/ai-powered-development",
   },
     {
     _id: "service-06",
@@ -117,6 +122,7 @@ export const servicesData: readonly IService[] = Object.freeze([
       "Good design isn’t just how a product looks. It’s how it behaves, how easily users move through it, and how confidently they achieve their goals. We design user experiences that are intuitive, scalable, and aligned with real business outcomes.",
     image: images.service7,
     icon: <BrandingMenuIcon color="#7AD58D" />,
+    link: "/services/ai-powered-development",
   },
 ]);
 

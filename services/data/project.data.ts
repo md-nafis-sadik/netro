@@ -18,7 +18,7 @@ export const projects: readonly IProject[] = Object.freeze([
       },
       {
         text: "Case Study",
-        url: routes.portfolio.link + "nlc-branding-and-digital-marketing",
+        url: routes.portfolio.link + "/simigo-esim-branding-and-digital-marketing",
       },
     ],
   },
@@ -38,7 +38,7 @@ export const projects: readonly IProject[] = Object.freeze([
       {
         text: "Case Study",
         url:
-          routes.portfolio.link + "kangabooking-branding-and-digital-marketing",
+          routes.portfolio.link + "/simigo-esim-branding-and-digital-marketing",
       },
     ],
   },
@@ -58,7 +58,7 @@ export const projects: readonly IProject[] = Object.freeze([
       },
       {
         text: "Case Study",
-        url: routes.portfolio.link + "telzen-branding-and-digital-marketing",
+        url: routes.portfolio.link + "/simigo-esim-branding-and-digital-marketing",
       },
     ],
   },
@@ -78,7 +78,7 @@ export const projects: readonly IProject[] = Object.freeze([
       },
       {
         text: "Case Study",
-        url: routes.portfolio.link + "/unisavi-branding-and-digital-marketing",
+        url: routes.portfolio.link + "/simigo-esim-branding-and-digital-marketing",
       },
     ],
   },

@@ -6,13 +6,14 @@ import { images } from "@/services";
 import { StarIcon, StarShadowIcon } from "@/services/assets/svgs";
 import { bannerIcons } from "@/services/data";
 import Image from "next/image";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Avatar } from "../ui/avatar";
 import ExpandableButtonList from "./partials/ExpandableButtonList";
 
 function HeroHome() {
   const { avatarRef, titleRef, descriptionRef } = useHeroAnimation();
   const [videoLoaded, setVideoLoaded] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   return (
     <section
@@ -179,12 +180,21 @@ function HeroHome() {
       />
       {/* hero background video */}
       <video
+        ref={videoRef}
         className="absolute bottom-0 left-0 w-full h-full object-fill"
         autoPlay
         loop
         muted
         playsInline
+        preload="auto"
         onLoadedData={() => setVideoLoaded(true)}
+        onEnded={() => {
+          // Ensure seamless looping by immediately replaying
+          if (videoRef.current) {
+            videoRef.current.currentTime = 0;
+            videoRef.current.play();
+          }
+        }}
       >
         <source src="/videos/hero-video.mp4" type="video/mp4" />
       </video>

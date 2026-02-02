@@ -208,7 +208,7 @@ export default function DropupNavigationMenu({
                 {displayedService.description}
               </div>
               <Link
-                href={`${routes.services.childLink}/${displayedService.title}`}
+                href={`${displayedService.link}`}
                 className={cn(
                   "flex-1 flex_center gap-2 py-2 pl-4 pr-3 w-max rounded-full text-xs font-semibold sm:font-bold leading-[110%] whitespace-nowrap mt-4 hover:scale-105 transition_common",
                   "bg-white text-black",
