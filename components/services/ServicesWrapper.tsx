@@ -3,30 +3,28 @@ import ProductAnimationService from "@/components/services/ProductAnimationServi
 import SaasDevelopmentService from "@/components/services/SaasDevelopmentService";
 import SoftwareService from "@/components/services/SoftwareService";
 import UXUIService from "@/components/services/UXUIService";
-import { fetchWithDelay } from "@/lib/apiHandler";
+import { servicesData } from "@/services/data/services.data";
 
-const ServicesWrapper = async () => {
-  let services = (await fetchWithDelay(`/services/all`)) as any;
-
-  const softwareService = services?.data?.find(
-    (service: any) => service.title === "Software Development"
+const ServicesWrapper = () => {
+  const softwareService = servicesData.find(
+    (service) => service.title === "Software Development"
   );
-  const uxUiService = services?.data?.find(
-    (service: any) => service.title === "Product Design (UI/UX Design)"
+  const uxUiService = servicesData.find(
+    (service) => service.title === "Product Design (UI/UX Design)"
   );
-  const productAnimationService = services?.data?.find(
-    (service: any) => service.title === "3D Product Animation"
+  const productAnimationService = servicesData.find(
+    (service) => service.title === "3D Product Animation"
   );
-  const saasDevelopmentService = services?.data?.find(
-    (service: any) => service.title === "SaaS Development & SQA"
+  const saasDevelopmentService = servicesData.find(
+    (service) => service.title === "SaaS Development & SQA"
   );
 
   return (
     <Fragment>
-      <SoftwareService data={softwareService} />
-      <UXUIService data={uxUiService} />
-      <ProductAnimationService data={productAnimationService} />
-      <SaasDevelopmentService data={saasDevelopmentService} />
+      {softwareService && <SoftwareService data={softwareService} />}
+      {uxUiService && <UXUIService data={uxUiService} />}
+      {productAnimationService && <ProductAnimationService data={productAnimationService} />}
+      {saasDevelopmentService && <SaasDevelopmentService data={saasDevelopmentService} />}
     </Fragment>
   );
 };

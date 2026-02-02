@@ -6,28 +6,40 @@ import ServiceDetailsContent from "@/components/services/ServiceDetailsContent";
 import ServiceDetailsSkeleton from "@/components/services/ServiceDetailsSkeleton";
 import TestimonialSkeleton from "@/components/testimonial/TestimonialSkeleton";
 import TestimonialWrapper from "@/components/testimonial/TestimonialWrapper";
-import { getGeneratedMetadata } from "@/lib/metadata";
 import { purifyUrl } from "@/services";
 import { Suspense } from "react";
 import { notFound } from "next/navigation";
+import { Metadata } from "next";
 
 // Import the main services page components
 import ClientServiceList from "@/components/services/ClientServiceList";
 import ServiceStrengthAreas from "@/components/services/ServiceStrengthAreas";
 import ServicesWrapper from "@/components/services/ServicesWrapper";
 import PageThumbnail from "@/components/shared/PageThumbnail";
+import { findServiceBySlug } from "@/services/data/services.data";
 
 export async function generateMetadata({
   params,
 }: {
   params: Promise<{ slug: string }>;
-}) {
+}): Promise<Metadata> {
   let { slug } = await params;
   slug = Array.isArray(slug) ? slug.join("/") : slug;
   slug = purifyUrl({ urlString: slug });
-  const id = purifyUrl({ urlString: slug });
-  const url = `/services/find-by-title/${id}`;
-  return await getGeneratedMetadata({ apiUrl: url, metaTitle: id });
+  
+  const service = findServiceBySlug(slug);
+  
+  if (!service) {
+    return {
+      title: "Service Not Found | Netro Systems",
+      description: "The requested service could not be found.",
+    };
+  }
+
+  return {
+    title: service.metaTitle || `${service.title} | Netro Systems`,
+    description: service.metaDescription || service.description,
+  };
 }
 
 const ServiceDetailsPage = async ({
