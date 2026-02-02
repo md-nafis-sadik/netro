@@ -113,6 +113,7 @@ export const servicesData: readonly IService[] = Object.freeze([
       "Great software isn’t just built—it’s tested, deployed, monitored, and supported in the real world. We help teams make sure their applications are reliable, secure, and ready for growth long after the first release.",
     image: images.service6,
     icon: <UIMenuIcon color="#FF7036" />,
+    link: "/services/ai-powered-development",
   },
   {
     _id: "service-07",
