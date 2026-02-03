@@ -97,7 +97,7 @@ export const servicesData: readonly IService[] = Object.freeze([
       {
         title: "AI Application Development",
         description: "We design and build AI-native applications such as:",
-        bgColor: "#BEDAFF",
+        bgColor: "#97C0FF",
         textColor: "#000000",
         features: [
           "AI copilots & productivity agents",
@@ -115,7 +115,7 @@ export const servicesData: readonly IService[] = Object.freeze([
       {
         title: "AI Integration for Existing Software",
         description: "We integrate AI into CRMs, ERPs, SaaS platforms, and proprietary systems without requiring full rewrites.",
-        bgColor: "#FFB199",
+        bgColor: "#FFA77C",
         textColor: "#000000",
         features: [
           "AI onboarding flows inside existing products",
@@ -132,7 +132,7 @@ export const servicesData: readonly IService[] = Object.freeze([
       {
         title: "Autonomous & Multi-Agent Systems",
         description: "We build systems that execute tasks end-to-end with minimal human input:",
-        bgColor: "#B4F4C0",
+        bgColor: "#7FFBAF",
         textColor: "#000000",
         features: [
           "DevOps task automation",

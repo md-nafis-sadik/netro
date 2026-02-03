@@ -1,5 +1,5 @@
 "use client";
-import { useRef, useState, useEffect } from "react";
+import { useRef, useEffect } from "react";
 import { ServiceDeliverable } from "@/services/types/interfaces/service";
 import { cn } from "@/lib/utils";
 import { ArrowLongTailIcon } from "@/services/assets/svgs";
@@ -28,18 +28,36 @@ function ServiceDeliverables({
     if (!containerRef.current || cardsRef.current.length === 0) return;
 
     const cards = cardsRef.current.filter(Boolean);
+    const viewportHeight = window.innerHeight;
+    
+    // Only animate all cards except the last one
+    const cardsToAnimate = cards.slice(0, -1);
+    
+    if (cardsToAnimate.length === 0) return;
+    
+    // Calculate total animation distance needed
+    // Each animated card moves up by viewportHeight * 1.2
+    const totalAnimationHeight = cardsToAnimate.length * (viewportHeight * 0.8) + (viewportHeight * 0.5);
+    const totalContainerHeight = totalAnimationHeight + (viewportHeight * 0.5); // Add some padding
 
-    // Create individual ScrollTriggers for each card
-    cards.forEach((card, index) => {
+    // Set container height
+    containerRef.current.style.height = `${totalContainerHeight}px`;
+
+    // Animate all cards except the last one
+    cardsToAnimate.forEach((card, index) => {
+      // Stagger animations with some overlap
+      const startOffset = index * (viewportHeight * 0.8);
+      const animationDuration = viewportHeight * 1;
+
       gsap.to(card, {
-        y: -window.innerHeight, // Move entire card height + viewport off screen
-        ease: "power2.inOut",
+        y: -viewportHeight * 1.2,
+        ease: "none",
         scrollTrigger: {
           trigger: containerRef.current,
-          start: `top+=${index * 100} top`,
-          end: `top+=${(index + 1) * 100} top`,
-          scrub: 1,
-          markers: false, // Set to true for debugging
+          start: `top+=${startOffset}px top+=18%`,
+          end: `top+=${startOffset + animationDuration}px top+=18%`,
+          scrub: 2,
+          markers: false,
         },
       });
     });
@@ -60,12 +78,9 @@ function ServiceDeliverables({
 
         <div
           ref={containerRef}
-          className="w-full relative mt-20 md:mt-32"
-          style={{
-            height: `${deliverables.length * 100}vh`, // Reduced height
-          }}
+          className="w-full relative my-8 md:my-10"
         >
-          <div className="sticky top-0">
+          <div className="sticky top-[18%]">
             {deliverables.map((deliverable, index) => (
               <div
                 key={index}
@@ -74,13 +89,13 @@ function ServiceDeliverables({
                 }}
                 className={cn(
                   "deliverable-card rounded-2xl md:rounded-3xl p-8 md:p-12 lg:p-16",
-                  index === 0 ? "relative" : "absolute top-0 left-0 right-0"
+                  index === 0 ? "relative" : "absolute top-0 left-0 right-0",
                 )}
                 style={{
                   backgroundColor: deliverable.bgColor,
                   color: deliverable.textColor || "#000000",
                   zIndex: deliverables.length - index,
-                  transform: `translateY(${index * 50}px)`,
+                  transform: `translateY(${index * 40}px)`,
                   width: "100%",
                 }}
               >
