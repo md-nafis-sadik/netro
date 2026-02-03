@@ -2,13 +2,33 @@ import { images } from "../assets";
 import {
   AiIcon,
   AIMenuIcon,
+  APIYellowIcon,
   AppMenuIcon,
   BrandingMenuIcon,
+  CloudYellowIcon,
+  DBYellowIcon,
+  LangChainYellowIcon,
+  LLMYellowIcon,
+  PSQLYellowIcon,
+  PythonYellowIcon,
+  ReactYellowIcon,
   SAASMenuIcon,
   SQAMenuIcon,
+  TSYellowIcon,
   UIMenuIcon,
   VibeMenuIcon,
 } from "../assets/svgs";
+import {
+  PythonIcon,
+  TypeScriptIcon,
+  AIIcon as AITechIcon,
+  DatabaseIcon,
+  PostgreSQLIcon,
+  APIIcon,
+  ReactIcon,
+  CloudIcon,
+  LLMIcon,
+} from "@/components/services/ServiceIcons";
 import { IService } from "../types";
 
 // Helper function to find service by slug or title
@@ -82,7 +102,7 @@ export const servicesData: readonly IService[] = Object.freeze([
     description:
       "We help startups, enterprises, and global brands integrate AI into their products, workflow, and infrastructure through end-to-end engineering.",
     image: images.service1,
-    featuredImage: images.service1,
+    featuredImage: images.aiPowered,
     icon: <AIMenuIcon color="#FFC400" />,
     link: "/services/ai-powered-development",
     tags: [
@@ -166,6 +186,140 @@ export const servicesData: readonly IService[] = Object.freeze([
     metaTitle: "AI-Powered Development Services | Netro Systems",
     metaDescription:
       "Integrate AI into your products with our end-to-end AI development services. Custom ML models, NLP, computer vision, and more.",
+    atGlance: [
+      {
+        title: "DATA, MODELS & INFRASTRUCTURE",
+        description: "Models & Foundation Model Support",
+        items: [
+          "We support open-source & closed-source models:",
+          "OpenAI GPT-series",
+          "Claude / Anthropic",
+          "Meta Llama",
+          "Google Gemini",
+          "Mistral",
+          "DeepSeek",
+        ],
+        bgColor: "#3654FF",
+        textColor: "#FFFFFF",
+      },
+      {
+        title: "DATA LAYER & STORAGE",
+        description: "",
+        items: [
+          "Vector databases: Pinecone, Weaviate, Milvus, Chroma, pgvector",
+          "KB setups: Neo4j, TypeDB, Elastic/Kibana",
+          "Data lakes & warehouses: Snowflake, BigQuery, Databricks",
+        ],
+        bgColor: "#FFC400",
+        textColor: "#000000",
+      },
+      {
+        title: "AGENT & ORCHESTRATION FRAMEWORKS",
+        description: "",
+        items: [
+          "LangChain / LangGraph",
+          "LlamaIndex",
+          "OpenAI Functions & Tools",
+          "Azure AI Studio",
+          "Workflow orchestrators (Temporal, Airflow, Prefect)",
+        ],
+        bgColor: "#00DE71",
+        textColor: "#FFFFFF",
+      },
+      {
+        title: "MLOPS & DEPLOYMENT",
+        description: "",
+        items: [
+          "Model serving",
+          "Autoscaling & inference optimization",
+          "Fine-tuning & LoRA adapters",
+          "Prompt & dataset evaluation",
+          "CI/CD for ML pipelines",
+          "Monitoring (latency, hallucination, costs)",
+        ],
+        bgColor: "#FFA77C",
+        textColor: "#000000",
+      },
+      {
+        title: "SECURITY, COMPLIANCE & GOVERNANCE (CRITICAL FOR US/EU BUYERS)",
+        description: "",
+        items: [
+          "GDPR & data locality",
+          "SOC 2 & ISO-27001 alignment",
+          "Audit logging & traceability",
+          "PII redaction & anonymization",
+          "Model guardrails & content filters",
+          "Role-based access control",
+        ],
+        bgColor: "#F1571B",
+        textColor: "#FFFFFF",
+      },
+    ],
+    techStacks: [
+      {
+        icon: <PythonYellowIcon />,
+        title: "Python",
+        description:
+          "Our primary language for AI and backend services due to its mature ecosystem and rapid development speed",
+        color: "#FFC400",
+      },
+      {
+        icon: <TSYellowIcon />,
+        title: "TypeScript",
+        description:
+          "Used across frontend and backend to build scalable, maintainable applications.",
+        color: "#3178C6",
+      },
+      {
+        icon: <LLMYellowIcon />,
+        title: "Large Language Models",
+        description:
+          "State-of-the-Art AI Models - We work with leading LLMs such as OpenAI, Anthropic, Meta, and Mistral.",
+        color: "#FFC400",
+      },
+      {
+        icon: <LangChainYellowIcon />,
+        title: "LangChain & LlamaIndex",
+        description:
+          "LLM Workflow Orchestration - These frameworks help structure prompts, tools, and retrieval pipelines.",
+        color: "#FFC400",
+      },
+      {
+        icon: <PSQLYellowIcon />,
+        title: "PostgreSQL",
+        description:
+          "A trusted relational database for transactional and structured data. Its extensibility supports modern AI.",
+        color: "#336791",
+      },
+      {
+        icon: <DBYellowIcon />,
+        title: "Vector Databases",
+        description:
+          "Used for embedding storage and similarity search over unstructured data. They power accurate AI responses",
+        color: "#FFC400",
+      },
+      {
+        icon: <APIYellowIcon />,
+        title: "FastAPI & NestJS",
+        description:
+          "Frameworks for building high-performance, cloud-native APIs. They enforce clean architecture and strong validation.",
+        color: "#FFC400",
+      },
+      {
+        icon: <ReactYellowIcon />,
+        title: "React & Next.js",
+        description:
+          "Our preferred stack for fast, responsive, and SEO-friendly web applications. It integrates seamlessly with AI-driven features.",
+        color: "#61DAFB",
+      },
+      {
+        icon: <CloudYellowIcon />,
+        title: "Cloud & Containerization",
+        description:
+          "We deploy using AWS, Azure, or GCP with Docker and Kubernetes. This ensures high availability, scalability, and compliance with regional requirements.",
+        color: "#FFC400",
+      },
+    ],
   },
   {
     _id: "service-02",

@@ -4,6 +4,9 @@ import ProjectsPreviewServicesSkeleton from "@/components/projects/ProjectsPrevi
 import ProjectsPreviewServicesWrapper from "@/components/projects/ProjectsPreviewServicesWrapper";
 import ServiceDetailsContent from "@/components/services/ServiceDetailsContent";
 import ServiceDetailsSkeleton from "@/components/services/ServiceDetailsSkeleton";
+import ServiceChallengesSolution from "@/components/services/ServiceChallengesSolution";
+import ServiceAdditionalSections from "@/components/services/ServiceAdditionalSections";
+import ServiceCommitment from "@/components/services/ServiceCommitment";
 import TestimonialSkeleton from "@/components/testimonial/TestimonialSkeleton";
 import TestimonialWrapper from "@/components/testimonial/TestimonialWrapper";
 import { purifyUrl } from "@/services";
@@ -17,6 +20,7 @@ import ServiceStrengthAreas from "@/components/services/ServiceStrengthAreas";
 import ServicesWrapper from "@/components/services/ServicesWrapper";
 import PageThumbnail from "@/components/shared/PageThumbnail";
 import { findServiceBySlug } from "@/services/data/services.data";
+import ProcessFollowed from "@/components/view/ProcessFollowed";
 
 export async function generateMetadata({
   params,
@@ -26,9 +30,9 @@ export async function generateMetadata({
   let { slug } = await params;
   slug = Array.isArray(slug) ? slug.join("/") : slug;
   slug = purifyUrl({ urlString: slug });
-  
+
   const service = findServiceBySlug(slug);
-  
+
   if (!service) {
     return {
       title: "Service Not Found | Netro Systems",
@@ -75,8 +79,14 @@ const ServiceDetailsPage = async ({
         <ServiceDetailsContent slug={slug} />
       </Suspense>
 
+      <ServiceChallengesSolution />
+
+      <ProcessFollowed />
+
+      <ServiceAdditionalSections slug={slug} />
+
       <section className="bg-black flex_center flex-col w-full py-20">
-        <div className="containerX mt-10 md:mt-20">
+        <div className="container mt-10 md:mt-20">
           <SectionSubHeader
             dark
             text="Project previews"
@@ -90,9 +100,8 @@ const ServiceDetailsPage = async ({
           </Suspense>
         </div>
       </section>
-      <Suspense fallback={<TestimonialSkeleton />}>
-        <TestimonialWrapper />
-      </Suspense>
+
+      <ServiceCommitment />
     </main>
   );
 };

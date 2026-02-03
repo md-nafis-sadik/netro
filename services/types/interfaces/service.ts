@@ -9,6 +9,21 @@ export type ServiceDeliverable = {
   textColor?: string;
 };
 
+export type ServiceAtGlanceItem = {
+  title: string;
+  description: string;
+  items: string[];
+  bgColor: string;
+  textColor: string;
+};
+
+export type ServiceTechStack = {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+  color?: string;
+};
+
 export type IService = Readonly<{
   _id: string;
   title: string;
@@ -27,4 +42,6 @@ export type IService = Readonly<{
   deliverables?: ServiceDeliverable[];
   deliverablesTitle?: string;
   deliverablesDescription?: string;
+  atGlance?: ServiceAtGlanceItem[];
+  techStacks?: ServiceTechStack[];
 }>;

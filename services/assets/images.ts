@@ -230,3 +230,16 @@ export { default as simigoWireGrid4 } from "@/public/images/project/simigo-wiref
 export { default as simigoWireGrid5 } from "@/public/images/project/simigo-wireframe-grid-5.webp";
 export { default as simigoWireGrid6 } from "@/public/images/project/simigo-wireframe-grid-6.webp";
 export { default as simigoProblemIdentify } from "@/public/images/project/simigo-problem-identify.webp";
+
+//services
+export { default as aiPowered } from "@/public/images/services/ai-powered.webp";
+export { default as belowBg } from "@/public/images/services/below-bg.webp";
+export { default as belowCard } from "@/public/images/services/below-card.webp";
+export { default as belowContent } from "@/public/images/services/below-content.webp";
+export { default as belowUser } from "@/public/images/services/below-user.webp";
+export { default as serviceFrame1 } from "@/public/images/services/frame-1.webp";
+export { default as serviceFrame2 } from "@/public/images/services/frame-2.webp";
+export { default as serviceFrame3 } from "@/public/images/services/frame-3.webp";
+export { default as ellipseBg } from "@/public/images/services/ellipse-bg.webp";
+export { default as atAGlance } from "@/public/images/services/at-a-glance.webp";
+
