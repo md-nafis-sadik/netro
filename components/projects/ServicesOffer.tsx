@@ -8,7 +8,17 @@ import Autoplay from "embla-carousel-autoplay";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 
-const ServicesOffer = ({ data }: any) => {
+interface ServicesOfferProps {
+  title?: string;
+  description?: string;
+  data: any[];
+}
+
+const ServicesOffer = ({ 
+  title = "What we offer",
+  description = "Unified engineering for the AI era. From strategy and prototyping to production-grade rollouts, we help organizations:",
+  data 
+}: ServicesOfferProps) => {
   const sectionRef = useAppearanceAnimation(".animate-item3", {
     x: 100,
     y: 0,
@@ -31,10 +41,8 @@ const ServicesOffer = ({ data }: any) => {
         <div className="container w-full overflow-hidden pb-8 md:pb-12 lg:pb-20">
           <div className="w-full pb-4 pt-10" ref={emblaRef}>
             <DescriptionHeader
-              title="What we offer"
-              text={
-                "Unified engineering for the AI era. From strategy and prototyping to production-grade rollouts, we help organizations:"
-              }
+              title={title}
+              text={description}
               descriptionClassName="max-w-full"
             />
             <div className="w-full min-h-fit flex flex-row gap-6 md:gap-10 mt-10">

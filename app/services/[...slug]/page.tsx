@@ -14,7 +14,7 @@ import ClientServiceList from "@/components/services/ClientServiceList";
 import ServiceStrengthAreas from "@/components/services/ServiceStrengthAreas";
 import ServicesWrapper from "@/components/services/ServicesWrapper";
 import PageThumbnail from "@/components/shared/PageThumbnail";
-import { findServiceBySlug } from "@/services/data/services.data";
+import { findServiceBySlug, servicesPageContent } from "@/services/data/services.data";
 import ProcessFollowed from "@/components/view/ProcessFollowed";
 import ContactUsFormHome from "@/components/contact-us/ContactUsFormHome";
 import DescriptionHeader from "@/components/common/DescriptionHeader";
@@ -50,18 +50,23 @@ const ServiceDetailsPage = async ({
 }) => {
   let { slug } = await params;
   if (slug === "all") {
+    const content = servicesPageContent.all;
     return (
       <main className="relative mt-20">
         <PageThumbnail
-          title="What We Do"
-          description="Know our strengths"
-          titleClassName="services_header w-fit"
+          title={content.title}
+          description={content.description}
+          titleClassName={content.titleClassName}
         />
         <Suspense fallback={<div className="containerX">Loading...</div>}>
           <ServicesWrapper />
         </Suspense>
-        <ServiceStrengthAreas />
-        <ClientServiceList />
+        <Suspense fallback={<div className="containerX py-20">Loading...</div>}>
+          <ServiceStrengthAreas />
+        </Suspense>
+        <Suspense fallback={<div className="containerX py-20">Loading...</div>}>
+          <ClientServiceList />
+        </Suspense>
       </main>
     );
   }
@@ -76,18 +81,26 @@ const ServiceDetailsPage = async ({
         <ServiceDetailsContent slug={slug} />
       </Suspense>
 
-      <ServiceChallengesSolution />
+      <Suspense fallback={<div className="containerX py-20">Loading...</div>}>
+        <ServiceChallengesSolution />
+      </Suspense>
 
-      <ProcessFollowed />
+      <Suspense fallback={<div className="containerX py-20">Loading...</div>}>
+        <ProcessFollowed />
+      </Suspense>
 
-      <ServiceAdditionalSections slug={slug} />
+      <Suspense fallback={<div className="containerX py-20">Loading...</div>}>
+        <ServiceAdditionalSections slug={slug} />
+      </Suspense>
 
-      <ContactUsFormHome />
+      <Suspense fallback={<div className="containerX py-20">Loading...</div>}>
+        <ContactUsFormHome />
+      </Suspense>
 
       <section className="bg-darkPurplebg flex_center flex-col w-full py-20">
         <div className="container">
           <DescriptionHeader
-            title="Releted Works"
+            title={servicesPageContent.relatedWorks.title}
             className="mb-6 md:mb-8 lg:mb-10"
           />
 
@@ -97,7 +110,9 @@ const ServiceDetailsPage = async ({
         </div>
       </section>
 
-      <ServiceCommitment />
+      <Suspense fallback={<div className="containerX py-20">Loading...</div>}>
+        <ServiceCommitment />
+      </Suspense>
     </main>
   );
 };

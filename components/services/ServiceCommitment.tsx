@@ -1,7 +1,7 @@
 import React from "react";
 import Image, { StaticImageData } from "next/image";
 import DescriptionHeader from "../common/DescriptionHeader";
-import { images } from "@/services";
+import { servicesPageContent } from "@/services/data/services.data";
 
 interface CommitmentCard {
   title?: string;
@@ -14,51 +14,15 @@ interface CommitmentCard {
   innerText?: string;
 }
 
-const commitmentCards: CommitmentCard[] = [
-  {
-    title: "Communication",
-    description:
-      "Our dedicated customer relationship managers will always keep you aware about your project and progress.",
-    image: images.belowCard,
-    bgColor: "#3654FF",
-    textColor: "#86C9FF",
-    imageAlt: "Communication notification",
-  },
-  {
-    title: "We don't hide",
-    description:
-      "We never lie or hide truth about development. We disclose every details about code structure and your engineering barriers.",
-    image: images.belowContent,
-    bg: images.belowBg1,
-    bgColor: "#86C9FF",
-    textColor: "#3654FF",
-    imageAlt: "Code transparency",
-  },
-  {
-    title: "Growth Focused UX",
-    description:
-      "Our Growth focused UX ensures maximum scalability and ensures growth. We always surprises client with growth and result not with buggy UI at delivery!",
-    image: images.belowUser,
-    bgColor: "#86C9FF",
-    textColor: "#3654FF",
-    imageAlt: "UX Designer profile",
-  },
-  {
-    innerText: "Trust Netro Systems <br> because we care your money!",
-    bg: images.belowBg,
-    bgColor: "#3654FF",
-    textColor: "#86C9FF",
-  },
-];
-
 const ServiceCommitment = () => {
+  const { title, description, cards: commitmentCards } = servicesPageContent.commitment;
   return (
     <section className="bg-darkPurplebg py-8 md:py-12 lg:py-16">
       <div className="container">
         {/* Header */}
         <DescriptionHeader
-          title="Our commitment"
-          text="As an organization we are committed to deliver best practiced software solution to you. It’s not only quality we maintain, It’s commitment we have. Always!"
+          title={title}
+          text={description}
           className="mb-12 md:mb-16"
           descriptionClassName="max-w-full"
         />

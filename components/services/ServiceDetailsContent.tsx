@@ -1,4 +1,4 @@
-import { findServiceBySlug } from "@/services/data/services.data";
+import { findServiceBySlug, servicesPageContent } from "@/services/data/services.data";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import ServiceDeliverables from "./ServiceDeliverables";
@@ -12,27 +12,6 @@ const ServiceDetailsContent = async ({ slug }: { slug: string }) => {
   if (!service) {
     notFound();
   }
-
-  const data = [
-    {
-      title: "AI Consulting",
-      desc: "Automate work and reduce cost",
-      link: "/services/ai-consulting",
-      featuredImage: images.serviceFrame1,
-    },
-    {
-      title: "AI Consulting",
-      desc: "Build AI-driven products and features",
-      link: "/services/ai-consulting",
-      featuredImage: images.serviceFrame2,
-    },
-    {
-      title: "AI Consulting",
-      desc: "Extend legacy systems with intelligence",
-      link: "/services/ai-consulting",
-      featuredImage: images.serviceFrame3,
-    },
-  ];
 
 
   return (
@@ -50,7 +29,11 @@ const ServiceDetailsContent = async ({ slug }: { slug: string }) => {
       </div>
       <section className="relative z-10">
         <ServicesDetails service={service} />
-        <ServicesOffer data={data} />
+        <ServicesOffer 
+          title={servicesPageContent.servicesOffer.title}
+          description={servicesPageContent.servicesOffer.description}
+          data={servicesPageContent.servicesOffer.data} 
+        />
 
         {service.deliverables && service.deliverables.length > 0 && (
           <ServiceDeliverables

@@ -92,6 +92,121 @@ export const coreStrengthsServicesData = [
   },
 ];
 
+// Services Page Content
+export const servicesPageContent = {
+  all: {
+    title: "What We Do",
+    description: "Know our strengths",
+    titleClassName: "services_header w-fit",
+  },
+  relatedWorks: {
+    title: "Releted Works",
+  },
+  servicesOffer: {
+    title: "What we offer",
+    description:
+      "Unified engineering for the AI era. From strategy and prototyping to production-grade rollouts, we help organizations:",
+    data: [
+      {
+        title: "AI Consulting",
+        desc: "Automate work and reduce cost",
+        link: "/services/ai-consulting",
+        featuredImage: images.serviceFrame1,
+      },
+      {
+        title: "AI Consulting",
+        desc: "Build AI-driven products and features",
+        link: "/services/ai-consulting",
+        featuredImage: images.serviceFrame2,
+      },
+      {
+        title: "AI Consulting",
+        desc: "Extend legacy systems with intelligence",
+        link: "/services/ai-consulting",
+        featuredImage: images.serviceFrame3,
+      },
+    ],
+  },
+  challengesSolution: {
+    title: "CHALLENGES AND SOLUTION",
+    description:
+      "Turning AI complexity into reliable, scalable, and compliant software solutions.",
+    challenges: [
+      {
+        title: "AI Adoption Without Clear ROI",
+        description:
+          "We identify high-impact use cases and design solutions that deliver measurable business outcomes, not experiments.",
+      },
+      {
+        title: "Legacy Systems That Can't Leverage AI",
+        description:
+          "Crafting intuitive and engaging user experiences that blend aesthetics with usability.",
+      },
+      {
+        title: "Unstructured & Fragmented Data",
+        description:
+          "We transform scattered documents, logs, and databases into AI-ready, searchable knowledge systems.",
+      },
+      {
+        title: "Scaling AI from PoC to Production",
+        description:
+          "We engineer production-grade architectures with monitoring, cost control, and performance optimization.",
+      },
+      {
+        title: "Security, Privacy & Regulatory Risks",
+        description:
+          "We embed governance, access control, and compliance (GDPR, SOC2, ISO) into every AI system.",
+      },
+      {
+        title: "Unreliable Outputs & Hallucinations",
+        description:
+          "We apply retrieval, validation, guardrails, and evaluation frameworks to ensure trustworthy AI behavior.",
+      },
+    ],
+  },
+  commitment: {
+    title: "Our commitment",
+    description:
+      "As an organization we are committed to deliver best practiced software solution to you. It's not only quality we maintain, It's commitment we have. Always!",
+    cards: [
+      {
+        title: "Communication",
+        description:
+          "Our dedicated customer relationship managers will always keep you aware about your project and progress.",
+        image: images.belowCard,
+        bgColor: "#3654FF",
+        textColor: "#86C9FF",
+        imageAlt: "Communication notification",
+      },
+      {
+        title: "We don't hide",
+        description:
+          "We never lie or hide truth about development. We disclose every details about code structure and your engineering barriers.",
+        image: images.belowContent,
+        bg: images.belowBg1,
+        bgColor: "#86C9FF",
+        textColor: "#3654FF",
+        imageAlt: "Code transparency",
+      },
+      {
+        title: "Growth Focused UX",
+        description:
+          "Our Growth focused UX ensures maximum scalability and ensures growth. We always surprises client with growth and result not with buggy UI at delivery!",
+        image: images.belowUser,
+        bgColor: "#86C9FF",
+        textColor: "#3654FF",
+        imageAlt: "UX Designer profile",
+      },
+      {
+        innerText: "Trust Netro Systems <br> because we care your money!",
+        bg: images.belowBg,
+        bgColor: "#3654FF",
+        textColor: "#86C9FF",
+      },
+    ],
+  },
+};
+
 export const servicesData: readonly IService[] = Object.freeze([
   {
     _id: "service-01",
