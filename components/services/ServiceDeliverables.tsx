@@ -35,28 +35,34 @@ function ServiceDeliverables({
 
     if (cardsToAnimate.length === 0) return;
 
-    // Calculate total animation distance needed
-    // Each animated card moves up by viewportHeight * 1.2
-    const totalAnimationHeight =
-      cardsToAnimate.length * (viewportHeight * 0.8) + viewportHeight * 0.5;
-    const totalContainerHeight = totalAnimationHeight + viewportHeight * 0.5; // Add some padding
+    const stickyContainer = containerRef.current.querySelector('.sticky-wrapper') as HTMLElement;
+    if (!stickyContainer) return;
 
-    // Set container height
-    containerRef.current.style.height = `${totalContainerHeight}px`;
+    // Pin the sticky container while animations happen
+    const animationDuration = viewportHeight * 1;
+    const totalAnimationHeight = cardsToAnimate.length * animationDuration;
+
+    // Create a pin for the container
+    ScrollTrigger.create({
+      trigger: containerRef.current,
+      start: "top top+=15%",
+      end: `+=${totalAnimationHeight}`,
+      pin: stickyContainer,
+      pinSpacing: true,
+      markers: false,
+    });
 
     // Animate all cards except the last one
     cardsToAnimate.forEach((card, index) => {
-      // Stagger animations with some overlap
-      const startOffset = index * (viewportHeight * 0.8);
-      const animationDuration = viewportHeight * 1;
+      const startOffset = index * animationDuration;
 
       gsap.to(card, {
         y: -viewportHeight * 1.2,
         ease: "none",
         scrollTrigger: {
           trigger: containerRef.current,
-          start: `top+=${startOffset}px top+=18%`,
-          end: `top+=${startOffset + animationDuration}px top+=18%`,
+          start: `top+=${startOffset}px top+=15%`,
+          end: `top+=${startOffset + animationDuration}px top+=15%`,
           scrub: 2,
           markers: false,
         },
@@ -78,7 +84,7 @@ function ServiceDeliverables({
         />
 
         <div ref={containerRef} className="w-full relative my-8 md:my-10">
-          <div className="sticky top-[18%]">
+          <div className="sticky-wrapper">
             {deliverables.map((deliverable, index) => (
               <div
                 key={index}

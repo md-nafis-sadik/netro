@@ -14,7 +14,7 @@ interface ServiceTechStacksProps {
 
 const ServiceTechStacks = ({ stacks }: ServiceTechStacksProps) => {
   return (
-    <section className="bg-darkPurplebg py-8 md:py-16 lg:py-32">
+    <section className="bg-darkPurplebg pb-8 md:pb-12 lg:pb-16">
       <div className="container">
         {/* Header */}
         <DescriptionHeader
