@@ -1,16 +1,9 @@
 import { findServiceBySlug } from "@/services/data/services.data";
-import { ArrowLongTailIcon } from "@/services/assets/svgs";
 import Image from "next/image";
-import SectionHeader from "../common/SectionHeader";
-import { tidycalMettingUrl } from "@/services/data/shared.data";
 import { notFound } from "next/navigation";
 import ExpandableButtonList from "../hero/partials/ExpandableButtonList";
-import { cn } from "@/lib/utils";
-import DescriptionHeader from "../common/DescriptionHeader";
 import ServiceDeliverables from "./ServiceDeliverables";
 import { images } from "@/services";
-import useEmblaCarousel from "embla-carousel-react";
-import Autoplay from "embla-carousel-autoplay";
 import ServicesOffer from "../projects/ServicesOffer";
 
 const ServiceDetailsContent = async ({ slug }: { slug: string }) => {

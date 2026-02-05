@@ -1,5 +1,3 @@
-import SectionHeader from "@/components/common/SectionHeader";
-import SectionSubHeader from "@/components/common/SectionSubHeader";
 import ProjectsPreviewServicesSkeleton from "@/components/projects/ProjectsPreviewServicesSkeleton";
 import ProjectsPreviewServicesWrapper from "@/components/projects/ProjectsPreviewServicesWrapper";
 import ServiceDetailsContent from "@/components/services/ServiceDetailsContent";
@@ -7,11 +5,8 @@ import ServiceDetailsSkeleton from "@/components/services/ServiceDetailsSkeleton
 import ServiceChallengesSolution from "@/components/services/ServiceChallengesSolution";
 import ServiceAdditionalSections from "@/components/services/ServiceAdditionalSections";
 import ServiceCommitment from "@/components/services/ServiceCommitment";
-import TestimonialSkeleton from "@/components/testimonial/TestimonialSkeleton";
-import TestimonialWrapper from "@/components/testimonial/TestimonialWrapper";
 import { purifyUrl } from "@/services";
 import { Suspense } from "react";
-import { notFound } from "next/navigation";
 import { Metadata } from "next";
 
 // Import the main services page components
@@ -22,8 +17,6 @@ import PageThumbnail from "@/components/shared/PageThumbnail";
 import { findServiceBySlug } from "@/services/data/services.data";
 import ProcessFollowed from "@/components/view/ProcessFollowed";
 import ContactUsFormHome from "@/components/contact-us/ContactUsFormHome";
-import DiscoverMoreProjects from "@/components/projects/DiscoverMoreProjects";
-import { fetchWithDelay } from "@/lib/apiHandler";
 import DescriptionHeader from "@/components/common/DescriptionHeader";
 
 export async function generateMetadata({
