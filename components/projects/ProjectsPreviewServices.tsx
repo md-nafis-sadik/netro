@@ -34,9 +34,9 @@ const ProjectsPreviewServices = ({ data }: any) => {
         </div>
       )} */}
 
-      <div className="containerX w-full overflow-hidden">
+      <div className="container w-full overflow-hidden">
         <div className="w-full" ref={emblaRef}>
-          <div className="w-full min-h-fit flex flex-row gap-6 md:gap-10 py-10 md:py-20">
+          <div className="w-full min-h-fit flex flex-row gap-6 md:gap-10">
             {data?.map((item: any, index: number) => (
               <OtherProductCard item={item} key={index} />
             ))}

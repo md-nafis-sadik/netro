@@ -41,16 +41,16 @@ const challenges: Challenge[] = [
 
 const ServiceChallengesSolution = () => {
   return (
-    <section className="bg-darkPurplebg py-16 md:py-24 lg:py-32">
+    <section className="bg-darkPurplebg py-8 md:py-16 lg:py-32">
       <div className="container">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-16">
           {/* Left Side - Title and Subtitle */}
           <div className="flex flex-col justify-center">
             <DescriptionHeader
               title="CHALLENGES AND SOLUTION"
               text="Turning AI complexity into reliable, scalable, and compliant software solutions."
-              className="items-start"
-              descriptionClassName="text-start"
+              className="items-center lg:items-start"
+              descriptionClassName="text-center lg:text-left"
             />
           </div>
 
@@ -58,7 +58,7 @@ const ServiceChallengesSolution = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-4 md:gap-y-6 gap-x-8 md:gap-x-12">
             {challenges.map((challenge, index) => (
               <div key={index} className="flex flex-col">
-                <h3 className="text-main-400 text-lg md:text-xl lg:text-2xl font-semibold mb-3 md:mb-4 leading-snug">
+                <h3 className="text-main-400 text-base md:text-xl lg:text-2xl font-semibold mb-2 md:mb-4 leading-snug">
                   {challenge.title}
                 </h3>
                 <p className="text-text-50 text-sm md:text-base leading-relaxed">

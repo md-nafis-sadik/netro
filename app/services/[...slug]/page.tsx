@@ -21,6 +21,10 @@ import ServicesWrapper from "@/components/services/ServicesWrapper";
 import PageThumbnail from "@/components/shared/PageThumbnail";
 import { findServiceBySlug } from "@/services/data/services.data";
 import ProcessFollowed from "@/components/view/ProcessFollowed";
+import ContactUsFormHome from "@/components/contact-us/ContactUsFormHome";
+import DiscoverMoreProjects from "@/components/projects/DiscoverMoreProjects";
+import { fetchWithDelay } from "@/lib/apiHandler";
+import DescriptionHeader from "@/components/common/DescriptionHeader";
 
 export async function generateMetadata({
   params,
@@ -85,16 +89,15 @@ const ServiceDetailsPage = async ({
 
       <ServiceAdditionalSections slug={slug} />
 
-      <section className="bg-black flex_center flex-col w-full py-20">
-        <div className="container mt-10 md:mt-20">
-          <SectionSubHeader
-            dark
-            text="Project previews"
-            className="w-fit mx-auto"
+      <ContactUsFormHome />
+
+      <section className="bg-darkPurplebg flex_center flex-col w-full py-20">
+        <div className="container">
+          <DescriptionHeader
+            title="Releted Works"
+            className="mb-6 md:mb-8 lg:mb-10"
           />
-          <SectionHeader className="home_faq_header w-full mt-6">
-            DISCOVER MORE PROJECTS
-          </SectionHeader>
+
           <Suspense fallback={<ProjectsPreviewServicesSkeleton />}>
             <ProjectsPreviewServicesWrapper />
           </Suspense>

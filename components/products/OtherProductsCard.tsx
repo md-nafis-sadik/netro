@@ -9,7 +9,7 @@ const OtherProductCard = ({ item }: IFProductCardProps) => {
   return (
     <div
       className={cn(
-        "w-full min-w-[90%] 2xl:min-w-[376px] aspect-[328/418] xl:aspect-[376/460] last:aspect-[328/418] md:last:aspect-[376/240] xl:last:aspect-[376/460] last:col-span-1 md:last:col-span-2 xl:last:col-span-1 overflow-hidden bg-neutral-50 group relative animate-item3 rounded-xl md:rounded-2xl",
+        "w-full min-w-[100%] sm:min-w-[376px] aspect-[376/460] overflow-hidden bg-neutral-50 group relative animate-item3 rounded-xl md:rounded-2xl",
       )}
     >
       <Image

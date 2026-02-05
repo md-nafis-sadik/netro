@@ -102,7 +102,7 @@ const ServiceAtGlance = ({ items, image }: ServiceAtGlanceProps) => {
   }
 
   return (
-    <section className="bg-darkPurplebg py-16 md:py-24 lg:py-32">
+    <section className="bg-darkPurplebg py-8 md:py-20 lg:py-32">
       <div className="container">
         {/* Header */}
         <DescriptionHeader
@@ -111,12 +111,12 @@ const ServiceAtGlance = ({ items, image }: ServiceAtGlanceProps) => {
             engineering service what we are offering. It&apos;s a complete AI
             solution for your business or startups."
           descriptionClassName="max-w-full"
-          className="mb-12 md:mb-16"
+          className="mb-6 md:mb-12 lg:mb-16"
         />
 
 
         {/* Desktop Grid - Checkerboard */}
-        <div className="hidden md:grid md:grid-cols-2 gap-4 md:gap-6">
+        <div className="hidden md:grid md:grid-cols-2 gap-5 md:gap-6">
           {desktopGrid}
         </div>
 
@@ -132,12 +132,12 @@ const ServiceAtGlance = ({ items, image }: ServiceAtGlanceProps) => {
                   color: item.textColor,
                 }}
               >
-                <div className="text-[56px] font-bold mb-4 uppercase !leading-[90%] font-scoutcond">
+                <div className="text-[48px] font-bold mb-4 uppercase !leading-[90%] font-scoutcond">
                   {item.title}
                 </div>
-                <ul className="space-y-2">
+                <ul className="space-y-0.5">
                   {item.items.map((listItem, idx) => (
-                    <li key={idx} className="text-2xl flex items-start">
+                    <li key={idx} className="text-sm flex items-start">
                       <span className="mr-2">•</span>
                       <span>{listItem}</span>
                     </li>

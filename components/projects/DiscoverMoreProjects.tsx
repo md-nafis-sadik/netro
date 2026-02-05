@@ -3,6 +3,8 @@
 import OtherProductCard from "../products/OtherProductsCard";
 import DescriptionHeader from "../common/DescriptionHeader";
 import { useAppearanceAnimation } from "@/hooks/useAppearanceAnimation";
+import useEmblaCarousel from "embla-carousel-react";
+import Autoplay from "embla-carousel-autoplay";
 
 const DiscoverMoreProjects = ({ data }: any) => {
   const sectionRef = useAppearanceAnimation(".animate-item3", {
@@ -15,6 +17,11 @@ const DiscoverMoreProjects = ({ data }: any) => {
     delay: 0.1,
   });
 
+    const options = { align: "start", loop: false } as const;
+    const [emblaRef] = useEmblaCarousel(options, [
+      Autoplay({ delay: 3000, stopOnInteraction: false }),
+    ]);
+
   return (
     <section
       ref={sectionRef}
@@ -26,8 +33,8 @@ const DiscoverMoreProjects = ({ data }: any) => {
       />
 
       <div className="container w-full overflow-hidden">
-        <div className="w-full">
-          <div className="w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-6">
+        <div className="w-full"  ref={emblaRef}>
+          <div className="w-full min-h-fit flex flex-row gap-6 md:gap-10">
             {data?.map((item: any, index: number) => (
               <OtherProductCard item={item} key={index} />
             ))}

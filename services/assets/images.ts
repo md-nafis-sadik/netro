@@ -234,6 +234,7 @@ export { default as simigoProblemIdentify } from "@/public/images/project/simigo
 //services
 export { default as aiPowered } from "@/public/images/services/ai-powered.webp";
 export { default as belowBg } from "@/public/images/services/below-bg.webp";
+export { default as belowBg1 } from "@/public/images/services/below-bg-1.webp";
 export { default as belowCard } from "@/public/images/services/below-card.webp";
 export { default as belowContent } from "@/public/images/services/below-content.webp";
 export { default as belowUser } from "@/public/images/services/below-user.webp";

@@ -9,6 +9,9 @@ import { cn } from "@/lib/utils";
 import DescriptionHeader from "../common/DescriptionHeader";
 import ServiceDeliverables from "./ServiceDeliverables";
 import { images } from "@/services";
+import useEmblaCarousel from "embla-carousel-react";
+import Autoplay from "embla-carousel-autoplay";
+import ServicesOffer from "../projects/ServicesOffer";
 
 const ServiceDetailsContent = async ({ slug }: { slug: string }) => {
   const service = findServiceBySlug(slug);
@@ -38,99 +41,91 @@ const ServiceDetailsContent = async ({ slug }: { slug: string }) => {
     },
   ];
 
+  const points = [
+    "Automate work and reduce cost",
+    "Build AI-driven products and features",
+    "Extend legacy systems",
+  ];
+
   return (
-    <section className="bg-darkPurplebg relative">
-      <div className="absolute inset-0 z-0">
+    <section className="bg-darkPurplebg relative overflow-x-hidden">
+      <div className="absolute inset-0 z-0 flex justify-center md:justify-start">
         <Image
           src={images.ellipseBg}
           alt="background ellipse"
-          className="absolute top-[2%] sm:top-[7%] 2xl:top-[3%] left-0 w-full h-auto object-contain"
+          className="absolute top-[2%] sm:top-[7%] 2xl:top-[3%] left-1/2 -translate-x-1/2 md:left-0 md:translate-x-0 min-w-[1110px] md:w-full h-auto object-cover md:object-contain"
           width={1920}
           height={1080}
-          sizes="100vw"
+          sizes="(max-width: 768px) 1110px, 100vw"
           priority
         />
       </div>
       <section className="relative z-10">
-        <div className="container py-10 md:py-[100px]">
-          <div className="flex gap-6 mt-24">
-            <div className="w-[68%] max-w-[780px]">
+        <div className="container py-10 md:py-[60px] lg:py-[100px]">
+          <div className="flex flex-col md:flex-row gap-6 mt-16 md:mt-20 lg:mt-24">
+            <div className="w-full md:w-[68%] max-w-[780px]">
               <h2
-                className="portfolio_details_header text-[28px] md:text-4xl lg:text-5xl xl:text-6xl font-bold text-start tracking-wide"
+                className="portfolio_details_header text-center md:text-left text-[28px] md:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-wide"
                 style={{ lineHeight: "120%" }}
               >
                 {service.descTitle}
               </h2>
-              <p className="font-inter text-sm md:text-lg lg:text-xl xl:text-2xl font-normal md:font-light !leading-[140%] text-start text-white mt-4">
+              <p className="font-inter text-sm md:text-lg lg:text-xl xl:text-2xl font-normal md:font-light !leading-[140%] text-center md:text-left text-white mt-4">
                 {service?.description}
               </p>
-              <ExpandableButtonList className="justify-start" blue={true} />
+              <ExpandableButtonList
+                className="justify-start hidden md:flex"
+                blue={true}
+              />
             </div>
-            <div className="w-[32%] flex items-end">
-              <div className="flex flex-col gap-4">
-                <div className="flex items-center gap-3 text-white text-sm md:text-base">
-                  <span className="bg-[#212121] w-8 h-8 rounded-full flex items-center justify-center">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 20 20"
-                      fill="none"
+            <div className="w-full md:w-[32%] flex items-end">
+              <div className="flex flex-col gap-3 md:gap-4">
+                {points &&
+                  points.map((point, index) => (
+                    <div
+                      key={index}
+                      className="flex items-center gap-[8px] md:gap-3 text-white text-sm md:text-base"
                     >
-                      <path
-                        d="M16.6666 5L7.49992 14.1667L3.33325 10"
-                        stroke="white"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  </span>
-                  <span>Automate work and reduce cost</span>
-                </div>
-                <div className="flex items-center gap-3 text-white text-sm md:text-base">
-                  <span className="bg-[#212121] w-8 h-8 rounded-full flex items-center justify-center">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 20 20"
-                      fill="none"
-                    >
-                      <path
-                        d="M16.6666 5L7.49992 14.1667L3.33325 10"
-                        stroke="white"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  </span>
-                  <span>Build AI-driven products and features</span>
-                </div>
-                <div className="flex items-center gap-3 text-white text-sm md:text-base">
-                  <span className="bg-[#212121] w-8 h-8 rounded-full flex items-center justify-center">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 20 20"
-                      fill="none"
-                    >
-                      <path
-                        d="M16.6666 5L7.49992 14.1667L3.33325 10"
-                        stroke="white"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  </span>
-                  <span>Extend legacy systems</span>
-                </div>
+                      <span className="bg-[#212121] w-4 md:w-8 h-4 md:h-8 rounded-full hidden md:flex items-center justify-center">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="20"
+                          height="20"
+                          viewBox="0 0 20 20"
+                          fill="none"
+                        >
+                          <path
+                            d="M16.6666 5L7.49992 14.1667L3.33325 10"
+                            stroke="white"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                        </svg>
+                      </span>
+                      <span className="bg-[#212121] w-4 md:w-8 h-4 md:h-8 rounded-full flex md:hidden items-center justify-center">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="10"
+                          height="10"
+                          viewBox="0 0 10 10"
+                          fill="none"
+                        >
+                          <path
+                            d="M8.33329 2.5L3.74996 7.08333L1.66663 5"
+                            stroke="white"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                        </svg>
+                      </span>
+                      <span>{points[index]}</span>
+                    </div>
+                  ))}
               </div>
             </div>
           </div>
+          <ExpandableButtonList className="md:hidden" blue={true} />
 
           <Image
             src={service.featuredImage}
@@ -141,51 +136,7 @@ const ServiceDetailsContent = async ({ slug }: { slug: string }) => {
           />
         </div>
 
-        <div className="container w-full overflow-hidden pb-20">
-          <div className="w-full pb-4 pt-10">
-            <DescriptionHeader
-              title="What we offer"
-              text={
-                "Unified engineering for the AI era. From strategy and prototyping to production-grade rollouts, we help organizations:"
-              }
-              descriptionClassName="max-w-full"
-            />
-            <div className="w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-6 mt-10">
-              {data?.map((item: any, index: number) => (
-                <div
-                  className={cn(
-                    "w-full min-w-[90%] 2xl:min-w-[376px] aspect-[328/418] xl:aspect-[376/460] last:aspect-[328/418] md:last:aspect-[376/240] xl:last:aspect-[376/460] last:col-span-1 md:last:col-span-2 xl:last:col-span-1 overflow-hidden bg-neutral-50 group relative animate-item3 rounded-2xl md:rounded-3xl",
-                  )}
-                  key={index}
-                >
-                  <Image
-                    src={item?.featuredImage}
-                    alt={item?.title || "Project"}
-                    className="min-h-full h-full min-w-full w-auto object-cover absolute_center"
-                    width={1920}
-                    height={1280}
-                  />
-
-                  {(item?.desc || item?.title) && (
-                    <div
-                      className={cn(
-                        "absolute left-0 bottom-0 w-full h-[45%] xl:h-[40%] md:max-w-full project-home-blur transition_common ",
-                      )}
-                    >
-                      <div className="pr-6 pl-4 pb-4 pt-5 md:pr-14 md:pl-6 md:pt-12 md:pb-6 h-full flex flex-col justify-between gap-4 md:gap-6">
-                        <div className="flex flex-col mt-auto">
-                          <p className="text-base md:text-lg 2xl:text-2xl font-bold !leading-[1.1] text-white mt-3 font-inter line-clamp-2">
-                            {item?.desc}
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
+        <ServicesOffer data={data} />
 
         {service.deliverables && service.deliverables.length > 0 && (
           <ServiceDeliverables
