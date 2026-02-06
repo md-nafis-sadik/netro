@@ -162,7 +162,7 @@ export default function DropupNavigationMenu({
     <div
       ref={menuRef}
       className={clsx(
-        "absolute -bottom-[494px] mb-2 min-w-[652px] min-h-[60px] z-50 services-dropdown bg-navyblue-600 rounded-3xl overflow-hidden",
+        "absolute -bottom-[543px] mb-2 min-w-[652px] min-h-[60px] z-50 services-dropdown bg-navyblue-600 rounded-3xl overflow-hidden",
         "left-1/4 -translate-x-1/4",
       )}
       style={{ display: "none" }}
