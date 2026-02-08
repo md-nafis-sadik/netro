@@ -1,7 +1,10 @@
+"use client";
+
 import React from "react";
 import Image, { StaticImageData } from "next/image";
 import DescriptionHeader from "../common/DescriptionHeader";
 import { servicesPageContent } from "@/services/data/services.data";
+import { useAppearanceAnimation } from "@/hooks/useAppearanceAnimation";
 
 interface CommitmentCard {
   title?: string;
@@ -20,8 +23,17 @@ const ServiceCommitment = () => {
     description,
     cards: commitmentCards,
   } = servicesPageContent.commitment;
+
+  const sectionRef = useAppearanceAnimation(".animate-commitment", {
+    y: 60,
+    opacity: 0,
+    duration: 1,
+    stagger: 0.15,
+    ease: "power3.out",
+    delay: 0.1,
+  });
   return (
-    <section className="bg-darkPurplebg py-8 md:py-12 lg:py-16">
+    <section ref={sectionRef} className="bg-darkPurplebg py-8 md:py-12 lg:py-16">
       <div className="container">
         {/* Header */}
         <DescriptionHeader
@@ -36,7 +48,7 @@ const ServiceCommitment = () => {
           {commitmentCards.map((card, index) => (
             <div
               key={index}
-              className="rounded-2xl px-6 md:px-7 lg:px-9 py-8 md:py-10 lg:py-16 flex flex-col justify-center overflow-hidden relative"
+              className="rounded-2xl px-6 md:px-7 lg:px-9 py-8 md:py-10 lg:py-16 flex flex-col justify-center overflow-hidden min-h-[328px] relative animate-commitment"
               style={{
                 backgroundColor: card.bgColor,
                 color: card.textColor,

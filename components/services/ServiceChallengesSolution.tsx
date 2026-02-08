@@ -6,18 +6,22 @@ import { servicesPageContent } from "@/services/data/services.data";
 import { useAppearanceAnimation } from "@/hooks/useAppearanceAnimation";
 
 const ServiceChallengesSolution = () => {
-  const { title, description, challenges } = servicesPageContent.challengesSolution;
+  const { title, description, challenges } =
+    servicesPageContent.challengesSolution;
 
-    const sectionRef = useAppearanceAnimation(".animate-challenge", {
-      y: 60,
-      opacity: 0,
-      duration: 1,
-      stagger: 0.15,
-      ease: "power3.out",
-      delay: 0.1,
-    });
+  const sectionRef = useAppearanceAnimation(".animate-challenge", {
+    y: 60,
+    opacity: 0,
+    duration: 1,
+    stagger: 0.15,
+    ease: "power3.out",
+    delay: 0.1,
+  });
   return (
-    <section ref={sectionRef} className="bg-darkPurplebg py-8 md:py-16 lg:py-32">
+    <section
+      ref={sectionRef}
+      className="bg-darkPurplebg py-8 md:py-16 lg:py-32"
+    >
       <div className="container">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-16">
           {/* Left Side - Title and Subtitle */}

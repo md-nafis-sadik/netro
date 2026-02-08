@@ -77,7 +77,7 @@ function ServiceDeliverables({
   }, [deliverables]);
 
   return (
-    <section className="py-10 relative z-10">
+    <section className="py-10 relative z-10 overflow-hidden">
       <div className="container flex_center flex-col">
         <DescriptionHeader
           title={title}
@@ -86,7 +86,7 @@ function ServiceDeliverables({
         />
 
         <div ref={containerRef} className="w-full relative my-8 md:my-10">
-          <div className="sticky-wrapper">
+          <div className="sticky-wrapper w-full">
             {deliverables.map((deliverable, index) => (
               <div
                 key={index}
@@ -94,20 +94,20 @@ function ServiceDeliverables({
                   cardsRef.current[index] = el;
                 }}
                 className={cn(
-                  "deliverable-card rounded-2xl md:rounded-3xl py-8 md:py-12 lg:py-16 px-4 md:px-8 lg:px-12",
-                  index === 0 ? "relative" : "absolute top-0 left-0 right-0",
+                  "deliverable-card rounded-2xl md:rounded-3xl py-6 md:py-12 lg:py-16 px-4 md:px-8 lg:px-12 w-full overflow-hidden",
+                  index === 0 ? "relative" : "absolute top-0 left-0",
                 )}
                 style={{
                   backgroundColor: deliverable.bgColor,
                   color: deliverable.textColor || "#000000",
                   zIndex: deliverables.length - index,
                   transform: `translateY(${index * 40}px)`,
-                  width: "100%",
+                  maxWidth: "100%",
                 }}
               >
-                <div className="flex flex-col sm:flex-row justify-between items-start gap-4 pb-5 md:pb-8 mb-5 md:mb-8 border-b border-b-[#BDBDBD]">
-                  <div className="flex-1">
-                    <h3 className="text-[28px] md:text-3xl lg:text-4xl font-bold mb-3 text-center md:text-left leading-[110%]">
+                <div className="flex flex-col sm:flex-row justify-between items-start gap-3 md:gap-4 pb-4 md:pb-8 mb-4 md:mb-8 border-b border-b-[#BDBDBD]">
+                  <div className="flex-1 w-full">
+                    <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-2 md:mb-3 text-center md:text-left leading-[110%]">
                       {deliverable.title}
                     </h3>
                     <p className="text-sm md:text-base lg:text-lg font-inter text-center md:text-left leading-[120%]">
@@ -123,10 +123,10 @@ function ServiceDeliverables({
                   </Link>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-12">
-                  <div className="flex flex-col gap-4 md:gap-5">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 lg:gap-12">
+                  <div className="flex flex-col gap-3 md:gap-5">
                     {deliverable.features.slice(0, 5).map((feature, idx) => (
-                      <div key={idx} className="flex items-center gap-2">
+                      <div key={idx} className="flex items-start gap-2">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           width="24"
@@ -173,15 +173,15 @@ function ServiceDeliverables({
                             strokeLinejoin="round"
                           />
                         </svg>
-                        <span className="text-sm md:text-base font-inter">
+                        <span className="text-sm md:text-base font-inter break-words">
                           {feature}
                         </span>
                       </div>
                     ))}
                   </div>
-                  <div className="flex flex-col gap-4 md:gap-5">
+                  <div className="flex flex-col gap-3 md:gap-5">
                     {deliverable.features.slice(5, 10).map((feature, idx) => (
-                      <div key={idx} className="flex items-center gap-2">
+                      <div key={idx} className="flex items-start gap-2">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           width="24"
@@ -228,7 +228,7 @@ function ServiceDeliverables({
                             strokeLinejoin="round"
                           />
                         </svg>
-                        <span className="text-sm md:text-base font-inter">
+                        <span className="text-sm md:text-base font-inter break-words">
                           {feature}
                         </span>
                       </div>
@@ -237,7 +237,7 @@ function ServiceDeliverables({
                 </div>
                 <Link
                   href="/contact-us"
-                  className="btn_primary md:hidden flex bg-natural-900 hover:bg-black hover:text-white py-2 sm:py-3 px-4 sm:px-5 md:px-6 gap-2 whitespace-nowrap w-max mt-8 mx-auto"
+                  className="btn_primary md:hidden flex bg-natural-900 hover:bg-black hover:text-white py-2 px-4 gap-2 whitespace-nowrap w-max mt-6 mx-auto"
                 >
                   <span className="text-base font-semibold">Contact Us</span>
                   <ArrowLongTailIcon className="group-hover:fill-white fill-white duration-300" />

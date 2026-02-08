@@ -241,6 +241,16 @@ export { default as belowUser } from "@/public/images/services/below-user.webp";
 export { default as serviceFrame1 } from "@/public/images/services/frame-1.webp";
 export { default as serviceFrame2 } from "@/public/images/services/frame-2.webp";
 export { default as serviceFrame3 } from "@/public/images/services/frame-3.webp";
+export { default as serviceOffer1 } from "@/public/images/services/offer-1.webp";
+export { default as serviceOffer2 } from "@/public/images/services/offer-2.webp";
+export { default as serviceOffer3 } from "@/public/images/services/offer-3.webp";
+export { default as serviceOffer4 } from "@/public/images/services/offer-4.webp";
+export { default as serviceOffer5 } from "@/public/images/services/offer-5.webp";
+export { default as serviceOffer6 } from "@/public/images/services/offer-6.webp";
 export { default as ellipseBg } from "@/public/images/services/ellipse-bg.webp";
-export { default as atAGlance } from "@/public/images/services/at-a-glance.webp";
+export { default as atAGlance1 } from "@/public/images/services/at-a-glance-1.webp";
+export { default as atAGlance2 } from "@/public/images/services/at-a-glance-2.webp";
+export { default as atAGlance3 } from "@/public/images/services/at-a-glance-3.webp";
+export { default as atAGlance4 } from "@/public/images/services/at-a-glance-4.webp";
+export { default as atAGlance5 } from "@/public/images/services/at-a-glance-5.webp";
 

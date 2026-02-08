@@ -1,5 +1,8 @@
+"use client";
+
 import React from "react";
 import DescriptionHeader from "../common/DescriptionHeader";
+import { useAppearanceAnimation } from "@/hooks/useAppearanceAnimation";
 
 interface TechStack {
   icon: React.ReactNode;
@@ -13,8 +16,17 @@ interface ServiceTechStacksProps {
 }
 
 const ServiceTechStacks = ({ stacks }: ServiceTechStacksProps) => {
+  const sectionRef = useAppearanceAnimation(".animate-tech", {
+    x: 100,
+    y: 0,
+    opacity: 0,
+    duration: 1,
+    stagger: 0.2,
+    ease: "back.out(1.7)",
+    delay: 0.1,
+  });
   return (
-    <section className="bg-darkPurplebg pb-8 md:pb-12 lg:pb-16">
+    <section ref={sectionRef} className="bg-darkPurplebg pb-8 md:pb-12 lg:pb-16">
       <div className="container">
         {/* Header */}
         <DescriptionHeader
@@ -29,7 +41,7 @@ const ServiceTechStacks = ({ stacks }: ServiceTechStacksProps) => {
           {stacks.map((stack, index) => (
             <div
               key={index}
-              className="bg-blue-950 rounded-2xl px-4 py-5 lg:px-8 lg:py-10 flex flex-col transition-all duration-300 hover:scale-105 select-none border border-[#20338F]"
+              className="bg-blue-950 rounded-2xl px-4 py-5 lg:px-8 lg:py-10 flex flex-col hover:scale-105 select-none border border-[#20338F] animate-tech"
             >
               {/* Icon */}
               <div className="mb-4" style={{ color: stack.color || "#FFC400" }}>

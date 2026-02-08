@@ -111,19 +111,37 @@ export const servicesPageContent = {
         title: "AI Consulting",
         desc: "Automate work and reduce cost",
         link: "/services/ai-consulting",
-        featuredImage: images.serviceFrame1,
+        featuredImage: images.serviceOffer1,
       },
       {
         title: "AI Consulting",
         desc: "Build AI-driven products and features",
         link: "/services/ai-consulting",
-        featuredImage: images.serviceFrame2,
+        featuredImage: images.serviceOffer2,
       },
       {
         title: "AI Consulting",
         desc: "Extend legacy systems with intelligence",
         link: "/services/ai-consulting",
-        featuredImage: images.serviceFrame3,
+        featuredImage: images.serviceOffer3,
+      },
+      {
+        title: "AI Consulting",
+        desc: "Accelerate software delivery using AI- dev.",
+        link: "/services/ai-consulting",
+        featuredImage: images.serviceOffer4,
+      },
+      {
+        title: "AI Consulting",
+        desc: "Achieve compliance for regulated industries",
+        link: "/services/ai-consulting",
+        featuredImage: images.serviceOffer5,
+      },
+      {
+        title: "AI Consulting",
+        desc: "Integrate multi-model architectures, agents",
+        link: "/services/ai-consulting",
+        featuredImage: images.serviceOffer6,
       },
     ],
   },
@@ -319,6 +337,7 @@ export const servicesData: readonly IService[] = Object.freeze([
         ],
         bgColor: "#3654FF",
         textColor: "#FFFFFF",
+        image: images.atAGlance1,
       },
       {
         title: "DATA LAYER & STORAGE",
@@ -330,6 +349,7 @@ export const servicesData: readonly IService[] = Object.freeze([
         ],
         bgColor: "#FFC400",
         textColor: "#000000",
+        image: images.atAGlance2,
       },
       {
         title: "AGENT & ORCHESTRATION FRAMEWORKS",
@@ -343,6 +363,7 @@ export const servicesData: readonly IService[] = Object.freeze([
         ],
         bgColor: "#00DE71",
         textColor: "#FFFFFF",
+        image: images.atAGlance3,
       },
       {
         title: "MLOPS & DEPLOYMENT",
@@ -357,6 +378,7 @@ export const servicesData: readonly IService[] = Object.freeze([
         ],
         bgColor: "#FFA77C",
         textColor: "#000000",
+        image: images.atAGlance4,
       },
       {
         title: "SECURITY, COMPLIANCE & GOVERNANCE (CRITICAL FOR US/EU BUYERS)",
@@ -371,6 +393,7 @@ export const servicesData: readonly IService[] = Object.freeze([
         ],
         bgColor: "#F1571B",
         textColor: "#FFFFFF",
+        image: images.atAGlance5,
       },
     ],
     techStacks: [

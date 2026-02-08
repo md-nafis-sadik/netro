@@ -62,13 +62,13 @@ const ServiceDetailsPage = async ({
           description={content.description}
           titleClassName={content.titleClassName}
         />
-        <Suspense fallback={<div className="containerX">Loading...</div>}>
+        <Suspense fallback={<div className="container">Loading...</div>}>
           <ServicesWrapper />
         </Suspense>
-        <Suspense fallback={<div className="containerX py-20">Loading...</div>}>
+        <Suspense fallback={<div className="container py-20">Loading...</div>}>
           <ServiceStrengthAreas />
         </Suspense>
-        <Suspense fallback={<div className="containerX py-20">Loading...</div>}>
+        <Suspense fallback={<div className="container py-20">Loading...</div>}>
           <ClientServiceList />
         </Suspense>
       </main>
@@ -91,19 +91,19 @@ const ServiceDetailsPage = async ({
         <ServiceDetailsContent service={service} />
       </Suspense>
 
-      <Suspense fallback={<div className="containerX py-20">Loading...</div>}>
+      <Suspense fallback={<div className="container py-20">Loading...</div>}>
         <ServiceChallengesSolution />
       </Suspense>
 
-      <Suspense fallback={<div className="containerX py-20">Loading...</div>}>
+      <Suspense fallback={<div className="container py-20">Loading...</div>}>
         <ProcessFollowed />
       </Suspense>
 
-      <Suspense fallback={<div className="containerX py-20">Loading...</div>}>
+      <Suspense fallback={<div className="container py-20">Loading...</div>}>
         <ServiceAdditionalSections slug={slug} />
       </Suspense>
 
-      <Suspense fallback={<div className="containerX py-20">Loading...</div>}>
+      <Suspense fallback={<div className="container py-20">Loading...</div>}>
         <ContactUsFormHome />
       </Suspense>
 
@@ -120,7 +120,7 @@ const ServiceDetailsPage = async ({
         </div>
       </section>
 
-      <Suspense fallback={<div className="containerX py-20">Loading...</div>}>
+      <Suspense fallback={<div className="container py-20">Loading...</div>}>
         <ServiceCommitment />
       </Suspense>
     </main>

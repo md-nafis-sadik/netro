@@ -15,6 +15,7 @@ export type ServiceAtGlanceItem = {
   items: string[];
   bgColor: string;
   textColor: string;
+  image: StaticImageData;
 };
 
 export type ServiceTechStack = {
