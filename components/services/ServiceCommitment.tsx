@@ -15,7 +15,11 @@ interface CommitmentCard {
 }
 
 const ServiceCommitment = () => {
-  const { title, description, cards: commitmentCards } = servicesPageContent.commitment;
+  const {
+    title,
+    description,
+    cards: commitmentCards,
+  } = servicesPageContent.commitment;
   return (
     <section className="bg-darkPurplebg py-8 md:py-12 lg:py-16">
       <div className="container">

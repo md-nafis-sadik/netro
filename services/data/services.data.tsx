@@ -227,7 +227,8 @@ export const servicesData: readonly IService[] = Object.freeze([
       "Automation",
     ],
     deliverablesTitle: "WHAT WE DELIVER",
-    deliverablesDescription: "Our services cover both greenfield AI builds and augmentation of existing platforms.",
+    deliverablesDescription:
+      "Our services cover both greenfield AI builds and augmentation of existing platforms.",
     deliverables: [
       {
         title: "AI Application Development",
@@ -249,7 +250,8 @@ export const servicesData: readonly IService[] = Object.freeze([
       },
       {
         title: "AI Integration for Existing Software",
-        description: "We integrate AI into CRMs, ERPs, SaaS platforms, and proprietary systems without requiring full rewrites.",
+        description:
+          "We integrate AI into CRMs, ERPs, SaaS platforms, and proprietary systems without requiring full rewrites.",
         bgColor: "#FFA77C",
         textColor: "#000000",
         features: [
@@ -266,7 +268,8 @@ export const servicesData: readonly IService[] = Object.freeze([
       },
       {
         title: "Autonomous & Multi-Agent Systems",
-        description: "We build systems that execute tasks end-to-end with minimal human input:",
+        description:
+          "We build systems that execute tasks end-to-end with minimal human input:",
         bgColor: "#7FFBAF",
         textColor: "#000000",
         features: [

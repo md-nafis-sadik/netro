@@ -1,4 +1,7 @@
-import { findServiceBySlug, servicesPageContent } from "@/services/data/services.data";
+import {
+  findServiceBySlug,
+  servicesPageContent,
+} from "@/services/data/services.data";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import ServiceDeliverables from "./ServiceDeliverables";
@@ -12,7 +15,6 @@ const ServiceDetailsContent = async ({ slug }: { slug: string }) => {
   if (!service) {
     notFound();
   }
-
 
   return (
     <section className="bg-darkPurplebg relative overflow-x-hidden">
@@ -29,10 +31,10 @@ const ServiceDetailsContent = async ({ slug }: { slug: string }) => {
       </div>
       <section className="relative z-10">
         <ServicesDetails service={service} />
-        <ServicesOffer 
+        <ServicesOffer
           title={servicesPageContent.servicesOffer.title}
           description={servicesPageContent.servicesOffer.description}
-          data={servicesPageContent.servicesOffer.data} 
+          data={servicesPageContent.servicesOffer.data}
         />
 
         {service.deliverables && service.deliverables.length > 0 && (

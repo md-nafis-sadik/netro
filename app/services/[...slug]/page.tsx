@@ -14,7 +14,10 @@ import ClientServiceList from "@/components/services/ClientServiceList";
 import ServiceStrengthAreas from "@/components/services/ServiceStrengthAreas";
 import ServicesWrapper from "@/components/services/ServicesWrapper";
 import PageThumbnail from "@/components/shared/PageThumbnail";
-import { findServiceBySlug, servicesPageContent } from "@/services/data/services.data";
+import {
+  findServiceBySlug,
+  servicesPageContent,
+} from "@/services/data/services.data";
 import ProcessFollowed from "@/components/view/ProcessFollowed";
 import ContactUsFormHome from "@/components/contact-us/ContactUsFormHome";
 import DescriptionHeader from "@/components/common/DescriptionHeader";

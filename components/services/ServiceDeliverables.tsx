@@ -35,7 +35,9 @@ function ServiceDeliverables({
 
     if (cardsToAnimate.length === 0) return;
 
-    const stickyContainer = containerRef.current.querySelector('.sticky-wrapper') as HTMLElement;
+    const stickyContainer = containerRef.current.querySelector(
+      ".sticky-wrapper",
+    ) as HTMLElement;
     if (!stickyContainer) return;
 
     // Pin the sticky container while animations happen

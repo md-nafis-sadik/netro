@@ -3,7 +3,8 @@ import DescriptionHeader from "../common/DescriptionHeader";
 import { servicesPageContent } from "@/services/data/services.data";
 
 const ServiceChallengesSolution = () => {
-  const { title, description, challenges } = servicesPageContent.challengesSolution;
+  const { title, description, challenges } =
+    servicesPageContent.challengesSolution;
   return (
     <section className="bg-darkPurplebg py-8 md:py-16 lg:py-32">
       <div className="container">
