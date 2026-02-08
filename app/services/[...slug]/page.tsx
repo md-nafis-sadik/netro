@@ -8,6 +8,7 @@ import ServiceCommitment from "@/components/services/ServiceCommitment";
 import { purifyUrl } from "@/services";
 import { Suspense } from "react";
 import { Metadata } from "next";
+import { notFound } from "next/navigation";
 
 // Import the main services page components
 import ClientServiceList from "@/components/services/ClientServiceList";
@@ -78,10 +79,16 @@ const ServiceDetailsPage = async ({
   slug = Array.isArray(slug) ? slug.join("/") : slug;
   slug = purifyUrl({ urlString: slug });
 
+  const service = findServiceBySlug(slug);
+
+  if (!service) {
+    notFound();
+  }
+
   return (
     <main className="relative">
       <Suspense fallback={<ServiceDetailsSkeleton />}>
-        <ServiceDetailsContent slug={slug} />
+        <ServiceDetailsContent service={service} />
       </Suspense>
 
       <Suspense fallback={<div className="containerX py-20">Loading...</div>}>

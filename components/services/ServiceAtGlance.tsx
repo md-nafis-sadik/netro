@@ -1,6 +1,9 @@
+"use client";
+
 import React from "react";
 import Image, { StaticImageData } from "next/image";
 import DescriptionHeader from "../common/DescriptionHeader";
+import { useAppearanceAnimation } from "@/hooks/useAppearanceAnimation";
 
 interface ServiceAtGlanceItem {
   title: string;
@@ -16,6 +19,16 @@ interface ServiceAtGlanceProps {
 
 const ServiceAtGlance = ({ items, image }: ServiceAtGlanceProps) => {
   // Create checkerboard pattern: [Image, Card1], [Card2, Image], [Image, Card3], etc.
+
+      const sectionRef = useAppearanceAnimation(".animate-glance", {
+        y: 60,
+        opacity: 0,
+        duration: 1,
+        stagger: 0.15,
+        ease: "power3.out",
+        delay: 0.1,
+      });
+
   const desktopGrid = [];
   for (let i = 0; i < items.length; i++) {
     if (i % 2 === 0) {
@@ -102,7 +115,7 @@ const ServiceAtGlance = ({ items, image }: ServiceAtGlanceProps) => {
   }
 
   return (
-    <section className="bg-darkPurplebg py-8 md:py-20 lg:py-32">
+    <section ref={sectionRef} className="bg-darkPurplebg py-8 md:py-20 lg:py-32">
       <div className="container">
         {/* Header */}
         <DescriptionHeader
@@ -126,7 +139,7 @@ const ServiceAtGlance = ({ items, image }: ServiceAtGlanceProps) => {
             <React.Fragment key={index}>
               {/* Content card */}
               <div
-                className="rounded-xl p-6 flex flex-col"
+                className="rounded-xl p-6 flex flex-col animate-glance"
                 style={{
                   backgroundColor: item.bgColor,
                   color: item.textColor,
@@ -145,7 +158,7 @@ const ServiceAtGlance = ({ items, image }: ServiceAtGlanceProps) => {
                 </ul>
               </div>
               {/* Image after each content card */}
-              <div className="relative w-full aspect-[576/536] rounded-lg overflow-hidden">
+              <div className="relative w-full aspect-[576/536] rounded-lg overflow-hidden animate-glance">
                 <Image
                   src={image}
                   alt="Service illustration"

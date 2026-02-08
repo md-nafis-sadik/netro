@@ -1,20 +1,14 @@
-import {
-  findServiceBySlug,
-  servicesPageContent,
-} from "@/services/data/services.data";
+"use client";
+
+import { servicesPageContent } from "@/services/data/services.data";
 import Image from "next/image";
-import { notFound } from "next/navigation";
 import ServiceDeliverables from "./ServiceDeliverables";
 import { images } from "@/services";
 import ServicesOffer from "../projects/ServicesOffer";
 import ServicesDetails from "../projects/ServicesDetails";
+import { IService } from "@/services/types";
 
-const ServiceDetailsContent = async ({ slug }: { slug: string }) => {
-  const service = findServiceBySlug(slug);
-
-  if (!service) {
-    notFound();
-  }
+const ServiceDetailsContent = ({ service }: { service: IService }) => {
 
   return (
     <section className="bg-darkPurplebg relative overflow-x-hidden">

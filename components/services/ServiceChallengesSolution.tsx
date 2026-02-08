@@ -1,12 +1,23 @@
+"use client";
+
 import React from "react";
 import DescriptionHeader from "../common/DescriptionHeader";
 import { servicesPageContent } from "@/services/data/services.data";
+import { useAppearanceAnimation } from "@/hooks/useAppearanceAnimation";
 
 const ServiceChallengesSolution = () => {
-  const { title, description, challenges } =
-    servicesPageContent.challengesSolution;
+  const { title, description, challenges } = servicesPageContent.challengesSolution;
+
+    const sectionRef = useAppearanceAnimation(".animate-challenge", {
+      y: 60,
+      opacity: 0,
+      duration: 1,
+      stagger: 0.15,
+      ease: "power3.out",
+      delay: 0.1,
+    });
   return (
-    <section className="bg-darkPurplebg py-8 md:py-16 lg:py-32">
+    <section ref={sectionRef} className="bg-darkPurplebg py-8 md:py-16 lg:py-32">
       <div className="container">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-16">
           {/* Left Side - Title and Subtitle */}
@@ -22,7 +33,7 @@ const ServiceChallengesSolution = () => {
           {/* Right Side - Challenges Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-4 md:gap-y-6 gap-x-8 md:gap-x-12">
             {challenges.map((challenge, index) => (
-              <div key={index} className="flex flex-col">
+              <div key={index} className="flex flex-col animate-challenge">
                 <h3 className="text-main-400 text-base md:text-xl lg:text-2xl font-semibold mb-2 md:mb-4 leading-snug">
                   {challenge.title}
                 </h3>
