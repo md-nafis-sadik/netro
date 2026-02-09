@@ -98,17 +98,18 @@ const ProjectDescription = ({ project }: any) => {
           items={project?.data?.problemIdentificationPoints}
         />
 
-        {project?.data?.problemIdentificationPoints && project?.data?.problemIdentificationImage && (
-          <div ref={lastImageRef}>
-            <Image
-              src={project?.data?.problemIdentificationImage}
-              alt={project?.data?.title || "Project Image"}
-              width={2352}
-              height={1296}
-              className="w-full mt-10 md:mt-16 lg:mt-32 rounded-2xl md:rounded-3xl"
-            />
-          </div>
-        )}
+        {project?.data?.problemIdentificationPoints &&
+          project?.data?.problemIdentificationImage && (
+            <div ref={lastImageRef}>
+              <Image
+                src={project?.data?.problemIdentificationImage}
+                alt={project?.data?.title || "Project Image"}
+                width={2352}
+                height={1296}
+                className="w-full mt-10 md:mt-16 lg:mt-32 rounded-2xl md:rounded-3xl"
+              />
+            </div>
+          )}
       </div>
     </section>
   );
