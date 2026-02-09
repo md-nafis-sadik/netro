@@ -2,12 +2,24 @@
 
 import React from "react";
 import DescriptionHeader from "../common/DescriptionHeader";
-import { servicesPageContent } from "@/services/data/services.data";
 import { useAppearanceAnimation } from "@/hooks/useAppearanceAnimation";
 
-const ServiceChallengesSolution = () => {
-  const { title, description, challenges } =
-    servicesPageContent.challengesSolution;
+interface Challenge {
+  title: string;
+  description: string;
+}
+
+interface ServiceChallengesSolutionProps {
+  title: string;
+  description: string;
+  challenges: Challenge[];
+}
+
+const ServiceChallengesSolution = ({
+  title,
+  description,
+  challenges,
+}: ServiceChallengesSolutionProps) => {
 
   const sectionRef = useAppearanceAnimation(".animate-challenge", {
     y: 60,

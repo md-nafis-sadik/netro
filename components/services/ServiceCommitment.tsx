@@ -3,7 +3,6 @@
 import React from "react";
 import Image, { StaticImageData } from "next/image";
 import DescriptionHeader from "../common/DescriptionHeader";
-import { servicesPageContent } from "@/services/data/services.data";
 import { useAppearanceAnimation } from "@/hooks/useAppearanceAnimation";
 
 interface CommitmentCard {
@@ -17,12 +16,17 @@ interface CommitmentCard {
   innerText?: string;
 }
 
-const ServiceCommitment = () => {
-  const {
-    title,
-    description,
-    cards: commitmentCards,
-  } = servicesPageContent.commitment;
+interface ServiceCommitmentProps {
+  title: string;
+  description: string;
+  cards: CommitmentCard[];
+}
+
+const ServiceCommitment = ({
+  title,
+  description,
+  cards: commitmentCards,
+}: ServiceCommitmentProps) => {
 
   const sectionRef = useAppearanceAnimation(".animate-commitment", {
     y: 60,

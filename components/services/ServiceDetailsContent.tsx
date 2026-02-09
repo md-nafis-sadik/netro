@@ -1,11 +1,10 @@
 "use client";
 
-import { servicesPageContent } from "@/services/data/services.data";
 import Image from "next/image";
 import ServiceDeliverables from "./ServiceDeliverables";
 import { images } from "@/services";
-import ServicesOffer from "../projects/ServicesOffer";
 import ServicesDetails from "../projects/ServicesDetails";
+import ServicesOffer from "../projects/ServicesOffer";
 import { IService } from "@/services/types";
 
 const ServiceDetailsContent = ({ service }: { service: IService }) => {
@@ -25,11 +24,14 @@ const ServiceDetailsContent = ({ service }: { service: IService }) => {
       </div>
       <section className="relative z-10">
         <ServicesDetails service={service} />
-        <ServicesOffer
-          title={servicesPageContent.servicesOffer.title}
-          description={servicesPageContent.servicesOffer.description}
-          data={servicesPageContent.servicesOffer.data}
-        />
+
+        {service.servicesOffer && service.servicesOffer.data.length > 0 && (
+          <ServicesOffer
+            title={service.servicesOffer.title}
+            description={service.servicesOffer.description}
+            data={service.servicesOffer.data}
+          />
+        )}
 
         {service.deliverables && service.deliverables.length > 0 && (
           <ServiceDeliverables

@@ -92,139 +92,6 @@ export const coreStrengthsServicesData = [
   },
 ];
 
-// Services Page Content
-export const servicesPageContent = {
-  all: {
-    title: "What We Do",
-    description: "Know our strengths",
-    titleClassName: "services_header w-fit",
-  },
-  relatedWorks: {
-    title: "Releted Works",
-  },
-  servicesOffer: {
-    title: "What we offer",
-    description:
-      "Unified engineering for the AI era. From strategy and prototyping to production-grade rollouts, we help organizations:",
-    data: [
-      {
-        title: "AI Consulting",
-        desc: "Automate work and reduce cost",
-        link: "/services/ai-consulting",
-        featuredImage: images.serviceOffer1,
-      },
-      {
-        title: "AI Consulting",
-        desc: "Build AI-driven products and features",
-        link: "/services/ai-consulting",
-        featuredImage: images.serviceOffer2,
-      },
-      {
-        title: "AI Consulting",
-        desc: "Extend legacy systems with intelligence",
-        link: "/services/ai-consulting",
-        featuredImage: images.serviceOffer3,
-      },
-      {
-        title: "AI Consulting",
-        desc: "Accelerate software delivery using AI- dev.",
-        link: "/services/ai-consulting",
-        featuredImage: images.serviceOffer4,
-      },
-      {
-        title: "AI Consulting",
-        desc: "Achieve compliance for regulated industries",
-        link: "/services/ai-consulting",
-        featuredImage: images.serviceOffer5,
-      },
-      {
-        title: "AI Consulting",
-        desc: "Integrate multi-model architectures, agents",
-        link: "/services/ai-consulting",
-        featuredImage: images.serviceOffer6,
-      },
-    ],
-  },
-  challengesSolution: {
-    title: "CHALLENGES AND SOLUTION",
-    description:
-      "Turning AI complexity into reliable, scalable, and compliant software solutions.",
-    challenges: [
-      {
-        title: "AI Adoption Without Clear ROI",
-        description:
-          "We identify high-impact use cases and design solutions that deliver measurable business outcomes, not experiments.",
-      },
-      {
-        title: "Legacy Systems That Can't Leverage AI",
-        description:
-          "Crafting intuitive and engaging user experiences that blend aesthetics with usability.",
-      },
-      {
-        title: "Unstructured & Fragmented Data",
-        description:
-          "We transform scattered documents, logs, and databases into AI-ready, searchable knowledge systems.",
-      },
-      {
-        title: "Scaling AI from PoC to Production",
-        description:
-          "We engineer production-grade architectures with monitoring, cost control, and performance optimization.",
-      },
-      {
-        title: "Security, Privacy & Regulatory Risks",
-        description:
-          "We embed governance, access control, and compliance (GDPR, SOC2, ISO) into every AI system.",
-      },
-      {
-        title: "Unreliable Outputs & Hallucinations",
-        description:
-          "We apply retrieval, validation, guardrails, and evaluation frameworks to ensure trustworthy AI behavior.",
-      },
-    ],
-  },
-  commitment: {
-    title: "Our commitment",
-    description:
-      "As an organization we are committed to deliver best practiced software solution to you. It's not only quality we maintain, It's commitment we have. Always!",
-    cards: [
-      {
-        title: "Communication",
-        description:
-          "Our dedicated customer relationship managers will always keep you aware about your project and progress.",
-        image: images.belowCard,
-        bgColor: "#3654FF",
-        textColor: "#86C9FF",
-        imageAlt: "Communication notification",
-      },
-      {
-        title: "We don't hide",
-        description:
-          "We never lie or hide truth about development. We disclose every details about code structure and your engineering barriers.",
-        image: images.belowContent,
-        bg: images.belowBg1,
-        bgColor: "#86C9FF",
-        textColor: "#3654FF",
-        imageAlt: "Code transparency",
-      },
-      {
-        title: "Growth Focused UX",
-        description:
-          "Our Growth focused UX ensures maximum scalability and ensures growth. We always surprises client with growth and result not with buggy UI at delivery!",
-        image: images.belowUser,
-        bgColor: "#86C9FF",
-        textColor: "#3654FF",
-        imageAlt: "UX Designer profile",
-      },
-      {
-        innerText: "Trust Netro Systems <br> because we care your money!",
-        bg: images.belowBg,
-        bgColor: "#3654FF",
-        textColor: "#86C9FF",
-      },
-    ],
-  },
-};
-
 export const servicesData: readonly IService[] = Object.freeze([
   {
     _id: "service-01",
@@ -244,6 +111,135 @@ export const servicesData: readonly IService[] = Object.freeze([
       "AI Integration",
       "Automation",
     ],
+    points: [
+      "Automate work and reduce cost",
+      "Build AI-driven products and features",
+      "Extend legacy systems",
+    ],
+    servicesOffer: {
+      title: "What we offer",
+      description:
+        "Unified engineering for the AI era. From strategy and prototyping to production-grade rollouts, we help organizations:",
+      data: [
+        {
+          title: "AI Consulting",
+          desc: "Automate work and reduce cost",
+          link: "/services/ai-consulting",
+          featuredImage: images.serviceOffer1,
+        },
+        {
+          title: "AI Consulting",
+          desc: "Build AI-driven products and features",
+          link: "/services/ai-consulting",
+          featuredImage: images.serviceOffer2,
+        },
+        {
+          title: "AI Consulting",
+          desc: "Extend legacy systems with intelligence",
+          link: "/services/ai-consulting",
+          featuredImage: images.serviceOffer3,
+        },
+        {
+          title: "AI Consulting",
+          desc: "Accelerate software delivery using AI- dev.",
+          link: "/services/ai-consulting",
+          featuredImage: images.serviceOffer4,
+        },
+        {
+          title: "AI Consulting",
+          desc: "Achieve compliance for regulated industries",
+          link: "/services/ai-consulting",
+          featuredImage: images.serviceOffer5,
+        },
+        {
+          title: "AI Consulting",
+          desc: "Integrate multi-model architectures, agents",
+          link: "/services/ai-consulting",
+          featuredImage: images.serviceOffer6,
+        },
+      ],
+    },
+    relatedWorks: {
+      title: "Related Works",
+    },
+    challengesSolution: {
+      title: "CHALLENGES AND SOLUTION",
+      description:
+        "Turning AI complexity into reliable, scalable, and compliant software solutions.",
+      challenges: [
+        {
+          title: "AI Adoption Without Clear ROI",
+          description:
+            "We identify high-impact use cases and design solutions that deliver measurable business outcomes, not experiments.",
+        },
+        {
+          title: "Legacy Systems That Can't Leverage AI",
+          description:
+            "Crafting intuitive and engaging user experiences that blend aesthetics with usability.",
+        },
+        {
+          title: "Unstructured & Fragmented Data",
+          description:
+            "We transform scattered documents, logs, and databases into AI-ready, searchable knowledge systems.",
+        },
+        {
+          title: "Scaling AI from PoC to Production",
+          description:
+            "We engineer production-grade architectures with monitoring, cost control, and performance optimization.",
+        },
+        {
+          title: "Security, Privacy & Regulatory Risks",
+          description:
+            "We embed governance, access control, and compliance (GDPR, SOC2, ISO) into every AI system.",
+        },
+        {
+          title: "Unreliable Outputs & Hallucinations",
+          description:
+            "We apply retrieval, validation, guardrails, and evaluation frameworks to ensure trustworthy AI behavior.",
+        },
+      ],
+    },
+    commitment: {
+      title: "Our commitment",
+      description:
+        "As an organization we are committed to deliver best practiced software solution to you. It's not only quality we maintain, It's commitment we have. Always!",
+      cards: [
+        {
+          title: "Communication",
+          description:
+            "Our dedicated customer relationship managers will always keep you aware about your project and progress.",
+          image: images.belowCard,
+          bgColor: "#3654FF",
+          textColor: "#86C9FF",
+          imageAlt: "Communication notification",
+        },
+        {
+          title: "We don't hide",
+          description:
+            "We never lie or hide truth about development. We disclose every details about code structure and your engineering barriers.",
+          image: images.belowContent,
+          bg: images.belowBg1,
+          bgColor: "#86C9FF",
+          textColor: "#3654FF",
+          imageAlt: "Code transparency",
+        },
+        {
+          title: "Growth Focused UX",
+          description:
+            "Our Growth focused UX ensures maximum scalability and ensures growth. We always surprises client with growth and result not with buggy UI at delivery!",
+          image: images.belowUser,
+          bgColor: "#86C9FF",
+          textColor: "#3654FF",
+          imageAlt: "UX Designer profile",
+        },
+        {
+          innerText: "Trust Netro Systems <br> because we care your money!",
+          bg: images.belowBg,
+          bgColor: "#3654FF",
+          textColor: "#86C9FF",
+        },
+      ],
+    },
     deliverablesTitle: "WHAT WE DELIVER",
     deliverablesDescription:
       "Our services cover both greenfield AI builds and augmentation of existing platforms.",
@@ -467,12 +463,11 @@ export const servicesData: readonly IService[] = Object.freeze([
     title: "SaaS Development & SQA",
     slug: "saas-development-sqa",
     subtitle: "Expertise over 5 years with 30+ apps",
-    descTitle: "AI-Powered Software Engineering",
-
+    descTitle: "SaaS, MVP Development",
     description:
-      "Building a SaaS product or MVP isn't about writing the most code. It's about validating the right idea quickly, engineering it properly, and setting yourself up to scale without painful rewrites later.",
+      "Building a SaaS product or MVP isn’t about writing the most code. It’s about validating the right idea quickly, engineering it properly, and setting yourself up to scale without painful rewrites later.",
     image: images.service2,
-    featuredImage: images.service2,
+    featuredImage: images.saas,
     icon: <SAASMenuIcon color="#FF7036" />,
     link: "/services/saas-development-sqa",
     tags: [
@@ -480,6 +475,195 @@ export const servicesData: readonly IService[] = Object.freeze([
       "MVP Development",
       "Software Quality Assurance",
       "Scalable Solutions",
+    ],
+    points: [
+      "Transparency to your legacy operations",
+      "Build with passion and professionalism",
+      "Scalable that brings piece of mind",
+    ],
+    servicesOffer: {
+      title: "What we offer",
+      description:
+        "Unified engineering for the AI era. From strategy and prototyping to production-grade rollouts, we help organizations:",
+      data: [
+        {
+          title: "AI Consulting",
+          desc: "Launch Scalable MVPs Faster",
+          link: "/services/ai-consulting",
+          featuredImage: images.serviceOffer7,
+        },
+        {
+          title: "AI Consulting",
+          desc: "Design Scalable SaaS Platforms",
+          link: "/services/ai-consulting",
+          featuredImage: images.serviceOffer9,
+        },
+        {
+          title: "AI Consulting",
+          desc: "Build Conversion-Focused UX",
+          link: "/services/ai-consulting",
+          featuredImage: images.serviceOffer8,
+        },
+        {
+          title: "AI Consulting",
+          desc: "Integrate Essential SaaS Ecosystems",
+          link: "/services/ai-consulting",
+          featuredImage: images.serviceOffer10,
+        },
+        {
+          title: "AI Consulting",
+          desc: "Cloud-Native Deployment & DevOps",
+          link: "/services/ai-consulting",
+          featuredImage: images.serviceOffer5,
+        },
+        {
+          title: "AI Consulting",
+          desc: "Continuous Product Evolution",
+          link: "/services/ai-consulting",
+          featuredImage: images.serviceOffer3,
+        },
+      ],
+    },
+    commitment: {
+      title: "Our commitment",
+      description:
+        "As an organization we are committed to deliver best practiced software solution to you. It's not only quality we maintain, It's commitment we have. Always!",
+      cards: [
+        {
+          title: "Communication",
+          description:
+            "Our dedicated customer relationship managers will always keep you aware about your project and progress.",
+          image: images.belowCard,
+          bgColor: "#3654FF",
+          textColor: "#86C9FF",
+          imageAlt: "Communication notification",
+        },
+        {
+          title: "We don't hide",
+          description:
+            "We never lie or hide truth about development. We disclose every details about code structure and your engineering barriers.",
+          image: images.belowContent,
+          bg: images.belowBg1,
+          bgColor: "#86C9FF",
+          textColor: "#3654FF",
+          imageAlt: "Code transparency",
+        },
+        {
+          title: "Growth Focused UX",
+          description:
+            "Our Growth focused UX ensures maximum scalability and ensures growth. We always surprises client with growth and result not with buggy UI at delivery!",
+          image: images.belowUser,
+          bgColor: "#86C9FF",
+          textColor: "#3654FF",
+          imageAlt: "UX Designer profile",
+        },
+        {
+          innerText: "Trust Netro Systems <br> because we care your money!",
+          bg: images.belowBg,
+          bgColor: "#3654FF",
+          textColor: "#86C9FF",
+        },
+      ],
+    },
+    relatedWorks: {
+      title: "Related Works",
+    },
+    challengesSolution: {
+      title: "CHALLENGES AND SOLUTION",
+      description:
+        "Building SaaS products that scale from MVP to enterprise without painful rewrites.",
+      challenges: [
+        {
+          title: "Slow Time to Market",
+          description:
+            "We validate ideas quickly with MVPs that can evolve into production-grade platforms.",
+        },
+        {
+          title: "Technical Debt from Day One",
+          description:
+            "We architect solutions properly from the start, avoiding costly rewrites later.",
+        },
+        {
+          title: "Poor User Experience",
+          description:
+            "Our UX-first approach ensures intuitive interfaces that users love and adopt quickly.",
+        },
+        {
+          title: "Scaling Issues",
+          description:
+            "We build with scalability in mind, so your product grows smoothly with your user base.",
+        },
+        {
+          title: "Quality & Reliability",
+          description:
+            "Comprehensive QA and testing ensure your product works flawlessly under real-world conditions.",
+        },
+        {
+          title: "Security Vulnerabilities",
+          description:
+            "We implement security best practices and compliance requirements from day one.",
+        },
+      ],
+    },
+        deliverablesTitle: "WHAT WE DELIVER",
+    deliverablesDescription:
+      "Our services cover both greenfield AI builds and augmentation of existing platforms.",
+    deliverables: [
+      {
+        title: "AI Application Development",
+        description: "We design and build AI-native applications such as:",
+        bgColor: "#97C0FF",
+        textColor: "#000000",
+        features: [
+          "AI copilots & productivity agents",
+          "Enterprise search & knowledge systems",
+          "Recommendation & personalization engines",
+          "Model orchestration & agent design",
+          "Retrieval-Augmented Generation (RAG)",
+          "Predictive analytics & forecasting models",
+          "Document & contract intelligence (OCR + NLP)",
+          "AI chat & voice contact automation",
+          "Vector databases & embeddings",
+          "Knowledge graph integration",
+        ],
+      },
+      {
+        title: "AI Integration for Existing Software",
+        description:
+          "We integrate AI into CRMs, ERPs, SaaS platforms, and proprietary systems without requiring full rewrites.",
+        bgColor: "#FFA77C",
+        textColor: "#000000",
+        features: [
+          "AI onboarding flows inside existing products",
+          "Automated ticket classification for support tools",
+          "AI-generated insights inside analytics dashboards",
+          "Intelligent recommendations for e-commerce platforms",
+          "REST / GraphQL extension layers",
+          "Microservices with async event buses",
+          "Multi-model routing & fallback patterns",
+          "Cloud-hosted MLOps pipelines (Azure, AWS, GCP)",
+          "BYOM (Bring-Your-Own-Model) or vendor LLMs",
+        ],
+      },
+      {
+        title: "Autonomous & Multi-Agent Systems",
+        description:
+          "We build systems that execute tasks end-to-end with minimal human input:",
+        bgColor: "#7FFBAF",
+        textColor: "#000000",
+        features: [
+          "DevOps task automation",
+          "Procurement agents",
+          "HR and recruiting automation",
+          "Data enrichment & research agents",
+          "Email + document triage",
+          "Compliance & auditing automation",
+          "Task decomposition & planning",
+          "Multi-agent orchestration frameworks",
+          "Latency-aware tool calling",
+          "Workflow/state persistence",
+        ],
+      },
     ],
     content: `
       <h2>Build Scalable SaaS Products That Last</h2>
@@ -507,8 +691,7 @@ export const servicesData: readonly IService[] = Object.freeze([
     title: "Software Development",
     slug: "software-development",
     subtitle: "We develop apps with craftsmanship",
-    descTitle: "AI-Powered Software Engineering",
-
+    descTitle: "Custom Software Engineering",
     description:
       "Great apps aren't just about features—they're about performance, usability, and reliability. We design and build mobile and web applications that feel intuitive, scale smoothly, and integrate seamlessly with modern backend and AI systems.",
     image: images.service3,
@@ -521,6 +704,87 @@ export const servicesData: readonly IService[] = Object.freeze([
       "Enterprise Solutions",
       "API Development",
     ],
+    relatedWorks: {
+      title: "Related Works",
+    },
+    challengesSolution: {
+      title: "CHALLENGES AND SOLUTION",
+      description:
+        "Delivering custom software solutions that perform, scale, and integrate seamlessly.",
+      challenges: [
+        {
+          title: "Complex Business Requirements",
+          description:
+            "We translate complex business needs into clean, maintainable code architectures.",
+        },
+        {
+          title: "Legacy System Integration",
+          description:
+            "We seamlessly connect new software with existing systems and databases.",
+        },
+        {
+          title: "Performance Bottlenecks",
+          description:
+            "We optimize applications for speed and efficiency at every layer of the stack.",
+        },
+        {
+          title: "Cross-Platform Compatibility",
+          description:
+            "We ensure consistent experiences across browsers, devices, and operating systems.",
+        },
+        {
+          title: "Maintenance & Scalability",
+          description:
+            "We write clean, documented code that's easy to maintain and scale as you grow.",
+        },
+        {
+          title: "Security & Compliance",
+          description:
+            "We implement industry-standard security practices and compliance requirements.",
+        },
+      ],
+    },
+    commitment: {
+      title: "Our commitment",
+      description:
+        "As an organization we are committed to deliver best practiced software solution to you. It's not only quality we maintain, It's commitment we have. Always!",
+      cards: [
+        {
+          title: "Communication",
+          description:
+            "Our dedicated customer relationship managers will always keep you aware about your project and progress.",
+          image: images.belowCard,
+          bgColor: "#3654FF",
+          textColor: "#86C9FF",
+          imageAlt: "Communication notification",
+        },
+        {
+          title: "We don't hide",
+          description:
+            "We never lie or hide truth about development. We disclose every details about code structure and your engineering barriers.",
+          image: images.belowContent,
+          bg: images.belowBg1,
+          bgColor: "#86C9FF",
+          textColor: "#3654FF",
+          imageAlt: "Code transparency",
+        },
+        {
+          title: "Growth Focused UX",
+          description:
+            "Our Growth focused UX ensures maximum scalability and ensures growth. We always surprises client with growth and result not with buggy UI at delivery!",
+          image: images.belowUser,
+          bgColor: "#86C9FF",
+          textColor: "#3654FF",
+          imageAlt: "UX Designer profile",
+        },
+        {
+          innerText: "Trust Netro Systems <br> because we care your money!",
+          bg: images.belowBg,
+          bgColor: "#3654FF",
+          textColor: "#86C9FF",
+        },
+      ],
+    },
     content: `
       <h2>Custom Software Development Built for Your Business</h2>
       <p>Whether you need a custom web application, enterprise software, or complex backend systems, we deliver solutions that are robust, scalable, and tailored to your specific requirements.</p>
@@ -548,8 +812,7 @@ export const servicesData: readonly IService[] = Object.freeze([
     title: "3D Product Animation",
     slug: "3d-product-animation",
     subtitle: "Bring your products to life with stunning visuals",
-    descTitle: "AI-Powered Software Engineering",
-
+    descTitle: "3D Product Visualization",
     description:
       "High-quality 3D product animations transform how you showcase your products online. Whether it's for marketing, e-commerce, or presentations, our 3D animation services help you stand out and engage your audience.",
     image: images.service4,
@@ -562,6 +825,87 @@ export const servicesData: readonly IService[] = Object.freeze([
       "3D Modeling",
       "Visual Effects",
     ],
+    relatedWorks: {
+      title: "Related Works",
+    },
+    challengesSolution: {
+      title: "CHALLENGES AND SOLUTION",
+      description:
+        "Creating photorealistic 3D animations that showcase products and drive engagement.",
+      challenges: [
+        {
+          title: "Expensive Product Photography",
+          description:
+            "We create 3D models that can be rendered from any angle, eliminating costly photo shoots.",
+        },
+        {
+          title: "Limited Product Visualization",
+          description:
+            "Interactive 360° views let customers explore products in detail before purchasing.",
+        },
+        {
+          title: "Complex Product Features",
+          description:
+            "Exploded view animations clearly show how products work and what's inside.",
+        },
+        {
+          title: "Low Engagement Marketing",
+          description:
+            "Stunning 3D animations capture attention and increase conversion rates.",
+        },
+        {
+          title: "Pre-Launch Showcasing",
+          description:
+            "Create marketing materials for products still in development or manufacturing.",
+        },
+        {
+          title: "AR/VR Integration",
+          description:
+            "3D models ready for augmented and virtual reality experiences.",
+        },
+      ],
+    },
+    commitment: {
+      title: "Our commitment",
+      description:
+        "As an organization we are committed to deliver best practiced software solution to you. It's not only quality we maintain, It's commitment we have. Always!",
+      cards: [
+        {
+          title: "Communication",
+          description:
+            "Our dedicated customer relationship managers will always keep you aware about your project and progress.",
+          image: images.belowCard,
+          bgColor: "#3654FF",
+          textColor: "#86C9FF",
+          imageAlt: "Communication notification",
+        },
+        {
+          title: "We don't hide",
+          description:
+            "We never lie or hide truth about development. We disclose every details about code structure and your engineering barriers.",
+          image: images.belowContent,
+          bg: images.belowBg1,
+          bgColor: "#86C9FF",
+          textColor: "#3654FF",
+          imageAlt: "Code transparency",
+        },
+        {
+          title: "Growth Focused UX",
+          description:
+            "Our Growth focused UX ensures maximum scalability and ensures growth. We always surprises client with growth and result not with buggy UI at delivery!",
+          image: images.belowUser,
+          bgColor: "#86C9FF",
+          textColor: "#3654FF",
+          imageAlt: "UX Designer profile",
+        },
+        {
+          innerText: "Trust Netro Systems <br> because we care your money!",
+          bg: images.belowBg,
+          bgColor: "#3654FF",
+          textColor: "#86C9FF",
+        },
+      ],
+    },
     content: `
       <h2>Bring Your Products to Life with 3D Animation</h2>
       <p>High-quality 3D product animations can transform how you showcase your products online. Whether it's for marketing, e-commerce, or presentations, our 3D animation services help you stand out and engage your audience.</p>
@@ -586,8 +930,7 @@ export const servicesData: readonly IService[] = Object.freeze([
     title: "Product Design (UI/UX Design)",
     slug: "product-design-ui-ux-design",
     subtitle: "We don't leave you even after development",
-    descTitle: "AI-Powered Software Engineering",
-
+    descTitle: "User-Centered Product Design",
     description:
       "Good design isn't just how a product looks. It's how it behaves, how easily users move through it, and how confidently they achieve their goals. We design user experiences that are intuitive, scalable, and aligned with real business outcomes.",
     image: images.service5,
@@ -595,6 +938,87 @@ export const servicesData: readonly IService[] = Object.freeze([
     icon: <SQAMenuIcon color="#FFC400" />,
     link: "/services/product-design-ui-ux-design",
     tags: ["UI/UX Design", "Product Design", "User Research", "Prototyping"],
+    relatedWorks: {
+      title: "Related Works",
+    },
+    challengesSolution: {
+      title: "CHALLENGES AND SOLUTION",
+      description:
+        "Designing intuitive user experiences that drive engagement and business results.",
+      challenges: [
+        {
+          title: "Poor User Adoption",
+          description:
+            "We conduct user research to understand needs and design experiences users love.",
+        },
+        {
+          title: "Confusing Navigation",
+          description:
+            "Clear information architecture ensures users find what they need quickly.",
+        },
+        {
+          title: "Inconsistent Design",
+          description:
+            "Design systems create consistency across your product and speed up development.",
+        },
+        {
+          title: "Low Conversion Rates",
+          description:
+            "Data-driven UX optimization improves key metrics and business outcomes.",
+        },
+        {
+          title: "Accessibility Issues",
+          description:
+            "WCAG-compliant designs ensure your product is usable by everyone.",
+        },
+        {
+          title: "Developer Handoff Problems",
+          description:
+            "Detailed specs and design systems ensure pixel-perfect implementation.",
+        },
+      ],
+    },
+    commitment: {
+      title: "Our commitment",
+      description:
+        "As an organization we are committed to deliver best practiced software solution to you. It's not only quality we maintain, It's commitment we have. Always!",
+      cards: [
+        {
+          title: "Communication",
+          description:
+            "Our dedicated customer relationship managers will always keep you aware about your project and progress.",
+          image: images.belowCard,
+          bgColor: "#3654FF",
+          textColor: "#86C9FF",
+          imageAlt: "Communication notification",
+        },
+        {
+          title: "We don't hide",
+          description:
+            "We never lie or hide truth about development. We disclose every details about code structure and your engineering barriers.",
+          image: images.belowContent,
+          bg: images.belowBg1,
+          bgColor: "#86C9FF",
+          textColor: "#3654FF",
+          imageAlt: "Code transparency",
+        },
+        {
+          title: "Growth Focused UX",
+          description:
+            "Our Growth focused UX ensures maximum scalability and ensures growth. We always surprises client with growth and result not with buggy UI at delivery!",
+          image: images.belowUser,
+          bgColor: "#86C9FF",
+          textColor: "#3654FF",
+          imageAlt: "UX Designer profile",
+        },
+        {
+          innerText: "Trust Netro Systems <br> because we care your money!",
+          bg: images.belowBg,
+          bgColor: "#3654FF",
+          textColor: "#86C9FF",
+        },
+      ],
+    },
     content: `
       <h2>Design That Drives Results</h2>
       <p>Great design is invisible—it just works. Our product design team creates intuitive, beautiful interfaces that users love and that drive measurable business results.</p>
@@ -622,8 +1046,7 @@ export const servicesData: readonly IService[] = Object.freeze([
     title: "App Development",
     slug: "app-development",
     subtitle: "Years of expertise and proven portfolio",
-    descTitle: "AI-Powered Software Engineering",
-
+    descTitle: "Mobile App Development",
     description:
       "Great software isn't just built—it's tested, deployed, monitored, and supported in the real world. We help teams make sure their applications are reliable, secure, and ready for growth long after the first release.",
     image: images.service6,
@@ -636,6 +1059,87 @@ export const servicesData: readonly IService[] = Object.freeze([
       "Android Development",
       "Cross-Platform",
     ],
+    relatedWorks: {
+      title: "Related Works",
+    },
+    challengesSolution: {
+      title: "CHALLENGES AND SOLUTION",
+      description:
+        "Building mobile apps that users love on both iOS and Android platforms.",
+      challenges: [
+        {
+          title: "High Development Costs",
+          description:
+            "Cross-platform development with React Native or Flutter reduces costs significantly.",
+        },
+        {
+          title: "Platform Fragmentation",
+          description:
+            "We ensure consistent experiences across different devices and OS versions.",
+        },
+        {
+          title: "Poor App Performance",
+          description:
+            "Native optimization techniques ensure smooth, responsive user experiences.",
+        },
+        {
+          title: "User Retention Issues",
+          description:
+            "Engaging UX and push notifications keep users coming back to your app.",
+        },
+        {
+          title: "App Store Approval",
+          description:
+            "We navigate App Store and Play Store guidelines to ensure smooth approval.",
+        },
+        {
+          title: "Maintenance Burden",
+          description:
+            "Clean architecture and automated testing make updates and bug fixes easy.",
+        },
+      ],
+    },
+    commitment: {
+      title: "Our commitment",
+      description:
+        "As an organization we are committed to deliver best practiced software solution to you. It's not only quality we maintain, It's commitment we have. Always!",
+      cards: [
+        {
+          title: "Communication",
+          description:
+            "Our dedicated customer relationship managers will always keep you aware about your project and progress.",
+          image: images.belowCard,
+          bgColor: "#3654FF",
+          textColor: "#86C9FF",
+          imageAlt: "Communication notification",
+        },
+        {
+          title: "We don't hide",
+          description:
+            "We never lie or hide truth about development. We disclose every details about code structure and your engineering barriers.",
+          image: images.belowContent,
+          bg: images.belowBg1,
+          bgColor: "#86C9FF",
+          textColor: "#3654FF",
+          imageAlt: "Code transparency",
+        },
+        {
+          title: "Growth Focused UX",
+          description:
+            "Our Growth focused UX ensures maximum scalability and ensures growth. We always surprises client with growth and result not with buggy UI at delivery!",
+          image: images.belowUser,
+          bgColor: "#86C9FF",
+          textColor: "#3654FF",
+          imageAlt: "UX Designer profile",
+        },
+        {
+          innerText: "Trust Netro Systems <br> because we care your money!",
+          bg: images.belowBg,
+          bgColor: "#3654FF",
+          textColor: "#86C9FF",
+        },
+      ],
+    },
     content: `
       <h2>Mobile Apps That Users Love</h2>
       <p>In today's mobile-first world, your app needs to be fast, intuitive, and reliable. We build native and cross-platform mobile applications that deliver exceptional user experiences on both iOS and Android.</p>
@@ -663,8 +1167,7 @@ export const servicesData: readonly IService[] = Object.freeze([
     title: "Branding & Stationery",
     slug: "branding-stationery",
     subtitle: "We build visually appealing brands",
-    descTitle: "AI-Powered Software Engineering",
-
+    descTitle: "Brand Identity Design",
     description:
       "Good design isn't just how a product looks. It's how it behaves, how easily users move through it, and how confidently they achieve their goals. We design user experiences that are intuitive, scalable, and aligned with real business outcomes.",
     image: images.service7,
@@ -677,6 +1180,87 @@ export const servicesData: readonly IService[] = Object.freeze([
       "Visual Identity",
       "Brand Strategy",
     ],
+    relatedWorks: {
+      title: "Related Works",
+    },
+    challengesSolution: {
+      title: "CHALLENGES AND SOLUTION",
+      description:
+        "Creating memorable brand identities that connect with audiences and drive recognition.",
+      challenges: [
+        {
+          title: "Lack of Brand Recognition",
+          description:
+            "A strong visual identity makes your brand memorable and distinguishable from competitors.",
+        },
+        {
+          title: "Inconsistent Brand Presence",
+          description:
+            "Comprehensive brand guidelines ensure consistency across all touchpoints.",
+        },
+        {
+          title: "Unprofessional Appearance",
+          description:
+            "Professional stationery and marketing materials build trust and credibility.",
+        },
+        {
+          title: "Unclear Brand Message",
+          description:
+            "Strategic brand positioning clarifies what you stand for and who you serve.",
+        },
+        {
+          title: "Limited Visual Assets",
+          description:
+            "Complete brand packages include logos, colors, typography, and templates.",
+        },
+        {
+          title: "Rebranding Complexity",
+          description:
+            "We manage smooth brand transitions that maintain customer trust and recognition.",
+        },
+      ],
+    },
+    commitment: {
+      title: "Our commitment",
+      description:
+        "As an organization we are committed to deliver best practiced software solution to you. It's not only quality we maintain, It's commitment we have. Always!",
+      cards: [
+        {
+          title: "Communication",
+          description:
+            "Our dedicated customer relationship managers will always keep you aware about your project and progress.",
+          image: images.belowCard,
+          bgColor: "#3654FF",
+          textColor: "#86C9FF",
+          imageAlt: "Communication notification",
+        },
+        {
+          title: "We don't hide",
+          description:
+            "We never lie or hide truth about development. We disclose every details about code structure and your engineering barriers.",
+          image: images.belowContent,
+          bg: images.belowBg1,
+          bgColor: "#86C9FF",
+          textColor: "#3654FF",
+          imageAlt: "Code transparency",
+        },
+        {
+          title: "Growth Focused UX",
+          description:
+            "Our Growth focused UX ensures maximum scalability and ensures growth. We always surprises client with growth and result not with buggy UI at delivery!",
+          image: images.belowUser,
+          bgColor: "#86C9FF",
+          textColor: "#3654FF",
+          imageAlt: "UX Designer profile",
+        },
+        {
+          innerText: "Trust Netro Systems <br> because we care your money!",
+          bg: images.belowBg,
+          bgColor: "#3654FF",
+          textColor: "#86C9FF",
+        },
+      ],
+    },
     content: `
       <h2>Build a Brand That Stands Out</h2>
       <p>Your brand is more than just a logo—it's the complete experience your customers have with your company. We create comprehensive brand identities that tell your story and connect with your audience.</p>

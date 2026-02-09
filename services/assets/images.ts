@@ -233,6 +233,10 @@ export { default as simigoProblemIdentify } from "@/public/images/project/simigo
 
 //services
 export { default as aiPowered } from "@/public/images/services/ai-powered.webp";
+export { default as appDev } from "@/public/images/services/app-dev.webp";
+export { default as saas } from "@/public/images/services/saas.webp";
+export { default as sqaDep } from "@/public/images/services/sqa-dep.webp";
+export { default as vibeCode } from "@/public/images/services/vibe-code.webp";
 export { default as belowBg } from "@/public/images/services/below-bg.webp";
 export { default as belowBg1 } from "@/public/images/services/below-bg-1.webp";
 export { default as belowCard } from "@/public/images/services/below-card.webp";
@@ -247,10 +251,25 @@ export { default as serviceOffer3 } from "@/public/images/services/offer-3.webp"
 export { default as serviceOffer4 } from "@/public/images/services/offer-4.webp";
 export { default as serviceOffer5 } from "@/public/images/services/offer-5.webp";
 export { default as serviceOffer6 } from "@/public/images/services/offer-6.webp";
+export { default as serviceOffer7 } from "@/public/images/services/offer-7.webp";
+export { default as serviceOffer8 } from "@/public/images/services/offer-8.webp";
+export { default as serviceOffer9 } from "@/public/images/services/offer-9.webp";
+export { default as serviceOffer10 } from "@/public/images/services/offer-10.webp";
+export { default as serviceOffer11 } from "@/public/images/services/offer-11.webp";
+export { default as serviceOffer12 } from "@/public/images/services/offer-12.webp";
+export { default as serviceOffer13 } from "@/public/images/services/offer-13.webp";
+export { default as serviceOffer14 } from "@/public/images/services/offer-14.webp";
+export { default as serviceOffer15 } from "@/public/images/services/offer-15.webp";
+export { default as serviceOffer16 } from "@/public/images/services/offer-16.webp";
 export { default as ellipseBg } from "@/public/images/services/ellipse-bg.webp";
 export { default as atAGlance1 } from "@/public/images/services/at-a-glance-1.webp";
 export { default as atAGlance2 } from "@/public/images/services/at-a-glance-2.webp";
 export { default as atAGlance3 } from "@/public/images/services/at-a-glance-3.webp";
 export { default as atAGlance4 } from "@/public/images/services/at-a-glance-4.webp";
 export { default as atAGlance5 } from "@/public/images/services/at-a-glance-5.webp";
+export { default as atAGlance6 } from "@/public/images/services/at-a-glance-6.webp";
+export { default as atAGlance7 } from "@/public/images/services/at-a-glance-7.webp";
+export { default as atAGlance8 } from "@/public/images/services/at-a-glance-8.webp";
+export { default as atAGlance9 } from "@/public/images/services/at-a-glance-9.webp";
+export { default as atAGlance10 } from "@/public/images/services/at-a-glance-10.webp";
 

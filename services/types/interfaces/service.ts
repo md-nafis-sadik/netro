@@ -25,6 +25,51 @@ export type ServiceTechStack = {
   color?: string;
 };
 
+export type Challenge = {
+  title: string;
+  description: string;
+};
+
+export type ChallengesSolution = {
+  title: string;
+  description: string;
+  challenges: Challenge[];
+};
+
+export type CommitmentCard = {
+  title?: string;
+  description?: string;
+  image?: StaticImageData;
+  bg?: StaticImageData;
+  bgColor: string;
+  textColor: string;
+  imageAlt?: string;
+  innerText?: string;
+};
+
+export type Commitment = {
+  title: string;
+  description: string;
+  cards: CommitmentCard[];
+};
+
+export type RelatedWorks = {
+  title: string;
+};
+
+export type ServiceOfferItem = {
+  title: string;
+  desc: string;
+  link: string;
+  featuredImage: StaticImageData;
+};
+
+export type ServicesOffer = {
+  title: string;
+  description: string;
+  data: ServiceOfferItem[];
+};
+
 export type IService = Readonly<{
   _id: string;
   title: string;
@@ -45,4 +90,8 @@ export type IService = Readonly<{
   deliverablesDescription?: string;
   atGlance?: ServiceAtGlanceItem[];
   techStacks?: ServiceTechStack[];
+  relatedWorks?: RelatedWorks;
+  challengesSolution?: ChallengesSolution;
+  commitment?: Commitment;
+  servicesOffer?: ServicesOffer;
 }>;

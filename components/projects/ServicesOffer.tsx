@@ -19,7 +19,7 @@ const ServicesOffer = ({
   description = "Unified engineering for the AI era. From strategy and prototyping to production-grade rollouts, we help organizations:",
   data,
 }: ServicesOfferProps) => {
-  const sectionRef = useAppearanceAnimation(".animate-item3", {
+  const sectionRef = useAppearanceAnimation(".animate-item4", {
     x: 100,
     y: 0,
     opacity: 0,
@@ -48,7 +48,7 @@ const ServicesOffer = ({
               {data?.map((item: any, index: number) => (
                 <div
                   className={cn(
-                    "w-full min-w-[100%] sm:min-w-[376px] aspect-[376/460] overflow-hidden bg-neutral-50 group relative animate-item3 rounded-2xl md:rounded-3xl",
+                    "w-full min-w-[100%] sm:min-w-[376px] aspect-[376/460] overflow-hidden bg-neutral-50 group relative animate-item4 rounded-2xl md:rounded-3xl",
                   )}
                   key={index}
                 >

@@ -3,10 +3,7 @@ import { purifyUrl } from "@/services";
 import { Suspense } from "react";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
-import {
-  findServiceBySlug,
-  servicesPageContent,
-} from "@/services/data/services.data";
+import { findServiceBySlug } from "@/services/data/services.data";
 import DescriptionHeader from "@/components/common/DescriptionHeader";
 import ServiceDetailsSkeleton from "@/components/services/ServiceDetailsSkeleton";
 import ProjectsPreviewServicesSkeleton from "@/components/projects/ProjectsPreviewServicesSkeleton";
@@ -75,7 +72,13 @@ const ServiceDetailsPage = async ({
   return (
     <main className="relative">
       <ServiceDetailsContent service={service} />
-      <ServiceChallengesSolution />
+      {service.challengesSolution && (
+        <ServiceChallengesSolution
+          title={service.challengesSolution.title}
+          description={service.challengesSolution.description}
+          challenges={service.challengesSolution.challenges}
+        />
+      )}
       <ProcessFollowed />
       <Suspense fallback={<Pulse />}>
         <ServiceAdditionalSections slug={getSlug(slug)} />
@@ -84,7 +87,7 @@ const ServiceDetailsPage = async ({
       <section className="bg-darkPurplebg flex_center flex-col w-full py-20">
         <div className="container">
           <DescriptionHeader
-            title={servicesPageContent.relatedWorks.title}
+            title={service.relatedWorks?.title || "Related Works"}
             className="mb-6 md:mb-8 lg:mb-10"
           />
           <Suspense fallback={<ProjectsPreviewServicesSkeleton />}>
@@ -92,7 +95,13 @@ const ServiceDetailsPage = async ({
           </Suspense>
         </div>
       </section>
-      <ServiceCommitment />
+      {service.commitment && (
+        <ServiceCommitment
+          title={service.commitment.title}
+          description={service.commitment.description}
+          cards={service.commitment.cards}
+        />
+      )}
     </main>
   );
 };

@@ -93,8 +93,8 @@ const ServicesDetails = ({ service }: any) => {
         </div>
         <div className="w-full md:w-[32%] flex items-end">
           <div className="flex flex-col gap-3 md:gap-4" ref={breadcrumbRef}>
-            {points &&
-              points.map((point, index) => (
+            {service?.points &&
+              service?.points.map((point: string, index: number) => (
                 <div
                   key={index}
                   
@@ -133,7 +133,7 @@ const ServicesDetails = ({ service }: any) => {
                       />
                     </svg>
                   </span>
-                  <span>{points[index]}</span>
+                  <span>{point}</span>
                 </div>
               ))}
           </div>
@@ -144,9 +144,9 @@ const ServicesDetails = ({ service }: any) => {
       <Image
         src={service.featuredImage}        
         alt={`service image ${service.title}`}
-        className="min-h-auto min-w-full object-contain mt-[50px] rounded-3xl md:rounded-[32px]"
-        height={1280}
-        width={1920}
+        className="min-h-auto min-w-full object-contain mt-[50px] rounded-2xl md:rounded-3xl"
+        height={1016}
+        width={2352}
         ref={imageRef}
       />
     </div>
