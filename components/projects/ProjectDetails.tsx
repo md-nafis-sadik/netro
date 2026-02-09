@@ -61,17 +61,18 @@ const ProjectDetails = ({ project }: any) => {
 
   return (
     <section ref={sectionRef} className="font-inter mt-[-60px]">
-      <div
-        className="pt-24 lg:pt-40 xl:pt-48"
-        style={{
-          backgroundImage: `url('${project?.data?.backgroundImageUrl}')`,
-          backgroundPosition: "50%",
-          backgroundSize: "cover",
-          backgroundRepeat: "no-repeat",
-          backgroundColor: "lightgray",
-        }}
-      >
-        <div className="container overflow-hidden">
+      <div className="pt-24 lg:pt-40 xl:pt-48 relative overflow-hidden">
+        {project?.data?.backgroundImageUrl && (
+          <Image
+            src={project?.data?.backgroundImageUrl}
+            alt={`${project?.data?.title || "Portfolio"} background`}
+            fill
+            priority
+            className="absolute inset-0 object-cover object-center -z-10"
+            quality={90}
+          />
+        )}
+        <div className="container overflow-hidden relative z-10">
           <div
             ref={breadcrumbRef}
             className="flex items-center gap-2 text-white text-xs md:text-sm lg:text-base"
@@ -107,6 +108,7 @@ const ProjectDetails = ({ project }: any) => {
                 alt={project?.data?.title || "Portfolio Background"}
                 width={2352}
                 height={1296}
+                priority
                 className="w-full mb-0 md:-mb-28 mt-12 md:mt-14 rounded-t-3xl md:rounded-t-[32px]"
               />
             </div>

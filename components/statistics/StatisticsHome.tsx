@@ -1,3 +1,5 @@
+"use client";
+
 import SectionHeaderAnimated from "@/components/common/SectionHeaderAnimated";
 import { cn } from "@/lib/utils";
 import SectionHeader from "../common/SectionHeader";

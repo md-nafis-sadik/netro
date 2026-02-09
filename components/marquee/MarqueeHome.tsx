@@ -1,3 +1,5 @@
+"use client";
+
 import { cn } from "@/lib/utils";
 import { clientCompanyData } from "@/services/data/shared.data";
 import Image from "next/image";

@@ -1,4 +1,5 @@
 import dynamic from "next/dynamic";
+import { Suspense } from "react";
 
 import HeroHome from "@/components/hero/HeroHome";
 import IntroHome from "@/components/intro/IntroHome";
@@ -96,7 +97,9 @@ const HomePage = () => {
       <ProcessFollowed />
       <Team />
       <AwardsRecognition />
-      <ContactUsFormHome />
+      <Suspense fallback={<PulseBlock className="min-h-[420px]" />}>
+        <ContactUsFormHome />
+      </Suspense>
       <StatisticsHome />
       <JournalHomeWrapper />
     </main>

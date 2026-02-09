@@ -58,6 +58,7 @@ const ProjectDescription = ({ project }: any) => {
               alt={project?.data?.title || "Project Image"}
               width={2352}
               height={1296}
+              priority
               className="w-full mt-10 md:mt-16 lg:mt-20 rounded-2xl md:rounded-3xl"
             />
           </div>
