@@ -842,7 +842,7 @@ export const servicesData: readonly IService[] = Object.freeze([
     slug: "app-development",
     subtitle: "We develop apps with craftsmanship",
     descTitle: "App Development",
-     description:
+    description:
       "Great apps aren’t just about features—they’re about performance, usability, and reliability. We design and build mobile and web applications that feel intuitive, scale smoothly with tech stacks.",
     image: images.service3,
     featuredImage: images.appDev,
@@ -1186,7 +1186,8 @@ export const servicesData: readonly IService[] = Object.freeze([
     metaTitle:
       "Mobile App Development Services | iOS & Android | Netro Systems",
     metaDescription:
-      "Expert mobile app development for iOS and Android. Native and cross-platform apps built with years of proven expertise.",},
+      "Expert mobile app development for iOS and Android. Native and cross-platform apps built with years of proven expertise.",
+  },
   {
     _id: "service-04",
     title: "Vibe Coding Assistance",
@@ -1200,10 +1201,10 @@ export const servicesData: readonly IService[] = Object.freeze([
     icon: <VibeMenuIcon color="#8F73FF" />,
     link: "/services/vibe-coding-assistance",
     tags: [
-      "3D Animation",
-      "Product Visualization",
-      "3D Modeling",
-      "Visual Effects",
+      "AI Development",
+      "MVP Development",
+      "Rapid Prototyping",
+      "SaaS Development",
     ],
     points: [
       "Quickest with the help of AI development",
@@ -1216,37 +1217,37 @@ export const servicesData: readonly IService[] = Object.freeze([
         "Vibe Coding Assistance goes beyond code generation — it combines AI-powered development workflows, intelligent tooling, and human expertise to accelerate software delivery while maintaining code quality and engineering standards.",
       data: [
         {
-          title: "3D Product Modeling",
+          title: "Faster Development",
           desc: "Faster development cycles",
           link: "/services/vibe-coding-assistance",
           featuredImage: images.serviceOffer13,
         },
         {
-          title: "360° Product Views",
+          title: "Clean Code",
           desc: "Reduced developer fatigue and Clean code",
           link: "/services/vibe-coding-assistance",
           featuredImage: images.serviceOffer14,
         },
         {
-          title: "Product Animation",
+          title: "Engineering Visibility",
           desc: "Better engineering visibility",
           link: "/services/vibe-coding-assistance",
           featuredImage: images.serviceOffer15,
         },
         {
-          title: "Exploded View Animations",
+          title: "AI Support",
           desc: "AI-assisted coding & debugging support",
           link: "/services/vibe-coding-assistance",
           featuredImage: images.serviceOffer16,
         },
         {
-          title: "AR/VR Experiences",
+          title: "Documentation",
           desc: "Automated documentation",
           link: "/services/vibe-coding-assistance",
           featuredImage: images.serviceOffer5,
         },
         {
-          title: "Marketing Videos",
+          title: "Optimization",
           desc: "Continuous optimization",
           link: "/services/vibe-coding-assistance",
           featuredImage: images.serviceOffer17,
@@ -1259,37 +1260,27 @@ export const servicesData: readonly IService[] = Object.freeze([
     challengesSolution: {
       title: "CHALLENGES AND SOLUTION",
       description:
-        "Creating photorealistic 3D animations that showcase products and drive engagement.",
+        "Turning ideas into reliable, scalable, and compliant software solutions.",
       challenges: [
         {
-          title: "Expensive Product Photography",
+          title: "Overbuilding Before Validation",
           description:
-            "We create 3D models that can be rendered from any angle, eliminating costly photo shoots.",
+            "Many startups invest heavily before proving demand.",
         },
         {
-          title: "Limited Product Visualization",
+          title: "Scaling Issues Later",
           description:
-            "Interactive 360° views let customers explore products in detail before purchasing.",
+            "Poor architecture leads to performance bottlenecks.",
         },
         {
-          title: "Complex Product Features",
+          title: "Time-to-Market Pressure",
           description:
-            "Exploded view animations clearly show how products work and what's inside.",
+            "Delays can cost market opportunities.",
         },
         {
-          title: "Low Engagement Marketing",
+          title: "User Adoption & Retention",
           description:
-            "Stunning 3D animations capture attention and increase conversion rates.",
-        },
-        {
-          title: "Pre-Launch Showcasing",
-          description:
-            "Create marketing materials for products still in development or manufacturing.",
-        },
-        {
-          title: "AR/VR Integration",
-          description:
-            "3D models ready for augmented and virtual reality experiences.",
+            "Even good products fail without great UX.",
         },
       ],
     },
@@ -1336,219 +1327,163 @@ export const servicesData: readonly IService[] = Object.freeze([
     },
     deliverablesTitle: "WHAT WE DELIVER",
     deliverablesDescription:
-      "Our 3D visualization services transform how you showcase products, from e-commerce to marketing campaigns.",
+      "Our AI-powered coding assistance transforms how you build software, from rapid prototyping to production-ready applications.",
     deliverables: [
       {
-        title: "3D Modeling & Rendering",
-        description: "We create photorealistic 3D models and high-quality renders that showcase your products from every angle.",
-        bgColor: "#97C0FF",
-        textColor: "#000000",
-        features: [
-          "High-poly detailed product models",
-          "Photorealistic material creation",
-          "Studio-quality lighting setups",
-          "Multiple angle renders",
-          "Close-up detail shots",
-          "Environmental context renders",
-          "Product variant renders",
-          "High-resolution output for print",
-        ],
-      },
-      {
-        title: "Interactive 3D Experiences",
-        description:
-          "We develop interactive 3D viewers and experiences that let customers explore products in detail before purchasing.",
+        title: "AI Integration for Development Workflows",
+        description: "We integrate AI into your existing engineering ecosystem without disrupting your tools, pipelines, or processes.",
         bgColor: "#FFA77C",
         textColor: "#000000",
         features: [
-          "360° product spin viewers",
-          "Interactive product configurators",
-          "Zoom and pan functionality",
-          "Material and color switchers",
-          "Exploded view animations",
-          "WebGL-based 3D viewers",
-          "Mobile-responsive experiences",
-          "E-commerce platform integration",
+          "IDE, repo & CI/CD integration support",
+          "Automated testing & troubleshooting assistance",
+          "AI-powered ticket triage & issue classification",
+          "Documentation and knowledge base automation",
+          "DevOps workflow augmentation",
+          "Secure integration with internal codebases",
+          "AI-assisted release management insights",
+          "Multi-model AI routing for coding tasks",
+          "Cloud or on-prem deployment flexibility",
+          "Developer collaboration enhancement tools",
         ],
       },
       {
-        title: "3D Animation & Video Production",
+        title: "Autonomous Coding & Engineering Assistance",
         description:
-          "We produce engaging 3D animated videos that tell your product story and capture audience attention.",
+          "We build intelligent coding support systems that proactively assist teams across the entire software development lifecycle.",
         bgColor: "#7FFBAF",
         textColor: "#000000",
         features: [
-          "Product showcase animations",
-          "Feature highlight videos",
-          "Assembly and disassembly animations",
-          "How-it-works explainer videos",
-          "Marketing and promotional videos",
-          "Social media content",
-          "AR filter creation",
-          "VR product experiences",
+          "Automated code analysis & improvement suggestions",
+          "Intelligent research & code discovery agents",
+          "Continuous learning from your codebase",
+          "Proactive bug detection & optimization hints",
+          "Workflow automation for repetitive dev tasks",
+          "Knowledge persistence across projects",
+          "Engineering decision-support insights",
+          "AI-assisted architectural recommendations",
+          "Latency-aware developer tooling",
+          "Human-AI collaborative coding environments",
+        ],
+      },
+      {
+        title: "AI-Powered Developer Productivity",
+        description:
+          "We accelerate software development by embedding AI assistance directly into coding workflows and developer environments.",
+        bgColor: "#97C0FF",
+        textColor: "#000000",
+        features: [
+          "AI-assisted coding, debugging & refactoring",
+          "Context-aware code suggestions aligned with your stack",
+          "Intelligent documentation generation",
+          "Faster developer onboarding & knowledge transfer",
+          "AI-assisted code reviews & quality checks",
+          "Productivity analytics & engineering insights",
+          "Coding standards enforcement automation",
+          "Developer workflow optimization",
+          "Reduced technical debt through smart refactoring",
+          "Continuous developer experience improvements",
         ],
       },
     ],
     atGlanceTitle: "SERVICE AT A GLANCE",
-    atGlanceDescription: "We combine artistic expertise with technical precision to create stunning 3D visualizations that drive engagement and sales.",
+    atGlanceDescription: "Mobile App Development today requires more than just coding — it demands performance, seamless user experience, scalability, and platform reliability.",
     atGlance: [
       {
-        title: "3D MODELING & TEXTURING",
-        description: "Creating detailed digital twins",
+        title: "AI-ASSISTED DEVELOPMENT WORKFLOWS",
+        description: "",
         items: [
-          "We build accurate 3D representations:",
-          "CAD file conversion",
-          "High-detail polygon modeling",
-          "PBR material creation",
-          "UV mapping and texturing",
-          "Surface detail sculpting",
-          "Accurate dimensions and proportions",
+          "AI-powered code completion & generation",
+          "Intelligent refactoring and optimization",
+          "Automated documentation assistance",
+          "Rapid prototyping support",
+          "Context-aware coding suggestions",
+          "Developer productivity optimization",
         ],
         bgColor: "#3654FF",
-        textColor: "#FFFFFF",
-        image: images.atAGlance1,
-      },
-      {
-        title: "LIGHTING & RENDERING",
-        description: "",
-        items: [
-          "We create photorealistic results:",
-          "Studio lighting setups",
-          "HDRI environment lighting",
-          "Ray-traced rendering",
-          "Global illumination",
-          "4K and 8K output resolution",
-          "Render optimization",
-        ],
-        bgColor: "#FFC400",
-        textColor: "#000000",
-        image: images.atAGlance2,
-      },
-      {
-        title: "ANIMATION & MOTION",
-        description: "",
-        items: [
-          "We bring products to life:",
-          "Keyframe animation",
-          "Camera movement and transitions",
-          "Product rotation and reveals",
-          "Exploded view sequences",
-          "Physics-based simulations",
-          "Smooth motion and timing",
-        ],
-        bgColor: "#00DE71",
         textColor: "#FFFFFF",
         image: images.atAGlance3,
       },
       {
-        title: "INTERACTIVE EXPERIENCES",
+        title: "CODE QUALITY & ENGINEERING STANDARDS",
         description: "",
         items: [
-          "We create engaging web experiences:",
-          "Real-time 3D rendering",
-          "WebGL and Three.js integration",
-          "Touch and mouse interactions",
-          "Product configurators",
-          "Performance optimization",
-          "Cross-platform compatibility",
+          "Automated code reviews and linting",
+          "Architecture pattern enforcement",
+          "Secure coding best practices",
+          "Code maintainability improvements",
+          "Technical debt reduction strategies",
+          "Continuous code quality monitoring",
         ],
-        bgColor: "#FFA77C",
+        bgColor: "#FFC400",
         textColor: "#000000",
+        image: images.atAGlance1,
+      },
+      {
+        title: "DEVELOPMENT TOOLING & INTEGRATIONS",
+        description: "",
+        items: [
+          "AI coding assistants integration",
+          "IDE and DevOps tool connectivity",
+          "Repository and version control automation",
+          "API development assistance",
+          "Testing automation integration",
+          "Workflow orchestration tools",
+        ],
+        bgColor: "#00DE71",
+        textColor: "#FFFFFF",
         image: images.atAGlance4,
       },
       {
-        title: "AR/VR INTEGRATION",
+        title: "CI/CD & DELIVERY ACCELERATION",
         description: "",
         items: [
-          "We prepare models for immersive tech:",
-          "AR-ready model optimization",
-          "USDZ and GLB export formats",
-          "Unity and Unreal Engine integration",
-          "Mobile AR experiences",
-          "VR showroom development",
-          "Web-based AR viewers",
+          "Automated build and deployment pipelines",
+          "Continuous integration optimization",
+          "Test automation and validation flows",
+          "Release management support",
+          "Performance monitoring integration",
+          "DevOps workflow automation",
+        ],
+        bgColor: "#FFA77C",
+        textColor: "#000000",
+        image: images.atAGlance10,
+      },
+      {
+        title: "SECURITY, COMPLIANCE & GOVERNANCE",
+        description: "",
+        items: [
+          "Secure AI coding practices",
+          "Compliance-ready development workflows",
+          "Code audit and traceability support",
+          "Access control and governance policies",
+          "Data protection in AI-assisted coding",
+          "Responsible AI development standards",
         ],
         bgColor: "#F1571B",
         textColor: "#FFFFFF",
         image: images.atAGlance5,
       },
     ],
-    techStacks: [
-      {
-        icon: <VibeMenuIcon color="#FFC400" />,
-        title: "Blender",
-        description:
-          "Industry-leading open-source 3D creation suite for modeling, animation, and rendering.",
-        color: "#FFC400",
-      },
-      {
-        icon: <VibeMenuIcon color="#FFC400" />,
-        title: "Cinema 4D",
-        description:
-          "Professional 3D modeling and animation software for motion graphics and visualization.",
-        color: "#FFC400",
-      },
-      {
-        icon: <ReactYellowIcon />,
-        title: "Three.js",
-        description:
-          "JavaScript library for creating interactive 3D web experiences.",
-        color: "#000000",
-      },
-      {
-        icon: <VibeMenuIcon color="#FFC400" />,
-        title: "WebGL",
-        description:
-          "Web graphics API for hardware-accelerated 3D rendering in browsers.",
-        color: "#FFC400",
-      },
-      {
-        icon: <VibeMenuIcon color="#FFC400" />,
-        title: "Unity",
-        description:
-          "Real-time 3D engine for AR/VR experiences and interactive product configurators.",
-        color: "#000000",
-      },
-      {
-        icon: <VibeMenuIcon color="#FFC400" />,
-        title: "Substance Painter",
-        description:
-          "Industry-standard tool for creating photorealistic materials and textures.",
-        color: "#FFC400",
-      },
-      {
-        icon: <VibeMenuIcon color="#FFC400" />,
-        title: "After Effects",
-        description:
-          "Motion graphics and compositing for polishing final 3D animations.",
-        color: "#FFC400",
-      },
-      {
-        icon: <VibeMenuIcon color="#FFC400" />,
-        title: "Unreal Engine",
-        description:
-          "High-fidelity real-time rendering for immersive product experiences.",
-        color: "#FFC400",
-      },
-    ],
+    
     content: `
-      <h2>Bring Your Products to Life with 3D Animation</h2>
-      <p>High-quality 3D product animations can transform how you showcase your products online. Whether it's for marketing, e-commerce, or presentations, our 3D animation services help you stand out and engage your audience.</p>
-      
-      <h3>Our 3D Animation Services:</h3>
-      <ul>
-        <li><strong>Product Visualization:</strong> Create photorealistic 3D models and animations of your products</li>
-        <li><strong>360° Product Views:</strong> Interactive product displays that customers can rotate and explore</li>
-        <li><strong>Exploded View Animations:</strong> Show how products are assembled or how they work internally</li>
-        <li><strong>Marketing Videos:</strong> Engaging animated videos for advertising and social media</li>
-        <li><strong>AR/VR Integration:</strong> Bring 3D models into augmented and virtual reality experiences</li>
-      </ul>
-      
-      <p>We use industry-leading tools like Blender, Cinema 4D, and Three.js to create stunning visuals that captivate your audience and drive conversions.</p>
-    `,
-    metaTitle: "3D Product Animation Services | Netro Systems",
+    <h2>Accelerate Development with AI-Powered Coding Assistance</h2>
+    <p>Vibe Coding Assistance combines cutting-edge AI technology with proven development practices to help teams build faster without sacrificing quality. Whether you're validating an MVP or scaling production systems, our AI-powered approach keeps you moving at the speed of innovation.</p>
+    
+    <h3>Our AI Coding Services:</h3>
+    <ul>
+      <li><strong>AI Integration:</strong> Seamlessly integrate AI assistants into your existing development workflow</li>
+      <li><strong>Autonomous Coding:</strong> Intelligent systems that proactively support your engineering team</li>
+      <li><strong>Developer Productivity:</strong> AI-powered tools that accelerate coding, debugging, and refactoring</li>
+      <li><strong>Code Quality:</strong> Automated reviews and best practice enforcement</li>
+      <li><strong>CI/CD Enhancement:</strong> AI-assisted deployment and delivery optimization</li>
+    </ul>
+    
+    <p>We leverage the latest AI coding tools including GitHub Copilot, Claude AI, and specialized developer agents to transform how your team builds software.</p>
+  `,
+    metaTitle: "AI-Powered Coding Assistance Services | Netro Systems",
     metaDescription:
-      "Professional 3D product animation and visualization services. Create stunning product showcases for marketing and e-commerce.",
+      "Accelerate software development with AI coding assistance. Integrate intelligent tools into your workflow for faster, cleaner code delivery.",
   },
   {
     _id: "service-05",
