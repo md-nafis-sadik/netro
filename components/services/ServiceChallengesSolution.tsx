@@ -32,7 +32,7 @@ const ServiceChallengesSolution = ({
   return (
     <section
       ref={sectionRef}
-      className="bg-darkPurplebg py-8 md:py-16 lg:py-32"
+      className="bg-darkPurplebg py-8 md:py-16 lg:py-32 overflow-hidden"
     >
       <div className="container">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-16">

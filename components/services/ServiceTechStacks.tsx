@@ -28,7 +28,7 @@ const ServiceTechStacks = ({ stacks, techStacksTitle, techStacksDescription }: S
     delay: 0.1,
   });
   return (
-    <section ref={sectionRef} className="bg-darkPurplebg pb-8 md:pb-12 lg:pb-16">
+    <section ref={sectionRef} className="bg-darkPurplebg pb-8 md:pb-12 lg:pb-16 overflow-hidden">
       <div className="container">
         {/* Header */}
         <DescriptionHeader

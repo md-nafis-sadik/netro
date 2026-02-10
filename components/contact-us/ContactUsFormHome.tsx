@@ -92,7 +92,7 @@ function ContactUsFormHome() {
   };
 
   return (
-    <div className="relative  xl:min-h-dvh flex flex-col justify-center">
+    <div className="relative  xl:min-h-dvh flex flex-col justify-center overflow-hidden">
       <div className="absolute inset-0 -z-10 hidden md:block" />
 
       <Image

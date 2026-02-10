@@ -36,7 +36,7 @@ const ServicesOffer = ({
 
   return (
     <section ref={sectionRef}>
-      <div className="container pb-8 md:pb-12 lg:pb-20">
+      <div className="container pb-8 md:pb-12 lg:pb-20 overflow-hidden">
         <DescriptionHeader
           title={title}
           text={description}

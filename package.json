@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "set NODE_OPTIONS=--max-old-space-size=4096 && next dev --turbopack",
-    "start:dev": "set NODE_OPTIONS=--max-old-space-size=4096 && next dev --turbopack",
+    "dev": "next dev --turbopack",
+    "start:dev": "next dev --turbopack",
     "build": "next build",
     "postbuild": "next-sitemap",
     "start:local": "next start",

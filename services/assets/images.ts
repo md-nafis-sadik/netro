@@ -261,6 +261,7 @@ export { default as serviceOffer13 } from "@/public/images/services/offer-13.web
 export { default as serviceOffer14 } from "@/public/images/services/offer-14.webp";
 export { default as serviceOffer15 } from "@/public/images/services/offer-15.webp";
 export { default as serviceOffer16 } from "@/public/images/services/offer-16.webp";
+export { default as serviceOffer17 } from "@/public/images/services/offer-17.webp";
 export { default as ellipseBg } from "@/public/images/services/ellipse-bg.webp";
 export { default as atAGlance1 } from "@/public/images/services/at-a-glance-1.webp";
 export { default as atAGlance2 } from "@/public/images/services/at-a-glance-2.webp";

@@ -73,7 +73,7 @@ const ServicesDetails = ({ service }: any) => {
     }, [service]);
 
   return (
-    <div className="container py-10 md:py-[60px] lg:py-[100px]">
+    <div className="container py-10 md:py-[60px] lg:py-[100px] overflow-hidden">
       <div className="flex flex-col md:flex-row gap-6 mt-16 md:mt-20 lg:mt-24">
         <div className="w-full md:w-[68%] max-w-[780px]">
           <h2

@@ -84,7 +84,7 @@ const ServiceDetailsPage = async ({
         <ServiceAdditionalSections slug={getSlug(slug)} />
       </Suspense>
       <ContactUsFormHome />
-      <section className="bg-darkPurplebg flex_center flex-col w-full py-20">
+      <section className="bg-darkPurplebg flex_center flex-col w-full py-20 overflow-hidden">
         <div className="container">
           <DescriptionHeader
             title={service.relatedWorks?.title || "Related Works"}

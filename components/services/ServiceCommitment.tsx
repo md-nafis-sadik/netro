@@ -37,7 +37,7 @@ const ServiceCommitment = ({
     delay: 0.1,
   });
   return (
-    <section ref={sectionRef} className="bg-darkPurplebg py-8 md:py-12 lg:py-16">
+    <section ref={sectionRef} className="bg-darkPurplebg py-8 md:py-12 lg:py-16 overflow-hidden">
       <div className="container">
         {/* Header */}
         <DescriptionHeader

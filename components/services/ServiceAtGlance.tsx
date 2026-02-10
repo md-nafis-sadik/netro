@@ -60,7 +60,7 @@ const ServiceAtGlance = ({ items, title, description }: ServiceAtGlanceProps ) =
   );
 
   return (
-    <section ref={sectionRef} className="bg-darkPurplebg py-10 lg:py-28">
+    <section ref={sectionRef} className="bg-darkPurplebg py-10 lg:py-28 overflow-hidden">
       <div className="container">
         {/* Header */}
         <DescriptionHeader

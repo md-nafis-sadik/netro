@@ -4,16 +4,25 @@ import {
   AIMenuIcon,
   APIYellowIcon,
   AppMenuIcon,
+  AwsYellowIcon,
   BrandingMenuIcon,
   CloudYellowIcon,
   DBYellowIcon,
+  FirebaseYellowIcon,
+  FlutterYellowIcon,
+  KotlinYellowIcon,
+  KubernatesYellowIcon,
   LangChainYellowIcon,
   LLMYellowIcon,
+  MongoYellowIcon,
+  NodeJsYellowIcon,
   PSQLYellowIcon,
   PythonYellowIcon,
+  ReactNativeYellowIcon,
   ReactYellowIcon,
   SAASMenuIcon,
   SQAMenuIcon,
+  SwiftYellowIcon,
   TSYellowIcon,
   UIMenuIcon,
   VibeMenuIcon,
@@ -462,7 +471,7 @@ export const servicesData: readonly IService[] = Object.freeze([
   },
   {
     _id: "service-02",
-    title: "SaaS Development & SQA",
+    title: "SaaS, MVP Development",
     slug: "saas-development-sqa",
     subtitle: "Expertise over 5 years with 30+ apps",
     descTitle: "SaaS, MVP Development",
@@ -739,6 +748,73 @@ export const servicesData: readonly IService[] = Object.freeze([
         image: images.atAGlance8,
       },
     ],
+    techStacks: [
+      {
+        icon: <ReactYellowIcon />,
+        title: "React & Next.js",
+        description:
+          "Builds fast, interactive UIs with reusable components for modern SaaS apps.",
+        color: "#61DAFB",
+      },
+      {
+        icon: <NodeJsYellowIcon />,
+        title: "Node.js",
+        description:
+          "Fast, scalable runtime ideal for real-time apps and rapid SaaS development.",
+        color: "#61DAFB",
+      },
+      {
+        icon: <TSYellowIcon />,
+        title: "TypeScript",
+        description:
+          "Used across frontend and backend to build scalable, maintainable applications.",
+        color: "#3178C6",
+      },
+      {
+        icon: <APIYellowIcon />,
+        title: "FastAPI & NestJS",
+        description:
+          "Frameworks for building high-performance, cloud-native APIs.",
+        color: "#FFC400",
+      },
+      {
+        icon: <PythonYellowIcon />,
+        title: "Python",
+        description:
+          "Our primary language for AI and backend services due to its mature ecosystem and rapid development speed",
+        color: "#FFC400",
+      },
+      {
+        icon: <MongoYellowIcon />,
+        title: "MongoDB",
+        description:
+          "Flexible database that supports rapid MVP development and easy scaling.",
+        color: "#336791",
+      },
+
+      {
+        icon: <PSQLYellowIcon />,
+        title: "PostgreSQL",
+        description:
+          "A trusted relational database for transactional and structured data. Its extensibility supports modern AI.",
+        color: "#336791",
+      },
+      {
+        icon: <KubernatesYellowIcon />,
+        title: "Vector Databases",
+        description:
+          "Automates deployment and scaling, keeping applications reliable as they grow.",
+        color: "#FFC400",
+      },
+
+      {
+        icon: <CloudYellowIcon />,
+        title: "Cloud & Containerization",
+        description:
+          "We deploy using AWS, Azure, or GCP with Docker and Kubernetes. This ensures high availability, scalability, and compliance with regional requirements.",
+        color: "#FFC400",
+      },
+    ],
     content: `
       <h2>Build Scalable SaaS Products That Last</h2>
       <p>With over 5 years of experience and 30+ successful SaaS applications delivered, we understand what it takes to build products that scale. Our approach focuses on rapid validation, solid engineering practices, and long-term sustainability.</p>
@@ -762,59 +838,97 @@ export const servicesData: readonly IService[] = Object.freeze([
   },
   {
     _id: "service-03",
-    title: "Software Development",
-    slug: "software-development",
+    title: "App Development",
+    slug: "app-development",
     subtitle: "We develop apps with craftsmanship",
-    descTitle: "Custom Software Engineering",
-    description:
-      "Great apps aren't just about features—they're about performance, usability, and reliability. We design and build mobile and web applications that feel intuitive, scale smoothly, and integrate seamlessly with modern backend and AI systems.",
+    descTitle: "App Development",
+     description:
+      "Great apps aren’t just about features—they’re about performance, usability, and reliability. We design and build mobile and web applications that feel intuitive, scale smoothly with tech stacks.",
     image: images.service3,
-    featuredImage: images.service3,
-    icon: <AppMenuIcon color="#7AD58D" />,
-    link: "/services/software-development",
+    featuredImage: images.appDev,
+    icon: <UIMenuIcon color="#FF7036" />,
+    link: "/services/app-development",
     tags: [
-      "Custom Software",
-      "Web Development",
-      "Enterprise Solutions",
-      "API Development",
+      "Mobile Apps",
+      "iOS Development",
+      "Android Development",
+      "Cross-Platform",
     ],
+    points: [
+      "Clean architecture followed",
+      "Works with any of your platform",
+      "Scalable that brings piece of mind",
+    ],
+    servicesOffer: {
+      title: "What we offer",
+      description:
+        "From native iOS and Android apps to cross-platform solutions, we build mobile experiences that users love:",
+      data: [
+        {
+          title: "Native iOS Development",
+          desc: "Build High-Performance Apps",
+          link: "/services/app-development",
+          featuredImage: images.serviceOffer10,
+        },
+        {
+          title: "Native Android Development",
+          desc: "Design User-First Experiences",
+          link: "/services/app-development",
+          featuredImage: images.serviceOffer11,
+        },
+        {
+          title: "Cross-Platform Apps",
+          desc: "Cross-Platform App Development",
+          link: "/services/app-development",
+          featuredImage: images.serviceOffer8,
+        },
+        {
+          title: "Progressive Web Apps",
+          desc: "Integrate Smart Features & APIs",
+          link: "/services/app-development",
+          featuredImage: images.serviceOffer12,
+        },
+        {
+          title: "App Store Optimization",
+          desc: "Continuous Improvement & Scaling",
+          link: "/services/app-development",
+          featuredImage: images.serviceOffer5,
+        },
+        {
+          title: "App Maintenance",
+          desc: "Cloud-Ready Deployment",
+          link: "/services/app-development",
+          featuredImage: images.serviceOffer17,
+        },
+      ],
+    },
     relatedWorks: {
       title: "Related Works",
     },
     challengesSolution: {
       title: "CHALLENGES AND SOLUTION",
       description:
-        "Delivering custom software solutions that perform, scale, and integrate seamlessly.",
+        "Turning ideas into reliable, scalable, and compliant software solutions.",
       challenges: [
         {
-          title: "Complex Business Requirements",
+          title: "Overbuilding Before Validation",
           description:
-            "We translate complex business needs into clean, maintainable code architectures.",
+            "Many startups invest heavily before proving demand.",
         },
         {
-          title: "Legacy System Integration",
+          title: "Scaling Issues Later",
           description:
-            "We seamlessly connect new software with existing systems and databases.",
+            "Poor architecture leads to performance bottlenecks.",
         },
         {
-          title: "Performance Bottlenecks",
+          title: "Time-to-Market Pressure",
           description:
-            "We optimize applications for speed and efficiency at every layer of the stack.",
+            "Delays can cost market opportunities.",
         },
         {
-          title: "Cross-Platform Compatibility",
+          title: "User Adoption & Retention",
           description:
-            "We ensure consistent experiences across browsers, devices, and operating systems.",
-        },
-        {
-          title: "Maintenance & Scalability",
-          description:
-            "We write clean, documented code that's easy to maintain and scale as you grow.",
-        },
-        {
-          title: "Security & Compliance",
-          description:
-            "We implement industry-standard security practices and compliance requirements.",
+            "Even good products fail without great UX.",
         },
       ],
     },
@@ -859,46 +973,286 @@ export const servicesData: readonly IService[] = Object.freeze([
         },
       ],
     },
+    deliverablesTitle: "WHAT WE DELIVER",
+    deliverablesDescription:
+      "Our mobile app development services cover the complete lifecycle from design to deployment and beyond.",
+    deliverables: [
+      {
+        title: "Application Development",
+        description: "We design and build modern, scalable applications tailored for performance, usability, and long-term maintainability.",
+        bgColor: "#97C0FF",
+        textColor: "#000000",
+        features: [
+          "Custom web & mobile application development",
+          "Scalable frontend and backend architecture",
+          "REST & GraphQL API development",
+          "Cross-platform app development frameworks",
+          "Secure authentication & user management",
+          "Performance optimization and scalability planning",
+        ],
+      },
+      {
+        title: "Platform Integration & Modernization",
+        description: "We enhance existing applications with modern integrations, automation, and architectural improvements without disrupting business operations.",
+        bgColor: "#FFA77C",
+        textColor: "#000000",
+        features: [
+          "Third-party API & system integrations",
+          "Legacy application modernization",
+          "Cloud migration & containerization",
+          "Microservices architecture adoption",
+          "Data synchronization & middleware solutions",
+          "Performance tuning and system optimization",
+        ],
+      },
+      {
+        title: "Cloud, DevOps & Continuous Delivery",
+        description: "We ensure applications remain secure, reliable, and continuously evolving with modern DevOps practices and cloud-native infrastructure.",
+        bgColor: "#7FFBAF",
+        textColor: "#000000",
+        features: [
+          "CI/CD pipeline implementation",
+          "Cloud-native deployment (AWS, Azure, GCP)",
+          "Containerization with Docker & Kubernetes",
+          "Monitoring, logging & observability setup",
+          "Security best practices & compliance readiness",
+          "Continuous updates, scaling & maintenance",
+        ],
+      },
+    ],
+    atGlanceTitle: "SERVICE AT A GLANCE",
+    atGlanceDescription: "Mobile App Development today requires more than just coding — it demands performance, seamless user experience, scalability, and platform reliability.",
+    atGlance: [
+      {
+        title: "APPLICATION ARCHITECTURE",
+        description: "Mobile App Development today requires more than just coding — it demands performance, seamless user experience, scalability, and platform reliability.",
+        items: [
+          "Native & cross-platform mobile architecture",
+          "Scalable mobile backend integration",
+          "Offline-first and performance-driven design",
+          "API-first mobile infrastructure",
+          "Secure app session and data handling",
+          "Future-ready scalability planning",
+        ],
+        bgColor: "#3654FF",
+        textColor: "#FFFFFF",
+        image: images.atAGlance6,
+      },
+      {
+        title: "DATA LAYER & STORAGE",
+        description: "",
+        items: [
+          "Mobile-friendly database design",
+          "Local storage & cloud synchronization",
+          "Secure user data handling",
+          "Real-time data integration",
+          "Performance caching strategies",
+          "Analytics-ready mobile data pipelines",
+        ],
+        bgColor: "#FFC400",
+        textColor: "#000000",
+        image: images.atAGlance1,
+      },
+      {
+        title: "FRAMEWORKS & DEVELOPMENT STACK",
+        description: "",
+        items: [
+          "Native development (Swift, Kotlin)",
+          "Cross-platform frameworks (Flutter, React Native)",
+          "Mobile API integration & SDK development",
+          "UI performance optimization frameworks",
+          "Push notification & messaging integration",
+          "Modular app development standards",
+        ],
+        bgColor: "#00DE71",
+        textColor: "#FFFFFF",
+        image: images.atAGlance4,
+      },
+      {
+        title: "DEVOPS & APP DEPLOYMENT",
+        description: "",
+        items: [
+          "CI/CD for mobile app releases",
+          "App Store & Play Store deployment support",
+          "Beta testing workflows",
+          "Cloud backend integration",
+          "Crash monitoring & performance analytics",
+          "Version control & update workflows",
+          "Continuous app optimization",
+        ],
+        bgColor: "#FFA77C",
+        textColor: "#000000",
+        image: images.atAGlance10,
+      },
+      {
+        title: "SECURITY, COMPLIANCE & RELIABILITY",
+        description: "",
+        items: [
+          "Secure authentication & mobile encryption",
+          "Compliance-ready mobile architecture",
+          "Secure API communication",
+          "App performance monitoring",
+          "Data privacy best practices",
+          "Long-term maintenance & support",
+        ],
+        bgColor: "#F1571B",
+        textColor: "#FFFFFF",
+        image: images.atAGlance5,
+      },
+    ],
+
+    techStacks: [
+      {
+        icon: <SwiftYellowIcon />,
+        title: "Swift (iOS Native)",
+        description:
+          "Apple's native language for building high-performance, secure iOS applications with smooth UX.",
+        color: "#FFC400",
+      },
+      {
+        icon: <KotlinYellowIcon />,
+        title: "Kotlin (Android Native)",
+        description:
+          "Modern Android development language offering reliability, speed, and strong Google ecosystem support.",
+        color: "#FFC400",
+      },
+      {
+        icon: <FlutterYellowIcon />,
+        title: "Flutter",
+        description:
+          "Google's cross-platform framework for building fast, visually rich apps from a single codebase.",
+        color: "#FFC400",
+      },
+      {
+        icon: <ReactNativeYellowIcon />,
+        title: "React Native",
+        description:
+          "Popular JavaScript framework for building iOS & Android apps with shared code and rapid development.",
+        color: "#FFC400",
+      },
+      {
+        icon: <NodeJsYellowIcon />,
+        title: "Node.js Backend",
+        description:
+          "Scalable backend runtime ideal for real-time mobile apps, APIs, and cloud-connected services.",
+        color: "#FFC400",
+      },
+      {
+        icon: <FirebaseYellowIcon />,
+        title: "Firebase",
+        description:
+          "Complete mobile backend platform with authentication, database, hosting, and analytics tools.",
+        color: "#FFC400",
+      },
+      {
+        icon: <AwsYellowIcon />,
+        title: "AWS Mobile Services",
+        description:
+          "Cloud infrastructure for scalable app backends, storage, notifications, and deployment.",
+        color: "#FFC400",
+      },
+      {
+        icon: <MongoYellowIcon />,
+        title: "MongoDB / NoSQL Databases",
+        description:
+          "Flexible database solutions suited for dynamic mobile data and rapid app scaling.",
+        color: "#FFC400",
+      },
+      {
+        icon: <APIYellowIcon />,
+        title: "GraphQL / REST APIs",
+        description:
+          "Efficient data communication layers enabling smooth mobile app performance and integrations.",
+        color: "#FFC400",
+      },
+    ],
     content: `
-      <h2>Custom Software Development Built for Your Business</h2>
-      <p>Whether you need a custom web application, enterprise software, or complex backend systems, we deliver solutions that are robust, scalable, and tailored to your specific requirements.</p>
+      <h2>Mobile Apps That Users Love</h2>
+      <p>In today's mobile-first world, your app needs to be fast, intuitive, and reliable. We build native and cross-platform mobile applications that deliver exceptional user experiences on both iOS and Android.</p>
       
-      <h3>Technologies We Work With:</h3>
+      <h3>Mobile Development Services:</h3>
       <ul>
-        <li><strong>Frontend:</strong> React, Next.js, Vue.js, Angular, TypeScript</li>
-        <li><strong>Backend:</strong> Node.js, Python, .NET, Java, PHP</li>
-        <li><strong>Databases:</strong> PostgreSQL, MySQL, MongoDB, Redis</li>
-        <li><strong>Cloud:</strong> AWS, Azure, Google Cloud, DigitalOcean</li>
-        <li><strong>Mobile:</strong> React Native, Flutter</li>
+        <li><strong>Native iOS Development:</strong> Swift and Objective-C apps optimized for Apple devices</li>
+        <li><strong>Native Android Development:</strong> Kotlin and Java apps for Android ecosystem</li>
+        <li><strong>Cross-Platform Development:</strong> React Native and Flutter apps that work everywhere</li>
+        <li><strong>Progressive Web Apps:</strong> Web apps that feel like native mobile experiences</li>
+        <li><strong>App Store Optimization:</strong> Help your app get discovered and downloaded</li>
+        <li><strong>Maintenance & Updates:</strong> Keep your app running smoothly with ongoing support</li>
       </ul>
       
-      <h3>Our Development Approach:</h3>
-      <p>We follow industry best practices including clean code principles, SOLID design patterns, test-driven development, and continuous integration. Every line of code we write is maintainable, documented, and built to last.</p>
-      
-      <p>From startups to enterprises, we've helped businesses across industries build software that drives growth and operational efficiency.</p>
+      <h3>Why Choose Us:</h3>
+      <p>With years of experience and a proven portfolio of successful apps, we know what it takes to build mobile applications that users engage with daily. From initial concept to App Store submission and beyond, we're with you every step of the way.</p>
     `,
-    metaTitle: "Custom Software Development Services | Netro Systems",
+    metaTitle:
+      "Mobile App Development Services | iOS & Android | Netro Systems",
     metaDescription:
-      "Professional software development with craftsmanship. Web apps, enterprise solutions, and scalable backend systems.",
-  },
+      "Expert mobile app development for iOS and Android. Native and cross-platform apps built with years of proven expertise.",},
   {
     _id: "service-04",
-    title: "3D Product Animation",
-    slug: "3d-product-animation",
-    subtitle: "Bring your products to life with stunning visuals",
-    descTitle: "3D Product Visualization",
+    title: "Vibe Coding Assistance",
+    slug: "vibe-coding-assistance",
+    subtitle: "Quick yet MVP based to development",
+    descTitle: "Vibe Coding Assistance",
     description:
-      "High-quality 3D product animations transform how you showcase your products online. Whether it's for marketing, e-commerce, or presentations, our 3D animation services help you stand out and engage your audience.",
+      "Vibe Coding is our rapid MVP delivery approach designed for teams that need to move fast, validate ideas early, and get real user feedback—without sacrificing code quality or future scalability.",
     image: images.service4,
-    featuredImage: images.service4,
+    featuredImage: images.vibeCode,
     icon: <VibeMenuIcon color="#8F73FF" />,
-    link: "/services/3d-product-animation",
+    link: "/services/vibe-coding-assistance",
     tags: [
       "3D Animation",
       "Product Visualization",
       "3D Modeling",
       "Visual Effects",
     ],
+    points: [
+      "Quickest with the help of AI development",
+      "Convert your idea into SaaS",
+      "Show your investors, show to the world",
+    ],
+    servicesOffer: {
+      title: "What we offer",
+      description:
+        "Vibe Coding Assistance goes beyond code generation — it combines AI-powered development workflows, intelligent tooling, and human expertise to accelerate software delivery while maintaining code quality and engineering standards.",
+      data: [
+        {
+          title: "3D Product Modeling",
+          desc: "Faster development cycles",
+          link: "/services/vibe-coding-assistance",
+          featuredImage: images.serviceOffer13,
+        },
+        {
+          title: "360° Product Views",
+          desc: "Reduced developer fatigue and Clean code",
+          link: "/services/vibe-coding-assistance",
+          featuredImage: images.serviceOffer14,
+        },
+        {
+          title: "Product Animation",
+          desc: "Better engineering visibility",
+          link: "/services/vibe-coding-assistance",
+          featuredImage: images.serviceOffer15,
+        },
+        {
+          title: "Exploded View Animations",
+          desc: "AI-assisted coding & debugging support",
+          link: "/services/vibe-coding-assistance",
+          featuredImage: images.serviceOffer16,
+        },
+        {
+          title: "AR/VR Experiences",
+          desc: "Automated documentation",
+          link: "/services/vibe-coding-assistance",
+          featuredImage: images.serviceOffer5,
+        },
+        {
+          title: "Marketing Videos",
+          desc: "Continuous optimization",
+          link: "/services/vibe-coding-assistance",
+          featuredImage: images.serviceOffer17,
+        },
+      ],
+    },
     relatedWorks: {
       title: "Related Works",
     },
@@ -980,6 +1334,203 @@ export const servicesData: readonly IService[] = Object.freeze([
         },
       ],
     },
+    deliverablesTitle: "WHAT WE DELIVER",
+    deliverablesDescription:
+      "Our 3D visualization services transform how you showcase products, from e-commerce to marketing campaigns.",
+    deliverables: [
+      {
+        title: "3D Modeling & Rendering",
+        description: "We create photorealistic 3D models and high-quality renders that showcase your products from every angle.",
+        bgColor: "#97C0FF",
+        textColor: "#000000",
+        features: [
+          "High-poly detailed product models",
+          "Photorealistic material creation",
+          "Studio-quality lighting setups",
+          "Multiple angle renders",
+          "Close-up detail shots",
+          "Environmental context renders",
+          "Product variant renders",
+          "High-resolution output for print",
+        ],
+      },
+      {
+        title: "Interactive 3D Experiences",
+        description:
+          "We develop interactive 3D viewers and experiences that let customers explore products in detail before purchasing.",
+        bgColor: "#FFA77C",
+        textColor: "#000000",
+        features: [
+          "360° product spin viewers",
+          "Interactive product configurators",
+          "Zoom and pan functionality",
+          "Material and color switchers",
+          "Exploded view animations",
+          "WebGL-based 3D viewers",
+          "Mobile-responsive experiences",
+          "E-commerce platform integration",
+        ],
+      },
+      {
+        title: "3D Animation & Video Production",
+        description:
+          "We produce engaging 3D animated videos that tell your product story and capture audience attention.",
+        bgColor: "#7FFBAF",
+        textColor: "#000000",
+        features: [
+          "Product showcase animations",
+          "Feature highlight videos",
+          "Assembly and disassembly animations",
+          "How-it-works explainer videos",
+          "Marketing and promotional videos",
+          "Social media content",
+          "AR filter creation",
+          "VR product experiences",
+        ],
+      },
+    ],
+    atGlanceTitle: "SERVICE AT A GLANCE",
+    atGlanceDescription: "We combine artistic expertise with technical precision to create stunning 3D visualizations that drive engagement and sales.",
+    atGlance: [
+      {
+        title: "3D MODELING & TEXTURING",
+        description: "Creating detailed digital twins",
+        items: [
+          "We build accurate 3D representations:",
+          "CAD file conversion",
+          "High-detail polygon modeling",
+          "PBR material creation",
+          "UV mapping and texturing",
+          "Surface detail sculpting",
+          "Accurate dimensions and proportions",
+        ],
+        bgColor: "#3654FF",
+        textColor: "#FFFFFF",
+        image: images.atAGlance1,
+      },
+      {
+        title: "LIGHTING & RENDERING",
+        description: "",
+        items: [
+          "We create photorealistic results:",
+          "Studio lighting setups",
+          "HDRI environment lighting",
+          "Ray-traced rendering",
+          "Global illumination",
+          "4K and 8K output resolution",
+          "Render optimization",
+        ],
+        bgColor: "#FFC400",
+        textColor: "#000000",
+        image: images.atAGlance2,
+      },
+      {
+        title: "ANIMATION & MOTION",
+        description: "",
+        items: [
+          "We bring products to life:",
+          "Keyframe animation",
+          "Camera movement and transitions",
+          "Product rotation and reveals",
+          "Exploded view sequences",
+          "Physics-based simulations",
+          "Smooth motion and timing",
+        ],
+        bgColor: "#00DE71",
+        textColor: "#FFFFFF",
+        image: images.atAGlance3,
+      },
+      {
+        title: "INTERACTIVE EXPERIENCES",
+        description: "",
+        items: [
+          "We create engaging web experiences:",
+          "Real-time 3D rendering",
+          "WebGL and Three.js integration",
+          "Touch and mouse interactions",
+          "Product configurators",
+          "Performance optimization",
+          "Cross-platform compatibility",
+        ],
+        bgColor: "#FFA77C",
+        textColor: "#000000",
+        image: images.atAGlance4,
+      },
+      {
+        title: "AR/VR INTEGRATION",
+        description: "",
+        items: [
+          "We prepare models for immersive tech:",
+          "AR-ready model optimization",
+          "USDZ and GLB export formats",
+          "Unity and Unreal Engine integration",
+          "Mobile AR experiences",
+          "VR showroom development",
+          "Web-based AR viewers",
+        ],
+        bgColor: "#F1571B",
+        textColor: "#FFFFFF",
+        image: images.atAGlance5,
+      },
+    ],
+    techStacks: [
+      {
+        icon: <VibeMenuIcon color="#FFC400" />,
+        title: "Blender",
+        description:
+          "Industry-leading open-source 3D creation suite for modeling, animation, and rendering.",
+        color: "#FFC400",
+      },
+      {
+        icon: <VibeMenuIcon color="#FFC400" />,
+        title: "Cinema 4D",
+        description:
+          "Professional 3D modeling and animation software for motion graphics and visualization.",
+        color: "#FFC400",
+      },
+      {
+        icon: <ReactYellowIcon />,
+        title: "Three.js",
+        description:
+          "JavaScript library for creating interactive 3D web experiences.",
+        color: "#000000",
+      },
+      {
+        icon: <VibeMenuIcon color="#FFC400" />,
+        title: "WebGL",
+        description:
+          "Web graphics API for hardware-accelerated 3D rendering in browsers.",
+        color: "#FFC400",
+      },
+      {
+        icon: <VibeMenuIcon color="#FFC400" />,
+        title: "Unity",
+        description:
+          "Real-time 3D engine for AR/VR experiences and interactive product configurators.",
+        color: "#000000",
+      },
+      {
+        icon: <VibeMenuIcon color="#FFC400" />,
+        title: "Substance Painter",
+        description:
+          "Industry-standard tool for creating photorealistic materials and textures.",
+        color: "#FFC400",
+      },
+      {
+        icon: <VibeMenuIcon color="#FFC400" />,
+        title: "After Effects",
+        description:
+          "Motion graphics and compositing for polishing final 3D animations.",
+        color: "#FFC400",
+      },
+      {
+        icon: <VibeMenuIcon color="#FFC400" />,
+        title: "Unreal Engine",
+        description:
+          "High-fidelity real-time rendering for immersive product experiences.",
+        color: "#FFC400",
+      },
+    ],
     content: `
       <h2>Bring Your Products to Life with 3D Animation</h2>
       <p>High-quality 3D product animations can transform how you showcase your products online. Whether it's for marketing, e-commerce, or presentations, our 3D animation services help you stand out and engage your audience.</p>
@@ -1001,17 +1552,65 @@ export const servicesData: readonly IService[] = Object.freeze([
   },
   {
     _id: "service-05",
-    title: "Product Design (UI/UX Design)",
-    slug: "product-design-ui-ux-design",
-    subtitle: "We don't leave you even after development",
-    descTitle: "User-Centered Product Design",
+    title: "SQA, Deployment & Support",
+    slug: "sqa-deployment-support",
+    subtitle: "We don't let you even after delivery",
+    descTitle: "SQA, Deployment & Support",
     description:
       "Good design isn't just how a product looks. It's how it behaves, how easily users move through it, and how confidently they achieve their goals. We design user experiences that are intuitive, scalable, and aligned with real business outcomes.",
     image: images.service5,
     featuredImage: images.service5,
     icon: <SQAMenuIcon color="#FFC400" />,
-    link: "/services/product-design-ui-ux-design",
+    link: "/services/sqa-deployment-support",
     tags: ["UI/UX Design", "Product Design", "User Research", "Prototyping"],
+    points: [
+      "User-centered design approach",
+      "Data-driven UX optimization",
+      "Scalable design systems",
+    ],
+    servicesOffer: {
+      title: "What we offer",
+      description:
+        "From user research to design systems, we create intuitive experiences that users love and that drive business results:",
+      data: [
+        {
+          title: "User Research",
+          desc: "Understand your users deeply",
+          link: "/services/ui-ux-design",
+          featuredImage: images.serviceOffer1,
+        },
+        {
+          title: "Wireframing & IA",
+          desc: "Structure content for clarity",
+          link: "/services/ui-ux-design",
+          featuredImage: images.serviceOffer2,
+        },
+        {
+          title: "UI Design",
+          desc: "Create beautiful, on-brand interfaces",
+          link: "/services/ui-ux-design",
+          featuredImage: images.serviceOffer3,
+        },
+        {
+          title: "Prototyping",
+          desc: "Test concepts before development",
+          link: "/services/ui-ux-design",
+          featuredImage: images.serviceOffer4,
+        },
+        {
+          title: "Design Systems",
+          desc: "Build scalable design foundations",
+          link: "/services/ui-ux-design",
+          featuredImage: images.serviceOffer5,
+        },
+        {
+          title: "Usability Testing",
+          desc: "Validate designs with real users",
+          link: "/services/ui-ux-design",
+          featuredImage: images.serviceOffer6,
+        },
+      ],
+    },
     relatedWorks: {
       title: "Related Works",
     },
@@ -1093,6 +1692,203 @@ export const servicesData: readonly IService[] = Object.freeze([
         },
       ],
     },
+    deliverablesTitle: "WHAT WE DELIVER",
+    deliverablesDescription:
+      "Our design services create user experiences that are beautiful, intuitive, and drive measurable business outcomes.",
+    deliverables: [
+      {
+        title: "User Research & Strategy",
+        description: "We uncover user needs and behaviors to inform design decisions with data-driven insights.",
+        bgColor: "#97C0FF",
+        textColor: "#000000",
+        features: [
+          "User interviews and surveys",
+          "Persona development",
+          "User journey mapping",
+          "Competitive analysis",
+          "Analytics review and insights",
+          "Heuristic evaluations",
+          "Design strategy and roadmap",
+          "Stakeholder workshops",
+        ],
+      },
+      {
+        title: "UI/UX Design & Prototyping",
+        description:
+          "We design beautiful, functional interfaces and validate them through interactive prototypes and testing.",
+        bgColor: "#FFA77C",
+        textColor: "#000000",
+        features: [
+          "Information architecture",
+          "Low and high-fidelity wireframes",
+          "Visual design and UI mockups",
+          "Interactive prototypes",
+          "Micro-interactions and animations",
+          "Responsive design for all devices",
+          "Accessibility compliance (WCAG)",
+          "Usability testing and iteration",
+        ],
+      },
+      {
+        title: "Design Systems & Handoff",
+        description:
+          "We create scalable design systems and ensure pixel-perfect implementation through detailed developer handoff.",
+        bgColor: "#7FFBAF",
+        textColor: "#000000",
+        features: [
+          "Component libraries",
+          "Design tokens and variables",
+          "Style guides and documentation",
+          "Pattern libraries",
+          "Icon sets and illustrations",
+          "Developer handoff specifications",
+          "Design system governance",
+          "Ongoing design support",
+        ],
+      },
+    ],
+    atGlanceTitle: "SERVICE AT A GLANCE",
+    atGlanceDescription: "We follow a user-centered design process that combines research, creativity, and validation to deliver exceptional experiences.",
+    atGlance: [
+      {
+        title: "RESEARCH & DISCOVERY",
+        description: "Understanding users and business goals",
+        items: [
+          "We start with deep user understanding:",
+          "User interviews and surveys",
+          "Analytics and data analysis",
+          "Competitive research",
+          "Persona development",
+          "Journey mapping",
+          "Pain point identification",
+        ],
+        bgColor: "#3654FF",
+        textColor: "#FFFFFF",
+        image: images.atAGlance1,
+      },
+      {
+        title: "INFORMATION ARCHITECTURE",
+        description: "",
+        items: [
+          "We structure content for clarity:",
+          "Content inventory and audit",
+          "Site mapping and navigation",
+          "User flow diagrams",
+          "Content prioritization",
+          "Taxonomy and labeling",
+          "Card sorting exercises",
+        ],
+        bgColor: "#FFC400",
+        textColor: "#000000",
+        image: images.atAGlance2,
+      },
+      {
+        title: "WIREFRAMING & PROTOTYPING",
+        description: "",
+        items: [
+          "We visualize concepts quickly:",
+          "Low-fidelity sketches",
+          "High-fidelity wireframes",
+          "Interactive prototypes",
+          "User flow prototypes",
+          "Rapid iteration cycles",
+          "Stakeholder feedback loops",
+        ],
+        bgColor: "#00DE71",
+        textColor: "#FFFFFF",
+        image: images.atAGlance3,
+      },
+      {
+        title: "VISUAL DESIGN",
+        description: "",
+        items: [
+          "We create beautiful, on-brand UI:",
+          "Visual design exploration",
+          "Color and typography systems",
+          "Component design",
+          "Responsive layouts",
+          "Iconography and illustrations",
+          "Micro-interactions",
+        ],
+        bgColor: "#FFA77C",
+        textColor: "#000000",
+        image: images.atAGlance4,
+      },
+      {
+        title: "TESTING & VALIDATION",
+        description: "",
+        items: [
+          "We validate with real users:",
+          "Usability testing sessions",
+          "A/B testing setup",
+          "Heatmaps and analytics",
+          "Accessibility audits",
+          "Design iteration based on feedback",
+          "Post-launch optimization",
+        ],
+        bgColor: "#F1571B",
+        textColor: "#FFFFFF",
+        image: images.atAGlance5,
+      },
+    ],
+    techStacks: [
+      {
+        icon: <UIMenuIcon color="#FFC400" />,
+        title: "Figma",
+        description:
+          "Our primary design tool for UI design, prototyping, and collaborative design work.",
+        color: "#FFC400",
+      },
+      {
+        icon: <UIMenuIcon color="#FFC400" />,
+        title: "Adobe XD",
+        description:
+          "Vector-based design tool for creating prototypes and design systems.",
+        color: "#FFC400",
+      },
+      {
+        icon: <UIMenuIcon color="#FFC400" />,
+        title: "Sketch",
+        description:
+          "Digital design toolkit for creating high-fidelity interfaces and assets.",
+        color: "#FFC400",
+      },
+      {
+        icon: <UIMenuIcon color="#FFC400" />,
+        title: "InVision",
+        description:
+          "Prototyping and collaboration platform for user testing and stakeholder feedback.",
+        color: "#FFC400",
+      },
+      {
+        icon: <UIMenuIcon color="#FFC400" />,
+        title: "Miro",
+        description:
+          "Collaborative whiteboard for workshops, journey mapping, and brainstorming.",
+        color: "#FFC400",
+      },
+      {
+        icon: <UIMenuIcon color="#FFC400" />,
+        title: "Adobe Creative Suite",
+        description:
+          "Photoshop and Illustrator for advanced graphics and image editing.",
+        color: "#FFC400",
+      },
+      {
+        icon: <UIMenuIcon color="#FFC400" />,
+        title: "Principle",
+        description:
+          "Animation tool for designing complex micro-interactions and transitions.",
+        color: "#FFC400",
+      },
+      {
+        icon: <UIMenuIcon color="#FFC400" />,
+        title: "Maze",
+        description:
+          "User testing platform for rapid usability testing and feedback collection.",
+        color: "#FFC400",
+      },
+    ],
     content: `
       <h2>Design That Drives Results</h2>
       <p>Great design is invisible—it just works. Our product design team creates intuitive, beautiful interfaces that users love and that drive measurable business results.</p>
@@ -1117,59 +1913,97 @@ export const servicesData: readonly IService[] = Object.freeze([
   },
   {
     _id: "service-06",
-    title: "App Development",
-    slug: "app-development",
+    title: "UI/UX Design",
+    slug: "ui-ux-design",
     subtitle: "Years of expertise and proven portfolio",
-    descTitle: "Mobile App Development",
+    descTitle: "UI/UX Design",
     description:
-      "Great software isn't just built—it's tested, deployed, monitored, and supported in the real world. We help teams make sure their applications are reliable, secure, and ready for growth long after the first release.",
+      "Great apps aren’t just about features—they’re about performance, usability, and reliability. We design and build mobile and web applications that feel intuitive, scale smoothly with tech stacks.",
     image: images.service6,
-    featuredImage: images.service6,
+    featuredImage: images.appDev,
     icon: <UIMenuIcon color="#FF7036" />,
-    link: "/services/app-development",
+    link: "/services/ui-ux-design",
     tags: [
       "Mobile Apps",
       "iOS Development",
       "Android Development",
       "Cross-Platform",
     ],
+    points: [
+      "Clean architecture followed",
+      "Works with any of your platform",
+      "Scalable that brings piece of mind",
+    ],
+    servicesOffer: {
+      title: "What we offer",
+      description:
+        "From user research to design systems, we create intuitive experiences that users love and that drive business results:",
+      data: [
+        {
+          title: "User Research",
+          desc: "Understand your users deeply",
+          link: "/services/ui-ux-design",
+          featuredImage: images.serviceOffer1,
+        },
+        {
+          title: "Wireframing & IA",
+          desc: "Structure content for clarity",
+          link: "/services/ui-ux-design",
+          featuredImage: images.serviceOffer2,
+        },
+        {
+          title: "UI Design",
+          desc: "Create beautiful, on-brand interfaces",
+          link: "/services/ui-ux-design",
+          featuredImage: images.serviceOffer3,
+        },
+        {
+          title: "Prototyping",
+          desc: "Test concepts before development",
+          link: "/services/ui-ux-design",
+          featuredImage: images.serviceOffer4,
+        },
+        {
+          title: "Design Systems",
+          desc: "Build scalable design foundations",
+          link: "/services/ui-ux-design",
+          featuredImage: images.serviceOffer5,
+        },
+        {
+          title: "Usability Testing",
+          desc: "Validate designs with real users",
+          link: "/services/ui-ux-design",
+          featuredImage: images.serviceOffer6,
+        },
+      ],
+    },
     relatedWorks: {
       title: "Related Works",
     },
     challengesSolution: {
       title: "CHALLENGES AND SOLUTION",
       description:
-        "Building mobile apps that users love on both iOS and Android platforms.",
+        "Turning ideas into reliable, scalable, and compliant software solutions.",
       challenges: [
         {
-          title: "High Development Costs",
+          title: "Overbuilding Before Validation",
           description:
-            "Cross-platform development with React Native or Flutter reduces costs significantly.",
+            "Many startups invest heavily before proving demand.",
         },
         {
-          title: "Platform Fragmentation",
+          title: "Scaling Issues Later",
           description:
-            "We ensure consistent experiences across different devices and OS versions.",
+            "Poor architecture leads to performance bottlenecks.",
         },
         {
-          title: "Poor App Performance",
+          title: "Time-to-Market Pressure",
           description:
-            "Native optimization techniques ensure smooth, responsive user experiences.",
+            "Delays can cost market opportunities.",
         },
         {
-          title: "User Retention Issues",
+          title: "User Adoption & Retention",
           description:
-            "Engaging UX and push notifications keep users coming back to your app.",
-        },
-        {
-          title: "App Store Approval",
-          description:
-            "We navigate App Store and Play Store guidelines to ensure smooth approval.",
-        },
-        {
-          title: "Maintenance Burden",
-          description:
-            "Clean architecture and automated testing make updates and bug fixes easy.",
+            "Even good products fail without great UX.",
         },
       ],
     },
@@ -1214,6 +2048,199 @@ export const servicesData: readonly IService[] = Object.freeze([
         },
       ],
     },
+    deliverablesTitle: "WHAT WE DELIVER",
+    deliverablesDescription:
+      "Our mobile app development services cover the complete lifecycle from design to deployment and beyond.",
+    deliverables: [
+      {
+        title: "Application Development",
+        description: "We design and build modern, scalable applications tailored for performance, usability, and long-term maintainability.",
+        bgColor: "#97C0FF",
+        textColor: "#000000",
+        features: [
+          "Custom web & mobile application development",
+          "Scalable frontend and backend architecture",
+          "REST & GraphQL API development",
+          "Cross-platform app development frameworks",
+          "Secure authentication & user management",
+          "Performance optimization and scalability planning",
+        ],
+      },
+      {
+        title: "Platform Integration & Modernization",
+        description: "We enhance existing applications with modern integrations, automation, and architectural improvements without disrupting business operations.",
+        bgColor: "#FFA77C",
+        textColor: "#000000",
+        features: [
+          "Third-party API & system integrations",
+          "Legacy application modernization",
+          "Cloud migration & containerization",
+          "Microservices architecture adoption",
+          "Data synchronization & middleware solutions",
+          "Performance tuning and system optimization",
+        ],
+      },
+      {
+        title: "Cloud, DevOps & Continuous Delivery",
+        description: "We ensure applications remain secure, reliable, and continuously evolving with modern DevOps practices and cloud-native infrastructure.",
+        bgColor: "#7FFBAF",
+        textColor: "#000000",
+        features: [
+          "CI/CD pipeline implementation",
+          "Cloud-native deployment (AWS, Azure, GCP)",
+          "Containerization with Docker & Kubernetes",
+          "Monitoring, logging & observability setup",
+          "Security best practices & compliance readiness",
+          "Continuous updates, scaling & maintenance",
+        ],
+      },
+    ],
+    atGlanceTitle: "SERVICE AT A GLANCE",
+    atGlanceDescription: "Mobile App Development today requires more than just coding — it demands performance, seamless user experience, scalability, and platform reliability.",
+    atGlance: [
+      {
+        title: "APPLICATION ARCHITECTURE",
+        description: "Mobile App Development today requires more than just coding — it demands performance, seamless user experience, scalability, and platform reliability.",
+        items: [
+          "Native & cross-platform mobile architecture",
+          "Scalable mobile backend integration",
+          "Offline-first and performance-driven design",
+          "API-first mobile infrastructure",
+          "Secure app session and data handling",
+          "Future-ready scalability planning",
+        ],
+        bgColor: "#3654FF",
+        textColor: "#FFFFFF",
+        image: images.atAGlance6,
+      },
+      {
+        title: "DATA LAYER & STORAGE",
+        description: "",
+        items: [
+          "Mobile-friendly database design",
+          "Local storage & cloud synchronization",
+          "Secure user data handling",
+          "Real-time data integration",
+          "Performance caching strategies",
+          "Analytics-ready mobile data pipelines",
+        ],
+        bgColor: "#FFC400",
+        textColor: "#000000",
+        image: images.atAGlance1,
+      },
+      {
+        title: "FRAMEWORKS & DEVELOPMENT STACK",
+        description: "",
+        items: [
+          "Native development (Swift, Kotlin)",
+          "Cross-platform frameworks (Flutter, React Native)",
+          "Mobile API integration & SDK development",
+          "UI performance optimization frameworks",
+          "Push notification & messaging integration",
+          "Modular app development standards",
+        ],
+        bgColor: "#00DE71",
+        textColor: "#FFFFFF",
+        image: images.atAGlance4,
+      },
+      {
+        title: "DEVOPS & APP DEPLOYMENT",
+        description: "",
+        items: [
+          "CI/CD for mobile app releases",
+          "App Store & Play Store deployment support",
+          "Beta testing workflows",
+          "Cloud backend integration",
+          "Crash monitoring & performance analytics",
+          "Version control & update workflows",
+          "Continuous app optimization",
+        ],
+        bgColor: "#FFA77C",
+        textColor: "#000000",
+        image: images.atAGlance10,
+      },
+      {
+        title: "SECURITY, COMPLIANCE & RELIABILITY",
+        description: "",
+        items: [
+          "Secure authentication & mobile encryption",
+          "Compliance-ready mobile architecture",
+          "Secure API communication",
+          "App performance monitoring",
+          "Data privacy best practices",
+          "Long-term maintenance & support",
+        ],
+        bgColor: "#F1571B",
+        textColor: "#FFFFFF",
+        image: images.atAGlance5,
+      },
+    ],
+
+    techStacks: [
+      {
+        icon: <SwiftYellowIcon />,
+        title: "Swift (iOS Native)",
+        description:
+          "Apple's native language for building high-performance, secure iOS applications with smooth UX.",
+        color: "#FFC400",
+      },
+      {
+        icon: <KotlinYellowIcon />,
+        title: "Kotlin (Android Native)",
+        description:
+          "Modern Android development language offering reliability, speed, and strong Google ecosystem support.",
+        color: "#FFC400",
+      },
+      {
+        icon: <FlutterYellowIcon />,
+        title: "Flutter",
+        description:
+          "Google's cross-platform framework for building fast, visually rich apps from a single codebase.",
+        color: "#FFC400",
+      },
+      {
+        icon: <ReactNativeYellowIcon />,
+        title: "React Native",
+        description:
+          "Popular JavaScript framework for building iOS & Android apps with shared code and rapid development.",
+        color: "#FFC400",
+      },
+      {
+        icon: <NodeJsYellowIcon />,
+        title: "Node.js Backend",
+        description:
+          "Scalable backend runtime ideal for real-time mobile apps, APIs, and cloud-connected services.",
+        color: "#FFC400",
+      },
+      {
+        icon: <FirebaseYellowIcon />,
+        title: "Firebase",
+        description:
+          "Complete mobile backend platform with authentication, database, hosting, and analytics tools.",
+        color: "#FFC400",
+      },
+      {
+        icon: <AwsYellowIcon />,
+        title: "AWS Mobile Services",
+        description:
+          "Cloud infrastructure for scalable app backends, storage, notifications, and deployment.",
+        color: "#FFC400",
+      },
+      {
+        icon: <MongoYellowIcon />,
+        title: "MongoDB / NoSQL Databases",
+        description:
+          "Flexible database solutions suited for dynamic mobile data and rapid app scaling.",
+        color: "#FFC400",
+      },
+      {
+        icon: <APIYellowIcon />,
+        title: "GraphQL / REST APIs",
+        description:
+          "Efficient data communication layers enabling smooth mobile app performance and integrations.",
+        color: "#FFC400",
+      },
+    ],
     content: `
       <h2>Mobile Apps That Users Love</h2>
       <p>In today's mobile-first world, your app needs to be fast, intuitive, and reliable. We build native and cross-platform mobile applications that deliver exceptional user experiences on both iOS and Android.</p>
@@ -1254,6 +2281,54 @@ export const servicesData: readonly IService[] = Object.freeze([
       "Visual Identity",
       "Brand Strategy",
     ],
+    points: [
+      "Memorable brand identities",
+      "Consistent brand systems",
+      "Professional visual presence",
+    ],
+    servicesOffer: {
+      title: "What we offer",
+      description:
+        "From brand strategy to complete visual identity systems, we create brands that resonate and endure:",
+      data: [
+        {
+          title: "Brand Strategy",
+          desc: "Define positioning and messaging",
+          link: "/services/branding-stationery",
+          featuredImage: images.serviceOffer1,
+        },
+        {
+          title: "Logo Design",
+          desc: "Create memorable brand marks",
+          link: "/services/branding-stationery",
+          featuredImage: images.serviceOffer2,
+        },
+        {
+          title: "Visual Identity",
+          desc: "Develop complete brand systems",
+          link: "/services/branding-stationery",
+          featuredImage: images.serviceOffer3,
+        },
+        {
+          title: "Brand Guidelines",
+          desc: "Document brand usage standards",
+          link: "/services/branding-stationery",
+          featuredImage: images.serviceOffer4,
+        },
+        {
+          title: "Stationery Design",
+          desc: "Design professional business materials",
+          link: "/services/branding-stationery",
+          featuredImage: images.serviceOffer5,
+        },
+        {
+          title: "Marketing Collateral",
+          desc: "Create branded marketing assets",
+          link: "/services/branding-stationery",
+          featuredImage: images.serviceOffer6,
+        },
+      ],
+    },
     relatedWorks: {
       title: "Related Works",
     },
@@ -1335,6 +2410,203 @@ export const servicesData: readonly IService[] = Object.freeze([
         },
       ],
     },
+    deliverablesTitle: "WHAT WE DELIVER",
+    deliverablesDescription:
+      "Our branding services create cohesive visual identities that build recognition, trust, and lasting impressions.",
+    deliverables: [
+      {
+        title: "Brand Strategy & Identity",
+        description: "We define your brand positioning and create visual identities that authentically represent who you are.",
+        bgColor: "#97C0FF",
+        textColor: "#000000",
+        features: [
+          "Brand discovery workshops",
+          "Competitive analysis",
+          "Brand positioning strategy",
+          "Brand personality and voice",
+          "Messaging framework",
+          "Tagline and value proposition",
+          "Target audience definition",
+          "Brand architecture planning",
+        ],
+      },
+      {
+        title: "Logo & Visual Identity Design",
+        description:
+          "We design memorable logos and comprehensive visual systems that work across all touchpoints.",
+        bgColor: "#FFA77C",
+        textColor: "#000000",
+        features: [
+          "Logo design concepts and refinement",
+          "Color palette development",
+          "Typography system",
+          "Icon and symbol set",
+          "Pattern and texture library",
+          "Photography and image guidance",
+          "Logo variations and lockups",
+          "Print and digital file formats",
+        ],
+      },
+      {
+        title: "Brand Guidelines & Applications",
+        description:
+          "We document your brand standards and apply them across business materials for consistent brand presence.",
+        bgColor: "#7FFBAF",
+        textColor: "#000000",
+        features: [
+          "Comprehensive brand guidelines",
+          "Business card design",
+          "Letterhead and envelope design",
+          "Email signature templates",
+          "Presentation templates",
+          "Social media templates",
+          "Marketing collateral design",
+          "Packaging design (if applicable)",
+        ],
+      },
+    ],
+    atGlanceTitle: "SERVICE AT A GLANCE",
+    atGlanceDescription: "We create distinctive brand identities through strategic thinking and thoughtful design that resonates with your audience.",
+    atGlance: [
+      {
+        title: "BRAND STRATEGY",
+        description: "Foundation for strong brands",
+        items: [
+          "We define your brand foundation:",
+          "Discovery and research",
+          "Competitive landscape analysis",
+          "Brand positioning strategy",
+          "Brand personality and attributes",
+          "Value proposition development",
+          "Messaging framework",
+        ],
+        bgColor: "#3654FF",
+        textColor: "#FFFFFF",
+        image: images.atAGlance1,
+      },
+      {
+        title: "LOGO DESIGN",
+        description: "",
+        items: [
+          "We create memorable brand marks:",
+          "Concept exploration",
+          "Multiple design directions",
+          "Logo refinement and testing",
+          "Scalability testing",
+          "Black and white versions",
+          "Logo variation lockups",
+        ],
+        bgColor: "#FFC400",
+        textColor: "#000000",
+        image: images.atAGlance2,
+      },
+      {
+        title: "VISUAL IDENTITY SYSTEM",
+        description: "",
+        items: [
+          "We build comprehensive brand systems:",
+          "Color palette development",
+          "Typography and font pairings",
+          "Iconography and symbols",
+          "Patterns and textures",
+          "Photography style",
+          "Graphic element library",
+        ],
+        bgColor: "#00DE71",
+        textColor: "#FFFFFF",
+        image: images.atAGlance3,
+      },
+      {
+        title: "BRAND GUIDELINES",
+        description: "",
+        items: [
+          "We document brand standards:",
+          "Logo usage rules",
+          "Color specifications",
+          "Typography guidelines",
+          "Dos and don'ts",
+          "Application examples",
+          "Digital and print specifications",
+        ],
+        bgColor: "#FFA77C",
+        textColor: "#000000",
+        image: images.atAGlance4,
+      },
+      {
+        title: "BRAND APPLICATIONS",
+        description: "",
+        items: [
+          "We apply your brand consistently:",
+          "Business stationery design",
+          "Marketing collateral",
+          "Digital templates",
+          "Social media assets",
+          "Presentation designs",
+          "Signage and environmental graphics",
+        ],
+        bgColor: "#F1571B",
+        textColor: "#FFFFFF",
+        image: images.atAGlance5,
+      },
+    ],
+    techStacks: [
+      {
+        icon: <BrandingMenuIcon color="#FFC400" />,
+        title: "Adobe Illustrator",
+        description:
+          "Industry-standard vector graphics software for logo and icon design.",
+        color: "#FFC400",
+      },
+      {
+        icon: <BrandingMenuIcon color="#FFC400" />,
+        title: "Adobe Photoshop",
+        description:
+          "Professional image editing for photo manipulation and digital artwork.",
+        color: "#FFC400",
+      },
+      {
+        icon: <BrandingMenuIcon color="#FFC400" />,
+        title: "Adobe InDesign",
+        description:
+          "Page layout software for creating marketing materials and brand guidelines.",
+        color: "#FFC400",
+      },
+      {
+        icon: <BrandingMenuIcon color="#FFC400" />,
+        title: "Figma",
+        description:
+          "Collaborative design tool for creating digital brand assets and templates.",
+        color: "#FFC400",
+      },
+      {
+        icon: <BrandingMenuIcon color="#FFC400" />,
+        title: "Adobe After Effects",
+        description:
+          "Motion graphics software for animated logo reveals and brand videos.",
+        color: "#FFC400",
+      },
+      {
+        icon: <BrandingMenuIcon color="#FFC400" />,
+        title: "Sketch",
+        description:
+          "Digital design toolkit for creating scalable brand assets.",
+        color: "#FFC400",
+      },
+      {
+        icon: <BrandingMenuIcon color="#FFC400" />,
+        title: "Pantone",
+        description:
+          "Color matching system for accurate brand color reproduction across media.",
+        color: "#FFC400",
+      },
+      {
+        icon: <BrandingMenuIcon color="#FFC400" />,
+        title: "Adobe Fonts",
+        description:
+          "Typography library for selecting and licensing brand fonts.",
+        color: "#FFC400",
+      },
+    ],
     content: `
       <h2>Build a Brand That Stands Out</h2>
       <p>Your brand is more than just a logo—it's the complete experience your customers have with your company. We create comprehensive brand identities that tell your story and connect with your audience.</p>
