@@ -23,7 +23,7 @@ export function useStaggerReveal(
     () => {
       if (!ref.current) return;
 
-      gsap.from(ref.current.children, {
+      const animation = gsap.from(ref.current.children, {
         opacity: options.opacity ?? 0,
         y: options.y ?? 40,
         x: options.x ?? 0,
@@ -38,6 +38,11 @@ export function useStaggerReveal(
           once: options.once ?? true,
         },
       });
+
+      return () => {
+        animation.scrollTrigger?.kill();
+        animation.kill();
+      };
     },
     {
       scope: ref,
@@ -53,7 +58,7 @@ export function useAnimation(
     () => {
       if (!ref.current) return;
 
-      gsap.from(ref.current, {
+      const animation = gsap.from(ref.current, {
         opacity: options.opacity ?? 0,
         y: options.y ?? 40,
         x: options.x ?? 0,
@@ -66,6 +71,11 @@ export function useAnimation(
           once: options.once ?? true,
         },
       });
+
+      return () => {
+        animation.scrollTrigger?.kill();
+        animation.kill();
+      };
     },
     {
       scope: ref,

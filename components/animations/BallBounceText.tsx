@@ -82,6 +82,10 @@ const BallBounceText: FC<BallBounceTextProps> = ({
         duration: 0.2,
         ease: "power1.inOut",
       });
+
+    return () => {
+      tl.kill();
+    };
   }, []);
 
   return (

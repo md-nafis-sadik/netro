@@ -35,6 +35,8 @@ const WorkCultureHome = () => {
     "Netro Systems fosters innovation, collaboration, diversity, and growth, creating impactful software solutions in a vibrant, inclusive culture.";
 
   useLayoutEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    
     // Initialize cards first
     initializeCards();
 
@@ -45,7 +47,12 @@ const WorkCultureHome = () => {
     setupCardStackAnimation();
 
     return () => {
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+      // Only kill ScrollTriggers created in this component
+      ScrollTrigger.getAll().forEach((trigger) => {
+        if (trigger.vars.trigger && containerRef.current?.contains(trigger.vars.trigger as Element)) {
+          trigger.kill();
+        }
+      });
     };
   }, []);
 

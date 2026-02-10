@@ -37,6 +37,10 @@ const NumberCounter = ({ value, duration = 2, className = "" }: Props) => {
     );
 
     if (el.current) observer.observe(el.current);
+
+    return () => {
+      observer.disconnect();
+    };
   }, [value, duration, hasAnimated]);
 
   const counter = { val: 0 };

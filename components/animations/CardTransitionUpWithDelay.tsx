@@ -25,7 +25,7 @@ const CardTransitionUpWithDelay: React.FC<CardTransitionUpWithDelayProps> = ({
 
   useGSAP(() => {
     if (cardRef.current) {
-      gsap.fromTo(
+      const animation = gsap.fromTo(
         cardRef.current,
         {
           y: 400,
@@ -51,6 +51,11 @@ const CardTransitionUpWithDelay: React.FC<CardTransitionUpWithDelayProps> = ({
           },
         }
       );
+
+      return () => {
+        animation.scrollTrigger?.kill();
+        animation.kill();
+      };
     }
   }, [index]);
 

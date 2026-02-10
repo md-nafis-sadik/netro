@@ -105,6 +105,11 @@ export default function DropupNavigationMenu({
         ease: "power2.out",
       },
     );
+
+    return () => {
+      tl.current?.kill();
+      transitionTl.current?.kill();
+    };
   }, []);
 
   useEffect(() => {

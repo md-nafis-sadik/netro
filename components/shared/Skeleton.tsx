@@ -17,12 +17,16 @@ const Skeleton: React.FC<SkeletonProps> = ({
 
   useGSAP(() => {
     if (shimmerRef.current) {
-      gsap.to(shimmerRef.current, {
+      const animation = gsap.to(shimmerRef.current, {
         x: "200%",
         duration: 1.5,
         repeat: -1,
         ease: "linear",
       });
+
+      return () => {
+        animation.kill();
+      };
     }
   }, []);
 

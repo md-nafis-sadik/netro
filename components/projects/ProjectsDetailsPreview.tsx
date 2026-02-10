@@ -76,6 +76,15 @@ const ProjectsDetailsPreview = ({ project }: any) => {
           }
         });
       }, 100);
+
+      // Cleanup function
+      return () => {
+        ScrollTrigger.getAll().forEach((trigger) => {
+          if (cardsRef.current?.contains(trigger.vars.trigger as Element)) {
+            trigger.kill();
+          }
+        });
+      };
     },
     { scope: cardsRef },
   );

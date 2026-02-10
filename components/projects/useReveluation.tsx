@@ -98,28 +98,40 @@ export const useReveluation = () => {
 
       // Button hover animation
       const button = document.querySelector(".revolution-button");
-      if (button) {
-        button.addEventListener("mouseenter", () => {
-          gsap.to(".ai-icon-wrapper", {
-            rotation: 360,
-            scale: 1.1,
-            duration: 0.6,
-            ease: "power2.out",
-          });
+      
+      const handleMouseEnter = () => {
+        gsap.to(".ai-icon-wrapper", {
+          rotation: 360,
+          scale: 1.1,
+          duration: 0.6,
+          ease: "power2.out",
         });
+      };
 
-        button.addEventListener("mouseleave", () => {
-          gsap.to(".ai-icon-wrapper", {
-            rotation: 0,
-            scale: 1,
-            duration: 0.4,
-            ease: "power2.out",
-          });
+      const handleMouseLeave = () => {
+        gsap.to(".ai-icon-wrapper", {
+          rotation: 0,
+          scale: 1,
+          duration: 0.4,
+          ease: "power2.out",
         });
+      };
+
+      if (button) {
+        button.addEventListener("mouseenter", handleMouseEnter);
+        button.addEventListener("mouseleave", handleMouseLeave);
       }
     }, sectionRef);
 
-    return () => ctx.revert();
+    return () => {
+      const button = document.querySelector(".revolution-button");
+      if (button) {
+        // Remove event listeners using cloned selectors
+        const clone = button.cloneNode(true);
+        button.parentNode?.replaceChild(clone, button);
+      }
+      ctx.revert();
+    };
   }, []);
 
   return {
