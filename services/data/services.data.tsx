@@ -318,6 +318,8 @@ export const servicesData: readonly IService[] = Object.freeze([
     metaTitle: "AI-Powered Development Services | Netro Systems",
     metaDescription:
       "Integrate AI into your products with our end-to-end AI development services. Custom ML models, NLP, computer vision, and more.",
+    atGlanceTitle: "SERVICE AT A GLANCE",
+    atGlanceDescription: "AI-Powered Software Engineering is not a generic software engineering service what we are offering. It&apos;s a complete AI solution for your business or startups.",
     atGlance: [
       {
         title: "DATA, MODELS & INFRASTRUCTURE",
@@ -571,98 +573,170 @@ export const servicesData: readonly IService[] = Object.freeze([
     challengesSolution: {
       title: "CHALLENGES AND SOLUTION",
       description:
-        "Building SaaS products that scale from MVP to enterprise without painful rewrites.",
+        "Turning ideas into reliable, scalable, and compliant software solutions.",
       challenges: [
         {
-          title: "Slow Time to Market",
+          title: "Overbuilding Before Validation",
           description:
-            "We validate ideas quickly with MVPs that can evolve into production-grade platforms.",
+            "Many startups invest heavily before proving demand.",
         },
         {
-          title: "Technical Debt from Day One",
+          title: "Scaling Issues Later",
           description:
-            "We architect solutions properly from the start, avoiding costly rewrites later.",
+            "Poor architecture leads to performance bottlenecks.",
         },
         {
-          title: "Poor User Experience",
+          title: "Time-to-Market Pressure",
           description:
-            "Our UX-first approach ensures intuitive interfaces that users love and adopt quickly.",
+            "Delays can cost market opportunities.",
         },
         {
-          title: "Scaling Issues",
+          title: "User Adoption & Retention",
           description:
-            "We build with scalability in mind, so your product grows smoothly with your user base.",
-        },
-        {
-          title: "Quality & Reliability",
-          description:
-            "Comprehensive QA and testing ensure your product works flawlessly under real-world conditions.",
-        },
-        {
-          title: "Security Vulnerabilities",
-          description:
-            "We implement security best practices and compliance requirements from day one.",
+            "Even good products fail without great UX.",
         },
       ],
     },
-        deliverablesTitle: "WHAT WE DELIVER",
+    deliverablesTitle: "WHAT WE DELIVER",
     deliverablesDescription:
       "Our services cover both greenfield AI builds and augmentation of existing platforms.",
     deliverables: [
       {
-        title: "AI Application Development",
-        description: "We design and build AI-native applications such as:",
+        title: "MVP & SaaS Product Development",
+        description: "We design and build scalable SaaS products and MVPs that move from idea to launch quickly while ensuring long-term technical stability.",
         bgColor: "#97C0FF",
         textColor: "#000000",
         features: [
-          "AI copilots & productivity agents",
-          "Enterprise search & knowledge systems",
-          "Recommendation & personalization engines",
-          "Model orchestration & agent design",
-          "Retrieval-Augmented Generation (RAG)",
-          "Predictive analytics & forecasting models",
+          "Rapid MVP development & validation",
+          "SaaS web app and dashboard development",
+          "Multi-tenant SaaS architecture design",
+          "Subscription, billing & user management",
+          "API-first backend systems",
+          "Scalable cloud deployment",
           "Document & contract intelligence (OCR + NLP)",
-          "AI chat & voice contact automation",
-          "Vector databases & embeddings",
-          "Knowledge graph integration",
         ],
       },
       {
-        title: "AI Integration for Existing Software",
+        title: "SaaS Integration & Platform Expansion",
         description:
-          "We integrate AI into CRMs, ERPs, SaaS platforms, and proprietary systems without requiring full rewrites.",
+          "We extend existing platforms or new SaaS products with integrations, automation, and ecosystem connectivity for seamless growth.",
         bgColor: "#FFA77C",
         textColor: "#000000",
         features: [
-          "AI onboarding flows inside existing products",
-          "Automated ticket classification for support tools",
-          "AI-generated insights inside analytics dashboards",
-          "Intelligent recommendations for e-commerce platforms",
-          "REST / GraphQL extension layers",
+          "Third-party API integrations",
+          "Payment gateway & subscription systems",
+          "CRM, analytics & automation integrations",
+          "Microservices & modular architecture",
+          "Performance optimization & scaling",
           "Microservices with async event buses",
           "Multi-model routing & fallback patterns",
-          "Cloud-hosted MLOps pipelines (Azure, AWS, GCP)",
-          "BYOM (Bring-Your-Own-Model) or vendor LLMs",
+          "Cloud-hosted pipelines (Azure, AWS, GCP)",
         ],
       },
       {
-        title: "Autonomous & Multi-Agent Systems",
+        title: "Cloud, Security & Continuous Evolution",
         description:
-          "We build systems that execute tasks end-to-end with minimal human input:",
+          "We ensure your SaaS product stays secure, reliable, and ready to scale with ongoing optimization and infrastructure support.",
         bgColor: "#7FFBAF",
         textColor: "#000000",
         features: [
-          "DevOps task automation",
-          "Procurement agents",
-          "HR and recruiting automation",
+          "Cloud-native deployment & DevOps",
+          "CI/CD pipeline setup",
+          "Security, compliance & access control",
           "Data enrichment & research agents",
-          "Email + document triage",
-          "Compliance & auditing automation",
-          "Task decomposition & planning",
-          "Multi-agent orchestration frameworks",
-          "Latency-aware tool calling",
-          "Workflow/state persistence",
+          "Monitoring, logging & reliability engineering",
+          "Feature enhancements & iteration support",
+          "Long-term product scaling strategy",
         ],
+      },
+    ],
+    atGlanceTitle: "SERVICE AT A GLANCE",
+    atGlanceDescription: "We help startups and enterprises move from concept to cloud-ready SaaS platforms with speed, clarity, and confidence.",
+    atGlance: [
+      {
+        title: "PRODUCT STRATEGY & MVP DESIGN",
+        description: "Models & Foundation Model Support",
+        items: [
+          "We help you build the right product from day one:",
+          "MVP scoping & feature prioritization",
+          "Product-market fit validation",
+          "User journey mapping",
+          "Rapid prototyping & wireframing",
+          "UX-first SaaS architecture planning",
+          "Business model & monetization strategy",
+        ]
+        ,
+        bgColor: "#3654FF",
+        textColor: "#FFFFFF",
+        image: images.atAGlance7,
+      },
+      {
+        title: "APPLICATION ARCHITECTURE",
+        description: "",
+        items: [
+          "We design scalable SaaS systems built for growth:",
+          "Multi-tenant SaaS architecture design",
+          "Modular, scalable backend systems",
+          "API-first development approach",
+          "Microservices or monolith strategy guidance",
+          "Performance optimization planning",
+          "Future scaling considerations built-in",
+        ]
+        ,
+        bgColor: "#FFC400",
+        textColor: "#000000",
+        image: images.atAGlance1,
+      },
+      {
+        title: "FRONTEND & USER EXPERIENCE",
+        description: "",
+        items: [
+          "We craft modern SaaS experiences users love:",
+          "Responsive SaaS dashboards & portals",
+          "Modern web app interfaces",
+          "Intuitive onboarding experiences",
+          "Accessibility-focused design",
+          "Performance-driven UI development",
+          "Cross-device compatibility",
+        ]
+        ,
+        bgColor: "#00DE71",
+        textColor: "#FFFFFF",
+        image: images.atAGlance4,
+      },
+      {
+        title: "BACKEND, APIs & INTEGRATIONS",
+        description: "",
+        items: [
+          "We build secure, integration-ready SaaS backends:",
+          "Secure backend infrastructure",
+          "REST & GraphQL API development",
+          "Third-party integrations (payments, CRM, analytics)",
+          "Authentication & authorization systems",
+          "Workflow automation integrations",
+          "Real-time data handling where needed",
+        ]
+        ,
+        bgColor: "#FFA77C",
+        textColor: "#000000",
+        image: images.atAGlance9,
+      },
+      {
+        title: "CLOUD, DEVOPS & DEPLOYMENT",
+        description: "",
+        items: [
+          "We build secure, integration-ready SaaS backends:",
+          "Secure backend infrastructure",
+          "REST & GraphQL API development",
+          "Third-party integrations (payments, CRM, analytics)",
+          "Authentication & authorization systems",
+          "Workflow automation integrations",
+          "Real-time data handling where needed",
+        ]
+        ,
+        bgColor: "#F1571B",
+        textColor: "#FFFFFF",
+        image: images.atAGlance8,
       },
     ],
     content: `

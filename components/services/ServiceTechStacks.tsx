@@ -13,9 +13,11 @@ interface TechStack {
 
 interface ServiceTechStacksProps {
   stacks: TechStack[];
+  techStacksTitle?: string;
+  techStacksDescription?: string;
 }
 
-const ServiceTechStacks = ({ stacks }: ServiceTechStacksProps) => {
+const ServiceTechStacks = ({ stacks, techStacksTitle, techStacksDescription }: ServiceTechStacksProps ) => {
   const sectionRef = useAppearanceAnimation(".animate-tech", {
     x: 100,
     y: 0,

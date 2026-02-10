@@ -44,7 +44,7 @@ const ServicesOffer = ({
         />
         <div className="w-full overflow-hidden mt-10">
           <div className="w-full" ref={emblaRef}>
-            <div className="w-full min-h-fit flex flex-row gap-6 md:gap-10">
+            <div className="w-full min-h-fit flex flex-row gap-4 md:gap-6">
               {data?.map((item: any, index: number) => (
                 <div
                   className={cn(

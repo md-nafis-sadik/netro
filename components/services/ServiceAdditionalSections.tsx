@@ -16,7 +16,7 @@ const ServiceAdditionalSections = ({ slug }: ServiceAdditionalSectionsProps) => 
   return (
     <>
       {service.atGlance && service.atGlance.length > 0 && (
-        <ServiceAtGlance items={service.atGlance} />
+        <ServiceAtGlance items={service.atGlance} title={service.atGlanceTitle} description={service.atGlanceDescription} />
       )}
       {service.techStacks && service.techStacks.length > 0 && (
         <ServiceTechStacks stacks={service.techStacks} />

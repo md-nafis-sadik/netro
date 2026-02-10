@@ -8,9 +8,11 @@ import { ServiceAtGlanceItem } from "@/services/types";
 
 interface ServiceAtGlanceProps {
   items: ServiceAtGlanceItem[];
+  title: string;
+  description: string;
 }
 
-const ServiceAtGlance = ({ items }: ServiceAtGlanceProps) => {
+const ServiceAtGlance = ({ items, title, description }: ServiceAtGlanceProps ) => {
   const sectionRef = useAppearanceAnimation(".animate-glance", {
     y: 60,
     opacity: 0,
@@ -62,10 +64,8 @@ const ServiceAtGlance = ({ items }: ServiceAtGlanceProps) => {
       <div className="container">
         {/* Header */}
         <DescriptionHeader
-          title="SERVICE AT A GLANCE"
-          text="AI-Powered Software Engineering is not a generic software
-            engineering service what we are offering. It&apos;s a complete AI
-            solution for your business or startups."
+          title={title}
+          text={description}
           descriptionClassName="max-w-full"
           className="mb-8 lg:mb-14"
         />
