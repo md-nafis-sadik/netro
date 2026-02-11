@@ -1465,7 +1465,7 @@ export const servicesData: readonly IService[] = Object.freeze([
         image: images.atAGlance5,
       },
     ],
-    
+
     content: `
     <h2>Accelerate Development with AI-Powered Coding Assistance</h2>
     <p>Vibe Coding Assistance combines cutting-edge AI technology with proven development practices to help teams build faster without sacrificing quality. Whether you're validating an MVP or scaling production systems, our AI-powered approach keeps you moving at the speed of innovation.</p>
@@ -1487,428 +1487,62 @@ export const servicesData: readonly IService[] = Object.freeze([
   },
   {
     _id: "service-05",
-    title: "SQA, Deployment & Support",
+    title: "SQA, Deployment",
     slug: "sqa-deployment-support",
     subtitle: "We don't let you even after delivery",
-    descTitle: "SQA, Deployment & Support",
+    descTitle: "SQA, Deployment",
     description:
-      "Good design isn't just how a product looks. It's how it behaves, how easily users move through it, and how confidently they achieve their goals. We design user experiences that are intuitive, scalable, and aligned with real business outcomes.",
+      "Great software isn’t just built—it’s tested, deployed, monitored, and supported in the real world. We help teams make sure their applications are reliable, secure, and ready for growth long after the first release.",
     image: images.service5,
-    featuredImage: images.service5,
+    featuredImage: images.sqaDep,
     icon: <SQAMenuIcon color="#FFC400" />,
     link: "/services/sqa-deployment-support",
     tags: ["UI/UX Design", "Product Design", "User Research", "Prototyping"],
     points: [
-      "User-centered design approach",
-      "Data-driven UX optimization",
-      "Scalable design systems",
+      "24/7 support and maintenance",
+      "Our deployment ensures maximum uptime",
+      "SQA report of your software solution",
     ],
     servicesOffer: {
       title: "What we offer",
       description:
-        "From user research to design systems, we create intuitive experiences that users love and that drive business results:",
+        "Vibe Coding Assistance goes beyond code generation — it combines AI-powered development workflows, intelligent tooling, and human expertise to accelerate software delivery while maintaining code quality and engineering standards.",
       data: [
         {
-          title: "User Research",
-          desc: "Understand your users deeply",
-          link: "/services/ui-ux-design",
-          featuredImage: images.serviceOffer1,
+          title: "Faster Development",
+          desc: "Faster development cycles",
+          link: "/services/vibe-coding-assistance",
+          featuredImage: images.serviceOffer13,
         },
         {
-          title: "Wireframing & IA",
-          desc: "Structure content for clarity",
-          link: "/services/ui-ux-design",
-          featuredImage: images.serviceOffer2,
+          title: "Clean Code",
+          desc: "Reduced developer fatigue and Clean code",
+          link: "/services/vibe-coding-assistance",
+          featuredImage: images.serviceOffer14,
         },
         {
-          title: "UI Design",
-          desc: "Create beautiful, on-brand interfaces",
-          link: "/services/ui-ux-design",
-          featuredImage: images.serviceOffer3,
+          title: "Engineering Visibility",
+          desc: "Better engineering visibility",
+          link: "/services/vibe-coding-assistance",
+          featuredImage: images.serviceOffer15,
         },
         {
-          title: "Prototyping",
-          desc: "Test concepts before development",
-          link: "/services/ui-ux-design",
-          featuredImage: images.serviceOffer4,
+          title: "AI Support",
+          desc: "AI-assisted coding & debugging support",
+          link: "/services/vibe-coding-assistance",
+          featuredImage: images.serviceOffer16,
         },
         {
-          title: "Design Systems",
-          desc: "Build scalable design foundations",
-          link: "/services/ui-ux-design",
+          title: "Documentation",
+          desc: "Automated documentation",
+          link: "/services/vibe-coding-assistance",
           featuredImage: images.serviceOffer5,
         },
         {
-          title: "Usability Testing",
-          desc: "Validate designs with real users",
-          link: "/services/ui-ux-design",
-          featuredImage: images.serviceOffer6,
-        },
-      ],
-    },
-    relatedWorks: {
-      title: "Related Works",
-    },
-    challengesSolution: {
-      title: "CHALLENGES AND SOLUTION",
-      description:
-        "Designing intuitive user experiences that drive engagement and business results.",
-      challenges: [
-        {
-          title: "Poor User Adoption",
-          description:
-            "We conduct user research to understand needs and design experiences users love.",
-        },
-        {
-          title: "Confusing Navigation",
-          description:
-            "Clear information architecture ensures users find what they need quickly.",
-        },
-        {
-          title: "Inconsistent Design",
-          description:
-            "Design systems create consistency across your product and speed up development.",
-        },
-        {
-          title: "Low Conversion Rates",
-          description:
-            "Data-driven UX optimization improves key metrics and business outcomes.",
-        },
-        {
-          title: "Accessibility Issues",
-          description:
-            "WCAG-compliant designs ensure your product is usable by everyone.",
-        },
-        {
-          title: "Developer Handoff Problems",
-          description:
-            "Detailed specs and design systems ensure pixel-perfect implementation.",
-        },
-      ],
-    },
-    commitment: {
-      title: "Our commitment",
-      description:
-        "As an organization we are committed to deliver best practiced software solution to you. It's not only quality we maintain, It's commitment we have. Always!",
-      cards: [
-        {
-          title: "Communication",
-          description:
-            "Our dedicated customer relationship managers will always keep you aware about your project and progress.",
-          image: images.belowCard,
-          bgColor: "#3654FF",
-          textColor: "#86C9FF",
-          imageAlt: "Communication notification",
-        },
-        {
-          title: "We don't hide",
-          description:
-            "We never lie or hide truth about development. We disclose every details about code structure and your engineering barriers.",
-          image: images.belowContent,
-          bg: images.belowBg1,
-          bgColor: "#86C9FF",
-          textColor: "#3654FF",
-          imageAlt: "Code transparency",
-        },
-        {
-          title: "Growth Focused UX",
-          description:
-            "Our Growth focused UX ensures maximum scalability and ensures growth. We always surprises client with growth and result not with buggy UI at delivery!",
-          image: images.belowUser,
-          bgColor: "#86C9FF",
-          textColor: "#3654FF",
-          imageAlt: "UX Designer profile",
-        },
-        {
-          innerText: "Trust Netro Systems <br> because we care your money!",
-          bg: images.belowBg,
-          bgColor: "#3654FF",
-          textColor: "#86C9FF",
-        },
-      ],
-    },
-    deliverablesTitle: "WHAT WE DELIVER",
-    deliverablesDescription:
-      "Our design services create user experiences that are beautiful, intuitive, and drive measurable business outcomes.",
-    deliverables: [
-      {
-        title: "User Research & Strategy",
-        description: "We uncover user needs and behaviors to inform design decisions with data-driven insights.",
-        bgColor: "#97C0FF",
-        textColor: "#000000",
-        features: [
-          "User interviews and surveys",
-          "Persona development",
-          "User journey mapping",
-          "Competitive analysis",
-          "Analytics review and insights",
-          "Heuristic evaluations",
-          "Design strategy and roadmap",
-          "Stakeholder workshops",
-        ],
-      },
-      {
-        title: "UI/UX Design & Prototyping",
-        description:
-          "We design beautiful, functional interfaces and validate them through interactive prototypes and testing.",
-        bgColor: "#FFA77C",
-        textColor: "#000000",
-        features: [
-          "Information architecture",
-          "Low and high-fidelity wireframes",
-          "Visual design and UI mockups",
-          "Interactive prototypes",
-          "Micro-interactions and animations",
-          "Responsive design for all devices",
-          "Accessibility compliance (WCAG)",
-          "Usability testing and iteration",
-        ],
-      },
-      {
-        title: "Design Systems & Handoff",
-        description:
-          "We create scalable design systems and ensure pixel-perfect implementation through detailed developer handoff.",
-        bgColor: "#7FFBAF",
-        textColor: "#000000",
-        features: [
-          "Component libraries",
-          "Design tokens and variables",
-          "Style guides and documentation",
-          "Pattern libraries",
-          "Icon sets and illustrations",
-          "Developer handoff specifications",
-          "Design system governance",
-          "Ongoing design support",
-        ],
-      },
-    ],
-    atGlanceTitle: "SERVICE AT A GLANCE",
-    atGlanceDescription: "We follow a user-centered design process that combines research, creativity, and validation to deliver exceptional experiences.",
-    atGlance: [
-      {
-        title: "RESEARCH & DISCOVERY",
-        description: "Understanding users and business goals",
-        items: [
-          "We start with deep user understanding:",
-          "User interviews and surveys",
-          "Analytics and data analysis",
-          "Competitive research",
-          "Persona development",
-          "Journey mapping",
-          "Pain point identification",
-        ],
-        bgColor: "#3654FF",
-        textColor: "#FFFFFF",
-        image: images.atAGlance1,
-      },
-      {
-        title: "INFORMATION ARCHITECTURE",
-        description: "",
-        items: [
-          "We structure content for clarity:",
-          "Content inventory and audit",
-          "Site mapping and navigation",
-          "User flow diagrams",
-          "Content prioritization",
-          "Taxonomy and labeling",
-          "Card sorting exercises",
-        ],
-        bgColor: "#FFC400",
-        textColor: "#000000",
-        image: images.atAGlance2,
-      },
-      {
-        title: "WIREFRAMING & PROTOTYPING",
-        description: "",
-        items: [
-          "We visualize concepts quickly:",
-          "Low-fidelity sketches",
-          "High-fidelity wireframes",
-          "Interactive prototypes",
-          "User flow prototypes",
-          "Rapid iteration cycles",
-          "Stakeholder feedback loops",
-        ],
-        bgColor: "#00DE71",
-        textColor: "#FFFFFF",
-        image: images.atAGlance3,
-      },
-      {
-        title: "VISUAL DESIGN",
-        description: "",
-        items: [
-          "We create beautiful, on-brand UI:",
-          "Visual design exploration",
-          "Color and typography systems",
-          "Component design",
-          "Responsive layouts",
-          "Iconography and illustrations",
-          "Micro-interactions",
-        ],
-        bgColor: "#FFA77C",
-        textColor: "#000000",
-        image: images.atAGlance4,
-      },
-      {
-        title: "TESTING & VALIDATION",
-        description: "",
-        items: [
-          "We validate with real users:",
-          "Usability testing sessions",
-          "A/B testing setup",
-          "Heatmaps and analytics",
-          "Accessibility audits",
-          "Design iteration based on feedback",
-          "Post-launch optimization",
-        ],
-        bgColor: "#F1571B",
-        textColor: "#FFFFFF",
-        image: images.atAGlance5,
-      },
-    ],
-    techStacks: [
-      {
-        icon: <UIMenuIcon color="#FFC400" />,
-        title: "Figma",
-        description:
-          "Our primary design tool for UI design, prototyping, and collaborative design work.",
-        color: "#FFC400",
-      },
-      {
-        icon: <UIMenuIcon color="#FFC400" />,
-        title: "Adobe XD",
-        description:
-          "Vector-based design tool for creating prototypes and design systems.",
-        color: "#FFC400",
-      },
-      {
-        icon: <UIMenuIcon color="#FFC400" />,
-        title: "Sketch",
-        description:
-          "Digital design toolkit for creating high-fidelity interfaces and assets.",
-        color: "#FFC400",
-      },
-      {
-        icon: <UIMenuIcon color="#FFC400" />,
-        title: "InVision",
-        description:
-          "Prototyping and collaboration platform for user testing and stakeholder feedback.",
-        color: "#FFC400",
-      },
-      {
-        icon: <UIMenuIcon color="#FFC400" />,
-        title: "Miro",
-        description:
-          "Collaborative whiteboard for workshops, journey mapping, and brainstorming.",
-        color: "#FFC400",
-      },
-      {
-        icon: <UIMenuIcon color="#FFC400" />,
-        title: "Adobe Creative Suite",
-        description:
-          "Photoshop and Illustrator for advanced graphics and image editing.",
-        color: "#FFC400",
-      },
-      {
-        icon: <UIMenuIcon color="#FFC400" />,
-        title: "Principle",
-        description:
-          "Animation tool for designing complex micro-interactions and transitions.",
-        color: "#FFC400",
-      },
-      {
-        icon: <UIMenuIcon color="#FFC400" />,
-        title: "Maze",
-        description:
-          "User testing platform for rapid usability testing and feedback collection.",
-        color: "#FFC400",
-      },
-    ],
-    content: `
-      <h2>Design That Drives Results</h2>
-      <p>Great design is invisible—it just works. Our product design team creates intuitive, beautiful interfaces that users love and that drive measurable business results.</p>
-      
-      <h3>Our Design Process:</h3>
-      <ul>
-        <li><strong>User Research:</strong> Understand your users through interviews, surveys, and analytics</li>
-        <li><strong>Information Architecture:</strong> Structure content and features in a way that makes sense</li>
-        <li><strong>Wireframing:</strong> Create low-fidelity layouts to test concepts quickly</li>
-        <li><strong>UI Design:</strong> Design beautiful, on-brand interfaces with attention to detail</li>
-        <li><strong>Prototyping:</strong> Build interactive prototypes for testing and validation</li>
-        <li><strong>Usability Testing:</strong> Validate designs with real users before development</li>
-        <li><strong>Design Systems:</strong> Create scalable design systems for consistency across products</li>
-      </ul>
-      
-      <h3>What Sets Us Apart:</h3>
-      <p>We don't just make things look pretty—we solve problems. Every design decision is backed by research, tested with users, and measured against business goals. We work closely with developers to ensure designs are implemented pixel-perfect.</p>
-    `,
-    metaTitle: "UI/UX Design & Product Design Services | Netro Systems",
-    metaDescription:
-      "Expert UI/UX design services. Create intuitive, beautiful products that users love and that drive business results.",
-  },
-  {
-    _id: "service-06",
-    title: "UI/UX Design",
-    slug: "ui-ux-design",
-    subtitle: "Years of expertise and proven portfolio",
-    descTitle: "UI/UX Design",
-    description:
-      "Great apps aren’t just about features—they’re about performance, usability, and reliability. We design and build mobile and web applications that feel intuitive, scale smoothly with tech stacks.",
-    image: images.service6,
-    featuredImage: images.appDev,
-    icon: <UIMenuIcon color="#FF7036" />,
-    link: "/services/ui-ux-design",
-    tags: [
-      "Mobile Apps",
-      "iOS Development",
-      "Android Development",
-      "Cross-Platform",
-    ],
-    points: [
-      "Clean architecture followed",
-      "Works with any of your platform",
-      "Scalable that brings piece of mind",
-    ],
-    servicesOffer: {
-      title: "What we offer",
-      description:
-        "From user research to design systems, we create intuitive experiences that users love and that drive business results:",
-      data: [
-        {
-          title: "User Research",
-          desc: "Understand your users deeply",
-          link: "/services/ui-ux-design",
-          featuredImage: images.serviceOffer1,
-        },
-        {
-          title: "Wireframing & IA",
-          desc: "Structure content for clarity",
-          link: "/services/ui-ux-design",
-          featuredImage: images.serviceOffer2,
-        },
-        {
-          title: "UI Design",
-          desc: "Create beautiful, on-brand interfaces",
-          link: "/services/ui-ux-design",
-          featuredImage: images.serviceOffer3,
-        },
-        {
-          title: "Prototyping",
-          desc: "Test concepts before development",
-          link: "/services/ui-ux-design",
-          featuredImage: images.serviceOffer4,
-        },
-        {
-          title: "Design Systems",
-          desc: "Build scalable design foundations",
-          link: "/services/ui-ux-design",
-          featuredImage: images.serviceOffer5,
-        },
-        {
-          title: "Usability Testing",
-          desc: "Validate designs with real users",
-          link: "/services/ui-ux-design",
-          featuredImage: images.serviceOffer6,
+          title: "Optimization",
+          desc: "Continuous optimization",
+          link: "/services/vibe-coding-assistance",
+          featuredImage: images.serviceOffer17,
         },
       ],
     },
@@ -1985,48 +1619,62 @@ export const servicesData: readonly IService[] = Object.freeze([
     },
     deliverablesTitle: "WHAT WE DELIVER",
     deliverablesDescription:
-      "Our mobile app development services cover the complete lifecycle from design to deployment and beyond.",
+      "Our AI-powered coding assistance transforms how you build software, from rapid prototyping to production-ready applications.",
     deliverables: [
       {
-        title: "Application Development",
-        description: "We design and build modern, scalable applications tailored for performance, usability, and long-term maintainability.",
-        bgColor: "#97C0FF",
-        textColor: "#000000",
-        features: [
-          "Custom web & mobile application development",
-          "Scalable frontend and backend architecture",
-          "REST & GraphQL API development",
-          "Cross-platform app development frameworks",
-          "Secure authentication & user management",
-          "Performance optimization and scalability planning",
-        ],
-      },
-      {
-        title: "Platform Integration & Modernization",
-        description: "We enhance existing applications with modern integrations, automation, and architectural improvements without disrupting business operations.",
+        title: "AI Integration for Development Workflows",
+        description: "We integrate AI into your existing engineering ecosystem without disrupting your tools, pipelines, or processes.",
         bgColor: "#FFA77C",
         textColor: "#000000",
         features: [
-          "Third-party API & system integrations",
-          "Legacy application modernization",
-          "Cloud migration & containerization",
-          "Microservices architecture adoption",
-          "Data synchronization & middleware solutions",
-          "Performance tuning and system optimization",
+          "IDE, repo & CI/CD integration support",
+          "Automated testing & troubleshooting assistance",
+          "AI-powered ticket triage & issue classification",
+          "Documentation and knowledge base automation",
+          "DevOps workflow augmentation",
+          "Secure integration with internal codebases",
+          "AI-assisted release management insights",
+          "Multi-model AI routing for coding tasks",
+          "Cloud or on-prem deployment flexibility",
+          "Developer collaboration enhancement tools",
         ],
       },
       {
-        title: "Cloud, DevOps & Continuous Delivery",
-        description: "We ensure applications remain secure, reliable, and continuously evolving with modern DevOps practices and cloud-native infrastructure.",
+        title: "Autonomous Coding & Engineering Assistance",
+        description:
+          "We build intelligent coding support systems that proactively assist teams across the entire software development lifecycle.",
         bgColor: "#7FFBAF",
         textColor: "#000000",
         features: [
-          "CI/CD pipeline implementation",
-          "Cloud-native deployment (AWS, Azure, GCP)",
-          "Containerization with Docker & Kubernetes",
-          "Monitoring, logging & observability setup",
-          "Security best practices & compliance readiness",
-          "Continuous updates, scaling & maintenance",
+          "Automated code analysis & improvement suggestions",
+          "Intelligent research & code discovery agents",
+          "Continuous learning from your codebase",
+          "Proactive bug detection & optimization hints",
+          "Workflow automation for repetitive dev tasks",
+          "Knowledge persistence across projects",
+          "Engineering decision-support insights",
+          "AI-assisted architectural recommendations",
+          "Latency-aware developer tooling",
+          "Human-AI collaborative coding environments",
+        ],
+      },
+      {
+        title: "AI-Powered Developer Productivity",
+        description:
+          "We accelerate software development by embedding AI assistance directly into coding workflows and developer environments.",
+        bgColor: "#97C0FF",
+        textColor: "#000000",
+        features: [
+          "AI-assisted coding, debugging & refactoring",
+          "Context-aware code suggestions aligned with your stack",
+          "Intelligent documentation generation",
+          "Faster developer onboarding & knowledge transfer",
+          "AI-assisted code reviews & quality checks",
+          "Productivity analytics & engineering insights",
+          "Coding standards enforcement automation",
+          "Developer workflow optimization",
+          "Reduced technical debt through smart refactoring",
+          "Continuous developer experience improvements",
         ],
       },
     ],
@@ -2034,76 +1682,75 @@ export const servicesData: readonly IService[] = Object.freeze([
     atGlanceDescription: "Mobile App Development today requires more than just coding — it demands performance, seamless user experience, scalability, and platform reliability.",
     atGlance: [
       {
-        title: "APPLICATION ARCHITECTURE",
-        description: "Mobile App Development today requires more than just coding — it demands performance, seamless user experience, scalability, and platform reliability.",
+        title: "AI-ASSISTED DEVELOPMENT WORKFLOWS",
+        description: "",
         items: [
-          "Native & cross-platform mobile architecture",
-          "Scalable mobile backend integration",
-          "Offline-first and performance-driven design",
-          "API-first mobile infrastructure",
-          "Secure app session and data handling",
-          "Future-ready scalability planning",
+          "AI-powered code completion & generation",
+          "Intelligent refactoring and optimization",
+          "Automated documentation assistance",
+          "Rapid prototyping support",
+          "Context-aware coding suggestions",
+          "Developer productivity optimization",
         ],
         bgColor: "#3654FF",
         textColor: "#FFFFFF",
-        image: images.atAGlance6,
+        image: images.atAGlance3,
       },
       {
-        title: "DATA LAYER & STORAGE",
+        title: "CODE QUALITY & ENGINEERING STANDARDS",
         description: "",
         items: [
-          "Mobile-friendly database design",
-          "Local storage & cloud synchronization",
-          "Secure user data handling",
-          "Real-time data integration",
-          "Performance caching strategies",
-          "Analytics-ready mobile data pipelines",
+          "Automated code reviews and linting",
+          "Architecture pattern enforcement",
+          "Secure coding best practices",
+          "Code maintainability improvements",
+          "Technical debt reduction strategies",
+          "Continuous code quality monitoring",
         ],
         bgColor: "#FFC400",
         textColor: "#000000",
         image: images.atAGlance1,
       },
       {
-        title: "FRAMEWORKS & DEVELOPMENT STACK",
+        title: "DEVELOPMENT TOOLING & INTEGRATIONS",
         description: "",
         items: [
-          "Native development (Swift, Kotlin)",
-          "Cross-platform frameworks (Flutter, React Native)",
-          "Mobile API integration & SDK development",
-          "UI performance optimization frameworks",
-          "Push notification & messaging integration",
-          "Modular app development standards",
+          "AI coding assistants integration",
+          "IDE and DevOps tool connectivity",
+          "Repository and version control automation",
+          "API development assistance",
+          "Testing automation integration",
+          "Workflow orchestration tools",
         ],
         bgColor: "#00DE71",
         textColor: "#FFFFFF",
         image: images.atAGlance4,
       },
       {
-        title: "DEVOPS & APP DEPLOYMENT",
+        title: "CI/CD & DELIVERY ACCELERATION",
         description: "",
         items: [
-          "CI/CD for mobile app releases",
-          "App Store & Play Store deployment support",
-          "Beta testing workflows",
-          "Cloud backend integration",
-          "Crash monitoring & performance analytics",
-          "Version control & update workflows",
-          "Continuous app optimization",
+          "Automated build and deployment pipelines",
+          "Continuous integration optimization",
+          "Test automation and validation flows",
+          "Release management support",
+          "Performance monitoring integration",
+          "DevOps workflow automation",
         ],
         bgColor: "#FFA77C",
         textColor: "#000000",
         image: images.atAGlance10,
       },
       {
-        title: "SECURITY, COMPLIANCE & RELIABILITY",
+        title: "SECURITY, COMPLIANCE & GOVERNANCE",
         description: "",
         items: [
-          "Secure authentication & mobile encryption",
-          "Compliance-ready mobile architecture",
-          "Secure API communication",
-          "App performance monitoring",
-          "Data privacy best practices",
-          "Long-term maintenance & support",
+          "Secure AI coding practices",
+          "Compliance-ready development workflows",
+          "Code audit and traceability support",
+          "Access control and governance policies",
+          "Data protection in AI-assisted coding",
+          "Responsible AI development standards",
         ],
         bgColor: "#F1571B",
         textColor: "#FFFFFF",
@@ -2111,156 +1758,77 @@ export const servicesData: readonly IService[] = Object.freeze([
       },
     ],
 
-    techStacks: [
-      {
-        icon: <SwiftYellowIcon />,
-        title: "Swift (iOS Native)",
-        description:
-          "Apple's native language for building high-performance, secure iOS applications with smooth UX.",
-        color: "#FFC400",
-      },
-      {
-        icon: <KotlinYellowIcon />,
-        title: "Kotlin (Android Native)",
-        description:
-          "Modern Android development language offering reliability, speed, and strong Google ecosystem support.",
-        color: "#FFC400",
-      },
-      {
-        icon: <FlutterYellowIcon />,
-        title: "Flutter",
-        description:
-          "Google's cross-platform framework for building fast, visually rich apps from a single codebase.",
-        color: "#FFC400",
-      },
-      {
-        icon: <ReactNativeYellowIcon />,
-        title: "React Native",
-        description:
-          "Popular JavaScript framework for building iOS & Android apps with shared code and rapid development.",
-        color: "#FFC400",
-      },
-      {
-        icon: <NodeJsYellowIcon />,
-        title: "Node.js Backend",
-        description:
-          "Scalable backend runtime ideal for real-time mobile apps, APIs, and cloud-connected services.",
-        color: "#FFC400",
-      },
-      {
-        icon: <FirebaseYellowIcon />,
-        title: "Firebase",
-        description:
-          "Complete mobile backend platform with authentication, database, hosting, and analytics tools.",
-        color: "#FFC400",
-      },
-      {
-        icon: <AwsYellowIcon />,
-        title: "AWS Mobile Services",
-        description:
-          "Cloud infrastructure for scalable app backends, storage, notifications, and deployment.",
-        color: "#FFC400",
-      },
-      {
-        icon: <MongoYellowIcon />,
-        title: "MongoDB / NoSQL Databases",
-        description:
-          "Flexible database solutions suited for dynamic mobile data and rapid app scaling.",
-        color: "#FFC400",
-      },
-      {
-        icon: <APIYellowIcon />,
-        title: "GraphQL / REST APIs",
-        description:
-          "Efficient data communication layers enabling smooth mobile app performance and integrations.",
-        color: "#FFC400",
-      },
-    ],
     content: `
-      <h2>Mobile Apps That Users Love</h2>
-      <p>In today's mobile-first world, your app needs to be fast, intuitive, and reliable. We build native and cross-platform mobile applications that deliver exceptional user experiences on both iOS and Android.</p>
-      
-      <h3>Mobile Development Services:</h3>
-      <ul>
-        <li><strong>Native iOS Development:</strong> Swift and Objective-C apps optimized for Apple devices</li>
-        <li><strong>Native Android Development:</strong> Kotlin and Java apps for Android ecosystem</li>
-        <li><strong>Cross-Platform Development:</strong> React Native and Flutter apps that work everywhere</li>
-        <li><strong>Progressive Web Apps:</strong> Web apps that feel like native mobile experiences</li>
-        <li><strong>App Store Optimization:</strong> Help your app get discovered and downloaded</li>
-        <li><strong>Maintenance & Updates:</strong> Keep your app running smoothly with ongoing support</li>
-      </ul>
-      
-      <h3>Why Choose Us:</h3>
-      <p>With years of experience and a proven portfolio of successful apps, we know what it takes to build mobile applications that users engage with daily. From initial concept to App Store submission and beyond, we're with you every step of the way.</p>
-    `,
-    metaTitle:
-      "Mobile App Development Services | iOS & Android | Netro Systems",
+    <h2>Accelerate Development with AI-Powered Coding Assistance</h2>
+    <p>Vibe Coding Assistance combines cutting-edge AI technology with proven development practices to help teams build faster without sacrificing quality. Whether you're validating an MVP or scaling production systems, our AI-powered approach keeps you moving at the speed of innovation.</p>
+    
+    <h3>Our AI Coding Services:</h3>
+    <ul>
+      <li><strong>AI Integration:</strong> Seamlessly integrate AI assistants into your existing development workflow</li>
+      <li><strong>Autonomous Coding:</strong> Intelligent systems that proactively support your engineering team</li>
+      <li><strong>Developer Productivity:</strong> AI-powered tools that accelerate coding, debugging, and refactoring</li>
+      <li><strong>Code Quality:</strong> Automated reviews and best practice enforcement</li>
+      <li><strong>CI/CD Enhancement:</strong> AI-assisted deployment and delivery optimization</li>
+    </ul>
+    
+    <p>We leverage the latest AI coding tools including GitHub Copilot, Claude AI, and specialized developer agents to transform how your team builds software.</p>
+  `,
+    metaTitle: "AI-Powered Coding Assistance Services | Netro Systems",
     metaDescription:
-      "Expert mobile app development for iOS and Android. Native and cross-platform apps built with years of proven expertise.",
+      "Accelerate software development with AI coding assistance. Integrate intelligent tools into your workflow for faster, cleaner code delivery.",
   },
   {
-    _id: "service-07",
-    title: "Branding & Stationery",
-    slug: "branding-stationery",
-    subtitle: "We build visually appealing brands",
-    descTitle: "Brand Identity Design",
+    _id: "service-06",
+    title: "UIUX Design",
+    slug: "ui-ux-design",
+    subtitle: "Years of expertise and proven portfolio",
+    descTitle: "UIUX Design",
     description:
       "Good design isn't just how a product looks. It's how it behaves, how easily users move through it, and how confidently they achieve their goals. We design user experiences that are intuitive, scalable, and aligned with real business outcomes.",
-    image: images.service7,
-    featuredImage: images.service7,
-    icon: <BrandingMenuIcon color="#7AD58D" />,
-    link: "/services/branding-stationery",
+    image: images.service6,
+    featuredImage: images.uiux,
+    icon: <UIMenuIcon color="#FF7036" />,
+    link: "/services/ui-ux-design",
     tags: [
-      "Brand Identity",
-      "Logo Design",
-      "Visual Identity",
-      "Brand Strategy",
-    ],
-    points: [
-      "Memorable brand identities",
-      "Consistent brand systems",
-      "Professional visual presence",
+      "UI/UX Design",
+      "User Research",
+      "Design Systems",
+      "Prototyping",
     ],
     servicesOffer: {
       title: "What we offer",
       description:
-        "From brand strategy to complete visual identity systems, we create brands that resonate and endure:",
+        "We craft digital experiences where usability, aesthetics, and strategic thinking intersect — transforming complex ideas into intuitive, engaging, and high-performing interfaces.",
       data: [
         {
-          title: "Brand Strategy",
-          desc: "Define positioning and messaging",
-          link: "/services/branding-stationery",
-          featuredImage: images.serviceOffer1,
-        },
-        {
-          title: "Logo Design",
-          desc: "Create memorable brand marks",
-          link: "/services/branding-stationery",
-          featuredImage: images.serviceOffer2,
-        },
-        {
-          title: "Visual Identity",
-          desc: "Develop complete brand systems",
-          link: "/services/branding-stationery",
-          featuredImage: images.serviceOffer3,
-        },
-        {
-          title: "Brand Guidelines",
-          desc: "Document brand usage standards",
-          link: "/services/branding-stationery",
-          featuredImage: images.serviceOffer4,
-        },
-        {
-          title: "Stationery Design",
-          desc: "Design professional business materials",
-          link: "/services/branding-stationery",
+          title: "User Research",
+          desc: "User-Centered Interface Design",
+          link: "/services/ui-ux-design",
           featuredImage: images.serviceOffer5,
         },
         {
-          title: "Marketing Collateral",
-          desc: "Create branded marketing assets",
-          link: "/services/branding-stationery",
-          featuredImage: images.serviceOffer6,
+          title: "Wireframing & IA",
+          desc: "Experience Strategy & UX Architecture",
+          link: "/services/ui-ux-design",
+          featuredImage: images.serviceOffer15,
+        },
+        {
+          title: "UI Design",
+          desc: "Visual Identity & UI Systems",
+          link: "/services/ui-ux-design",
+          featuredImage: images.serviceOffer10,
+        },
+        {
+          title: "Prototyping",
+          desc: "Prototype & Interaction Design",
+          link: "/services/ui-ux-design",
+          featuredImage: images.serviceOffer12,
+        },
+        {
+          title: "Design Systems",
+          desc: "Usability Optimization & Refinement",
+          link: "/services/ui-ux-design",
+          featuredImage: images.serviceOffer18,
         },
       ],
     },
@@ -2270,38 +1838,272 @@ export const servicesData: readonly IService[] = Object.freeze([
     challengesSolution: {
       title: "CHALLENGES AND SOLUTION",
       description:
-        "Creating memorable brand identities that connect with audiences and drive recognition.",
+        "Designing digital products that users trust, adopt, and enjoy requires more than visuals — it demands clarity, usability, and strategic experience thinking.",
       challenges: [
         {
-          title: "Lack of Brand Recognition",
+          title: "Confusing User Flows & Navigation",
           description:
-            "A strong visual identity makes your brand memorable and distinguishable from competitors.",
+            "Complex flows create friction; structured UX simplifies navigation and improves engagement.",
+        },
+        {
+          title: "Low User Adoption & Retention",
+          description:
+            "Even functional products struggle without intuitive experiences that guide users naturally.",
+        },
+        {
+          title: "Inconsistent Interface Design",
+          description:
+            "Fragmented visuals weaken brand perception; unified design systems ensure consistency.",
+        },
+        {
+          title: "Scalability & Usability Balance",
+          description:
+            "Growing products need interfaces that evolve without sacrificing clarity or performance.",
+        },
+      ],
+    },
+    commitment: {
+      title: "Our commitment",
+      description:
+        "As an organization we are committed to deliver best practiced software solution to you. It's not only quality we maintain, It's commitment we have. Always!",
+      cards: [
+        {
+          title: "Communication",
+          description:
+            "Our dedicated customer relationship managers will always keep you aware about your project and progress.",
+          image: images.belowCard,
+          bgColor: "#3654FF",
+          textColor: "#86C9FF",
+          imageAlt: "Communication notification",
+        },
+        {
+          title: "We don't hide",
+          description:
+            "We never lie or hide truth about development. We disclose every details about code structure and your engineering barriers.",
+          image: images.belowContent,
+          bg: images.belowBg1,
+          bgColor: "#86C9FF",
+          textColor: "#3654FF",
+          imageAlt: "Code transparency",
+        },
+        {
+          title: "Growth Focused UX",
+          description:
+            "Our Growth focused UX ensures maximum scalability and ensures growth. We always surprises client with growth and result not with buggy UI at delivery!",
+          image: images.belowUser,
+          bgColor: "#86C9FF",
+          textColor: "#3654FF",
+          imageAlt: "UX Designer profile",
+        },
+        {
+          innerText: "Trust Netro Systems <br> because we care your money!",
+          bg: images.belowBg,
+          bgColor: "#3654FF",
+          textColor: "#86C9FF",
+        },
+      ],
+    },
+    deliverablesTitle: "WHAT WE DELIVER",
+    deliverablesDescription:
+      "Our UI/UX design services transform how users interact with your digital products, from strategy to visual execution.",
+    deliverables: [
+      {
+        title: "Experience Design Foundations",
+        description: "We shape user experiences from insight to structure — ensuring every interaction is intentional, intuitive, and aligned with product goals.",
+        bgColor: "#97C0FF",
+        textColor: "#000000",
+        features: [
+          "User research synthesis & behavioral insights",
+          "Information architecture & UX flow mapping",
+          "Wireframes across key product journeys",
+          "Interaction logic & usability planning",
+          "Persona development & journey scenarios",
+          "Early-stage usability validation",
+          "Accessibility-first UX considerations",
+          "Cross-platform experience consistency",
+          "UX documentation for product teams",
+          "Experience optimization recommendations",
+        ],
+      },
+      {
+        title: "Interface Design & Visual Systems",
+        description:
+          "We craft cohesive visual interfaces that balance clarity, brand expression, and scalable design consistency.",
+        bgColor: "#FFA77C",
+        textColor: "#000000",
+        features: [
+          "High-fidelity UI layouts & screen designs",
+          "Design systems & scalable component libraries",
+          "Visual style exploration & refinement",
+          "Responsive web & mobile interface design",
+          "Typography, color & visual hierarchy definition",
+          "Iconography & micro-visual elements",
+          "Interactive prototype demonstrations",
+          "Developer-ready UI specifications",
+          "Brand alignment within product interfaces",
+          "Continuous visual system evolution",
+        ],
+      },
+      {
+        title: "Product Experience Optimization",
+        description:
+          "We refine and elevate digital products through iterative testing, performance insights, and experience improvements.",
+        bgColor: "#7FFBAF",
+        textColor: "#000000",
+        features: [
+          "Usability testing & behavioral analysis",
+          "UX audit reports & improvement roadmaps",
+          "Interaction refinement & friction reduction",
+          "Conversion-focused design enhancements",
+          "Accessibility and inclusivity improvements",
+          "Prototype validation before development",
+          "Experience consistency across touchpoints",
+          "Performance-oriented UX adjustments",
+          "Data-informed design recommendations",
+          "Ongoing product experience support",
+        ],
+      },
+    ],
+    atGlanceTitle: "SERVICE AT A GLANCE",
+    atGlanceDescription: "Modern digital products succeed when design goes beyond visuals — blending usability, accessibility, interaction logic, and brand consistency into seamless user experiences.",
+    atGlance: [
+      {
+        title: "USER EXPERIENCE STRATEGY",
+        description: "",
+        items: [
+          "User research insights & behavior mapping",
+          "Information architecture planning",
+          "User journey & interaction flow design",
+          "Usability-first product structuring",
+          "Experience validation through testing",
+        ],
+        bgColor: "#3654FF",
+        textColor: "#FFFFFF",
+        image: images.atAGlance3,
+      },
+      {
+        title: "INTERFACE DESIGN SYSTEMS",
+        description: "",
+        items: [
+          "High-fidelity UI design for web & mobile",
+          "Scalable design systems & components",
+          "Visual hierarchy & layout optimization",
+          "Brand-consistent interface styling",
+          "Developer-ready UI specifications",
+        ],
+        bgColor: "#FFC400",
+        textColor: "#000000",
+        image: images.atAGlance1,
+      },
+      {
+        title: "PROTOTYPING & INTERACTION DESIGN",
+        description: "",
+        items: [
+          "Interactive clickable prototypes",
+          "Motion & micro-interaction design",
+          "Rapid concept visualization",
+          "Usability testing prototypes",
+          "Stakeholder validation support",
+        ],
+        bgColor: "#00DE71",
+        textColor: "#FFFFFF",
+        image: images.atAGlance4,
+      },
+      {
+        title: "PRODUCT EXPERIENCE OPTIMIZATION",
+        description: "",
+        items: [
+          "UX audits & usability evaluations",
+          "Conversion and engagement improvements",
+          "Accessibility optimization guidance",
+          "Interface refinement iterations",
+          "Data-informed design enhancements",
+        ],
+        bgColor: "#FFA77C",
+        textColor: "#000000",
+        image: images.atAGlance10,
+      },
+      {
+        title: "DESIGN COLLABORATION & HANDOFF",
+        description: "",
+        items: [
+          "Structured developer handoff assets",
+          "Design documentation & guidelines",
+          "Cross-team collaboration workflows",
+          "Continuous design support cycles",
+          "Product evolution design consulting",
+        ],
+        bgColor: "#F1571B",
+        textColor: "#FFFFFF",
+        image: images.atAGlance8,
+      },
+    ],
+
+    content: `
+    <h2>Design Experiences That Users Love</h2>
+    <p>Great UI/UX design is the foundation of successful digital products. We combine user research, strategic thinking, and visual craft to create interfaces that are both beautiful and highly functional.</p>
+    
+    <h3>Our Design Services:</h3>
+    <ul>
+      <li><strong>User Research & Strategy:</strong> Understand your users and define the right experience direction</li>
+      <li><strong>Information Architecture:</strong> Structure content and flows for intuitive navigation</li>
+      <li><strong>UI Design:</strong> Create visually stunning interfaces that reflect your brand</li>
+      <li><strong>Prototyping:</strong> Build interactive prototypes for testing and validation</li>
+      <li><strong>Design Systems:</strong> Establish scalable design systems for consistency</li>
+      <li><strong>Usability Testing:</strong> Validate designs with real users to optimize experiences</li>
+    </ul>
+    
+    <h3>Why Choose Us:</h3>
+    <p>With years of expertise and a proven portfolio, we deliver designs that not only look great but drive measurable business results through improved user engagement and conversion.</p>
+  `,
+    metaTitle:
+      "UI/UX Design Services | User Experience Design | Netro Systems",
+    metaDescription:
+      "Professional UI/UX design services. Create intuitive, engaging user experiences with years of proven expertise.",
+  },
+  {
+    _id: "service-07",
+    title: "Branding Design",
+    slug: "branding-design",
+    subtitle: "We build visually appealing brands",
+    descTitle: "Branding Design",
+    description:
+      "Your brand is often the first experience people have with your product or company. We help you shape that experience through clear, consistent, and memorable branding that works across digital products, marketing, and everyday business touchpoints.",
+    image: images.service7,
+    featuredImage: images.branding,
+    icon: <BrandingMenuIcon color="#7AD58D" />,
+    link: "/services/branding-design",
+    tags: [
+      "Brand Identity",
+      "Logo Design",
+      "Visual Identity",
+      "Brand Strategy",
+    ],
+    challengesSolution: {
+      title: "CHALLENGES AND SOLUTION",
+      description:
+        "Building a strong brand requires more than visuals — it demands clarity, consistency, and strategic positioning that resonates across every customer interaction.",
+      challenges: [
+        {
+          title: "Unclear Brand Positioning",
+          description:
+            "Without a defined identity, brands struggle to stand out and communicate value effectively.",
         },
         {
           title: "Inconsistent Brand Presence",
           description:
-            "Comprehensive brand guidelines ensure consistency across all touchpoints.",
+            "Fragmented branding weakens recognition; cohesive design systems ensure clarity and trust.",
         },
         {
-          title: "Unprofessional Appearance",
+          title: "Low Audience Connection",
           description:
-            "Professional stationery and marketing materials build trust and credibility.",
+            "Strong visuals alone aren't enough — meaningful brand storytelling drives engagement.",
         },
         {
-          title: "Unclear Brand Message",
+          title: "Scaling Brand Consistency",
           description:
-            "Strategic brand positioning clarifies what you stand for and who you serve.",
-        },
-        {
-          title: "Limited Visual Assets",
-          description:
-            "Complete brand packages include logos, colors, typography, and templates.",
-        },
-        {
-          title: "Rebranding Complexity",
-          description:
-            "We manage smooth brand transitions that maintain customer trust and recognition.",
-        },
+            "As brands grow, structured guidelines maintain coherence across platforms and teams.",
+        }
       ],
     },
     commitment: {
@@ -2350,217 +2152,154 @@ export const servicesData: readonly IService[] = Object.freeze([
       "Our branding services create cohesive visual identities that build recognition, trust, and lasting impressions.",
     deliverables: [
       {
-        title: "Brand Strategy & Identity",
-        description: "We define your brand positioning and create visual identities that authentically represent who you are.",
+        title: "Brand Identity Design",
+        description: "We craft strong visual identities that express your brand's personality, positioning, and long-term vision.",
         bgColor: "#97C0FF",
         textColor: "#000000",
         features: [
-          "Brand discovery workshops",
-          "Competitive analysis",
-          "Brand positioning strategy",
-          "Brand personality and voice",
-          "Messaging framework",
-          "Tagline and value proposition",
-          "Target audience definition",
-          "Brand architecture planning",
+          "Logo design & visual identity systems",
+          "Typography, color & visual language definition",
+          "Brand style guides & usage frameworks",
+          "Iconography & graphic asset creation",
+          "Scalable identity systems for digital & print",
+          "Brand expression consistency guidelines",
+          "Visual storytelling direction",
+          "Brand differentiation strategy support",
+          "Identity refinement & evolution planning",
+          "Multi-platform identity adaptability",
         ],
       },
       {
-        title: "Logo & Visual Identity Design",
+        title: "Brand Experience & Communication",
         description:
-          "We design memorable logos and comprehensive visual systems that work across all touchpoints.",
+          "We design how your brand communicates — ensuring clarity, consistency, and emotional connection across channels.",
         bgColor: "#FFA77C",
         textColor: "#000000",
         features: [
-          "Logo design concepts and refinement",
-          "Color palette development",
-          "Typography system",
-          "Icon and symbol set",
-          "Pattern and texture library",
-          "Photography and image guidance",
-          "Logo variations and lockups",
-          "Print and digital file formats",
+          "Brand voice & messaging frameworks",
+          "Marketing visual direction systems",
+          "Social & digital brand expression design",
+          "Campaign identity design support",
+          "Presentation & collateral design systems",
+          "Website & product brand alignment",
+          "Customer touchpoint consistency design",
+          "Brand perception enhancement strategies",
+          "Visual communication optimization",
+          "Experience-driven brand positioning",
         ],
       },
       {
-        title: "Brand Guidelines & Applications",
+        title: "Brand Strategy & Evolution",
         description:
-          "We document your brand standards and apply them across business materials for consistent brand presence.",
+          "We help brands grow strategically while maintaining consistency, relevance, and adaptability over time.",
         bgColor: "#7FFBAF",
         textColor: "#000000",
         features: [
-          "Comprehensive brand guidelines",
-          "Business card design",
-          "Letterhead and envelope design",
-          "Email signature templates",
-          "Presentation templates",
-          "Social media templates",
-          "Marketing collateral design",
-          "Packaging design (if applicable)",
+          "Brand positioning & differentiation mapping",
+          "Competitive brand landscape analysis",
+          "Rebranding & brand refresh strategies",
+          "Brand architecture structuring",
+          "Sub-brand & product identity alignment",
+          "Long-term brand governance frameworks",
+          "Brand consistency monitoring guidance",
+          "Expansion-ready identity systems",
+          "Brand performance insight support",
+          "Ongoing brand design consultation",
         ],
       },
     ],
     atGlanceTitle: "SERVICE AT A GLANCE",
-    atGlanceDescription: "We create distinctive brand identities through strategic thinking and thoughtful design that resonates with your audience.",
+    atGlanceDescription: "Modern digital products succeed when design goes beyond visuals — blending usability, accessibility, interaction logic, and brand consistency into seamless user experiences.",
     atGlance: [
       {
-        title: "BRAND STRATEGY",
-        description: "Foundation for strong brands",
+        title: "BRAND STRATEGY & POSITIONING",
+        description: "",
         items: [
-          "We define your brand foundation:",
-          "Discovery and research",
-          "Competitive landscape analysis",
-          "Brand positioning strategy",
-          "Brand personality and attributes",
-          "Value proposition development",
-          "Messaging framework",
+          "Brand discovery workshops & research insights",
+          "Market positioning & differentiation mapping",
+          "Audience persona & brand voice definition",
+          "Competitive brand landscape analysis",
+          "Core messaging & narrative development",
         ],
         bgColor: "#3654FF",
         textColor: "#FFFFFF",
-        image: images.atAGlance1,
+        image: images.atAGlance14,
       },
       {
-        title: "LOGO DESIGN",
+        title: "VISUAL IDENTITY SYSTEMS",
         description: "",
         items: [
-          "We create memorable brand marks:",
-          "Concept exploration",
-          "Multiple design directions",
-          "Logo refinement and testing",
-          "Scalability testing",
-          "Black and white versions",
-          "Logo variation lockups",
+          "Logo design & identity exploration",
+          "Color, typography & visual language creation",
+          "Brand style guides & usage frameworks",
+          "Iconography & graphic asset development",
+          "Scalable identity systems for all platforms",
         ],
         bgColor: "#FFC400",
         textColor: "#000000",
-        image: images.atAGlance2,
+        image: images.atAGlance12,
       },
       {
-        title: "VISUAL IDENTITY SYSTEM",
+        title: "BRAND EXPERIENCE DESIGN",
         description: "",
         items: [
-          "We build comprehensive brand systems:",
-          "Color palette development",
-          "Typography and font pairings",
-          "Iconography and symbols",
-          "Patterns and textures",
-          "Photography style",
-          "Graphic element library",
+          "Marketing & digital brand expression design",
+          "Website and product brand alignment",
+          "Campaign visual identity support",
+          "Presentation & communication design assets",
+          "Customer touchpoint consistency design",
         ],
         bgColor: "#00DE71",
         textColor: "#FFFFFF",
-        image: images.atAGlance3,
+        image: images.atAGlance11,
       },
       {
-        title: "BRAND GUIDELINES",
+        title: "BRAND EVOLUTION & REFRESH",
         description: "",
         items: [
-          "We document brand standards:",
-          "Logo usage rules",
-          "Color specifications",
-          "Typography guidelines",
-          "Dos and don'ts",
-          "Application examples",
-          "Digital and print specifications",
+          "Rebranding & brand modernization strategies",
+          "Identity refinement for growing businesses",
+          "Sub-brand & product brand structuring",
+          "Brand consistency monitoring guidance",
+          "Expansion-ready brand frameworks",
         ],
         bgColor: "#FFA77C",
         textColor: "#000000",
-        image: images.atAGlance4,
+        image: images.atAGlance10,
       },
       {
-        title: "BRAND APPLICATIONS",
+        title: "BRAND COLLABORATION & SUPPORT",
         description: "",
         items: [
-          "We apply your brand consistently:",
-          "Business stationery design",
-          "Marketing collateral",
-          "Digital templates",
-          "Social media assets",
-          "Presentation designs",
-          "Signage and environmental graphics",
+          "Design handoff documentation & guidelines",
+          "Cross-team brand implementation support",
+          "Continuous brand design consulting",
+          "Brand governance frameworks",
+          "Long-term brand consistency planning",
         ],
         bgColor: "#F1571B",
         textColor: "#FFFFFF",
-        image: images.atAGlance5,
-      },
-    ],
-    techStacks: [
-      {
-        icon: <BrandingMenuIcon color="#FFC400" />,
-        title: "Adobe Illustrator",
-        description:
-          "Industry-standard vector graphics software for logo and icon design.",
-        color: "#FFC400",
-      },
-      {
-        icon: <BrandingMenuIcon color="#FFC400" />,
-        title: "Adobe Photoshop",
-        description:
-          "Professional image editing for photo manipulation and digital artwork.",
-        color: "#FFC400",
-      },
-      {
-        icon: <BrandingMenuIcon color="#FFC400" />,
-        title: "Adobe InDesign",
-        description:
-          "Page layout software for creating marketing materials and brand guidelines.",
-        color: "#FFC400",
-      },
-      {
-        icon: <BrandingMenuIcon color="#FFC400" />,
-        title: "Figma",
-        description:
-          "Collaborative design tool for creating digital brand assets and templates.",
-        color: "#FFC400",
-      },
-      {
-        icon: <BrandingMenuIcon color="#FFC400" />,
-        title: "Adobe After Effects",
-        description:
-          "Motion graphics software for animated logo reveals and brand videos.",
-        color: "#FFC400",
-      },
-      {
-        icon: <BrandingMenuIcon color="#FFC400" />,
-        title: "Sketch",
-        description:
-          "Digital design toolkit for creating scalable brand assets.",
-        color: "#FFC400",
-      },
-      {
-        icon: <BrandingMenuIcon color="#FFC400" />,
-        title: "Pantone",
-        description:
-          "Color matching system for accurate brand color reproduction across media.",
-        color: "#FFC400",
-      },
-      {
-        icon: <BrandingMenuIcon color="#FFC400" />,
-        title: "Adobe Fonts",
-        description:
-          "Typography library for selecting and licensing brand fonts.",
-        color: "#FFC400",
+        image: images.atAGlance13,
       },
     ],
     content: `
-      <h2>Build a Brand That Stands Out</h2>
-      <p>Your brand is more than just a logo—it's the complete experience your customers have with your company. We create comprehensive brand identities that tell your story and connect with your audience.</p>
-      
-      <h3>Branding Services:</h3>
-      <ul>
-        <li><strong>Brand Strategy:</strong> Define your brand positioning, values, and messaging</li>
-        <li><strong>Logo Design:</strong> Create memorable, versatile logos that represent your brand</li>
-        <li><strong>Visual Identity:</strong> Develop color palettes, typography, and visual systems</li>
-        <li><strong>Brand Guidelines:</strong> Document how to use your brand consistently</li>
-        <li><strong>Business Stationery:</strong> Business cards, letterheads, envelopes, and more</li>
-        <li><strong>Marketing Materials:</strong> Brochures, flyers, presentations, and social media templates</li>
-        <li><strong>Packaging Design:</strong> Product packaging that attracts and informs</li>
-      </ul>
-      
-      <p>Whether you're a startup building your brand from scratch or an established company looking for a refresh, we'll help you create a visual identity that resonates with your target audience and sets you apart from the competition.</p>
-    `,
-    metaTitle: "Branding & Stationery Design Services | Netro Systems",
+    <h2>Build a Brand That Stands Out</h2>
+    <p>Your brand is more than just a logo—it's the complete experience your customers have with your company. We create comprehensive brand identities that tell your story and connect with your audience.</p>
+    
+    <h3>Branding Services:</h3>
+    <ul>
+      <li><strong>Brand Strategy:</strong> Define your brand positioning, values, and messaging</li>
+      <li><strong>Logo Design:</strong> Create memorable, versatile logos that represent your brand</li>
+      <li><strong>Visual Identity:</strong> Develop color palettes, typography, and visual systems</li>
+      <li><strong>Brand Guidelines:</strong> Document how to use your brand consistently</li>
+      <li><strong>Brand Experience:</strong> Design how your brand communicates across all touchpoints</li>
+      <li><strong>Brand Evolution:</strong> Refresh and modernize your brand for growth</li>
+    </ul>
+    
+    <p>Whether you're a startup building your brand from scratch or an established company looking for a refresh, we'll help you create a visual identity that resonates with your target audience and sets you apart from the competition.</p>
+  `,
+    metaTitle: "Branding & Identity Design Services | Netro Systems",
     metaDescription:
-      "Professional branding and stationery design. Create a memorable visual identity that stands out and connects with your audience.",
+      "Professional branding and identity design. Create a memorable visual identity that stands out and connects with your audience.",
   },
 ]);

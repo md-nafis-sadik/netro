@@ -237,6 +237,8 @@ export { default as appDev } from "@/public/images/services/app-dev.webp";
 export { default as saas } from "@/public/images/services/saas.webp";
 export { default as sqaDep } from "@/public/images/services/sqa-dep.webp";
 export { default as vibeCode } from "@/public/images/services/vibe-code.webp";
+export { default as uiux } from "@/public/images/services/uiux.webp";
+export { default as branding } from "@/public/images/services/branding.webp";
 export { default as belowBg } from "@/public/images/services/below-bg.webp";
 export { default as belowBg1 } from "@/public/images/services/below-bg-1.webp";
 export { default as belowCard } from "@/public/images/services/below-card.webp";
@@ -262,6 +264,7 @@ export { default as serviceOffer14 } from "@/public/images/services/offer-14.web
 export { default as serviceOffer15 } from "@/public/images/services/offer-15.webp";
 export { default as serviceOffer16 } from "@/public/images/services/offer-16.webp";
 export { default as serviceOffer17 } from "@/public/images/services/offer-17.webp";
+export { default as serviceOffer18 } from "@/public/images/services/offer-18.webp";
 export { default as ellipseBg } from "@/public/images/services/ellipse-bg.webp";
 export { default as atAGlance1 } from "@/public/images/services/at-a-glance-1.webp";
 export { default as atAGlance2 } from "@/public/images/services/at-a-glance-2.webp";
@@ -273,4 +276,8 @@ export { default as atAGlance7 } from "@/public/images/services/at-a-glance-7.we
 export { default as atAGlance8 } from "@/public/images/services/at-a-glance-8.webp";
 export { default as atAGlance9 } from "@/public/images/services/at-a-glance-9.webp";
 export { default as atAGlance10 } from "@/public/images/services/at-a-glance-10.webp";
+export { default as atAGlance11 } from "@/public/images/services/at-a-glance-11.webp";
+export { default as atAGlance12 } from "@/public/images/services/at-a-glance-12.webp";
+export { default as atAGlance13 } from "@/public/images/services/at-a-glance-13.webp";
+export { default as atAGlance14 } from "@/public/images/services/at-a-glance-14.webp";
 
