@@ -8,11 +8,11 @@ import { ServiceAtGlanceItem } from "@/services/types";
 
 interface ServiceAtGlanceProps {
   items: ServiceAtGlanceItem[];
-  title: string;
-  description: string;
+  title?: string;
+  description?: string;
 }
 
-const ServiceAtGlance = ({ items, title, description }: ServiceAtGlanceProps ) => {
+const ServiceAtGlance = ({ items, title = "", description = "" }: ServiceAtGlanceProps ) => {
   const sectionRef = useAppearanceAnimation(".animate-glance", {
     y: 60,
     opacity: 0,
