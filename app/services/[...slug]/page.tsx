@@ -9,33 +9,27 @@ import ServiceDetailsSkeleton from "@/components/services/ServiceDetailsSkeleton
 import ProjectsPreviewServicesSkeleton from "@/components/projects/ProjectsPreviewServicesSkeleton";
 import ProjectsPreviewServicesWrapper from "@/components/projects/ProjectsPreviewServicesWrapper";
 import ServiceAdditionalSections from "@/components/services/ServiceAdditionalSections";
-
-const Pulse = ({ h = "180px" }: { h?: string }) => (
-  <div
-    className={`w-full animate-pulse bg-neutral-900/10`}
-    style={{ minHeight: h }}
-  />
-);
+import InlineLoader from "@/components/common/InlineLoader";
 
 const ServiceDetailsContent = dynamic(
   () => import("@/components/services/ServiceDetailsContent"),
-  { loading: () => <ServiceDetailsSkeleton /> },
+  { loading: () => <InlineLoader h="400px" /> },
 );
 const ServiceChallengesSolution = dynamic(
   () => import("@/components/services/ServiceChallengesSolution"),
-  { loading: () => <Pulse h="400px" /> },
+  { loading: () => <InlineLoader h="400px" /> },
 );
 const ProcessFollowed = dynamic(
   () => import("@/components/view/ProcessFollowed"),
-  { loading: () => <Pulse h="400px" /> },
+  { loading: () => <InlineLoader h="400px" /> },
 );
 const ContactUsFormHome = dynamic(
   () => import("@/components/contact-us/ContactUsFormHome"),
-  { loading: () => <Pulse h="420px" /> },
+  { loading: () => <InlineLoader h="420px" /> },
 );
 const ServiceCommitment = dynamic(
   () => import("@/components/services/ServiceCommitment"),
-  { loading: () => <Pulse h="300px" /> },
+  { loading: () => <InlineLoader h="300px" /> },
 );
 
 const getSlug = (slug: string | string[]) =>
@@ -80,7 +74,7 @@ const ServiceDetailsPage = async ({
         />
       )}
       <ProcessFollowed />
-      <Suspense fallback={<Pulse />}>
+      <Suspense fallback={<InlineLoader h="300px" />}>
         <ServiceAdditionalSections slug={getSlug(slug)} />
       </Suspense>
       <ContactUsFormHome />

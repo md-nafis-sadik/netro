@@ -10,12 +10,12 @@ import {
 import { baseUrl } from "@/services/data/shared.data";
 import Image from "next/image";
 import { useSearchParams } from "next/navigation";
-import { Fragment, useState } from "react";
+import { Fragment, Suspense, useState } from "react";
 import { toast } from "sonner";
 import { Button } from "../ui/button";
 import { Toaster } from "../ui/sonner";
 
-function ContactUsFormHome() {
+function ContactUsFormContent() {
   const searchParams = useSearchParams();
   const [selectedBudget, setSelectedBudget] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -221,6 +221,15 @@ function ContactUsFormHome() {
 
       <Toaster />
     </div>
+  );
+}
+
+// Wrap with Suspense to prevent hydration issues from useSearchParams
+function ContactUsFormHome() {
+  return (
+    <Suspense fallback={<div className="min-h-[420px] animate-pulse bg-neutral-900/10" />}>
+      <ContactUsFormContent />
+    </Suspense>
   );
 }
 

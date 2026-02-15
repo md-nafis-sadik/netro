@@ -32,9 +32,71 @@ const ServiceCommitment = ({
   description,
   cards: commitmentCards,
 }: ServiceCommitmentProps) => {
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  // useEffect(() => {
+  //   if (!sectionRef.current) return;
+
+  //   const cards = sectionRef.current.querySelectorAll(".animate-commitment");
+    
+  //   if (cards.length === 0) return;
+
+  //   // Check if section is already visible
+  //   const rect = sectionRef.current.getBoundingClientRect();
+  //   const isVisible = rect.top < window.innerHeight * 0.75;
+
+  //   const ctx = gsap.context(() => {
+  //     if (isVisible) {
+  //       // Already visible - no animation, just show
+  //       gsap.set(cards, {
+  //         y: 0,
+  //         opacity: 1,
+  //         scale: 1,
+  //       });
+  //     } else {
+  //       // Not visible yet - set up animation
+  //       gsap.fromTo(
+  //         cards,
+  //         {
+  //           y: 40,
+  //           opacity: 0,
+  //           scale: 0.95,
+  //         },
+  //         {
+  //           y: 0,
+  //           opacity: 1,
+  //           scale: 1,
+  //           duration: 0.8,
+  //           stagger: 0.12,
+  //           ease: "power2.out",
+  //           scrollTrigger: {
+  //             trigger: sectionRef.current,
+  //             start: "top 75%",
+  //             toggleActions: "play none none none",
+  //           },
+  //         }
+  //       );
+  //     }
+  //   }, sectionRef);
+
+  //   // Refresh ScrollTrigger after setup
+  //   setTimeout(() => {
+  //     ScrollTrigger.refresh();
+  //   }, 50);
+
+  //   // Refresh ScrollTrigger after setup
+  //   setTimeout(() => {
+  //     ScrollTrigger.refresh();
+  //   }, 50);
+
+  //   return () => {
+  //     ctx.revert();
+  //   };
+  // }, []);
+
   return (
     <section className="bg-darkPurplebg py-8 md:py-12 lg:py-16 overflow-hidden">
-      <div className="container">
+      <div ref={sectionRef} className="container">
         {/* Header */}
         <DescriptionHeader
           title={title}
@@ -100,6 +162,7 @@ const ServiceCommitment = ({
                     <div
                       className="text-2xl lg:text-[28px] font-bold leading-[140%] text-center"
                       dangerouslySetInnerHTML={{ __html: card.innerText }}
+                      suppressHydrationWarning
                     />
                   )}
                 </div>

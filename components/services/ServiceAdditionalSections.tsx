@@ -1,3 +1,5 @@
+"use client";
+
 import { findServiceBySlug } from "@/services/data/services.data";
 import ServiceAtGlance from "./ServiceAtGlance";
 import ServiceTechStacks from "./ServiceTechStacks";
