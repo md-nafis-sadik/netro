@@ -89,6 +89,8 @@ export type IService = Readonly<{
   deliverablesTitle?: string;
   deliverablesDescription?: string;
   atGlance?: ServiceAtGlanceItem[];
+  atGlanceTitle?: string;
+  atGlanceDescription?: string;
   techStacks?: ServiceTechStack[];
   relatedWorks?: RelatedWorks;
   challengesSolution?: ChallengesSolution;
