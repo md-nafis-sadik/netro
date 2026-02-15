@@ -238,8 +238,8 @@ export default function DropupNavigationMenu({
               <Image
                 src={displayedService.image}
                 alt={`${displayedService.title} preview`}
-                width={556}
-                height={240}
+                width={1112}
+                height={480}
                 className="rounded-xl"
               />
             </div>

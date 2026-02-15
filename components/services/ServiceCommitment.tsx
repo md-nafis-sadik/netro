@@ -1,9 +1,14 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import Image, { StaticImageData } from "next/image";
 import DescriptionHeader from "../common/DescriptionHeader";
-import { useAppearanceAnimation } from "@/hooks/useAppearanceAnimation";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 interface CommitmentCard {
   title?: string;
@@ -27,17 +32,8 @@ const ServiceCommitment = ({
   description,
   cards: commitmentCards,
 }: ServiceCommitmentProps) => {
-
-  const sectionRef = useAppearanceAnimation(".animate-commitment", {
-    y: 60,
-    opacity: 0,
-    duration: 1,
-    stagger: 0.15,
-    ease: "power3.out",
-    delay: 0.1,
-  });
   return (
-    <section ref={sectionRef} className="bg-darkPurplebg py-8 md:py-12 lg:py-16 overflow-hidden">
+    <section className="bg-darkPurplebg py-8 md:py-12 lg:py-16 overflow-hidden">
       <div className="container">
         {/* Header */}
         <DescriptionHeader

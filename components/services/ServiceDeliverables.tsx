@@ -77,7 +77,7 @@ function ServiceDeliverables({
   }, [deliverables]);
 
   return (
-    <section className="py-10 relative z-10 overflow-hidden">
+    <section className="py-20 relative z-10 overflow-hidden">
       <div className="container flex_center flex-col">
         <DescriptionHeader
           title={title}

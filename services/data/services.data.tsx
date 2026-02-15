@@ -328,7 +328,8 @@ export const servicesData: readonly IService[] = Object.freeze([
     metaDescription:
       "Integrate AI into your products with our end-to-end AI development services. Custom ML models, NLP, computer vision, and more.",
     atGlanceTitle: "SERVICE AT A GLANCE",
-    atGlanceDescription: "AI-Powered Software Engineering is not a generic software engineering service what we are offering. It&apos;s a complete AI solution for your business or startups.",
+    atGlanceDescription:
+      "AI-Powered Software Engineering is not a generic software engineering service what we are offering. It&apos;s a complete AI solution for your business or startups.",
     atGlance: [
       {
         title: "DATA, MODELS & INFRASTRUCTURE",
@@ -586,23 +587,19 @@ export const servicesData: readonly IService[] = Object.freeze([
       challenges: [
         {
           title: "Overbuilding Before Validation",
-          description:
-            "Many startups invest heavily before proving demand.",
+          description: "Many startups invest heavily before proving demand.",
         },
         {
           title: "Scaling Issues Later",
-          description:
-            "Poor architecture leads to performance bottlenecks.",
+          description: "Poor architecture leads to performance bottlenecks.",
         },
         {
           title: "Time-to-Market Pressure",
-          description:
-            "Delays can cost market opportunities.",
+          description: "Delays can cost market opportunities.",
         },
         {
           title: "User Adoption & Retention",
-          description:
-            "Even good products fail without great UX.",
+          description: "Even good products fail without great UX.",
         },
       ],
     },
@@ -612,7 +609,8 @@ export const servicesData: readonly IService[] = Object.freeze([
     deliverables: [
       {
         title: "MVP & SaaS Product Development",
-        description: "We design and build scalable SaaS products and MVPs that move from idea to launch quickly while ensuring long-term technical stability.",
+        description:
+          "We design and build scalable SaaS products and MVPs that move from idea to launch quickly while ensuring long-term technical stability.",
         bgColor: "#97C0FF",
         textColor: "#000000",
         features: [
@@ -660,7 +658,8 @@ export const servicesData: readonly IService[] = Object.freeze([
       },
     ],
     atGlanceTitle: "SERVICE AT A GLANCE",
-    atGlanceDescription: "We help startups and enterprises move from concept to cloud-ready SaaS platforms with speed, clarity, and confidence.",
+    atGlanceDescription:
+      "We help startups and enterprises move from concept to cloud-ready SaaS platforms with speed, clarity, and confidence.",
     atGlance: [
       {
         title: "PRODUCT STRATEGY & MVP DESIGN",
@@ -673,8 +672,7 @@ export const servicesData: readonly IService[] = Object.freeze([
           "Rapid prototyping & wireframing",
           "UX-first SaaS architecture planning",
           "Business model & monetization strategy",
-        ]
-        ,
+        ],
         bgColor: "#3654FF",
         textColor: "#FFFFFF",
         image: images.atAGlance7,
@@ -690,8 +688,7 @@ export const servicesData: readonly IService[] = Object.freeze([
           "Microservices or monolith strategy guidance",
           "Performance optimization planning",
           "Future scaling considerations built-in",
-        ]
-        ,
+        ],
         bgColor: "#FFC400",
         textColor: "#000000",
         image: images.atAGlance1,
@@ -707,8 +704,7 @@ export const servicesData: readonly IService[] = Object.freeze([
           "Accessibility-focused design",
           "Performance-driven UI development",
           "Cross-device compatibility",
-        ]
-        ,
+        ],
         bgColor: "#00DE71",
         textColor: "#FFFFFF",
         image: images.atAGlance4,
@@ -724,8 +720,7 @@ export const servicesData: readonly IService[] = Object.freeze([
           "Authentication & authorization systems",
           "Workflow automation integrations",
           "Real-time data handling where needed",
-        ]
-        ,
+        ],
         bgColor: "#FFA77C",
         textColor: "#000000",
         image: images.atAGlance9,
@@ -741,8 +736,7 @@ export const servicesData: readonly IService[] = Object.freeze([
           "Authentication & authorization systems",
           "Workflow automation integrations",
           "Real-time data handling where needed",
-        ]
-        ,
+        ],
         bgColor: "#F1571B",
         textColor: "#FFFFFF",
         image: images.atAGlance8,
@@ -890,13 +884,13 @@ export const servicesData: readonly IService[] = Object.freeze([
         },
         {
           title: "App Store Optimization",
-          desc: "Continuous Improvement & Scaling",
+          desc: "Cloud-Ready Deployment",
           link: "/services/app-development",
           featuredImage: images.serviceOffer5,
         },
         {
           title: "App Maintenance",
-          desc: "Cloud-Ready Deployment",
+          desc: "Continuous Improvement & Scaling",
           link: "/services/app-development",
           featuredImage: images.serviceOffer17,
         },
@@ -912,23 +906,19 @@ export const servicesData: readonly IService[] = Object.freeze([
       challenges: [
         {
           title: "Overbuilding Before Validation",
-          description:
-            "Many startups invest heavily before proving demand.",
+          description: "Many startups invest heavily before proving demand.",
         },
         {
           title: "Scaling Issues Later",
-          description:
-            "Poor architecture leads to performance bottlenecks.",
+          description: "Poor architecture leads to performance bottlenecks.",
         },
         {
           title: "Time-to-Market Pressure",
-          description:
-            "Delays can cost market opportunities.",
+          description: "Delays can cost market opportunities.",
         },
         {
           title: "User Adoption & Retention",
-          description:
-            "Even good products fail without great UX.",
+          description: "Even good products fail without great UX.",
         },
       ],
     },
@@ -979,7 +969,8 @@ export const servicesData: readonly IService[] = Object.freeze([
     deliverables: [
       {
         title: "Application Development",
-        description: "We design and build modern, scalable applications tailored for performance, usability, and long-term maintainability.",
+        description:
+          "We design and build modern, scalable applications tailored for performance, usability, and long-term maintainability.",
         bgColor: "#97C0FF",
         textColor: "#000000",
         features: [
@@ -993,7 +984,8 @@ export const servicesData: readonly IService[] = Object.freeze([
       },
       {
         title: "Platform Integration & Modernization",
-        description: "We enhance existing applications with modern integrations, automation, and architectural improvements without disrupting business operations.",
+        description:
+          "We enhance existing applications with modern integrations, automation, and architectural improvements without disrupting business operations.",
         bgColor: "#FFA77C",
         textColor: "#000000",
         features: [
@@ -1007,7 +999,8 @@ export const servicesData: readonly IService[] = Object.freeze([
       },
       {
         title: "Cloud, DevOps & Continuous Delivery",
-        description: "We ensure applications remain secure, reliable, and continuously evolving with modern DevOps practices and cloud-native infrastructure.",
+        description:
+          "We ensure applications remain secure, reliable, and continuously evolving with modern DevOps practices and cloud-native infrastructure.",
         bgColor: "#7FFBAF",
         textColor: "#000000",
         features: [
@@ -1021,11 +1014,13 @@ export const servicesData: readonly IService[] = Object.freeze([
       },
     ],
     atGlanceTitle: "SERVICE AT A GLANCE",
-    atGlanceDescription: "Mobile App Development today requires more than just coding — it demands performance, seamless user experience, scalability, and platform reliability.",
+    atGlanceDescription:
+      "Mobile App Development today requires more than just coding — it demands performance, seamless user experience, scalability, and platform reliability.",
     atGlance: [
       {
         title: "APPLICATION ARCHITECTURE",
-        description: "Mobile App Development today requires more than just coding — it demands performance, seamless user experience, scalability, and platform reliability.",
+        description:
+          "Mobile App Development today requires more than just coding — it demands performance, seamless user experience, scalability, and platform reliability.",
         items: [
           "Native & cross-platform mobile architecture",
           "Scalable mobile backend integration",
@@ -1196,7 +1191,7 @@ export const servicesData: readonly IService[] = Object.freeze([
     descTitle: "Vibe Coding Assistance",
     description:
       "Vibe Coding is our rapid MVP delivery approach designed for teams that need to move fast, validate ideas early, and get real user feedback—without sacrificing code quality or future scalability.",
-    image: images.service4,
+    image: images.service5,
     featuredImage: images.vibeCode,
     icon: <VibeMenuIcon color="#8F73FF" />,
     link: "/services/vibe-coding-assistance",
@@ -1264,23 +1259,19 @@ export const servicesData: readonly IService[] = Object.freeze([
       challenges: [
         {
           title: "Overbuilding Before Validation",
-          description:
-            "Many startups invest heavily before proving demand.",
+          description: "Many startups invest heavily before proving demand.",
         },
         {
           title: "Scaling Issues Later",
-          description:
-            "Poor architecture leads to performance bottlenecks.",
+          description: "Poor architecture leads to performance bottlenecks.",
         },
         {
           title: "Time-to-Market Pressure",
-          description:
-            "Delays can cost market opportunities.",
+          description: "Delays can cost market opportunities.",
         },
         {
           title: "User Adoption & Retention",
-          description:
-            "Even good products fail without great UX.",
+          description: "Even good products fail without great UX.",
         },
       ],
     },
@@ -1330,8 +1321,28 @@ export const servicesData: readonly IService[] = Object.freeze([
       "Our AI-powered coding assistance transforms how you build software, from rapid prototyping to production-ready applications.",
     deliverables: [
       {
+        title: "AI-Powered Developer Productivity",
+        description:
+          "We accelerate software development by embedding AI assistance directly into coding workflows and developer environments.",
+        bgColor: "#97C0FF",
+        textColor: "#000000",
+        features: [
+          "AI-assisted coding, debugging & refactoring",
+          "Context-aware code suggestions aligned with your stack",
+          "Intelligent documentation generation",
+          "Faster developer onboarding & knowledge transfer",
+          "AI-assisted code reviews & quality checks",
+          "Productivity analytics & engineering insights",
+          "Coding standards enforcement automation",
+          "Developer workflow optimization",
+          "Reduced technical debt through smart refactoring",
+          "Continuous developer experience improvements",
+        ],
+      },
+      {
         title: "AI Integration for Development Workflows",
-        description: "We integrate AI into your existing engineering ecosystem without disrupting your tools, pipelines, or processes.",
+        description:
+          "We integrate AI into your existing engineering ecosystem without disrupting your tools, pipelines, or processes.",
         bgColor: "#FFA77C",
         textColor: "#000000",
         features: [
@@ -1366,28 +1377,10 @@ export const servicesData: readonly IService[] = Object.freeze([
           "Human-AI collaborative coding environments",
         ],
       },
-      {
-        title: "AI-Powered Developer Productivity",
-        description:
-          "We accelerate software development by embedding AI assistance directly into coding workflows and developer environments.",
-        bgColor: "#97C0FF",
-        textColor: "#000000",
-        features: [
-          "AI-assisted coding, debugging & refactoring",
-          "Context-aware code suggestions aligned with your stack",
-          "Intelligent documentation generation",
-          "Faster developer onboarding & knowledge transfer",
-          "AI-assisted code reviews & quality checks",
-          "Productivity analytics & engineering insights",
-          "Coding standards enforcement automation",
-          "Developer workflow optimization",
-          "Reduced technical debt through smart refactoring",
-          "Continuous developer experience improvements",
-        ],
-      },
     ],
     atGlanceTitle: "SERVICE AT A GLANCE",
-    atGlanceDescription: "Mobile App Development today requires more than just coding — it demands performance, seamless user experience, scalability, and platform reliability.",
+    atGlanceDescription:
+      "Mobile App Development today requires more than just coding — it demands performance, seamless user experience, scalability, and platform reliability.",
     atGlance: [
       {
         title: "AI-ASSISTED DEVELOPMENT WORKFLOWS",
@@ -1492,57 +1485,46 @@ export const servicesData: readonly IService[] = Object.freeze([
     subtitle: "We don't let you even after delivery",
     descTitle: "SQA, Deployment",
     description:
-      "Great software isn’t just built—it’s tested, deployed, monitored, and supported in the real world. We help teams make sure their applications are reliable, secure, and ready for growth long after the first release.",
-    image: images.service5,
+      "Great software isn't just built—it's tested, deployed, monitored, and supported in the real world. We help teams make sure their applications are reliable, secure, and ready for growth long after the first release.",
+    image: images.service4,
     featuredImage: images.sqaDep,
     icon: <SQAMenuIcon color="#FFC400" />,
     link: "/services/sqa-deployment-support",
-    tags: ["UI/UX Design", "Product Design", "User Research", "Prototyping"],
-    points: [
-      "24/7 support and maintenance",
-      "Our deployment ensures maximum uptime",
-      "SQA report of your software solution",
-    ],
+    tags: ["Quality Assurance", "Testing", "Deployment", "DevOps"],
     servicesOffer: {
       title: "What we offer",
       description:
-        "Vibe Coding Assistance goes beyond code generation — it combines AI-powered development workflows, intelligent tooling, and human expertise to accelerate software delivery while maintaining code quality and engineering standards.",
+        "Reliable software doesn't stop at development. We ensure your applications are thoroughly tested, smoothly deployed, continuously monitored, and fully supported — so they perform consistently, scale confidently, and deliver long-term value.",
       data: [
         {
-          title: "Faster Development",
-          desc: "Faster development cycles",
-          link: "/services/vibe-coding-assistance",
-          featuredImage: images.serviceOffer13,
+          title: "Quality Assurance",
+          desc: "Quality Assurance & Testing",
+          link: "/services/sqa-deployment-support",
+          featuredImage: images.serviceFrame1,
         },
         {
-          title: "Clean Code",
-          desc: "Reduced developer fatigue and Clean code",
-          link: "/services/vibe-coding-assistance",
-          featuredImage: images.serviceOffer14,
+          title: "CI/CD & Deployment",
+          desc: "CI/CD & Deployment Automation",
+          link: "/services/sqa-deployment-support",
+          featuredImage: images.serviceFrame2,
         },
         {
-          title: "Engineering Visibility",
-          desc: "Better engineering visibility",
-          link: "/services/vibe-coding-assistance",
+          title: "Performance Monitoring",
+          desc: "Performance & Security Monitoring",
+          link: "/services/sqa-deployment-support",
           featuredImage: images.serviceOffer15,
         },
         {
-          title: "AI Support",
-          desc: "AI-assisted coding & debugging support",
-          link: "/services/vibe-coding-assistance",
+          title: "Release Management",
+          desc: "Release Management & Optimization",
+          link: "/services/sqa-deployment-support",
           featuredImage: images.serviceOffer16,
         },
         {
-          title: "Documentation",
-          desc: "Automated documentation",
-          link: "/services/vibe-coding-assistance",
+          title: "Post-Launch Support",
+          desc: "Post-Launch Support & Reliability",
+          link: "/services/sqa-deployment-support",
           featuredImage: images.serviceOffer5,
-        },
-        {
-          title: "Optimization",
-          desc: "Continuous optimization",
-          link: "/services/vibe-coding-assistance",
-          featuredImage: images.serviceOffer17,
         },
       ],
     },
@@ -1552,27 +1534,27 @@ export const servicesData: readonly IService[] = Object.freeze([
     challengesSolution: {
       title: "CHALLENGES AND SOLUTION",
       description:
-        "Turning ideas into reliable, scalable, and compliant software solutions.",
+        "Ensuring software reliability, security, and performance requires comprehensive testing, smooth deployment, and continuous operational support.",
       challenges: [
         {
-          title: "Overbuilding Before Validation",
+          title: "Untested Software Releases",
           description:
-            "Many startups invest heavily before proving demand.",
+            "Comprehensive testing strategies catch issues before they reach users.",
         },
         {
-          title: "Scaling Issues Later",
+          title: "Deployment Failures & Downtime",
           description:
-            "Poor architecture leads to performance bottlenecks.",
+            "Automated CI/CD pipelines ensure smooth, repeatable releases.",
         },
         {
-          title: "Time-to-Market Pressure",
+          title: "Performance & Security Vulnerabilities",
           description:
-            "Delays can cost market opportunities.",
+            "Continuous monitoring identifies and resolves issues proactively.",
         },
         {
-          title: "User Adoption & Retention",
+          title: "Lack of Post-Launch Support",
           description:
-            "Even good products fail without great UX.",
+            "Ongoing maintenance keeps systems reliable and optimized long-term.",
         },
       ],
     },
@@ -1619,138 +1601,120 @@ export const servicesData: readonly IService[] = Object.freeze([
     },
     deliverablesTitle: "WHAT WE DELIVER",
     deliverablesDescription:
-      "Our AI-powered coding assistance transforms how you build software, from rapid prototyping to production-ready applications.",
+      "We ensure your software performs reliably beyond development — through structured testing, seamless deployment, and continuous operational support that keeps your product stable, secure, and ready to scale.",
     deliverables: [
       {
-        title: "AI Integration for Development Workflows",
-        description: "We integrate AI into your existing engineering ecosystem without disrupting your tools, pipelines, or processes.",
-        bgColor: "#FFA77C",
-        textColor: "#000000",
-        features: [
-          "IDE, repo & CI/CD integration support",
-          "Automated testing & troubleshooting assistance",
-          "AI-powered ticket triage & issue classification",
-          "Documentation and knowledge base automation",
-          "DevOps workflow augmentation",
-          "Secure integration with internal codebases",
-          "AI-assisted release management insights",
-          "Multi-model AI routing for coding tasks",
-          "Cloud or on-prem deployment flexibility",
-          "Developer collaboration enhancement tools",
-        ],
-      },
-      {
-        title: "Autonomous Coding & Engineering Assistance",
+        title: "Quality Assurance & Testing",
         description:
-          "We build intelligent coding support systems that proactively assist teams across the entire software development lifecycle.",
-        bgColor: "#7FFBAF",
-        textColor: "#000000",
-        features: [
-          "Automated code analysis & improvement suggestions",
-          "Intelligent research & code discovery agents",
-          "Continuous learning from your codebase",
-          "Proactive bug detection & optimization hints",
-          "Workflow automation for repetitive dev tasks",
-          "Knowledge persistence across projects",
-          "Engineering decision-support insights",
-          "AI-assisted architectural recommendations",
-          "Latency-aware developer tooling",
-          "Human-AI collaborative coding environments",
-        ],
-      },
-      {
-        title: "AI-Powered Developer Productivity",
-        description:
-          "We accelerate software development by embedding AI assistance directly into coding workflows and developer environments.",
+          "We design comprehensive testing strategies to ensure your software performs flawlessly before release.",
         bgColor: "#97C0FF",
         textColor: "#000000",
         features: [
-          "AI-assisted coding, debugging & refactoring",
-          "Context-aware code suggestions aligned with your stack",
-          "Intelligent documentation generation",
-          "Faster developer onboarding & knowledge transfer",
-          "AI-assisted code reviews & quality checks",
-          "Productivity analytics & engineering insights",
-          "Coding standards enforcement automation",
-          "Developer workflow optimization",
-          "Reduced technical debt through smart refactoring",
-          "Continuous developer experience improvements",
+          "Functional, regression, and integration testing",
+          "Automated test pipelines for faster releases",
+          "Performance and load testing",
+          "Security and vulnerability testing",
+          "Usability and cross-platform validation",
+        ],
+      },
+      {
+        title: "Deployment & Release Engineering",
+        description:
+          "We streamline deployment processes so your releases are smooth, repeatable, and risk-free.",
+        bgColor: "#FFA77C",
+        textColor: "#000000",
+        features: [
+          "CI/CD pipeline setup and optimization",
+          "Cloud, on-premise, and hybrid deployments",
+          "Version control and release management",
+          "Rollback and disaster recovery planning",
+          "Infrastructure and environment configuration",
+        ],
+      },
+      {
+        title: "Monitoring, Maintenance & Support",
+        description:
+          "We provide ongoing oversight and improvements to keep your systems reliable long after launch.",
+        bgColor: "#7FFBAF",
+        textColor: "#000000",
+        features: [
+          "Performance monitoring and alerting",
+          "Security monitoring and compliance checks",
+          "Bug fixing and stability enhancements",
+          "System optimization and updates",
+          "Continuous operational support",
         ],
       },
     ],
     atGlanceTitle: "SERVICE AT A GLANCE",
-    atGlanceDescription: "Mobile App Development today requires more than just coding — it demands performance, seamless user experience, scalability, and platform reliability.",
+    atGlanceDescription:
+      "Delivering reliable software requires more than development — it demands rigorous testing, seamless deployment, continuous monitoring, and strong operational support to ensure performance, security, and long-term scalability.",
     atGlance: [
       {
-        title: "AI-ASSISTED DEVELOPMENT WORKFLOWS",
+        title: "QUALITY ASSURANCE & TESTING EXCELLENCE",
         description: "",
         items: [
-          "AI-powered code completion & generation",
-          "Intelligent refactoring and optimization",
-          "Automated documentation assistance",
-          "Rapid prototyping support",
-          "Context-aware coding suggestions",
-          "Developer productivity optimization",
+          "Functional, regression, and integration testing",
+          "Automated testing frameworks and pipelines",
+          "Performance and load testing strategies",
+          "Security and vulnerability assessments",
+          "Cross-platform and usability validation",
         ],
         bgColor: "#3654FF",
+        textColor: "#FFFFFF",
+        image: images.atAGlance1,
+      },
+      {
+        title: "DEPLOYMENT & RELEASE ENGINEERING",
+        description: "",
+        items: [
+          "CI/CD pipeline design and automation",
+          "Cloud, hybrid, and on-prem deployment support",
+          "Version control and release coordination",
+          "Rollback and recovery strategies",
+          "Infrastructure configuration management",
+        ],
+        bgColor: "#FFC400",
+        textColor: "#000000",
+        image: images.atAGlance2,
+      },
+      {
+        title: "MONITORING & PERFORMANCE OPTIMIZATION",
+        description: "",
+        items: [
+          "Real-time performance monitoring",
+          "Error tracking and alert systems",
+          "System health and uptime monitoring",
+          "Scalability readiness assessment",
+          "Continuous optimization recommendations",
+        ],
+        bgColor: "#00DE71",
         textColor: "#FFFFFF",
         image: images.atAGlance3,
       },
       {
-        title: "CODE QUALITY & ENGINEERING STANDARDS",
-        description: "",
-        items: [
-          "Automated code reviews and linting",
-          "Architecture pattern enforcement",
-          "Secure coding best practices",
-          "Code maintainability improvements",
-          "Technical debt reduction strategies",
-          "Continuous code quality monitoring",
-        ],
-        bgColor: "#FFC400",
-        textColor: "#000000",
-        image: images.atAGlance1,
-      },
-      {
-        title: "DEVELOPMENT TOOLING & INTEGRATIONS",
-        description: "",
-        items: [
-          "AI coding assistants integration",
-          "IDE and DevOps tool connectivity",
-          "Repository and version control automation",
-          "API development assistance",
-          "Testing automation integration",
-          "Workflow orchestration tools",
-        ],
-        bgColor: "#00DE71",
-        textColor: "#FFFFFF",
-        image: images.atAGlance4,
-      },
-      {
-        title: "CI/CD & DELIVERY ACCELERATION",
+        title: "DEVOPS & WORKFLOW AUTOMATION",
         description: "",
         items: [
           "Automated build and deployment pipelines",
-          "Continuous integration optimization",
-          "Test automation and validation flows",
-          "Release management support",
-          "Performance monitoring integration",
-          "DevOps workflow automation",
+          "Integration with development toolchains",
+          "Environment consistency management",
+          "Infrastructure automation support",
+          "Workflow efficiency optimization",
         ],
         bgColor: "#FFA77C",
         textColor: "#000000",
-        image: images.atAGlance10,
+        image: images.atAGlance4,
       },
       {
-        title: "SECURITY, COMPLIANCE & GOVERNANCE",
+        title: "SECURITY, COMPLIANCE & RELIABILITY",
         description: "",
         items: [
-          "Secure AI coding practices",
-          "Compliance-ready development workflows",
-          "Code audit and traceability support",
-          "Access control and governance policies",
-          "Data protection in AI-assisted coding",
-          "Responsible AI development standards",
+          "Secure deployment practices",
+          "Compliance readiness support",
+          "Data protection and access governance",
+          "Risk mitigation strategies",
+          "Long-term reliability assurance",
         ],
         bgColor: "#F1571B",
         textColor: "#FFFFFF",
@@ -1759,23 +1723,24 @@ export const servicesData: readonly IService[] = Object.freeze([
     ],
 
     content: `
-    <h2>Accelerate Development with AI-Powered Coding Assistance</h2>
-    <p>Vibe Coding Assistance combines cutting-edge AI technology with proven development practices to help teams build faster without sacrificing quality. Whether you're validating an MVP or scaling production systems, our AI-powered approach keeps you moving at the speed of innovation.</p>
+    <h2>Ensure Software Reliability From Testing to Production</h2>
+    <p>Great software requires more than just development — it needs rigorous testing, smooth deployment, and continuous support. Our SQA and deployment services ensure your applications are reliable, secure, and ready to scale in production environments.</p>
     
-    <h3>Our AI Coding Services:</h3>
+    <h3>Our SQA & Deployment Services:</h3>
     <ul>
-      <li><strong>AI Integration:</strong> Seamlessly integrate AI assistants into your existing development workflow</li>
-      <li><strong>Autonomous Coding:</strong> Intelligent systems that proactively support your engineering team</li>
-      <li><strong>Developer Productivity:</strong> AI-powered tools that accelerate coding, debugging, and refactoring</li>
-      <li><strong>Code Quality:</strong> Automated reviews and best practice enforcement</li>
-      <li><strong>CI/CD Enhancement:</strong> AI-assisted deployment and delivery optimization</li>
+      <li><strong>Quality Assurance:</strong> Comprehensive testing strategies including functional, performance, and security testing</li>
+      <li><strong>Test Automation:</strong> Automated test pipelines for faster, more reliable releases</li>
+      <li><strong>CI/CD Implementation:</strong> Streamlined deployment pipelines for smooth releases</li>
+      <li><strong>Infrastructure Management:</strong> Cloud, on-premise, and hybrid deployment support</li>
+      <li><strong>Monitoring & Support:</strong> Continuous performance monitoring and operational support</li>
+      <li><strong>Security & Compliance:</strong> Ongoing security assessments and compliance readiness</li>
     </ul>
     
-    <p>We leverage the latest AI coding tools including GitHub Copilot, Claude AI, and specialized developer agents to transform how your team builds software.</p>
+    <p>We don't stop at delivery — we ensure your software continues to perform reliably, securely, and efficiently long after launch.</p>
   `,
-    metaTitle: "AI-Powered Coding Assistance Services | Netro Systems",
+    metaTitle: "SQA, Deployment & Support Services | Netro Systems",
     metaDescription:
-      "Accelerate software development with AI coding assistance. Integrate intelligent tools into your workflow for faster, cleaner code delivery.",
+      "Comprehensive software quality assurance, deployment automation, and ongoing support. Ensure your applications are reliable, secure, and production-ready.",
   },
   {
     _id: "service-06",
@@ -1789,12 +1754,7 @@ export const servicesData: readonly IService[] = Object.freeze([
     featuredImage: images.uiux,
     icon: <UIMenuIcon color="#FF7036" />,
     link: "/services/ui-ux-design",
-    tags: [
-      "UI/UX Design",
-      "User Research",
-      "Design Systems",
-      "Prototyping",
-    ],
+    tags: ["UI/UX Design", "User Research", "Design Systems", "Prototyping"],
     servicesOffer: {
       title: "What we offer",
       description:
@@ -1838,27 +1798,27 @@ export const servicesData: readonly IService[] = Object.freeze([
     challengesSolution: {
       title: "CHALLENGES AND SOLUTION",
       description:
-        "Designing digital products that users trust, adopt, and enjoy requires more than visuals — it demands clarity, usability, and strategic experience thinking.",
+        "Ensuring software reliability goes beyond development. We help teams overcome testing gaps, deployment risks, and operational uncertainties to deliver stable, scalable, and production-ready applications.",
       challenges: [
         {
-          title: "Confusing User Flows & Navigation",
+          title: "Quality Risks Before Release",
           description:
-            "Complex flows create friction; structured UX simplifies navigation and improves engagement.",
+            "We implement structured QA strategies, automation, and thorough validation before every release.",
         },
         {
-          title: "Low User Adoption & Retention",
+          title: "Deployment Complexity",
           description:
-            "Even functional products struggle without intuitive experiences that guide users naturally.",
+            "We build reliable CI/CD pipelines and deployment workflows that reduce risk and ensure smooth releases.",
         },
         {
-          title: "Inconsistent Interface Design",
+          title: "Performance & Scaling Challenges",
           description:
-            "Fragmented visuals weaken brand perception; unified design systems ensure consistency.",
+            "Continuous monitoring, performance tuning, and proactive system optimization keep applications stable as they scale.",
         },
         {
-          title: "Scalability & Usability Balance",
+          title: "Post-Launch Maintenance Pressure",
           description:
-            "Growing products need interfaces that evolve without sacrificing clarity or performance.",
+            "Ongoing support, monitoring, and maintenance ensure long-term software stability and performance.",
         },
       ],
     },
@@ -1909,7 +1869,8 @@ export const servicesData: readonly IService[] = Object.freeze([
     deliverables: [
       {
         title: "Experience Design Foundations",
-        description: "We shape user experiences from insight to structure — ensuring every interaction is intentional, intuitive, and aligned with product goals.",
+        description:
+          "We shape user experiences from insight to structure — ensuring every interaction is intentional, intuitive, and aligned with product goals.",
         bgColor: "#97C0FF",
         textColor: "#000000",
         features: [
@@ -1965,7 +1926,8 @@ export const servicesData: readonly IService[] = Object.freeze([
       },
     ],
     atGlanceTitle: "SERVICE AT A GLANCE",
-    atGlanceDescription: "Modern digital products succeed when design goes beyond visuals — blending usability, accessibility, interaction logic, and brand consistency into seamless user experiences.",
+    atGlanceDescription:
+      "Modern digital products succeed when design goes beyond visuals — blending usability, accessibility, interaction logic, and brand consistency into seamless user experiences.",
     atGlance: [
       {
         title: "USER EXPERIENCE STRATEGY",
@@ -2056,8 +2018,7 @@ export const servicesData: readonly IService[] = Object.freeze([
     <h3>Why Choose Us:</h3>
     <p>With years of expertise and a proven portfolio, we deliver designs that not only look great but drive measurable business results through improved user engagement and conversion.</p>
   `,
-    metaTitle:
-      "UI/UX Design Services | User Experience Design | Netro Systems",
+    metaTitle: "UI/UX Design Services | User Experience Design | Netro Systems",
     metaDescription:
       "Professional UI/UX design services. Create intuitive, engaging user experiences with years of proven expertise.",
   },
@@ -2103,7 +2064,7 @@ export const servicesData: readonly IService[] = Object.freeze([
           title: "Scaling Brand Consistency",
           description:
             "As brands grow, structured guidelines maintain coherence across platforms and teams.",
-        }
+        },
       ],
     },
     commitment: {
@@ -2153,7 +2114,8 @@ export const servicesData: readonly IService[] = Object.freeze([
     deliverables: [
       {
         title: "Brand Identity Design",
-        description: "We craft strong visual identities that express your brand's personality, positioning, and long-term vision.",
+        description:
+          "We craft strong visual identities that express your brand's personality, positioning, and long-term vision.",
         bgColor: "#97C0FF",
         textColor: "#000000",
         features: [
@@ -2209,7 +2171,8 @@ export const servicesData: readonly IService[] = Object.freeze([
       },
     ],
     atGlanceTitle: "SERVICE AT A GLANCE",
-    atGlanceDescription: "Modern digital products succeed when design goes beyond visuals — blending usability, accessibility, interaction logic, and brand consistency into seamless user experiences.",
+    atGlanceDescription:
+      "Modern digital products succeed when design goes beyond visuals — blending usability, accessibility, interaction logic, and brand consistency into seamless user experiences.",
     atGlance: [
       {
         title: "BRAND STRATEGY & POSITIONING",
