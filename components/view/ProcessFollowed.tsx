@@ -10,6 +10,7 @@ import {
 } from "@/services/assets/svgs";
 import { processData } from "@/services/data";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 import SectionHeader from "../common/SectionHeader";
 import SectionSubHeader from "../common/SectionSubHeader";
 
@@ -23,6 +24,26 @@ const icons = {
 function ProcessFollowed() {
   const { cardsRef, imageRef, handleHover, handleLeave, activeIndex } =
     useProcessAnimation();
+  const [imagesLoaded, setImagesLoaded] = useState<Record<number, boolean>>({});
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  // Preload all images on mount
+  useEffect(() => {
+    processData.forEach((item, index) => {
+      const img = new window.Image();
+      img.src = typeof item.image === 'string' ? item.image : item.image.src;
+      img.onload = () => {
+        setImagesLoaded(prev => ({ ...prev, [index]: true }));
+      };
+    });
+  }, []);
+
+  // Handle image transition when activeIndex changes
+  useEffect(() => {
+    if (activeIndex !== currentImageIndex && imagesLoaded[activeIndex]) {
+      setCurrentImageIndex(activeIndex);
+    }
+  }, [activeIndex, currentImageIndex, imagesLoaded]);
 
 
   return (
@@ -57,6 +78,7 @@ function ProcessFollowed() {
                       : "border-[#74E49F] after:bg-[#3654FF] after:scale-x-0",
                   )}
                 >
+
                   {icons[item.icon as keyof typeof icons]}
 
                   <div className="flex flex-col mt-4 md:mt-6">
@@ -74,7 +96,7 @@ function ProcessFollowed() {
 
           <div ref={imageRef}>
             <Image
-              src={processData[activeIndex].image}
+              src={processData[currentImageIndex].image}
               alt="process active image"
               width={2400}
               height={1600}

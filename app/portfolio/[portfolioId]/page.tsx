@@ -1,6 +1,5 @@
 import dynamic from "next/dynamic";
 import { Suspense } from "react";
-
 import { purifyUrl } from "@/services";
 import { getPortfolioById, portfolios } from "@/services/data/portfolio.data";
 import { Metadata } from "next";
@@ -9,44 +8,29 @@ import CustomCardGrid from "@/components/shared/CustomCardGrid";
 import DiscoverMoreProjects from "@/components/projects/DiscoverMoreProjects";
 import ContactUsFormHome from "@/components/contact-us/ContactUsFormHome";
 import Loading from "@/app/loading";
+import InlineLoader from "@/components/common/InlineLoader";
+import PortfolioPageWrapper from "@/components/projects/PortfolioPageWrapper";
 
-const PulseBlock = ({ className }: { className?: string }) => (
-  <div
-    className={`w-full min-h-[180px] animate-pulse bg-neutral-900/10 ${className ?? ""}`}
-    aria-busy="true"
-    aria-live="polite"
-  />
-);
+// Shared loader factory
+const createLoader = (h: string) => {
+  const LoaderComponent = () => <InlineLoader h={h} />;
+  LoaderComponent.displayName = `InlineLoader(${h})`;
+  return LoaderComponent;
+};
 
-const ProjectDetails = dynamic(
-  () => import("@/components/projects/ProjectDetails"),
-  { loading: () => <PulseBlock className="min-h-[240px]" /> },
-);
-
-const ProjectDescription = dynamic(
-  () => import("@/components/projects/ProjectDescription"),
-  { loading: () => <PulseBlock /> },
-);
-
-const ProjectSolution = dynamic(
-  () => import("@/components/projects/ProjectSolution"),
-  { loading: () => <PulseBlock /> },
-);
-
-const ProjectBranding = dynamic(
-  () => import("@/components/projects/ProjectBranding"),
-  { loading: () => <PulseBlock /> },
-);
+// Dynamic imports with shared loaders
+const ProjectDetails = dynamic(() => import("@/components/projects/ProjectDetails"), { loading: createLoader("240px") });
+const ProjectDescription = dynamic(() => import("@/components/projects/ProjectDescription"), { loading: createLoader("180px") });
+const ProjectSolution = dynamic(() => import("@/components/projects/ProjectSolution"), { loading: createLoader("180px") });
+const ProjectBranding = dynamic(() => import("@/components/projects/ProjectBranding"), { loading: createLoader("180px") });
 
 export async function generateMetadata({
   params,
 }: {
   params: Promise<{ portfolioId: string }>;
 }): Promise<Metadata> {
-  const { portfolioId } = await params;
-  const purifiedPortfolioId = purifyUrl({ urlString: portfolioId });
-  const portfolio = getPortfolioById(purifiedPortfolioId);
-
+  const portfolio = getPortfolioById(purifyUrl({ urlString: (await params).portfolioId }));
+  
   if (!portfolio) {
     return {
       title: "Portfolio Not Found",
@@ -64,41 +48,36 @@ async function PortfolioDetails({
 }: {
   params: Promise<{ portfolioId: string }>;
 }) {
-  let { portfolioId } = await params;
-  portfolioId = purifyUrl({ urlString: portfolioId });
+  const portfolioId = purifyUrl({ urlString: (await params).portfolioId });
   const portfolioData = getPortfolioById(portfolioId);
 
-  if (!portfolioData) {
-    notFound();
-  }
+  if (!portfolioData) notFound();
 
-  const portfolioDetails = {
-    data: portfolioData,
-  };
-
-  const morePortfolioData = portfolios
-    .filter((p) => p._id !== portfolioId)
-    .splice(0, 3);
+  const portfolioDetails = { data: portfolioData };
+  const morePortfolioData = portfolios.filter((p) => p._id !== portfolioId).splice(0, 3);
+  const { card1, card2, card3, card4, card5 } = portfolioData;
 
   return (
-    <main className="mt-[60px]">
-      <Suspense fallback={<Loading />}>
-        <ProjectDetails project={portfolioDetails} />
-        <ProjectDescription project={portfolioDetails} />
-        <ProjectSolution project={portfolioDetails} />
-        <ProjectBranding project={portfolioDetails} />
-        <CustomCardGrid
-          card1={portfolioDetails?.data?.card1}
-          card2={portfolioDetails?.data?.card2}
-          card3={portfolioDetails?.data?.card3}
-          card4={portfolioDetails?.data?.card4}
-          card5={portfolioDetails?.data?.card5}
-          className="py-12 md:py-24 lg:py-32"
-        />
-        <ContactUsFormHome />
-        <DiscoverMoreProjects data={morePortfolioData} />
-      </Suspense>
-    </main>
+    <PortfolioPageWrapper portfolio={portfolioData}>
+      <main className="mt-[60px]">
+        <Suspense fallback={<Loading />}>
+          <ProjectDetails project={portfolioDetails} />
+          <ProjectDescription project={portfolioDetails} />
+          <ProjectSolution project={portfolioDetails} />
+          <ProjectBranding project={portfolioDetails} />
+          <CustomCardGrid
+            card1={card1}
+            card2={card2}
+            card3={card3}
+            card4={card4}
+            card5={card5}
+            className="py-12 md:py-24 lg:py-32"
+          />
+          <ContactUsFormHome />
+          <DiscoverMoreProjects data={morePortfolioData} />
+        </Suspense>
+      </main>
+    </PortfolioPageWrapper>
   );
 }
 

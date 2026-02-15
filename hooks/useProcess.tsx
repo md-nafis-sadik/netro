@@ -15,12 +15,12 @@ export const useProcessAnimation = () => {
 
     gsap.fromTo(
       imageRef.current,
-      { scale: 0.9, y: 16 },
+      { scale: 0.95, opacity: 0 },
       {
         scale: 1,
-        y: 0,
-        duration: 1,
-        ease: "power3.out",
+        opacity: 1,
+        duration: 0.7,
+        ease: "power2.out",
         overwrite: "auto",
       },
     );
@@ -28,7 +28,10 @@ export const useProcessAnimation = () => {
 
   /* ---------- HOVER ANIMATION ---------- */
   const handleHover = (index: number, el: HTMLDivElement) => {
-    setActiveIndex(index);
+    // Only update if different from current active index
+    if (activeIndex !== index) {
+      setActiveIndex(index);
+    }
 
     gsap.to(el, {
       y: -6,

@@ -71,6 +71,9 @@ export const useNavbarColorDetection = (pathname: string) => {
   useGSAP(() => {
     gsap.registerPlugin(ScrollTrigger);
 
+    // Ensure navbar starts visible on mount/route change
+    gsap.set(".main-tool-bar", { yPercent: 0, opacity: 1 });
+
     const showAnim = gsap
       .from(".main-tool-bar", {
         yPercent: -150,
@@ -96,7 +99,7 @@ export const useNavbarColorDetection = (pathname: string) => {
       trigger.kill();
       showAnim.kill();
     };
-  }, []);
+  }, [pathname]);
 
   return { isDarkBackground, isScrolled };
 };

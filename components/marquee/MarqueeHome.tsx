@@ -31,7 +31,7 @@ const MarqueeHome: FC<IFMarqueeHomeProps> = ({ dark, className }) => {
         {clientCompanyData.map((image, index) => (
           <div
             key={index}
-            className="mx-0.5 size-24 sm:size-32 md:size-40 flex_center bg-natural-100 p-9"
+            className="mx-0.5 size-24 sm:size-32 md:size-40 flex_center bg-natural-100 p-9 rounded-2xl"
           >
             <Image
               src={image.src}

@@ -21,7 +21,7 @@ type NavbarProps = {
   services: any[];
 };
 
-const Navbar: FC<NavbarProps> = ({ show, services }) => {
+const Navbar: FC<NavbarProps> = ({ show = true, services }) => {
   const pathname = usePathname();
   const { isDarkBackground, isScrolled } = useNavbarColorDetection(pathname);
 
@@ -29,6 +29,7 @@ const Navbar: FC<NavbarProps> = ({ show, services }) => {
   const [megamenuOpening, setMegamenuOpening] = useState(false);
   const [mobileMegaIndex, setMobileMegaIndex] = useState<number | null>(null);
   const isLightText = isDarkBackground;
+  
   return (
     <nav className="main-tool-bar fixed lg:top-6 left-1/2 -translate-x-1/2 shadow-nav w-full lg:max-w-[787px] lg:bg-blue-900 lg:border border-blue-950 lg:rounded-full z-[999] p-3 pl-6 bg-blue-900/40 backdrop-blur-[20px]">
       <div className="w-full flex flex-row items-center justify-between lg:justify-start gap-4 md:gap-10">

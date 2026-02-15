@@ -35,11 +35,13 @@ function ServiceMenuItem({
   index,
   isActive,
   onHover,
+  onLeave,
 }: {
   service: IService;
   index: number;
   isActive: boolean;
   onHover: (index: number) => void;
+  onLeave: () => void;
 }) {
   return (
     <Link
@@ -51,6 +53,7 @@ function ServiceMenuItem({
           : "hover:scale-105 hover:bg-main-600"
       )}
       onMouseEnter={() => onHover(index)}
+      onMouseLeave={onLeave}
     >
       {service.icon &&
         isValidElement(service.icon) &&
@@ -85,9 +88,13 @@ export default function DropupNavigationMenu({
   const contentRef = useRef<HTMLDivElement | null>(null);
   const imageRef = useRef<HTMLDivElement | null>(null);
   const transitionTl = useRef<gsap.core.Timeline | null>(null);
-  const [activeIndex, setActiveIndex] = useState(0);       // drives left-panel highlight
+  
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null); // track hover
   const [displayedIndex, setDisplayedIndex] = useState(0); // drives right-panel content
 
+  // Active index is only the hovered item (null if not hovering)
+  const activeIndex = hoveredIndex;
+  
   const displayedService = servicesMenu[displayedIndex] ?? servicesMenu[0];
 
   useGSAP(() => {
@@ -118,17 +125,17 @@ export default function DropupNavigationMenu({
     else tl.current.reverse();
   }, [show]);
 
-  // Reset both indices whenever the menu is shown
+  // Reset hover and displayed index when menu is shown
   useEffect(() => {
     if (show) {
-      setActiveIndex(0);
+      setHoveredIndex(null);
       setDisplayedIndex(0);
     }
   }, [show]);
 
   // Animate right panel: fade out → swap content → fade in
   useEffect(() => {
-    if (activeIndex === displayedIndex) return;
+    if (activeIndex === null || activeIndex === displayedIndex) return;
     if (!contentRef.current || !imageRef.current) return;
 
     // Kill any running transition so rapid hovering never stacks
@@ -183,7 +190,8 @@ export default function DropupNavigationMenu({
                 service={service}
                 index={serviceIndex}
                 isActive={activeIndex === serviceIndex}
-                onHover={setActiveIndex}
+                onHover={setHoveredIndex}
+                onLeave={() => setHoveredIndex(null)}
               />
             ))}
           </div>
@@ -198,7 +206,8 @@ export default function DropupNavigationMenu({
                   service={service}
                   index={realIndex}
                   isActive={activeIndex === realIndex}
-                  onHover={setActiveIndex}
+                  onHover={setHoveredIndex}
+                  onLeave={() => setHoveredIndex(null)}
                 />
               );
             })}
