@@ -28,24 +28,24 @@ const DescriptionHeader = ({
   // useAnimation(textRef, {
   //   y: 40,
   // });
-  // const variantClasses = {
-  //   default: {
-  //     title: "text-white",
-  //     description: "text-text-600",
-  //   },
-  //   dark: {
-  //     title: "text-black",
-  //     description: "text-text-600",
-  //   },
-  //   blue: {
-  //     title: "text-white",
-  //     description: "text-white",
-  //   },
-  //   gradient: {
-  //     title: "text-white",
-  //     description: "text-white",
-  //   },
-  // };
+  const variantClasses = {
+    default: {
+      title: "text-white",
+      description: "text-text-600",
+    },
+    dark: {
+      title: "text-black",
+      description: "text-text-600",
+    },
+    blue: {
+      title: "text-white",
+      description: "text-white",
+    },
+    gradient: {
+      title: "text-white",
+      description: "text-white",
+    },
+  };
 
   return (
     <div className={cn("flex flex-col items-center gap-6", className)}>
