@@ -42,7 +42,7 @@ const HomePageLoader = ({ children, imageSources }: HomePageLoaderProps) => {
     Promise.all(imageSources.map(loadImage))
       .then(() => {
         // Small delay for smooth transition
-        setTimeout(() => setIsLoading(false), 300);
+        setTimeout(() => setIsLoading(false), 0);
       });
   }, [imageSources, loadImage]);
 

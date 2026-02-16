@@ -29,20 +29,20 @@ function IntroHome() {
       className="py-10 md:py-15 font-inter overflow-hidden"
     >
       <div className="container">
-        <div className="flex flex-col md:flex-row gap-4 sm:gap-8 md:gap-12 items-center md:items-start justify-between">
+        {/* <div className="flex flex-col md:flex-row gap-4 sm:gap-8 md:gap-12 items-center md:items-start justify-between">
           <AppLogoIcon className="w-28 shrink-0" />
           <div
             ref={introTextRef}
             className="text-lg sm:text-xl md:text-2xl 2xl:text-4xl font-normal align-middle leading-[110%] max-w-[994px] ml-auto text-center md:text-left"
           >
             We are{" "}
-            {/* <Image
+            <Image
               ref={logoIconRef}
               src={images.logo}
               className="size-5 sm:size-7 xl:size-12 object-contain inline-block logo-icon"
               alt="logo icon"
               title="logo icon"
-            /> */}
+            />
             Netro Systems fosters innovation, collaboration, diversity, and
             growth, creating{" "}
             <Avatar
@@ -61,7 +61,7 @@ function IntroHome() {
             </Avatar>
             impactful software solutions in a vibrant, inclusive culture.
           </div>
-        </div>
+        </div> */}
         <div className="grid grid-cols-2 lg:grid-cols-10 grid-rows-5 gap-4 mt-11">
           {/* Projects Delivered */}
           <div

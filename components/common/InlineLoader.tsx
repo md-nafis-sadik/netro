@@ -13,7 +13,9 @@ const InlineLoader = ({ h = "180px", message }: InlineLoaderProps) => {
       className="w-full flex flex-col items-center justify-center gap-2 bg-darkPurplebg"
       style={{ minHeight: h }}
     >
+      <div className="min-h-40">
       <Lottie animationData={loader} loop={true} style={{ width: "120px" }} />
+      </div>
       {message && <p className="text-sm text-white/60">{message}</p>}
     </div>
   );

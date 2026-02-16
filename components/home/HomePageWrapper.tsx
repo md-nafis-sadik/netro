@@ -30,41 +30,41 @@ const HomePageWrapper = ({ children }: HomePageWrapperProps) => {
       images.ratingGoodFirms,
       
       // Support avatars
-      images.support1,
-      images.support2,
-      images.support3,
+      // images.support1,
+      // images.support2,
+      // images.support3,
       
       // About/intro images
-      images.about1,
-      images.about2,
-      images.about3,
-      images.about4,
-      images.about5,
+      // images.about1,
+      // images.about2,
+      // images.about3,
+      // images.about4,
+      // images.about5,
       
       // Hero banner icons
-      ...bannerIcons.map(item => item.icon),
+      // ...bannerIcons.map(item => item.icon),
       
       // Intro home images
-      ...homeIntroData.map(item => item.image),
+      // ...homeIntroData.map(item => item.image),
       
       // Country flags
-      ...countries.map(c => c.image),
+      // ...countries.map(c => c.image),
       
       // Projects background images
-      ...projects.map(p => p.backgroundImage),
+      // ...projects.map(p => p.backgroundImage),
       
       // Services images (first 5 shown on home)
-      ...servicesData.slice(0, 5).map(s => s.image),
+      // ...servicesData.slice(0, 5).map(s => s.image),
       
       // Products images
-      ...productsData.map(p => p.image),
+      // ...productsData.map(p => p.image),
       
       // Team member images
-      ...teamData.map(t => t.image),
+      // ...teamData.map(t => t.image),
       
       // Awards background patterns
-      awardsBgUp,
-      awardsBgDown,
+      // awardsBgUp,
+      // awardsBgDown,
       
       // Portfolio images (thumbnails for home display)
       ...portfolios.slice(0, 6).map(p => p.thumbnail || p.featuredImage || p.topImage).filter(Boolean),

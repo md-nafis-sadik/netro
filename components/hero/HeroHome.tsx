@@ -23,7 +23,11 @@ function HeroHome() {
   return (
     <section
       data-bg-theme="dark"
-      className="relative pt-52 pb-10 sm:min-h-dvh flex_center overflow-hidden"
+      className="relative  pt-52 pb-10 sm:min-h-dvh flex_center overflow-hidden"
+      style={{
+        background:
+          "linear-gradient(9deg, #e6f2fe 0%, #8fb6fd 8%, #88b0fb 10%, #5a89f4 20%, #143bda 30%, #1e3a8a 35%, #03011b 45%, #02001a 80%, #03011b 100%)",
+      }}
     >
       <div className="containerX max-w-[964px] relative z-[99] text-center">
         <h1
@@ -184,6 +188,7 @@ function HeroHome() {
           alt="Hero Banner"
           title="Hero banner"
           suppressHydrationWarning
+          priority
         />
       )}
       {/* hero background video */}
