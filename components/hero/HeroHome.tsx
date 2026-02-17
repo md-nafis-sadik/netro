@@ -6,19 +6,14 @@ import { images } from "@/services";
 import { StarIcon, StarShadowIcon } from "@/services/assets/svgs";
 import { bannerIcons } from "@/services/data";
 import Image from "next/image";
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState } from "react";
 import { Avatar } from "../ui/avatar";
 import ExpandableButtonList from "./partials/ExpandableButtonList";
 
 function HeroHome() {
   const { avatarRef, titleRef, descriptionRef } = useHeroAnimation();
   const [videoLoaded, setVideoLoaded] = useState(false);
-  const [mounted, setMounted] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
   return (
     <section
@@ -179,41 +174,36 @@ function HeroHome() {
         </div>
       </div>
       {/* hero banner image - placeholder until video loads */}
-      {mounted && (
-        <Image
-          src={images.banner}
-          className={`absolute bottom-0 left-0 w-full h-full object-fill transition-opacity duration-500 ${
-            videoLoaded ? "opacity-0" : "opacity-100"
-          }`}
-          alt="Hero Banner"
-          title="Hero banner"
-          suppressHydrationWarning
-          priority
-        />
-      )}
+      <Image
+        src={images.banner}
+        className={`absolute bottom-0 left-0 w-full h-full object-fill transition-opacity duration-500 ${
+          videoLoaded ? "opacity-0" : "opacity-100"
+        }`}
+        alt="Hero Banner"
+        title="Hero banner"
+        priority
+        fill
+      />
       {/* hero background video */}
-      {mounted && (
-        <video
-          ref={videoRef}
-          className="absolute bottom-0 left-0 w-full h-full object-fill"
-          autoPlay
-          loop
-          muted
-          playsInline
-          preload="auto"
-          onLoadedData={() => setVideoLoaded(true)}
-          onEnded={() => {
-            // Ensure seamless looping by immediately replaying
-            if (videoRef.current) {
-              videoRef.current.currentTime = 0;
-              videoRef.current.play();
-            }
-          }}
-          suppressHydrationWarning
-        >
-          <source src="/videos/hero-video.mp4" type="video/mp4" />
-        </video>
-      )}
+      <video
+        ref={videoRef}
+        className="absolute bottom-0 left-0 w-full h-full object-fill"
+        autoPlay
+        loop
+        muted
+        playsInline
+        preload="auto"
+        onLoadedData={() => setVideoLoaded(true)}
+        onEnded={() => {
+          // Ensure seamless looping by immediately replaying
+          if (videoRef.current) {
+            videoRef.current.currentTime = 0;
+            videoRef.current.play();
+          }
+        }}
+      >
+        <source src="/videos/hero-video.mp4" type="video/mp4" />
+      </video>
     </section>
   );
 }

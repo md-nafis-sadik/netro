@@ -40,65 +40,24 @@ export const useProjectAnimation = () => {
               transition: "none",
             });
           },
+          onLeave: () => {},
+          // Important: This ensures the ScrollTrigger initializes properly on page load
           invalidateOnRefresh: true,
         });
 
+        // Force immediate refresh/update to handle page loads at non-zero scroll positions
         trigger.refresh();
       });
 
-      // Collapse animation: cards wrap up from bottom to top
-      // (last card collapses first, then second-to-last, etc.)
-      if (cards.length > 0) {
-        const lastCard = cards[cards.length - 1];
-
-        ScrollTrigger.create({
-          trigger: lastCard,
-          start: "top center+=100",
-          end: "bottom top+=100",
-          scrub: 1,
-          onUpdate: (self) => {
-            const progress = self.progress;
-
-            cards.forEach((card, i) => {
-              const initialY = i * 50;
-
-              // Last card (i = total-1) collapses first (startProgress = 0)
-              // First card (i = 0) collapses last (startProgress near 1)
-              // Use i directly (not reversed) so bottom cards go first
-              const collapseOrder = total - 1 - i; // 0 = last card, total-1 = first card
-              const startProgress = collapseOrder / total;
-              const endProgress = (collapseOrder + 1) / total;
-
-              // Clamp local progress [0, 1] for this card's collapse window
-              const localProgress = Math.max(
-                0,
-                Math.min(
-                  1,
-                  (progress - startProgress) / (endProgress - startProgress),
-                ),
-              );
-
-              // Each card collapses toward the last card's initial y position
-              // which is (total - 1) * 50 — the bottom of the stack
-              const targetY = (total - 1) * 50;
-              const currentY = gsap.utils.interpolate(
-                initialY,
-                targetY,
-                localProgress,
-              );
-
-              gsap.set(card, { y: currentY });
-            });
-          },
-          invalidateOnRefresh: true,
-        });
-      }
-
+      // Force immediate update of all ScrollTriggers to account for initial scroll position
       ScrollTrigger.refresh();
 
+      // Add a small delay to make sure ScrollTrigger has properly initialized
       setTimeout(() => {
+        // Update each card based on current scroll position
         cards.forEach((card, i) => {
           const cardTrigger =
+            ScrollTrigger.getById(card.id) ||
             ScrollTrigger.getAll().find((st) => st.trigger === card);
 
           if (cardTrigger) {
@@ -106,11 +65,15 @@ export const useProjectAnimation = () => {
             const progress = cardTrigger.progress;
             const scale = 1 - progress * scaleDecay * (reversedIndex + 1);
 
-            gsap.set(card, { scale });
+            // Set the initial scale based on current scroll position
+            gsap.set(card, {
+              scale,
+            });
           }
         });
       }, 100);
 
+      // Cleanup function
       return () => {
         ScrollTrigger.getAll().forEach((trigger) => {
           if (cardsRef.current?.contains(trigger.vars.trigger as Element)) {
