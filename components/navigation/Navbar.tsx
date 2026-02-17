@@ -12,7 +12,7 @@ import { servicesData } from "@/services/data";
 import { navbarData, routes } from "@/services/data/shared.data";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { FC, useState } from "react";
+import { FC, useState, useEffect } from "react";
 import DropupNavigationMenu from "./DropUpNavigationMenu";
 import NavigationSheet from "./NavigationSheet";
 
@@ -29,6 +29,18 @@ const Navbar: FC<NavbarProps> = ({ show = true, services }) => {
   const [megamenuOpening, setMegamenuOpening] = useState(false);
   const [mobileMegaIndex, setMobileMegaIndex] = useState<number | null>(null);
   const isLightText = isDarkBackground;
+
+  // Close dropdown when scrolling
+  useEffect(() => {
+    const handleScroll = () => {
+      if (megamenuOpening) {
+        setMegamenuOpening(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [megamenuOpening]);
   
   return (
     <nav className="main-tool-bar fixed lg:top-6 left-1/2 -translate-x-1/2 shadow-nav w-full lg:max-w-[787px] lg:bg-blue-900 lg:border border-blue-950 lg:rounded-full z-[999] p-3 pl-6 bg-blue-900/40 backdrop-blur-[20px]">

@@ -31,7 +31,7 @@ const DescriptionHeader = ({
   const variantClasses = {
     default: {
       title: "text-white",
-      description: "text-text-600",
+      description: "text-gray-100",
     },
     dark: {
       title: "text-black",
@@ -66,7 +66,7 @@ const DescriptionHeader = ({
         <div
           ref={textRef}
           className={cn(
-            "!text-sm sm:!text-xl lg:!text-4xl !leading-[110%] text-center max-w-[874px]",
+            "font-inter text-sm md:text-lg lg:text-xl xl:text-2xl font-normal md:font-light !leading-[1.4] text-center max-w-[874px]",
             descriptionClassName,
             variantClasses[variant].description,
           )}

@@ -120,11 +120,11 @@ export const servicesData: readonly IService[] = Object.freeze([
       "AI Integration",
       "Automation",
     ],
-    points: [
-      "Automate work and reduce cost",
-      "Build AI-driven products and features",
-      "Extend legacy systems",
-    ],
+    // points: [
+    //   "Automate work and reduce cost",
+    //   "Build AI-driven products and features",
+    //   "Extend legacy systems",
+    // ],
     servicesOffer: {
       title: "What we offer",
       description:
@@ -488,11 +488,11 @@ export const servicesData: readonly IService[] = Object.freeze([
       "Software Quality Assurance",
       "Scalable Solutions",
     ],
-    points: [
-      "Transparency to your legacy operations",
-      "Build with passion and professionalism",
-      "Scalable that brings piece of mind",
-    ],
+    // points: [
+    //   "Transparency to your legacy operations",
+    //   "Build with passion and professionalism",
+    //   "Scalable that brings piece of mind",
+    // ],
     servicesOffer: {
       title: "What we offer",
       description:
@@ -848,11 +848,11 @@ export const servicesData: readonly IService[] = Object.freeze([
       "Android Development",
       "Cross-Platform",
     ],
-    points: [
-      "Clean architecture followed",
-      "Works with any of your platform",
-      "Scalable that brings piece of mind",
-    ],
+    // points: [
+    //   "Clean architecture followed",
+    //   "Works with any of your platform",
+    //   "Scalable that brings piece of mind",
+    // ],
     servicesOffer: {
       title: "What we offer",
       description:
@@ -1201,11 +1201,11 @@ export const servicesData: readonly IService[] = Object.freeze([
       "Rapid Prototyping",
       "SaaS Development",
     ],
-    points: [
-      "Quickest with the help of AI development",
-      "Convert your idea into SaaS",
-      "Show your investors, show to the world",
-    ],
+    // points: [
+    //   "Quickest with the help of AI development",
+    //   "Convert your idea into SaaS",
+    //   "Show your investors, show to the world",
+    // ],
     servicesOffer: {
       title: "What we offer",
       description:

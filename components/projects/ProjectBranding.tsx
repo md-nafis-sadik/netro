@@ -56,9 +56,9 @@ const ProjectBranding = ({ project }: any) => {
             beforeImage={project?.data?.wireframeImages[0]}
             afterImage={project?.data?.wireframeImages[1]}
             alt={project?.data?.title || "Wireframe Comparison"}
-            dividerColor="#ffffff"
-            circleColor="#ffffff"
-            arrowColor="#000000"
+            dividerColor="#099A8C"
+            circleColor="#099A8C"
+            arrowColor="white"
           />
         </div>
 

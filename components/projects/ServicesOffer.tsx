@@ -68,7 +68,7 @@ const ServicesOffer = ({
                     >
                       <div className="pr-6 pl-4 pb-4 pt-5 md:pr-14 md:pl-6 md:pt-12 md:pb-6 h-full flex flex-col justify-between gap-4 md:gap-6">
                         <div className="flex flex-col mt-auto">
-                          <p className="text-base md:text-lg 2xl:text-2xl font-bold !leading-[1.1] text-white mt-3 font-inter line-clamp-2">
+                          <p className="text-base md:text-lg 2xl:text-2xl font-semibold !leading-[1.1] text-white mt-3 font-inter line-clamp-2">
                             {item?.desc}
                           </p>
                         </div>

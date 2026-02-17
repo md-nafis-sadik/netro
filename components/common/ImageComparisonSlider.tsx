@@ -32,88 +32,103 @@ const ImageComparisonSlider = ({
   const currentMousePosRef = useRef<number>(0);
   const rafRef = useRef<number | null>(null);
 
-  const getMousePercentage = useCallback((e: MouseEvent<HTMLDivElement>): number => {
-    if (!containerRef.current) return 0;
-    const rect = containerRef.current.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const percentage = (x / rect.width) * 100;
-    return Math.max(0, Math.min(100, percentage));
-  }, []);
+  const getMousePercentage = useCallback(
+    (e: MouseEvent<HTMLDivElement>): number => {
+      if (!containerRef.current) return 0;
+      const rect = containerRef.current.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const percentage = (x / rect.width) * 100;
+      return Math.max(0, Math.min(100, percentage));
+    },
+    [],
+  );
 
   // Smooth interpolation for mouse tracking
   const smoothFollow = useCallback(() => {
-    setSliderPosition(prev => {
+    setSliderPosition((prev) => {
       const diff = currentMousePosRef.current - prev;
       const speed = 0.12; // Lower = slower follow
       return prev + diff * speed;
     });
-    
+
     rafRef.current = requestAnimationFrame(smoothFollow);
   }, []);
 
-  const handleMouseMove = useCallback((e: MouseEvent<HTMLDivElement>) => {
-    if (isInitialAnimating) return;
-    
-    const percentage = getMousePercentage(e);
-    currentMousePosRef.current = percentage;
-  }, [isInitialAnimating, getMousePercentage]);
+  const handleMouseMove = useCallback(
+    (e: MouseEvent<HTMLDivElement>) => {
+      if (isInitialAnimating) return;
 
-  const handleMouseEnter = useCallback((e: MouseEvent<HTMLDivElement>) => {
-    if (!containerRef.current) return;
-    
-    setIsHovering(true);
-    setIsInitialAnimating(true);
+      const percentage = getMousePercentage(e);
+      currentMousePosRef.current = percentage;
+    },
+    [isInitialAnimating, getMousePercentage],
+  );
 
-    // Calculate target position from mouse
-    const percentage = getMousePercentage(e);
-    currentMousePosRef.current = percentage;
+  const handleMouseEnter = useCallback(
+    (e: MouseEvent<HTMLDivElement>) => {
+      if (!containerRef.current) return;
 
-    // Animate from 0 to mouse position with GSAP
-    if (tweenRef.current) {
-      tweenRef.current.kill();
-    }
-    tweenRef.current = gsap.to({ value: 0 }, {
-      value: percentage,
-      duration: 1.4,
-      ease: "power2.inOut",
-      onUpdate: function() {
-        setSliderPosition(this.targets()[0].value);
-      },
-      onComplete: () => {
-        setIsInitialAnimating(false);
-        // Start smooth RAF-based following after initial animation
-        if (rafRef.current) cancelAnimationFrame(rafRef.current);
-        rafRef.current = requestAnimationFrame(smoothFollow);
+      setIsHovering(true);
+      setIsInitialAnimating(true);
+
+      // Calculate target position from mouse
+      const percentage = getMousePercentage(e);
+      currentMousePosRef.current = percentage;
+
+      // Animate from 0 to mouse position with GSAP
+      if (tweenRef.current) {
+        tweenRef.current.kill();
       }
-    });
-  }, [getMousePercentage, smoothFollow]);
+      tweenRef.current = gsap.to(
+        { value: 0 },
+        {
+          value: percentage,
+          duration: 1.4,
+          ease: "power2.inOut",
+          onUpdate: function () {
+            setSliderPosition(this.targets()[0].value);
+          },
+          onComplete: () => {
+            setIsInitialAnimating(false);
+            // Start smooth RAF-based following after initial animation
+            if (rafRef.current) cancelAnimationFrame(rafRef.current);
+            rafRef.current = requestAnimationFrame(smoothFollow);
+          },
+        },
+      );
+    },
+    [getMousePercentage, smoothFollow],
+  );
 
   const handleMouseLeave = useCallback(() => {
     setIsHovering(false);
     setIsInitialAnimating(true);
-    
+
     // Cancel RAF loop
     if (rafRef.current) {
       cancelAnimationFrame(rafRef.current);
       rafRef.current = null;
     }
-    
+
     // Animate back to 0 (full before image)
     if (tweenRef.current) {
       tweenRef.current.kill();
     }
-    tweenRef.current = gsap.to({ value: sliderPosition }, {
-      value: 0,
-      duration: 1.2,
-      ease: "power2.inOut",
-      onUpdate: function() {
-        setSliderPosition(this.targets()[0].value);
+    tweenRef.current = gsap.to(
+      { value: sliderPosition },
+      {
+        value: 0,
+        duration: 1.2,
+        ease: "power2.inOut",
+        onUpdate: function () {
+          setSliderPosition(this.targets()[0].value);
+        },
+        onComplete: () => {
+          setIsInitialAnimating(false);
+          currentMousePosRef.current = 0;
+        },
       },
-      onComplete: () => {
-        setIsInitialAnimating(false);
-        currentMousePosRef.current = 0;
-      }
-    });
+    );
   }, [sliderPosition]);
 
   // Cleanup on unmount
@@ -132,8 +147,8 @@ const ImageComparisonSlider = ({
     <div
       ref={containerRef}
       className={cn(
-        "relative w-full overflow-hidden cursor-col-resize select-none rounded-2xl md:rounded-3xl",
-        className
+        "relative w-full overflow-hidden select-none rounded-2xl md:rounded-3xl",
+        className,
       )}
       onMouseMove={handleMouseMove}
       onMouseEnter={handleMouseEnter}
@@ -172,7 +187,7 @@ const ImageComparisonSlider = ({
       <div
         className={cn(
           "absolute top-0 bottom-0 z-20 transition-opacity duration-500",
-          isHovering ? "opacity-100" : "opacity-0"
+          isHovering ? "opacity-100" : "opacity-0",
         )}
         style={{
           left: `${sliderPosition}%`,
@@ -180,36 +195,33 @@ const ImageComparisonSlider = ({
           pointerEvents: "none",
         }}
       >
-          {/* Vertical Line */}
-          <div
-            className="absolute top-0 bottom-0 w-[2px]"
-            style={{
-              left: "50%",
-              transform: "translateX(-50%)",
-              backgroundColor: dividerColor,
-              boxShadow: "0 0 10px rgba(0, 0, 0, 0.3)",
-            }}
-          />
+        {/* Vertical Line */}
+        <div
+          className="absolute top-0 bottom-0 w-[7px]"
+          style={{
+            left: "50%",
+            transform: "translateX(-50%)",
+            backgroundColor: dividerColor,
+            boxShadow: "0 3.491px 5.237px 0 rgba(74, 74, 74, 0.25)",
+          }}
+        />
 
-          {/* Circle with Arrows in Center */}
-          <div
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center"
-            style={{
-              width: "48px",
-              height: "48px",
-              borderRadius: "50%",
-              backgroundColor: circleColor,
-              boxShadow: "0 4px 12px rgba(0, 0, 0, 0.2)",
-            }}
-          >
-            <div className="flex flex-col items-center justify-center gap-1">
-              <ArrowLeft color={arrowColor} />
-              <ArrowRight color={arrowColor}  />
-            </div>
+        {/* Circle with Arrows in Center */}
+        <div
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center"
+          style={{
+            width: "41.8px",
+            height: "41.8px",
+            borderRadius: "50%",
+            backgroundColor: circleColor,
+          }}
+        >
+          <div className="flex flex-col items-center justify-center">
+            <ArrowLeft color={arrowColor} />
+            <ArrowRight color={arrowColor} />
           </div>
-
-   
         </div>
+      </div>
     </div>
   );
 };

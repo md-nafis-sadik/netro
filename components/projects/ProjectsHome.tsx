@@ -13,7 +13,7 @@ function ProjectsHome() {
   return (
     <section
       data-bg-theme="dark"
-      className="pt-10 md:pt-16 lg:pt-20 pb-10 bg-blue-900 "
+      className="pt-10 md:pt-16 lg:pt-20 pb-56 bg-blue-900 "
     >
       <div className="container flex_center flex-col">
         <SectionSubHeader
@@ -31,7 +31,9 @@ function ProjectsHome() {
         >
           {projects.map((item: IProject, index: number) => (
             <ProjectCard
-              className={cn("stacked-card sticky left-0 top-0 mb-60 lg:mb-80 rounded-2xl md:rounded-3xl")}
+              className={cn(
+                "stacked-card sticky left-0 top-28 mb-20 lg:mb-24 rounded-2xl md:rounded-3xl",
+              )}
               style={{
                 pointerEvents: activeIndex === index ? "auto" : "none",
               }}
