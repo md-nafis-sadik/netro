@@ -12,19 +12,19 @@ const ProjectCard = ({
   className = "",
   projectDescriptionClassName = "",
   showBottom = false,
-  style = {},
   leftSlideClass = "",
   linkCondition,
   shrinkedInGrid = false,
+  ...rest
 }: {
   item: IProject;
   className?: string;
   projectDescriptionClassName?: string;
   showBottom?: boolean;
-  style?: React.CSSProperties;
   leftSlideClass?: string;
   linkCondition?: string;
   shrinkedInGrid?: boolean;
+  [key: string]: any;
 }) => {
   const router = useRouter();
 
@@ -37,6 +37,7 @@ const ProjectCard = ({
         className,
         isLink ? "cursor-pointer" : "",
       )}
+      {...rest}
     >
       <div className="relative">
         <Image

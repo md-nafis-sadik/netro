@@ -1,5 +1,4 @@
 "use client";
-import { useProjectAnimation } from "@/hooks/useProjectAnimation";
 import { cn } from "@/lib/utils";
 import { IProject } from "@/services";
 import { projects } from "@/services/data";
@@ -8,8 +7,6 @@ import SectionSubHeader from "../common/SectionSubHeader";
 import ProjectCard from "./ProjectCard";
 
 function ProjectsHome() {
-  const { cardsRef, activeIndex } = useProjectAnimation();
-
   return (
     <section
       data-bg-theme="dark"
@@ -24,21 +21,21 @@ function ProjectsHome() {
         <SectionHeader className="home_projects_header">
           Our Projects
         </SectionHeader>
-
-        <div
-          ref={cardsRef}
-          className="flex flex-col items-center w-full relative mt-12 md:mt-16 lg:mt-20"
-        >
-          {projects.map((item: IProject, index: number) => (
-            <ProjectCard
-              className={cn("stacked-card sticky left-0 top-0 mb-60 lg:mb-80 rounded-2xl md:rounded-3xl")}
-              style={{
-                pointerEvents: activeIndex === index ? "auto" : "none",
-              }}
-              item={item}
-              key={index}
-            />
-          ))}
+        <div className="sticky">
+          <div className="flex flex-col items-center w-full relative mt-12 md:mt-16 lg:mt-20 gap-60 lg:gap-72 relative">
+            {projects.map((item: IProject, index: number) => (
+              <ProjectCard
+                className={cn(
+                  "stacked-card sticky left-0 rounded-2xl md:rounded-3xl",
+                )}
+                style={{
+                  top: 80 + index * 40,
+                }}
+                item={item}
+                key={index}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>
