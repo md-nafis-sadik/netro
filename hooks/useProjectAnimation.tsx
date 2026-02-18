@@ -11,14 +11,14 @@ export const useProjectAnimation = () => {
     () => {
       const cards = gsap.utils.toArray<HTMLDivElement>(".stacked-card");
       const total = cards.length;
-      const scaleDecay = 0;
+      const scaleDecay = 0.075;
 
       cards.forEach((card, i) => {
         const reversedIndex = total - 1 - i;
 
         // Stack setup - initial positions
         gsap.set(card, {
-          y: i * 50,
+          y: i * 60,
           scale: 1,
           zIndex: i,
         });
@@ -40,7 +40,6 @@ export const useProjectAnimation = () => {
               transition: "none",
             });
           },
-          onLeave: () => {},
           // Important: This ensures the ScrollTrigger initializes properly on page load
           invalidateOnRefresh: true,
         });
