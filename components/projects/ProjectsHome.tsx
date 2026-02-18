@@ -22,7 +22,7 @@ function ProjectsHome() {
           Our Projects
         </SectionHeader>
         <div className="sticky">
-          <div className="flex flex-col items-center w-full relative mt-12 md:mt-16 lg:mt-20 gap-60 lg:gap-72 relative">
+          <div className="flex flex-col items-center w-full relative mt-12 md:mt-16 lg:mt-20 gap-60 lg:gap-72">
             {projects.map((item: IProject, index: number) => (
               <ProjectCard
                 className={cn(

@@ -94,7 +94,7 @@ export const useIntroAnimation = () => {
             scrollTrigger: {
               trigger: cardRef.current,
               start: "top 85%",
-              toggleActions: "play none none none",
+              toggleActions: "play none none reset",
             },
           },
         );
@@ -198,7 +198,7 @@ export const useIntroAnimation = () => {
           scrollTrigger: {
             trigger: logoIconRef.current,
             start: "top 85%",
-            toggleActions: "play none none none",
+            toggleActions: "play none none reset",
           },
         },
       );

@@ -16,9 +16,7 @@ const LenisWrapper = ({ children }: { children: React.ReactNode }) => {
     lenisRef.current = lenis;
 
     // Sync Lenis with ScrollTrigger
-    lenis.on("scroll", () => {
-      ScrollTrigger.update();
-    });
+    lenis.on("scroll", ScrollTrigger.update);
 
     gsap.ticker.add((time) => {
       lenis.raf(time * 1000);
@@ -27,9 +25,6 @@ const LenisWrapper = ({ children }: { children: React.ReactNode }) => {
     gsap.ticker.lagSmoothing(0);
 
     return () => {
-      gsap.ticker.remove((time) => {
-        lenis.raf(time * 1000);
-      });
       lenis.destroy();
     };
   }, []);

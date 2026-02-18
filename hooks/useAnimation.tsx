@@ -35,7 +35,8 @@ export function useStaggerReveal(
         scrollTrigger: {
           trigger: ref.current,
           start: options.start ?? "top 85%",
-          once: options.once ?? true,
+          toggleActions: "play none none reset",
+          once: options.once ?? false,
         },
       });
 
@@ -46,6 +47,7 @@ export function useStaggerReveal(
     },
     {
       scope: ref,
+      dependencies: [],
     },
   );
 }
@@ -68,7 +70,8 @@ export function useAnimation(
         scrollTrigger: {
           trigger: ref.current,
           start: options.start ?? "top 85%",
-          once: options.once ?? true,
+          toggleActions: "play none none reset",
+          once: options.once ?? false,
         },
       });
 
@@ -79,6 +82,7 @@ export function useAnimation(
     },
     {
       scope: ref,
+      dependencies: [],
     },
   );
 }

@@ -46,8 +46,7 @@ const CardTransitionUpWithDelay: React.FC<CardTransitionUpWithDelayProps> = ({
               : window?.innerWidth > 768
               ? "top 80%"
               : "top 100%",
-            toggleActions: "play none none none",
-            once: true,
+            toggleActions: "play none none reset",
           },
         }
       );

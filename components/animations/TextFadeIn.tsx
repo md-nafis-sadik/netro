@@ -22,7 +22,7 @@ const TextFadeIn: React.FC<TextFadeInProps> = ({ text, className = "" }) => {
         scrollTrigger: {
           trigger: container,
           start: "top 80%",
-          toggleActions: "play none none none",
+          toggleActions: "play none none reset",
         },
       });
 

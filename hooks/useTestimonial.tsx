@@ -71,7 +71,7 @@ export const useTestimonialAnimation = () => {
           scrollTrigger: {
             trigger: containerRef.current,
             start: "top 75%",
-            toggleActions: "play none none none",
+            toggleActions: "play none none reset",
           },
         },
       );
@@ -94,7 +94,7 @@ export const useTestimonialAnimation = () => {
           scrollTrigger: {
             trigger: containerRef.current,
             start: "top 70%",
-            toggleActions: "play none none none",
+            toggleActions: "play none none reset",
           },
         },
       );

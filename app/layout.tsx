@@ -1,5 +1,4 @@
 import ScrollToTopOnRouteChange from "@/components/common/ScrollToTopOnRouteChange";
-import ScrollTriggerRefresh from "@/components/common/ScrollTriggerRefresh";
 import Footer from "@/components/footer/Footer";
 import NavbarWrapper from "@/components/navigation/NavbarWrapper";
 import { TidycalModal } from "@/components/tidycal/TidycalModal";
@@ -96,7 +95,6 @@ const RootLayout = ({
         <TidycalModalProvider>
           <LenisWrapper>
             <ScrollToTopOnRouteChange />
-            <ScrollTriggerRefresh />
             <NavbarWrapper />
             {children}
             {/* <LetsTalk /> */}

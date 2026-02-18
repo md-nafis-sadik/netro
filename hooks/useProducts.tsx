@@ -25,6 +25,7 @@ export const useProductAnimation = () => {
             scrollTrigger: {
               trigger: item,
               start: "top 85%",
+              toggleActions: "play none none reset",
             },
           },
         );
@@ -40,6 +41,7 @@ export const useProductAnimation = () => {
             scrollTrigger: {
               trigger: item,
               start: "top 85%",
+              toggleActions: "play none none reset",
             },
           },
         );
@@ -57,6 +59,7 @@ export const useProductAnimation = () => {
             scrollTrigger: {
               trigger: item,
               start: "top 80%",
+              toggleActions: "play none none reset",
             },
           },
         );

@@ -12,12 +12,14 @@ export const useServiceAnimation = () => {
     alpha: 0,
     x: -60,
     scale: 0.95,
+    once: false,
   });
 
   useAnimation(imageRef, {
     alpha: 0,
     scale: 0.9,
     x: 40,
+    once: false,
   });
 
   /* ---------------- IMAGE SMOOTH CHANGE ---------------- */

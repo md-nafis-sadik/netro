@@ -7,7 +7,7 @@ export const useProcessAnimation = () => {
   const sectionRef = useRef<HTMLElement | null>(null);
   const cardsRef = useRef<HTMLDivElement | null>(null);
   const imageRef = useRef<HTMLDivElement | null>(null);
-  useStaggerReveal(cardsRef, {});
+  useStaggerReveal(cardsRef, { once: false });
 
   /* ---------- IMAGE CHANGE ANIMATION ---------- */
   useEffect(() => {

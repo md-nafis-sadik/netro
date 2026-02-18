@@ -23,7 +23,7 @@ export const useReveluation = () => {
           scrollTrigger: {
             trigger: sectionRef.current,
             start: "top 80%",
-            toggleActions: "play none none none",
+            toggleActions: "play none none reset",
           },
         },
       );
@@ -47,7 +47,7 @@ export const useReveluation = () => {
           scrollTrigger: {
             trigger: ".home_ai_header",
             start: "top 75%",
-            toggleActions: "play none none none",
+            toggleActions: "play none none reset",
           },
         },
       );
@@ -68,7 +68,7 @@ export const useReveluation = () => {
           scrollTrigger: {
             trigger: ".revolution-description",
             start: "top 80%",
-            toggleActions: "play none none none",
+            toggleActions: "play none none reset",
           },
         },
       );
@@ -91,7 +91,7 @@ export const useReveluation = () => {
           scrollTrigger: {
             trigger: ".revolution-button",
             start: "top 85%",
-            toggleActions: "play none none none",
+            toggleActions: "play none none reset",
           },
         },
       );
