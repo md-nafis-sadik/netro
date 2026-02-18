@@ -1,8 +1,6 @@
 "use client";
 
-import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect, useState } from "react";
 
 export const useNavbarColorDetection = (pathname: string) => {
@@ -68,36 +66,67 @@ export const useNavbarColorDetection = (pathname: string) => {
     };
   }, []);
 
-  useGSAP(() => {
-    gsap.registerPlugin(ScrollTrigger);
+  useEffect(() => {
+    const toolbar = document.querySelector<HTMLElement>(".main-tool-bar");
+    if (!toolbar) {
+      return;
+    }
 
-    // Ensure navbar starts visible on mount/route change
-    gsap.set(".main-tool-bar", { yPercent: 0, opacity: 1 });
+    let rafId: number | null = null;
+    let lastScrollY = window.scrollY;
+    let isHidden = false;
 
-    const showAnim = gsap
-      .from(".main-tool-bar", {
-        yPercent: -150,
-        paused: true,
-        duration: 0.6,
+    const animateNavbar = (hide: boolean) => {
+      if (hide === isHidden) {
+        return;
+      }
+
+      isHidden = hide;
+      gsap.to(toolbar, {
+        yPercent: hide ? -150 : 0,
+        opacity: hide ? 0 : 1,
+        duration: 0.35,
         ease: "power2.out",
-      })
-      .progress(1);
+        overwrite: "auto",
+      });
+    };
 
-    const trigger = ScrollTrigger.create({
-      start: "top top",
-      end: "max",
-      onUpdate: (self) => {
-        if (self.direction === -1) {
-          showAnim.play();
-        } else {
-          showAnim.reverse();
-        }
-      },
-    });
+    const updateNavbarVisibility = () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY <= 0) {
+        animateNavbar(false);
+        lastScrollY = 0;
+        return;
+      }
+
+      if (currentScrollY > lastScrollY + 2 && currentScrollY > 20) {
+        animateNavbar(true);
+      } else if (currentScrollY < lastScrollY - 2) {
+        animateNavbar(false);
+      }
+
+      lastScrollY = currentScrollY;
+    };
+
+    const onScroll = () => {
+      if (rafId !== null) {
+        cancelAnimationFrame(rafId);
+      }
+      rafId = requestAnimationFrame(updateNavbarVisibility);
+    };
+
+    gsap.set(toolbar, { yPercent: 0, opacity: 1 });
+    updateNavbarVisibility();
+    window.addEventListener("scroll", onScroll, { passive: true });
 
     return () => {
-      trigger.kill();
-      showAnim.kill();
+      window.removeEventListener("scroll", onScroll);
+      if (rafId !== null) {
+        cancelAnimationFrame(rafId);
+      }
+      gsap.killTweensOf(toolbar);
+      gsap.set(toolbar, { yPercent: 0, opacity: 1 });
     };
   }, [pathname]);
 
