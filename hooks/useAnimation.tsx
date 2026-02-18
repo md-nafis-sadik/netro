@@ -32,11 +32,12 @@ export function useStaggerReveal(
         duration: options.duration ?? 0.8,
         stagger: options.stagger ?? 0.2,
         ease: options.ease ?? "power3.out",
+        immediateRender: false,
         scrollTrigger: {
           trigger: ref.current,
           start: options.start ?? "top 85%",
-          toggleActions: "play none none reset",
-          once: options.once ?? false,
+          toggleActions: "play none none none",
+          once: options.once ?? true,
         },
       });
 
@@ -67,11 +68,12 @@ export function useAnimation(
         scale: options.scale ?? 0.9,
         duration: options.duration ?? 0.8,
         ease: options.ease ?? "power3.out",
+        immediateRender: false,
         scrollTrigger: {
           trigger: ref.current,
           start: options.start ?? "top 85%",
-          toggleActions: "play none none reset",
-          once: options.once ?? false,
+          toggleActions: "play none none none",
+          once: options.once ?? true,
         },
       });
 

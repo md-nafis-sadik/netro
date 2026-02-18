@@ -22,10 +22,11 @@ export const useProductAnimation = () => {
             x: 0,
             duration: 1.2,
             ease: "power3.out",
+            immediateRender: false,
             scrollTrigger: {
               trigger: item,
               start: "top 85%",
-              toggleActions: "play none none reset",
+              toggleActions: "play none none none",
             },
           },
         );
@@ -38,10 +39,11 @@ export const useProductAnimation = () => {
             scale: 1,
             duration: 1.4,
             ease: "expo.out",
+            immediateRender: false,
             scrollTrigger: {
               trigger: item,
               start: "top 85%",
-              toggleActions: "play none none reset",
+              toggleActions: "play none none none",
             },
           },
         );
@@ -56,10 +58,11 @@ export const useProductAnimation = () => {
             duration: 0.8,
             stagger: 0.12,
             ease: "power3.out",
+            immediateRender: false,
             scrollTrigger: {
               trigger: item,
               start: "top 80%",
-              toggleActions: "play none none reset",
+              toggleActions: "play none none none",
             },
           },
         );

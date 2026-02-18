@@ -7,13 +7,10 @@ export default function ScrollToTopOnRouteChange() {
   const pathname = usePathname();
 
   useEffect(() => {
-    // Kill all ScrollTrigger instances before navigation
-    ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-    
     // Scroll to top immediately
     window.scrollTo({ top: 0, left: 0, behavior: "instant" });
     
-    // Small delay to ensure new page components mount, then refresh
+    // Refresh ScrollTrigger after route change to recalculate positions
     const timeoutId = setTimeout(() => {
       ScrollTrigger.refresh();
     }, 100);

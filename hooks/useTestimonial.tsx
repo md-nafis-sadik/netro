@@ -68,10 +68,11 @@ export const useTestimonialAnimation = () => {
           duration: 1,
           stagger: 0.15,
           ease: "power3.out",
+          immediateRender: false,
           scrollTrigger: {
             trigger: containerRef.current,
             start: "top 75%",
-            toggleActions: "play none none reset",
+            toggleActions: "play none none none",
           },
         },
       );
@@ -91,10 +92,11 @@ export const useTestimonialAnimation = () => {
           duration: 1.2,
           stagger: 0.2,
           ease: "power4.out",
+          immediateRender: false,
           scrollTrigger: {
             trigger: containerRef.current,
             start: "top 70%",
-            toggleActions: "play none none reset",
+            toggleActions: "play none none none",
           },
         },
       );

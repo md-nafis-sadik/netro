@@ -39,6 +39,7 @@ const CardTransitionUpWithDelay: React.FC<CardTransitionUpWithDelayProps> = ({
           duration: duration || 0.5 * (index + 1),
           // ease: "power1.in",
           transition: "none",
+          immediateRender: false,
           scrollTrigger: {
             trigger: cardRef.current,
             start: startAnim
@@ -46,7 +47,8 @@ const CardTransitionUpWithDelay: React.FC<CardTransitionUpWithDelayProps> = ({
               : window?.innerWidth > 768
               ? "top 80%"
               : "top 100%",
-            toggleActions: "play none none reset",
+            toggleActions: "play none none none",
+            once: true,
           },
         }
       );

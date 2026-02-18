@@ -91,10 +91,11 @@ export const useIntroAnimation = () => {
             duration: 0.8,
             delay: index * 0.15,
             ease: "power2.out",
+            immediateRender: false,
             scrollTrigger: {
               trigger: cardRef.current,
               start: "top 85%",
-              toggleActions: "play none none reset",
+              toggleActions: "play none none none",
             },
           },
         );
@@ -195,10 +196,11 @@ export const useIntroAnimation = () => {
           rotation: 0,
           duration: 1,
           ease: "back.out",
+          immediateRender: false,
           scrollTrigger: {
             trigger: logoIconRef.current,
             start: "top 85%",
-            toggleActions: "play none none reset",
+            toggleActions: "play none none none",
           },
         },
       );

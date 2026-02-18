@@ -20,10 +20,11 @@ export const useReveluation = () => {
           autoAlpha: 0.5,
           duration: 1.5,
           ease: "power3.out",
+          immediateRender: false,
           scrollTrigger: {
             trigger: sectionRef.current,
             start: "top 80%",
-            toggleActions: "play none none reset",
+            toggleActions: "play none none none",
           },
         },
       );
@@ -44,10 +45,11 @@ export const useReveluation = () => {
           rotateX: 0,
           duration: 1.2,
           ease: "power4.out",
+          immediateRender: false,
           scrollTrigger: {
             trigger: ".home_ai_header",
             start: "top 75%",
-            toggleActions: "play none none reset",
+            toggleActions: "play none none none",
           },
         },
       );
@@ -65,10 +67,11 @@ export const useReveluation = () => {
           duration: 1,
           delay: 0.3,
           ease: "power3.out",
+          immediateRender: false,
           scrollTrigger: {
             trigger: ".revolution-description",
             start: "top 80%",
-            toggleActions: "play none none reset",
+            toggleActions: "play none none none",
           },
         },
       );
@@ -88,10 +91,11 @@ export const useReveluation = () => {
           duration: 0.8,
           delay: 0.5,
           ease: "back.out(1.4)",
+          immediateRender: false,
           scrollTrigger: {
             trigger: ".revolution-button",
             start: "top 85%",
-            toggleActions: "play none none reset",
+            toggleActions: "play none none none",
           },
         },
       );
